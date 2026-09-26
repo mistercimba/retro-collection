@@ -12,7 +12,7 @@ Web app/PWA privada e mobile-first para consultar a coleção retro sem abrir o 
 - Modo mock quando não existem credenciais Google.
 - Leitura server-side do Google Sheets; as credenciais nunca são enviadas ao browser.
 - Password opcional com cookie HttpOnly através de `APP_PASSWORD`.
-- Manifest + service worker simples para instalação como PWA.
+- Manifest + service worker simples para instalação como PWA; nesta fase não guarda páginas privadas em cache.
 
 A Google Sheet continua a ser a **source of truth**. Esta primeira fase é read-only.
 
@@ -80,6 +80,7 @@ A app lê apenas:
 
 - `COLLECTION!A1:Z1200`
 - `AUDIT LOG!A1:U1200`
+- `GB!B6:B300` e `GBC!B6:B300` apenas para preservar a separação Game Boy / Game Boy Color
 
 `COLLECTION` é a fonte canónica. Os detalhes de auditoria são ligados por `Collection ID`.
 
