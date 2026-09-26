@@ -19,9 +19,9 @@
 
 ## Estado de validação
 
-- TypeScript/TSX verificado quanto a erros de sintaxe no ambiente de trabalho.
-- O ambiente desta sessão não conseguiu concluir `npm install` dentro do tempo disponível, por isso lint/tests/build completos ainda têm de correr em CI ou num ambiente com npm funcional.
-- Não considerar o build validado até `npm run check` passar.
+- GitHub Actions passou com sucesso no commit `8fd3085` (lint + tests + production build).
+- Vercel production deploy ficou `READY` no mesmo commit.
+- Produção continua em modo mock até serem configuradas as credenciais Google e `APP_PASSWORD`.
 
 ## Próximo — qualidade de dados e UX
 
