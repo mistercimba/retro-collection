@@ -17,6 +17,12 @@
 - [x] Testes de parsing, EUR, join e slugs.
 - [x] README com configuração Google/Vercel.
 
+## Estado de validação
+
+- TypeScript/TSX verificado quanto a erros de sintaxe no ambiente de trabalho.
+- O ambiente desta sessão não conseguiu concluir `npm install` dentro do tempo disponível, por isso lint/tests/build completos ainda têm de correr em CI ou num ambiente com npm funcional.
+- Não considerar o build validado até `npm run check` passar.
+
 ## Próximo — qualidade de dados e UX
 
 - [ ] Ligar credenciais reais e validar todos os headers da sheet em produção.
