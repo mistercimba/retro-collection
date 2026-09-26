@@ -7,6 +7,8 @@ const PLATFORM_SLUGS: Record<string, string> = {
   "Nintendo Wii U": "wii-u",
   "Nintendo Switch": "switch",
   "GameBoy + Color": "game-boy-color",
+  "Game Boy": "game-boy",
+  "Game Boy Color": "game-boy-color",
   "GameBoy Advance": "gba",
   "Nintendo DS": "ds",
   "Nintendo 3DS": "3ds",
@@ -34,6 +36,8 @@ export function displayPlatform(platform: string): string {
     "Playstation 3": "PlayStation 3",
     "Playstation 5": "PlayStation 5",
     "GameBoy + Color": "Game Boy / Color",
+    "Game Boy": "Game Boy",
+    "Game Boy Color": "Game Boy Color",
     "GameBoy Advance": "Game Boy Advance",
   };
   return labels[platform] ?? platform;
