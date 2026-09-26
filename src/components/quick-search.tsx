@@ -5,6 +5,7 @@ import { Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CollectionGame } from "@/lib/data/types";
 import { displayPlatform } from "@/lib/data/platforms";
+import { GameArtwork } from "@/components/artwork";
 
 function normalizeSearch(value: string) {
   return value
@@ -97,14 +98,14 @@ export function QuickSearch({ games }: { games: CollectionGame[] }) {
                   setOpen(false);
                 }}
               >
-                <div className="h-14 overflow-hidden rounded-lg bg-slate-100">
-                  <img
-                    src={`/api/artwork/game?title=${encodeURIComponent(game.title)}&platform=${encodeURIComponent(game.platform)}`}
-                    alt=""
-                    loading="lazy"
-                    className="h-full w-full object-contain p-1"
-                  />
-                </div>
+                <GameArtwork
+                  title={game.title}
+                  platform={game.platform}
+                  region={game.region || "PAL"}
+                  edition={game.edition}
+                  productCode={game.audit?.productCode ?? ""}
+                  className="h-14 w-11 rounded-lg"
+                />
                 <div className="min-w-0">
                   <p className="truncate font-semibold text-slate-950">{game.title}</p>
                   <p className="truncate text-xs text-slate-500">
