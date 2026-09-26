@@ -1,4 +1,4 @@
-import { displayPlatform } from "@/lib/data/platforms";
+import { displayPlatform } from "./data/platforms";
 
 type WikiPage = {
   index?: number;
