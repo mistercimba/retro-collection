@@ -7,11 +7,21 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const title = searchParams.get("title")?.trim();
   const platform = searchParams.get("platform")?.trim();
+  const region = searchParams.get("region")?.trim() || "PAL";
+  const edition = searchParams.get("edition")?.trim() || "";
+  const productCode = searchParams.get("productCode")?.trim() || "";
 
   if (!title || !platform) return new NextResponse(null, { status: 400 });
 
   try {
-    const image = await resolveGameArtwork(title, platform);
+    const image = await resolveGameArtwork({
+      title,
+      platform,
+      region,
+      edition,
+      productCode,
+    });
+
     if (!image) {
       return new NextResponse(null, {
         status: 404,
