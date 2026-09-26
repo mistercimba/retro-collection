@@ -16,6 +16,7 @@
 - [x] Gate opcional com `APP_PASSWORD`.
 - [x] Testes de parsing, EUR, join e slugs.
 - [x] README com configuração Google/Vercel.
+- [ ] CI GitHub: lint + tests + build validados.
 
 ## Próximo — qualidade de dados e UX
 
