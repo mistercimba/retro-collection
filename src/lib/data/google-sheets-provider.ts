@@ -35,10 +35,15 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
   }
 
   async read(): Promise<RawSheetData> {
-    const [collection, audit] = await Promise.all([
+    const [collection, audit, gb, gbc] = await Promise.all([
       this.getRange("COLLECTION!A1:Z1200"),
       this.getRange("AUDIT LOG!A1:U1200"),
+      this.getRange("GB!B6:B300"),
+      this.getRange("GBC!B6:B300"),
     ]);
-    return { collection: rowsToObjects(collection), audit: rowsToObjects(audit) };
+    const platformOverrides: Record<string, string> = {};
+    for (const [id] of gb) if (id?.trim()) platformOverrides[id.trim()] = "Game Boy";
+    for (const [id] of gbc) if (id?.trim()) platformOverrides[id.trim()] = "Game Boy Color";
+    return { collection: rowsToObjects(collection), audit: rowsToObjects(audit), platformOverrides };
   }
 }
