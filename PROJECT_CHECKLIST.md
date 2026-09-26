@@ -21,7 +21,8 @@
 
 - GitHub Actions passou com sucesso no commit `8fd3085` (lint + tests + production build).
 - Vercel production deploy ficou `READY` no mesmo commit.
-- Produção continua em modo mock até serem configuradas as credenciais Google e `APP_PASSWORD`.
+- Google Sheets real confirmado em produção via `/api/health` (`provider: google`).
+- `APP_PASSWORD` configurada em produção.
 
 ## Próximo — qualidade de dados e UX
 
