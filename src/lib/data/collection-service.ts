@@ -5,7 +5,10 @@ import type { CollectionGame, CollectionStats } from "./types";
 
 export async function getAllGames(): Promise<CollectionGame[]> {
   const raw = await getDataProvider().read();
-  const collection = raw.collection.map(parseCollectionRow).filter((item) => item.collectionId && item.title);
+  const collection = raw.collection
+    .map(parseCollectionRow)
+    .filter((item) => item.collectionId && item.title)
+    .map((item) => ({ ...item, platform: raw.platformOverrides?.[item.collectionId] ?? item.platform }));
   const audit = raw.audit.map(parseAuditRow).filter((entry) => entry.collectionId);
   return joinCollectionWithAudit(collection, audit);
 }
