@@ -23,21 +23,12 @@ export function QuickSearch({ games }: { games: CollectionGame[] }) {
   const results = useMemo(() => {
     const q = normalizeSearch(query);
     if (q.length < 2) return [];
-
     const tokens = q.split(/\s+/).filter(Boolean);
 
     return games
       .filter((game) => {
         const haystack = normalizeSearch(
-          [
-            game.title,
-            game.platform,
-            displayPlatform(game.platform),
-            game.collectionId,
-            game.edition,
-            game.region,
-            game.overallStatus,
-          ].join(" "),
+          [game.title, game.platform, displayPlatform(game.platform), game.collectionId, game.edition, game.region, game.overallStatus].join(" "),
         );
         return tokens.every((token) => haystack.includes(token));
       })
@@ -100,12 +91,20 @@ export function QuickSearch({ games }: { games: CollectionGame[] }) {
               <Link
                 key={game.collectionId}
                 href={`/game/${encodeURIComponent(game.collectionId)}`}
-                className="flex items-center justify-between gap-3 border-b border-slate-100 px-4 py-3 last:border-0 hover:bg-slate-50"
+                className="grid grid-cols-[44px_1fr_auto] items-center gap-3 border-b border-slate-100 px-3 py-2.5 last:border-0 hover:bg-slate-50"
                 onClick={() => {
                   setQuery("");
                   setOpen(false);
                 }}
               >
+                <div className="h-14 overflow-hidden rounded-lg bg-slate-100">
+                  <img
+                    src={`/api/artwork/game?title=${encodeURIComponent(game.title)}&platform=${encodeURIComponent(game.platform)}`}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-contain p-1"
+                  />
+                </div>
                 <div className="min-w-0">
                   <p className="truncate font-semibold text-slate-950">{game.title}</p>
                   <p className="truncate text-xs text-slate-500">
@@ -122,11 +121,7 @@ export function QuickSearch({ games }: { games: CollectionGame[] }) {
                         : "bg-slate-100 text-slate-600"
                   }`}
                 >
-                  {game.keepStatus === "Collection"
-                    ? "✓ Na coleção"
-                    : game.keepStatus === "Sell"
-                      ? "€ Para venda"
-                      : "Vendido"}
+                  {game.keepStatus === "Collection" ? "✓ Na coleção" : game.keepStatus === "Sell" ? "€ Para venda" : "Vendido"}
                 </span>
               </Link>
             ))
