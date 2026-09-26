@@ -21,8 +21,8 @@ export default async function GamePage({ params }: { params: Promise<{ collectio
 
       <div className="grid gap-6 lg:grid-cols-[300px_1fr]">
         <div>
-          <GameArtwork title={game.title} platform={game.platform} className="aspect-[3/4] rounded-[1.6rem] shadow-sm ring-1 ring-slate-200" eager />
-          <p className="mt-2 text-center text-[11px] text-slate-400">Imagem de referência online; pode não corresponder à variante física exata.</p>
+          <GameArtwork title={game.title} platform={game.platform} region={game.region || "PAL"} edition={game.edition} productCode={game.audit?.productCode ?? ""} className="aspect-[3/4] rounded-[1.6rem] shadow-sm ring-1 ring-slate-200" eager />
+          <p className="mt-2 text-center text-[11px] text-slate-400">Imagem PAL de referência; capa, cartucho ou disco podem variar da tua cópia física.</p>
         </div>
 
         <div>
