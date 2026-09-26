@@ -277,9 +277,7 @@ function commonsImage(page: CommonsPage) {
 
 export function buildPalArtworkSearch(request: GameArtworkRequest) {
   const platform = displayPlatform(request.platform);
-  const productCode = productCodeTokens(request.productCode)[0];
-  const exactCode = productCode ? ` "${productCode}"` : "";
-  return `"${request.title}" "${platform}" PAL${exactCode} (cover OR box OR cartridge OR cart OR disc OR label)`;
+  return `"${request.title}" "${platform}" PAL (cover OR box OR cartridge OR cart OR disc OR label)`;
 }
 
 export async function resolveGameArtwork(request: GameArtworkRequest): Promise<string | null> {
