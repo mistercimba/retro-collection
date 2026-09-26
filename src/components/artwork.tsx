@@ -1,7 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { PlatformMark } from "@/components/platform-mark";
+import { displayPlatform } from "@/lib/data/platforms";
+
+function initials(value: string) {
+  return value
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 3)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+}
 
 function ArtworkFrame({
   src,
@@ -22,25 +32,24 @@ function ArtworkFrame({
 }) {
   const [failed, setFailed] = useState(false);
 
-  if (failed) {
-    return (
-      <div className={className}>
-        <PlatformMark platform={platform} title={title} />
-      </div>
-    );
-  }
-
   return (
-    <div className={className}>
-      <img
-        src={src}
-        alt={alt}
-        loading={eager ? "eager" : "lazy"}
-        decoding="async"
-        referrerPolicy="no-referrer"
-        onError={() => setFailed(true)}
-        className={imageClassName}
-      />
+    <div className={`relative ${className}`}>
+      {failed ? (
+        <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 p-4 text-white">
+          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">{displayPlatform(platform)}</span>
+          <span className="text-3xl font-black tracking-tight text-white/90">{initials(title) || "GAME"}</span>
+        </div>
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+          referrerPolicy="no-referrer"
+          onError={() => setFailed(true)}
+          className={imageClassName}
+        />
+      )}
     </div>
   );
 }
@@ -55,9 +64,9 @@ export function PlatformArtwork({
   return (
     <ArtworkFrame
       src={`/api/artwork/platform?platform=${encodeURIComponent(platform)}`}
-      alt={`${platform} console`}
+      alt={`${displayPlatform(platform)} console`}
       platform={platform}
-      title={platform}
+      title={displayPlatform(platform)}
       className={`overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 ${className}`}
       imageClassName="h-full w-full object-contain p-5 transition duration-300 group-hover:scale-[1.03]"
     />
