@@ -9,7 +9,7 @@ export default async function HomePage() {
   const [stats, games] = await Promise.all([getStats(), getAllGames()]);
   const mode = dataMode();
   return <div className="space-y-8">
-    <section className="overflow-hidden rounded-[2rem] bg-slate-950 px-5 py-7 text-white shadow-xl sm:px-8 sm:py-9">
+    <section className="relative z-30 rounded-[2rem] bg-slate-950 px-5 py-7 text-white shadow-xl sm:px-8 sm:py-9">
       <div className="mx-auto max-w-4xl text-center">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-bold text-blue-100"><Sparkles className="h-3.5 w-3.5" />Coleção pessoal · mobile-first</div>
         <h1 className="text-3xl font-black tracking-tight sm:text-5xl">A tua coleção, sem abrir o Excel.</h1>
