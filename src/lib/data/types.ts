@@ -79,6 +79,7 @@ export interface CollectionStats {
 export interface RawSheetData {
   collection: Record<string, string>[];
   audit: Record<string, string>[];
+  platformOverrides?: Record<string, string>;
 }
 
 export type ProviderMode = "google" | "mock";
