@@ -76,18 +76,32 @@ export function PlatformArtwork({
 export function GameArtwork({
   title,
   platform,
+  region = "PAL",
+  edition = "",
+  productCode = "",
   className = "aspect-[3/4]",
   eager = false,
 }: {
   title: string;
   platform: string;
+  region?: string;
+  edition?: string;
+  productCode?: string;
   className?: string;
   eager?: boolean;
 }) {
+  const params = new URLSearchParams({
+    title,
+    platform,
+    region: region || "PAL",
+  });
+  if (edition) params.set("edition", edition);
+  if (productCode) params.set("productCode", productCode);
+
   return (
     <ArtworkFrame
-      src={`/api/artwork/game?title=${encodeURIComponent(title)}&platform=${encodeURIComponent(platform)}`}
-      alt={`${title} artwork`}
+      src={`/api/artwork/game?${params.toString()}`}
+      alt={`${title} PAL artwork`}
       platform={platform}
       title={title}
       eager={eager}
