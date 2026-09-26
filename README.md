@@ -1,5 +1,13 @@
 # Mário's Retro Collection
 
+## Estado atual
+
+- Produção: `https://retro-collection-mistercimbas-projects.vercel.app`
+- Build Vercel: **READY**
+- GitHub CI: **verde** (lint + tests + build)
+- Dados: **mock/demo** até configurar a integração Google Sheets
+
+
 Web app/PWA privada e mobile-first para consultar a coleção retro sem abrir o Google Sheets.
 
 ## O que já existe
