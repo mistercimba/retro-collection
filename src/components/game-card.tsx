@@ -12,7 +12,7 @@ export function GameCard({ game, sale = false }: { game: CollectionGame; sale?: 
       href={`/game/${encodeURIComponent(game.collectionId)}`}
       className="group overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md"
     >
-      <GameArtwork title={game.title} platform={game.platform} region={game.region || "PAL"} edition={game.edition} productCode={game.audit?.productCode ?? ""} className="aspect-[3/4] w-full" />
+      <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="aspect-[3/4] w-full" />
       <div className="p-4">
         <div className="mb-1 flex items-start justify-between gap-2">
           <div>
