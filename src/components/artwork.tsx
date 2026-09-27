@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { displayPlatform } from "@/lib/data/platforms";
+import { PLATFORM_ARTWORK } from "@/data/platform-artwork";
 
 function initials(value: string) {
   return value
@@ -67,7 +68,7 @@ export function PlatformArtwork({
 }) {
   return (
     <ArtworkFrame
-      src={`/api/artwork/platform?platform=${encodeURIComponent(platform)}`}
+      src={PLATFORM_ARTWORK[platform] ?? "/platforms/__missing__.png"}
       alt={`${displayPlatform(platform)} console`}
       platform={platform}
       title={displayPlatform(platform)}
