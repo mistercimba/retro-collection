@@ -66,6 +66,17 @@ PLATFORM_ALIASES = {
     "PC": {"windows", "microsoft windows", "pc"},
 }
 
+TITLE_OVERRIDES = {
+    "GBA-0045": "Need for Speed: Carbon - Own the City",
+    "GBA-0062": "Classic NES Series: The Legend of Zelda",
+    "GBC-0020": "Super Mario Land 2: 6 Golden Coins",
+    "GBC-0025": "Harvest Moon GB",
+    "PS1-0026": "Disney-Pixar Toy Story 2: Buzz Lightyear to the Rescue!",
+    "PS2-0062": "Formula One 05",
+    "PS2-0064": "Chess Challenger",
+    "PS2-0129": "Football Mania",
+}
+
 SPECIAL_TERMS = [
     "platinum",
     "greatest hits",
@@ -367,13 +378,14 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
             if not platform_matches(game["platform"], meta["platform"]):
                 continue
 
+            requested_title = TITLE_OVERRIDES.get(cid, game["title"])
             matched_name = None
-            matched_name_score = title_score(game["title"], meta["name"])
+            matched_name_score = title_score(requested_title, meta["name"])
             if matched_name_score >= 900:
                 matched_name = meta["name"]
 
             for alt in meta["alternates"]:
-                alt_score = title_score(game["title"], alt["name"])
+                alt_score = title_score(requested_title, alt["name"])
                 if alt_score > matched_name_score:
                     matched_name_score = alt_score
                     matched_name = alt["name"]
@@ -389,7 +401,7 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
 
             best_image = max(images, key=lambda image: region_priority(image["region"], game))
             score = matched_name_score + region_priority(best_image["region"], game)
-            if canonical(game["title"]) == canonical(meta["name"]):
+            if canonical(requested_title) == canonical(meta["name"]):
                 score += 50
 
             candidates.append({
