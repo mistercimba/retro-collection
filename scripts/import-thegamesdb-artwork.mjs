@@ -507,7 +507,11 @@ if (!FORCE && existingMissingFile?.source === "thegamesdb") {
 
 const uniqueQueries = new Set();
 for (const game of games) {
-  if (reusable.has(game.collectionId) || reusableMissing.has(game.collectionId)) continue;
+  if (
+    reusable.has(game.collectionId) ||
+    reusableMissing.has(game.collectionId) ||
+    preservedFallback.has(game.collectionId)
+  ) continue;
   const platform = platformMap.get(game.platform);
   if (!platform) continue;
   const override = overrides[game.collectionId] ?? null;
@@ -540,13 +544,19 @@ const manifest = {
 const missing = [];
 const queryCache = new Map();
 const downloadedUrlToPath = new Map();
-let matched = 0;
-let reusedCount = 0;
+let matched = preservedFallback.size;
+let reusedCount = preservedFallback.size;
 let apiLookups = 0;
 
 for (const [index, game] of games.entries()) {
   const override = overrides[game.collectionId] ?? null;
   const fp = fingerprint(game, override);
+  const fallbackExisting = preservedFallback.get(game.collectionId);
+  if (fallbackExisting) {
+    // Stronger exact-code / serial-derived artwork wins over a looser API search.
+    continue;
+  }
+
   const existing = reusable.get(game.collectionId);
 
   if (existing) {
