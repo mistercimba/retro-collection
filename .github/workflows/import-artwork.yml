@@ -16,6 +16,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: artwork-import-main
+  cancel-in-progress: false
+
 jobs:
   import:
     runs-on: ubuntu-latest
@@ -46,6 +50,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run artwork:nintendo
+
+      - name: Fill only exact-title PAL leftovers
+        run: npm run artwork:strict-fallback
 
       - name: Show artwork status
         run: npm run artwork:status
