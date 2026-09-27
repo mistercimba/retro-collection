@@ -29,8 +29,11 @@ def fetch_text(url):
     with urllib.request.urlopen(request, timeout=60) as response:
         return response.read().decode("latin-1", errors="ignore")
 
-def download(url, destination):
-    request = urllib.request.Request(url, headers={"User-Agent": UA})
+def download(url, destination, referer=None):
+    headers = {"User-Agent": UA, "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"}
+    if referer:
+        headers["Referer"] = referer
+    request = urllib.request.Request(url, headers=headers)
     last = None
     for attempt in range(1, 5):
         try:
@@ -101,8 +104,13 @@ for collection_id, target in targets.items():
 
     page_url = target["page"]
     serial = target["serial"]
-    html = fetch_text(page_url)
-    image_url = find_exact_front_image(page_url, html, serial)
+    image_url = target.get("image")
+    if not image_url:
+        html = fetch_text(page_url)
+        image_url = find_exact_front_image(page_url, html, serial)
+
+    if serial.upper() not in image_url.upper() or "-F-ALL." not in image_url.upper():
+        raise RuntimeError(f"{collection_id}: image URL is not the exact standard front for {serial}")
 
     relative = f"/covers/{collection_id}.jpg"
     destination = ROOT / "public" / relative.lstrip("/")
@@ -114,7 +122,7 @@ for collection_id, target in targets.items():
         except FileNotFoundError:
             pass
 
-    download(image_url, destination)
+    download(image_url, destination, page_url)
 
     resolved[collection_id] = {
         "file": relative,
