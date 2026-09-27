@@ -114,7 +114,11 @@ function stripLeadingArticle(value) {
 function significantTokens(value) {
   return baseTitle(value)
     .split(" ")
-    .filter((token) => token.length > 1 && !["the", "a", "an", "and", "of"].includes(token));
+    .filter((token) =>
+      /^\d+$/.test(token) ||
+      ROMAN.has(token) ||
+      (token.length > 1 && !["the", "a", "an", "and", "of"].includes(token))
+    );
 }
 
 function numberSignature(value) {
@@ -200,6 +204,18 @@ function productCountryHint(productCode) {
   if (/\bspa\b|\besp\b/.test(code)) return /spain/i;
   if (/\bita\b/.test(code)) return /italy/i;
   if (/\baus\b/.test(code)) return /australia/i;
+  return null;
+}
+
+function languageCountryHint(language) {
+  const value = normalize(language);
+  if (!value || /unknown|multi|various/.test(value)) return null;
+  if (/english|ingles|en\b/.test(value)) return /united kingdom|great britain|ireland/i;
+  if (/french|frances|fr\b/.test(value)) return /france/i;
+  if (/german|alemao|de\b/.test(value)) return /germany/i;
+  if (/spanish|espanhol|es\b/.test(value)) return /spain/i;
+  if (/italian|italiano|it\b/.test(value)) return /italy/i;
+  if (/portuguese|portugues|pt\b/.test(value)) return /portugal/i;
   return null;
 }
 
@@ -335,6 +351,7 @@ function candidateSummary(entry, countriesById) {
 
 function rankCandidates(payload, requestedTitle, localGame, targetPlatformId, europeRegionId, countriesById, override) {
   const countryHint = productCountryHint(localGame.productCode);
+  const languageHint = languageCountryHint(localGame.language);
   return (payload?.data?.games ?? [])
     .filter((game) => Number(game?.platform) === Number(targetPlatformId))
     .filter((game) => Number(game?.region_id) === Number(europeRegionId))
@@ -344,9 +361,11 @@ function rankCandidates(payload, requestedTitle, localGame, targetPlatformId, eu
 
       let score = nameScore + 500 + specialEditionScore(game, localGame.edition);
       const country = countryName(countriesById, game.country_id);
-      if (countryHint && countryHint.test(country)) score += 50;
+      if (countryHint && countryHint.test(country)) score += 60;
+      else if (languageHint && languageHint.test(country)) score += 35;
       else if (!game.country_id || Number(game.country_id) === 0) score += 15;
 
+      if (scoreSingleName(requestedTitle, game.game_title) >= 970) score += 25;
       if (override?.tgdbGameId && Number(game.id) === Number(override.tgdbGameId)) score += 1000;
 
       return {
@@ -363,7 +382,10 @@ function rankCandidates(payload, requestedTitle, localGame, targetPlatformId, eu
 
 function sameIdentity(a, b) {
   if (!a || !b) return false;
-  return baseTitle(a.game.game_title) === baseTitle(b.game.game_title);
+  return (
+    baseTitle(a.game.game_title) === baseTitle(b.game.game_title) ||
+    (a.matchedName && b.matchedName && baseTitle(a.matchedName) === baseTitle(b.matchedName))
+  );
 }
 
 async function fetchGamePayload(searchTitle, platformId, override) {
@@ -417,6 +439,13 @@ if (!FORCE && existingManifest?.source === "thegamesdb") {
     const override = overrides[game.collectionId] ?? null;
     const entry = existingManifest.entries?.[game.collectionId];
     if (!entry || entry.fingerprint !== fingerprint(game, override) || !entry.file) continue;
+    const platform = platformMap.get(game.platform);
+    const stillValid =
+      Number(entry.regionId) === Number(europeRegion.id) &&
+      platform &&
+      Number(entry.platformId) === Number(platform.id) &&
+      scoreSingleName(game.title, entry.matchedName ?? entry.tgdbTitle) >= 900;
+    if (!stillValid) continue;
     try {
       await fs.access(path.join(ROOT, "public", entry.file.replace(/^\//, "")));
       reusable.set(game.collectionId, entry);
