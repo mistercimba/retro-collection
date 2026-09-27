@@ -458,3 +458,5 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
     print(f"Remaining without local artwork: {len(remaining_missing)}")
     if review:
         print(f"Ambiguous LaunchBox matches left for review: {len(review)}")
+
+# importer-version: 2
