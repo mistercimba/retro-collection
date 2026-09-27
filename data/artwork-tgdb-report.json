@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-09-27T09:42:01.050Z",
+  "source": "thegamesdb",
+  "region": {
+    "id": 6,
+    "name": "PAL"
+  },
+  "totalOwnedGames": 516,
+  "matched": 248,
+  "missing": 268,
+  "reused": 0,
+  "apiLookups": 498,
+  "remainingMonthlyAllowance": 496,
+  "platformMapping": {
+    "Nintendo 3DS": {
+      "id": 4912,
+      "name": "Nintendo 3DS",
+      "alias": "nintendo-3ds"
+    },
+    "GameBoy Advance": {
+      "id": 5,
+      "name": "Nintendo Game Boy Advance",
+      "alias": "nintendo-gameboy-advance"
+    },
+    "Game Boy Color": {
+      "id": 41,
+      "name": "Nintendo Game Boy Color",
+      "alias": "nintendo-gameboy-color"
+    },
+    "Game Boy": {
+      "id": 4,
+      "name": "Nintendo Game Boy",
+      "alias": "nintendo-gameboy"
+    },
+    "GameCube": {
+      "id": 2,
+      "name": "Nintendo GameCube",
+      "alias": "nintendo-gamecube"
+    },
+    "Nintendo 64": {
+      "id": 3,
+      "name": "Nintendo 64",
+      "alias": "nintendo-64"
+    },
+    "Nintendo DS": {
+      "id": 8,
+      "name": "Nintendo DS",
+      "alias": "nintendo-ds"
+    },
+    "NES": {
+      "id": 7,
+      "name": "Nintendo Entertainment System (NES)",
+      "alias": "nintendo-entertainment-system-nes"
+    },
+    "PC": {
+      "id": 1,
+      "name": "PC",
+      "alias": "pc"
+    },
+    "Playstation": {
+      "id": 10,
+      "name": "Sony Playstation",
+      "alias": "sony-playstation"
+    },
+    "Playstation 2": {
+      "id": 11,
+      "name": "Sony Playstation 2",
+      "alias": "sony-playstation-2"
+    },
+    "Playstation 3": {
+      "id": 12,
+      "name": "Sony Playstation 3",
+      "alias": "sony-playstation-3"
+    },
+    "Playstation 5": {
+      "id": 4980,
+      "name": "Sony Playstation 5",
+      "alias": "sony-playstation-5"
+    },
+    "PSP": {
+      "id": 13,
+      "name": "Sony Playstation Portable",
+      "alias": "sony-psp"
+    },
+    "SNES": {
+      "id": 6,
+      "name": "Super Nintendo (SNES)",
+      "alias": "super-nintendo-snes"
+    },
+    "Nintendo Switch": {
+      "id": 4971,
+      "name": "Nintendo Switch",
+      "alias": "nintendo-switch"
+    },
+    "Nintendo Wii": {
+      "id": 9,
+      "name": "Nintendo Wii",
+      "alias": "nintendo-wii"
+    },
+    "Nintendo Wii U": {
+      "id": 38,
+      "name": "Nintendo Wii U",
+      "alias": "nintendo-wii-u"
+    }
+  }
+}
