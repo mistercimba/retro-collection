@@ -56,3 +56,21 @@ for (const url of gamePages) {
   const artUrls = [...html.matchAll(/https?:\\?\/\\?\/art\.gametdb\.com[^"'<>\\s]+/gi)].map(m => m[0].replace(/\\\//g, "/"));
   console.log("PAGE ART", url, response.status, [...new Set(artUrls)].slice(0, 20));
 }
+
+const matrices = [
+  ["ds", "A2DP", ["cover", "coverHQ", "box", "coverM", "coverS", "coverDS"]],
+  ["3ds", "A2AP", ["cover", "coverHQ", "box", "coverM", "coverS"]],
+  ["wiiu", "ABAP01", ["cover", "coverHQ", "box", "coverM", "cover3D"]],
+  ["ps3", "BLES01792", ["cover", "coverHQ", "box", "coverM", "coverfullHQ"]],
+];
+for (const [system, id, types] of matrices) {
+  for (const type of types) {
+    for (const ext of ["png", "jpg"]) {
+      const url = `https://art.gametdb.com/${system}/${type}/EN/${id}.${ext}`;
+      const response = await fetch(url, { method: "HEAD", headers: { "User-Agent": "MarioRetroCollection/1.0" } });
+      if (response.status === 200) {
+        console.log("FOUND COVER", url, response.headers.get("content-type"), response.headers.get("content-length"));
+      }
+    }
+  }
+}
