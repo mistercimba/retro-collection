@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-27T09:54:07.064Z",
+  "generatedAt": "2026-09-27T09:58:36.426Z",
   "source": "thegamesdb",
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 261,
-  "missing": 255,
+  "matched": 250,
+  "missing": 266,
   "entries": [
     {
       "collectionId": "3DS-0003",
@@ -194,6 +194,23 @@
         }
       ],
       "inputKey": "{\"title\":\"Bella Sara: The Magical Horse Adventures\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
+      "collectionId": "GBA-0001",
+      "title": "Pokémon Emerald",
+      "platform": "GameBoy Advance",
+      "region": "PAL",
+      "language": "English",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "AGB-BPEP-EUR",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Pokémon Emerald",
+      "platformId": 5,
+      "candidates": [],
+      "inputKey": "{\"title\":\"Pokémon Emerald\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
       "collectionId": "GBA-0002",
@@ -2066,6 +2083,23 @@
         }
       ],
       "inputKey": "{\"title\":\"Mario Kart Double Dash\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
+      "collectionId": "GC-0010",
+      "title": "Mario Party 4",
+      "platform": "GameCube",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "DOL-GMPP-UKV",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Mario Party 4",
+      "platformId": 2,
+      "candidates": [],
+      "inputKey": "{\"title\":\"Mario Party 4\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
       "collectionId": "GC-0013",
@@ -4015,6 +4049,23 @@
       "inputKey": "{\"title\":\"Toy Story 2\",\"platform\":\"Playstation\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
+      "collectionId": "PS1-0035",
+      "title": "Spyro The Dragon",
+      "platform": "Playstation",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "Disc: SCES-01438",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Spyro The Dragon",
+      "platformId": 10,
+      "candidates": [],
+      "inputKey": "{\"title\":\"Spyro The Dragon\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
       "collectionId": "PS1-0055",
       "title": "Jungle Book Groove Party",
       "platform": "Playstation",
@@ -4502,6 +4553,23 @@
       "inputKey": "{\"title\":\"Need for Speed Most Wanted\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
+      "collectionId": "PS2-0020",
+      "title": "Dragon Ball Z Budokai Tenkaichi 2",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SLES-54164",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Dragon Ball Z Budokai Tenkaichi 2",
+      "platformId": 11,
+      "candidates": [],
+      "inputKey": "{\"title\":\"Dragon Ball Z Budokai Tenkaichi 2\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
       "collectionId": "PS2-0021",
       "title": "Seven Samurai 20XX",
       "platform": "Playstation 2",
@@ -4674,6 +4742,23 @@
       "inputKey": "{\"title\":\"Kuri Kuri Mix\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
+      "collectionId": "PS2-0038",
+      "title": "Jak 3",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SCES-52460",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Jak 3",
+      "platformId": 11,
+      "candidates": [],
+      "inputKey": "{\"title\":\"Jak 3\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
       "collectionId": "PS2-0041",
       "title": "Tomb Raider Legend",
       "platform": "Playstation 2",
@@ -4723,6 +4808,23 @@
         }
       ],
       "inputKey": "{\"title\":\"Future Tactics\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
+      "collectionId": "PS2-0048",
+      "title": "FIFA Street 2",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SLES-53796",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "FIFA Street 2",
+      "platformId": 11,
+      "candidates": [],
+      "inputKey": "{\"title\":\"FIFA Street 2\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
       "collectionId": "PS2-0049",
@@ -4785,6 +4887,23 @@
       "platformId": 11,
       "candidates": [],
       "inputKey": "{\"title\":\"Buzz o Grande Quiz\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
+      "collectionId": "PS2-0056",
+      "title": "Star Wars: The Force Unleashed",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SLES-54658",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Star Wars: The Force Unleashed",
+      "platformId": 11,
+      "candidates": [],
+      "inputKey": "{\"title\":\"Star Wars: The Force Unleashed\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
       "collectionId": "PS2-0057",
@@ -4922,6 +5041,40 @@
       "platformId": 11,
       "candidates": [],
       "inputKey": "{\"title\":\"Splinter Cell\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
+      "collectionId": "PS2-0069",
+      "title": "FIFA Street",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SLES-53064",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "FIFA Street",
+      "platformId": 11,
+      "candidates": [],
+      "inputKey": "{\"title\":\"FIFA Street\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
+      "collectionId": "PS2-0073",
+      "title": "Rayman Revolution",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SLES-50044",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Rayman Revolution",
+      "platformId": 11,
+      "candidates": [],
+      "inputKey": "{\"title\":\"Rayman Revolution\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
       "collectionId": "PS2-0076",
@@ -5423,6 +5576,23 @@
       "inputKey": "{\"title\":\"Sly 3: Honor Among Thieves\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
+      "collectionId": "PS2-0106",
+      "title": "Medal of Honor: Rising Sun",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Portuguese",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SLES-51873",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Medal of Honor: Rising Sun",
+      "platformId": 11,
+      "candidates": [],
+      "inputKey": "{\"title\":\"Medal of Honor: Rising Sun\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
       "collectionId": "PS2-0110",
       "title": "Raging Blades",
       "platform": "Playstation 2",
@@ -5444,6 +5614,23 @@
         }
       ],
       "inputKey": "{\"title\":\"Raging Blades\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
+      "collectionId": "PS2-0111",
+      "title": "The Getaway",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Portuguese / Greek / English / Spanish",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SCES-51159",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "The Getaway",
+      "platformId": 11,
+      "candidates": [],
+      "inputKey": "{\"title\":\"The Getaway\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
       "collectionId": "PS2-0115",

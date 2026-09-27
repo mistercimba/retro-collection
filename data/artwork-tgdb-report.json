@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-27T09:54:07.064Z",
+  "generatedAt": "2026-09-27T09:58:36.426Z",
   "source": "thegamesdb",
   "region": {
     "id": 6,
     "name": "PAL"
   },
   "totalOwnedGames": 516,
-  "matched": 261,
-  "missing": 255,
-  "reused": 242,
-  "apiLookups": 269,
-  "remainingMonthlyAllowance": 224,
+  "matched": 250,
+  "missing": 266,
+  "reused": 250,
+  "apiLookups": 11,
+  "remainingMonthlyAllowance": 210,
   "platformMapping": {
     "Nintendo 3DS": {
       "id": 4912,

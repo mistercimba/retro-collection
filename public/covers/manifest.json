@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T09:54:07.064Z",
+  "generatedAt": "2026-09-27T09:58:36.426Z",
   "source": "thegamesdb",
   "sourceUrl": "https://thegamesdb.net",
   "regionPolicy": "PAL-Europe",
@@ -188,24 +188,6 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "995a38f0aeeab3c2"
-    },
-    "GBA-0001": {
-      "file": "/covers/GBA-0001.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 81402,
-      "tgdbTitle": "Pokemon Emerald Version [Case Bundle]",
-      "matchedName": "Pokemon Emerald Version [Case Bundle]",
-      "platformId": 5,
-      "platformName": "Nintendo Game Boy Advance",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 443570,
-      "sourceImage": "boxart/front/81402-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "3b4ee9f52786d17c"
     },
     "GBA-0003": {
       "file": "/covers/GBA-0003.jpg",
@@ -854,24 +836,6 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "6fa6d25312c76f15"
-    },
-    "GC-0010": {
-      "file": "/covers/GC-0010.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 85853,
-      "tgdbTitle": "Mario Party 4 [Player's Choice] (PAL)",
-      "matchedName": "Mario Party 4 [Player's Choice] (PAL)",
-      "platformId": 2,
-      "platformName": "Nintendo GameCube",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 0,
-      "countryName": "",
-      "imageId": 452692,
-      "sourceImage": "boxart/front/85853-1.jpg",
-      "matchScore": 1300,
-      "nameScore": 1000,
-      "fingerprint": "569cb960b425235e"
     },
     "GC-0011": {
       "file": "/covers/GC-0011.jpg",
@@ -2187,24 +2151,6 @@
       "nameScore": 1000,
       "fingerprint": "f7e68c31ec6f2fd2"
     },
-    "PS1-0035": {
-      "file": "/covers/PS1-0035.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 81453,
-      "tgdbTitle": "Spyro the Dragon [Platinum]",
-      "matchedName": "Spyro the Dragon [Platinum]",
-      "platformId": 10,
-      "platformName": "Sony Playstation",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 264826,
-      "sourceImage": "boxart/front/81453-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "5a81d070b5524a44"
-    },
     "PS1-0036": {
       "file": "/covers/PS1-0036.jpg",
       "source": "thegamesdb",
@@ -3105,24 +3051,6 @@
       "nameScore": 1000,
       "fingerprint": "44c0cc69a8cb75d3"
     },
-    "PS2-0020": {
-      "file": "/covers/PS2-0020.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 85907,
-      "tgdbTitle": "Dragon Ball Z Budokai Tenkaichi 2 (Platinum)",
-      "matchedName": "Dragon Ball Z Budokai Tenkaichi 2 (Platinum)",
-      "platformId": 11,
-      "platformName": "Sony Playstation 2",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 317254,
-      "sourceImage": "boxart/front/85907-1.jpg",
-      "matchScore": 1285,
-      "nameScore": 1000,
-      "fingerprint": "223df542753210e9"
-    },
     "PS2-0022": {
       "file": "/covers/PS2-0022.jpg",
       "source": "thegamesdb",
@@ -3285,24 +3213,6 @@
       "nameScore": 1000,
       "fingerprint": "4b856bcc450cb65c"
     },
-    "PS2-0038": {
-      "file": "/covers/PS2-0038.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 82675,
-      "tgdbTitle": "Jak 3 (Platinum)",
-      "matchedName": "Jak 3 (Platinum)",
-      "platformId": 11,
-      "platformName": "Sony Playstation 2",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 317035,
-      "sourceImage": "boxart/front/82675-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "9bec86b37c05c52c"
-    },
     "PS2-0039": {
       "file": "/covers/PS2-0039.jpg",
       "source": "thegamesdb",
@@ -3429,24 +3339,6 @@
       "nameScore": 985,
       "fingerprint": "eea3349fc2bbd96b"
     },
-    "PS2-0048": {
-      "file": "/covers/PS2-0048.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 78653,
-      "tgdbTitle": "FIFA Street 2 (Platinum)",
-      "matchedName": "FIFA Street 2 (Platinum)",
-      "platformId": 11,
-      "platformName": "Sony Playstation 2",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 317231,
-      "sourceImage": "boxart/front/78653-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "a8fd136fe9806785"
-    },
     "PS2-0050": {
       "file": "/covers/PS2-0050.jpg",
       "source": "thegamesdb",
@@ -3518,24 +3410,6 @@
       "matchScore": 1500,
       "nameScore": 1000,
       "fingerprint": "d720373e91964752"
-    },
-    "PS2-0056": {
-      "file": "/covers/PS2-0056.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 73716,
-      "tgdbTitle": "Star Wars: The Force Unleashed [Platinum]",
-      "matchedName": "Star Wars: The Force Unleashed [Platinum]",
-      "platformId": 11,
-      "platformName": "Sony Playstation 2",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 236388,
-      "sourceImage": "boxart/front/73716-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "9225ecc19b1e9a2c"
     },
     "PS2-0059": {
       "file": "/covers/PS2-0059.jpg",
@@ -3627,24 +3501,6 @@
       "nameScore": 1000,
       "fingerprint": "f51224dedca5d43b"
     },
-    "PS2-0069": {
-      "file": "/covers/PS2-0069.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 77603,
-      "tgdbTitle": "FIFA Street [Platinum]",
-      "matchedName": "FIFA Street [Platinum]",
-      "platformId": 11,
-      "platformName": "Sony Playstation 2",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 317232,
-      "sourceImage": "boxart/front/77603-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "a9564d2a6d2879e1"
-    },
     "PS2-0070": {
       "file": "/covers/PS2-0070.jpg",
       "source": "thegamesdb",
@@ -3698,24 +3554,6 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "b27fd0d7506bb15d"
-    },
-    "PS2-0073": {
-      "file": "/covers/PS2-0073.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 75017,
-      "tgdbTitle": "Rayman Revolution (Platinum)",
-      "matchedName": "Rayman Revolution (Platinum)",
-      "platformId": 11,
-      "platformName": "Sony Playstation 2",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 317107,
-      "sourceImage": "boxart/front/75017-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "1b59849bcbc0f2e3"
     },
     "PS2-0074": {
       "file": "/covers/PS2-0074.jpg",
@@ -3933,24 +3771,6 @@
       "nameScore": 1000,
       "fingerprint": "d41e45623517efba"
     },
-    "PS2-0106": {
-      "file": "/covers/PS2-0106.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 85354,
-      "tgdbTitle": "Medal of Honor: Rising Sun [Platinum]",
-      "matchedName": "Medal of Honor: Rising Sun [Platinum]",
-      "platformId": 11,
-      "platformName": "Sony Playstation 2",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 317208,
-      "sourceImage": "boxart/front/85354-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "90e59817af65520f"
-    },
     "PS2-0107": {
       "file": "/covers/PS2-0107.jpg",
       "source": "thegamesdb",
@@ -4004,24 +3824,6 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "84e7d488f458bec7"
-    },
-    "PS2-0111": {
-      "file": "/covers/PS2-0111.jpg",
-      "source": "thegamesdb",
-      "tgdbGameId": 75010,
-      "tgdbTitle": "The Getaway (Platinum)",
-      "matchedName": "The Getaway (Platinum)",
-      "platformId": 11,
-      "platformName": "Sony Playstation 2",
-      "regionId": 6,
-      "regionName": "PAL",
-      "countryId": 18,
-      "countryName": "United Kingdom of Great Britain and Northern Ireland",
-      "imageId": 242766,
-      "sourceImage": "boxart/front/75010-1.jpg",
-      "matchScore": 1260,
-      "nameScore": 1000,
-      "fingerprint": "5c4080783f208ba5"
     },
     "PS2-0112": {
       "file": "/covers/PS2-0112.jpg",
@@ -4708,9 +4510,9 @@
       "fingerprint": "b736076f2808f62d"
     }
   },
-  "matched": 261,
-  "missing": 255,
-  "reused": 242,
-  "apiLookups": 269,
-  "remainingMonthlyAllowance": 224
+  "matched": 250,
+  "missing": 266,
+  "reused": 250,
+  "apiLookups": 11,
+  "remainingMonthlyAllowance": 210
 }
