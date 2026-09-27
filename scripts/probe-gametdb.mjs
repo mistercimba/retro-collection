@@ -32,3 +32,14 @@ for (const url of coverUrls) {
 }
 
 // probe-version: 2
+
+const moreCoverUrls = [
+  "https://art.gametdb.com/ds/cover/EN/A2DP.png",
+  "https://art.gametdb.com/3ds/cover/EN/A2AP.png",
+  "https://art.gametdb.com/wiiu/cover/EN/ABAP01.png",
+  "https://art.gametdb.com/ps3/cover/EN/BLES01792.png",
+];
+for (const url of moreCoverUrls) {
+  const response = await fetch(url, { method: "HEAD", headers: { "User-Agent": "MarioRetroCollection/1.0" } });
+  console.log("MORE COVER", url, response.status, response.headers.get("content-type"), response.headers.get("content-length"));
+}
