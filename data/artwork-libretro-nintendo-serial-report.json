@@ -1,0 +1,1286 @@
+{
+  "generatedAt": "2026-09-27T10:40:31.617Z",
+  "source": "libretro-nintendo-serial",
+  "resolved": 62,
+  "added": 42,
+  "replaced": 20,
+  "unresolved": 92,
+  "entries": [
+    {
+      "collectionId": "GBA-0002",
+      "platform": "GameBoy Advance",
+      "title": "Steel Empire",
+      "productCode": "AGB-BKTP-UKV",
+      "matchedSerial": "AGB-BKTP-EUR",
+      "serialTitle": "Steel Empire (Europe)",
+      "thumbnail": "Named_Boxarts/Steel Empire (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0008",
+      "platform": "GameBoy Advance",
+      "title": "The Legend of Zelda: The Minish Cap",
+      "productCode": "AGB-BZMP-EUR",
+      "matchedSerial": "AGB-BZMP-EUR",
+      "serialTitle": "Legend of Zelda, The - The Minish Cap (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Legend of Zelda, The - The Minish Cap (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBA-0009",
+      "platform": "GameBoy Advance",
+      "title": "Sonic Battle",
+      "productCode": "AGB-BSBP-EUR",
+      "matchedSerial": "AGB-BSBP-EUR",
+      "serialTitle": "Sonic Battle (Europe) (En,Ja,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Sonic Battle (Europe) (En,Ja,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBA-0013",
+      "platform": "GameBoy Advance",
+      "title": "The Legend of Zelda: A Link to the Past & Four Swords",
+      "productCode": "AGB-AZLP-EUR",
+      "matchedSerial": "AGB-AZLP-EUR",
+      "serialTitle": "Legend of Zelda, The - A Link to the Past & Four Swords (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Legend of Zelda, The - A Link to the Past _ Four Swords (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0015",
+      "platform": "GameBoy Advance",
+      "title": "Phantasy Star Collection",
+      "productCode": "AGB-AYCP-EUR",
+      "matchedSerial": "AGB-AYCP-EUR",
+      "serialTitle": "Phantasy Star Collection (Europe)",
+      "thumbnail": "Named_Boxarts/Phantasy Star Collection (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0016",
+      "platform": "GameBoy Advance",
+      "title": "Kill Switch",
+      "productCode": "AGB-BKHP-EUR",
+      "matchedSerial": "AGB-BKHP-EUR",
+      "serialTitle": "Kill Switch (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Kill Switch (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0017",
+      "platform": "GameBoy Advance",
+      "title": "Game & Watch Gallery Advance",
+      "productCode": "AGB-AQWP-EUR",
+      "matchedSerial": "AGB-AQWP-EUR",
+      "serialTitle": "Game & Watch Gallery Advance (Europe)",
+      "thumbnail": "Named_Boxarts/Game _ Watch Gallery Advance (Europe) (Virtual Console).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0018",
+      "platform": "GameBoy Advance",
+      "title": "Bubble Bobble Old & New",
+      "productCode": "AGB-AONP-EUR",
+      "matchedSerial": "AGB-AONP-EUR",
+      "serialTitle": "Bubble Bobble - Old & New (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Bubble Bobble - Old _ New (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0019",
+      "platform": "GameBoy Advance",
+      "title": "Kingdom Hearts: Chain Of Memories",
+      "productCode": "AGB-B8CP-EUR",
+      "matchedSerial": "AGB-B8CP-EUR",
+      "serialTitle": "Kingdom Hearts - Chain of Memories (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Kingdom Hearts - Chain of Memories (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0020",
+      "platform": "GameBoy Advance",
+      "title": "Beyblade: G-Revolution",
+      "productCode": "AGB-BB2P-EUR",
+      "matchedSerial": "AGB-BB2P-EUR",
+      "serialTitle": "Beyblade G-Revolution (Europe) (En,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Beyblade G-Revolution (Europe) (En,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0021",
+      "platform": "GameBoy Advance",
+      "title": "Mario Kart Super Circuit",
+      "productCode": "AGB-AMKE-USA",
+      "matchedSerial": "AGB-AMKE-USA",
+      "serialTitle": "Mario Kart - Super Circuit (USA)",
+      "thumbnail": "Named_Boxarts/Mario Kart - Super Circuit (Europe) (Virtual Console).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBA-0022",
+      "platform": "GameBoy Advance",
+      "title": "Super Mario Advance 2",
+      "productCode": "AGB-AA2P-EUR",
+      "matchedSerial": "AGB-AA2P-EUR",
+      "serialTitle": "Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es)",
+      "thumbnail": "Named_Boxarts/Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBA-0023",
+      "platform": "GameBoy Advance",
+      "title": "Golden Sun",
+      "productCode": "AGB-AGSP-EUR",
+      "matchedSerial": "AGB-AGSP-EUR",
+      "serialTitle": "Golden Sun (France)",
+      "thumbnail": "Named_Boxarts/Golden Sun (France).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBA-0026",
+      "platform": "GameBoy Advance",
+      "title": "Rocky",
+      "productCode": "AGB-AROP-EUR",
+      "matchedSerial": "AGB-AROP-EUR",
+      "serialTitle": "Rocky (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Rocky (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0027",
+      "platform": "GameBoy Advance",
+      "title": "Advance Wars",
+      "productCode": "AGB-AWRP-EUR",
+      "matchedSerial": "AGB-AWRP-EUR",
+      "serialTitle": "Advance Wars (Europe) (En,Fr,De,Es)",
+      "thumbnail": "Named_Boxarts/Advance Wars (Europe) (En,Fr,De,Es) (Virtual Console).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBA-0032",
+      "platform": "GameBoy Advance",
+      "title": "ESPN Winter X-Games Snowboarding 2",
+      "productCode": "AGB-AWXP-EUR",
+      "matchedSerial": "AGB-AWXP-EUR",
+      "serialTitle": "ESPN Winter X-Games Snowboarding 2 (Europe)",
+      "thumbnail": "Named_Boxarts/ESPN Winter X-Games Snowboarding 2 (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0033",
+      "platform": "GameBoy Advance",
+      "title": "Final Fantasy Tactics Advance",
+      "productCode": "AGB-AFXP-EUR",
+      "matchedSerial": "AGB-AFXP-EUR",
+      "serialTitle": "Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It) (Virtual Console).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0034",
+      "platform": "GameBoy Advance",
+      "title": "Super Mario Advance",
+      "productCode": "AGB-AMAP-EUR-1",
+      "matchedSerial": "AGB-AMAP-EUR",
+      "serialTitle": "Super Mario Advance 3 - Yoshi's Island (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Super Mario Advance 3 - Yoshi's Island (Europe) (En,Fr,De,Es,It) (Virtual Console).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBA-0036",
+      "platform": "GameBoy Advance",
+      "title": "Sonic Advance 2",
+      "productCode": "AGB-A2NP-UKV",
+      "matchedSerial": "AGB-A2NP-EUR",
+      "serialTitle": "Sonic Advance 2 (Europe) (En,Ja,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Sonic Advance 2 (Europe) (En,Ja,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0037",
+      "platform": "GameBoy Advance",
+      "title": "Driver 2 Advance",
+      "productCode": "AGB-ADUP-UKV",
+      "matchedSerial": "AGB-ADUP-EUR",
+      "serialTitle": "Driver 2 Advance (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Driver 2 Advance (Europe) (En,Fr,De,Es,It) (Beta).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0038",
+      "platform": "GameBoy Advance",
+      "title": "Yu-Gi-Oh Dungeon Dice Monsters",
+      "productCode": "AGB-AYDP-EUR",
+      "matchedSerial": "AGB-AYDP-EUR",
+      "serialTitle": "Yu-Gi-Oh! - Dungeon Dice Monsters (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Yu-Gi-Oh! - Dungeon Dice Monsters (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0040",
+      "platform": "GameBoy Advance",
+      "title": "Banjo-Kazooie: Grunty's Revenge",
+      "productCode": "AGB-BKZP-UKV",
+      "matchedSerial": "AGB-BKZP-EUR",
+      "serialTitle": "Banjo-Kazooie - Grunty's Revenge (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Banjo-Kazooie - Grunty's Revenge (Europe) (En,Fr,De).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0041",
+      "platform": "GameBoy Advance",
+      "title": "Tomb Raider: Legend",
+      "productCode": "AGB-BL8P-EUR",
+      "matchedSerial": "AGB-BL8P-EUR",
+      "serialTitle": "Lara Croft Tomb Raider - Legend (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Lara Croft Tomb Raider - Legend (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0043",
+      "platform": "GameBoy Advance",
+      "title": "Star Wars: Episode III Revenge Of The Sith",
+      "productCode": "AGB-BE3P-EUR",
+      "matchedSerial": "AGB-BE3P-EUR",
+      "serialTitle": "Star Wars - Episode III - Revenge of the Sith (Europe) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Star Wars - Episode III - Revenge of the Sith (Europe) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0044",
+      "platform": "GameBoy Advance",
+      "title": "Spyro 2: Season Of Flame",
+      "productCode": "AGB-A2SP-EUR",
+      "matchedSerial": "AGB-A2SP-EUR",
+      "serialTitle": "Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It) (Beta).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0049",
+      "platform": "GameBoy Advance",
+      "title": "Spyro Fusion",
+      "productCode": "AGB-BSTP-EUR",
+      "matchedSerial": "AGB-BSTP-EUR",
+      "serialTitle": "Spyro Fusion (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Spyro Fusion (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0050",
+      "platform": "GameBoy Advance",
+      "title": "Mission: Impossible: Operation Surma",
+      "productCode": "AGB-AIHP-EUR",
+      "matchedSerial": "AGB-AIHP-EUR",
+      "serialTitle": "Mission Impossible - Operation Surma (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Mission Impossible - Operation Surma (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0051",
+      "platform": "GameBoy Advance",
+      "title": "Starsky & Hutch",
+      "productCode": "AGB-AYHP-EUR",
+      "matchedSerial": "AGB-AYHP-EUR",
+      "serialTitle": "Starsky & Hutch (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Starsky _ Hutch (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0055",
+      "platform": "GameBoy Advance",
+      "title": "Disney's Atlantis: The Lost Empire",
+      "productCode": "AGB-ATLP-UKV",
+      "matchedSerial": "AGB-ATLP-EUR",
+      "serialTitle": "Atlantis - The Lost Empire (Europe) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Atlantis - The Lost Empire (Europe) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0057",
+      "platform": "GameBoy Advance",
+      "title": "Tom And Jerry: Infurnal Escape",
+      "productCode": "AGB-AIFP-EUR",
+      "matchedSerial": "AGB-AIFP-EUR",
+      "serialTitle": "Tom and Jerry in Infurnal Escape (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Tom and Jerry in Infurnal Escape (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0058",
+      "platform": "GameBoy Advance",
+      "title": "James Pond: Codename Robocod",
+      "productCode": "AGB-AJDP-EUR",
+      "matchedSerial": "AGB-AJDP-EUR",
+      "serialTitle": "James Pond - Codename Robocod (Europe) (En,Fr,De,Es,It,Nl,Pt)",
+      "thumbnail": "Named_Boxarts/James Pond - Codename Robocod (Europe) (En,Fr,De,Es,It,Nl,Pt).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBA-0059",
+      "platform": "GameBoy Advance",
+      "title": "Spyro: Season Of Ice",
+      "productCode": "AGB-ASYP-EUR",
+      "matchedSerial": "AGB-ASYP-EUR",
+      "serialTitle": "Spyro - Season of Ice (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Spyro - Season of Ice (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBA-0061",
+      "platform": "GameBoy Advance",
+      "title": "The Incredibles",
+      "productCode": "AGB-BICP-UKV",
+      "matchedSerial": "AGB-BICP-EUR",
+      "serialTitle": "Incredibles, The (Europe) (Fr,Nl)",
+      "thumbnail": "Named_Boxarts/Incredibles, The (Europe) (Fr,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBC-0004",
+      "platform": "Game Boy Color",
+      "title": "Zelda Oracle Of Ages",
+      "productCode": "CGB-AZ8P-EUR",
+      "matchedSerial": "CGB-AZ8P-EUR",
+      "serialTitle": "Legend of Zelda, The - Oracle of Ages (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Legend of Zelda, The - Oracle of Ages (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBC-0023",
+      "platform": "Game Boy",
+      "title": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
+      "productCode": "DMG-NT-USA",
+      "matchedSerial": "DMG-NT-USA",
+      "serialTitle": "Teenage Mutant Ninja Turtles - Fall of the Foot Clan (USA)",
+      "thumbnail": "Named_Boxarts/Teenage Mutant Hero Turtles - Fall of the Foot Clan (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBC-0027",
+      "platform": "Game Boy Color",
+      "title": "Pokemon Trading Card Game",
+      "productCode": "DMG-AXQP-NOE",
+      "matchedSerial": "DMG-AXQP-EUR",
+      "serialTitle": "Pokemon Trading Card Game (Europe) (En,Es,It) (SGB Enhanced)",
+      "thumbnail": "Named_Boxarts/Pokemon Trading Card Game (Europe) (En,Es,It) (Rev 1) (SGB Enhanced) (GB Compatible).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBC-0032",
+      "platform": "Game Boy Color",
+      "title": "Pokemon Pinball",
+      "productCode": "DMG-VPHP-EUR",
+      "matchedSerial": "DMG-VPHP-EUR",
+      "serialTitle": "Pokemon Pinball (Europe) (En,Fr,De,Es,It) (Rumble Version) (SGB Enhanced)",
+      "thumbnail": "Named_Boxarts/Pokemon Pinball (Europe) (En,Fr,De,Es,It) (Rumble Version) (SGB Enhanced) (GB Compatible).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "GBC-0043",
+      "platform": "Game Boy Color",
+      "title": "Bugs Bunny Crazy Castle 4",
+      "productCode": "CGB-AO4P-EUU-1",
+      "matchedSerial": "CGB-AO4P-EUU",
+      "serialTitle": "Bugs Bunny in Crazy Castle 4 (Europe)",
+      "thumbnail": "Named_Boxarts/Bugs Bunny in - Crazy Castle 4 (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBC-0045",
+      "platform": "Game Boy Color",
+      "title": "Sylvester & Tweety Breakfast On The Run",
+      "productCode": "DMG-AYRP-UKV-1",
+      "matchedSerial": "DMG-AYRP-EUR",
+      "serialTitle": "Sylvester and Tweety - Breakfast on the Run (Europe) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Sylvester _ Tweety - Breakfast on the Run (Europe) (En,Fr,De,Es,It,Nl) (GB Compatible).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBC-0047",
+      "platform": "Game Boy Color",
+      "title": "Laura",
+      "productCode": "CGB-BLDP-EUR",
+      "matchedSerial": "CGB-BLDP-EUR",
+      "serialTitle": "Laura (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)",
+      "thumbnail": "Named_Boxarts/Laura (Europe) (En,Fr,De,Es,It,Nl,Sv,Da).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "GBC-0053",
+      "platform": "Game Boy Color",
+      "title": "The Legend of Zelda: Oracle of Seasons",
+      "productCode": "CGB-AZ7P-EUR",
+      "matchedSerial": "CGB-AZ7P-EUR",
+      "serialTitle": "Legend of Zelda, The - Oracle of Seasons (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Legend of Zelda, The - Oracle of Seasons (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0001",
+      "platform": "Nintendo 64",
+      "title": "Pokémon Stadium 2",
+      "productCode": "NUS-NP3P-EUR",
+      "matchedSerial": "NUS-NP3P-EUR",
+      "serialTitle": "Pokemon Stadium 2 (Europe)",
+      "thumbnail": "Named_Boxarts/Pokemon Stadium 2 (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0002",
+      "platform": "Nintendo 64",
+      "title": "The Legend of Zelda: Majora's Mask",
+      "productCode": "NUS-NZSP-EUR",
+      "matchedSerial": "NUS-NZSP-EUR",
+      "serialTitle": "Legend of Zelda, The - Majora's Mask (Europe) (En,Fr,De,Es)",
+      "thumbnail": "Named_Boxarts/Legend of Zelda, The - Majora's Mask (Europe) (En,Fr,De,Es) (Rev 1) (Debug).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0003",
+      "platform": "Nintendo 64",
+      "title": "Banjo-Tooie",
+      "productCode": "NUS-NB7P-EUR",
+      "matchedSerial": "NUS-NB7P-EUR",
+      "serialTitle": "Banjo-Tooie (Europe) (En,Fr,De,Es)",
+      "thumbnail": "Named_Boxarts/Banjo-Tooie (Europe) (En,Fr,De,Es).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0004",
+      "platform": "Nintendo 64",
+      "title": "Lylat Wars",
+      "productCode": "NUS-NFXP-EUR",
+      "matchedSerial": "NUS-NFXP-EUR",
+      "serialTitle": "Lylat Wars (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Lylatwars (Europe) (En,Fr,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0005",
+      "platform": "Nintendo 64",
+      "title": "Mortal Kombat Mythologies: Sub-Zero",
+      "productCode": "NUS-NMYP-FRA",
+      "matchedSerial": "NUS-NMYP-EUR",
+      "serialTitle": "Mortal Kombat Mythologies - Sub-Zero (Europe)",
+      "thumbnail": "Named_Boxarts/Mortal Kombat Mythologies - Sub-Zero (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0006",
+      "platform": "Nintendo 64",
+      "title": "Super Smash Bros.",
+      "productCode": "NUS-NALP-EUR",
+      "matchedSerial": "NUS-NALP-EUR",
+      "serialTitle": "Super Smash Bros. (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Super Smash Bros. (Europe) (En,Fr,De).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0007",
+      "platform": "Nintendo 64",
+      "title": "The Legend of Zelda: Ocarina of Time",
+      "productCode": "NUS-NZLP-EUR",
+      "matchedSerial": "NUS-NZLP-EUR",
+      "serialTitle": "Legend of Zelda, The - Ocarina of Time (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Legend of Zelda, The - Ocarina of Time (Europe) (Beta) (2003-02-13) (GameCube).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0008",
+      "platform": "Nintendo 64",
+      "title": "Donkey Kong 64",
+      "productCode": "NUS-NDOP-EUR",
+      "matchedSerial": "NUS-NDOP-EUR",
+      "serialTitle": "Donkey Kong 64 (Europe) (En,Fr,De,Es)",
+      "thumbnail": "Named_Boxarts/Donkey Kong 64 (Europe) (En,Fr,De,Es).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0009",
+      "platform": "Nintendo 64",
+      "title": "Mario Kart 64",
+      "productCode": "NUS-NKTP-EUR (probable; only EUR suffix legible)",
+      "matchedSerial": "NUS-NKTP-EUR",
+      "serialTitle": "Mario Kart 64 (Europe)",
+      "thumbnail": "Named_Boxarts/Mario Kart 64 (Europe) (Rev 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0010",
+      "platform": "Nintendo 64",
+      "title": "Power Rangers: Lightspeed Rescue",
+      "productCode": "NUS-NPUP-EUR",
+      "matchedSerial": "NUS-NPUP-EUR",
+      "serialTitle": "Power Rangers - Lightspeed Rescue (Europe)",
+      "thumbnail": "Named_Boxarts/Power Rangers - Lightspeed Rescue (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0011",
+      "platform": "Nintendo 64",
+      "title": "Lode Runner 3D",
+      "productCode": "NUS-NLRP-EUR",
+      "matchedSerial": "NUS-NLRP-EUR",
+      "serialTitle": "Lode Runner 3-D (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Lode Runner 3-D (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0012",
+      "platform": "Nintendo 64",
+      "title": "Yoshi's Story",
+      "productCode": "NUS-NYSP-EUR",
+      "matchedSerial": "NUS-NYSP-EUR",
+      "serialTitle": "Yoshi's Story (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Yoshi's Story (Europe) (En,Fr,De).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0013",
+      "platform": "Nintendo 64",
+      "title": "Diddy Kong Racing",
+      "productCode": "NUS-NDYP-EUR",
+      "matchedSerial": "NUS-NDYP-EUR",
+      "serialTitle": "Diddy Kong Racing (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Diddy Kong Racing (Europe) (En,Fr,De) (Rev 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0014",
+      "platform": "Nintendo 64",
+      "title": "Banjo-Kazooie",
+      "productCode": "NUS-NBKP-EUR",
+      "matchedSerial": "NUS-NBKP-EUR",
+      "serialTitle": "Banjo-Kazooie (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Banjo-Kazooie (Europe) (En,Fr,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0016",
+      "platform": "Nintendo 64",
+      "title": "Super Mario 64",
+      "productCode": "NUS-NSMP-EUR",
+      "matchedSerial": "NUS-NSMP-EUR",
+      "serialTitle": "Super Mario 64 (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Super Mario 64 (Europe) (En,Fr,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "N64-0019",
+      "platform": "Nintendo 64",
+      "title": "Pokemon Snap",
+      "productCode": "NUS-NPFP-EUR",
+      "matchedSerial": "NUS-NPFP-EUR",
+      "serialTitle": "Pokemon Snap (Europe)",
+      "thumbnail": "Named_Boxarts/Pokemon Snap (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0020",
+      "platform": "Nintendo 64",
+      "title": "Turok Rage Wars",
+      "productCode": "NUS-NRWP-UKV",
+      "matchedSerial": "NUS-NRWP-EUR",
+      "serialTitle": "Turok - Rage Wars (Europe)",
+      "thumbnail": "Named_Boxarts/Turok - Rage Wars (Europe) (En,Fr,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0023",
+      "platform": "Nintendo 64",
+      "title": "F1 World Grand Prix",
+      "productCode": "NUS-NFWP-EUR",
+      "matchedSerial": "NUS-NFWP-EUR",
+      "serialTitle": "F-1 World Grand Prix (Europe)",
+      "thumbnail": "Named_Boxarts/F-1 World Grand Prix (Europe) (Beta).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0024",
+      "platform": "Nintendo 64",
+      "title": "Turok 2 Seeds Of Evil",
+      "productCode": "NUS-NT2P-EUR",
+      "matchedSerial": "NUS-NT2P-EUR",
+      "serialTitle": "Turok 2 - Seeds of Evil (Europe)",
+      "thumbnail": "Named_Boxarts/Turok 2 - Seeds of Evil (Europe) (Demo) (Kiosk).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0025",
+      "platform": "Nintendo 64",
+      "title": "Buck Bumble",
+      "productCode": "NUS-NBLP-EUR",
+      "matchedSerial": "NUS-NBLP-EUR",
+      "serialTitle": "Buck Bumble (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Buck Bumble (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "N64-0026",
+      "platform": "Nintendo 64",
+      "title": "Jet Force Gemini",
+      "productCode": "Código físico não lido; NUS-NJFP-EUR é a referência PAL publicada, ainda por confirmar na cópia",
+      "matchedSerial": "NUS-NJFP-EUR",
+      "serialTitle": "Jet Force Gemini (Europe) (En,Fr,De,Es)",
+      "thumbnail": "Named_Boxarts/Jet Force Gemini (Europe) (En,Fr,De,Es).png",
+      "replacedSource": null
+    }
+  ],
+  "unresolvedEntries": [
+    {
+      "collectionId": "GBA-0001",
+      "platform": "GameBoy Advance",
+      "title": "Pokémon Emerald",
+      "productCode": "AGB-BPEP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0004",
+      "platform": "GameBoy Advance",
+      "title": "Pokémon FireRed",
+      "productCode": "AGB-BPRP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0005",
+      "platform": "GameBoy Advance",
+      "title": "Pokémon LeafGreen",
+      "productCode": "AGB-BPGP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0006",
+      "platform": "GameBoy Advance",
+      "title": "Pokémon Sapphire",
+      "productCode": "AGB-AXPP-EUR",
+      "serial": "AGB-AXPP-EUR",
+      "serialTitle": "Pokemon - Sapphire Version (Europe) (Rev 1)",
+      "reason": "no-confident-pure-pal-thumbnail"
+    },
+    {
+      "collectionId": "GBA-0007",
+      "platform": "GameBoy Advance",
+      "title": "Pokémon Ruby",
+      "productCode": "AGB-AXVP-EUR",
+      "serial": "AGB-AXVP-EUR",
+      "serialTitle": "Pokemon - Ruby Version (Europe) (Rev 1)",
+      "reason": "no-confident-pure-pal-thumbnail"
+    },
+    {
+      "collectionId": "GBA-0010",
+      "platform": "GameBoy Advance",
+      "title": "Metroid Fusion",
+      "productCode": "AGB-AMTP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0024",
+      "platform": "GameBoy Advance",
+      "title": "Mario Vs. Donkey Kong",
+      "productCode": "AGB-BM5E-USA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0025",
+      "platform": "GameBoy Advance",
+      "title": "Yu-Gi-Oh Ultimate Masters Edition",
+      "productCode": "AGB-BY6P-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0028",
+      "platform": "GameBoy Advance",
+      "title": "Barbie and the Magic of Pegasus",
+      "productCode": "AGB-APFE-USA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0029",
+      "platform": "GameBoy Advance",
+      "title": "Wario Land 4",
+      "productCode": "AGB-AWAP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0030",
+      "platform": "GameBoy Advance",
+      "title": "Excitebike NES Classics",
+      "productCode": "AGB-FEBP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0035",
+      "platform": "GameBoy Advance",
+      "title": "Donkey Kong NES Classics",
+      "productCode": "AGB-FDKP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0039",
+      "platform": "GameBoy Advance",
+      "title": "Spiderman: Mysterio's Menace",
+      "productCode": "AGB-ASEP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0042",
+      "platform": "GameBoy Advance",
+      "title": "Lilo & Stitch 2",
+      "productCode": "AGB-BLSP-EUR-1",
+      "serial": "AGB-BLSP-EUR",
+      "serialTitle": "Lilo & Stitch 2 (Europe) (En,Fr,De,Es)",
+      "reason": "no-confident-pure-pal-thumbnail"
+    },
+    {
+      "collectionId": "GBA-0045",
+      "platform": "GameBoy Advance",
+      "title": "Need For Speed: Carbon Own The City",
+      "productCode": "AGB-BN7P-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0046",
+      "platform": "GameBoy Advance",
+      "title": "Crash And Spyro Super Pack Volume 2",
+      "productCode": "AGB-B52P-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0047",
+      "platform": "GameBoy Advance",
+      "title": "The Hobbit",
+      "productCode": "AGB-AH9P-EUR",
+      "serial": "AGB-AH9P-EUR",
+      "serialTitle": "Hobbit, The (Europe) (En,Fr,De,Es,It)",
+      "reason": "no-confident-pure-pal-thumbnail"
+    },
+    {
+      "collectionId": "GBA-0048",
+      "platform": "GameBoy Advance",
+      "title": "Top Gear Rally",
+      "productCode": "AGB-BTGX-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0054",
+      "platform": "GameBoy Advance",
+      "title": "F-Zero: Maximum Velocity",
+      "productCode": "AGB-AFZP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0056",
+      "platform": "GameBoy Advance",
+      "title": "Harry Potter And The Chamber Of Secrets",
+      "productCode": "AGB-A7HP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0060",
+      "platform": "GameBoy Advance",
+      "title": "Lord Of The Rings Two Towers",
+      "productCode": "AGB-BLRP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBA-0062",
+      "platform": "GameBoy Advance",
+      "title": "Zelda NES Classics",
+      "productCode": "AGB-FZLP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0001",
+      "platform": "Game Boy Color",
+      "title": "Pokemon Crystal",
+      "productCode": "CGB-BYTP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0002",
+      "platform": "Game Boy Color",
+      "title": "Pokemon Gold",
+      "productCode": "DMG-AAUP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0003",
+      "platform": "Game Boy",
+      "title": "Pokemon Yellow",
+      "productCode": "DMG-APSU-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0006",
+      "platform": "Game Boy",
+      "title": "Kirby's Dream Land 2",
+      "productCode": "DMG-AKBP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0007",
+      "platform": "Game Boy",
+      "title": "Pokemon Red",
+      "productCode": "DMG-APAU-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0008",
+      "platform": "Game Boy Color",
+      "title": "Pokemon Silver",
+      "productCode": "DMG-AAXP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0010",
+      "platform": "Game Boy",
+      "title": "Pokemon Blue",
+      "productCode": "DMG-APEU-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0011",
+      "platform": "Game Boy",
+      "title": "Zelda Link's Awakening",
+      "productCode": "DMG-ZL-FRA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0012",
+      "platform": "Game Boy",
+      "title": "Kirby's Dream Land",
+      "productCode": "DMG-KY-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0013",
+      "platform": "Game Boy",
+      "title": "Star Wars The Empire Strikes Back",
+      "productCode": "DMG-EB-FAH",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0014",
+      "platform": "Game Boy Color",
+      "title": "Super Mario Bros Deluxe",
+      "productCode": "CGB-AHYP-0 (ROM chip)",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0015",
+      "platform": "Game Boy",
+      "title": "Boulder Dash",
+      "productCode": "DMG-BD-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0016",
+      "platform": "Game Boy",
+      "title": "Wario Land II",
+      "productCode": "DMG-AWLP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0017",
+      "platform": "Game Boy Color",
+      "title": "Wario Land 3",
+      "productCode": "CGB-AW8A-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0018",
+      "platform": "Game Boy",
+      "title": "Star Trek 25th Anniversary",
+      "productCode": "DMG-RK-USA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0019",
+      "platform": "Game Boy",
+      "title": "Gargoyle's Quest",
+      "productCode": "DMG-RA-UKV-1",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0020",
+      "platform": "Game Boy",
+      "title": "Super Mario Land 2",
+      "productCode": "DMG-MQ-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0021",
+      "platform": "Game Boy",
+      "title": "Probotector",
+      "productCode": "DMG-CN-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0022",
+      "platform": "Game Boy",
+      "title": "Super Mario Land",
+      "productCode": "DMG-ML-UKV",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0024",
+      "platform": "Game Boy",
+      "title": "Donkey Kong",
+      "productCode": "DMG-QD-EUR (probable; only EUR suffix readable)",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0025",
+      "platform": "Game Boy",
+      "title": "Harvest Moon",
+      "productCode": "DMG-AYXP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0026",
+      "platform": "Game Boy",
+      "title": "Donkey Kong Land 2",
+      "productCode": "DMG-ADDP-EUR-1",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0028",
+      "platform": "Game Boy",
+      "title": "Donkey Kong Land III",
+      "productCode": "DMG-AD3P-EUR (probable; only EUR suffix readable)",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0029",
+      "platform": "Game Boy",
+      "title": "Bart Simpson's Escape From Camp Deadly",
+      "productCode": "DMG-TS-NOE",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0030",
+      "platform": "Game Boy",
+      "title": "Wario Land Super Mario Land 3",
+      "productCode": "DMG-WJ-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0031",
+      "platform": "Game Boy Color",
+      "title": "Harry Potter And The Chamber Of Secrets",
+      "productCode": "CGB-BH6P-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0033",
+      "platform": "Game Boy Color",
+      "title": "Speedy Gonzales Aztec Adventure",
+      "productCode": "DMG-ALZP-UKV",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0034",
+      "platform": "Game Boy",
+      "title": "Barbie Game Girl",
+      "productCode": "DMG-GU-USA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0035",
+      "platform": "Game Boy",
+      "title": "Donkey Kong Land",
+      "productCode": "DMG-YT-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0036",
+      "platform": "Game Boy Color",
+      "title": "Game & Watch Gallery 3",
+      "productCode": "DMG-AGQP-EUR-2",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0037",
+      "platform": "Game Boy",
+      "title": "Tetris",
+      "productCode": "DMG-TR-UKV",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0040",
+      "platform": "Game Boy",
+      "title": "Game & Watch Gallery 2",
+      "productCode": "DMG-AGLP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0041",
+      "platform": "Game Boy Color",
+      "title": "Harry Potter And The Philosopher's Stone",
+      "productCode": "CGB-BHVP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0042",
+      "platform": "Game Boy",
+      "title": "Alleyway",
+      "productCode": "DMG-AW-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0044",
+      "platform": "Game Boy Color",
+      "title": "Golden Goal",
+      "productCode": "DMG-AAFX-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0048",
+      "platform": "Game Boy Color",
+      "title": "Bugs Bunny & Lola Bunny Operation Carrot Patch",
+      "productCode": "DMG-ABLP-UKV-1",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0049",
+      "platform": "Game Boy Color",
+      "title": "Atlantis The Lost Empire",
+      "productCode": "CGB-BABP-UKV",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0050",
+      "platform": "Game Boy",
+      "title": "Dr. Mario",
+      "productCode": "DMG-VU-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0051",
+      "platform": "Game Boy Color",
+      "title": "Bugs Bunny: Crazy Castle 3",
+      "productCode": "DMG-AB6P-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "GBC-0052",
+      "platform": "Game Boy",
+      "title": "The Hunt for Red October",
+      "productCode": "DMG-HF-USA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "N64-0017",
+      "platform": "Nintendo 64",
+      "title": "Pokemon Stadium",
+      "productCode": "NUS-NP0P-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "N64-0018",
+      "platform": "Nintendo 64",
+      "title": "007 GoldenEye",
+      "productCode": "NUS-NGEP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "N64-0021",
+      "platform": "Nintendo 64",
+      "title": "Wave Race 64",
+      "productCode": "NUS-NWRP-EUR",
+      "serial": "NUS-NWRP-EUR",
+      "serialTitle": "Wave Race 64 (Europe) (En,De)",
+      "reason": "no-confident-pure-pal-thumbnail"
+    },
+    {
+      "collectionId": "NES-0001",
+      "platform": "NES",
+      "title": "Jackie Chan's Action Kung Fu",
+      "productCode": "NES-V5-FRG",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0002",
+      "platform": "NES",
+      "title": "Double Dragon II: The Revenge",
+      "productCode": "NES-W2-EEC",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0003",
+      "platform": "NES",
+      "title": "Super Mario Bros.",
+      "productCode": "NES-SM-UKV",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0004",
+      "platform": "NES",
+      "title": "Popeye",
+      "productCode": "NES-PP-FRA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0005",
+      "platform": "NES",
+      "title": "Gradius",
+      "productCode": "NES-GR-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0006",
+      "platform": "NES",
+      "title": "Super Mario Bros. 2",
+      "productCode": "NES-MW-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0007",
+      "platform": "NES",
+      "title": "Tom & Jerry: The Ultimate Game of Cat and Mouse!",
+      "productCode": "NES-5Y-NOE",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0008",
+      "platform": "NES",
+      "title": "Super Mario Bros. 3",
+      "productCode": "NES-UM-FRA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0009",
+      "platform": "NES",
+      "title": "Terminator 2: Judgement Day",
+      "productCode": "NES-62-NOE",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0010",
+      "platform": "NES",
+      "title": "Disney's Chip 'n Dale Rescue Rangers",
+      "productCode": "NES-RU-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0012",
+      "platform": "NES",
+      "title": "The Simpsons: Bart vs. the Space Mutants",
+      "productCode": "NES-Q5-NOE",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0013",
+      "platform": "NES",
+      "title": "Little Nemo: The Dream Master",
+      "productCode": "NES-LN-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0014",
+      "platform": "NES",
+      "title": "Teenage Mutant Hero Turtles",
+      "productCode": "NES-88-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0015",
+      "platform": "NES",
+      "title": "California Games",
+      "productCode": "NES-CG-FRA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0016",
+      "platform": "NES",
+      "title": "The Battle of Olympus",
+      "productCode": "NES-AD-ESP",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0017",
+      "platform": "NES",
+      "title": "WWF WrestleMania Challenge",
+      "productCode": "NES-W9-NOE",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0018",
+      "platform": "NES",
+      "title": "Super Spike V'Ball",
+      "productCode": "NES-VJ-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "NES-0019",
+      "platform": "NES",
+      "title": "Willow",
+      "productCode": "NES-WI-FRG",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0001",
+      "platform": "SNES",
+      "title": "The Legend of Zelda: A Link to the Past",
+      "productCode": "SNSP-ZL-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0002",
+      "platform": "SNES",
+      "title": "Cybernator",
+      "productCode": "SNSP-AV-UKV",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0004",
+      "platform": "SNES",
+      "title": "Equinox",
+      "productCode": "SNSP-EX-UKV",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0005",
+      "platform": "SNES",
+      "title": "Super Mario Kart",
+      "productCode": "SNSP-MK-EUR (probable; label unreadable)",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0006",
+      "platform": "SNES",
+      "title": "Super Ghouls 'N Ghosts",
+      "productCode": "SNSP-CM-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0007",
+      "platform": "SNES",
+      "title": "Super Mario All-Stars",
+      "productCode": "SNSP-4M-FAH",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0008",
+      "platform": "SNES",
+      "title": "Street Fighter II: The World Warrior",
+      "productCode": "SNSP-S2-NOE",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0009",
+      "platform": "SNES",
+      "title": "Super Mario World",
+      "productCode": "SNSP-MW-GPS",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "SNES-0010",
+      "platform": "SNES",
+      "title": "Kick Off 3: European Challenge",
+      "productCode": "SNSP-37-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    }
+  ]
+}

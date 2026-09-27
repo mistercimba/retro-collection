@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T10:29:35.300Z",
+  "generatedAt": "2026-09-27T10:37:32.120Z",
   "source": "thegamesdb",
   "region": {
     "id": 6,
@@ -8,9 +8,9 @@
   "totalOwnedGames": 516,
   "matched": 250,
   "missing": 266,
-  "reused": 250,
-  "apiLookups": 0,
-  "remainingMonthlyAllowance": 203,
+  "reused": 139,
+  "apiLookups": 107,
+  "remainingMonthlyAllowance": 91,
   "platformMapping": {
     "Nintendo 3DS": {
       "id": 4912,

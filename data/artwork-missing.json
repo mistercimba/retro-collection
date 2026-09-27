@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2026-09-27T10:30:23.307Z",
+  "generatedAt": "2026-09-27T10:40:31.617Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
     "gametdb",
-    "libretro-redump-serial"
+    "libretro-redump-serial",
+    "libretro-nintendo-serial"
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 366,
-  "missing": 150,
+  "matched": 408,
+  "missing": 108,
   "entries": [
     {
       "collectionId": "GBA-0001",
@@ -27,30 +28,6 @@
       "platformId": 5,
       "candidates": [],
       "inputKey": "{\"title\":\"Pokémon Emerald\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0002",
-      "title": "Steel Empire",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BKTP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Steel Empire",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 26184,
-          "title": "Steel Empire",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Steel Empire\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -166,24 +143,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0013",
-      "title": "The Legend of Zelda: A Link to the Past & Four Swords",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AZLP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Legend of Zelda: A Link to the Past & Four Swords",
-      "platformId": 5,
-      "candidates": [],
-      "inputKey": "{\"title\":\"The Legend of Zelda: A Link to the Past & Four Swords\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0014",
       "title": "Hello Kitty Happy Party Pals",
       "platform": "GameBoy Advance",
@@ -208,144 +167,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0015",
-      "title": "Phantasy Star Collection",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AYCP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Phantasy Star Collection",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3526,
-          "title": "Phantasy Star Collection",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Phantasy Star Collection\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0016",
-      "title": "Kill Switch",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BKHP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Kill Switch",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 26021,
-          "title": "Kill.Switch",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Kill Switch\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0017",
-      "title": "Game & Watch Gallery Advance",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AQWP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Game & Watch Gallery Advance",
-      "platformId": 5,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Game & Watch Gallery Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0018",
-      "title": "Bubble Bobble Old & New",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AONP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Bubble Bobble Old & New",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3346,
-          "title": "Bubble Bobble: Old & New",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Bubble Bobble Old & New\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0019",
-      "title": "Kingdom Hearts: Chain Of Memories",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-B8CP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Kingdom Hearts: Chain Of Memories",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 2335,
-          "title": "Kingdom Hearts: Chain of Memories",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Kingdom Hearts: Chain Of Memories\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0020",
-      "title": "Beyblade: G-Revolution",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BB2P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Beyblade: G-Revolution",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3330,
-          "title": "Beyblade: G-Revolution",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Beyblade: G-Revolution\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0025",
       "title": "Yu-Gi-Oh Ultimate Masters Edition",
       "platform": "GameBoy Advance",
@@ -361,35 +182,6 @@
       "platformId": 5,
       "candidates": [],
       "inputKey": "{\"title\":\"Yu-Gi-Oh Ultimate Masters Edition\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0026",
-      "title": "Rocky",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AROP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Rocky",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3594,
-          "title": "Rocky",
-          "regionId": 0
-        },
-        {
-          "id": 21354,
-          "title": "Pocky & Rocky with Becky",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Rocky\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -453,69 +245,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0032",
-      "title": "ESPN Winter X-Games Snowboarding 2",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AWXP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "ESPN Winter X-Games Snowboarding 2",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 4139,
-          "title": "ESPN Winter X-Games Snowboarding 2002",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"ESPN Winter X-Games Snowboarding 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0033",
-      "title": "Final Fantasy Tactics Advance",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AFXP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Final Fantasy Tactics Advance",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 2497,
-          "title": "Final Fantasy Tactics Advance",
-          "regionId": 0
-        },
-        {
-          "id": 83092,
-          "title": "Final Fantasy Tactics Advance",
-          "regionId": 4
-        },
-        {
-          "id": 136344,
-          "title": "Final Fantasy Tactics Advance Anarchy",
-          "regionId": 9
-        },
-        {
-          "id": 126197,
-          "title": "Final Fantasy Tactics Advance Battle",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Final Fantasy Tactics Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0035",
       "title": "Donkey Kong NES Classics",
       "platform": "GameBoy Advance",
@@ -531,93 +260,6 @@
       "platformId": 5,
       "candidates": [],
       "inputKey": "{\"title\":\"Donkey Kong NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0036",
-      "title": "Sonic Advance 2",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-A2NP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Sonic Advance 2",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3692,
-          "title": "Sonic Advance 2",
-          "regionId": 0
-        },
-        {
-          "id": 87609,
-          "title": "Sonic Advance 2",
-          "regionId": 4
-        },
-        {
-          "id": 46550,
-          "title": "Shanghai Advance",
-          "regionId": 0
-        },
-        {
-          "id": 2346,
-          "title": "Sonic Advance",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Sonic Advance 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0037",
-      "title": "Driver 2 Advance",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-ADUP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Driver 2 Advance",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3408,
-          "title": "Driver 2 Advance",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Driver 2 Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0038",
-      "title": "Yu-Gi-Oh Dungeon Dice Monsters",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AYDP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Yu-Gi-Oh Dungeon Dice Monsters",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 4037,
-          "title": "Yu-Gi-Oh!: Dungeon Dice Monsters",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Yu-Gi-Oh Dungeon Dice Monsters\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -645,54 +287,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0040",
-      "title": "Banjo-Kazooie: Grunty's Revenge",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BKZP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Banjo-Kazooie: Grunty's Revenge",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3325,
-          "title": "Banjo-Kazooie: Grunty's Revenge",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Banjo-Kazooie: Grunty's Revenge\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0041",
-      "title": "Tomb Raider: Legend",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BL8P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Tomb Raider: Legend",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 20918,
-          "title": "Tomb Raider: Legend",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Tomb Raider: Legend\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0042",
       "title": "Lilo & Stitch 2",
       "platform": "GameBoy Advance",
@@ -708,54 +302,6 @@
       "platformId": 5,
       "candidates": [],
       "inputKey": "{\"title\":\"Lilo & Stitch 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0043",
-      "title": "Star Wars: Episode III Revenge Of The Sith",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BE3P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Star Wars: Episode III Revenge Of The Sith",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3510,
-          "title": "Star Wars: Episode III Revenge of the Sith",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Star Wars: Episode III Revenge Of The Sith\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0044",
-      "title": "Spyro 2: Season Of Flame",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-A2SP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Spyro 2: Season Of Flame",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3708,
-          "title": "Spyro 2: Season of Flame",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Spyro 2: Season Of Flame\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -855,78 +401,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0049",
-      "title": "Spyro Fusion",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BSTP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Spyro Fusion",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 22309,
-          "title": "Spyro Orange: The Cortex Conspiracy",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Spyro Fusion\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0050",
-      "title": "Mission: Impossible: Operation Surma",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AIHP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Mission: Impossible: Operation Surma",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 26043,
-          "title": "Mission: Impossible - Operation Surma",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Mission: Impossible: Operation Surma\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0051",
-      "title": "Starsky & Hutch",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AYHP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Starsky & Hutch",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3710,
-          "title": "Starsky & Hutch",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Starsky & Hutch\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0053",
       "title": "Tweety & the Magic Gems",
       "platform": "GameBoy Advance",
@@ -980,78 +454,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0055",
-      "title": "Disney's Atlantis: The Lost Empire",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-ATLP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Disney's Atlantis: The Lost Empire",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 21173,
-          "title": "Disney's Atlantis: The Lost Empire",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Disney's Atlantis: The Lost Empire\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0057",
-      "title": "Tom And Jerry: Infurnal Escape",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AIFP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Tom And Jerry: Infurnal Escape",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 4116,
-          "title": "Tom and Jerry in Infurnal Escape",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Tom And Jerry: Infurnal Escape\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0058",
-      "title": "James Pond: Codename Robocod",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AJDP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "James Pond: Codename Robocod",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 18438,
-          "title": "James Pond: Codename ROBOCOD",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"James Pond: Codename Robocod\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0060",
       "title": "Lord Of The Rings Two Towers",
       "platform": "GameBoy Advance",
@@ -1070,45 +472,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0061",
-      "title": "The Incredibles",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BICP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Incredibles",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 25998,
-          "title": "Disney/Pixar The Incredibles: Rise of the Underminer",
-          "regionId": 1
-        },
-        {
-          "id": 62939,
-          "title": "2 Games in 1: Finding Nemo The Continuing Adventures & The Incredibles",
-          "regionId": 1
-        },
-        {
-          "id": 25999,
-          "title": "Disney/Pixar The Incredibles",
-          "regionId": 1
-        },
-        {
-          "id": 11187,
-          "title": "The Incredible Hulk",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"The Incredibles\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0062",
       "title": "Zelda NES Classics",
       "platform": "GameBoy Advance",
@@ -1124,24 +487,6 @@
       "platformId": 5,
       "candidates": [],
       "inputKey": "{\"title\":\"Zelda NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0004",
-      "title": "Zelda Oracle Of Ages",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English / French / German / Spanish / Italian",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "CGB-AZ8P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Zelda Oracle Of Ages",
-      "platformId": 41,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Zelda Oracle Of Ages\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -1379,30 +724,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBC-0023",
-      "title": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
-      "platform": "Game Boy",
-      "region": "NTSC",
-      "language": "English",
-      "edition": "USA / Ultra Games Label",
-      "keepStatus": "Collection",
-      "productCode": "DMG-NT-USA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 6024,
-          "title": "Teenage Mutant Ninja Turtles: Fall of the Foot Clan",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Teenage Mutant Ninja Turtles Fall Of The Foot Clan\",\"platform\":\"Game Boy\",\"edition\":\"USA / Ultra Games Label\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBC-0025",
       "title": "Harvest Moon",
       "platform": "Game Boy",
@@ -1628,35 +949,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBC-0043",
-      "title": "Bugs Bunny Crazy Castle 4",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English",
-      "edition": "EUU-1 Label Variant",
-      "keepStatus": "Collection",
-      "productCode": "CGB-AO4P-EUU-1",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Bugs Bunny Crazy Castle 4",
-      "platformId": 41,
-      "candidates": [
-        {
-          "id": 21899,
-          "title": "Bugs Bunny In Crazy Castle 3",
-          "regionId": 0
-        },
-        {
-          "id": 21900,
-          "title": "Bugs Bunny In Crazy Castle 4",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Bugs Bunny Crazy Castle 4\",\"platform\":\"Game Boy Color\",\"edition\":\"EUU-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBC-0044",
       "title": "Golden Goal",
       "platform": "Game Boy Color",
@@ -1681,24 +973,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBC-0045",
-      "title": "Sylvester & Tweety Breakfast On The Run",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English / French / German / Spanish / Italian / Dutch",
-      "edition": "UKV-1 Label Variant",
-      "keepStatus": "Collection",
-      "productCode": "DMG-AYRP-UKV-1",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Sylvester & Tweety Breakfast On The Run",
-      "platformId": 41,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Sylvester & Tweety Breakfast On The Run\",\"platform\":\"Game Boy Color\",\"edition\":\"UKV-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBC-0046",
       "title": "Sylvester & Tweety Breakfast On The Run",
       "platform": "Game Boy Color",
@@ -1714,35 +988,6 @@
       "platformId": 41,
       "candidates": [],
       "inputKey": "{\"title\":\"Sylvester & Tweety Breakfast On The Run\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0047",
-      "title": "Laura",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English / French / German / Spanish / Italian / Dutch / Swedish / Danish",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "CGB-BLDP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Laura",
-      "platformId": 41,
-      "candidates": [
-        {
-          "id": 132955,
-          "title": "Laura's Room",
-          "regionId": 1
-        },
-        {
-          "id": 22014,
-          "title": "Playmobil Interactive: Laura",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Laura\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -1868,169 +1113,6 @@
       ]
     },
     {
-      "collectionId": "N64-0001",
-      "title": "Pokémon Stadium 2",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NP3P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Pokémon Stadium 2",
-      "platformId": 3,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Pokémon Stadium 2\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0005",
-      "title": "Mortal Kombat Mythologies: Sub-Zero",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NMYP-FRA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Mortal Kombat Mythologies: Sub-Zero",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 1148,
-          "title": "Mortal Kombat Mythologies: Sub-Zero",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Mortal Kombat Mythologies: Sub-Zero\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0006",
-      "title": "Super Smash Bros.",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NALP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Super Smash Bros.",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 404,
-          "title": "Super Smash Bros.",
-          "regionId": 1
-        },
-        {
-          "id": 80683,
-          "title": "Smash Remix",
-          "regionId": 9
-        },
-        {
-          "id": 99910,
-          "title": "Super Smash Bros. [Player's Choice]",
-          "regionId": 1
-        },
-        {
-          "id": 122379,
-          "title": "Smash Remix",
-          "regionId": 9
-        }
-      ],
-      "inputKey": "{\"title\":\"Super Smash Bros.\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0010",
-      "title": "Power Rangers: Lightspeed Rescue",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NPUP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Power Rangers: Lightspeed Rescue",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 1183,
-          "title": "Saban's Power Rangers: Lightspeed Rescue",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Power Rangers: Lightspeed Rescue\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0011",
-      "title": "Lode Runner 3D",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NLRP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Lode Runner 3D",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 1131,
-          "title": "Lode Runner 3-D",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Lode Runner 3D\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0012",
-      "title": "Yoshi's Story",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NYSP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Yoshi's Story",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 90321,
-          "title": "Yoshi's Story",
-          "regionId": 4
-        },
-        {
-          "id": 419,
-          "title": "Yoshi's Story",
-          "regionId": 1
-        },
-        {
-          "id": 89227,
-          "title": "Yoshi's Story [Player's Choice]",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Yoshi's Story\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "N64-0017",
       "title": "Pokemon Stadium",
       "platform": "Nintendo 64",
@@ -2070,164 +1152,6 @@
         }
       ],
       "inputKey": "{\"title\":\"007 GoldenEye\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0019",
-      "title": "Pokemon Snap",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NPFP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Pokemon Snap",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 102317,
-          "title": "Pocket Monster Snap",
-          "regionId": 4
-        },
-        {
-          "id": 390,
-          "title": "Pokémon Snap",
-          "regionId": 1
-        },
-        {
-          "id": 130442,
-          "title": "Pokemon Snap Station",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Pokemon Snap\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0020",
-      "title": "Turok Rage Wars",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NRWP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Turok Rage Wars",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 408,
-          "title": "Turok: Rage Wars",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Turok Rage Wars\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0023",
-      "title": "F1 World Grand Prix",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NFWP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "F1 World Grand Prix",
-      "platformId": 3,
-      "candidates": [],
-      "inputKey": "{\"title\":\"F1 World Grand Prix\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0024",
-      "title": "Turok 2 Seeds Of Evil",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NT2P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Turok 2 Seeds Of Evil",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 407,
-          "title": "Turok 2: Seeds of Evil",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Turok 2 Seeds Of Evil\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0025",
-      "title": "Buck Bumble",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NBLP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Buck Bumble",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 1075,
-          "title": "Buck Bumble",
-          "regionId": 1
-        },
-        {
-          "id": 136138,
-          "title": "Buck Bumble",
-          "regionId": 4
-        }
-      ],
-      "inputKey": "{\"title\":\"Buck Bumble\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0026",
-      "title": "Jet Force Gemini",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Código físico não lido; NUS-NJFP-EUR é a referência PAL publicada, ainda por confirmar na cópia",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Jet Force Gemini",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 114059,
-          "title": "Star Twins",
-          "regionId": 4
-        },
-        {
-          "id": 260,
-          "title": "Jet Force Gemini",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Jet Force Gemini\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {

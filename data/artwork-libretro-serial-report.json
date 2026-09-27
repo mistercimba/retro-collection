@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-27T10:30:23.307Z",
+  "generatedAt": "2026-09-27T10:40:20.355Z",
   "source": "libretro-redump-serial",
   "resolved": 178,
-  "added": 67,
-  "replaced": 111,
+  "added": 0,
+  "replaced": 178,
   "unresolvedSerials": 35,
   "entries": [
     {
@@ -76,7 +76,7 @@
       "serial": "SLES-01726",
       "redumpName": "Bugs Bunny - Lost in Time (Europe) (En,Fr,De,Es,It,Nl)",
       "thumbnail": "Named_Boxarts/Bugs Bunny - Lost in Time (Europe) (En,Fr,De,Es,It,Nl).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-0010",
@@ -94,7 +94,7 @@
       "serial": "SLES-04034",
       "redumpName": "Final Fantasy Origins - Final Fantasy (Europe)",
       "thumbnail": "Named_Boxarts/Final Fantasy Origins - Final Fantasy (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-0013",
@@ -265,7 +265,7 @@
       "serial": "SCES-01438",
       "redumpName": "Spyro the Dragon (Europe, Australia) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Spyro the Dragon (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-0036",
@@ -418,7 +418,7 @@
       "serial": "SCES-03020",
       "redumpName": "Walt Disney's The Jungle Book - Groove Party (Europe)",
       "thumbnail": "Named_Boxarts/Walt Disney's The Jungle Book - Groove Party (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-0058",
@@ -427,7 +427,7 @@
       "serial": "SLES-03390",
       "redumpName": "Aqua GT (Europe) (En,Fr,De,Es,It,Nl)",
       "thumbnail": "Named_Boxarts/Aqua GT (Europe) (En,Fr,De,Es,It,Nl).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-0059",
@@ -472,7 +472,7 @@
       "serial": "SLES-02339",
       "redumpName": "Arcade Party Pak (Europe, Australia)",
       "thumbnail": "Named_Boxarts/Arcade Party Pak (Europe, Australia).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-0066",
@@ -526,7 +526,7 @@
       "serial": "SLES-02534",
       "redumpName": "Vanishing Point (Europe) (En,Fr,De,Es)",
       "thumbnail": "Named_Boxarts/Vanishing Point (Europe) (En,Fr,De,Es).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-0075",
@@ -625,7 +625,7 @@
       "serial": "SLES-04061",
       "redumpName": "Dalmatians 2 (Europe) (En,Fr,De)",
       "thumbnail": "Named_Boxarts/Dalmatians 2 (Europe) (En,Fr,De).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-0087",
@@ -634,7 +634,7 @@
       "serial": "SLES-00386",
       "redumpName": "Advanced Dungeons & Dragons - Iron & Blood - Warriors of Ravenloft (Europe)",
       "thumbnail": "Named_Boxarts/Advanced Dungeons _ Dragons - Iron _ Blood - Warriors of Ravenloft (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS1-EXTRA-0001",
@@ -643,7 +643,7 @@
       "serial": "SCED-01982",
       "redumpName": "Ridge Racer Type 4 Collectors Demo (Europe, Australia)",
       "thumbnail": "Named_Boxarts/Ridge Racer Type 4 Collectors Demo (Europe, Australia).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0001",
@@ -652,7 +652,7 @@
       "serial": "SLES-53825",
       "redumpName": "Project Zero 3 (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Project Zero 3 (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0002",
@@ -661,7 +661,7 @@
       "serial": "SLES-53192",
       "redumpName": "Tim Burton's The Nightmare Before Christmas - Oogie's Revenge (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Tim Burton's The Nightmare Before Christmas - Oogie's Revenge (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0003",
@@ -670,7 +670,7 @@
       "serial": "SLES-52534",
       "redumpName": "Crimson Tears (Europe) (En,Fr,De)",
       "thumbnail": "Named_Boxarts/Crimson Tears (Europe) (En,Fr,De).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0004",
@@ -679,7 +679,7 @@
       "serial": "SCES-53326",
       "redumpName": "Shadow of the Colossus (Europe, Australia) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Shadow of the Colossus (Europe, Australia) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0006",
@@ -697,7 +697,7 @@
       "serial": "SLES-52725",
       "redumpName": "Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da) (v1.01)",
       "thumbnail": "Named_Boxarts/Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da) (v1.01).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0008",
@@ -706,7 +706,7 @@
       "serial": "SLES-51113",
       "redumpName": "Zone of the Enders - The 2nd Runner (Europe) (En,Fr,De,Es,It) (Special Edition)",
       "thumbnail": "Named_Boxarts/Zone of the Enders - The 2nd Runner (Europe) (En,Fr,De,Es,It) (Special Edition).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0009",
@@ -715,7 +715,7 @@
       "serial": "SLES-53459",
       "redumpName": "Marc Ecko's Getting Up - Contents Under Pressure (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Marc Ecko's Getting Up - Contents Under Pressure (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0011",
@@ -742,7 +742,7 @@
       "serial": "SLES-51917",
       "redumpName": "Beyond Good & Evil (Europe, Australia) (En,Fr,De,Es,It,Nl)",
       "thumbnail": "Named_Boxarts/Beyond Good _ Evil (Europe, Australia) (En,Fr,De,Es,It,Nl).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0014",
@@ -760,7 +760,7 @@
       "serial": "SLES-53557",
       "redumpName": "Need for Speed - Most Wanted (Europe, Australia)",
       "thumbnail": "Named_Boxarts/Need for Speed - Most Wanted (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0016",
@@ -805,7 +805,7 @@
       "serial": "SLES-54164",
       "redumpName": "Dragon Ball Z - Budokai Tenkaichi 2 (Europe, Australia) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Dragon Ball Z - Budokai Tenkaichi 2 (Europe, Australia) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0021",
@@ -814,7 +814,7 @@
       "serial": "SLES-52348",
       "redumpName": "Seven Samurai 20XX (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Seven Samurai 20XX (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0022",
@@ -832,7 +832,7 @@
       "serial": "SLES-52714",
       "redumpName": "Board Games Gallery (Europe)",
       "thumbnail": "Named_Boxarts/Board Games Gallery (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0024",
@@ -841,7 +841,7 @@
       "serial": "SLES-53096",
       "redumpName": "Worms 4 - Mayhem (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Worms 4 - Mayhem (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0025",
@@ -868,7 +868,7 @@
       "serial": "SLES-51579",
       "redumpName": "Yu-Gi-Oh! The Duelists of the Roses (Europe)",
       "thumbnail": "Named_Boxarts/Yu-Gi-Oh! The Duelists of the Roses (Europe) (Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0033",
@@ -886,7 +886,7 @@
       "serial": "SLES-52444",
       "redumpName": "Hyper Street Fighter II - The Anniversary Edition (Europe)",
       "thumbnail": "Named_Boxarts/Hyper Street Fighter II - The Anniversary Edition (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0035",
@@ -913,7 +913,7 @@
       "serial": "SLES-50224",
       "redumpName": "Kuri Kuri Mix (Europe) (En,Fr,De)",
       "thumbnail": "Named_Boxarts/Kuri Kuri Mix (Europe) (En,Fr,De).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0038",
@@ -922,7 +922,7 @@
       "serial": "SCES-52460",
       "redumpName": "Jak 3 (Europe, Australia) (En,Fr,De,Es,It,Pt,Ru)",
       "thumbnail": "Named_Boxarts/Jak 3 (Europe, Australia) (En,Fr,De,Es,It,Pt,Ru).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0039",
@@ -958,7 +958,7 @@
       "serial": "SLES-52701",
       "redumpName": "Future Tactics - The Uprising (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Future Tactics - The Uprising (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0048",
@@ -967,7 +967,7 @@
       "serial": "SLES-53796",
       "redumpName": "FIFA Street 2 (Europe)",
       "thumbnail": "Named_Boxarts/FIFA Street 2 (Europe) (En,Fr,De,Es,It,Nl).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0049",
@@ -976,7 +976,7 @@
       "serial": "SLES-52720",
       "redumpName": "Ford Racing 3 (Europe, Australia) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Ford Racing 3 (Europe, Australia) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0050",
@@ -994,7 +994,7 @@
       "serial": "SLES-54793",
       "redumpName": "WWE SmackDown vs. Raw 2008 (Europe, Australia)",
       "thumbnail": "Named_Boxarts/WWE SmackDown vs. Raw 2008 (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0053",
@@ -1030,7 +1030,7 @@
       "serial": "SLES-54658",
       "redumpName": "Star Wars - The Force Unleashed (Europe, Australia)",
       "thumbnail": "Named_Boxarts/Star Wars - The Force Unleashed (Europe) (Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0057",
@@ -1039,7 +1039,7 @@
       "serial": "SLES-54489",
       "redumpName": "WWE SmackDown vs. Raw 2007 (Europe, Australia)",
       "thumbnail": "Named_Boxarts/WWE SmackDown vs. Raw 2007 (Europe, Australia).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0058",
@@ -1048,7 +1048,7 @@
       "serial": "SLES-52313",
       "redumpName": "Space Invaders Anniversary (Europe, Australia) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Space Invaders Anniversary (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0061",
@@ -1066,7 +1066,7 @@
       "serial": "SLES-53099",
       "redumpName": "Pilot Down - Behind Enemy Lines (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Pilot Down - Behind Enemy Lines (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0065",
@@ -1102,7 +1102,7 @@
       "serial": "SLES-53064",
       "redumpName": "FIFA Street (Europe) (En,Fr,De,Es,It,Nl,Sv)",
       "thumbnail": "Named_Boxarts/FIFA Street (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0070",
@@ -1129,7 +1129,7 @@
       "serial": "SLES-50044",
       "redumpName": "Rayman Revolution (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Rayman Revolution (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0075",
@@ -1147,7 +1147,7 @@
       "serial": "SCES-50139",
       "redumpName": "WRC - World Rally Championship (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi)",
       "thumbnail": "Named_Boxarts/WRC - World Rally Championship (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0077",
@@ -1165,7 +1165,7 @@
       "serial": "SLES-54945",
       "redumpName": "Dragon Ball Z - Budokai Tenkaichi 3 (Europe, Australia) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Dragon Ball Z - Budokai Tenkaichi 3 (Europe, Australia) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0079",
@@ -1174,7 +1174,7 @@
       "serial": "SCES-52412",
       "redumpName": "Jackie Chan Adventures (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt)",
       "thumbnail": "Named_Boxarts/Jackie Chan Adventures (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0080",
@@ -1192,7 +1192,7 @@
       "serial": "SLES-50386",
       "redumpName": "Crash Bandicoot - The Wrath of Cortex (Europe) (En,Fr,De,Es,It,Nl) (v1.03)",
       "thumbnail": "Named_Boxarts/Crash Bandicoot - The Wrath of Cortex (Europe) (En,Fr,De,Es,It,Nl) (v1.03).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0082",
@@ -1210,7 +1210,7 @@
       "serial": "SLES-50826",
       "redumpName": "Star Wars - The Clone Wars (Europe)",
       "thumbnail": "Named_Boxarts/Star Wars - The Clone Wars (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0084",
@@ -1219,7 +1219,7 @@
       "serial": "SCES-53372",
       "redumpName": "Tourist Trophy - The Real Riding Simulator (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Tourist Trophy - The Real Riding Simulator (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0085",
@@ -1228,7 +1228,7 @@
       "serial": "SCES-51177",
       "redumpName": "Disney's Treasure Planet (Europe) (En,Es,It,Sv,Da)",
       "thumbnail": "Named_Boxarts/Disney's Treasure Planet (Europe) (En,Es,It,Sv,Da).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0086",
@@ -1237,7 +1237,7 @@
       "serial": "SLES-55380",
       "redumpName": "Sonic Unleashed (Europe, Australia) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Sonic Unleashed (Europe, Australia) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0087",
@@ -1246,7 +1246,7 @@
       "serial": "SLES-53402",
       "redumpName": "Taxi Rider (Europe)",
       "thumbnail": "Named_Boxarts/Taxi Rider (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0088",
@@ -1255,7 +1255,7 @@
       "serial": "SLES-53140",
       "redumpName": "Choro Q (Europe)",
       "thumbnail": "Named_Boxarts/Choro Q (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0090",
@@ -1264,7 +1264,7 @@
       "serial": "SLES-50310",
       "redumpName": "Freak Out (Europe)",
       "thumbnail": "Named_Boxarts/Freak Out (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0091",
@@ -1282,7 +1282,7 @@
       "serial": "SLES-52753",
       "redumpName": "FlatOut (Europe) (En,Fr,Es,It)",
       "thumbnail": "Named_Boxarts/FlatOut (Europe) (En,Fr,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0093",
@@ -1291,7 +1291,7 @@
       "serial": "SCES-50410",
       "redumpName": "Ace Combat - Distant Thunder (Europe, Australia) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Ace Combat - Distant Thunder (Europe, Australia) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0094",
@@ -1300,7 +1300,7 @@
       "serial": "SLES-52895",
       "redumpName": "Nickelodeon The SpongeBob SquarePants Movie (Europe, Australia)",
       "thumbnail": "Named_Boxarts/Nickelodeon SpongeBob SquarePants - The Movie (Europe) (Fr,Nl).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0096",
@@ -1318,7 +1318,7 @@
       "serial": "SLES-54767",
       "redumpName": "Sniper Assault (Europe)",
       "thumbnail": "Named_Boxarts/Sniper Assault (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0098",
@@ -1336,7 +1336,7 @@
       "serial": "SLES-50964",
       "redumpName": "Antz Extreme Racing (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Antz Extreme Racing (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0101",
@@ -1345,7 +1345,7 @@
       "serial": "SLES-52889",
       "redumpName": "Disney's Winnie the Pooh's Rumbly Tumbly Adventure (Europe) (En,Fr,De,Es,It,Nl)",
       "thumbnail": "Named_Boxarts/Disney's Winnie the Pooh's Rumbly Tumbly Adventure (Europe) (En,Fr,De,Es,It,Nl).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0102",
@@ -1354,7 +1354,7 @@
       "serial": "SLES-52967",
       "redumpName": "Guilty Gear X2 Reload - The Midnight Carnival (Europe)",
       "thumbnail": "Named_Boxarts/Guilty Gear X2 Reload - The Midnight Carnival (Europe).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0103",
@@ -1372,7 +1372,7 @@
       "serial": "SCES-53409",
       "redumpName": "Sly 3 - Honour Among Thieves (Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi)",
       "thumbnail": "Named_Boxarts/Sly 3 - Honour Among Thieves (Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0105",
@@ -1390,7 +1390,7 @@
       "serial": "SLES-51873",
       "redumpName": "Medal of Honor - Rising Sun (Europe, Australia) (En,It,Nl,Sv,Da)",
       "thumbnail": "Named_Boxarts/Medal of Honor - Rising Sun (Europe, Australia) (En,It,Nl,Sv,Da).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0107",
@@ -1426,7 +1426,7 @@
       "serial": "SLES-51235",
       "redumpName": "Raging Blades (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Raging Blades (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0111",
@@ -1435,7 +1435,7 @@
       "serial": "SCES-51159",
       "redumpName": "Getaway, The (Europe) (En,Fr,De,Es,It) (v1.03)",
       "thumbnail": "Named_Boxarts/Getaway, The (Europe) (En,Fr,De,Es,It) (v1.03).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0112",
@@ -1471,7 +1471,7 @@
       "serial": "SLES-51931",
       "redumpName": "Teenage Mutant Ninja Turtles (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Teenage Mutant Ninja Turtles (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0116",
@@ -1498,7 +1498,7 @@
       "serial": "SLES-54786",
       "redumpName": "Heracles - Chariot Racing (Europe) (En,Fr)",
       "thumbnail": "Named_Boxarts/Heracles - Chariot Racing (Europe) (En,Fr).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0121",
@@ -1525,7 +1525,7 @@
       "serial": "SLES-55520",
       "redumpName": "Transformers - Revenge of the Fallen (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Transformers - Revenge of the Fallen (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0124",
@@ -1552,7 +1552,7 @@
       "serial": "SCES-50934",
       "redumpName": "WRC II Extreme (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi)",
       "thumbnail": "Named_Boxarts/WRC II Extreme (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0127",
@@ -1561,7 +1561,7 @@
       "serial": "SLES-55406",
       "redumpName": "PES 2009 - Pro Evolution Soccer (Europe) (En,Es,It,Pt)",
       "thumbnail": "Named_Boxarts/PES 2009 - Pro Evolution Soccer (Europe) (En,Es,It,Pt).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0128",
@@ -1570,7 +1570,7 @@
       "serial": "SLES-54914",
       "redumpName": "PES 2008 - Pro Evolution Soccer (Europe) (It,Pt)",
       "thumbnail": "Named_Boxarts/PES 2008 - Pro Evolution Soccer (Europe) (En,Es).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PS2-0130",
@@ -1597,7 +1597,7 @@
       "serial": "UCES-00005",
       "redumpName": "WRC - FIA World Rally Championship (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/WRC - FIA World Rally Championship (Europe) (En,Fr,De,Es,It) (v1.02).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     },
     {
       "collectionId": "PSP-0008",
@@ -1606,7 +1606,7 @@
       "serial": "ULES-01347",
       "redumpName": "Grand Theft Auto - Chinatown Wars (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Grand Theft Auto - Chinatown Wars (Europe) (En,Fr,De,Es,It) (v1.01).png",
-      "replacedSource": null
+      "replacedSource": "libretro-redump-serial"
     }
   ],
   "unresolvedEntries": [
