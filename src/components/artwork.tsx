@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { displayPlatform } from "@/lib/data/platforms";
 import { PLATFORM_ARTWORK } from "@/data/platform-artwork";
+import { GAME_ARTWORK } from "@/data/game-artwork";
 
 function initials(value: string) {
   return value
@@ -93,7 +94,7 @@ export function GameArtwork({
 }) {
   return (
     <ArtworkFrame
-      src={`/covers/${encodeURIComponent(collectionId)}.png`}
+      src={GAME_ARTWORK[collectionId] ?? "/covers/__missing__.png"}
       alt={`${title} PAL cover`}
       platform={platform}
       title={title}
