@@ -127,12 +127,53 @@ def number_signature(value):
     return tuple(out)
 
 
-def exact_title_match(requested, candidate):
+def title_score(requested, candidate):
     if not requested or not candidate:
-        return False
-    if number_signature(requested) and number_signature(requested) != number_signature(candidate):
-        return False
-    return canonical(requested) == canonical(candidate) or strip_article(requested) == strip_article(candidate)
+        return -1
+
+    requested_numbers = number_signature(requested)
+    candidate_numbers = number_signature(candidate)
+    if requested_numbers and requested_numbers != candidate_numbers:
+        return -1
+
+    req = canonical(requested)
+    cand = canonical(candidate)
+    if req == cand:
+        return 1000
+    if strip_article(requested) == strip_article(candidate):
+        return 985
+    if req.replace(" ", "") == cand.replace(" ", ""):
+        return 980
+
+    stop = {"the", "a", "an", "and", "of"}
+    req_tokens = {token for token in req.split() if token not in stop}
+    cand_tokens = {token for token in cand.split() if token not in stop}
+    if not req_tokens or not cand_tokens:
+        return -1
+
+    overlap = len(req_tokens & cand_tokens)
+    coverage = overlap / len(req_tokens)
+    precision = overlap / len(cand_tokens)
+
+    def bigrams(value):
+        compact = value.replace(" ", "")
+        return {compact[i:i+2] for i in range(max(0, len(compact) - 1))}
+
+    req_bi = bigrams(req)
+    cand_bi = bigrams(cand)
+    if not req_bi or not cand_bi:
+        dice = 0
+    else:
+        dice = (2 * len(req_bi & cand_bi)) / (len(req_bi) + len(cand_bi))
+
+    if coverage < 0.82 or precision < 0.60 or dice < 0.55:
+        return -1
+
+    return round(650 + coverage * 180 + precision * 80 + dice * 90)
+
+
+def exact_title_match(requested, candidate):
+    return title_score(requested, candidate) >= 980
 
 
 def edition_compatible(remote_name, local_edition):
@@ -253,19 +294,11 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
             shutil.copyfileobj(src, dst)
 
     target_platforms = {games_by_id[cid]["platform"] for cid in missing_ids if cid in games_by_id}
-    names_by_platform = {
-        platform: {
-            canonical(games_by_id[cid]["title"])
-            for cid in missing_ids
-            if cid in games_by_id and games_by_id[cid]["platform"] == platform
-        }
-        for platform in target_platforms
-    }
 
     games_meta = {}
     candidate_ids = set()
 
-    print("Indexing exact title/platform matches...")
+    print("Indexing candidate games for the missing platforms...")
     depth = 0
     for event, elem in ET.iterparse(xml_path, events=("start", "end")):
         if event == "start":
@@ -278,10 +311,7 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
             platform = elem.findtext("Platform") or ""
             if dbid:
                 for local_platform in target_platforms:
-                    if not platform_matches(local_platform, platform):
-                        continue
-                    local_names = names_by_platform.get(local_platform, set())
-                    if canonical(name) in local_names or strip_article(name) in {strip_article(v) for v in local_names}:
+                    if platform_matches(local_platform, platform):
                         games_meta[dbid] = {"name": name, "platform": platform, "alternates": []}
                         candidate_ids.add(dbid)
                         break
@@ -338,15 +368,17 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
                 continue
 
             matched_name = None
-            if exact_title_match(game["title"], meta["name"]):
+            matched_name_score = title_score(game["title"], meta["name"])
+            if matched_name_score >= 900:
                 matched_name = meta["name"]
-            else:
-                for alt in meta["alternates"]:
-                    if exact_title_match(game["title"], alt["name"]):
-                        matched_name = alt["name"]
-                        break
 
-            if not matched_name:
+            for alt in meta["alternates"]:
+                alt_score = title_score(game["title"], alt["name"])
+                if alt_score > matched_name_score:
+                    matched_name_score = alt_score
+                    matched_name = alt["name"]
+
+            if not matched_name or matched_name_score < 900:
                 continue
             if not edition_compatible(meta["name"], game.get("edition", "")):
                 continue
@@ -356,7 +388,7 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
                 continue
 
             best_image = max(images, key=lambda image: region_priority(image["region"], game))
-            score = 1000 + region_priority(best_image["region"], game)
+            score = matched_name_score + region_priority(best_image["region"], game)
             if canonical(game["title"]) == canonical(meta["name"]):
                 score += 50
 
@@ -367,6 +399,7 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
                 "platform": meta["platform"],
                 "image": best_image,
                 "score": score,
+                "titleScore": matched_name_score,
             })
 
         candidates.sort(key=lambda item: item["score"], reverse=True)
@@ -375,7 +408,7 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
 
         best = candidates[0]
         runner = candidates[1] if len(candidates) > 1 else None
-        if runner and runner["score"] == best["score"] and normalize(runner["name"]) != normalize(best["name"]):
+        if runner and best["score"] - runner["score"] < 45 and normalize(runner["name"]) != normalize(best["name"]):
             review.append({
                 "collectionId": cid,
                 "title": game["title"],
@@ -411,7 +444,8 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
             "imageType": best["image"]["type"],
             "sourceImage": IMAGE_BASE + filename,
             "matchScore": best["score"],
-            "matchedBy": "exact-title-platform-pal-region",
+            "titleScore": best["titleScore"],
+            "matchedBy": "high-confidence-title-platform-pal-region",
         }
 
     manifest_entries = dict(manifest.get("entries", {}))
