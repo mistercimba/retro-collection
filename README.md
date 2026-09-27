@@ -151,21 +151,22 @@ npm run check
 
 Ver `PROJECT_CHECKLIST.md`.
 
-
 ## Artwork local
 
 As capas dos jogos e as imagens das plataformas são ficheiros estáticos do próprio projeto. A aplicação não procura artwork online durante a navegação.
 
-- Fonte principal do import: **TheGamesDB API**, apenas no processo de importação.
-- Matching obrigatório por **título + plataforma + região PAL**; variantes de edição incompatíveis são rejeitadas.
+- **516/516 jogos físicos do snapshot atual têm artwork local.**
+- O import tenta primeiro bases estruturadas/serializadas e só aceita fallbacks quando a plataforma, região e identidade do jogo estão suficientemente verificadas.
+- Para jogos PAL, a prioridade é artwork PAL/Europe; para exceções físicas registadas noutra região, segue-se a região real da cópia.
+- Capa frontal é preferida; cartucho/disco é aceite quando representa melhor a variante física correta.
 - As imagens aprovadas são descarregadas para `public/covers/` e servidas localmente depois disso.
 - O mapa Collection ID → ficheiro local é gerado em `src/data/game-artwork.ts`.
-- Imagens locais das consolas: `public/platforms/`
-- Snapshot dos jogos físicos atuais: `data/artwork-games.json`
-- Casos por resolver: `data/artwork-missing.json`
-- Manifesto dos matches: `public/covers/manifest.json`
-- Relatório do último import: `data/artwork-tgdb-report.json`
-- Manifesto antigo do primeiro import libretro, apenas para histórico: `data/artwork-libretro-manifest.json`
+- Imagens locais das consolas: `public/platforms/`.
+- Snapshot dos jogos físicos atuais: `data/artwork-games.json`.
+- Casos por resolver: `data/artwork-missing.json` — atualmente vazio.
+- Manifesto auditável dos matches: `public/covers/manifest.json`.
+
+Fontes atualmente usadas no acervo local incluem TheGamesDB, GameTDB, LaunchBox, libretro-thumbnails com validação por serial/título, PSXDataCenter e alguns URLs curados de itens exatos. Nenhuma destas fontes é consultada pela app em runtime.
 
 Comandos:
 
@@ -174,6 +175,3 @@ npm run artwork:import
 npm run artwork:status
 ```
 
-O importador é incremental: capas TheGamesDB já validadas e casos sem match são reutilizados enquanto o jogo/edição não mudar. Para revalidar tudo manualmente usa `npm run artwork:import -- --force`.
-
-A API key fica apenas em `THEGAMESDB_API_KEY` nos GitHub Actions secrets; a aplicação em produção **não precisa da key e não faz pedidos de artwork externos em runtime**.
