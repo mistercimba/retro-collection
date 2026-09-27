@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:54:19Z",
+  "generatedAt": "2026-09-27T16:56:18Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -1724,12 +1724,14 @@
     "GBC-0052": {
       "file": "/covers/GBC-0052.jpg",
       "source": "curated-exact-url",
-      "serial": "DMG-HF-USA",
-      "regionName": "NTSC",
-      "mediaType": "cartridge",
-      "matchedBy": "manual-exact-serial-verification",
-      "sourcePage": "https://gbhwdb.gekkio.fi/cartridges/DMG-HFE-0/gekkio-1.html",
-      "sourceImage": "https://gbhwdb.gekkio.fi/static/DMG-HFE-0/gekkio-1_01_front.jpg",
+      "serial": null,
+      "productCode": "DMG-HF-USA",
+      "regionName": "PAL",
+      "artworkVariant": "NOE / Europe",
+      "mediaType": "box-front",
+      "matchedBy": "manual-exact-title-platform-region",
+      "sourcePage": "https://www.game-boy-database.com/game-HF-2654-NOE.html",
+      "sourceImage": "https://www.game-boy-database.com/vizu/2654.jpg",
       "matchScore": 1200
     },
     "GBC-0053": {
