@@ -17,7 +17,7 @@
     "sourcePage": "https://www.ebay.co.uk/itm/316840410442",
     "sourceImage": "https://i.ebayimg.com/images/g/IuoAAOSw8qVoLcKk/s-l400.jpg"
   },
-  "_importerVersion": 3,
+  "_importerVersion": 4,
   "GBC-0052": {
     "title": "The Hunt for Red October",
     "platform": "Game Boy",
@@ -36,5 +36,41 @@
     "sourcePage": "https://www.ldlc.com/fiche/PB00685536.html",
     "evidencePage": "https://www.pricecharting.com/game/pal-playstation-5/class-of-heroes-3-remaster",
     "sourceImage": "https://media.ldlc.com/r1600/mktp/product/productImage/250523/120/3b691aa8ff12476abb27b565734eeed1.webp"
+  },
+  "GBA-0045": {
+    "title": "Need For Speed: Carbon Own The City",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "serial": "AGB-BN7P-EUR",
+    "type": "cover",
+    "sourcePage": "https://vgcollect.com/item/32462",
+    "sourceImage": "https://vgcollect.com/images/front-box-art/32462.jpg"
+  },
+  "GBA-0047": {
+    "title": "The Hobbit",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "serial": "AGB-AH9P-EUR",
+    "type": "cartridge",
+    "sourcePage": "https://www.agil-retrogaming.fr/jeux-game-boy-advance-a-vendre/5632-the-hobbit-gba.html",
+    "sourceImage": "https://www.agil-retrogaming.fr/47969-thickbox/the-hobbit-gba.jpg"
+  },
+  "GBC-0025": {
+    "title": "Harvest Moon",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "serial": "DMG-AYXP-EUR",
+    "type": "cartridge",
+    "sourcePage": "https://allegro.pl/produkt/harvest-moon-nintendo-game-boy-color-pudelkowa-ea190756-293c-4fde-b9ff-e429ceac1eb0",
+    "sourceImage": "https://a.allegroimg.com/original/1179a7/baac3b8842b090d7b0fea4ce6d13/Harvest-Moon-GAME-BOY-SAM-CARTRIDGE-PAL"
+  },
+  "GBC-0040": {
+    "title": "Game & Watch Gallery 2",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "serial": "DMG-AGLP-EUR",
+    "type": "cartridge",
+    "sourcePage": "https://www.ricardo.ch/de/a/gameboy-game-watch-gallery-2-1241675664/",
+    "sourceImage": "https://img.ricardostatic.ch/images/329a825d-78d7-4b74-b105-8cf87eee684b/t_1000x750/gameboy-gamewatch-gallery-2"
   }
 }
