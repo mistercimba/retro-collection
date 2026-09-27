@@ -477,3 +477,5 @@ console.log(`Serial-matched Sony covers resolved: ${resolved.length}`);
 console.log(`Added: ${added}; replaced weaker source: ${replaced}`);
 console.log(`Total local artwork: ${manifest.matched}/${games.length}`);
 console.log(`Still missing: ${stillMissing.length}`);
+
+// pipeline-version: 1
