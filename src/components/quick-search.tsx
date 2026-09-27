@@ -99,11 +99,9 @@ export function QuickSearch({ games }: { games: CollectionGame[] }) {
                 }}
               >
                 <GameArtwork
+                  collectionId={game.collectionId}
                   title={game.title}
                   platform={game.platform}
-                  region={game.region || "PAL"}
-                  edition={game.edition}
-                  productCode={game.audit?.productCode ?? ""}
                   className="h-14 w-11 rounded-lg"
                 />
                 <div className="min-w-0">
