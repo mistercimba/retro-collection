@@ -2998,6 +2998,14 @@
       "matchScore": 1140,
       "matchedBy": "exact-title-platform-pal-region"
     },
+    "NES-0012": {
+      "file": "/covers/NES-0012.png",
+      "source": "libretro-thumbnails-strict-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Simpsons, The - Bart vs. the Space Mutants (Europe).png",
+      "regionPolicy": "PAL-Europe-only",
+      "matchType": "exact-normalized-title"
+    },
     "NES-0013": {
       "file": "/covers/NES-0013.png",
       "source": "libretro-strict-title",
@@ -6588,9 +6596,10 @@
       "matchScore": 1000
     }
   },
-  "matched": 487,
-  "missing": 29,
+  "matched": 488,
+  "missing": 28,
   "reused": 406,
   "apiLookups": 0,
-  "remainingMonthlyAllowance": 64
+  "remainingMonthlyAllowance": 64,
+  "fallbackImported": 1
 }

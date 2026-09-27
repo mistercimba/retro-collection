@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:11:03Z",
+  "generatedAt": "2026-09-27T11:37:06.091Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -10,8 +10,8 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 487,
-  "missing": 29,
+  "matched": 488,
+  "missing": 28,
   "entries": [
     {
       "collectionId": "GBA-0045",
@@ -206,30 +206,6 @@
         }
       ],
       "inputKey": "{\"title\":\"Tom & Jerry: The Ultimate Game of Cat and Mouse!\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "NES-0012",
-      "title": "The Simpsons: Bart vs. the Space Mutants",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-Q5-NOE",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Simpsons: Bart vs. the Space Mutants",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 1417,
-          "title": "The Simpsons: Bart vs. the Space Mutants",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"The Simpsons: Bart vs. the Space Mutants\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {

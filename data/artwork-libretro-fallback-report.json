@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-09-27T11:37:06.091Z",
+  "source": "libretro-thumbnails-strict-pal-fallback",
+  "attempted": 16,
+  "imported": 1,
+  "remaining": 28,
+  "entries": [
+    {
+      "collectionId": "NES-0012",
+      "title": "The Simpsons: Bart vs. the Space Mutants",
+      "platform": "NES",
+      "sourcePath": "Named_Boxarts/Simpsons, The - Bart vs. the Space Mutants (Europe).png"
+    }
+  ]
+}
