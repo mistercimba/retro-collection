@@ -145,7 +145,7 @@ npm run check
 - Nunca fazer commit de `.env.local` ou do JSON da service account.
 - O Google Private Key é usado apenas no servidor.
 - A app é read-only: não escreve na Google Sheet.
-- Não existem APIs de preço externas nem scraping de capas nesta fase.
+- O artwork usado pela app é servido localmente; a TheGamesDB API só é usada pelo importador de manutenção.
 
 ## Próximas fases
 
@@ -156,13 +156,16 @@ Ver `PROJECT_CHECKLIST.md`.
 
 As capas dos jogos e as imagens das plataformas são ficheiros estáticos do próprio projeto. A aplicação não procura artwork online durante a navegação.
 
-- Fonte de import inicial: repositórios públicos `libretro-thumbnails`
-- Prioridade: box art PAL/Europe
-- Ficheiro local do jogo: `public/covers/<Collection ID>.png`
+- Fonte principal do import: **TheGamesDB API**, apenas no processo de importação.
+- Matching obrigatório por **título + plataforma + região PAL**; variantes de edição incompatíveis são rejeitadas.
+- As imagens aprovadas são descarregadas para `public/covers/` e servidas localmente depois disso.
+- O mapa Collection ID → ficheiro local é gerado em `src/data/game-artwork.ts`.
 - Imagens locais das consolas: `public/platforms/`
 - Snapshot dos jogos físicos atuais: `data/artwork-games.json`
 - Casos por resolver: `data/artwork-missing.json`
 - Manifesto dos matches: `public/covers/manifest.json`
+- Relatório do último import: `data/artwork-tgdb-report.json`
+- Manifesto antigo do primeiro import libretro, apenas para histórico: `data/artwork-libretro-manifest.json`
 
 Comandos:
 
@@ -171,4 +174,6 @@ npm run artwork:import
 npm run artwork:status
 ```
 
-O importador é incremental: capas locais existentes são reutilizadas. Uma capa só volta a ser descarregada com `npm run artwork:import -- --force`.
+O importador é incremental: capas TheGamesDB já validadas e casos sem match são reutilizados enquanto o jogo/edição não mudar. Para revalidar tudo manualmente usa `npm run artwork:import -- --force`.
+
+A API key fica apenas em `THEGAMESDB_API_KEY` nos GitHub Actions secrets; a aplicação em produção **não precisa da key e não faz pedidos de artwork externos em runtime**.
