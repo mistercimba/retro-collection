@@ -1,149 +1,9 @@
 {
-  "generatedAt": "2026-09-27T09:12:59.940Z",
+  "generatedAt": "2026-09-27T09:18:25.404Z",
   "totalOwnedGames": 516,
-  "matched": 432,
-  "missing": 84,
+  "matched": 466,
+  "missing": 50,
   "entries": [
-    {
-      "collectionId": "GBA-0001",
-      "title": "Pokémon Emerald",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BPEP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Pokemon - Emerald Version (USA, Europe) (Alternate).png",
-      "bestScore": 903
-    },
-    {
-      "collectionId": "GBA-0004",
-      "title": "Pokémon FireRed",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BPRP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Pokemon - FireRed Version (USA, Europe) (Rev 1).png",
-      "bestScore": 903
-    },
-    {
-      "collectionId": "GBA-0005",
-      "title": "Pokémon LeafGreen",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BPGP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Pokemon - LeafGreen Version (USA, Europe) (Rev 1).png",
-      "bestScore": 905
-    },
-    {
-      "collectionId": "GBA-0006",
-      "title": "Pokémon Sapphire",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AXPP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Pokemon - Sapphire Version (USA, Europe) (Rev 1).png",
-      "bestScore": 902
-    },
-    {
-      "collectionId": "GBA-0007",
-      "title": "Pokémon Ruby",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AXVP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Pokemon - Ruby Version (USA, Europe) (Rev 1).png",
-      "bestScore": 883
-    },
-    {
-      "collectionId": "GBA-0025",
-      "title": "Yu-Gi-Oh Ultimate Masters Edition",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BY6P-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBA-0030",
-      "title": "Excitebike NES Classics",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-FEBP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBA-0035",
-      "title": "Donkey Kong NES Classics",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-FDKP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBA-0039",
-      "title": "Spiderman: Mysterio's Menace",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-ASEP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBA-0041",
-      "title": "Tomb Raider: Legend",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BL8P-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
     {
       "collectionId": "GBA-0047",
       "title": "The Hobbit",
@@ -154,79 +14,10 @@
       "keepStatus": "Collection",
       "productCode": "AGB-AH9P-EUR",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
-    },
-    {
-      "collectionId": "GBC-0003",
-      "title": "Pokemon Yellow",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-APSU-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBC-0011",
-      "title": "Zelda Link's Awakening",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "French",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-ZL-FRA",
-      "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Legend of Zelda, The - Link's Awakening (USA, Europe) (Rev 1).png",
-      "bestScore": 830
-    },
-    {
-      "collectionId": "GBC-0020",
-      "title": "Super Mario Land 2",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-MQ-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBC-0022",
-      "title": "Super Mario Land",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "UKV Cartridge / Rev 1 ROM",
-      "keepStatus": "Collection",
-      "productCode": "DMG-ML-UKV",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBC-0024",
-      "title": "Donkey Kong",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-QD-EUR (probable; only EUR suffix readable)",
-      "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Donkey Kong Land (USA, Europe) (SGB Enhanced).png",
-      "bestScore": 893
     },
     {
       "collectionId": "GBC-0025",
@@ -238,76 +29,7 @@
       "keepStatus": "Collection",
       "productCode": "DMG-AYXP-EUR",
       "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBC-0030",
-      "title": "Wario Land Super Mario Land 3",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-WJ-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBC-0042",
-      "title": "Alleyway",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-AW-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GBC-0050",
-      "title": "Dr. Mario",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Rev 1 (World ROM)",
-      "keepStatus": "Collection",
-      "productCode": "DMG-VU-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GC-0002",
-      "title": "Pokemon Box",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GPXP-UKV",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "GC-0006",
-      "title": "Eternal Darkness",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GEDP-UKV",
-      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -322,90 +44,22 @@
       "keepStatus": "Collection",
       "productCode": "DOL-GHBP-UKV",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
     },
     {
-      "collectionId": "N64-0021",
-      "title": "Wave Race 64",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NWRP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "N64-0022",
-      "title": "Wave Race 64",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Sell",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "NDS-0009",
-      "title": "Flower, Sun and Rain",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-YHNP-ESP",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "NDS-0017",
-      "title": "Pokémon White",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "TWL-IRAO-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Pokemon - White Version (USA, Europe) (NDSi Enhanced).png",
-      "bestScore": 888
-    },
-    {
-      "collectionId": "NDS-0031",
-      "title": "WarioWare D.I.Y.",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-UORP-EAP; cartridge: NTR-UORP-EUR",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "NES-0004",
-      "title": "Popeye",
+      "collectionId": "NES-0009",
+      "title": "Terminator 2: Judgement Day",
       "platform": "NES",
       "region": "PAL-B",
       "language": "Unknown",
-      "edition": "Arcade Classics Series",
+      "edition": "Standard",
       "keepStatus": "Collection",
-      "productCode": "NES-PP-FRA",
+      "productCode": "NES-62-NOE",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -420,6 +74,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -432,6 +87,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -444,6 +100,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -456,6 +113,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -468,6 +126,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -480,6 +139,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -492,6 +152,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -504,6 +165,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -516,6 +178,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -528,6 +191,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -540,6 +204,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -552,6 +217,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -564,6 +230,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -576,6 +243,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -588,6 +256,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -600,6 +269,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -612,6 +282,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -624,6 +295,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -636,6 +308,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -648,6 +321,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -660,6 +334,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -672,6 +347,7 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -684,21 +360,8 @@
       "keepStatus": "Collection",
       "productCode": "",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
-    },
-    {
-      "collectionId": "PS1-0004",
-      "title": "Ehrgeiz",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Disc: SLES-02111",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
     },
     {
       "collectionId": "PS1-0012",
@@ -710,65 +373,10 @@
       "keepStatus": "Collection",
       "productCode": "Legacy reference: PBPX-95008 (not reverified)",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "ambiguous-match",
       "bestCandidate": "Named_Boxarts/Demo One (Version 6) (Europe, Australia) (En,Fr,De,Es,It).png",
       "bestScore": 905
-    },
-    {
-      "collectionId": "PS1-0024",
-      "title": "Hercules",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box/disc: SCES-00891",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "PS1-0026",
-      "title": "Toy Story 2",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Platinum",
-      "keepStatus": "Collection",
-      "productCode": "Box: SLES-02067; disc: SLES-02067 /P",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "PS1-0042",
-      "title": "Tarzan",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Platinum",
-      "keepStatus": "Collection",
-      "productCode": "Box: SCES-01431; disc: SCES-01431 / 9220824",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "PS1-0054",
-      "title": "A Bug's Life",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Platinum",
-      "keepStatus": "Sell",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
     },
     {
       "collectionId": "PS1-0056",
@@ -780,23 +388,10 @@
       "keepStatus": "Collection",
       "productCode": "SLES-03663",
       "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "PS1-0063",
-      "title": "Tomb Raider II",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: SLES-00718; disc: Not confirmed",
-      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Tomb Raider (Europe) (EDC).png",
-      "bestScore": 928
+      "bestCandidate": "Named_Boxarts/D (Europe) (Disc 1).png",
+      "bestScore": 280
     },
     {
       "collectionId": "PS1-0067",
@@ -808,20 +403,7 @@
       "keepStatus": "Collection",
       "productCode": "Disc: SCED-01441#",
       "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "PS1-0074",
-      "title": "A Bug's Life",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Spanish",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box/disc: SCES-01523",
-      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -836,9 +418,10 @@
       "keepStatus": "Collection",
       "productCode": "Disc: SCED-04016 / 9431022",
       "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Euro Demo (Future) 99 (Europe).png",
-      "bestScore": 504
+      "matcherVersion": 2,
+      "reason": "no-pal-match",
+      "bestCandidate": null,
+      "bestScore": null
     },
     {
       "collectionId": "PS2-0010",
@@ -850,6 +433,22 @@
       "keepStatus": "Collection",
       "productCode": "SLES-51918 / SLES-52822 / SLES-53777",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-pal-match",
+      "bestCandidate": null,
+      "bestScore": null
+    },
+    {
+      "collectionId": "PS2-0023",
+      "title": "Board Games Gallery (10 Games)",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "SLES-52714",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -864,9 +463,10 @@
       "keepStatus": "Collection",
       "productCode": "SLES-50078",
       "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
+      "matcherVersion": 2,
+      "reason": "ambiguous-match",
+      "bestCandidate": "Named_Boxarts/TimeSplitters (Europe) (En,Fr,De,Es,It).png",
+      "bestScore": 520
     },
     {
       "collectionId": "PS2-0062",
@@ -878,34 +478,7 @@
       "keepStatus": "Collection",
       "productCode": "SCES-53033",
       "artworkPolicy": "PAL",
-      "reason": "ambiguous-match",
-      "bestCandidate": "Named_Boxarts/Formula One 2001 (Europe, Australia) (En,Fr,De,Es,It,Fi) (v2.00).png",
-      "bestScore": 826
-    },
-    {
-      "collectionId": "PS2-0064",
-      "title": "Play It Chess Challenger",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-51630",
-      "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "PS2-0066",
-      "title": "Splinter Cell",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Platinum",
-      "keepStatus": "Collection",
-      "productCode": "SLES-51466",
-      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -920,6 +493,7 @@
       "keepStatus": "Collection",
       "productCode": "SLES-51741",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -934,6 +508,7 @@
       "keepStatus": "Collection",
       "productCode": "BCES-00065",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -948,6 +523,7 @@
       "keepStatus": "Collection",
       "productCode": "BLES-00168",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -962,6 +538,7 @@
       "keepStatus": "Collection",
       "productCode": "PPSA-26573; EAN 5060690797685",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -974,6 +551,7 @@
       "keepStatus": "Sell",
       "productCode": "ULES-00412; EAN 5037930120251",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -988,6 +566,7 @@
       "keepStatus": "Sell",
       "productCode": "ULES-00366; EAN 8717418091781",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -1002,6 +581,7 @@
       "keepStatus": "Sell",
       "productCode": "ULES-00183; UPC 023272001933; EAN-13 0023272001933",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -1016,20 +596,7 @@
       "keepStatus": "Sell",
       "productCode": "ULES-00596; EAN 5030944052518 is from the apparent GTA Vice City Stories outer case, not verified for The Sims 2: Pets",
       "artworkPolicy": "PAL",
-      "reason": "no-pal-match",
-      "bestCandidate": null,
-      "bestScore": null
-    },
-    {
-      "collectionId": "SNES-0008",
-      "title": "Street Fighter II: The World Warrior",
-      "platform": "SNES",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SNSP-S2-NOE",
-      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "no-pal-match",
       "bestCandidate": null,
       "bestScore": null
@@ -1044,6 +611,7 @@
       "keepStatus": "Collection",
       "productCode": "EAN 0045496424473",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -1056,6 +624,7 @@
       "keepStatus": "Collection",
       "productCode": "EAN 0045496425289",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -1068,6 +637,7 @@
       "keepStatus": "Collection",
       "productCode": "Not reported",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -1080,6 +650,7 @@
       "keepStatus": "Collection",
       "productCode": "Not reported",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -1092,6 +663,7 @@
       "keepStatus": "Collection",
       "productCode": "Not reported",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -1104,6 +676,7 @@
       "keepStatus": "Collection",
       "productCode": "Not reported",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     },
     {
@@ -1116,6 +689,7 @@
       "keepStatus": "Collection",
       "productCode": "Not reported",
       "artworkPolicy": "PAL",
+      "matcherVersion": 2,
       "reason": "unsupported-platform"
     }
   ]
