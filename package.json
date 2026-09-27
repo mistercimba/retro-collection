@@ -14,7 +14,8 @@
     "test": "vitest run",
     "check": "npm run lint && npm run test && npm run build",
     "artwork:import": "node scripts/import-thegamesdb-artwork.mjs",
-    "artwork:status": "node scripts/artwork-status.mjs"
+    "artwork:status": "node scripts/artwork-status.mjs",
+    "artwork:fallback": "node scripts/import-gametdb-fallback.mjs"
   },
   "dependencies": {
     "google-auth-library": "11.1.0",
