@@ -1,0 +1,102 @@
+[
+  {
+    "platform": "NES",
+    "key": "nes",
+    "wikipediaTitle": "Nintendo Entertainment System"
+  },
+  {
+    "platform": "SNES",
+    "key": "snes",
+    "wikipediaTitle": "Super Nintendo Entertainment System"
+  },
+  {
+    "platform": "Nintendo 64",
+    "key": "nintendo-64",
+    "wikipediaTitle": "Nintendo 64"
+  },
+  {
+    "platform": "GameCube",
+    "key": "gamecube",
+    "wikipediaTitle": "GameCube"
+  },
+  {
+    "platform": "Nintendo Wii",
+    "key": "wii",
+    "wikipediaTitle": "Wii"
+  },
+  {
+    "platform": "Nintendo Wii U",
+    "key": "wii-u",
+    "wikipediaTitle": "Wii U"
+  },
+  {
+    "platform": "Nintendo Switch",
+    "key": "switch",
+    "wikipediaTitle": "Nintendo Switch"
+  },
+  {
+    "platform": "Game Boy",
+    "key": "game-boy",
+    "wikipediaTitle": "Game Boy"
+  },
+  {
+    "platform": "Game Boy Color",
+    "key": "game-boy-color",
+    "wikipediaTitle": "Game Boy Color"
+  },
+  {
+    "platform": "GameBoy + Color",
+    "key": "game-boy",
+    "wikipediaTitle": "Game Boy"
+  },
+  {
+    "platform": "GameBoy Advance",
+    "key": "game-boy-advance",
+    "wikipediaTitle": "Game Boy Advance"
+  },
+  {
+    "platform": "Nintendo DS",
+    "key": "nintendo-ds",
+    "wikipediaTitle": "Nintendo DS"
+  },
+  {
+    "platform": "Nintendo 3DS",
+    "key": "nintendo-3ds",
+    "wikipediaTitle": "Nintendo 3DS"
+  },
+  {
+    "platform": "Playstation",
+    "key": "playstation",
+    "wikipediaTitle": "PlayStation (console)"
+  },
+  {
+    "platform": "Playstation 2",
+    "key": "playstation-2",
+    "wikipediaTitle": "PlayStation 2"
+  },
+  {
+    "platform": "Playstation 3",
+    "key": "playstation-3",
+    "wikipediaTitle": "PlayStation 3"
+  },
+  {
+    "platform": "Playstation 5",
+    "key": "playstation-5",
+    "wikipediaTitle": "PlayStation 5"
+  },
+  {
+    "platform": "PSP",
+    "key": "psp",
+    "wikipediaTitle": "PlayStation Portable"
+  },
+  {
+    "platform": "PC",
+    "key": "pc",
+    "wikipediaTitle": "Personal computer"
+  },
+  {
+    "platform": "Miscellaneous",
+    "key": "misc",
+    "wikipediaTitle": "Video game console"
+  }
+]
