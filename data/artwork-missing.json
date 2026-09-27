@@ -1,16 +1,17 @@
 {
-  "generatedAt": "2026-09-27T10:48:24.378Z",
+  "generatedAt": "2026-09-27T10:51:36.686Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
     "gametdb",
     "libretro-redump-serial",
-    "libretro-nintendo-serial"
+    "libretro-nintendo-serial",
+    "libretro-strict-title"
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 406,
-  "missing": 110,
+  "matched": 430,
+  "missing": 86,
   "entries": [
     {
       "collectionId": "GBA-0001",
@@ -143,30 +144,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0014",
-      "title": "Hello Kitty Happy Party Pals",
-      "platform": "GameBoy Advance",
-      "region": "Unknown",
-      "language": "English",
-      "edition": "Bootleg / Reproduction",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Hello Kitty Happy Party Pals",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 3469,
-          "title": "Hello Kitty: Happy Party Pals",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Hello Kitty Happy Party Pals\",\"platform\":\"GameBoy Advance\",\"edition\":\"Bootleg / Reproduction\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0025",
       "title": "Yu-Gi-Oh Ultimate Masters Edition",
       "platform": "GameBoy Advance",
@@ -182,30 +159,6 @@
       "platformId": 5,
       "candidates": [],
       "inputKey": "{\"title\":\"Yu-Gi-Oh Ultimate Masters Edition\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0028",
-      "title": "Barbie and the Magic of Pegasus",
-      "platform": "GameBoy Advance",
-      "region": "NTSC",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-APFE-USA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Barbie and the Magic of Pegasus",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 27919,
-          "title": "Barbie and The Magic of Pegasus",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Barbie and the Magic of Pegasus\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -359,54 +312,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0048",
-      "title": "Top Gear Rally",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BTGX-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Top Gear Rally",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 4124,
-          "title": "Top Gear Rally",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Top Gear Rally\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0053",
-      "title": "Tweety & the Magic Gems",
-      "platform": "GameBoy Advance",
-      "region": "Unknown",
-      "language": "Unknown",
-      "edition": "Bootleg / Reproduction",
-      "keepStatus": "Collection",
-      "productCode": "E3-0053 (bootleg marking)",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Tweety & the Magic Gems",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 26148,
-          "title": "Tweety & The Magic Gems",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Tweety & the Magic Gems\",\"platform\":\"GameBoy Advance\",\"edition\":\"Bootleg / Reproduction\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0054",
       "title": "F-Zero: Maximum Velocity",
       "platform": "GameBoy Advance",
@@ -553,30 +458,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBC-0015",
-      "title": "Boulder Dash",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-BD-GPS",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Boulder Dash",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 17751,
-          "title": "Boulder Dash",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Boulder Dash\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBC-0016",
       "title": "Wario Land II",
       "platform": "Game Boy",
@@ -622,40 +503,6 @@
         }
       ],
       "inputKey": "{\"title\":\"Star Trek 25th Anniversary\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0019",
-      "title": "Gargoyle's Quest",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "UKV-1 Revision",
-      "keepStatus": "Collection",
-      "productCode": "DMG-RA-UKV-1",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Gargoyle's Quest",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 13069,
-          "title": "Gargoyle's Quest",
-          "regionId": 2
-        },
-        {
-          "id": 135837,
-          "title": "Gargoyle's Quest II: The Demon Darkness",
-          "regionId": 9
-        },
-        {
-          "id": 89367,
-          "title": "Red Arremer: Makaimura Gaiden",
-          "regionId": 4
-        }
-      ],
-      "inputKey": "{\"title\":\"Gargoyle's Quest\",\"platform\":\"Game Boy\",\"edition\":\"UKV-1 Revision\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -955,30 +802,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBC-0044",
-      "title": "Golden Goal",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English / French / German / Spanish / Italian / Dutch / Swedish",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-AAFX-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Golden Goal",
-      "platformId": 41,
-      "candidates": [
-        {
-          "id": 25464,
-          "title": "Three Lions",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Golden Goal\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBC-0046",
       "title": "Sylvester & Tweety Breakfast On The Run",
       "platform": "Game Boy Color",
@@ -1018,24 +841,6 @@
         }
       ],
       "inputKey": "{\"title\":\"Bugs Bunny & Lola Bunny Operation Carrot Patch\",\"platform\":\"Game Boy Color\",\"edition\":\"UKV-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0049",
-      "title": "Atlantis The Lost Empire",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "CGB-BABP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Atlantis The Lost Empire",
-      "platformId": 41,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Atlantis The Lost Empire\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -1230,98 +1035,6 @@
       ]
     },
     {
-      "collectionId": "NES-0001",
-      "title": "Jackie Chan's Action Kung Fu",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "German packaging",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-V5-FRG",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Jackie Chan's Action Kung Fu",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 1467,
-          "title": "Jackie Chan's Action Kung Fu",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Jackie Chan's Action Kung Fu\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "NES-0002",
-      "title": "Double Dragon II: The Revenge",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Mixed packaging (EN / DE / ES)",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-W2-EEC",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Double Dragon II: The Revenge",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 342,
-          "title": "Double Dragon II: The Revenge",
-          "regionId": 2
-        },
-        {
-          "id": 83159,
-          "title": "Double Dragon II: The Revenge (Easy)",
-          "regionId": 9
-        }
-      ],
-      "inputKey": "{\"title\":\"Double Dragon II: The Revenge\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "NES-0005",
-      "title": "Gradius",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-GR-GPS",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Gradius",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 1297,
-          "title": "Gradius",
-          "regionId": 2
-        },
-        {
-          "id": 111866,
-          "title": "Gradius",
-          "regionId": 4
-        },
-        {
-          "id": 86606,
-          "title": "Gradius [5 Screw]",
-          "regionId": 1
-        },
-        {
-          "id": 18951,
-          "title": "Gradius II",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Gradius\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "NES-0007",
       "title": "Tom & Jerry: The Ultimate Game of Cat and Mouse!",
       "platform": "NES",
@@ -1423,35 +1136,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "NES-0013",
-      "title": "Little Nemo: The Dream Master",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-LN-GPS",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Little Nemo: The Dream Master",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 126704,
-          "title": "Pajama Hero Nemo",
-          "regionId": 4
-        },
-        {
-          "id": 1482,
-          "title": "Little Nemo: The Dream Master",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Little Nemo: The Dream Master\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "NES-0014",
       "title": "Teenage Mutant Hero Turtles",
       "platform": "NES",
@@ -1467,30 +1151,6 @@
       "platformId": 7,
       "candidates": [],
       "inputKey": "{\"title\":\"Teenage Mutant Hero Turtles\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "NES-0015",
-      "title": "California Games",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-CG-FRA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "California Games",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 1662,
-          "title": "California Games",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"California Games\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -1515,78 +1175,6 @@
         }
       ],
       "inputKey": "{\"title\":\"The Battle of Olympus\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "NES-0017",
-      "title": "WWF WrestleMania Challenge",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-W9-NOE",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "WWF WrestleMania Challenge",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 2187,
-          "title": "WWF WrestleMania Challenge",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"WWF WrestleMania Challenge\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "NES-0018",
-      "title": "Super Spike V'Ball",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-VJ-GPS",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Super Spike V'Ball",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 1458,
-          "title": "Super Spike V'Ball",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Super Spike V'Ball\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "NES-0019",
-      "title": "Willow",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-WI-FRG",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Willow",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 1393,
-          "title": "Willow",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Willow\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -2283,48 +1871,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "PS2-0052",
-      "title": "Buzz o Grande Quiz",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SCES-53929",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Buzz o Grande Quiz",
-      "platformId": 11,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Buzz o Grande Quiz\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS2-0060",
-      "title": "Hitman Blood Money",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-53028",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Hitman Blood Money",
-      "platformId": 11,
-      "candidates": [
-        {
-          "id": 5355,
-          "title": "Hitman: Blood Money",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Hitman Blood Money\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "PS2-0062",
       "title": "Formula One 2005",
       "platform": "Playstation 2",
@@ -2379,63 +1925,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "PS2-0099",
-      "title": "Disney's The Haunted Mansion",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-52214",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Disney's The Haunted Mansion",
-      "platformId": 11,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Disney's The Haunted Mansion\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS2-0120",
-      "title": "Cabela's Dangerous Hunts",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "English (cover; manual missing; disc languages unverified)",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-52106; EAN 5060034552192",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Cabela's Dangerous Hunts",
-      "platformId": 11,
-      "candidates": [
-        {
-          "id": 116753,
-          "title": "Cabela's Dangerous Hunts [Greatest Hits]",
-          "regionId": 1
-        },
-        {
-          "id": 9642,
-          "title": "Cabela's Dangerous Hunts",
-          "regionId": 0
-        },
-        {
-          "id": 43923,
-          "title": "Cabela's Dangerous Hunts 2",
-          "regionId": 0
-        },
-        {
-          "id": 41703,
-          "title": "Cabela's Dangerous Hunts 2009",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Cabela's Dangerous Hunts\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "PS2-0129",
       "title": "LEGO Football Mania",
       "platform": "Playstation 2",
@@ -2475,35 +1964,6 @@
       "platformId": 4980,
       "candidates": [],
       "inputKey": "{\"title\":\"Class of Heroes 3 Remaster\",\"platform\":\"Playstation 5\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PSP-0003",
-      "title": "Need For Speed: Most Wanted 5-1-0",
-      "platform": "PSP",
-      "region": "NTSC-U",
-      "language": "English (US edition; package language inferred)",
-      "edition": "Greatest Hits",
-      "keepStatus": "Sell",
-      "productCode": "ULUS-10036GH; UPC 014633149401",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Need For Speed: Most Wanted 5-1-0",
-      "platformId": 13,
-      "candidates": [
-        {
-          "id": 7108,
-          "title": "Need for Speed: Most Wanted 5-1-0",
-          "regionId": 2
-        },
-        {
-          "id": 102488,
-          "title": "Need For Speed: Most Wanted 5-1-0 [Greatest Hits]",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Need For Speed: Most Wanted 5-1-0\",\"platform\":\"PSP\",\"edition\":\"Greatest Hits\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -2560,59 +2020,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "SNES-0002",
-      "title": "Cybernator",
-      "platform": "SNES",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SNSP-AV-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Cybernator",
-      "platformId": 6,
-      "candidates": [
-        {
-          "id": 1557,
-          "title": "Cybernator",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Cybernator\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "SNES-0006",
-      "title": "Super Ghouls 'N Ghosts",
-      "platform": "SNES",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SNSP-CM-GPS",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Super Ghouls 'N Ghosts",
-      "platformId": 6,
-      "candidates": [
-        {
-          "id": 2224,
-          "title": "Super Ghouls 'n Ghosts",
-          "regionId": 2
-        },
-        {
-          "id": 134606,
-          "title": "Super Ghouls 'N Ghosts: Super Arthur",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Super Ghouls 'N Ghosts\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "SNES-0008",
       "title": "Street Fighter II: The World Warrior",
       "platform": "SNES",
@@ -2634,30 +2041,6 @@
         }
       ],
       "inputKey": "{\"title\":\"Street Fighter II: The World Warrior\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "SNES-0010",
-      "title": "Kick Off 3: European Challenge",
-      "platform": "SNES",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SNSP-37-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Kick Off 3: European Challenge",
-      "platformId": 6,
-      "candidates": [
-        {
-          "id": 3824,
-          "title": "Kick Off 3: European Challenge",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Kick Off 3: European Challenge\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     }
   ]

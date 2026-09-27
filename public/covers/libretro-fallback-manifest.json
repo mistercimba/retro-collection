@@ -1,292 +1,173 @@
 {
-  "generatedAt": "2026-09-27T10:48:30.597Z",
-  "source": "libretro-thumbnails",
+  "generatedAt": "2026-09-27T10:51:36.686Z",
+  "source": "libretro-strict-title",
   "policy": "strict-exact-title-pal-fallback",
-  "matched": 41,
+  "matched": 24,
   "entries": {
-    "GBA-0001": {
-      "file": "/covers/GBA-0001.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Pokemon - Emerald Version (USA, Europe).png"
-    },
-    "GBA-0004": {
-      "file": "/covers/GBA-0004.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Pokemon - FireRed Version (USA, Europe) (Rev 1).png"
-    },
-    "GBA-0005": {
-      "file": "/covers/GBA-0005.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Pokemon - LeafGreen Version (USA, Europe) (Rev 1).png"
-    },
-    "GBA-0007": {
-      "file": "/covers/GBA-0007.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Pokemon - Ruby Version (USA, Europe) (Rev 1).png"
-    },
     "GBA-0014": {
       "file": "/covers/GBA-0014.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
       "sourcePath": "Named_Boxarts/Hello Kitty - Happy Party Pals (Europe) (En,Fr,De,Es).png"
     },
     "GBA-0028": {
       "file": "/covers/GBA-0028.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
       "sourcePath": "Named_Boxarts/Barbie and the Magic of Pegasus (Europe) (En,Fr,De,Es,It,Nl).png"
     },
-    "GBA-0030": {
-      "file": "/covers/GBA-0030.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Classic NES Series - Excitebike (USA, Europe).png"
-    },
-    "GBA-0035": {
-      "file": "/covers/GBA-0035.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Classic NES Series - Donkey Kong (USA, Europe).png"
-    },
-    "GBA-0039": {
-      "file": "/covers/GBA-0039.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Spider-Man - Mysterio's Menace (USA, Europe).png"
-    },
-    "GBA-0045": {
-      "file": "/covers/GBA-0045.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Need for Speed - Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).png"
-    },
     "GBA-0048": {
       "file": "/covers/GBA-0048.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
       "sourcePath": "Named_Boxarts/Top Gear Rally (Europe) (En,Fr,De,Es,It).png"
     },
     "GBA-0053": {
       "file": "/covers/GBA-0053.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
       "sourcePath": "Named_Boxarts/Tweety and the Magic Gems (Europe).png"
     },
-    "GBC-0008": {
-      "file": "/covers/GBC-0008.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
-      "sourcePath": "Named_Boxarts/Pokemon - Silver Version (USA, Europe) (SGB Enhanced) (GB Compatible).png"
-    },
-    "GBC-0013": {
-      "file": "/covers/GBC-0013.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
-      "sourcePath": "Named_Boxarts/Star Wars - The Empire Strikes Back (USA, Europe).png"
-    },
     "GBC-0015": {
       "file": "/covers/GBC-0015.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
       "sourcePath": "Named_Boxarts/Boulder Dash (Europe).png"
     },
-    "GBC-0016": {
-      "file": "/covers/GBC-0016.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
-      "sourcePath": "Named_Boxarts/Wario Land II (USA, Europe) (SGB Enhanced).png"
-    },
-    "GBC-0018": {
-      "file": "/covers/GBC-0018.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
-      "sourcePath": "Named_Boxarts/Star Trek - 25th Anniversary (USA, Europe).png"
-    },
     "GBC-0019": {
       "file": "/covers/GBC-0019.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
       "sourcePath": "Named_Boxarts/Gargoyle's Quest (Europe) (Rev 1).png"
     },
-    "GBC-0029": {
-      "file": "/covers/GBC-0029.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
-      "sourcePath": "Named_Boxarts/Bart Simpson's Escape from Camp Deadly (USA, Europe).png"
-    },
-    "GBC-0031": {
-      "file": "/covers/GBC-0031.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
-      "sourcePath": "Named_Boxarts/Harry Potter and the Chamber of Secrets (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,Da).png"
-    },
-    "GBC-0033": {
-      "file": "/covers/GBC-0033.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
-      "sourcePath": "Named_Boxarts/Speedy Gonzales - Aztec Adventure (USA, Europe) (GB Compatible).png"
-    },
-    "GBC-0034": {
-      "file": "/covers/GBC-0034.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
-      "sourcePath": "Named_Boxarts/Barbie - Game Girl (USA, Europe).png"
-    },
     "GBC-0044": {
       "file": "/covers/GBC-0044.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
       "sourcePath": "Named_Boxarts/Golden Goal (Europe) (En,Fr,De,Es,It,Nl,Sv) (GB Compatible).png"
     },
     "GBC-0049": {
       "file": "/covers/GBC-0049.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
       "sourcePath": "Named_Boxarts/Atlantis - The Lost Empire (Europe) (En,Es,It).png"
     },
-    "GBC-0051": {
-      "file": "/covers/GBC-0051.png",
-      "source": "libretro-thumbnails",
-      "policy": "strict-exact-title-pal-fallback",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
-      "sourcePath": "Named_Boxarts/Bugs Bunny - Crazy Castle 3 (USA, Europe) (GB Compatible).png"
-    },
     "NES-0001": {
       "file": "/covers/NES-0001.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Jackie Chan's Action Kung Fu (Europe).png"
     },
     "NES-0002": {
       "file": "/covers/NES-0002.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Double Dragon II - The Revenge (Europe).png"
     },
     "NES-0005": {
       "file": "/covers/NES-0005.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Gradius (Europe).png"
     },
     "NES-0013": {
       "file": "/covers/NES-0013.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Little Nemo - The Dream Master (Europe).png"
     },
     "NES-0015": {
       "file": "/covers/NES-0015.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/California Games (Europe).png"
     },
     "NES-0017": {
       "file": "/covers/NES-0017.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/WWF WrestleMania - Challenge (Europe).png"
     },
     "NES-0018": {
       "file": "/covers/NES-0018.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Super Spike V'Ball (Europe).png"
     },
     "NES-0019": {
       "file": "/covers/NES-0019.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Willow (Europe).png"
     },
     "PS2-0052": {
       "file": "/covers/PS2-0052.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
       "sourcePath": "Named_Boxarts/Buzz! O Grande Quiz (Portugal).png"
     },
     "PS2-0060": {
       "file": "/covers/PS2-0060.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
       "sourcePath": "Named_Boxarts/Hitman - Blood Money (Europe).png"
     },
     "PS2-0099": {
       "file": "/covers/PS2-0099.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
       "sourcePath": "Named_Boxarts/Disney's The Haunted Mansion (Europe) (En,Fr,De,Es,It).png"
     },
     "PS2-0120": {
       "file": "/covers/PS2-0120.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
       "sourcePath": "Named_Boxarts/Cabela's Dangerous Hunts (Europe, Australia).png"
     },
     "PSP-0003": {
       "file": "/covers/PSP-0003.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_Portable",
       "sourcePath": "Named_Boxarts/Need for Speed - Most Wanted - 5-1-0 (Europe) (En,Fr,De,Es,It).png"
     },
     "SNES-0002": {
       "file": "/covers/SNES-0002.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Cybernator (Europe).png"
     },
     "SNES-0006": {
       "file": "/covers/SNES-0006.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Super Ghouls 'N Ghosts (Europe).png"
     },
     "SNES-0010": {
       "file": "/covers/SNES-0010.png",
-      "source": "libretro-thumbnails",
+      "source": "libretro-strict-title",
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Kick Off 3 - European Challenge (Europe) (En,Fr,De,Es,It).png"

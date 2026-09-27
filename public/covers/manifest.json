@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-09-27T10:48:24.378Z",
+  "generatedAt": "2026-09-27T10:51:36.686Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
     "gametdb",
     "libretro-nintendo-serial",
+    "libretro-strict-title",
     "libretro-redump-serial"
   ],
   "sourceUrl": "https://thegamesdb.net",
@@ -401,6 +402,13 @@
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1039
     },
+    "GBA-0014": {
+      "file": "/covers/GBA-0014.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Hello Kitty - Happy Party Pals (Europe) (En,Fr,De,Es).png"
+    },
     "GBA-0015": {
       "file": "/covers/GBA-0015.png",
       "source": "libretro-nintendo-serial",
@@ -556,6 +564,13 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Advance%20Wars%20(Europe)%20(En%2CFr%2CDe%2CEs).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
+    },
+    "GBA-0028": {
+      "file": "/covers/GBA-0028.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Barbie and the Magic of Pegasus (Europe) (En,Fr,De,Es,It,Nl).png"
     },
     "GBA-0029": {
       "file": "/covers/GBA-0029.jpg",
@@ -713,6 +728,13 @@
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
+    "GBA-0048": {
+      "file": "/covers/GBA-0048.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Top Gear Rally (Europe) (En,Fr,De,Es,It).png"
+    },
     "GBA-0049": {
       "file": "/covers/GBA-0049.png",
       "source": "libretro-nintendo-serial",
@@ -748,6 +770,13 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Starsky%20_%20Hutch%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 999
+    },
+    "GBA-0053": {
+      "file": "/covers/GBA-0053.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Tweety and the Magic Gems (Europe).png"
     },
     "GBA-0055": {
       "file": "/covers/GBA-0055.png",
@@ -983,6 +1012,13 @@
       "nameScore": 1000,
       "fingerprint": "e7107780fc19da29"
     },
+    "GBC-0015": {
+      "file": "/covers/GBC-0015.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Boulder Dash (Europe).png"
+    },
     "GBC-0017": {
       "file": "/covers/GBC-0017.jpg",
       "source": "thegamesdb",
@@ -1000,6 +1036,13 @@
       "matchScore": 1545,
       "nameScore": 1000,
       "fingerprint": "5e974d8ea9b0a6d3"
+    },
+    "GBC-0019": {
+      "file": "/covers/GBC-0019.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Gargoyle's Quest (Europe) (Rev 1).png"
     },
     "GBC-0022": {
       "file": "/covers/GBC-0022.jpg",
@@ -1163,6 +1206,13 @@
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
+    "GBC-0044": {
+      "file": "/covers/GBC-0044.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Golden Goal (Europe) (En,Fr,De,Es,It,Nl,Sv) (GB Compatible).png"
+    },
     "GBC-0045": {
       "file": "/covers/GBC-0045.png",
       "source": "libretro-nintendo-serial",
@@ -1186,6 +1236,13 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Color/master/Named_Boxarts/Laura%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt%2CNl%2CSv%2CDa).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
+    },
+    "GBC-0049": {
+      "file": "/covers/GBC-0049.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Atlantis - The Lost Empire (Europe) (En,Es,It).png"
     },
     "GBC-0050": {
       "file": "/covers/GBC-0050.jpg",
@@ -2352,6 +2409,20 @@
       "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/YR9P.jpg",
       "matchScore": 1000
     },
+    "NES-0001": {
+      "file": "/covers/NES-0001.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Jackie Chan's Action Kung Fu (Europe).png"
+    },
+    "NES-0002": {
+      "file": "/covers/NES-0002.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Double Dragon II - The Revenge (Europe).png"
+    },
     "NES-0003": {
       "file": "/covers/NES-0003.jpg",
       "source": "thegamesdb",
@@ -2388,6 +2459,13 @@
       "nameScore": 1000,
       "fingerprint": "0dbce503ec5ae350"
     },
+    "NES-0005": {
+      "file": "/covers/NES-0005.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Gradius (Europe).png"
+    },
     "NES-0006": {
       "file": "/covers/NES-0006.jpg",
       "source": "thegamesdb",
@@ -2423,6 +2501,41 @@
       "matchScore": 1555,
       "nameScore": 1000,
       "fingerprint": "f131f3912ea305f4"
+    },
+    "NES-0013": {
+      "file": "/covers/NES-0013.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Little Nemo - The Dream Master (Europe).png"
+    },
+    "NES-0015": {
+      "file": "/covers/NES-0015.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/California Games (Europe).png"
+    },
+    "NES-0017": {
+      "file": "/covers/NES-0017.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/WWF WrestleMania - Challenge (Europe).png"
+    },
+    "NES-0018": {
+      "file": "/covers/NES-0018.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Spike V'Ball (Europe).png"
+    },
+    "NES-0019": {
+      "file": "/covers/NES-0019.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Willow (Europe).png"
     },
     "PC-0002": {
       "file": "/covers/PC-0002.jpg",
@@ -4140,6 +4253,13 @@
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
     },
+    "PS2-0052": {
+      "file": "/covers/PS2-0052.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Buzz! O Grande Quiz (Portugal).png"
+    },
     "PS2-0053": {
       "file": "/covers/PS2-0053.png",
       "source": "libretro-redump-serial",
@@ -4229,6 +4349,13 @@
       "matchScore": 1660,
       "nameScore": 1000,
       "fingerprint": "b4e5899fdb5dcf05"
+    },
+    "PS2-0060": {
+      "file": "/covers/PS2-0060.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Hitman - Blood Money (Europe).png"
     },
     "PS2-0061": {
       "file": "/covers/PS2-0061.png",
@@ -4674,6 +4801,13 @@
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
     },
+    "PS2-0099": {
+      "file": "/covers/PS2-0099.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Disney's The Haunted Mansion (Europe) (En,Fr,De,Es,It).png"
+    },
     "PS2-0100": {
       "file": "/covers/PS2-0100.png",
       "source": "libretro-redump-serial",
@@ -4920,6 +5054,13 @@
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
     },
+    "PS2-0120": {
+      "file": "/covers/PS2-0120.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Cabela's Dangerous Hunts (Europe, Australia).png"
+    },
     "PS2-0121": {
       "file": "/covers/PS2-0121.png",
       "source": "libretro-redump-serial",
@@ -5112,6 +5253,13 @@
       "nameScore": 1000,
       "fingerprint": "2558f8a2fb4474e7"
     },
+    "PSP-0003": {
+      "file": "/covers/PSP-0003.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_Portable",
+      "sourcePath": "Named_Boxarts/Need for Speed - Most Wanted - 5-1-0 (Europe) (En,Fr,De,Es,It).png"
+    },
     "PSP-0006": {
       "file": "/covers/PSP-0006.png",
       "source": "libretro-redump-serial",
@@ -5172,6 +5320,13 @@
       "nameScore": 1000,
       "fingerprint": "dce8caee222ad31a"
     },
+    "SNES-0002": {
+      "file": "/covers/SNES-0002.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Cybernator (Europe).png"
+    },
     "SNES-0004": {
       "file": "/covers/SNES-0004.jpg",
       "source": "thegamesdb",
@@ -5208,6 +5363,13 @@
       "nameScore": 1000,
       "fingerprint": "4ca086cfe02a0a1f"
     },
+    "SNES-0006": {
+      "file": "/covers/SNES-0006.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Ghouls 'N Ghosts (Europe).png"
+    },
     "SNES-0007": {
       "file": "/covers/SNES-0007.jpg",
       "source": "thegamesdb",
@@ -5243,6 +5405,13 @@
       "matchScore": 1545,
       "nameScore": 1000,
       "fingerprint": "5a6637b886bfbc2a"
+    },
+    "SNES-0010": {
+      "file": "/covers/SNES-0010.png",
+      "source": "libretro-strict-title",
+      "policy": "strict-exact-title-pal-fallback",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Kick Off 3 - European Challenge (Europe) (En,Fr,De,Es,It).png"
     },
     "SWITCH-0001": {
       "file": "/covers/SWITCH-0001.jpg",
@@ -5663,9 +5832,9 @@
       "matchScore": 1000
     }
   },
-  "matched": 406,
-  "missing": 110,
-  "reused": 404,
-  "apiLookups": 5,
-  "remainingMonthlyAllowance": 74
+  "matched": 430,
+  "missing": 86,
+  "reused": 406,
+  "apiLookups": 0,
+  "remainingMonthlyAllowance": 64
 }
