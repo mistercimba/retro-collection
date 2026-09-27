@@ -47,6 +47,7 @@ const PAL_MARKERS = [
   "austria",
   "switzerland",
   "ireland",
+  "world",
 ];
 
 const HARD_NON_PAL_MARKERS = [
@@ -79,10 +80,41 @@ function titleCoreFromFilename(filePath) {
   return filename.replace(/\s*\([^)]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
 }
 
-function significantTokens(value) {
+function canonicalTitle(value) {
   return normalize(value)
+    .replace(/\bclassic nes series\b/g, " ")
+    .replace(/\bnes classics\b/g, " ")
+    .replace(/\bversion\b/g, " ")
+    .replace(/\bspecial pikachu edition\b/g, " ")
+    .replace(/\bspider man\b/g, "spiderman")
+    .replace(/\bwarioware\b/g, "wario ware")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function significantTokens(value) {
+  return canonicalTitle(value)
     .split(" ")
     .filter((token) => token.length > 1 && !STOP_WORDS.has(token));
+}
+
+function numberTokens(value) {
+  const roman = { i: "1", ii: "2", iii: "3", iv: "4", v: "5", vi: "6" };
+  return significantTokens(value)
+    .filter((token) => /^\d+$/.test(token) || roman[token])
+    .map((token) => roman[token] ?? token);
+}
+
+function requestedCoverage(a, b) {
+  const requested = new Set(significantTokens(a));
+  const candidate = new Set(significantTokens(b));
+  if (!requested.size || !candidate.size) return { coverage: 0, precision: 0 };
+  let overlap = 0;
+  for (const token of requested) if (candidate.has(token)) overlap += 1;
+  return {
+    coverage: overlap / requested.size,
+    precision: overlap / candidate.size,
+  };
 }
 
 function diceCoefficient(a, b) {
@@ -138,21 +170,35 @@ function candidateScore(filePath, game) {
 
   const base = titleCoreFromFilename(filePath);
   const requested = game.title;
-  const baseNorm = normalize(base);
-  const requestedNorm = normalize(requested);
+  const baseNorm = canonicalTitle(base);
+  const requestedNorm = canonicalTitle(requested);
+
+  // Do not silently cross numbered sequels (Formula One 2005 -> 2001,
+  // Tomb Raider II -> Tomb Raider, etc.).
+  const requestedNumbers = numberTokens(requested);
+  const candidateNumbers = numberTokens(base);
+  if (requestedNumbers.some((number) => !candidateNumbers.includes(number))) return -Infinity;
 
   let score = 0;
-  if (baseNorm === requestedNorm) score += 1000;
-  else {
-    const tokens = tokenScore(base, requested);
-    const dice = diceCoefficient(base, requested);
-    if (tokens < 0.62 || dice < 0.55) return -Infinity;
-    score += Math.round(tokens * 500 + dice * 350);
-    if (baseNorm.includes(requestedNorm) || requestedNorm.includes(baseNorm)) score += 120;
+  if (baseNorm === requestedNorm) {
+    score += 1000;
+  } else {
+    const { coverage, precision } = requestedCoverage(requested, base);
+    const dice = diceCoefficient(baseNorm, requestedNorm);
+    const compactBase = baseNorm.replace(/\s/g, "");
+    const compactRequested = requestedNorm.replace(/\s/g, "");
+    const contains = compactBase.includes(compactRequested) || compactRequested.includes(compactBase);
+
+    if (coverage < 0.72 && !contains) return -Infinity;
+    if (dice < 0.42 && !contains) return -Infinity;
+
+    score += Math.round(coverage * 560 + precision * 220 + dice * 240);
+    if (contains) score += 120;
   }
 
   const normalizedPath = normalize(filePath);
   if (normalizedPath.includes("europe")) score += 160;
+  if (normalizedPath.includes("world")) score += 90;
   if (normalizedPath.includes("europe australia")) score += 10;
 
   for (const hint of preferredCountryHints(game)) {
@@ -162,6 +208,7 @@ function candidateScore(filePath, game) {
   const edition = normalize(game.edition);
   if (edition && edition !== "standard" && normalizedPath.includes(edition)) score += 35;
 
+  if (normalizedPath.includes("alternate")) score -= 35;
   if (normalizedPath.includes("proto") || normalizedPath.includes("beta") || normalizedPath.includes("demo")) score -= 300;
   if (normalizedPath.includes("aftermarket") || normalizedPath.includes("unl")) score -= 200;
 
@@ -262,8 +309,14 @@ for (const [index, game] of games.entries()) {
   const best = candidates[0];
   const runnerUp = candidates[1];
 
+  const sameTitleVariant =
+    best &&
+    runnerUp &&
+    canonicalTitle(titleCoreFromFilename(best.filePath)) === canonicalTitle(titleCoreFromFilename(runnerUp.filePath));
+
   // Be conservative. A wrong regional cover is worse than a placeholder.
-  if (!best || best.score < 620 || (runnerUp && best.score - runnerUp.score < 18 && best.score < 950)) {
+  // Multiple revisions/language variants of the same PAL title are safe enough.
+  if (!best || best.score < 620 || (runnerUp && !sameTitleVariant && best.score - runnerUp.score < 18 && best.score < 950)) {
     missing.push({
       ...game,
       reason: best ? "ambiguous-match" : "no-pal-match",
