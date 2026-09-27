@@ -1,0 +1,1939 @@
+{
+  "generatedAt": "2026-09-27T10:30:23.307Z",
+  "source": "libretro-redump-serial",
+  "resolved": 178,
+  "added": 67,
+  "replaced": 111,
+  "unresolvedSerials": 35,
+  "entries": [
+    {
+      "collectionId": "PS1-0001",
+      "platform": "Playstation",
+      "title": "Silent Hill",
+      "serial": "SLES-01514",
+      "redumpName": "Silent Hill (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Silent Hill (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0002",
+      "platform": "Playstation",
+      "title": "Parasite Eve II",
+      "serial": "SLES-02558",
+      "redumpName": "Parasite Eve II (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Parasite Eve II (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0003",
+      "platform": "Playstation",
+      "title": "Digimon World 2003",
+      "serial": "SLES-03936",
+      "redumpName": "Digimon World 2003 (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Digimon World 2003 (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0005",
+      "platform": "Playstation",
+      "title": "Dino Crisis 2",
+      "serial": "SLES-03221",
+      "redumpName": "Dino Crisis 2 (Europe)",
+      "thumbnail": "Named_Boxarts/Dino Crisis 2 (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0006",
+      "platform": "Playstation",
+      "title": "Resident Evil Director's Cut",
+      "serial": "SLES-00969",
+      "redumpName": "Resident Evil - Director's Cut (Europe)",
+      "thumbnail": "Named_Boxarts/Resident Evil - Director's Cut (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0007",
+      "platform": "Playstation",
+      "title": "Nightmare Creatures",
+      "serial": "SCES-00582",
+      "redumpName": "Nightmare Creatures (Europe)",
+      "thumbnail": "Named_Boxarts/Nightmare Creatures (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0008",
+      "platform": "Playstation",
+      "title": "Vagrant Story",
+      "serial": "SLES-02754",
+      "redumpName": "Vagrant Story (Europe)",
+      "thumbnail": "Named_Boxarts/Vagrant Story (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0009",
+      "platform": "Playstation",
+      "title": "Bugs Bunny: Lost in Time",
+      "serial": "SLES-01726",
+      "redumpName": "Bugs Bunny - Lost in Time (Europe) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Bugs Bunny - Lost in Time (Europe) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-0010",
+      "platform": "Playstation",
+      "title": "Digimon Digital Card Battle",
+      "serial": "SLES-03900",
+      "redumpName": "Digimon Digital Card Battle (Europe)",
+      "thumbnail": "Named_Boxarts/Digimon Digital Card Battle (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0011",
+      "platform": "Playstation",
+      "title": "Final Fantasy Origins",
+      "serial": "SLES-04034",
+      "redumpName": "Final Fantasy Origins - Final Fantasy (Europe)",
+      "thumbnail": "Named_Boxarts/Final Fantasy Origins - Final Fantasy (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-0013",
+      "platform": "Playstation",
+      "title": "Resident Evil 2",
+      "serial": "SLES-00972",
+      "redumpName": "Resident Evil 2 (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Resident Evil 2 (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0014",
+      "platform": "Playstation",
+      "title": "Fear Effect 2 Retro Helix",
+      "serial": "SLES-03386",
+      "redumpName": "Fear Effect 2 - Retro Helix (Europe) (En,Fr,De) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Fear Effect 2 - Retro Helix (Europe) (En,Fr,De) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0015",
+      "platform": "Playstation",
+      "title": "Metal Gear Solid",
+      "serial": "SLES-01370",
+      "redumpName": "Metal Gear Solid (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Metal Gear Solid (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0017",
+      "platform": "Playstation",
+      "title": "Ape Escape",
+      "serial": "SCES-01564",
+      "redumpName": "Ape Escape (Europe)",
+      "thumbnail": "Named_Boxarts/Ape Escape (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0018",
+      "platform": "Playstation",
+      "title": "Alone In The Dark The New Nightmare",
+      "serial": "SLES-02801",
+      "redumpName": "Alone in the Dark - The New Nightmare (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Alone in the Dark - The New Nightmare (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0019",
+      "platform": "Playstation",
+      "title": "ISS Pro Evolution",
+      "serial": "SLES-02095",
+      "redumpName": "ISS Pro Evolution (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/ISS Pro Evolution (Europe) (En,Fr,De) (EDC).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0020",
+      "platform": "Playstation",
+      "title": "MediEvil",
+      "serial": "SCES-00311",
+      "redumpName": "MediEvil (Europe)",
+      "thumbnail": "Named_Boxarts/MediEvil (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0021",
+      "platform": "Playstation",
+      "title": "Final Fantasy IX",
+      "serial": "SLES-02965",
+      "redumpName": "Final Fantasy IX (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Final Fantasy IX (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0022",
+      "platform": "Playstation",
+      "title": "Spider-Man",
+      "serial": "SLES-02886",
+      "redumpName": "Spider-Man (Europe)",
+      "thumbnail": "Named_Boxarts/Spider-Man (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0023",
+      "platform": "Playstation",
+      "title": "Croc 2",
+      "serial": "SLES-02088",
+      "redumpName": "Croc 2 (Europe) (En,Fr,De,Es,It,Nl,Sv)",
+      "thumbnail": "Named_Boxarts/Croc 2 (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0025",
+      "platform": "Playstation",
+      "title": "Final Fantasy VI",
+      "serial": "SCES-03828",
+      "redumpName": "Final Fantasy VI (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Final Fantasy VI (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0027",
+      "platform": "Playstation",
+      "title": "Pandemonium",
+      "serial": "SLES-00526",
+      "redumpName": "Pandemonium! (Europe)",
+      "thumbnail": "Named_Boxarts/Pandemonium! (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0028",
+      "platform": "Playstation",
+      "title": "Alone In The Dark The New Nightmare",
+      "serial": "SLES-02801",
+      "redumpName": "Alone in the Dark - The New Nightmare (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Alone in the Dark - The New Nightmare (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0029",
+      "platform": "Playstation",
+      "title": "Jersey Devil",
+      "serial": "SLES-00598",
+      "redumpName": "Jersey Devil (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Jersey Devil (Europe) (En,Fr,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0030",
+      "platform": "Playstation",
+      "title": "Tekken 3",
+      "serial": "SCES-01237",
+      "redumpName": "Tekken 3 (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Tekken 3 (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0031",
+      "platform": "Playstation",
+      "title": "Ridge Racer",
+      "serial": "SCES-00001",
+      "redumpName": "Ridge Racer (Europe)",
+      "thumbnail": "Named_Boxarts/Ridge Racer (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0033",
+      "platform": "Playstation",
+      "title": "Donald Duck Quack Attack",
+      "serial": "SLES-03095",
+      "redumpName": "Disney's Donald Duck - Quack Attack (Europe) (En,Fr,De,It)",
+      "thumbnail": "Named_Boxarts/Disney's Donald Duck - Quack Attack (Europe) (En,Fr,De,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0034",
+      "platform": "Playstation",
+      "title": "MediEvil 2",
+      "serial": "SCES-02545",
+      "redumpName": "MediEvil 2 (Europe) (Es,It,Pt)",
+      "thumbnail": "Named_Boxarts/MediEvil 2 (Europe) (En,Fr,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0035",
+      "platform": "Playstation",
+      "title": "Spyro The Dragon",
+      "serial": "SCES-01438",
+      "redumpName": "Spyro the Dragon (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Spyro the Dragon (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-0036",
+      "platform": "Playstation",
+      "title": "Fear Effect",
+      "serial": "SLES-02166",
+      "redumpName": "Fear Effect (Europe) (En,Es,It) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Fear Effect (Europe) (En,Es,It) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0037",
+      "platform": "Playstation",
+      "title": "Final Fantasy VII",
+      "serial": "SCES-00867",
+      "redumpName": "Final Fantasy VII (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Final Fantasy VII (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0038",
+      "platform": "Playstation",
+      "title": "Spyro Year Of The Dragon",
+      "serial": "SCES-02835",
+      "redumpName": "Spyro - Year of the Dragon (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Spyro - Year of the Dragon (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0039",
+      "platform": "Playstation",
+      "title": "Resident Evil Survivor",
+      "serial": "SLES-02732",
+      "redumpName": "Resident Evil - Survivor (Europe)",
+      "thumbnail": "Named_Boxarts/Resident Evil - Survivor (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0040",
+      "platform": "Playstation",
+      "title": "Crash Bandicoot 2 Cortex Strikes Back",
+      "serial": "SCES-00967",
+      "redumpName": "Crash Bandicoot 2 - Cortex Strikes Back (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Crash Bandicoot 2 - Cortex Strikes Back (Europe) (En,Fr,De,Es,It) (EDC).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0041",
+      "platform": "Playstation",
+      "title": "Wipeout 2097",
+      "serial": "SLES-00327",
+      "redumpName": "Wipeout 2097 (Europe)",
+      "thumbnail": "Named_Boxarts/WipEout 2097 (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0043",
+      "platform": "Playstation",
+      "title": "Chronicles of the Sword",
+      "serial": "SLES-00165",
+      "redumpName": "Chronicles of the Sword (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Chronicles of the Sword (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0044",
+      "platform": "Playstation",
+      "title": "Tony Hawk's Skateboarding",
+      "serial": "SLES-02055",
+      "redumpName": "Tony Hawk's Skateboarding (Europe)",
+      "thumbnail": "Named_Boxarts/Tony Hawk's Skateboarding (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0045",
+      "platform": "Playstation",
+      "title": "Harry Potter and the Chamber of Secrets",
+      "serial": "SLES-03972",
+      "redumpName": "Harry Potter and the Chamber of Secrets (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Harry Potter and the Chamber of Secrets (Europe) (En,Fr,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0046",
+      "platform": "Playstation",
+      "title": "Gran Turismo",
+      "serial": "SCES-00984",
+      "redumpName": "Gran Turismo (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Gran Turismo (Europe) (En,Fr,De,Es,It) (EDC).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0047",
+      "platform": "Playstation",
+      "title": "Hot Wheels Turbo Racing",
+      "serial": "SLES-02198",
+      "redumpName": "Hot Wheels - Turbo Racing (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Hot Wheels - Turbo Racing (Europe) (En,Fr,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0048",
+      "platform": "Playstation",
+      "title": "Resident Evil 2",
+      "serial": "SLES-10972",
+      "redumpName": "Resident Evil 2 (Europe) (Disc 2)",
+      "thumbnail": "Named_Boxarts/Resident Evil 2 (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0049",
+      "platform": "Playstation",
+      "title": "Rayman",
+      "serial": "SLES-00049",
+      "redumpName": "Rayman (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Rayman (Europe) (En,Fr,De) (EDC).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0050",
+      "platform": "Playstation",
+      "title": "Oddworld: Abe's Oddysee",
+      "serial": "SLES-00664",
+      "redumpName": "Oddworld - Abe's Oddysee (Europe)",
+      "thumbnail": "Named_Boxarts/Oddworld - Abe's Oddysee (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0052",
+      "platform": "Playstation",
+      "title": "Croc: Legend of the Gobbos",
+      "serial": "SLES-00593",
+      "redumpName": "Croc - Legend of the Gobbos (Europe)",
+      "thumbnail": "Named_Boxarts/Croc - Legend of the Gobbos (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0053",
+      "platform": "Playstation",
+      "title": "Tony Hawk's Pro Skater 3",
+      "serial": "SLES-03645",
+      "redumpName": "Tony Hawk's Pro Skater 3 (Europe)",
+      "thumbnail": "Named_Boxarts/Tony Hawk's Pro Skater 3 (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0055",
+      "platform": "Playstation",
+      "title": "Jungle Book Groove Party",
+      "serial": "SCES-03020",
+      "redumpName": "Walt Disney's The Jungle Book - Groove Party (Europe)",
+      "thumbnail": "Named_Boxarts/Walt Disney's The Jungle Book - Groove Party (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-0058",
+      "platform": "Playstation",
+      "title": "Aqua GT",
+      "serial": "SLES-03390",
+      "redumpName": "Aqua GT (Europe) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Aqua GT (Europe) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-0059",
+      "platform": "Playstation",
+      "title": "Star Wars Episode I: The Phantom Menace",
+      "serial": "SLES-02034",
+      "redumpName": "Star Wars - Episode I - The Phantom Menace (Europe)",
+      "thumbnail": "Named_Boxarts/Star Wars - Episode I - The Phantom Menace (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0060",
+      "platform": "Playstation",
+      "title": "Donald Duck: Quack Attack",
+      "serial": "SLES-03095",
+      "redumpName": "Disney's Donald Duck - Quack Attack (Europe) (En,Fr,De,It)",
+      "thumbnail": "Named_Boxarts/Disney's Donald Duck - Quack Attack (Europe) (En,Fr,De,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0062",
+      "platform": "Playstation",
+      "title": "Grand Theft Auto 2",
+      "serial": "SLES-01404",
+      "redumpName": "Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rev 1)",
+      "thumbnail": "Named_Boxarts/Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0064",
+      "platform": "Playstation",
+      "title": "Driver",
+      "serial": "SLES-01816",
+      "redumpName": "Driver (Europe)",
+      "thumbnail": "Named_Boxarts/Driver (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0065",
+      "platform": "Playstation",
+      "title": "Arcade Party Pak",
+      "serial": "SLES-02339",
+      "redumpName": "Arcade Party Pak (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Arcade Party Pak (Europe, Australia).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-0066",
+      "platform": "Playstation",
+      "title": "Tomb Raider",
+      "serial": "SLES-00024",
+      "redumpName": "Tomb Raider (Europe)",
+      "thumbnail": "Named_Boxarts/Tomb Raider (Europe) (EDC).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0068",
+      "platform": "Playstation",
+      "title": "Bust-A-Move 2 Arcade Edition",
+      "serial": "SLES-00278",
+      "redumpName": "Bust-A-Move 2 - Arcade Edition (Europe)",
+      "thumbnail": "Named_Boxarts/Bust-A-Move 2 - Arcade Edition (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0069",
+      "platform": "Playstation",
+      "title": "Formula 1",
+      "serial": "SLES-00298",
+      "redumpName": "Formula 1 (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Formula 1 (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0070",
+      "platform": "Playstation",
+      "title": "Mat Hoffman's Pro BMX",
+      "serial": "SLES-03217",
+      "redumpName": "Mat Hoffman's Pro BMX (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Mat Hoffman's Pro BMX (Europe, Australia).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0072",
+      "platform": "Playstation",
+      "title": "Who Wants to Be a Millionaire?",
+      "serial": "SLES-02988",
+      "redumpName": "Who Wants to Be a Millionaire (Europe)",
+      "thumbnail": "Named_Boxarts/Who Wants to Be a Millionaire (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0073",
+      "platform": "Playstation",
+      "title": "Vanishing Point",
+      "serial": "SLES-02534",
+      "redumpName": "Vanishing Point (Europe) (En,Fr,De,Es)",
+      "thumbnail": "Named_Boxarts/Vanishing Point (Europe) (En,Fr,De,Es).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-0075",
+      "platform": "Playstation",
+      "title": "Skullmonkeys",
+      "serial": "SLES-01090",
+      "redumpName": "Skullmonkeys (Europe)",
+      "thumbnail": "Named_Boxarts/Skullmonkeys (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0076",
+      "platform": "Playstation",
+      "title": "Crash Bandicoot 3: Warped",
+      "serial": "SCES-01420",
+      "redumpName": "Crash Bandicoot 3 - Warped (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Crash Bandicoot 3 - Warped (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0077",
+      "platform": "Playstation",
+      "title": "Asterix",
+      "serial": "SLES-01748",
+      "redumpName": "Asterix (Europe) (En,Fr,Es,It)",
+      "thumbnail": "Named_Boxarts/Asterix (Europe) (De,Es,It) (Rev 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0078",
+      "platform": "Playstation",
+      "title": "G-Police",
+      "serial": "SLES-00082",
+      "redumpName": "G-Police (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/G-Police (Europe) (Disc 1).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0079",
+      "platform": "Playstation",
+      "title": "Guardian's Crusade",
+      "serial": "SLES-01793",
+      "redumpName": "Guardian's Crusade (Europe)",
+      "thumbnail": "Named_Boxarts/Guardian's Crusade (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0080",
+      "platform": "Playstation",
+      "title": "Ridge Racer Type 4",
+      "serial": "SCES-01706",
+      "redumpName": "Ridge Racer Type 4 (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Ridge Racer Type 4 (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0081",
+      "platform": "Playstation",
+      "title": "Mickey's Wild Adventure",
+      "serial": "SCES-00163",
+      "redumpName": "Mickey's Wild Adventure (Europe)",
+      "thumbnail": "Named_Boxarts/Mickey's Wild Adventure (Europe) (EDC).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0083",
+      "platform": "Playstation",
+      "title": "Heart of Darkness",
+      "serial": "SLES-00461",
+      "redumpName": "Heart of Darkness (Europe) (Disc 1)",
+      "thumbnail": "Named_Boxarts/Heart of Darkness (Europe) (Disc 1) (EDC).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0084",
+      "platform": "Playstation",
+      "title": "Tomb Raider III: Adventures of Lara Croft",
+      "serial": "SLES-01649",
+      "redumpName": "Tomb Raider III - Adventures of Lara Croft (Europe)",
+      "thumbnail": "Named_Boxarts/Tomb Raider III - Adventures of Lara Croft (Europe) (Rev 1) (EDC).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0085",
+      "platform": "Playstation",
+      "title": "Warzone 2100",
+      "serial": "SLES-00937",
+      "redumpName": "Warzone 2100 (Europe) (En,Es,It)",
+      "thumbnail": "Named_Boxarts/Warzone 2100 (Europe) (En,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS1-0086",
+      "platform": "Playstation",
+      "title": "Dalmatians 2",
+      "serial": "SLES-04061",
+      "redumpName": "Dalmatians 2 (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Dalmatians 2 (Europe) (En,Fr,De).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-0087",
+      "platform": "Playstation",
+      "title": "Advanced Dungeons & Dragons: Iron & Blood – Warriors of Ravenloft",
+      "serial": "SLES-00386",
+      "redumpName": "Advanced Dungeons & Dragons - Iron & Blood - Warriors of Ravenloft (Europe)",
+      "thumbnail": "Named_Boxarts/Advanced Dungeons _ Dragons - Iron _ Blood - Warriors of Ravenloft (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS1-EXTRA-0001",
+      "platform": "Playstation",
+      "title": "Ridge Racer Type 4 Collectors Demo",
+      "serial": "SCED-01982",
+      "redumpName": "Ridge Racer Type 4 Collectors Demo (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Ridge Racer Type 4 Collectors Demo (Europe, Australia).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0001",
+      "platform": "Playstation 2",
+      "title": "Project Zero 3",
+      "serial": "SLES-53825",
+      "redumpName": "Project Zero 3 (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Project Zero 3 (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0002",
+      "platform": "Playstation 2",
+      "title": "Nightmare Before Christmas: Oogie's Revenge",
+      "serial": "SLES-53192",
+      "redumpName": "Tim Burton's The Nightmare Before Christmas - Oogie's Revenge (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Tim Burton's The Nightmare Before Christmas - Oogie's Revenge (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0003",
+      "platform": "Playstation 2",
+      "title": "Crimson Tears",
+      "serial": "SLES-52534",
+      "redumpName": "Crimson Tears (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Crimson Tears (Europe) (En,Fr,De).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0004",
+      "platform": "Playstation 2",
+      "title": "Shadow Of The Colossus",
+      "serial": "SCES-53326",
+      "redumpName": "Shadow of the Colossus (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Shadow of the Colossus (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0006",
+      "platform": "Playstation 2",
+      "title": "Dark Cloud",
+      "serial": "SCES-50295",
+      "redumpName": "Dark Cloud (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Dark Cloud (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0007",
+      "platform": "Playstation 2",
+      "title": "Need For Speed Underground 2",
+      "serial": "SLES-52725",
+      "redumpName": "Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da) (v1.01)",
+      "thumbnail": "Named_Boxarts/Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da) (v1.01).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0008",
+      "platform": "Playstation 2",
+      "title": "Zone Of The Enders 2nd Runner",
+      "serial": "SLES-51113",
+      "redumpName": "Zone of the Enders - The 2nd Runner (Europe) (En,Fr,De,Es,It) (Special Edition)",
+      "thumbnail": "Named_Boxarts/Zone of the Enders - The 2nd Runner (Europe) (En,Fr,De,Es,It) (Special Edition).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0009",
+      "platform": "Playstation 2",
+      "title": "Marc Ecko's Getting Up Contents Under Pressure",
+      "serial": "SLES-53459",
+      "redumpName": "Marc Ecko's Getting Up - Contents Under Pressure (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Marc Ecko's Getting Up - Contents Under Pressure (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0011",
+      "platform": "Playstation 2",
+      "title": "Shadow of Memories",
+      "serial": "SLES-50112",
+      "redumpName": "Shadow of Memories (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Shadow of Memories (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0012",
+      "platform": "Playstation 2",
+      "title": "Final Fantasy X",
+      "serial": "SCES-50490",
+      "redumpName": "Final Fantasy X (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Final Fantasy X (Europe, Australia).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0013",
+      "platform": "Playstation 2",
+      "title": "Beyond Good And Evil",
+      "serial": "SLES-51917",
+      "redumpName": "Beyond Good & Evil (Europe, Australia) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Beyond Good _ Evil (Europe, Australia) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0014",
+      "platform": "Playstation 2",
+      "title": "Canis Canem Edit",
+      "serial": "SLES-53561",
+      "redumpName": "Canis Canem Edit (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Canis Canem Edit (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0015",
+      "platform": "Playstation 2",
+      "title": "Need for Speed Most Wanted",
+      "serial": "SLES-53557",
+      "redumpName": "Need for Speed - Most Wanted (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Need for Speed - Most Wanted (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0016",
+      "platform": "Playstation 2",
+      "title": "Onimusha 3",
+      "serial": "SLES-51914",
+      "redumpName": "Onimusha 3 (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Onimusha 3 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0017",
+      "platform": "Playstation 2",
+      "title": "God Of War",
+      "serial": "SCES-53133",
+      "redumpName": "God of War (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/God of War (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0018",
+      "platform": "Playstation 2",
+      "title": "God Of War 2",
+      "serial": "SCES-54206",
+      "redumpName": "God of War II (Europe, Australia) (En,Fr,De,Es,It,Ru)",
+      "thumbnail": "Named_Boxarts/God of War II (Europe, Australia) (En,Fr,De,Es,It,Ru).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0019",
+      "platform": "Playstation 2",
+      "title": "Maximo Vs Army Of Zin",
+      "serial": "SLES-51759",
+      "redumpName": "Maximo vs Army of Zin (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Maximo vs Army of Zin (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0020",
+      "platform": "Playstation 2",
+      "title": "Dragon Ball Z Budokai Tenkaichi 2",
+      "serial": "SLES-54164",
+      "redumpName": "Dragon Ball Z - Budokai Tenkaichi 2 (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Dragon Ball Z - Budokai Tenkaichi 2 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0021",
+      "platform": "Playstation 2",
+      "title": "Seven Samurai 20XX",
+      "serial": "SLES-52348",
+      "redumpName": "Seven Samurai 20XX (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Seven Samurai 20XX (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0022",
+      "platform": "Playstation 2",
+      "title": "Zone Of The Enders",
+      "serial": "SLES-50111",
+      "redumpName": "Zone of the Enders (Europe) (En,Fr,De,It)",
+      "thumbnail": "Named_Boxarts/Zone of the Enders (Europe) (En,Fr,De,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0023",
+      "platform": "Playstation 2",
+      "title": "Board Games Gallery (10 Games)",
+      "serial": "SLES-52714",
+      "redumpName": "Board Games Gallery (Europe)",
+      "thumbnail": "Named_Boxarts/Board Games Gallery (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0024",
+      "platform": "Playstation 2",
+      "title": "Worms 4: Mayhem",
+      "serial": "SLES-53096",
+      "redumpName": "Worms 4 - Mayhem (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Worms 4 - Mayhem (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0025",
+      "platform": "Playstation 2",
+      "title": "Devil May Cry",
+      "serial": "SLES-50358",
+      "redumpName": "Devil May Cry (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Devil May Cry (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0031",
+      "platform": "Playstation 2",
+      "title": "Kingdom Hearts",
+      "serial": "SCES-50967",
+      "redumpName": "Kingdom Hearts (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Kingdom Hearts (Europe, Australia).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0032",
+      "platform": "Playstation 2",
+      "title": "Yu-Gi-Oh Duelists Of The Roses",
+      "serial": "SLES-51579",
+      "redumpName": "Yu-Gi-Oh! The Duelists of the Roses (Europe)",
+      "thumbnail": "Named_Boxarts/Yu-Gi-Oh! The Duelists of the Roses (Europe) (Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0033",
+      "platform": "Playstation 2",
+      "title": "Ratchet: Gladiator",
+      "serial": "SCES-53285/P",
+      "redumpName": "Ratchet - Gladiator (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Ratchet - Gladiator (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0034",
+      "platform": "Playstation 2",
+      "title": "Hyper Street Fighter II: The Anniversary Edition",
+      "serial": "SLES-52444",
+      "redumpName": "Hyper Street Fighter II - The Anniversary Edition (Europe)",
+      "thumbnail": "Named_Boxarts/Hyper Street Fighter II - The Anniversary Edition (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0035",
+      "platform": "Playstation 2",
+      "title": "Dragon Ball Z Budokai Tenkaichi",
+      "serial": "SLES-53200",
+      "redumpName": "Dragon Ball Z - Budokai Tenkaichi (Europe, Australia) (En,Ja,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Dragon Ball Z - Budokai Tenkaichi (Europe, Australia) (En,Ja,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0036",
+      "platform": "Playstation 2",
+      "title": "Dragon Ball Z Budokai 2",
+      "serial": "SLES-51839",
+      "redumpName": "Dragon Ball Z - Budokai 2 (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Dragon Ball Z - Budokai 2 (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0037",
+      "platform": "Playstation 2",
+      "title": "Kuri Kuri Mix",
+      "serial": "SLES-50224",
+      "redumpName": "Kuri Kuri Mix (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Kuri Kuri Mix (Europe) (En,Fr,De).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0038",
+      "platform": "Playstation 2",
+      "title": "Jak 3",
+      "serial": "SCES-52460",
+      "redumpName": "Jak 3 (Europe, Australia) (En,Fr,De,Es,It,Pt,Ru)",
+      "thumbnail": "Named_Boxarts/Jak 3 (Europe, Australia) (En,Fr,De,Es,It,Pt,Ru).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0039",
+      "platform": "Playstation 2",
+      "title": "Grand Theft Auto: San Andreas",
+      "serial": "SLES-52541",
+      "redumpName": "Grand Theft Auto - San Andreas (Europe, Australia) (En,Fr,De,Es,It) (v1.03)",
+      "thumbnail": "Named_Boxarts/Grand Theft Auto - San Andreas (Europe, Australia) (En,Fr,De,Es,It) (v1.03).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0045",
+      "platform": "Playstation 2",
+      "title": "Dynasty Warriors 4",
+      "serial": "SLES-51661",
+      "redumpName": "Dynasty Warriors 4 (Europe)",
+      "thumbnail": "Named_Boxarts/Dynasty Warriors 4 (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0046",
+      "platform": "Playstation 2",
+      "title": "Time Splitters",
+      "serial": "SLES-50078",
+      "redumpName": "TimeSplitters (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/TimeSplitters (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0047",
+      "platform": "Playstation 2",
+      "title": "Future Tactics",
+      "serial": "SLES-52701",
+      "redumpName": "Future Tactics - The Uprising (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Future Tactics - The Uprising (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0048",
+      "platform": "Playstation 2",
+      "title": "FIFA Street 2",
+      "serial": "SLES-53796",
+      "redumpName": "FIFA Street 2 (Europe)",
+      "thumbnail": "Named_Boxarts/FIFA Street 2 (Europe) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0049",
+      "platform": "Playstation 2",
+      "title": "Ford Racing 3",
+      "serial": "SLES-52720",
+      "redumpName": "Ford Racing 3 (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Ford Racing 3 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0050",
+      "platform": "Playstation 2",
+      "title": "Black",
+      "serial": "SLES-54030",
+      "redumpName": "Black (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Black (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0051",
+      "platform": "Playstation 2",
+      "title": "WWE Smackdown Vs. Raw 2008",
+      "serial": "SLES-54793",
+      "redumpName": "WWE SmackDown vs. Raw 2008 (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/WWE SmackDown vs. Raw 2008 (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0053",
+      "platform": "Playstation 2",
+      "title": "Unreal Tournament",
+      "serial": "SLES-50074",
+      "redumpName": "Unreal Tournament (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Unreal Tournament (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0054",
+      "platform": "Playstation 2",
+      "title": "Crash Nitro Kart",
+      "serial": "SLES-51511",
+      "redumpName": "Crash Nitro Kart (Europe) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Crash Nitro Kart (Europe) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0055",
+      "platform": "Playstation 2",
+      "title": "Onimusha Warlords",
+      "serial": "SLES-50247",
+      "redumpName": "Onimusha - Warlords (Europe) (En,Fr,De)",
+      "thumbnail": "Named_Boxarts/Onimusha - Warlords (Europe) (En,Fr,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0056",
+      "platform": "Playstation 2",
+      "title": "Star Wars: The Force Unleashed",
+      "serial": "SLES-54658",
+      "redumpName": "Star Wars - The Force Unleashed (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Star Wars - The Force Unleashed (Europe) (Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0057",
+      "platform": "Playstation 2",
+      "title": "WWE Smackdown Vs. Raw 2007",
+      "serial": "SLES-54489",
+      "redumpName": "WWE SmackDown vs. Raw 2007 (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/WWE SmackDown vs. Raw 2007 (Europe, Australia).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0058",
+      "platform": "Playstation 2",
+      "title": "Space Invaders Anniversary",
+      "serial": "SLES-52313",
+      "redumpName": "Space Invaders Anniversary (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Space Invaders Anniversary (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0061",
+      "platform": "Playstation 2",
+      "title": "International Superstar Soccer",
+      "serial": "SLES-50039",
+      "redumpName": "International Superstar Soccer (Europe) (En,De)",
+      "thumbnail": "Named_Boxarts/International Superstar Soccer (Europe) (En,De).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0063",
+      "platform": "Playstation 2",
+      "title": "Pilot Down: Behind Enemy Lines",
+      "serial": "SLES-53099",
+      "redumpName": "Pilot Down - Behind Enemy Lines (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Pilot Down - Behind Enemy Lines (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0065",
+      "platform": "Playstation 2",
+      "title": "Star Wars Battlefront",
+      "serial": "SLES-52545",
+      "redumpName": "Star Wars - Battlefront (Europe) (En,Es,It)",
+      "thumbnail": "Named_Boxarts/Star Wars - Battlefront (Europe) (En,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0067",
+      "platform": "Playstation 2",
+      "title": "The Sims 2: Pets",
+      "serial": "SLES-54347",
+      "redumpName": "Sims 2, The - Pets (Europe) (En,Fr,De,Es,It,Nl,Sv,No,Da,Fi,Pl) (v1.00)",
+      "thumbnail": "Named_Boxarts/Sims 2, The - Pets (Europe) (En,Fr,De,Es,It,Nl,Sv,No,Da,Fi,Pl) (v1.00).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0068",
+      "platform": "Playstation 2",
+      "title": "Sonic Heroes",
+      "serial": "SLES-51950",
+      "redumpName": "Sonic Heroes (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Sonic Heroes (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0069",
+      "platform": "Playstation 2",
+      "title": "FIFA Street",
+      "serial": "SLES-53064",
+      "redumpName": "FIFA Street (Europe) (En,Fr,De,Es,It,Nl,Sv)",
+      "thumbnail": "Named_Boxarts/FIFA Street (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0070",
+      "platform": "Playstation 2",
+      "title": "WWE Smackdown Vs. Raw 2006",
+      "serial": "SLES-53676",
+      "redumpName": "WWE SmackDown! vs. Raw 2006 (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/WWE SmackDown! vs. Raw 2006 (Europe, Australia).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0071",
+      "platform": "Playstation 2",
+      "title": "Need For Speed: ProStreet",
+      "serial": "SLES-55002",
+      "redumpName": "Need for Speed - ProStreet (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Need for Speed - ProStreet (Europe) (En,Nl,Sv,Da,Fi,Pl,Cs,Hu).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0073",
+      "platform": "Playstation 2",
+      "title": "Rayman Revolution",
+      "serial": "SLES-50044",
+      "redumpName": "Rayman Revolution (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Rayman Revolution (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0075",
+      "platform": "Playstation 2",
+      "title": "Harry Potter And The Goblet Of Fire",
+      "serial": "SLES-53726",
+      "redumpName": "Harry Potter and the Goblet of Fire (Europe)",
+      "thumbnail": "Named_Boxarts/Harry Potter and the Goblet of Fire (Europe) (En,Nl,Sv,No,Da,Fi,Pl).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0076",
+      "platform": "Playstation 2",
+      "title": "WRC: World Rally Championship",
+      "serial": "SCES-50139",
+      "redumpName": "WRC - World Rally Championship (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi)",
+      "thumbnail": "Named_Boxarts/WRC - World Rally Championship (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0077",
+      "platform": "Playstation 2",
+      "title": "Silent Hill 2",
+      "serial": "SLES-50382",
+      "redumpName": "Silent Hill 2 (Europe) (En,Ja,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Silent Hill 2 (Europe) (En,Ja,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0078",
+      "platform": "Playstation 2",
+      "title": "Dragon Ball Z: Budokai Tenkaichi 3",
+      "serial": "SLES-54945",
+      "redumpName": "Dragon Ball Z - Budokai Tenkaichi 3 (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Dragon Ball Z - Budokai Tenkaichi 3 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0079",
+      "platform": "Playstation 2",
+      "title": "Jackie Chan Adventures",
+      "serial": "SCES-52412",
+      "redumpName": "Jackie Chan Adventures (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt)",
+      "thumbnail": "Named_Boxarts/Jackie Chan Adventures (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0080",
+      "platform": "Playstation 2",
+      "title": "Bionicle",
+      "serial": "SLES-51956",
+      "redumpName": "Bionicle (Europe) (En,Fr,De,Es,It,Da)",
+      "thumbnail": "Named_Boxarts/Bionicle (Europe) (En,Fr,De,Es,It,Da).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0081",
+      "platform": "Playstation 2",
+      "title": "Crash Bandicoot: The Wrath of Cortex",
+      "serial": "SLES-50386",
+      "redumpName": "Crash Bandicoot - The Wrath of Cortex (Europe) (En,Fr,De,Es,It,Nl) (v1.03)",
+      "thumbnail": "Named_Boxarts/Crash Bandicoot - The Wrath of Cortex (Europe) (En,Fr,De,Es,It,Nl) (v1.03).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0082",
+      "platform": "Playstation 2",
+      "title": "Final Fantasy X-2",
+      "serial": "SLES-51815",
+      "redumpName": "Final Fantasy X-2 (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Final Fantasy X-2 (Europe, Australia).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0083",
+      "platform": "Playstation 2",
+      "title": "Star Wars: The Clone Wars",
+      "serial": "SLES-50826",
+      "redumpName": "Star Wars - The Clone Wars (Europe)",
+      "thumbnail": "Named_Boxarts/Star Wars - The Clone Wars (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0084",
+      "platform": "Playstation 2",
+      "title": "Tourist Trophy: The Real Riding Simulator",
+      "serial": "SCES-53372",
+      "redumpName": "Tourist Trophy - The Real Riding Simulator (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Tourist Trophy - The Real Riding Simulator (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0085",
+      "platform": "Playstation 2",
+      "title": "Disney's Treasure Planet",
+      "serial": "SCES-51177",
+      "redumpName": "Disney's Treasure Planet (Europe) (En,Es,It,Sv,Da)",
+      "thumbnail": "Named_Boxarts/Disney's Treasure Planet (Europe) (En,Es,It,Sv,Da).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0086",
+      "platform": "Playstation 2",
+      "title": "Sonic Unleashed",
+      "serial": "SLES-55380",
+      "redumpName": "Sonic Unleashed (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Sonic Unleashed (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0087",
+      "platform": "Playstation 2",
+      "title": "Taxi Rider",
+      "serial": "SLES-53402",
+      "redumpName": "Taxi Rider (Europe)",
+      "thumbnail": "Named_Boxarts/Taxi Rider (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0088",
+      "platform": "Playstation 2",
+      "title": "Choro Q",
+      "serial": "SLES-53140",
+      "redumpName": "Choro Q (Europe)",
+      "thumbnail": "Named_Boxarts/Choro Q (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0090",
+      "platform": "Playstation 2",
+      "title": "Freak Out",
+      "serial": "SLES-50310",
+      "redumpName": "Freak Out (Europe)",
+      "thumbnail": "Named_Boxarts/Freak Out (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0091",
+      "platform": "Playstation 2",
+      "title": "Crash Tag Team Racing",
+      "serial": "SLES-53439",
+      "redumpName": "Crash Tag Team Racing (Europe, Australia) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Crash Tag Team Racing (Europe, Australia) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0092",
+      "platform": "Playstation 2",
+      "title": "FlatOut",
+      "serial": "SLES-52753",
+      "redumpName": "FlatOut (Europe) (En,Fr,Es,It)",
+      "thumbnail": "Named_Boxarts/FlatOut (Europe) (En,Fr,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0093",
+      "platform": "Playstation 2",
+      "title": "Ace Combat: Distant Thunder",
+      "serial": "SCES-50410",
+      "redumpName": "Ace Combat - Distant Thunder (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Ace Combat - Distant Thunder (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0094",
+      "platform": "Playstation 2",
+      "title": "SpongeBob SquarePants: The Movie",
+      "serial": "SLES-52895",
+      "redumpName": "Nickelodeon The SpongeBob SquarePants Movie (Europe, Australia)",
+      "thumbnail": "Named_Boxarts/Nickelodeon SpongeBob SquarePants - The Movie (Europe) (Fr,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0096",
+      "platform": "Playstation 2",
+      "title": "Gran Turismo 3: A-Spec",
+      "serial": "SCES-50294",
+      "redumpName": "Gran Turismo 3 - A-Spec (Europe, Australia) (En,Fr,De,Es,It) (v1.00)",
+      "thumbnail": "Named_Boxarts/Gran Turismo 3 - A-Spec (Europe, Australia) (En,Fr,De,Es,It) (v1.00).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0097",
+      "platform": "Playstation 2",
+      "title": "Sniper Assault",
+      "serial": "SLES-54767",
+      "redumpName": "Sniper Assault (Europe)",
+      "thumbnail": "Named_Boxarts/Sniper Assault (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0098",
+      "platform": "Playstation 2",
+      "title": "Tomb Raider: The Angel of Darkness",
+      "serial": "SLES-51227",
+      "redumpName": "Lara Croft Tomb Raider - The Angel of Darkness (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Lara Croft Tomb Raider - The Angel of Darkness (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0100",
+      "platform": "Playstation 2",
+      "title": "Antz Extreme Racing",
+      "serial": "SLES-50964",
+      "redumpName": "Antz Extreme Racing (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Antz Extreme Racing (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0101",
+      "platform": "Playstation 2",
+      "title": "Winnie the Pooh's Rumbly Tumbly Adventure",
+      "serial": "SLES-52889",
+      "redumpName": "Disney's Winnie the Pooh's Rumbly Tumbly Adventure (Europe) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Disney's Winnie the Pooh's Rumbly Tumbly Adventure (Europe) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0102",
+      "platform": "Playstation 2",
+      "title": "Guilty Gear X2 Reload",
+      "serial": "SLES-52967",
+      "redumpName": "Guilty Gear X2 Reload - The Midnight Carnival (Europe)",
+      "thumbnail": "Named_Boxarts/Guilty Gear X2 Reload - The Midnight Carnival (Europe).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0103",
+      "platform": "Playstation 2",
+      "title": "Enter the Matrix",
+      "serial": "SLES-51203",
+      "redumpName": "Enter the Matrix (Europe) (En,Fr,De,Es,It) (v1.01)",
+      "thumbnail": "Named_Boxarts/Enter the Matrix (Europe) (En,Fr,De,Es,It) (v1.01).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0104",
+      "platform": "Playstation 2",
+      "title": "Sly 3: Honor Among Thieves",
+      "serial": "SCES-53409",
+      "redumpName": "Sly 3 - Honour Among Thieves (Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi)",
+      "thumbnail": "Named_Boxarts/Sly 3 - Honour Among Thieves (Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0105",
+      "platform": "Playstation 2",
+      "title": "Grand Theft Auto: Vice City",
+      "serial": "SLES-51061",
+      "redumpName": "Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (v1.50)",
+      "thumbnail": "Named_Boxarts/Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (v1.50).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0106",
+      "platform": "Playstation 2",
+      "title": "Medal of Honor: Rising Sun",
+      "serial": "SLES-51873",
+      "redumpName": "Medal of Honor - Rising Sun (Europe, Australia) (En,It,Nl,Sv,Da)",
+      "thumbnail": "Named_Boxarts/Medal of Honor - Rising Sun (Europe, Australia) (En,It,Nl,Sv,Da).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0107",
+      "platform": "Playstation 2",
+      "title": "FIFA 06",
+      "serial": "SLES-53532",
+      "redumpName": "FIFA 06 (Europe) (Es,Pt)",
+      "thumbnail": "Named_Boxarts/FIFA 06 (Europe) (En,Nl,Sv,No,Da,Pl,El,Hu).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0108",
+      "platform": "Playstation 2",
+      "title": "The Lord of the Rings: The Return of the King",
+      "serial": "SLES-52017",
+      "redumpName": "Lord of the Rings, The - The Return of the King (Europe) (En,Nl,Pt,Sv,Pl)",
+      "thumbnail": "Named_Boxarts/Lord of the Rings, The - The Return of the King (Europe) (En,Nl,Pt,Sv,Pl).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0109",
+      "platform": "Playstation 2",
+      "title": "Predator: Concrete Jungle",
+      "serial": "SLES-53091",
+      "redumpName": "Predator - Concrete Jungle (Europe)",
+      "thumbnail": "Named_Boxarts/Predator - Concrete Jungle (Europe).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0110",
+      "platform": "Playstation 2",
+      "title": "Raging Blades",
+      "serial": "SLES-51235",
+      "redumpName": "Raging Blades (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Raging Blades (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0111",
+      "platform": "Playstation 2",
+      "title": "The Getaway",
+      "serial": "SCES-51159",
+      "redumpName": "Getaway, The (Europe) (En,Fr,De,Es,It) (v1.03)",
+      "thumbnail": "Named_Boxarts/Getaway, The (Europe) (En,Fr,De,Es,It) (v1.03).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0112",
+      "platform": "Playstation 2",
+      "title": "Die Hard: Vendetta",
+      "serial": "SLES-51347",
+      "redumpName": "Die Hard - Vendetta (Europe) (En,Fr,Es,It)",
+      "thumbnail": "Named_Boxarts/Die Hard - Vendetta (Europe) (En,Fr,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0113",
+      "platform": "Playstation 2",
+      "title": "The Urbz: Sims in the City",
+      "serial": "SLES-52908",
+      "redumpName": "Urbz, The - Sims in the City (Europe) (En,Fr,De,Es,It,Nl,Sv,No,Da,Fi,Pl)",
+      "thumbnail": "Named_Boxarts/Urbz, The - Sims in the City (Europe) (En,Fr,De,Es,It,Nl,Sv,No,Da,Fi,Pl).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0114",
+      "platform": "Playstation 2",
+      "title": "Project Eden",
+      "serial": "SLES-50553",
+      "redumpName": "Project Eden (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Project Eden (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0115",
+      "platform": "Playstation 2",
+      "title": "Teenage Mutant Ninja Turtles",
+      "serial": "SLES-51931",
+      "redumpName": "Teenage Mutant Ninja Turtles (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Teenage Mutant Ninja Turtles (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0116",
+      "platform": "Playstation 2",
+      "title": "Pirates of the Caribbean: At World's End",
+      "serial": "SLES-54179",
+      "redumpName": "Disney Pirates of the Caribbean - At World's End (Europe) (En,Fr,De,Es,It,Nl)",
+      "thumbnail": "Named_Boxarts/Disney Pirates of the Caribbean - At World's End (Europe) (En,Fr,De,Es,It,Nl).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0118",
+      "platform": "Playstation 2",
+      "title": "WRC: Rally Evolved",
+      "serial": "SCES-53247",
+      "redumpName": "WRC - Rally Evolved (Europe) (En,Fr,De,Es,It,Pt,No,Fi) (v1.01)",
+      "thumbnail": "Named_Boxarts/WRC - Rally Evolved (Europe) (En,Fr,De,Es,It,Pt,No,Fi) (v1.01).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0119",
+      "platform": "Playstation 2",
+      "title": "Heracles: Chariot Racing",
+      "serial": "SLES-54786",
+      "redumpName": "Heracles - Chariot Racing (Europe) (En,Fr)",
+      "thumbnail": "Named_Boxarts/Heracles - Chariot Racing (Europe) (En,Fr).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0121",
+      "platform": "Playstation 2",
+      "title": "LEGO Star Wars II: The Original Trilogy",
+      "serial": "SLES-54221",
+      "redumpName": "LEGO Star Wars II - The Original Trilogy (Europe, Australia) (En,Fr,De,Es,It,Da)",
+      "thumbnail": "Named_Boxarts/LEGO Star Wars II - The Original Trilogy (Europe, Australia) (En,Fr,De,Es,It,Da).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0122",
+      "platform": "Playstation 2",
+      "title": "Sonic Heroes",
+      "serial": "SLES-51950",
+      "redumpName": "Sonic Heroes (Europe, Australia) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Sonic Heroes (Europe, Australia) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0123",
+      "platform": "Playstation 2",
+      "title": "Transformers: Revenge of the Fallen",
+      "serial": "SLES-55520",
+      "redumpName": "Transformers - Revenge of the Fallen (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Transformers - Revenge of the Fallen (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0124",
+      "platform": "Playstation 2",
+      "title": "Disney's Tarzan Freeride",
+      "serial": "SLES-50350",
+      "redumpName": "Disney's Tarzan - Freeride (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Disney's Tarzan - Freeride (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0125",
+      "platform": "Playstation 2",
+      "title": "MotoGP",
+      "serial": "SCES-50034",
+      "redumpName": "MotoGP (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/MotoGP (Europe) (En,Fr,De,Es,It).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0126",
+      "platform": "Playstation 2",
+      "title": "WRC II Extreme",
+      "serial": "SCES-50934",
+      "redumpName": "WRC II Extreme (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi)",
+      "thumbnail": "Named_Boxarts/WRC II Extreme (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0127",
+      "platform": "Playstation 2",
+      "title": "Pro Evolution Soccer 2009",
+      "serial": "SLES-55406",
+      "redumpName": "PES 2009 - Pro Evolution Soccer (Europe) (En,Es,It,Pt)",
+      "thumbnail": "Named_Boxarts/PES 2009 - Pro Evolution Soccer (Europe) (En,Es,It,Pt).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0128",
+      "platform": "Playstation 2",
+      "title": "Pro Evolution Soccer 2008",
+      "serial": "SLES-54914",
+      "redumpName": "PES 2008 - Pro Evolution Soccer (Europe) (It,Pt)",
+      "thumbnail": "Named_Boxarts/PES 2008 - Pro Evolution Soccer (Europe) (En,Es).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PS2-0130",
+      "platform": "Playstation 2",
+      "title": "EyeToy: Play",
+      "serial": "SCES-51513",
+      "redumpName": "EyeToy - Play (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi)",
+      "thumbnail": "Named_Boxarts/EyeToy - Play (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PS2-0131",
+      "platform": "Playstation 2",
+      "title": "EyeToy: Play 2",
+      "serial": "SCES-52748",
+      "redumpName": "EyeToy - Play 2 (Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi,El) (v2.00)",
+      "thumbnail": "Named_Boxarts/EyeToy - Play 2 (Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi,El) (v2.00).png",
+      "replacedSource": "thegamesdb"
+    },
+    {
+      "collectionId": "PSP-0006",
+      "platform": "PSP",
+      "title": "WRC: FIA World Rally Championship",
+      "serial": "UCES-00005",
+      "redumpName": "WRC - FIA World Rally Championship (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/WRC - FIA World Rally Championship (Europe) (En,Fr,De,Es,It) (v1.02).png",
+      "replacedSource": null
+    },
+    {
+      "collectionId": "PSP-0008",
+      "platform": "PSP",
+      "title": "Grand Theft Auto: Chinatown Wars",
+      "serial": "ULES-01347",
+      "redumpName": "Grand Theft Auto - Chinatown Wars (Europe) (En,Fr,De,Es,It)",
+      "thumbnail": "Named_Boxarts/Grand Theft Auto - Chinatown Wars (Europe) (En,Fr,De,Es,It) (v1.01).png",
+      "replacedSource": null
+    }
+  ],
+  "unresolvedEntries": [
+    {
+      "collectionId": "PS1-0004",
+      "platform": "Playstation",
+      "title": "Ehrgeiz",
+      "serials": [
+        "SLES-02111"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0016",
+      "platform": "Playstation",
+      "title": "Syphon Filter 3",
+      "serials": [
+        "SCES-03701"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0024",
+      "platform": "Playstation",
+      "title": "Hercules",
+      "serials": [
+        "SCES-00891"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0026",
+      "platform": "Playstation",
+      "title": "Toy Story 2",
+      "serials": [
+        "SLES-02067"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0032",
+      "platform": "Playstation",
+      "title": "Driver 2",
+      "serials": [
+        "SLES-02993",
+        "SLES-12993"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0042",
+      "platform": "Playstation",
+      "title": "Tarzan",
+      "serials": [
+        "SCES-01431"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0051",
+      "platform": "Playstation",
+      "title": "Risk",
+      "serials": [
+        "SLES-00707"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0056",
+      "platform": "Playstation",
+      "title": "Harry Potter e a Pedra Filosofal",
+      "serials": [
+        "SLES-03663"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0057",
+      "platform": "Playstation",
+      "title": "Oddworld: Abe's Oddysee DEMO",
+      "serials": [
+        "SLED-00725"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0063",
+      "platform": "Playstation",
+      "title": "Tomb Raider II",
+      "serials": [
+        "SLES-00718"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0067",
+      "platform": "Playstation",
+      "title": "Winter Releases '98",
+      "serials": [
+        "SCED-01441"
+      ],
+      "redumpName": "Winter Releases '98 (Europe)",
+      "reason": "no-confident-pal-thumbnail"
+    },
+    {
+      "collectionId": "PS1-0071",
+      "platform": "Playstation",
+      "title": "Caesars Palace 2000",
+      "serials": [
+        "SLES-02476"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0074",
+      "platform": "Playstation",
+      "title": "A Bug's Life",
+      "serials": [
+        "SCES-01523"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS1-0082",
+      "platform": "Playstation",
+      "title": "Euro Demo 92",
+      "serials": [
+        "SCED-04016"
+      ],
+      "redumpName": "Euro Demo 92 (Europe)",
+      "reason": "no-confident-pal-thumbnail"
+    },
+    {
+      "collectionId": "PS2-0005",
+      "platform": "Playstation 2",
+      "title": "Metal Gear Solid 2",
+      "serials": [
+        "SLES-50383"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0010",
+      "platform": "Playstation 2",
+      "title": "Prince Of Persia Trilogy",
+      "serials": [
+        "SLES-51918",
+        "SLES-52822",
+        "SLES-53777"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0026",
+      "platform": "Playstation 2",
+      "title": "Final Fantasy VII Dirge Of Cerberus",
+      "serials": [
+        "SLES-54185"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0027",
+      "platform": "Playstation 2",
+      "title": "Dragon Ball Z Budokai 3",
+      "serials": [
+        "SLES-53346",
+        "SLES-53346/P"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0030",
+      "platform": "Playstation 2",
+      "title": "Devil May Cry 3",
+      "serials": [
+        "SLES-54186"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0041",
+      "platform": "Playstation 2",
+      "title": "Tomb Raider Legend",
+      "serials": [
+        "SLES-53908"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0052",
+      "platform": "Playstation 2",
+      "title": "Buzz o Grande Quiz",
+      "serials": [
+        "SCES-53929"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0060",
+      "platform": "Playstation 2",
+      "title": "Hitman Blood Money",
+      "serials": [
+        "SLES-53028"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0062",
+      "platform": "Playstation 2",
+      "title": "Formula One 2005",
+      "serials": [
+        "SCES-53033"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0064",
+      "platform": "Playstation 2",
+      "title": "Play It Chess Challenger",
+      "serials": [
+        "SLES-51630"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0066",
+      "platform": "Playstation 2",
+      "title": "Splinter Cell",
+      "serials": [
+        "SLES-51466"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0089",
+      "platform": "Playstation 2",
+      "title": "Mundial 2002 Challenge",
+      "serials": [
+        "SLES-50855"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0095",
+      "platform": "Playstation 2",
+      "title": "1945 I&II: The Arcade Games",
+      "serials": [
+        "SLES-51741"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0099",
+      "platform": "Playstation 2",
+      "title": "Disney's The Haunted Mansion",
+      "serials": [
+        "SLES-52214"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0117",
+      "platform": "Playstation 2",
+      "title": "Disney's Peter Pan: The Legend of Never-Land",
+      "serials": [
+        "SCES-50522"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0120",
+      "platform": "Playstation 2",
+      "title": "Cabela's Dangerous Hunts",
+      "serials": [
+        "SLES-52106"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PS2-0129",
+      "platform": "Playstation 2",
+      "title": "LEGO Football Mania",
+      "serials": [
+        "SLES-50937"
+      ],
+      "reason": "serial-not-mapped-confidently"
+    },
+    {
+      "collectionId": "PSP-0002",
+      "platform": "PSP",
+      "title": "Myst",
+      "serials": [
+        "ULES-00412"
+      ],
+      "redumpName": "Myst (Europe) (En,Fr,De)",
+      "reason": "no-confident-pal-thumbnail"
+    },
+    {
+      "collectionId": "PSP-0004",
+      "platform": "PSP",
+      "title": "Pirates Of The Caribbean: Dead Man's Chest",
+      "serials": [
+        "ULES-00366"
+      ],
+      "redumpName": "Pirates of the Caribbean - Dead Man's Chest (Europe) (En,Fr,De,Es,It)",
+      "reason": "no-confident-pal-thumbnail"
+    },
+    {
+      "collectionId": "PSP-0005",
+      "platform": "PSP",
+      "title": "Star Wars: Battlefront II",
+      "serials": [
+        "ULES-00183"
+      ],
+      "redumpName": "Star Wars - Battlefront II (Europe, Australia) (En,Fr,De,Es,It)",
+      "reason": "no-confident-pal-thumbnail"
+    },
+    {
+      "collectionId": "PSP-0009",
+      "platform": "PSP",
+      "title": "The Sims 2: Pets",
+      "serials": [
+        "ULES-00596"
+      ],
+      "redumpName": "Sims 2, The - Pets (Europe) (En,Fr,De,Es,It,Nl)",
+      "reason": "no-confident-pal-thumbnail"
+    }
+  ]
+}
