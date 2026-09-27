@@ -218,3 +218,5 @@ await fs.writeFile(
 
 console.log(`Strict PAL fallback imported: ${imported.length}`);
 console.log(`Remaining missing: ${nextMissing.length}`);
+
+// fallback-import-version: 1
