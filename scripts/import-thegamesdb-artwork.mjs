@@ -185,15 +185,34 @@ function bestNameScore(requested, game) {
   return best;
 }
 
+function specialReleaseTerms(title) {
+  const raw = ascii(title);
+  const contextual = [];
+  const bracketParts = [...raw.matchAll(/[\[(]([^\])]+)[\])]/g)].map((match) => normalize(match[1]));
+  for (const term of SPECIAL_EDITION_TERMS) {
+    if (bracketParts.some((part) => part.includes(term))) contextual.push(term);
+  }
+
+  const normalized = normalize(title);
+  for (const term of ["greatest hits", "players choice", "player s choice", "essentials", "case bundle", "not for resale"]) {
+    if (normalized.includes(term)) contextual.push(term);
+  }
+
+  return [...new Set(contextual)];
+}
+
 function specialEditionScore(game, localEdition) {
-  const title = normalize(game.game_title);
   const edition = normalize(localEdition);
-  const specials = SPECIAL_EDITION_TERMS.filter((term) => title.includes(term));
+  const specials = specialReleaseTerms(game.game_title);
   if (!specials.length) return edition && edition !== "standard" ? 0 : 30;
 
-  if (!edition || edition === "standard") return -240;
+  if (!edition || edition === "standard") return -Infinity;
   if (specials.some((term) => edition.includes(term) || term.includes(edition))) return 160;
-  return -80;
+  return -Infinity;
+}
+
+function hasEditionMismatch(remoteTitle, localEdition) {
+  return !Number.isFinite(specialEditionScore({ game_title: remoteTitle }, localEdition));
 }
 
 function productCountryHint(productCode) {
@@ -231,15 +250,19 @@ function chooseFrontBoxart(payload, gameId) {
     .sort((a, b) => resolutionPixels(b) - resolutionPixels(a))[0] ?? null;
 }
 
+function inputKey(game, override) {
+  return JSON.stringify({
+    title: game.title,
+    platform: game.platform,
+    edition: game.edition ?? "",
+    regionPolicy: "PAL-Europe",
+    override: override ?? null,
+  });
+}
+
 function fingerprint(game, override) {
   return createHash("sha1")
-    .update(JSON.stringify({
-      title: game.title,
-      platform: game.platform,
-      edition: game.edition ?? "",
-      regionPolicy: "PAL-Europe",
-      override: override ?? null,
-    }))
+    .update(inputKey(game, override))
     .digest("hex")
     .slice(0, 16);
 }
@@ -359,7 +382,10 @@ function rankCandidates(payload, requestedTitle, localGame, targetPlatformId, eu
       const { score: nameScore, matchedName } = bestNameScore(requestedTitle, game);
       if (!Number.isFinite(nameScore)) return null;
 
-      let score = nameScore + 500 + specialEditionScore(game, localGame.edition);
+      const editionScore = specialEditionScore(game, localGame.edition);
+      if (!Number.isFinite(editionScore)) return null;
+
+      let score = nameScore + 500 + editionScore;
       const country = countryName(countriesById, game.country_id);
       if (countryHint && countryHint.test(country)) score += 60;
       else if (languageHint && languageHint.test(country)) score += 35;
@@ -410,6 +436,7 @@ await fs.mkdir(COVERS_DIR, { recursive: true });
 const games = await readJsonIfExists(GAMES_FILE, []);
 const overrides = await readJsonIfExists(OVERRIDES_FILE, {});
 const existingManifest = await readJsonIfExists(MANIFEST_FILE, { entries: {} });
+const existingMissingFile = await readJsonIfExists(MISSING_FILE, { entries: [] });
 
 const [limitPayload, regionsPayload, countriesPayload, platformsPayload] = await Promise.all([
   apiGet("/v1/API/Limit"),
@@ -444,7 +471,8 @@ if (!FORCE && existingManifest?.source === "thegamesdb") {
       Number(entry.regionId) === Number(europeRegion.id) &&
       platform &&
       Number(entry.platformId) === Number(platform.id) &&
-      scoreSingleName(game.title, entry.matchedName ?? entry.tgdbTitle) >= 900;
+      scoreSingleName(game.title, entry.matchedName ?? entry.tgdbTitle) >= 900 &&
+      !hasEditionMismatch(entry.tgdbTitle, game.edition);
     if (!stillValid) continue;
     try {
       await fs.access(path.join(ROOT, "public", entry.file.replace(/^\//, "")));
@@ -453,9 +481,21 @@ if (!FORCE && existingManifest?.source === "thegamesdb") {
   }
 }
 
+const reusableMissing = new Map();
+if (!FORCE && existingMissingFile?.source === "thegamesdb") {
+  for (const entry of existingMissingFile.entries ?? []) {
+    const game = games.find((candidate) => candidate.collectionId === entry.collectionId);
+    if (!game) continue;
+    const override = overrides[game.collectionId] ?? null;
+    if (entry.inputKey === inputKey(game, override)) {
+      reusableMissing.set(game.collectionId, entry);
+    }
+  }
+}
+
 const uniqueQueries = new Set();
 for (const game of games) {
-  if (reusable.has(game.collectionId)) continue;
+  if (reusable.has(game.collectionId) || reusableMissing.has(game.collectionId)) continue;
   const platform = platformMap.get(game.platform);
   if (!platform) continue;
   const override = overrides[game.collectionId] ?? null;
@@ -472,7 +512,7 @@ if (remaining && remaining < uniqueQueries.size + 5) {
 
 console.log(`TheGamesDB allowance before import: ${remaining || "unknown"}`);
 console.log(`PAL region: ${europeRegion.name} (#${europeRegion.id})`);
-console.log(`Games: ${games.length}; API lookups needed: ${uniqueQueries.size}; reusable: ${reusable.size}`);
+console.log(`Games: ${games.length}; API lookups needed: ${uniqueQueries.size}; reusable covers: ${reusable.size}; cached misses: ${reusableMissing.size}`);
 
 const manifest = {
   generatedAt: new Date().toISOString(),
@@ -500,6 +540,12 @@ for (const [index, game] of games.entries()) {
     manifest.entries[game.collectionId] = existing;
     matched += 1;
     reusedCount += 1;
+    continue;
+  }
+
+  const cachedMissing = reusableMissing.get(game.collectionId);
+  if (cachedMissing) {
+    missing.push(cachedMissing);
     continue;
   }
 
@@ -655,6 +701,12 @@ for (const file of await fs.readdir(COVERS_DIR)) {
   if (!referencedFiles.has(file)) await fs.rm(path.join(COVERS_DIR, file), { force: true });
 }
 
+const missingOutput = missing.map((entry) => {
+  const game = games.find((candidate) => candidate.collectionId === entry.collectionId) ?? entry;
+  const override = overrides[game.collectionId] ?? null;
+  return { ...entry, inputKey: inputKey(game, override) };
+});
+
 const sortedEntries = Object.fromEntries(
   Object.entries(manifest.entries).sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true })),
 );
@@ -673,8 +725,8 @@ await fs.writeFile(
     regionPolicy: manifest.regionPolicy,
     totalOwnedGames: games.length,
     matched,
-    missing: missing.length,
-    entries: missing,
+    missing: missingOutput.length,
+    entries: missingOutput,
   }, null, 2) + "\n",
 );
 await fs.writeFile(
