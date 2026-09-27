@@ -15,7 +15,8 @@
     "check": "npm run lint && npm run test && npm run build",
     "artwork:import": "node scripts/import-thegamesdb-artwork.mjs",
     "artwork:status": "node scripts/artwork-status.mjs",
-    "artwork:fallback": "node scripts/import-gametdb-fallback.mjs"
+    "artwork:fallback": "node scripts/import-gametdb-fallback.mjs",
+    "artwork:sony": "node scripts/import-libretro-serial-artwork.mjs"
   },
   "dependencies": {
     "google-auth-library": "11.1.0",
