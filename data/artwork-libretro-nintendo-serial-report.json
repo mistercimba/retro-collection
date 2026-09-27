@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-27T10:40:31.617Z",
+  "generatedAt": "2026-09-27T10:45:03.457Z",
   "source": "libretro-nintendo-serial",
-  "resolved": 62,
-  "added": 42,
-  "replaced": 20,
-  "unresolved": 92,
+  "resolved": 58,
+  "added": 58,
+  "replaced": 0,
+  "unresolved": 96,
   "entries": [
     {
       "collectionId": "GBA-0002",
@@ -24,7 +24,7 @@
       "matchedSerial": "AGB-BZMP-EUR",
       "serialTitle": "Legend of Zelda, The - The Minish Cap (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Legend of Zelda, The - The Minish Cap (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "GBA-0009",
@@ -34,7 +34,7 @@
       "matchedSerial": "AGB-BSBP-EUR",
       "serialTitle": "Sonic Battle (Europe) (En,Ja,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Sonic Battle (Europe) (En,Ja,Fr,De,Es,It).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "GBA-0013",
@@ -73,7 +73,7 @@
       "productCode": "AGB-AQWP-EUR",
       "matchedSerial": "AGB-AQWP-EUR",
       "serialTitle": "Game & Watch Gallery Advance (Europe)",
-      "thumbnail": "Named_Boxarts/Game _ Watch Gallery Advance (Europe) (Virtual Console).png",
+      "thumbnail": "Named_Boxarts/Game _ Watch Gallery Advance (Europe).png",
       "replacedSource": null
     },
     {
@@ -107,16 +107,6 @@
       "replacedSource": null
     },
     {
-      "collectionId": "GBA-0021",
-      "platform": "GameBoy Advance",
-      "title": "Mario Kart Super Circuit",
-      "productCode": "AGB-AMKE-USA",
-      "matchedSerial": "AGB-AMKE-USA",
-      "serialTitle": "Mario Kart - Super Circuit (USA)",
-      "thumbnail": "Named_Boxarts/Mario Kart - Super Circuit (Europe) (Virtual Console).png",
-      "replacedSource": "thegamesdb"
-    },
-    {
       "collectionId": "GBA-0022",
       "platform": "GameBoy Advance",
       "title": "Super Mario Advance 2",
@@ -124,7 +114,7 @@
       "matchedSerial": "AGB-AA2P-EUR",
       "serialTitle": "Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es)",
       "thumbnail": "Named_Boxarts/Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "GBA-0023",
@@ -134,7 +124,7 @@
       "matchedSerial": "AGB-AGSP-EUR",
       "serialTitle": "Golden Sun (France)",
       "thumbnail": "Named_Boxarts/Golden Sun (France).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "GBA-0026",
@@ -153,8 +143,8 @@
       "productCode": "AGB-AWRP-EUR",
       "matchedSerial": "AGB-AWRP-EUR",
       "serialTitle": "Advance Wars (Europe) (En,Fr,De,Es)",
-      "thumbnail": "Named_Boxarts/Advance Wars (Europe) (En,Fr,De,Es) (Virtual Console).png",
-      "replacedSource": "thegamesdb"
+      "thumbnail": "Named_Boxarts/Advance Wars (Europe) (En,Fr,De,Es).png",
+      "replacedSource": null
     },
     {
       "collectionId": "GBA-0032",
@@ -173,18 +163,8 @@
       "productCode": "AGB-AFXP-EUR",
       "matchedSerial": "AGB-AFXP-EUR",
       "serialTitle": "Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It)",
-      "thumbnail": "Named_Boxarts/Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It) (Virtual Console).png",
+      "thumbnail": "Named_Boxarts/Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It).png",
       "replacedSource": null
-    },
-    {
-      "collectionId": "GBA-0034",
-      "platform": "GameBoy Advance",
-      "title": "Super Mario Advance",
-      "productCode": "AGB-AMAP-EUR-1",
-      "matchedSerial": "AGB-AMAP-EUR",
-      "serialTitle": "Super Mario Advance 3 - Yoshi's Island (Europe) (En,Fr,De,Es,It)",
-      "thumbnail": "Named_Boxarts/Super Mario Advance 3 - Yoshi's Island (Europe) (En,Fr,De,Es,It) (Virtual Console).png",
-      "replacedSource": "thegamesdb"
     },
     {
       "collectionId": "GBA-0036",
@@ -203,7 +183,7 @@
       "productCode": "AGB-ADUP-UKV",
       "matchedSerial": "AGB-ADUP-EUR",
       "serialTitle": "Driver 2 Advance (Europe) (En,Fr,De,Es,It)",
-      "thumbnail": "Named_Boxarts/Driver 2 Advance (Europe) (En,Fr,De,Es,It) (Beta).png",
+      "thumbnail": "Named_Boxarts/Driver 2 Advance (Europe) (En,Fr,De,Es,It).png",
       "replacedSource": null
     },
     {
@@ -237,6 +217,16 @@
       "replacedSource": null
     },
     {
+      "collectionId": "GBA-0042",
+      "platform": "GameBoy Advance",
+      "title": "Lilo & Stitch 2",
+      "productCode": "AGB-BLSP-EUR-1",
+      "matchedSerial": "AGB-BLSP-EUR",
+      "serialTitle": "Lilo & Stitch 2 (Europe) (En,Fr,De,Es)",
+      "thumbnail": "Named_Boxarts/Lilo _ Stitch 2 (Europe) (En,Fr,De,Es).png",
+      "replacedSource": null
+    },
+    {
       "collectionId": "GBA-0043",
       "platform": "GameBoy Advance",
       "title": "Star Wars: Episode III Revenge Of The Sith",
@@ -253,7 +243,7 @@
       "productCode": "AGB-A2SP-EUR",
       "matchedSerial": "AGB-A2SP-EUR",
       "serialTitle": "Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It)",
-      "thumbnail": "Named_Boxarts/Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It) (Beta).png",
+      "thumbnail": "Named_Boxarts/Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It).png",
       "replacedSource": null
     },
     {
@@ -324,7 +314,7 @@
       "matchedSerial": "AGB-ASYP-EUR",
       "serialTitle": "Spyro - Season of Ice (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Spyro - Season of Ice (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "GBA-0061",
@@ -347,16 +337,6 @@
       "replacedSource": null
     },
     {
-      "collectionId": "GBC-0023",
-      "platform": "Game Boy",
-      "title": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
-      "productCode": "DMG-NT-USA",
-      "matchedSerial": "DMG-NT-USA",
-      "serialTitle": "Teenage Mutant Ninja Turtles - Fall of the Foot Clan (USA)",
-      "thumbnail": "Named_Boxarts/Teenage Mutant Hero Turtles - Fall of the Foot Clan (Europe).png",
-      "replacedSource": null
-    },
-    {
       "collectionId": "GBC-0027",
       "platform": "Game Boy Color",
       "title": "Pokemon Trading Card Game",
@@ -364,7 +344,7 @@
       "matchedSerial": "DMG-AXQP-EUR",
       "serialTitle": "Pokemon Trading Card Game (Europe) (En,Es,It) (SGB Enhanced)",
       "thumbnail": "Named_Boxarts/Pokemon Trading Card Game (Europe) (En,Es,It) (Rev 1) (SGB Enhanced) (GB Compatible).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "GBC-0032",
@@ -374,7 +354,7 @@
       "matchedSerial": "DMG-VPHP-EUR",
       "serialTitle": "Pokemon Pinball (Europe) (En,Fr,De,Es,It) (Rumble Version) (SGB Enhanced)",
       "thumbnail": "Named_Boxarts/Pokemon Pinball (Europe) (En,Fr,De,Es,It) (Rumble Version) (SGB Enhanced) (GB Compatible).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "GBC-0043",
@@ -414,7 +394,7 @@
       "matchedSerial": "CGB-AZ7P-EUR",
       "serialTitle": "Legend of Zelda, The - Oracle of Seasons (Europe) (En,Fr,De,Es,It)",
       "thumbnail": "Named_Boxarts/Legend of Zelda, The - Oracle of Seasons (Europe) (En,Fr,De,Es,It).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0001",
@@ -434,7 +414,7 @@
       "matchedSerial": "NUS-NZSP-EUR",
       "serialTitle": "Legend of Zelda, The - Majora's Mask (Europe) (En,Fr,De,Es)",
       "thumbnail": "Named_Boxarts/Legend of Zelda, The - Majora's Mask (Europe) (En,Fr,De,Es) (Rev 1) (Debug).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0003",
@@ -444,7 +424,7 @@
       "matchedSerial": "NUS-NB7P-EUR",
       "serialTitle": "Banjo-Tooie (Europe) (En,Fr,De,Es)",
       "thumbnail": "Named_Boxarts/Banjo-Tooie (Europe) (En,Fr,De,Es).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0004",
@@ -454,7 +434,7 @@
       "matchedSerial": "NUS-NFXP-EUR",
       "serialTitle": "Lylat Wars (Europe) (En,Fr,De)",
       "thumbnail": "Named_Boxarts/Lylatwars (Europe) (En,Fr,De).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0005",
@@ -483,8 +463,8 @@
       "productCode": "NUS-NZLP-EUR",
       "matchedSerial": "NUS-NZLP-EUR",
       "serialTitle": "Legend of Zelda, The - Ocarina of Time (Europe) (En,Fr,De)",
-      "thumbnail": "Named_Boxarts/Legend of Zelda, The - Ocarina of Time (Europe) (Beta) (2003-02-13) (GameCube).png",
-      "replacedSource": "thegamesdb"
+      "thumbnail": "Named_Boxarts/Legend of Zelda, The - Ocarina of Time (Europe) (Debug) (GameCube).png",
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0008",
@@ -494,7 +474,7 @@
       "matchedSerial": "NUS-NDOP-EUR",
       "serialTitle": "Donkey Kong 64 (Europe) (En,Fr,De,Es)",
       "thumbnail": "Named_Boxarts/Donkey Kong 64 (Europe) (En,Fr,De,Es).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0009",
@@ -504,7 +484,7 @@
       "matchedSerial": "NUS-NKTP-EUR",
       "serialTitle": "Mario Kart 64 (Europe)",
       "thumbnail": "Named_Boxarts/Mario Kart 64 (Europe) (Rev 1).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0010",
@@ -514,16 +494,6 @@
       "matchedSerial": "NUS-NPUP-EUR",
       "serialTitle": "Power Rangers - Lightspeed Rescue (Europe)",
       "thumbnail": "Named_Boxarts/Power Rangers - Lightspeed Rescue (Europe).png",
-      "replacedSource": null
-    },
-    {
-      "collectionId": "N64-0011",
-      "platform": "Nintendo 64",
-      "title": "Lode Runner 3D",
-      "productCode": "NUS-NLRP-EUR",
-      "matchedSerial": "NUS-NLRP-EUR",
-      "serialTitle": "Lode Runner 3-D (Europe) (En,Fr,De,Es,It)",
-      "thumbnail": "Named_Boxarts/Lode Runner 3-D (Europe) (En,Fr,De,Es,It).png",
       "replacedSource": null
     },
     {
@@ -544,7 +514,7 @@
       "matchedSerial": "NUS-NDYP-EUR",
       "serialTitle": "Diddy Kong Racing (Europe) (En,Fr,De)",
       "thumbnail": "Named_Boxarts/Diddy Kong Racing (Europe) (En,Fr,De) (Rev 1).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0014",
@@ -554,7 +524,7 @@
       "matchedSerial": "NUS-NBKP-EUR",
       "serialTitle": "Banjo-Kazooie (Europe) (En,Fr,De)",
       "thumbnail": "Named_Boxarts/Banjo-Kazooie (Europe) (En,Fr,De).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0016",
@@ -564,7 +534,7 @@
       "matchedSerial": "NUS-NSMP-EUR",
       "serialTitle": "Super Mario 64 (Europe) (En,Fr,De)",
       "thumbnail": "Named_Boxarts/Super Mario 64 (Europe) (En,Fr,De).png",
-      "replacedSource": "thegamesdb"
+      "replacedSource": null
     },
     {
       "collectionId": "N64-0019",
@@ -587,23 +557,13 @@
       "replacedSource": null
     },
     {
-      "collectionId": "N64-0023",
-      "platform": "Nintendo 64",
-      "title": "F1 World Grand Prix",
-      "productCode": "NUS-NFWP-EUR",
-      "matchedSerial": "NUS-NFWP-EUR",
-      "serialTitle": "F-1 World Grand Prix (Europe)",
-      "thumbnail": "Named_Boxarts/F-1 World Grand Prix (Europe) (Beta).png",
-      "replacedSource": null
-    },
-    {
       "collectionId": "N64-0024",
       "platform": "Nintendo 64",
       "title": "Turok 2 Seeds Of Evil",
       "productCode": "NUS-NT2P-EUR",
       "matchedSerial": "NUS-NT2P-EUR",
       "serialTitle": "Turok 2 - Seeds of Evil (Europe)",
-      "thumbnail": "Named_Boxarts/Turok 2 - Seeds of Evil (Europe) (Demo) (Kiosk).png",
+      "thumbnail": "Named_Boxarts/Turok 2 - Seeds of Evil (Europe) (En,Fr,Es,It).png",
       "replacedSource": null
     },
     {
@@ -675,6 +635,13 @@
       "reason": "physical-serial-not-mapped-confidently"
     },
     {
+      "collectionId": "GBA-0021",
+      "platform": "GameBoy Advance",
+      "title": "Mario Kart Super Circuit",
+      "productCode": "AGB-AMKE-USA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
       "collectionId": "GBA-0024",
       "platform": "GameBoy Advance",
       "title": "Mario Vs. Donkey Kong",
@@ -710,6 +677,13 @@
       "reason": "physical-serial-not-mapped-confidently"
     },
     {
+      "collectionId": "GBA-0034",
+      "platform": "GameBoy Advance",
+      "title": "Super Mario Advance",
+      "productCode": "AGB-AMAP-EUR-1",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
       "collectionId": "GBA-0035",
       "platform": "GameBoy Advance",
       "title": "Donkey Kong NES Classics",
@@ -722,15 +696,6 @@
       "title": "Spiderman: Mysterio's Menace",
       "productCode": "AGB-ASEP-EUR",
       "reason": "physical-serial-not-mapped-confidently"
-    },
-    {
-      "collectionId": "GBA-0042",
-      "platform": "GameBoy Advance",
-      "title": "Lilo & Stitch 2",
-      "productCode": "AGB-BLSP-EUR-1",
-      "serial": "AGB-BLSP-EUR",
-      "serialTitle": "Lilo & Stitch 2 (Europe) (En,Fr,De,Es)",
-      "reason": "no-confident-pure-pal-thumbnail"
     },
     {
       "collectionId": "GBA-0045",
@@ -924,6 +889,13 @@
       "reason": "physical-serial-not-mapped-confidently"
     },
     {
+      "collectionId": "GBC-0023",
+      "platform": "Game Boy",
+      "title": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
+      "productCode": "DMG-NT-USA",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
       "collectionId": "GBC-0024",
       "platform": "Game Boy",
       "title": "Donkey Kong",
@@ -1071,6 +1043,13 @@
       "reason": "physical-serial-not-mapped-confidently"
     },
     {
+      "collectionId": "N64-0011",
+      "platform": "Nintendo 64",
+      "title": "Lode Runner 3D",
+      "productCode": "NUS-NLRP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
+    },
+    {
       "collectionId": "N64-0017",
       "platform": "Nintendo 64",
       "title": "Pokemon Stadium",
@@ -1092,6 +1071,13 @@
       "serial": "NUS-NWRP-EUR",
       "serialTitle": "Wave Race 64 (Europe) (En,De)",
       "reason": "no-confident-pure-pal-thumbnail"
+    },
+    {
+      "collectionId": "N64-0023",
+      "platform": "Nintendo 64",
+      "title": "F1 World Grand Prix",
+      "productCode": "NUS-NFWP-EUR",
+      "reason": "physical-serial-not-mapped-confidently"
     },
     {
       "collectionId": "NES-0001",

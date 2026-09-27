@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T10:40:31.617Z",
+  "generatedAt": "2026-09-27T10:45:03.457Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -432,8 +432,8 @@
       "matchedSerial": "AGB-AQWP-EUR",
       "serialTitle": "Game & Watch Gallery Advance (Europe)",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Game _ Watch Gallery Advance (Europe) (Virtual Console).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Game%20_%20Watch%20Gallery%20Advance%20(Europe)%20(Virtual%20Console).png",
+      "sourcePath": "Named_Boxarts/Game _ Watch Gallery Advance (Europe).png",
+      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Game%20_%20Watch%20Gallery%20Advance%20(Europe).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1030
     },
@@ -470,18 +470,6 @@
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
       "sourcePath": "Named_Boxarts/Beyblade G-Revolution (Europe) (En,De,Es,It).png",
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Beyblade%20G-Revolution%20(Europe)%20(En%2CDe%2CEs%2CIt).png",
-      "matchedBy": "physical-product-code-serial-database",
-      "matchScore": 1055
-    },
-    "GBA-0021": {
-      "file": "/covers/GBA-0021.png",
-      "source": "libretro-nintendo-serial",
-      "physicalProductCode": "AGB-AMKE-USA",
-      "matchedSerial": "AGB-AMKE-USA",
-      "serialTitle": "Mario Kart - Super Circuit (USA)",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Mario Kart - Super Circuit (Europe) (Virtual Console).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Mario%20Kart%20-%20Super%20Circuit%20(Europe)%20(Virtual%20Console).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
@@ -546,8 +534,8 @@
       "matchedSerial": "AGB-AWRP-EUR",
       "serialTitle": "Advance Wars (Europe) (En,Fr,De,Es)",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Advance Wars (Europe) (En,Fr,De,Es) (Virtual Console).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Advance%20Wars%20(Europe)%20(En%2CFr%2CDe%2CEs)%20(Virtual%20Console).png",
+      "sourcePath": "Named_Boxarts/Advance Wars (Europe) (En,Fr,De,Es).png",
+      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Advance%20Wars%20(Europe)%20(En%2CFr%2CDe%2CEs).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
@@ -588,20 +576,8 @@
       "matchedSerial": "AGB-AFXP-EUR",
       "serialTitle": "Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It)",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It) (Virtual Console).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Final%20Fantasy%20Tactics%20Advance%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt)%20(Virtual%20Console).png",
-      "matchedBy": "physical-product-code-serial-database",
-      "matchScore": 1055
-    },
-    "GBA-0034": {
-      "file": "/covers/GBA-0034.png",
-      "source": "libretro-nintendo-serial",
-      "physicalProductCode": "AGB-AMAP-EUR-1",
-      "matchedSerial": "AGB-AMAP-EUR",
-      "serialTitle": "Super Mario Advance 3 - Yoshi's Island (Europe) (En,Fr,De,Es,It)",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Super Mario Advance 3 - Yoshi's Island (Europe) (En,Fr,De,Es,It) (Virtual Console).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Super%20Mario%20Advance%203%20-%20Yoshi's%20Island%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt)%20(Virtual%20Console).png",
+      "sourcePath": "Named_Boxarts/Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It).png",
+      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Final%20Fantasy%20Tactics%20Advance%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
@@ -624,8 +600,8 @@
       "matchedSerial": "AGB-ADUP-EUR",
       "serialTitle": "Driver 2 Advance (Europe) (En,Fr,De,Es,It)",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Driver 2 Advance (Europe) (En,Fr,De,Es,It) (Beta).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Driver%202%20Advance%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt)%20(Beta).png",
+      "sourcePath": "Named_Boxarts/Driver 2 Advance (Europe) (En,Fr,De,Es,It).png",
+      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Driver%202%20Advance%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
@@ -665,6 +641,18 @@
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
+    "GBA-0042": {
+      "file": "/covers/GBA-0042.png",
+      "source": "libretro-nintendo-serial",
+      "physicalProductCode": "AGB-BLSP-EUR-1",
+      "matchedSerial": "AGB-BLSP-EUR",
+      "serialTitle": "Lilo & Stitch 2 (Europe) (En,Fr,De,Es)",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Lilo _ Stitch 2 (Europe) (En,Fr,De,Es).png",
+      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Lilo%20_%20Stitch%202%20(Europe)%20(En%2CFr%2CDe%2CEs).png",
+      "matchedBy": "physical-product-code-serial-database",
+      "matchScore": 994
+    },
     "GBA-0043": {
       "file": "/covers/GBA-0043.png",
       "source": "libretro-nintendo-serial",
@@ -684,8 +672,8 @@
       "matchedSerial": "AGB-A2SP-EUR",
       "serialTitle": "Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It)",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
-      "sourcePath": "Named_Boxarts/Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It) (Beta).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Spyro%202%20-%20Season%20of%20Flame%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt)%20(Beta).png",
+      "sourcePath": "Named_Boxarts/Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It).png",
+      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Spyro%202%20-%20Season%20of%20Flame%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
@@ -994,18 +982,6 @@
       "matchScore": 1550,
       "nameScore": 1000,
       "fingerprint": "16b429e7dac15f05"
-    },
-    "GBC-0023": {
-      "file": "/covers/GBC-0023.png",
-      "source": "libretro-nintendo-serial",
-      "physicalProductCode": "DMG-NT-USA",
-      "matchedSerial": "DMG-NT-USA",
-      "serialTitle": "Teenage Mutant Ninja Turtles - Fall of the Foot Clan (USA)",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
-      "sourcePath": "Named_Boxarts/Teenage Mutant Hero Turtles - Fall of the Foot Clan (Europe).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy/master/Named_Boxarts/Teenage%20Mutant%20Hero%20Turtles%20-%20Fall%20of%20the%20Foot%20Clan%20(Europe).png",
-      "matchedBy": "physical-product-code-serial-database",
-      "matchScore": 913
     },
     "GBC-0024": {
       "file": "/covers/GBC-0024.jpg",
@@ -1527,8 +1503,8 @@
       "matchedSerial": "NUS-NZLP-EUR",
       "serialTitle": "Legend of Zelda, The - Ocarina of Time (Europe) (En,Fr,De)",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
-      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Ocarina of Time (Europe) (Beta) (2003-02-13) (GameCube).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/Legend%20of%20Zelda%2C%20The%20-%20Ocarina%20of%20Time%20(Europe)%20(Beta)%20(2003-02-13)%20(GameCube).png",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Ocarina of Time (Europe) (Debug) (GameCube).png",
+      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/Legend%20of%20Zelda%2C%20The%20-%20Ocarina%20of%20Time%20(Europe)%20(Debug)%20(GameCube).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
@@ -1565,18 +1541,6 @@
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
       "sourcePath": "Named_Boxarts/Power Rangers - Lightspeed Rescue (Europe).png",
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/Power%20Rangers%20-%20Lightspeed%20Rescue%20(Europe).png",
-      "matchedBy": "physical-product-code-serial-database",
-      "matchScore": 1055
-    },
-    "N64-0011": {
-      "file": "/covers/N64-0011.png",
-      "source": "libretro-nintendo-serial",
-      "physicalProductCode": "NUS-NLRP-EUR",
-      "matchedSerial": "NUS-NLRP-EUR",
-      "serialTitle": "Lode Runner 3-D (Europe) (En,Fr,De,Es,It)",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
-      "sourcePath": "Named_Boxarts/Lode Runner 3-D (Europe) (En,Fr,De,Es,It).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/Lode%20Runner%203-D%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
@@ -1688,18 +1652,6 @@
       "nameScore": 1000,
       "fingerprint": "fe8fd44b4439bfb1"
     },
-    "N64-0023": {
-      "file": "/covers/N64-0023.png",
-      "source": "libretro-nintendo-serial",
-      "physicalProductCode": "NUS-NFWP-EUR",
-      "matchedSerial": "NUS-NFWP-EUR",
-      "serialTitle": "F-1 World Grand Prix (Europe)",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
-      "sourcePath": "Named_Boxarts/F-1 World Grand Prix (Europe) (Beta).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/F-1%20World%20Grand%20Prix%20(Europe)%20(Beta).png",
-      "matchedBy": "physical-product-code-serial-database",
-      "matchScore": 1055
-    },
     "N64-0024": {
       "file": "/covers/N64-0024.png",
       "source": "libretro-nintendo-serial",
@@ -1707,8 +1659,8 @@
       "matchedSerial": "NUS-NT2P-EUR",
       "serialTitle": "Turok 2 - Seeds of Evil (Europe)",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
-      "sourcePath": "Named_Boxarts/Turok 2 - Seeds of Evil (Europe) (Demo) (Kiosk).png",
-      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/Turok%202%20-%20Seeds%20of%20Evil%20(Europe)%20(Demo)%20(Kiosk).png",
+      "sourcePath": "Named_Boxarts/Turok 2 - Seeds of Evil (Europe) (En,Fr,Es,It).png",
+      "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/Turok%202%20-%20Seeds%20of%20Evil%20(Europe)%20(En%2CFr%2CEs%2CIt).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
@@ -5675,9 +5627,9 @@
       "matchScore": 1000
     }
   },
-  "matched": 408,
-  "missing": 108,
-  "reused": 139,
-  "apiLookups": 107,
-  "remainingMonthlyAllowance": 91
+  "matched": 404,
+  "missing": 112,
+  "reused": 408,
+  "apiLookups": 0,
+  "remainingMonthlyAllowance": 85
 }
