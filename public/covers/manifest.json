@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:11:03Z",
+  "generatedAt": "2026-09-27T11:42:54Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -1017,6 +1017,20 @@
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
+    "GBA-0062": {
+      "file": "/covers/GBA-0062.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 14617,
+      "launchboxTitle": "Classic NES Series: The Legend of Zelda",
+      "matchedName": "Classic NES Series: The Legend of Zelda",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/71427243-a778-4bc6-955c-1ad7cd608871.jpg",
+      "matchScore": 1140,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
+    },
     "GBC-0001": {
       "file": "/covers/GBC-0001.jpg",
       "source": "thegamesdb",
@@ -1270,6 +1284,20 @@
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
       "sourcePath": "Named_Boxarts/Gargoyle's Quest (Europe) (Rev 1).png"
+    },
+    "GBC-0020": {
+      "file": "/covers/GBC-0020.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 1727,
+      "launchboxTitle": "Super Mario Land 2: 6 Golden Coins",
+      "matchedName": "Super Mario Land 2: 6 Golden Coins",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/47331cf7-6257-4eb7-8268-906145180939.jpg",
+      "matchScore": 1140,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
     },
     "GBC-0021": {
       "file": "/covers/GBC-0021.jpg",
@@ -3552,6 +3580,20 @@
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
     },
+    "PS1-0026": {
+      "file": "/covers/PS1-0026.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 10827,
+      "launchboxTitle": "Disney-Pixar's Toy Story 2: Buzz Lightyear to the Rescue!",
+      "matchedName": "Disney-Pixar Toy Story 2: Buzz Lightyear to the Rescue!",
+      "platformName": "Sony Playstation",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/5d53a1a9-3bed-4933-9741-577d65534736.jpg",
+      "matchScore": 1090,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
+    },
     "PS1-0027": {
       "file": "/covers/PS1-0027.png",
       "source": "libretro-redump-serial",
@@ -5083,6 +5125,20 @@
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
     },
+    "PS2-0062": {
+      "file": "/covers/PS2-0062.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 23482,
+      "launchboxTitle": "Formula One 05",
+      "matchedName": "Formula One 05",
+      "platformName": "Sony Playstation 2",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/fef043ea-c087-4b4a-9de6-f22ce99ba004.jpg",
+      "matchScore": 1140,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
+    },
     "PS2-0063": {
       "file": "/covers/PS2-0063.png",
       "source": "libretro-redump-serial",
@@ -5094,6 +5150,20 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_2/master/Named_Boxarts/Pilot%20Down%20-%20Behind%20Enemy%20Lines%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
+    },
+    "PS2-0064": {
+      "file": "/covers/PS2-0064.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 139325,
+      "launchboxTitle": "Chess Challenger",
+      "matchedName": "Chess Challenger",
+      "platformName": "Sony Playstation 2",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/r2_fca2f4a4-973b-4966-a776-3ef3ba2db928.jpg",
+      "matchScore": 1140,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
     },
     "PS2-0065": {
       "file": "/covers/PS2-0065.png",
@@ -5881,6 +5951,20 @@
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
     },
+    "PS2-0129": {
+      "file": "/covers/PS2-0129.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 18696,
+      "launchboxTitle": "Soccer Mania",
+      "matchedName": "Football Mania",
+      "platformName": "Sony Playstation 2",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/cebafa86-065f-4a19-8899-43ba1f33dfb1.jpg",
+      "matchScore": 1090,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
+    },
     "PS2-0130": {
       "file": "/covers/PS2-0130.png",
       "source": "libretro-redump-serial",
@@ -6596,8 +6680,8 @@
       "matchScore": 1000
     }
   },
-  "matched": 488,
-  "missing": 28,
+  "matched": 494,
+  "missing": 22,
   "reused": 406,
   "apiLookups": 0,
   "remainingMonthlyAllowance": 64,

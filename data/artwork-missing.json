@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:37:06.091Z",
+  "generatedAt": "2026-09-27T11:42:54Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -10,8 +10,8 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 488,
-  "missing": 28,
+  "matched": 494,
+  "missing": 22,
   "entries": [
     {
       "collectionId": "GBA-0045",
@@ -59,42 +59,6 @@
         }
       ],
       "inputKey": "{\"title\":\"The Hobbit\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0062",
-      "title": "Zelda NES Classics",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-FZLP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Zelda NES Classics",
-      "platformId": 5,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Zelda NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0020",
-      "title": "Super Mario Land 2",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-MQ-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Super Mario Land 2",
-      "platformId": 4,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Super Mario Land 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -516,24 +480,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "PS1-0026",
-      "title": "Toy Story 2",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Platinum",
-      "keepStatus": "Collection",
-      "productCode": "Box: SLES-02067; disc: SLES-02067 /P",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Toy Story 2",
-      "platformId": 10,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Toy Story 2\",\"platform\":\"Playstation\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "PS1-0057",
       "title": "Oddworld: Abe's Oddysee DEMO",
       "platform": "Playstation",
@@ -585,66 +531,6 @@
       "platformId": 10,
       "candidates": [],
       "inputKey": "{\"title\":\"Euro Demo 92\",\"platform\":\"Playstation\",\"edition\":\"Demo / Spanish\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS2-0062",
-      "title": "Formula One 2005",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SCES-53033",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Formula One 2005",
-      "platformId": 11,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Formula One 2005\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS2-0064",
-      "title": "Play It Chess Challenger",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-51630",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Play It Chess Challenger",
-      "platformId": 11,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Play It Chess Challenger\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS2-0129",
-      "title": "LEGO Football Mania",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Cover: Spanish/Portuguese; game: EN/FR/DE/IT/ES/NL/SV/DA (release reference)",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-50937; EAN 5030934030786",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "LEGO Football Mania",
-      "platformId": 11,
-      "candidates": [
-        {
-          "id": 18696,
-          "title": "Soccer Mania",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"LEGO Football Mania\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
