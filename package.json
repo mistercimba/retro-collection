@@ -12,7 +12,9 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest run",
-    "check": "npm run lint && npm run test && npm run build"
+    "check": "npm run lint && npm run test && npm run build",
+    "artwork:import": "node scripts/import-local-artwork.mjs",
+    "artwork:status": "node scripts/artwork-status.mjs"
   },
   "dependencies": {
     "google-auth-library": "11.1.0",
