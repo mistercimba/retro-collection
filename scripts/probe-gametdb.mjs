@@ -43,3 +43,16 @@ for (const url of moreCoverUrls) {
   const response = await fetch(url, { method: "HEAD", headers: { "User-Agent": "MarioRetroCollection/1.0" } });
   console.log("MORE COVER", url, response.status, response.headers.get("content-type"), response.headers.get("content-length"));
 }
+
+const gamePages = [
+  "https://www.gametdb.com/DS/A2DP",
+  "https://www.gametdb.com/3DS/A2AP",
+  "https://www.gametdb.com/WiiU/ABAP01",
+  "https://www.gametdb.com/PS3/BLES01792",
+];
+for (const url of gamePages) {
+  const response = await fetch(url, { headers: { "User-Agent": "MarioRetroCollection/1.0" }, redirect: "follow" });
+  const html = await response.text();
+  const artUrls = [...html.matchAll(/https?:\\?\/\\?\/art\.gametdb\.com[^"'<>\\s]+/gi)].map(m => m[0].replace(/\\\//g, "/"));
+  console.log("PAGE ART", url, response.status, [...new Set(artUrls)].slice(0, 20));
+}
