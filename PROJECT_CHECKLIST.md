@@ -19,15 +19,15 @@
 
 ## Estado de validação
 
-- GitHub Actions passou com sucesso no commit `8fd3085` (lint + tests + production build).
-- Vercel production deploy ficou `READY` no mesmo commit.
-- Google Sheets real confirmado em produção via `/api/health` (`provider: google`).
-- `APP_PASSWORD` configurada em produção.
+- [x] GitHub Actions passou (lint, testes e build de produção) no commit histórico `8fd3085`.
+- [x] Vercel ficou **READY** no commit histórico `8fd3085`.
+- [x] Artwork local completo no `main`: **516/516** jogos com capa, 0 em falta, conforme `data/artwork-missing.json` e `public/covers/manifest.json` no commit `2a3b3eb`.
+- [ ] Revalidar o deploy atual: o check Vercel do commit `2a3b3eb` falhou por limite de builds (`build-rate-limit`).
+- [ ] Confirmar o provider e os dados no deploy atual. Há documentação contraditória: confirmação histórica de `provider: google` via `/api/health` e uma indicação no README de modo mock/demo.
 
 ## Próximo — qualidade de dados e UX
 
-- [ ] Ligar credenciais reais e validar todos os headers da sheet em produção.
-- [ ] Adicionar capas através de uma fonte escolhida explicitamente (sem scraping aleatório).
+- [ ] Confirmar em produção que os headers e totais correspondem à Google Sheet e que `provider: google` está ativo.
 - [ ] Melhorar cache/offline para consulta em feiras com rede fraca.
 - [ ] Criar favoritos / shortlist temporária sem escrever na sheet.
 - [ ] Mostrar PLAN / buylist de forma read-only.
