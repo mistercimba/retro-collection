@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-27T09:42:01.050Z",
+  "generatedAt": "2026-09-27T09:54:07.064Z",
   "source": "thegamesdb",
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 248,
-  "missing": 268,
+  "matched": 261,
+  "missing": 255,
   "entries": [
     {
       "collectionId": "3DS-0003",
@@ -96,43 +96,6 @@
           "id": 114274,
           "title": "Spirit Camera: The Cursed Memoir",
           "regionId": 1
-        }
-      ]
-    },
-    {
-      "collectionId": "3DS-0009",
-      "title": "Pokémon Moon",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: TSA-CTR-BNEP-POR; cartridge: LNA-CTR-BNEP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Pokémon Moon",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 122107,
-          "title": "Pokémon Lune",
-          "regionId": 6,
-          "country": "France",
-          "matchedName": "Pokémon Moon",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 101693,
-          "title": "Pokémon Moon",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Pokémon Moon",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
         }
       ]
     },
@@ -513,43 +476,6 @@
           "id": 3330,
           "title": "Beyblade: G-Revolution",
           "regionId": 0
-        }
-      ]
-    },
-    {
-      "collectionId": "GBA-0022",
-      "title": "Super Mario Advance 2",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AA2P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Super Mario Advance 2",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 95436,
-          "title": "Super Mario Advance",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Super Mario Advance",
-          "nameScore": 956,
-          "score": 1486,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 95437,
-          "title": "Super Mario World: Super Mario Advance 2",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Super Mario World: Super Mario Advance 2",
-          "nameScore": 922,
-          "score": 1452,
-          "hasFrontBoxart": true
         }
       ]
     },
@@ -1271,80 +1197,6 @@
       "candidates": []
     },
     {
-      "collectionId": "GBC-0002",
-      "title": "Pokemon Gold",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-AAUP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Pokemon Gold",
-      "platformId": 41,
-      "candidates": [
-        {
-          "id": 118183,
-          "title": "Pokemon Gold Version",
-          "regionId": 6,
-          "country": "Netherlands",
-          "matchedName": "Pokemon Gold Version",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 125654,
-          "title": "Pokémon Adventure",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Pokémon Gold 2",
-          "nameScore": 954,
-          "score": 1499,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
-      "collectionId": "GBC-0003",
-      "title": "Pokemon Yellow",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-APSU-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Pokemon Yellow",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 128031,
-          "title": "Pokémon Yellow Special Pikachu Edition",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Pokémon Yellow",
-          "nameScore": 1000,
-          "score": 1545,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 97211,
-          "title": "Pokémon Yellow Version",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Pokémon Yellow Version",
-          "nameScore": 1000,
-          "score": 1545,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
       "collectionId": "GBC-0004",
       "title": "Zelda Oracle Of Ages",
       "platform": "Game Boy Color",
@@ -1544,31 +1396,10 @@
       "productCode": "DMG-MQ-EUR",
       "artworkPolicy": "PAL",
       "matcherVersion": 2,
-      "reason": "ambiguous-match",
+      "reason": "no-confident-title-match",
       "searchTitle": "Super Mario Land 2",
       "platformId": 4,
-      "candidates": [
-        {
-          "id": 125894,
-          "title": "Super Mario 4",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Super Mario Land 4",
-          "nameScore": 951,
-          "score": 1496,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 108951,
-          "title": "Super Mario Land",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Super Mario Land",
-          "nameScore": 956,
-          "score": 1486,
-          "hasFrontBoxart": true
-        }
-      ]
+      "candidates": []
     },
     {
       "collectionId": "GBC-0021",
@@ -1620,43 +1451,6 @@
       ]
     },
     {
-      "collectionId": "GBC-0024",
-      "title": "Donkey Kong",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-QD-EUR (probable; only EUR suffix readable)",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Donkey Kong",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 106873,
-          "title": "Donkey Kong",
-          "regionId": 6,
-          "country": "Australia",
-          "matchedName": "Donkey Kong",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 126036,
-          "title": "Super Donkey Kong 3",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Donkey Kong 3",
-          "nameScore": 953,
-          "score": 1498,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
       "collectionId": "GBC-0025",
       "title": "Harvest Moon",
       "platform": "Game Boy",
@@ -1694,31 +1488,10 @@
       "productCode": "DMG-ADDP-EUR-1",
       "artworkPolicy": "PAL",
       "matcherVersion": 2,
-      "reason": "ambiguous-match",
+      "reason": "no-confident-title-match",
       "searchTitle": "Donkey Kong Land 2",
       "platformId": 4,
-      "candidates": [
-        {
-          "id": 108955,
-          "title": "Donkey Kong Land",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Donkey Kong Land",
-          "nameScore": 955,
-          "score": 1485,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 108954,
-          "title": "Donkey Kong Land III",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Donkey Kong Land 3",
-          "nameScore": 951,
-          "score": 1481,
-          "hasFrontBoxart": true
-        }
-      ]
+      "candidates": []
     },
     {
       "collectionId": "GBC-0029",
@@ -2201,9 +1974,9 @@
           "regionId": 1
         },
         {
-          "id": 92100,
-          "title": "MARIOKART: Double Dash!!",
-          "regionId": 4
+          "id": 117732,
+          "title": "Mario Kart: Double Dash!!",
+          "regionId": 2
         }
       ]
     },
@@ -2835,53 +2608,6 @@
       ]
     },
     {
-      "collectionId": "NDS-0017",
-      "title": "Pokémon White",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "TWL-IRAO-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Pokémon White",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 102846,
-          "title": "Pokémon White Version",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Pokémon White Version",
-          "nameScore": 1000,
-          "score": 1545,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 121815,
-          "title": "Pokémon Weiße Edition",
-          "regionId": 6,
-          "country": "Germany",
-          "matchedName": "Pokémon White Version",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 121816,
-          "title": "Pokémon Weisse Edition 2",
-          "regionId": 6,
-          "country": "Germany",
-          "matchedName": "Pokémon White Version 2",
-          "nameScore": 955,
-          "score": 1485,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
       "collectionId": "NDS-0019",
       "title": "Pokémon Diamond",
       "platform": "Nintendo DS",
@@ -3326,14 +3052,14 @@
       "platformId": 7,
       "candidates": [
         {
-          "id": 111866,
-          "title": "Gradius",
-          "regionId": 4
-        },
-        {
           "id": 1297,
           "title": "Gradius",
           "regionId": 2
+        },
+        {
+          "id": 111866,
+          "title": "Gradius",
+          "regionId": 4
         },
         {
           "id": 86606,
@@ -3371,53 +3097,6 @@
           "id": 135094,
           "title": "Tom & Jerry: The Ultimate Game of Cat and Mouse!",
           "regionId": 1
-        }
-      ]
-    },
-    {
-      "collectionId": "NES-0008",
-      "title": "Super Mario Bros. 3",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-UM-FRA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Super Mario Bros. 3",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 85968,
-          "title": "Super Mario Bros 3",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Super Mario Bros 3",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 107095,
-          "title": "Super Mario Bros 2",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Super Mario Bros 2",
-          "nameScore": 951,
-          "score": 1496,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 104883,
-          "title": "Super Mario Bros",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Super Mario Bros",
-          "nameScore": 956,
-          "score": 1486,
-          "hasFrontBoxart": true
         }
       ]
     },
@@ -3676,6 +3355,22 @@
           "regionId": 0
         }
       ]
+    },
+    {
+      "collectionId": "PC-0003",
+      "title": "Guild Wars 2",
+      "platform": "PC",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Guild Wars 2",
+      "platformId": 1,
+      "candidates": []
     },
     {
       "collectionId": "PC-0004",
@@ -4156,63 +3851,6 @@
       "candidates": []
     },
     {
-      "collectionId": "PS1-0054",
-      "title": "A Bug's Life",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Platinum",
-      "keepStatus": "Sell",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "A Bug's Life",
-      "platformId": 10,
-      "candidates": [
-        {
-          "id": 98563,
-          "title": "A Bug's Life [Platinum]",
-          "regionId": 6,
-          "country": "Australia",
-          "matchedName": "A Bug's Life [Platinum]",
-          "nameScore": 1000,
-          "score": 1660,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 122742,
-          "title": "1001 Pattes [Platinum]",
-          "regionId": 6,
-          "country": "France",
-          "matchedName": "A Bug's Life",
-          "nameScore": 1000,
-          "score": 1660,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 107957,
-          "title": "A Bug's Life",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "A Bug's Life",
-          "nameScore": 1000,
-          "score": 1500,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 99876,
-          "title": "Een luizenleven",
-          "regionId": 6,
-          "country": "Belgium",
-          "matchedName": "A Bug's Life",
-          "nameScore": 1000,
-          "score": 1500,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
       "collectionId": "PS1-0055",
       "title": "Jungle Book Groove Party",
       "platform": "Playstation",
@@ -4332,43 +3970,6 @@
       "candidates": []
     },
     {
-      "collectionId": "PS1-0068",
-      "title": "Bust-A-Move 2 Arcade Edition",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Acclaimed Range",
-      "keepStatus": "Collection",
-      "productCode": "Box: SLES-00278; disc: SLES-00278#",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Bust-A-Move 2 Arcade Edition",
-      "platformId": 10,
-      "candidates": [
-        {
-          "id": 85880,
-          "title": "Bust-A-Move 2 (PAL)",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Bust -A- Move 2 - Arcade Edition",
-          "nameScore": 1000,
-          "score": 1515,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 112343,
-          "title": "Bust-A-Move 2 - Arcade Edition",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Bust-A-Move 2 - Arcade Edition",
-          "nameScore": 1000,
-          "score": 1500,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
       "collectionId": "PS1-0071",
       "title": "Caesars Palace 2000",
       "platform": "Playstation",
@@ -4383,43 +3984,6 @@
       "searchTitle": "Caesars Palace 2000",
       "platformId": 10,
       "candidates": []
-    },
-    {
-      "collectionId": "PS1-0072",
-      "title": "Who Wants to Be a Millionaire?",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box/disc: SLES-02988",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Who Wants to Be a Millionaire?",
-      "platformId": 10,
-      "candidates": [
-        {
-          "id": 52910,
-          "title": "Who Wants to be a Millionaire?",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Who Wants to be a Millionaire?",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 78867,
-          "title": "Qui Veut Gagner des Millions",
-          "regionId": 6,
-          "country": "France",
-          "matchedName": "Who Wants to be a Millionaire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        }
-      ]
     },
     {
       "collectionId": "PS1-0073",
@@ -4440,100 +4004,6 @@
           "id": 13418,
           "title": "Vanishing Point",
           "regionId": 2
-        }
-      ]
-    },
-    {
-      "collectionId": "PS1-0074",
-      "title": "A Bug's Life",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Spanish",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box/disc: SCES-01523",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "A Bug's Life",
-      "platformId": 10,
-      "candidates": [
-        {
-          "id": 107957,
-          "title": "A Bug's Life",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "A Bug's Life",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 99876,
-          "title": "Een luizenleven",
-          "regionId": 6,
-          "country": "Belgium",
-          "matchedName": "A Bug's Life",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 98563,
-          "title": "A Bug's Life [Platinum]",
-          "regionId": 6,
-          "country": "Australia",
-          "matchedName": "A Bug's Life [Platinum]",
-          "nameScore": 1000,
-          "score": 1260,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 122742,
-          "title": "1001 Pattes [Platinum]",
-          "regionId": 6,
-          "country": "France",
-          "matchedName": "A Bug's Life",
-          "nameScore": 1000,
-          "score": 1260,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
-      "collectionId": "PS1-0077",
-      "title": "Asterix",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box/disc: SLES-01748",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Asterix",
-      "platformId": 10,
-      "candidates": [
-        {
-          "id": 498,
-          "title": "Asterix and Obelix Take on Caesar",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "Astérix",
-          "nameScore": 1000,
-          "score": 1545,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 120871,
-          "title": "Asterix",
-          "regionId": 6,
-          "country": "Germany",
-          "matchedName": "Asterix",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
         }
       ]
     },
@@ -4725,14 +4195,14 @@
           "regionId": 1
         },
         {
-          "id": 5396,
-          "title": "Need for Speed: Underground",
-          "regionId": 1
-        },
-        {
           "id": 126112,
           "title": "Need For Speed: Underground",
           "regionId": 8
+        },
+        {
+          "id": 5396,
+          "title": "Need for Speed: Underground",
+          "regionId": 1
         }
       ]
     },
@@ -4924,6 +4394,22 @@
       "matcherVersion": 2,
       "reason": "no-pal-game",
       "searchTitle": "Final Fantasy VII Dirge Of Cerberus",
+      "platformId": 11,
+      "candidates": []
+    },
+    {
+      "collectionId": "PS2-0030",
+      "title": "Devil May Cry 3",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Special Edition",
+      "keepStatus": "Collection",
+      "productCode": "SLES-54186",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Devil May Cry 3",
       "platformId": 11,
       "candidates": []
     },
@@ -5232,167 +4718,6 @@
       "candidates": []
     },
     {
-      "collectionId": "PS2-0067",
-      "title": "The Sims 2: Pets",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-54347",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "The Sims 2: Pets",
-      "platformId": 11,
-      "candidates": [
-        {
-          "id": 120717,
-          "title": "The Sims 2: Zwierzaki",
-          "regionId": 6,
-          "country": "Poland",
-          "matchedName": "The Sims 2: Pets",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 126498,
-          "title": "The Sims 2: Pets",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "The Sims 2: Pets",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 80998,
-          "title": "The Sims 2: Pets (Platinum)",
-          "regionId": 6,
-          "country": "Australia",
-          "matchedName": "The Sims 2: Pets (Platinum)",
-          "nameScore": 1000,
-          "score": 1260,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
-      "collectionId": "PS2-0074",
-      "title": "Harry Potter And The Goblet Of Fire",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Sell",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Harry Potter And The Goblet Of Fire",
-      "platformId": 11,
-      "candidates": [
-        {
-          "id": 104809,
-          "title": "Harry Potter og Ildbegeret",
-          "regionId": 6,
-          "country": "Norway",
-          "matchedName": "Harry Potter and the Goblet of Fire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 123176,
-          "title": "Harry Potter et la Coupe du Feu",
-          "regionId": 6,
-          "country": "France",
-          "matchedName": "Harry Potter and the Goblet of Fire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 129998,
-          "title": "Harry Potter e o Cálice de Fogo",
-          "regionId": 6,
-          "country": "Portugal",
-          "matchedName": "Harry Potter and the Goblet of Fire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 124525,
-          "title": "Harry Potter and the Goblet of Fire",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Harry Potter and the Goblet of Fire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
-      "collectionId": "PS2-0075",
-      "title": "Harry Potter And The Goblet Of Fire",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Portuguese",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-53726",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "Harry Potter And The Goblet Of Fire",
-      "platformId": 11,
-      "candidates": [
-        {
-          "id": 104809,
-          "title": "Harry Potter og Ildbegeret",
-          "regionId": 6,
-          "country": "Norway",
-          "matchedName": "Harry Potter and the Goblet of Fire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 123176,
-          "title": "Harry Potter et la Coupe du Feu",
-          "regionId": 6,
-          "country": "France",
-          "matchedName": "Harry Potter and the Goblet of Fire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 129998,
-          "title": "Harry Potter e o Cálice de Fogo",
-          "regionId": 6,
-          "country": "Portugal",
-          "matchedName": "Harry Potter and the Goblet of Fire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 124525,
-          "title": "Harry Potter and the Goblet of Fire",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "Harry Potter and the Goblet of Fire",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        }
-      ]
-    },
-    {
       "collectionId": "PS2-0076",
       "title": "WRC: World Rally Championship",
       "platform": "Playstation 2",
@@ -5418,6 +4743,22 @@
           "regionId": 0
         }
       ]
+    },
+    {
+      "collectionId": "PS2-0078",
+      "title": "Dragon Ball Z: Budokai Tenkaichi 3",
+      "platform": "Playstation 2",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Platinum",
+      "keepStatus": "Collection",
+      "productCode": "SLES-54945",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "Dragon Ball Z: Budokai Tenkaichi 3",
+      "platformId": 11,
+      "candidates": []
     },
     {
       "collectionId": "PS2-0079",
@@ -5565,7 +4906,7 @@
         "country": "",
         "matchedName": "Sonic Unleashed",
         "nameScore": 1000,
-        "score": 1545,
+        "score": 1570,
         "hasFrontBoxart": false
       }
     },
@@ -6073,53 +5414,6 @@
           "id": 18696,
           "title": "Soccer Mania",
           "regionId": 0
-        }
-      ]
-    },
-    {
-      "collectionId": "PS2-0131",
-      "title": "EyeToy: Play 2",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Game release multilingual incl. Portuguese; box language not confirmed",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SCES-52748; UPC 711719687344 / EAN-13 0711719687344 (owner-read)",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "ambiguous-match",
-      "searchTitle": "EyeToy: Play 2",
-      "platformId": 11,
-      "candidates": [
-        {
-          "id": 9685,
-          "title": "EyeToy: Play 2",
-          "regionId": 6,
-          "country": "United Kingdom of Great Britain and Northern Ireland",
-          "matchedName": "EyeToy: Play 2",
-          "nameScore": 1000,
-          "score": 1530,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 111197,
-          "title": "EyeToy: Play",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "EyeToy: Play",
-          "nameScore": 954,
-          "score": 1499,
-          "hasFrontBoxart": true
-        },
-        {
-          "id": 8714,
-          "title": "EyeToy: Play 3",
-          "regionId": 6,
-          "country": "",
-          "matchedName": "EyeToy: Play 3",
-          "nameScore": 948,
-          "score": 1493,
-          "hasFrontBoxart": true
         }
       ]
     },
