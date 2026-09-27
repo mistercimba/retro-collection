@@ -55,3 +55,5 @@ for (const title of ["Lylat Wars", "Star Fox 64"]) {
     boxart: payload?.include?.boxart?.data ?? null,
   }, null, 2));
 }
+
+// probe-version: 2
