@@ -2,11 +2,11 @@ import "server-only";
 import { unstable_cache } from "next/cache";
 import type { CollectionGame } from "@/lib/data/types";
 import { formatPlaytime } from "@/lib/external-game-data.logic";
-import type { GameMetadata } from "@/lib/game-metadata";
+import type { MatchedGameMetadata } from "@/lib/game-metadata";
 import { getPricechartingEstimate, type PriceEstimate } from "@/lib/pricecharting-catalog";
 
 export type Research = {
-  metadata: (GameMetadata & { timeToBeat: { main: string; extras: string; completionist: string } }) | null;
+  metadata: (MatchedGameMetadata & { timeToBeat: { main: string; extras: string; completionist: string } }) | null;
   metadataState: "matched" | "ambiguous" | "unmatched" | "not-configured" | "unavailable";
   metascore: { value: number | null; source: string; url: string };
   estimate: PriceEstimate;

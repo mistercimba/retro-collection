@@ -1,9 +1,7 @@
 import snapshot from "@/data/game-metadata.json";
 
-export interface GameMetadata {
-  matchStatus?: "matched" | "ambiguous" | "unmatched";
-  matchReason?: string;
-  candidates?: { id: number; name: string; platforms: string[] }[];
+export type MatchedGameMetadata = {
+  matchStatus: "matched";
   source: string;
   sourceGameId: number;
   title: string;
@@ -21,9 +19,20 @@ export interface GameMetadata {
   userRatingCount: number;
   refreshedAt: string;
   timeToBeat?: { main: string; extras: string; completionist: string };
-}
+};
 
-const games = (snapshot as { games?: Record<string, GameMetadata> }).games ?? {};
+export type UnresolvedGameMetadata = {
+  matchStatus: "ambiguous" | "unmatched";
+  source: string;
+  matchReason?: string;
+  candidates?: { id: number; name: string; platforms: string[] }[];
+  refreshedAt: string;
+};
+
+export type GameMetadata = MatchedGameMetadata | UnresolvedGameMetadata;
+
+type GameMetadataSnapshot = { games?: Record<string, GameMetadata> };
+const games = (snapshot as unknown as GameMetadataSnapshot).games ?? {};
 
 export function getGameMetadata(collectionId: string): GameMetadata | null {
   return games[collectionId] ?? null;
