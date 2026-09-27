@@ -48,8 +48,12 @@ for cid,target in targets.items():
         continue
     if game.get("platform") != target.get("platform"):
         raise RuntimeError(f"{cid}: platform mismatch")
-    if target.get("region") != "PAL":
-        raise RuntimeError(f"{cid}: curated target must explicitly be PAL")
+    target_region = str(target.get("region") or "").upper()
+    game_region = str(game.get("region") or "").upper()
+    if not target_region:
+        raise RuntimeError(f"{cid}: curated target must explicitly declare its region")
+    if game_region and not game_region.startswith(target_region) and not target_region.startswith(game_region):
+        raise RuntimeError(f"{cid}: curated target region {target_region} does not match collection region {game_region}")
 
     ext=".jpg"
     dest=COVERS / f"{cid}{ext}"
@@ -60,7 +64,7 @@ for cid,target in targets.items():
         "file":f"/covers/{cid}{ext}",
         "source":"curated-exact-url",
         "serial":target.get("serial"),
-        "regionName":"PAL",
+        "regionName":target.get("region"),
         "mediaType":target.get("type","cover"),
         "matchedBy":"manual-exact-serial-verification",
         "sourcePage":target["sourcePage"],
