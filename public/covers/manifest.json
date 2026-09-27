@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T10:56:06Z",
+  "generatedAt": "2026-09-27T10:58:47Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -301,6 +301,19 @@
       "nameScore": 1000,
       "fingerprint": "995a38f0aeeab3c2"
     },
+    "GBA-0001": {
+      "file": "/covers/GBA-0001.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 2365,
+      "launchboxTitle": "Pokémon Emerald Version",
+      "matchedName": "Pokémon Emerald Version",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/94cd4e67-9ec7-40a9-8fee-5c316a699ce4.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBA-0002": {
       "file": "/covers/GBA-0002.png",
       "source": "libretro-nintendo-serial",
@@ -331,6 +344,32 @@
       "nameScore": 1000,
       "fingerprint": "da6ac40b706cd212"
     },
+    "GBA-0004": {
+      "file": "/covers/GBA-0004.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 3490,
+      "launchboxTitle": "Pokémon FireRed Version",
+      "matchedName": "Pokémon FireRed Version",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/6ab16c0c-62c0-4b0b-9e07-02514de9f436.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
+    "GBA-0005": {
+      "file": "/covers/GBA-0005.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 2314,
+      "launchboxTitle": "Pokémon LeafGreen Version",
+      "matchedName": "Pokémon LeafGreen Version",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/ca7e44be-b441-42d9-acaa-6fb34e6d3f11.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBA-0006": {
       "file": "/covers/GBA-0006.jpg",
       "source": "thegamesdb",
@@ -348,6 +387,19 @@
       "matchScore": 1545,
       "nameScore": 1000,
       "fingerprint": "1598dbf6efb8d6c2"
+    },
+    "GBA-0007": {
+      "file": "/covers/GBA-0007.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 2363,
+      "launchboxTitle": "Pokémon Ruby Version",
+      "matchedName": "Pokémon Ruby Version",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/c10d1bcb-3446-448b-8cf5-4b1df49eb394.png",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "GBA-0008": {
       "file": "/covers/GBA-0008.png",
@@ -591,6 +643,19 @@
       "nameScore": 1000,
       "fingerprint": "6bfeb95490b6a194"
     },
+    "GBA-0030": {
+      "file": "/covers/GBA-0030.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 2904,
+      "launchboxTitle": "Classic NES Series: Excitebike",
+      "matchedName": "Classic NES Series: Excitebike",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/c1cce1b6-11c4-4c44-8262-e475d200acbe.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBA-0032": {
       "file": "/covers/GBA-0032.png",
       "source": "libretro-nintendo-serial",
@@ -633,6 +698,19 @@
       "nameScore": 1000,
       "fingerprint": "8e508ac0f7fbb7b3"
     },
+    "GBA-0035": {
+      "file": "/covers/GBA-0035.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 3355,
+      "launchboxTitle": "Classic NES Series: Donkey Kong",
+      "matchedName": "Classic NES Series: Donkey Kong",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/ba440956-6f3d-4381-b43b-50288808c170.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBA-0036": {
       "file": "/covers/GBA-0036.png",
       "source": "libretro-nintendo-serial",
@@ -668,6 +746,19 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Yu-Gi-Oh!%20-%20Dungeon%20Dice%20Monsters%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
+    },
+    "GBA-0039": {
+      "file": "/covers/GBA-0039.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 3697,
+      "launchboxTitle": "Spider-Man: Mysterio's Menace",
+      "matchedName": "Spider-Man: Mysterio's Menace",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/f9ce5b9c-2897-4dc6-ac06-c8537eae03c1.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "GBA-0040": {
       "file": "/covers/GBA-0040.png",
@@ -729,6 +820,19 @@
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
+    "GBA-0046": {
+      "file": "/covers/GBA-0046.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 137269,
+      "launchboxTitle": "Crash & Spyro Super Pack Volume 2",
+      "matchedName": "Crash & Spyro Super Pack Volume 2",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/4efeb04a-b661-469a-b2d8-fb3ec65ed00d.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBA-0048": {
       "file": "/covers/GBA-0048.png",
       "source": "libretro-strict-title",
@@ -778,6 +882,19 @@
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
       "sourcePath": "Named_Boxarts/Tweety and the Magic Gems (Europe).png"
+    },
+    "GBA-0054": {
+      "file": "/covers/GBA-0054.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 2332,
+      "launchboxTitle": "F-Zero: Maximum Velocity",
+      "matchedName": "F-Zero: Maximum Velocity",
+      "platformName": "Nintendo Game Boy Advance",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/e2dfd801-ed2b-4dc6-aef1-fa68fc6dfcc8.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "GBA-0055": {
       "file": "/covers/GBA-0055.png",
@@ -959,6 +1076,19 @@
       "nameScore": 1000,
       "fingerprint": "125e6e70144e1582"
     },
+    "GBC-0008": {
+      "file": "/covers/GBC-0008.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 2361,
+      "launchboxTitle": "Pokémon Silver Version",
+      "matchedName": "Pokémon Silver Version",
+      "platformName": "Nintendo Game Boy Color",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/b33a7679-0b6b-46d3-a8d2-1d6474640143.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBC-0010": {
       "file": "/covers/GBC-0010.jpg",
       "source": "thegamesdb",
@@ -995,6 +1125,19 @@
       "nameScore": 1000,
       "fingerprint": "81b3b77758f6db0f"
     },
+    "GBC-0013": {
+      "file": "/covers/GBC-0013.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 13115,
+      "launchboxTitle": "Star Wars: The Empire Strikes Back",
+      "matchedName": "Star Wars: The Empire Strikes Back",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Spain",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/d4137f70-6c4d-4ca3-9d97-0289e5c38e77.png",
+      "matchScore": 1110,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBC-0014": {
       "file": "/covers/GBC-0014.jpg",
       "source": "thegamesdb",
@@ -1020,6 +1163,19 @@
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
       "sourcePath": "Named_Boxarts/Boulder Dash (Europe).png"
     },
+    "GBC-0016": {
+      "file": "/covers/GBC-0016.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 11547,
+      "launchboxTitle": "Wario Land II",
+      "matchedName": "Wario Land II",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/0d701bf1-280a-4d7e-972d-38d3c13b4321.png",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBC-0017": {
       "file": "/covers/GBC-0017.jpg",
       "source": "thegamesdb",
@@ -1037,6 +1193,19 @@
       "matchScore": 1545,
       "nameScore": 1000,
       "fingerprint": "5e974d8ea9b0a6d3"
+    },
+    "GBC-0018": {
+      "file": "/covers/GBC-0018.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 21741,
+      "launchboxTitle": "Star Trek: 25th Anniversary",
+      "matchedName": "Star Trek: 25th Anniversary",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/9098ea02-5c3f-4ca1-b77a-94c2c3699804.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "GBC-0019": {
       "file": "/covers/GBC-0019.png",
@@ -1063,6 +1232,19 @@
       "nameScore": 1000,
       "fingerprint": "16b429e7dac15f05"
     },
+    "GBC-0023": {
+      "file": "/covers/GBC-0023.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 6024,
+      "launchboxTitle": "Teenage Mutant Ninja Turtles: Fall of the Foot Clan",
+      "matchedName": "Teenage Mutant Ninja Turtles: Fall of the Foot Clan",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/f5fa70ea-a42e-4e18-ac16-2d77d54bad61.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBC-0024": {
       "file": "/covers/GBC-0024.jpg",
       "source": "thegamesdb",
@@ -1080,6 +1262,19 @@
       "matchScore": 1555,
       "nameScore": 1000,
       "fingerprint": "2cba00b7875265f1"
+    },
+    "GBC-0026": {
+      "file": "/covers/GBC-0026.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 3176,
+      "launchboxTitle": "Donkey Kong Land 2",
+      "matchedName": "Donkey Kong Land 2",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/cdda82a0-94a0-4226-968d-2e001d3dc311.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "GBC-0027": {
       "file": "/covers/GBC-0027.png",
@@ -1111,6 +1306,45 @@
       "nameScore": 1000,
       "fingerprint": "4a1d703eaa2d9202"
     },
+    "GBC-0029": {
+      "file": "/covers/GBC-0029.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 13059,
+      "launchboxTitle": "Bart Simpson's Escape from Camp Deadly",
+      "matchedName": "Bart Simpson's Escape from Camp Deadly",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/4cf7a8bb-c791-4e93-8b17-b9b513e4b60d.png",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
+    "GBC-0030": {
+      "file": "/covers/GBC-0030.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 1728,
+      "launchboxTitle": "Wario Land: Super Mario Land 3",
+      "matchedName": "Wario Land: Super Mario Land 3",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/b222666c-26c3-4a06-a8bc-c168e1c92a98.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
+    "GBC-0031": {
+      "file": "/covers/GBC-0031.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 8621,
+      "launchboxTitle": "Harry Potter and the Chamber of Secrets",
+      "matchedName": "Harry Potter and the Chamber of Secrets",
+      "platformName": "Nintendo Game Boy Color",
+      "regionName": "United Kingdom",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/f15fced0-ca76-4813-93fa-14390eae1ac0.jpg",
+      "matchScore": 1150,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "GBC-0032": {
       "file": "/covers/GBC-0032.png",
       "source": "libretro-nintendo-serial",
@@ -1122,6 +1356,32 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Color/master/Named_Boxarts/Pokemon%20Pinball%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt)%20(Rumble%20Version)%20(SGB%20Enhanced)%20(GB%20Compatible).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
+    },
+    "GBC-0033": {
+      "file": "/covers/GBC-0033.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 22085,
+      "launchboxTitle": "Speedy Gonzales: Aztec Adventure",
+      "matchedName": "Speedy Gonzales: Aztec Adventure",
+      "platformName": "Nintendo Game Boy Color",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/227c0163-7a3b-401d-9ede-22115d475b0f.png",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
+    "GBC-0034": {
+      "file": "/covers/GBC-0034.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 18296,
+      "launchboxTitle": "Barbie: Game Girl",
+      "matchedName": "Barbie: Game Girl",
+      "platformName": "Nintendo Game Boy",
+      "regionName": "Germany",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/3742ed13-2b6d-4331-865e-290490ff279d.jpg",
+      "matchScore": 1110,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "GBC-0035": {
       "file": "/covers/GBC-0035.jpg",
@@ -1262,6 +1522,19 @@
       "matchScore": 1500,
       "nameScore": 1000,
       "fingerprint": "ac73a6958d5c5b39"
+    },
+    "GBC-0051": {
+      "file": "/covers/GBC-0051.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 21899,
+      "launchboxTitle": "Bugs Bunny: Crazy Castle 3",
+      "matchedName": "Bugs Bunny: Crazy Castle 3",
+      "platformName": "Nintendo Game Boy Color",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/86fbf1c4-e7e0-4ab4-b129-4a34f7985582.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "GBC-0053": {
       "file": "/covers/GBC-0053.png",
@@ -1685,6 +1958,19 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/Super%20Mario%2064%20(Europe)%20(En%2CFr%2CDe).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
+    },
+    "N64-0017": {
+      "file": "/covers/N64-0017.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 391,
+      "launchboxTitle": "Pokémon Stadium",
+      "matchedName": "Pokémon Stadium",
+      "platformName": "Nintendo 64",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/7865fc05-cb65-4748-9ec1-c90549c0836d.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "N64-0019": {
       "file": "/covers/N64-0019.png",
@@ -2234,6 +2520,19 @@
       "nameScore": 1000,
       "fingerprint": "9982a5409dc7c05c"
     },
+    "NDS-0030": {
+      "file": "/covers/NDS-0030.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 127480,
+      "launchboxTitle": "Looney Tunes: Cartoon Conductor",
+      "matchedName": "Looney Tunes: Cartoon Conductor",
+      "platformName": "Nintendo DS",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/68b78448-196f-42c2-badb-7444efa65f38.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "NDS-0031": {
       "file": "/covers/NDS-0031.jpg",
       "source": "thegamesdb",
@@ -2503,6 +2802,19 @@
       "nameScore": 1000,
       "fingerprint": "f131f3912ea305f4"
     },
+    "NES-0010": {
+      "file": "/covers/NES-0010.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 1248,
+      "launchboxTitle": "Disney's Chip 'n Dale: Rescue Rangers",
+      "matchedName": "Disney's Chip 'n Dale: Rescue Rangers",
+      "platformName": "Nintendo Entertainment System",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/3fbe7609-9358-43f4-8bc2-518bb2fda718.png",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "NES-0013": {
       "file": "/covers/NES-0013.png",
       "source": "libretro-strict-title",
@@ -2516,6 +2828,19 @@
       "policy": "strict-exact-title-pal-fallback",
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/California Games (Europe).png"
+    },
+    "NES-0016": {
+      "file": "/covers/NES-0016.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 385,
+      "launchboxTitle": "The Battle of Olympus",
+      "matchedName": "The Battle of Olympus",
+      "platformName": "Nintendo Entertainment System",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/442e3e62-7972-46ca-b1a9-c92c7ef11611.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "NES-0017": {
       "file": "/covers/NES-0017.png",
@@ -2538,6 +2863,19 @@
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourcePath": "Named_Boxarts/Willow (Europe).png"
     },
+    "PC-0001": {
+      "file": "/covers/PC-0001.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 2511,
+      "launchboxTitle": "The Elder Scrolls V: Skyrim",
+      "matchedName": "The Elder Scrolls V: Skyrim",
+      "platformName": "Windows",
+      "regionName": "Germany",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/r2_4b284b3e-1589-4e29-a4c3-74d9061847ad.png",
+      "matchScore": 1060,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "PC-0002": {
       "file": "/covers/PC-0002.jpg",
       "source": "thegamesdb",
@@ -2555,6 +2893,32 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "77a57d1b21d12a8e"
+    },
+    "PC-0004": {
+      "file": "/covers/PC-0004.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 3952,
+      "launchboxTitle": "Guild Wars: Nightfall",
+      "matchedName": "Guild Wars: Nightfall",
+      "platformName": "Windows",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/r2_7565e128-06c1-4ddb-8b78-01b40c11296c.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
+    "PC-0007": {
+      "file": "/covers/PC-0007.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 3952,
+      "launchboxTitle": "Guild Wars: Nightfall",
+      "matchedName": "Guild Wars: Nightfall",
+      "platformName": "Windows",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/r2_7565e128-06c1-4ddb-8b78-01b40c11296c.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "PC-0011": {
       "file": "/covers/PC-0011.jpg",
@@ -2591,6 +2955,45 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "0434a3fbae677853"
+    },
+    "PC-0019": {
+      "file": "/covers/PC-0019.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 454781,
+      "launchboxTitle": "The Sims 2: University",
+      "matchedName": "The Sims 2: University",
+      "platformName": "Windows",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/36ffbcfe-5f77-421f-8ded-ae28ad95ede9.png",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
+    "PC-0020": {
+      "file": "/covers/PC-0020.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 1784,
+      "launchboxTitle": "The Sims 3",
+      "matchedName": "The Sims 3",
+      "platformName": "Windows",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/470865a5-9362-4762-99da-ded81ab3d309.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
+    "PC-0021": {
+      "file": "/covers/PC-0021.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 21518,
+      "launchboxTitle": "Uru: Ages Beyond Myst",
+      "matchedName": "Uru: Ages Beyond Myst",
+      "platformName": "Windows",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/c83c2a10-fe72-46a6-8702-8c1fdb49145f.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "PS1-0001": {
       "file": "/covers/PS1-0001.png",
@@ -3444,6 +3847,19 @@
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
     },
+    "PS1-0071": {
+      "file": "/covers/PS1-0071.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 14082,
+      "launchboxTitle": "Caesars Palace 2000",
+      "matchedName": "Caesars Palace 2000",
+      "platformName": "Sony Playstation",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/2dbeb51c-1ef0-4ca0-8234-299ef4f0feab.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "PS1-0072": {
       "file": "/covers/PS1-0072.png",
       "source": "libretro-redump-serial",
@@ -3755,6 +4171,19 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_2/master/Named_Boxarts/Marc%20Ecko's%20Getting%20Up%20-%20Contents%20Under%20Pressure%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
+    },
+    "PS2-0010": {
+      "file": "/covers/PS2-0010.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 16204,
+      "launchboxTitle": "Prince of Persia Trilogy",
+      "matchedName": "Prince of Persia Trilogy",
+      "platformName": "Sony Playstation 2",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/5371d8f1-072b-4f28-b40f-ce48dce547c3.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "PS2-0011": {
       "file": "/covers/PS2-0011.png",
@@ -4115,6 +4544,19 @@
       "matchScore": 1660,
       "nameScore": 1000,
       "fingerprint": "f543f7bcdb99cb63"
+    },
+    "PS2-0041": {
+      "file": "/covers/PS2-0041.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 5353,
+      "launchboxTitle": "Tomb Raider: Legend",
+      "matchedName": "Tomb Raider: Legend",
+      "platformName": "Sony Playstation 2",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/cd342ea4-1612-44b1-be6b-9df2dfa49bda.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
     },
     "PS2-0042": {
       "file": "/covers/PS2-0042.jpg",
@@ -5261,6 +5703,32 @@
       "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_Portable",
       "sourcePath": "Named_Boxarts/Need for Speed - Most Wanted - 5-1-0 (Europe) (En,Fr,De,Es,It).png"
     },
+    "PSP-0004": {
+      "file": "/covers/PSP-0004.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 19386,
+      "launchboxTitle": "Pirates of the Caribbean: Dead Man's Chest",
+      "matchedName": "Pirates of the Caribbean: Dead Man's Chest",
+      "platformName": "Sony PSP",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/c5307298-9ea1-487e-9d27-3ccfa67fc184.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
+    "PSP-0005": {
+      "file": "/covers/PSP-0005.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 14493,
+      "launchboxTitle": "Star Wars: Battlefront II",
+      "matchedName": "Star Wars: Battlefront II",
+      "platformName": "Sony PSP",
+      "regionName": "Europe",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/cceb6789-ab27-404f-8b9f-ab270378afab.jpg",
+      "matchScore": 1140,
+      "matchedBy": "exact-title-platform-pal-region"
+    },
     "PSP-0006": {
       "file": "/covers/PSP-0006.png",
       "source": "libretro-redump-serial",
@@ -5833,8 +6301,8 @@
       "matchScore": 1000
     }
   },
-  "matched": 430,
-  "missing": 86,
+  "matched": 466,
+  "missing": 50,
   "reused": 406,
   "apiLookups": 0,
   "remainingMonthlyAllowance": 64
