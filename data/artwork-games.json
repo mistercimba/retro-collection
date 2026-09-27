@@ -1,0 +1,5162 @@
+[
+  {
+    "collectionId": "3DS-0001",
+    "title": "Pokemon Alpha Sapphire",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Limited Edition",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-ECLP-UKV; cartridge: TSA/LNA-CTR-ECLP-EUR"
+  },
+  {
+    "collectionId": "3DS-0002",
+    "title": "Kid Icarus: Uprising",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Big Box",
+    "keepStatus": "Collection",
+    "productCode": "Box: CTR-P-AKDP; cartridge: not confirmed"
+  },
+  {
+    "collectionId": "3DS-0003",
+    "title": "Cave Story 3D",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: unreadable under EcoPlay sticker; cartridge: LNA-CTR-ACVP-UKV"
+  },
+  {
+    "collectionId": "3DS-0004",
+    "title": "Resident Evil Revelations",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Circle Pad Pro Bundle",
+    "keepStatus": "Collection",
+    "productCode": "Bundle box: CTR-R-ABRP; cartridge: not confirmed"
+  },
+  {
+    "collectionId": "3DS-0005",
+    "title": "Castlevania: Lords of Shadow - Mirror of Fate",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-ACFP-EAP; cartridge: LNA-CTR-ACFP-EUR"
+  },
+  {
+    "collectionId": "3DS-0006",
+    "title": "Spirit Camera: The Cursed Memoir",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-ALCP-EAP; cartridge: LNA-CTR-ALCP-EUR"
+  },
+  {
+    "collectionId": "3DS-0007",
+    "title": "Pokémon Y",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-EK2P-UKV; cartridge: LNA-CTR-EK2P-EUR"
+  },
+  {
+    "collectionId": "3DS-0008",
+    "title": "The Legend of Zelda: A Link Between Worlds",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Nintendo Selects",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-BZLP-EAP; cartridge: LNA-CTR-BZLP-EUR"
+  },
+  {
+    "collectionId": "3DS-0009",
+    "title": "Pokémon Moon",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-BNEP-POR; cartridge: LNA-CTR-BNEP-EUR"
+  },
+  {
+    "collectionId": "3DS-0010",
+    "title": "Star Fox 64 3D",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-ANRP-EAP; cartridge: LNA-CTR-ANRP-EUR"
+  },
+  {
+    "collectionId": "3DS-0011",
+    "title": "Super Street Fighter IV 3D Edition",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-ASSP-EAP; cartridge: LNA-CTR-ASSP-EUR"
+  },
+  {
+    "collectionId": "3DS-0012",
+    "title": "LEGO Star Wars III: The Clone Wars",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: unreadable; cartridge: LNA-CTR-ALGP-EUR"
+  },
+  {
+    "collectionId": "3DS-0013",
+    "title": "James Noir's Hollywood Crimes",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-AHCP-UXP; cartridge: LNA-CTR-AHCP-EUR"
+  },
+  {
+    "collectionId": "3DS-0014",
+    "title": "Bravely Second: End Layer",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-BSED-EAP; cartridge: LNA-CTR-BSED-EUR"
+  },
+  {
+    "collectionId": "3DS-0015",
+    "title": "Ever Oasis",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-BAGP-EAP; cartridge: LNA-CTR-BAGP-EUR"
+  },
+  {
+    "collectionId": "3DS-0016",
+    "title": "Story of Seasons: Trio of Towns",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TRA-CTR-BB3P-EAP; cartridge: LNA-CTR-BB3P-EUR"
+  },
+  {
+    "collectionId": "3DS-0017",
+    "title": "Bella Sara: The Magical Horse Adventures",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: TSA-CTR-AB2P-EUR; cartridge: LNA-CTR-AB2P-EUR"
+  },
+  {
+    "collectionId": "3DS-0018",
+    "title": "Mario Kart 7",
+    "platform": "Nintendo 3DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Cartridge: LNA-CTR-AMKP-EUR"
+  },
+  {
+    "collectionId": "GBA-0001",
+    "title": "Pokémon Emerald",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BPEP-EUR"
+  },
+  {
+    "collectionId": "GBA-0002",
+    "title": "Steel Empire",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BKTP-UKV"
+  },
+  {
+    "collectionId": "GBA-0003",
+    "title": "Ninja Cop",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "GBA-0004",
+    "title": "Pokémon FireRed",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BPRP-EUR"
+  },
+  {
+    "collectionId": "GBA-0005",
+    "title": "Pokémon LeafGreen",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BPGP-EUR"
+  },
+  {
+    "collectionId": "GBA-0006",
+    "title": "Pokémon Sapphire",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AXPP-EUR"
+  },
+  {
+    "collectionId": "GBA-0007",
+    "title": "Pokémon Ruby",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AXVP-EUR"
+  },
+  {
+    "collectionId": "GBA-0008",
+    "title": "The Legend of Zelda: The Minish Cap",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BZMP-EUR"
+  },
+  {
+    "collectionId": "GBA-0009",
+    "title": "Sonic Battle",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BSBP-EUR"
+  },
+  {
+    "collectionId": "GBA-0010",
+    "title": "Metroid Fusion",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AMTP-EUR"
+  },
+  {
+    "collectionId": "GBA-0013",
+    "title": "The Legend of Zelda: A Link to the Past & Four Swords",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AZLP-EUR"
+  },
+  {
+    "collectionId": "GBA-0014",
+    "title": "Hello Kitty Happy Party Pals",
+    "platform": "GameBoy Advance",
+    "region": "Unknown",
+    "language": "English",
+    "edition": "Bootleg / Reproduction",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "GBA-0015",
+    "title": "Phantasy Star Collection",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AYCP-EUR"
+  },
+  {
+    "collectionId": "GBA-0016",
+    "title": "Kill Switch",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BKHP-EUR"
+  },
+  {
+    "collectionId": "GBA-0017",
+    "title": "Game & Watch Gallery Advance",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AQWP-EUR"
+  },
+  {
+    "collectionId": "GBA-0018",
+    "title": "Bubble Bobble Old & New",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AONP-EUR"
+  },
+  {
+    "collectionId": "GBA-0019",
+    "title": "Kingdom Hearts: Chain Of Memories",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-B8CP-EUR"
+  },
+  {
+    "collectionId": "GBA-0020",
+    "title": "Beyblade: G-Revolution",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BB2P-EUR"
+  },
+  {
+    "collectionId": "GBA-0021",
+    "title": "Mario Kart Super Circuit",
+    "platform": "GameBoy Advance",
+    "region": "NTSC",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AMKE-USA"
+  },
+  {
+    "collectionId": "GBA-0022",
+    "title": "Super Mario Advance 2",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AA2P-EUR"
+  },
+  {
+    "collectionId": "GBA-0023",
+    "title": "Golden Sun",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AGSP-EUR"
+  },
+  {
+    "collectionId": "GBA-0024",
+    "title": "Mario Vs. Donkey Kong",
+    "platform": "GameBoy Advance",
+    "region": "NTSC",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BM5E-USA"
+  },
+  {
+    "collectionId": "GBA-0025",
+    "title": "Yu-Gi-Oh Ultimate Masters Edition",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BY6P-EUR"
+  },
+  {
+    "collectionId": "GBA-0026",
+    "title": "Rocky",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AROP-EUR"
+  },
+  {
+    "collectionId": "GBA-0027",
+    "title": "Advance Wars",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AWRP-EUR"
+  },
+  {
+    "collectionId": "GBA-0028",
+    "title": "Barbie and the Magic of Pegasus",
+    "platform": "GameBoy Advance",
+    "region": "NTSC",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-APFE-USA"
+  },
+  {
+    "collectionId": "GBA-0029",
+    "title": "Wario Land 4",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AWAP-EUR"
+  },
+  {
+    "collectionId": "GBA-0030",
+    "title": "Excitebike NES Classics",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-FEBP-EUR"
+  },
+  {
+    "collectionId": "GBA-0031",
+    "title": "Lord of the Rings: Return of the King",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "GBA-0032",
+    "title": "ESPN Winter X-Games Snowboarding 2",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AWXP-EUR"
+  },
+  {
+    "collectionId": "GBA-0033",
+    "title": "Final Fantasy Tactics Advance",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AFXP-EUR"
+  },
+  {
+    "collectionId": "GBA-0034",
+    "title": "Super Mario Advance",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AMAP-EUR-1"
+  },
+  {
+    "collectionId": "GBA-0035",
+    "title": "Donkey Kong NES Classics",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-FDKP-EUR"
+  },
+  {
+    "collectionId": "GBA-0036",
+    "title": "Sonic Advance 2",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-A2NP-UKV"
+  },
+  {
+    "collectionId": "GBA-0037",
+    "title": "Driver 2 Advance",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-ADUP-UKV"
+  },
+  {
+    "collectionId": "GBA-0038",
+    "title": "Yu-Gi-Oh Dungeon Dice Monsters",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AYDP-EUR"
+  },
+  {
+    "collectionId": "GBA-0039",
+    "title": "Spiderman: Mysterio's Menace",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-ASEP-EUR"
+  },
+  {
+    "collectionId": "GBA-0040",
+    "title": "Banjo-Kazooie: Grunty's Revenge",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BKZP-UKV"
+  },
+  {
+    "collectionId": "GBA-0041",
+    "title": "Tomb Raider: Legend",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BL8P-EUR"
+  },
+  {
+    "collectionId": "GBA-0042",
+    "title": "Lilo & Stitch 2",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BLSP-EUR-1"
+  },
+  {
+    "collectionId": "GBA-0043",
+    "title": "Star Wars: Episode III Revenge Of The Sith",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BE3P-EUR"
+  },
+  {
+    "collectionId": "GBA-0044",
+    "title": "Spyro 2: Season Of Flame",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-A2SP-EUR"
+  },
+  {
+    "collectionId": "GBA-0045",
+    "title": "Need For Speed: Carbon Own The City",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BN7P-EUR"
+  },
+  {
+    "collectionId": "GBA-0046",
+    "title": "Crash And Spyro Super Pack Volume 2",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-B52P-EUR"
+  },
+  {
+    "collectionId": "GBA-0047",
+    "title": "The Hobbit",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AH9P-EUR"
+  },
+  {
+    "collectionId": "GBA-0048",
+    "title": "Top Gear Rally",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BTGX-EUR"
+  },
+  {
+    "collectionId": "GBA-0049",
+    "title": "Spyro Fusion",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BSTP-EUR"
+  },
+  {
+    "collectionId": "GBA-0050",
+    "title": "Mission: Impossible: Operation Surma",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AIHP-EUR"
+  },
+  {
+    "collectionId": "GBA-0051",
+    "title": "Starsky & Hutch",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AYHP-EUR"
+  },
+  {
+    "collectionId": "GBA-0053",
+    "title": "Tweety & the Magic Gems",
+    "platform": "GameBoy Advance",
+    "region": "Unknown",
+    "language": "Unknown",
+    "edition": "Bootleg / Reproduction",
+    "keepStatus": "Collection",
+    "productCode": "E3-0053 (bootleg marking)"
+  },
+  {
+    "collectionId": "GBA-0054",
+    "title": "F-Zero: Maximum Velocity",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AFZP-EUR"
+  },
+  {
+    "collectionId": "GBA-0055",
+    "title": "Disney's Atlantis: The Lost Empire",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-ATLP-UKV"
+  },
+  {
+    "collectionId": "GBA-0056",
+    "title": "Harry Potter And The Chamber Of Secrets",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-A7HP-EUR"
+  },
+  {
+    "collectionId": "GBA-0057",
+    "title": "Tom And Jerry: Infurnal Escape",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AIFP-EUR"
+  },
+  {
+    "collectionId": "GBA-0058",
+    "title": "James Pond: Codename Robocod",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-AJDP-EUR"
+  },
+  {
+    "collectionId": "GBA-0059",
+    "title": "Spyro: Season Of Ice",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-ASYP-EUR"
+  },
+  {
+    "collectionId": "GBA-0060",
+    "title": "Lord Of The Rings Two Towers",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BLRP-EUR"
+  },
+  {
+    "collectionId": "GBA-0061",
+    "title": "The Incredibles",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-BICP-UKV"
+  },
+  {
+    "collectionId": "GBA-0062",
+    "title": "Zelda NES Classics",
+    "platform": "GameBoy Advance",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "AGB-FZLP-EUR"
+  },
+  {
+    "collectionId": "GBC-0001",
+    "title": "Pokemon Crystal",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "CGB-BYTP-EUR"
+  },
+  {
+    "collectionId": "GBC-0002",
+    "title": "Pokemon Gold",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AAUP-EUR"
+  },
+  {
+    "collectionId": "GBC-0003",
+    "title": "Pokemon Yellow",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-APSU-EUR"
+  },
+  {
+    "collectionId": "GBC-0004",
+    "title": "Zelda Oracle Of Ages",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "CGB-AZ8P-EUR"
+  },
+  {
+    "collectionId": "GBC-0006",
+    "title": "Kirby's Dream Land 2",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AKBP-EUR"
+  },
+  {
+    "collectionId": "GBC-0007",
+    "title": "Pokemon Red",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-APAU-EUR"
+  },
+  {
+    "collectionId": "GBC-0008",
+    "title": "Pokemon Silver",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AAXP-EUR"
+  },
+  {
+    "collectionId": "GBC-0010",
+    "title": "Pokemon Blue",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-APEU-EUR"
+  },
+  {
+    "collectionId": "GBC-0011",
+    "title": "Zelda Link's Awakening",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "French",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-ZL-FRA"
+  },
+  {
+    "collectionId": "GBC-0012",
+    "title": "Kirby's Dream Land",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-KY-EUR"
+  },
+  {
+    "collectionId": "GBC-0013",
+    "title": "Star Wars The Empire Strikes Back",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-EB-FAH"
+  },
+  {
+    "collectionId": "GBC-0014",
+    "title": "Super Mario Bros Deluxe",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Rev 0 (v1.0)",
+    "keepStatus": "Collection",
+    "productCode": "CGB-AHYP-0 (ROM chip)"
+  },
+  {
+    "collectionId": "GBC-0015",
+    "title": "Boulder Dash",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-BD-GPS"
+  },
+  {
+    "collectionId": "GBC-0016",
+    "title": "Wario Land II",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Game Boy Color Rerelease",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AWLP-EUR"
+  },
+  {
+    "collectionId": "GBC-0017",
+    "title": "Wario Land 3",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / Japanese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "CGB-AW8A-EUR"
+  },
+  {
+    "collectionId": "GBC-0018",
+    "title": "Star Trek 25th Anniversary",
+    "platform": "Game Boy",
+    "region": "NTSC",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-RK-USA"
+  },
+  {
+    "collectionId": "GBC-0019",
+    "title": "Gargoyle's Quest",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "UKV-1 Revision",
+    "keepStatus": "Collection",
+    "productCode": "DMG-RA-UKV-1"
+  },
+  {
+    "collectionId": "GBC-0020",
+    "title": "Super Mario Land 2",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-MQ-EUR"
+  },
+  {
+    "collectionId": "GBC-0021",
+    "title": "Probotector",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "GPS Variant",
+    "keepStatus": "Collection",
+    "productCode": "DMG-CN-GPS"
+  },
+  {
+    "collectionId": "GBC-0022",
+    "title": "Super Mario Land",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "UKV Cartridge / Rev 1 ROM",
+    "keepStatus": "Collection",
+    "productCode": "DMG-ML-UKV"
+  },
+  {
+    "collectionId": "GBC-0023",
+    "title": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
+    "platform": "Game Boy",
+    "region": "NTSC",
+    "language": "English",
+    "edition": "USA / Ultra Games Label",
+    "keepStatus": "Collection",
+    "productCode": "DMG-NT-USA"
+  },
+  {
+    "collectionId": "GBC-0024",
+    "title": "Donkey Kong",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-QD-EUR (probable; only EUR suffix readable)"
+  },
+  {
+    "collectionId": "GBC-0025",
+    "title": "Harvest Moon",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AYXP-EUR"
+  },
+  {
+    "collectionId": "GBC-0026",
+    "title": "Donkey Kong Land 2",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-ADDP-EUR-1"
+  },
+  {
+    "collectionId": "GBC-0027",
+    "title": "Pokemon Trading Card Game",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AXQP-NOE"
+  },
+  {
+    "collectionId": "GBC-0028",
+    "title": "Donkey Kong Land III",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AD3P-EUR (probable; only EUR suffix readable)"
+  },
+  {
+    "collectionId": "GBC-0029",
+    "title": "Bart Simpson's Escape From Camp Deadly",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-TS-NOE"
+  },
+  {
+    "collectionId": "GBC-0030",
+    "title": "Wario Land Super Mario Land 3",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-WJ-EUR"
+  },
+  {
+    "collectionId": "GBC-0031",
+    "title": "Harry Potter And The Chamber Of Secrets",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian / Dutch / Portuguese / Swedish / Danish",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "CGB-BH6P-EUR"
+  },
+  {
+    "collectionId": "GBC-0032",
+    "title": "Pokemon Pinball",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian",
+    "edition": "Rumble Version",
+    "keepStatus": "Collection",
+    "productCode": "DMG-VPHP-EUR"
+  },
+  {
+    "collectionId": "GBC-0033",
+    "title": "Speedy Gonzales Aztec Adventure",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-ALZP-UKV"
+  },
+  {
+    "collectionId": "GBC-0034",
+    "title": "Barbie Game Girl",
+    "platform": "Game Boy",
+    "region": "NTSC",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-GU-USA"
+  },
+  {
+    "collectionId": "GBC-0035",
+    "title": "Donkey Kong Land",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-YT-EUR"
+  },
+  {
+    "collectionId": "GBC-0036",
+    "title": "Game & Watch Gallery 3",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AGQP-EUR-2"
+  },
+  {
+    "collectionId": "GBC-0037",
+    "title": "Tetris",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-TR-UKV"
+  },
+  {
+    "collectionId": "GBC-0040",
+    "title": "Game & Watch Gallery 2",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AGLP-EUR"
+  },
+  {
+    "collectionId": "GBC-0041",
+    "title": "Harry Potter And The Philosopher's Stone",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian / Dutch / Portuguese / Swedish / Norwegian / Danish / Finnish",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "CGB-BHVP-EUR"
+  },
+  {
+    "collectionId": "GBC-0042",
+    "title": "Alleyway",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AW-EUR"
+  },
+  {
+    "collectionId": "GBC-0043",
+    "title": "Bugs Bunny Crazy Castle 4",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "EUU-1 Label Variant",
+    "keepStatus": "Collection",
+    "productCode": "CGB-AO4P-EUU-1"
+  },
+  {
+    "collectionId": "GBC-0044",
+    "title": "Golden Goal",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian / Dutch / Swedish",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AAFX-EUR"
+  },
+  {
+    "collectionId": "GBC-0045",
+    "title": "Sylvester & Tweety Breakfast On The Run",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian / Dutch",
+    "edition": "UKV-1 Label Variant",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AYRP-UKV-1"
+  },
+  {
+    "collectionId": "GBC-0046",
+    "title": "Sylvester & Tweety Breakfast On The Run",
+    "platform": "GameBoy + Color",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "GBC-0047",
+    "title": "Laura",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian / Dutch / Swedish / Danish",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "CGB-BLDP-EUR"
+  },
+  {
+    "collectionId": "GBC-0048",
+    "title": "Bugs Bunny & Lola Bunny Operation Carrot Patch",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian / Dutch",
+    "edition": "UKV-1 Label Variant",
+    "keepStatus": "Collection",
+    "productCode": "DMG-ABLP-UKV-1"
+  },
+  {
+    "collectionId": "GBC-0049",
+    "title": "Atlantis The Lost Empire",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "CGB-BABP-UKV"
+  },
+  {
+    "collectionId": "GBC-0050",
+    "title": "Dr. Mario",
+    "platform": "Game Boy",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Rev 1 (World ROM)",
+    "keepStatus": "Collection",
+    "productCode": "DMG-VU-EUR"
+  },
+  {
+    "collectionId": "GBC-0051",
+    "title": "Bugs Bunny: Crazy Castle 3",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-AB6P-EUR"
+  },
+  {
+    "collectionId": "GBC-0052",
+    "title": "The Hunt for Red October",
+    "platform": "Game Boy",
+    "region": "NTSC",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DMG-HF-USA"
+  },
+  {
+    "collectionId": "GBC-0053",
+    "title": "The Legend of Zelda: Oracle of Seasons",
+    "platform": "Game Boy Color",
+    "region": "PAL",
+    "language": "English / French / German / Spanish / Italian",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "CGB-AZ7P-EUR"
+  },
+  {
+    "collectionId": "GC-0001",
+    "title": "Fire Emblem Path Of Radiance",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GFEP-UKV"
+  },
+  {
+    "collectionId": "GC-0002",
+    "title": "Pokemon Box",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GPXP-UKV"
+  },
+  {
+    "collectionId": "GC-0003",
+    "title": "Game Boy Player Start-Up Disc",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-UGPP-EUR"
+  },
+  {
+    "collectionId": "GC-0004",
+    "title": "Pokemon Colosseum",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GC6P-FRA"
+  },
+  {
+    "collectionId": "GC-0005",
+    "title": "Zelda Wind Waker",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Limited Edition",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GZLP-UKV"
+  },
+  {
+    "collectionId": "GC-0006",
+    "title": "Eternal Darkness",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GEDP-UKV"
+  },
+  {
+    "collectionId": "GC-0007",
+    "title": "Super Smash Bros. Melee",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GALP-UKV"
+  },
+  {
+    "collectionId": "GC-0009",
+    "title": "Mario Kart Double Dash",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GM4P-UKV"
+  },
+  {
+    "collectionId": "GC-0010",
+    "title": "Mario Party 4",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GMPP-UKV"
+  },
+  {
+    "collectionId": "GC-0011",
+    "title": "Metroid Prime",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GM8P-UKV"
+  },
+  {
+    "collectionId": "GC-0012",
+    "title": "Super Mario Sunshine",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GMSP-UKV"
+  },
+  {
+    "collectionId": "GC-0013",
+    "title": "The Simpsons Road Rage",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GSPP-ESP"
+  },
+  {
+    "collectionId": "GC-0014",
+    "title": "The Hobbit",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GHBP-UKV"
+  },
+  {
+    "collectionId": "GC-0015",
+    "title": "Pikmin",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GPIP-UKV"
+  },
+  {
+    "collectionId": "GC-0016",
+    "title": "Wave Race Blue Storm",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GWRP-UKV"
+  },
+  {
+    "collectionId": "GC-0017",
+    "title": "Super Monkey Ball",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "DOL-GMBP-EUR"
+  },
+  {
+    "collectionId": "GC-0018",
+    "title": "The Legend of Zelda: Twilight Princess",
+    "platform": "GameCube",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/manual DOL-GZ2P-HOL / IM-DOL-GZ2P-HOL; disc DL-DOL-GZ2P-EUR"
+  },
+  {
+    "collectionId": "N64-0001",
+    "title": "Pokémon Stadium 2",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NP3P-EUR"
+  },
+  {
+    "collectionId": "N64-0002",
+    "title": "The Legend of Zelda: Majora's Mask",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "English / French / German",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NZSP-EUR"
+  },
+  {
+    "collectionId": "N64-0003",
+    "title": "Banjo-Tooie",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NB7P-EUR"
+  },
+  {
+    "collectionId": "N64-0004",
+    "title": "Lylat Wars",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "English / French / German",
+    "edition": "Player's Choice",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NFXP-EUR"
+  },
+  {
+    "collectionId": "N64-0005",
+    "title": "Mortal Kombat Mythologies: Sub-Zero",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NMYP-FRA"
+  },
+  {
+    "collectionId": "N64-0006",
+    "title": "Super Smash Bros.",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NALP-EUR"
+  },
+  {
+    "collectionId": "N64-0007",
+    "title": "The Legend of Zelda: Ocarina of Time",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "English / French / German",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NZLP-EUR"
+  },
+  {
+    "collectionId": "N64-0008",
+    "title": "Donkey Kong 64",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NDOP-EUR"
+  },
+  {
+    "collectionId": "N64-0009",
+    "title": "Mario Kart 64",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NKTP-EUR (probable; only EUR suffix legible)"
+  },
+  {
+    "collectionId": "N64-0010",
+    "title": "Power Rangers: Lightspeed Rescue",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NPUP-EUR"
+  },
+  {
+    "collectionId": "N64-0011",
+    "title": "Lode Runner 3D",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NLRP-EUR"
+  },
+  {
+    "collectionId": "N64-0012",
+    "title": "Yoshi's Story",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NYSP-EUR"
+  },
+  {
+    "collectionId": "N64-0013",
+    "title": "Diddy Kong Racing",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NDYP-EUR"
+  },
+  {
+    "collectionId": "N64-0014",
+    "title": "Banjo-Kazooie",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NBKP-EUR"
+  },
+  {
+    "collectionId": "N64-0016",
+    "title": "Super Mario 64",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "English / French / German",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NSMP-EUR"
+  },
+  {
+    "collectionId": "N64-0017",
+    "title": "Pokemon Stadium",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NP0P-EUR"
+  },
+  {
+    "collectionId": "N64-0018",
+    "title": "007 GoldenEye",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NGEP-EUR"
+  },
+  {
+    "collectionId": "N64-0019",
+    "title": "Pokemon Snap",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NPFP-EUR"
+  },
+  {
+    "collectionId": "N64-0020",
+    "title": "Turok Rage Wars",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NRWP-UKV"
+  },
+  {
+    "collectionId": "N64-0021",
+    "title": "Wave Race 64",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NWRP-EUR"
+  },
+  {
+    "collectionId": "N64-0022",
+    "title": "Wave Race 64",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "N64-0023",
+    "title": "F1 World Grand Prix",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NFWP-EUR"
+  },
+  {
+    "collectionId": "N64-0024",
+    "title": "Turok 2 Seeds Of Evil",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NT2P-EUR"
+  },
+  {
+    "collectionId": "N64-0025",
+    "title": "Buck Bumble",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NUS-NBLP-EUR"
+  },
+  {
+    "collectionId": "N64-0026",
+    "title": "Jet Force Gemini",
+    "platform": "Nintendo 64",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Código físico não lido; NUS-NJFP-EUR é a referência PAL publicada, ainda por confirmar na cópia"
+  },
+  {
+    "collectionId": "NDS-0001",
+    "title": "Pokémon Mystery Dungeon: Blue Rescue Team",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-APHP-UKV"
+  },
+  {
+    "collectionId": "NDS-0002",
+    "title": "Freshly-Picked Tingle's Rosy Rupeeland",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-ACHP-EUR"
+  },
+  {
+    "collectionId": "NDS-0003",
+    "title": "Suikoden Tierkreis",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-YG4P-EUR"
+  },
+  {
+    "collectionId": "NDS-0004",
+    "title": "Pokémon Mystery Dungeon: Explorers of Sky",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-C2SP-PORT; cartridge: NTR-C2SP-EUR"
+  },
+  {
+    "collectionId": "NDS-0005",
+    "title": "Ghost Trick: Phantom Detective",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-BGTP-EAP; cartridge: NTR-BGTP-EUR"
+  },
+  {
+    "collectionId": "NDS-0006",
+    "title": "Learn With Pokémon: Typing Adventure",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Keyboard Bundle",
+    "keepStatus": "Collection",
+    "productCode": "Bundle: NTR-UZPP-UKV-CO; cartridge: NTR-UZPP-UKV"
+  },
+  {
+    "collectionId": "NDS-0007",
+    "title": "Mega Man Star Force Leo",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR P A6BP; cartridge: NTR A6BP EUR"
+  },
+  {
+    "collectionId": "NDS-0008",
+    "title": "Luminous Arc 2",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Soundtrack Edition",
+    "keepStatus": "Collection",
+    "productCode": "NTR-YL2P-UKV"
+  },
+  {
+    "collectionId": "NDS-0009",
+    "title": "Flower, Sun and Rain",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-YHNP-ESP"
+  },
+  {
+    "collectionId": "NDS-0010",
+    "title": "Pokémon SoulSilver",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-IPGP-EUR"
+  },
+  {
+    "collectionId": "NDS-0011",
+    "title": "Luminous Arc",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-ANIP-EUR; cartridge: NTR-ANIP-UKV"
+  },
+  {
+    "collectionId": "NDS-0012",
+    "title": "Pokémon Ranger: Guardian Signs",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-B3RP-EAP; cartridge: NTR-B3RP-EUR"
+  },
+  {
+    "collectionId": "NDS-0013",
+    "title": "Pokémon Platinum",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-CPUP-EUR"
+  },
+  {
+    "collectionId": "NDS-0014",
+    "title": "The Legend of Zelda: Spirit Tracks",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-BKIP-EAP; cartridge: NTR-BKIP-EUR"
+  },
+  {
+    "collectionId": "NDS-0015",
+    "title": "The Legend of Zelda: Spirit Tracks",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "NDS-0016",
+    "title": "Golden Sun: Dark Dawn",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-B05P-UKV; cartridge: NTR-B05P-EUR"
+  },
+  {
+    "collectionId": "NDS-0017",
+    "title": "Pokémon White",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "TWL-IRAO-EUR"
+  },
+  {
+    "collectionId": "NDS-0018",
+    "title": "Advance Wars: Dual Strike",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-AWRP-FHG; cartridge: NTR-AWRP-EUR"
+  },
+  {
+    "collectionId": "NDS-0019",
+    "title": "Pokémon Diamond",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-ADAP-EUR"
+  },
+  {
+    "collectionId": "NDS-0020",
+    "title": "Children of Mana",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-ASEP-FHG; cartridge: NTR-ASEP-EUR"
+  },
+  {
+    "collectionId": "NDS-0021",
+    "title": "Heroes of Mana",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-AHEP-FRA; cartridge: NTR-AHEP-UKV"
+  },
+  {
+    "collectionId": "NDS-0022",
+    "title": "Professor Layton and the Lost Future",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-C3JP-PORT"
+  },
+  {
+    "collectionId": "NDS-0023",
+    "title": "Professor Layton and the Spectre's Call",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "TLA-NTR-BLFP-PORT"
+  },
+  {
+    "collectionId": "NDS-0024",
+    "title": "Super Mario 64 DS",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-ASMP-EIP; cartridge: NTR-ASMP-EUR"
+  },
+  {
+    "collectionId": "NDS-0025",
+    "title": "Animal Crossing: Wild World",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-ADMP-EAP; cartridge: NTR-ADMP-EUR"
+  },
+  {
+    "collectionId": "NDS-0026",
+    "title": "Final Fantasy Crystal Chronicles: Ring of Fates",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-AFXP-FRA; cartridge: NTR-AFXP-EUR"
+  },
+  {
+    "collectionId": "NDS-0027",
+    "title": "New Zealand Story Revolution",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-ANZP-EUR"
+  },
+  {
+    "collectionId": "NDS-0028",
+    "title": "Harvest Moon DS",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-ABCP-UKV; cartridge: NTR-ABCP-EUR"
+  },
+  {
+    "collectionId": "NDS-0029",
+    "title": "New Super Mario Bros.",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-A2DP-UKV; cartridge: NTR-A2DP-EUR"
+  },
+  {
+    "collectionId": "NDS-0030",
+    "title": "Looney Tunes: Cartoon Conductor",
+    "platform": "Nintendo DS",
+    "region": "NTSC",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-YLNE-USA"
+  },
+  {
+    "collectionId": "NDS-0031",
+    "title": "WarioWare D.I.Y.",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-UORP-EAP; cartridge: NTR-UORP-EUR"
+  },
+  {
+    "collectionId": "NDS-0032",
+    "title": "The Legend of Spyro: Dawn of the Dragon",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-YO8P-EUR"
+  },
+  {
+    "collectionId": "NDS-0033",
+    "title": "B-17: Fortress in the Sky",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-AB7P-EUR"
+  },
+  {
+    "collectionId": "NDS-0034",
+    "title": "Guitar Hero: On Tour",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Guitar Grip Bundle",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-YGHX-ESP; cartridge: NTR-YGHX-EUR"
+  },
+  {
+    "collectionId": "NDS-0035",
+    "title": "Drawn to Life: The Next Chapter",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-BDRP-UKV; cartridge: NTR-BDRP-EUR"
+  },
+  {
+    "collectionId": "NDS-0036",
+    "title": "Metroid Prime Hunters",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "First Hunt Demo",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-AMFP-EU6; cartridge: NTR-AMFP-EUR"
+  },
+  {
+    "collectionId": "NDS-0037",
+    "title": "Tootuff: Mission Nadia",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-ATFP-UKV"
+  },
+  {
+    "collectionId": "NDS-0038",
+    "title": "Let's Yoga",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-AY5P-EUR"
+  },
+  {
+    "collectionId": "NDS-0039",
+    "title": "Super Scribblenauts",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-BH2X-UXP; cartridge: NTR-BH2P-EUR"
+  },
+  {
+    "collectionId": "NDS-0040",
+    "title": "Professor Layton and the Curious Village",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-A5FP-PORT; cartridge: NTR-A5FP-EUR"
+  },
+  {
+    "collectionId": "NDS-0041",
+    "title": "Final Fantasy III",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: NTR-AFFP-UKV; cartridge: NTR-AFFP-EUR"
+  },
+  {
+    "collectionId": "NDS-0042",
+    "title": "Castlevania: Order of Ecclesia",
+    "platform": "Nintendo DS",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NTR-YR9P-EUT (packaging; owner-confirmed); NTR-YR9P-EUR (cartridge; previously confirmed); EAN 4012927082898"
+  },
+  {
+    "collectionId": "NES-0001",
+    "title": "Jackie Chan's Action Kung Fu",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "German packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-V5-FRG"
+  },
+  {
+    "collectionId": "NES-0002",
+    "title": "Double Dragon II: The Revenge",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Mixed packaging (EN / DE / ES)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-W2-EEC"
+  },
+  {
+    "collectionId": "NES-0003",
+    "title": "Super Mario Bros.",
+    "platform": "NES",
+    "region": "PAL-A",
+    "language": "English manual",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-SM-UKV"
+  },
+  {
+    "collectionId": "NES-0004",
+    "title": "Popeye",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Arcade Classics Series",
+    "keepStatus": "Collection",
+    "productCode": "NES-PP-FRA"
+  },
+  {
+    "collectionId": "NES-0005",
+    "title": "Gradius",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-GR-GPS"
+  },
+  {
+    "collectionId": "NES-0006",
+    "title": "Super Mario Bros. 2",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-MW-GPS"
+  },
+  {
+    "collectionId": "NES-0007",
+    "title": "Tom & Jerry: The Ultimate Game of Cat and Mouse!",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "German localized title",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-5Y-NOE"
+  },
+  {
+    "collectionId": "NES-0008",
+    "title": "Super Mario Bros. 3",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-UM-FRA"
+  },
+  {
+    "collectionId": "NES-0009",
+    "title": "Terminator 2: Judgement Day",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-62-NOE"
+  },
+  {
+    "collectionId": "NES-0010",
+    "title": "Disney's Chip 'n Dale Rescue Rangers",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-RU-GPS"
+  },
+  {
+    "collectionId": "NES-0012",
+    "title": "The Simpsons: Bart vs. the Space Mutants",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-Q5-NOE"
+  },
+  {
+    "collectionId": "NES-0013",
+    "title": "Little Nemo: The Dream Master",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-LN-GPS"
+  },
+  {
+    "collectionId": "NES-0014",
+    "title": "Teenage Mutant Hero Turtles",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-88-GPS"
+  },
+  {
+    "collectionId": "NES-0015",
+    "title": "California Games",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-CG-FRA"
+  },
+  {
+    "collectionId": "NES-0016",
+    "title": "The Battle of Olympus",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-AD-ESP"
+  },
+  {
+    "collectionId": "NES-0017",
+    "title": "WWF WrestleMania Challenge",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-W9-NOE"
+  },
+  {
+    "collectionId": "NES-0018",
+    "title": "Super Spike V'Ball",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-VJ-GPS"
+  },
+  {
+    "collectionId": "NES-0019",
+    "title": "Willow",
+    "platform": "NES",
+    "region": "PAL-B",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "NES-WI-FRG"
+  },
+  {
+    "collectionId": "PC-0001",
+    "title": "Elder Scrolls V: Skyrim",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0002",
+    "title": "Guild Wars",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0003",
+    "title": "Guild Wars 2",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0004",
+    "title": "Guild Wars Nightfall",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Collector's Edition",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0005",
+    "title": "Guild Wars: Eye Of The North",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0006",
+    "title": "Guild Wars: Factions",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0007",
+    "title": "Guild Wars: Nightfall",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0008",
+    "title": "Harry Potter Prisoner of Azkaban",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0009",
+    "title": "Magic Battlegrounds",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0010",
+    "title": "Ms. Pac-Man Quest For The Golden Maze",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0011",
+    "title": "Myst",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Big Box",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0012",
+    "title": "The Sims 2",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0013",
+    "title": "The Sims 2: Family Fun Stuff",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0014",
+    "title": "The Sims 2: Freetime",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0015",
+    "title": "The Sims 2: Glamor Life Stuff",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0016",
+    "title": "The Sims 2: Nightlife",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0017",
+    "title": "The Sims 2: Nightlife",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0018",
+    "title": "The Sims 2: Open for Business",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0019",
+    "title": "The Sims 2: University",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0020",
+    "title": "The Sims 3",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0021",
+    "title": "URU Ages Beyond Myst",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0022",
+    "title": "World of Goo",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PC-0023",
+    "title": "World of Warcraft Battle Chest",
+    "platform": "PC",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS1-0001",
+    "title": "Silent Hill",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-01514"
+  },
+  {
+    "collectionId": "PS1-0002",
+    "title": "Parasite Eve II",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02558; discs: SLES-02558 + SLES-12558"
+  },
+  {
+    "collectionId": "PS1-0003",
+    "title": "Digimon World 2003",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-03936"
+  },
+  {
+    "collectionId": "PS1-0004",
+    "title": "Ehrgeiz",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SLES-02111"
+  },
+  {
+    "collectionId": "PS1-0005",
+    "title": "Dino Crisis 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-03221"
+  },
+  {
+    "collectionId": "PS1-0006",
+    "title": "Resident Evil Director's Cut",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-00969"
+  },
+  {
+    "collectionId": "PS1-0007",
+    "title": "Nightmare Creatures",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SCES-00582"
+  },
+  {
+    "collectionId": "PS1-0008",
+    "title": "Vagrant Story",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-02754"
+  },
+  {
+    "collectionId": "PS1-0009",
+    "title": "Bugs Bunny: Lost in Time",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-01726; disc: SLES-01726 / 775"
+  },
+  {
+    "collectionId": "PS1-0010",
+    "title": "Digimon Digital Card Battle",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SLES-03900"
+  },
+  {
+    "collectionId": "PS1-0011",
+    "title": "Final Fantasy Origins",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-04034; discs: SLES-04034 + SLES-14034"
+  },
+  {
+    "collectionId": "PS1-0012",
+    "title": "Demo One",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Demo",
+    "keepStatus": "Collection",
+    "productCode": "Legacy reference: PBPX-95008 (not reverified)"
+  },
+  {
+    "collectionId": "PS1-0013",
+    "title": "Resident Evil 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-00972; discs: SLES-00972 / 7082559 + SLES-10972 / 7082559"
+  },
+  {
+    "collectionId": "PS1-0014",
+    "title": "Fear Effect 2 Retro Helix",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-03386; discs: SLES-03386 + SLES-13386 + SLES-23386 + SLES-33386"
+  },
+  {
+    "collectionId": "PS1-0015",
+    "title": "Metal Gear Solid",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-01370; discs: SLES-01370 + SLES-11370"
+  },
+  {
+    "collectionId": "PS1-0016",
+    "title": "Syphon Filter 3",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-03701; disc: SCES-03701-P"
+  },
+  {
+    "collectionId": "PS1-0017",
+    "title": "Ape Escape",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-01564; disc: SCES-01564"
+  },
+  {
+    "collectionId": "PS1-0018",
+    "title": "Alone In The Dark The New Nightmare",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Sell",
+    "productCode": "Box: SLES-02801; discs: SLES-02801 + SLES-12801"
+  },
+  {
+    "collectionId": "PS1-0019",
+    "title": "ISS Pro Evolution",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02095; disc: SLES-02095"
+  },
+  {
+    "collectionId": "PS1-0020",
+    "title": "MediEvil",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-00311; disc: SCES-00311 / 9793229"
+  },
+  {
+    "collectionId": "PS1-0021",
+    "title": "Final Fantasy IX",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02965; discs: SLES-02965 + SLES-12965 + SLES-22965 + SLES-32965"
+  },
+  {
+    "collectionId": "PS1-0022",
+    "title": "Spider-Man",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02886; disc: SLES-02886 /P"
+  },
+  {
+    "collectionId": "PS1-0023",
+    "title": "Croc 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-02088"
+  },
+  {
+    "collectionId": "PS1-0024",
+    "title": "Hercules",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SCES-00891"
+  },
+  {
+    "collectionId": "PS1-0025",
+    "title": "Final Fantasy VI",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/game disc: SCES-03828; advertised Final Fantasy X demo absent"
+  },
+  {
+    "collectionId": "PS1-0026",
+    "title": "Toy Story 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02067; disc: SLES-02067 /P"
+  },
+  {
+    "collectionId": "PS1-0027",
+    "title": "Pandemonium",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-00526; disc: SLES-00526 / 9724728"
+  },
+  {
+    "collectionId": "PS1-0028",
+    "title": "Alone In The Dark The New Nightmare",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02801; discs: SLES-02801 + SLES-12801"
+  },
+  {
+    "collectionId": "PS1-0029",
+    "title": "Jersey Devil",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-00598"
+  },
+  {
+    "collectionId": "PS1-0030",
+    "title": "Tekken 3",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SCES-01237"
+  },
+  {
+    "collectionId": "PS1-0031",
+    "title": "Ridge Racer",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SCES-00001"
+  },
+  {
+    "collectionId": "PS1-0032",
+    "title": "Driver 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-02993 confirmado; segundo CD presente, código não relido (histórico: SLES-12993)"
+  },
+  {
+    "collectionId": "PS1-0033",
+    "title": "Donald Duck Quack Attack",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-03095; disc: SLES-03095 P"
+  },
+  {
+    "collectionId": "PS1-0034",
+    "title": "MediEvil 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Portuguese / Spanish / Italian",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-02545; disc: SCES-02545-P"
+  },
+  {
+    "collectionId": "PS1-0035",
+    "title": "Spyro The Dragon",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SCES-01438"
+  },
+  {
+    "collectionId": "PS1-0036",
+    "title": "Fear Effect",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02166; discs: SLES-02166 + SLES-12166 + SLES-22166 + SLES-32166"
+  },
+  {
+    "collectionId": "PS1-0037",
+    "title": "Final Fantasy VII",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-00867; discs: SCES-00867 / 9736820 + SCES-10867 / 9736820 + SCES-20867 / 9736820; demo: SCED-02062 / 9786122"
+  },
+  {
+    "collectionId": "PS1-0038",
+    "title": "Spyro Year Of The Dragon",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Spanish / Portuguese / Greek / English",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-02835; disc: SCES-02835 / 9283423"
+  },
+  {
+    "collectionId": "PS1-0039",
+    "title": "Resident Evil Survivor",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02732; game disc absent"
+  },
+  {
+    "collectionId": "PS1-0040",
+    "title": "Crash Bandicoot 2 Cortex Strikes Back",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-00967; disc: SCES-00967 / 9766421"
+  },
+  {
+    "collectionId": "PS1-0041",
+    "title": "Wipeout 2097",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SLES-00327 / 9695028"
+  },
+  {
+    "collectionId": "PS1-0042",
+    "title": "Tarzan",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-01431; disc: SCES-01431 / 9220824"
+  },
+  {
+    "collectionId": "PS1-0043",
+    "title": "Chronicles of the Sword",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-00165; discs: SLES-00165 + SLES-10165"
+  },
+  {
+    "collectionId": "PS1-0044",
+    "title": "Tony Hawk's Skateboarding",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "French",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02055; disc code not confirmed"
+  },
+  {
+    "collectionId": "PS1-0045",
+    "title": "Harry Potter and the Chamber of Secrets",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-03972"
+  },
+  {
+    "collectionId": "PS1-0046",
+    "title": "Gran Turismo",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-00984; disc code not confirmed"
+  },
+  {
+    "collectionId": "PS1-0047",
+    "title": "Hot Wheels Turbo Racing",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Classics",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-02198"
+  },
+  {
+    "collectionId": "PS1-0048",
+    "title": "Resident Evil 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": "Disc 2 / Claire: SLES-10972; Disc 1 / Leon SLES-00972 absent"
+  },
+  {
+    "collectionId": "PS1-0049",
+    "title": "Rayman",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-00049"
+  },
+  {
+    "collectionId": "PS1-0050",
+    "title": "Oddworld: Abe's Oddysee",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-00664; disc code not confirmed"
+  },
+  {
+    "collectionId": "PS1-0051",
+    "title": "Risk",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-00707"
+  },
+  {
+    "collectionId": "PS1-0052",
+    "title": "Croc: Legend of the Gobbos",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-00593"
+  },
+  {
+    "collectionId": "PS1-0053",
+    "title": "Tony Hawk's Pro Skater 3",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-03645; disc: Not confirmed"
+  },
+  {
+    "collectionId": "PS1-0054",
+    "title": "A Bug's Life",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS1-0055",
+    "title": "Jungle Book Groove Party",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "NFS / Dance pad bundle",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-03020; disc: Not confirmed"
+  },
+  {
+    "collectionId": "PS1-0056",
+    "title": "Harry Potter e a Pedra Filosofal",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-03663"
+  },
+  {
+    "collectionId": "PS1-0057",
+    "title": "Oddworld: Abe's Oddysee DEMO",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Demo",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLED-00725"
+  },
+  {
+    "collectionId": "PS1-0058",
+    "title": "Aqua GT",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-03390; disc: Not confirmed"
+  },
+  {
+    "collectionId": "PS1-0059",
+    "title": "Star Wars Episode I: The Phantom Menace",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02034; disc: Not confirmed"
+  },
+  {
+    "collectionId": "PS1-0060",
+    "title": "Donald Duck: Quack Attack",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Sell",
+    "productCode": "Box: SLES-03095; original disc: Absent; unrelated disc: SCES-01237 (Tekken 3 Platinum)"
+  },
+  {
+    "collectionId": "PS1-0061",
+    "title": "Rayman",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS1-0062",
+    "title": "Grand Theft Auto 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "UK Reprint / pressing #2",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SLES-01404#2; original box: Absent"
+  },
+  {
+    "collectionId": "PS1-0063",
+    "title": "Tomb Raider II",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-00718; disc: Not confirmed"
+  },
+  {
+    "collectionId": "PS1-0064",
+    "title": "Driver",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Best of Infogrames",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-01816; disc: Not confirmed"
+  },
+  {
+    "collectionId": "PS1-0065",
+    "title": "Arcade Party Pak",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Classics",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-02339"
+  },
+  {
+    "collectionId": "PS1-0066",
+    "title": "Tomb Raider",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SLES-00024#"
+  },
+  {
+    "collectionId": "PS1-0067",
+    "title": "Winter Releases '98",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Demo / Rev.1",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SCED-01441#"
+  },
+  {
+    "collectionId": "PS1-0068",
+    "title": "Bust-A-Move 2 Arcade Edition",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Acclaimed Range",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-00278; disc: SLES-00278#"
+  },
+  {
+    "collectionId": "PS1-0069",
+    "title": "Formula 1",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Multi-5",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-00298"
+  },
+  {
+    "collectionId": "PS1-0070",
+    "title": "Mat Hoffman's Pro BMX",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-03217"
+  },
+  {
+    "collectionId": "PS1-0071",
+    "title": "Caesars Palace 2000",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "White Label",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-02476"
+  },
+  {
+    "collectionId": "PS1-0072",
+    "title": "Who Wants to Be a Millionaire?",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-02988"
+  },
+  {
+    "collectionId": "PS1-0073",
+    "title": "Vanishing Point",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-02534; disc: Absent"
+  },
+  {
+    "collectionId": "PS1-0074",
+    "title": "A Bug's Life",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Spanish",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SCES-01523"
+  },
+  {
+    "collectionId": "PS1-0075",
+    "title": "Skullmonkeys",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-01090"
+  },
+  {
+    "collectionId": "PS1-0076",
+    "title": "Crash Bandicoot 3: Warped",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SCES-01420"
+  },
+  {
+    "collectionId": "PS1-0077",
+    "title": "Asterix",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-01748"
+  },
+  {
+    "collectionId": "PS1-0078",
+    "title": "G-Police",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-00082; discs: SLES-00082 + SLES-10082"
+  },
+  {
+    "collectionId": "PS1-0079",
+    "title": "Guardian's Crusade",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-01793"
+  },
+  {
+    "collectionId": "PS1-0080",
+    "title": "Ridge Racer Type 4",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box: SCES-01706; retail game disc: Absent; Hi-Spec Demo SCED-01832: Absent"
+  },
+  {
+    "collectionId": "PS1-0081",
+    "title": "Mickey's Wild Adventure",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SCES-00163"
+  },
+  {
+    "collectionId": "PS1-0082",
+    "title": "Euro Demo 92",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Spanish",
+    "edition": "Demo / Spanish",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SCED-04016 / 9431022"
+  },
+  {
+    "collectionId": "PS1-0083",
+    "title": "Heart of Darkness",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Best of Infogrames Adventure",
+    "keepStatus": "Collection",
+    "productCode": "Box: SLES-00461; discs: SLES-00461 + SLES-10461"
+  },
+  {
+    "collectionId": "PS1-0084",
+    "title": "Tomb Raider III: Adventures of Lara Croft",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-01649"
+  },
+  {
+    "collectionId": "PS1-0085",
+    "title": "Warzone 2100",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-00937"
+  },
+  {
+    "collectionId": "PS1-0086",
+    "title": "Dalmatians 2",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-04061"
+  },
+  {
+    "collectionId": "PS1-0087",
+    "title": "Advanced Dungeons & Dragons: Iron & Blood – Warriors of Ravenloft",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Box/disc: SLES-00386"
+  },
+  {
+    "collectionId": "PS1-EXTRA-0001",
+    "title": "Ridge Racer Type 4 Collectors Demo",
+    "platform": "Playstation",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Demo",
+    "keepStatus": "Collection",
+    "productCode": "Disc: SCED-01982 / 9782629"
+  },
+  {
+    "collectionId": "PS2-0001",
+    "title": "Project Zero 3",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53825"
+  },
+  {
+    "collectionId": "PS2-0002",
+    "title": "Nightmare Before Christmas: Oogie's Revenge",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53192"
+  },
+  {
+    "collectionId": "PS2-0003",
+    "title": "Crimson Tears",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52534"
+  },
+  {
+    "collectionId": "PS2-0004",
+    "title": "Shadow Of The Colossus",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-53326"
+  },
+  {
+    "collectionId": "PS2-0005",
+    "title": "Metal Gear Solid 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "DVD Bundle",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50383"
+  },
+  {
+    "collectionId": "PS2-0006",
+    "title": "Dark Cloud",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50295"
+  },
+  {
+    "collectionId": "PS2-0007",
+    "title": "Need For Speed Underground 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52725"
+  },
+  {
+    "collectionId": "PS2-0008",
+    "title": "Zone Of The Enders 2nd Runner",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Special Edition",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51113 / SLES-51113-GER"
+  },
+  {
+    "collectionId": "PS2-0009",
+    "title": "Marc Ecko's Getting Up Contents Under Pressure",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53459"
+  },
+  {
+    "collectionId": "PS2-0010",
+    "title": "Prince Of Persia Trilogy",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51918 / SLES-52822 / SLES-53777"
+  },
+  {
+    "collectionId": "PS2-0011",
+    "title": "Shadow of Memories",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50112"
+  },
+  {
+    "collectionId": "PS2-0012",
+    "title": "Final Fantasy X",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Bonus Disc Bundle",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50490 + SCED-50907"
+  },
+  {
+    "collectionId": "PS2-0013",
+    "title": "Beyond Good And Evil",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51917"
+  },
+  {
+    "collectionId": "PS2-0014",
+    "title": "Canis Canem Edit",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53561"
+  },
+  {
+    "collectionId": "PS2-0015",
+    "title": "Need for Speed Most Wanted",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53557"
+  },
+  {
+    "collectionId": "PS2-0016",
+    "title": "Onimusha 3",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51914"
+  },
+  {
+    "collectionId": "PS2-0017",
+    "title": "God Of War",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SCES-53133 / SCES-53133/P"
+  },
+  {
+    "collectionId": "PS2-0018",
+    "title": "God Of War 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-54206"
+  },
+  {
+    "collectionId": "PS2-0019",
+    "title": "Maximo Vs Army Of Zin",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51759"
+  },
+  {
+    "collectionId": "PS2-0020",
+    "title": "Dragon Ball Z Budokai Tenkaichi 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54164"
+  },
+  {
+    "collectionId": "PS2-0021",
+    "title": "Seven Samurai 20XX",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52348"
+  },
+  {
+    "collectionId": "PS2-0022",
+    "title": "Zone Of The Enders",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50111"
+  },
+  {
+    "collectionId": "PS2-0023",
+    "title": "Board Games Gallery (10 Games)",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52714"
+  },
+  {
+    "collectionId": "PS2-0024",
+    "title": "Worms 4: Mayhem",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53096"
+  },
+  {
+    "collectionId": "PS2-0025",
+    "title": "Devil May Cry",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50358"
+  },
+  {
+    "collectionId": "PS2-0026",
+    "title": "Final Fantasy VII Dirge Of Cerberus",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54185"
+  },
+  {
+    "collectionId": "PS2-0027",
+    "title": "Dragon Ball Z Budokai 3",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53346 / SLES-53346/P"
+  },
+  {
+    "collectionId": "PS2-0028",
+    "title": "Sonic Gems Collection",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0029",
+    "title": "Sonic Gems Collection",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0030",
+    "title": "Devil May Cry 3",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Special Edition",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54186"
+  },
+  {
+    "collectionId": "PS2-0031",
+    "title": "Kingdom Hearts",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50967"
+  },
+  {
+    "collectionId": "PS2-0032",
+    "title": "Yu-Gi-Oh Duelists Of The Roses",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51579"
+  },
+  {
+    "collectionId": "PS2-0033",
+    "title": "Ratchet: Gladiator",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SCES-53285/P"
+  },
+  {
+    "collectionId": "PS2-0034",
+    "title": "Hyper Street Fighter II: The Anniversary Edition",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52444"
+  },
+  {
+    "collectionId": "PS2-0035",
+    "title": "Dragon Ball Z Budokai Tenkaichi",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53200"
+  },
+  {
+    "collectionId": "PS2-0036",
+    "title": "Dragon Ball Z Budokai 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51839 / SLES-51839-P"
+  },
+  {
+    "collectionId": "PS2-0037",
+    "title": "Kuri Kuri Mix",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50224"
+  },
+  {
+    "collectionId": "PS2-0038",
+    "title": "Jak 3",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-52460"
+  },
+  {
+    "collectionId": "PS2-0039",
+    "title": "Grand Theft Auto: San Andreas",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52541"
+  },
+  {
+    "collectionId": "PS2-0040",
+    "title": "Jak 3",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0041",
+    "title": "Tomb Raider Legend",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53908 / SLES-53908-P"
+  },
+  {
+    "collectionId": "PS2-0042",
+    "title": "Need for Speed Carbon",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0043",
+    "title": "Need for Speed Carbon",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0044",
+    "title": "Need for Speed Carbon",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0045",
+    "title": "Dynasty Warriors 4",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51661"
+  },
+  {
+    "collectionId": "PS2-0046",
+    "title": "Time Splitters",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50078"
+  },
+  {
+    "collectionId": "PS2-0047",
+    "title": "Future Tactics",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52701"
+  },
+  {
+    "collectionId": "PS2-0048",
+    "title": "FIFA Street 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53796"
+  },
+  {
+    "collectionId": "PS2-0049",
+    "title": "Ford Racing 3",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52720"
+  },
+  {
+    "collectionId": "PS2-0050",
+    "title": "Black",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54030"
+  },
+  {
+    "collectionId": "PS2-0051",
+    "title": "WWE Smackdown Vs. Raw 2008",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54793"
+  },
+  {
+    "collectionId": "PS2-0052",
+    "title": "Buzz o Grande Quiz",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-53929"
+  },
+  {
+    "collectionId": "PS2-0053",
+    "title": "Unreal Tournament",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50074"
+  },
+  {
+    "collectionId": "PS2-0054",
+    "title": "Crash Nitro Kart",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51511"
+  },
+  {
+    "collectionId": "PS2-0055",
+    "title": "Onimusha Warlords",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50247"
+  },
+  {
+    "collectionId": "PS2-0056",
+    "title": "Star Wars: The Force Unleashed",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54658"
+  },
+  {
+    "collectionId": "PS2-0057",
+    "title": "WWE Smackdown Vs. Raw 2007",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54489"
+  },
+  {
+    "collectionId": "PS2-0058",
+    "title": "Space Invaders Anniversary",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52313"
+  },
+  {
+    "collectionId": "PS2-0059",
+    "title": "FIFA Street 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0060",
+    "title": "Hitman Blood Money",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53028"
+  },
+  {
+    "collectionId": "PS2-0061",
+    "title": "International Superstar Soccer",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50039"
+  },
+  {
+    "collectionId": "PS2-0062",
+    "title": "Formula One 2005",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-53033"
+  },
+  {
+    "collectionId": "PS2-0063",
+    "title": "Pilot Down: Behind Enemy Lines",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53099"
+  },
+  {
+    "collectionId": "PS2-0064",
+    "title": "Play It Chess Challenger",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51630"
+  },
+  {
+    "collectionId": "PS2-0065",
+    "title": "Star Wars Battlefront",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52545"
+  },
+  {
+    "collectionId": "PS2-0066",
+    "title": "Splinter Cell",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51466"
+  },
+  {
+    "collectionId": "PS2-0067",
+    "title": "The Sims 2: Pets",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54347"
+  },
+  {
+    "collectionId": "PS2-0068",
+    "title": "Sonic Heroes",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Sell",
+    "productCode": "SLES-51950"
+  },
+  {
+    "collectionId": "PS2-0069",
+    "title": "FIFA Street",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53064"
+  },
+  {
+    "collectionId": "PS2-0070",
+    "title": "WWE Smackdown Vs. Raw 2006",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53676"
+  },
+  {
+    "collectionId": "PS2-0071",
+    "title": "Need For Speed: ProStreet",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-55002"
+  },
+  {
+    "collectionId": "PS2-0072",
+    "title": "Need For Speed: ProStreet",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0073",
+    "title": "Rayman Revolution",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50044"
+  },
+  {
+    "collectionId": "PS2-0074",
+    "title": "Harry Potter And The Goblet Of Fire",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": ""
+  },
+  {
+    "collectionId": "PS2-0075",
+    "title": "Harry Potter And The Goblet Of Fire",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53726"
+  },
+  {
+    "collectionId": "PS2-0076",
+    "title": "WRC: World Rally Championship",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50139"
+  },
+  {
+    "collectionId": "PS2-0077",
+    "title": "Silent Hill 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Special 2 Disc Set",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50382"
+  },
+  {
+    "collectionId": "PS2-0078",
+    "title": "Dragon Ball Z: Budokai Tenkaichi 3",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54945"
+  },
+  {
+    "collectionId": "PS2-0079",
+    "title": "Jackie Chan Adventures",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-52412"
+  },
+  {
+    "collectionId": "PS2-0080",
+    "title": "Bionicle",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51956"
+  },
+  {
+    "collectionId": "PS2-0081",
+    "title": "Crash Bandicoot: The Wrath of Cortex",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50386 / SLES-50386-P#"
+  },
+  {
+    "collectionId": "PS2-0082",
+    "title": "Final Fantasy X-2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51815"
+  },
+  {
+    "collectionId": "PS2-0083",
+    "title": "Star Wars: The Clone Wars",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50826"
+  },
+  {
+    "collectionId": "PS2-0084",
+    "title": "Tourist Trophy: The Real Riding Simulator",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-53372"
+  },
+  {
+    "collectionId": "PS2-0085",
+    "title": "Disney's Treasure Planet",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-51177/POR"
+  },
+  {
+    "collectionId": "PS2-0086",
+    "title": "Sonic Unleashed",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-55380#"
+  },
+  {
+    "collectionId": "PS2-0087",
+    "title": "Taxi Rider",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53402"
+  },
+  {
+    "collectionId": "PS2-0088",
+    "title": "Choro Q",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Spanish / Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53140"
+  },
+  {
+    "collectionId": "PS2-0089",
+    "title": "Mundial 2002 Challenge",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50855"
+  },
+  {
+    "collectionId": "PS2-0090",
+    "title": "Freak Out",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English / Italian / Spanish / Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50310"
+  },
+  {
+    "collectionId": "PS2-0091",
+    "title": "Crash Tag Team Racing",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53439/P"
+  },
+  {
+    "collectionId": "PS2-0092",
+    "title": "FlatOut",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese / English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52753"
+  },
+  {
+    "collectionId": "PS2-0093",
+    "title": "Ace Combat: Distant Thunder",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Greek / Portuguese / Polish?",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50410"
+  },
+  {
+    "collectionId": "PS2-0094",
+    "title": "SpongeBob SquarePants: The Movie",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52895"
+  },
+  {
+    "collectionId": "PS2-0095",
+    "title": "1945 I&II: The Arcade Games",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51741"
+  },
+  {
+    "collectionId": "PS2-0096",
+    "title": "Gran Turismo 3: A-Spec",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Greek / Portuguese / Polish / Turkish",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50294/P"
+  },
+  {
+    "collectionId": "PS2-0097",
+    "title": "Sniper Assault",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54767#"
+  },
+  {
+    "collectionId": "PS2-0098",
+    "title": "Tomb Raider: The Angel of Darkness",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51227-P"
+  },
+  {
+    "collectionId": "PS2-0099",
+    "title": "Disney's The Haunted Mansion",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52214"
+  },
+  {
+    "collectionId": "PS2-0100",
+    "title": "Antz Extreme Racing",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50964"
+  },
+  {
+    "collectionId": "PS2-0101",
+    "title": "Winnie the Pooh's Rumbly Tumbly Adventure",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52889"
+  },
+  {
+    "collectionId": "PS2-0102",
+    "title": "Guilty Gear X2 Reload",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English / Italian",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52967"
+  },
+  {
+    "collectionId": "PS2-0103",
+    "title": "Enter the Matrix",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Spanish / Portuguese",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51203"
+  },
+  {
+    "collectionId": "PS2-0104",
+    "title": "Sly 3: Honor Among Thieves",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Greek / Russian / Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-53409"
+  },
+  {
+    "collectionId": "PS2-0105",
+    "title": "Grand Theft Auto: Vice City",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "French",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51061"
+  },
+  {
+    "collectionId": "PS2-0106",
+    "title": "Medal of Honor: Rising Sun",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51873"
+  },
+  {
+    "collectionId": "PS2-0107",
+    "title": "FIFA 06",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53532"
+  },
+  {
+    "collectionId": "PS2-0108",
+    "title": "The Lord of the Rings: The Return of the King",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52017"
+  },
+  {
+    "collectionId": "PS2-0109",
+    "title": "Predator: Concrete Jungle",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-53091"
+  },
+  {
+    "collectionId": "PS2-0110",
+    "title": "Raging Blades",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51235"
+  },
+  {
+    "collectionId": "PS2-0111",
+    "title": "The Getaway",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese / Greek / English / Spanish",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-51159"
+  },
+  {
+    "collectionId": "PS2-0112",
+    "title": "Die Hard: Vendetta",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51347"
+  },
+  {
+    "collectionId": "PS2-0113",
+    "title": "The Urbz: Sims in the City",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52908"
+  },
+  {
+    "collectionId": "PS2-0114",
+    "title": "Project Eden",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50553"
+  },
+  {
+    "collectionId": "PS2-0115",
+    "title": "Teenage Mutant Ninja Turtles",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-51931"
+  },
+  {
+    "collectionId": "PS2-0116",
+    "title": "Pirates of the Caribbean: At World's End",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54179"
+  },
+  {
+    "collectionId": "PS2-0117",
+    "title": "Disney's Peter Pan: The Legend of Never-Land",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English (cover/manual; disc English/Spanish)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50522 #2"
+  },
+  {
+    "collectionId": "PS2-0118",
+    "title": "WRC: Rally Evolved",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Greek / Portuguese / Russian (cover/manual; disc unverified)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-53247; EAN 711719124511 (reported; EAN not independently corroborated)"
+  },
+  {
+    "collectionId": "PS2-0119",
+    "title": "Heracles: Chariot Racing",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Cover Portuguese / Spanish; manual Spanish / English; disc missing",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54786; EAN 5036675010162 (reported; weak marketplace corroboration only)"
+  },
+  {
+    "collectionId": "PS2-0120",
+    "title": "Cabela's Dangerous Hunts",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English (cover; manual missing; disc languages unverified)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-52106; EAN 5060034552192"
+  },
+  {
+    "collectionId": "PS2-0121",
+    "title": "LEGO Star Wars II: The Original Trilogy",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Spanish (cover/manual; disc unverified)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-54221; EAN 023272329297"
+  },
+  {
+    "collectionId": "PS2-0122",
+    "title": "Sonic Heroes",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English manual transferred from PS2-0068; cover/disc languages unverified",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Product code SLES-51950 (reported by Mário); EAN not read"
+  },
+  {
+    "collectionId": "PS2-0123",
+    "title": "Transformers: Revenge of the Fallen",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English manual; UK EAN; cover/disc language not confirmed",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-55520; EAN 5030917068959"
+  },
+  {
+    "collectionId": "PS2-0124",
+    "title": "Disney's Tarzan Freeride",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Multi-5 game (EN/FR/DE/IT/ES); packaging language unverified",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50350; EAN 3307210403216"
+  },
+  {
+    "collectionId": "PS2-0125",
+    "title": "MotoGP",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Game: EN/FR/DE/IT/ES; cover/manual: Greek/Portuguese/Polish/Czech",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50034; UPC-A 711719357728 (EAN-13 0711719357728)"
+  },
+  {
+    "collectionId": "PS2-0126",
+    "title": "WRC II Extreme",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "English cover/manual; game Multi-7 (EN/FR/DE/ES/IT/PT/FI)",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "SCES-50934-P; EAN 0711719623717 (as read without leading zero: 711719623717)"
+  },
+  {
+    "collectionId": "PS2-0127",
+    "title": "Pro Evolution Soccer 2009",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Portuguese (game, cover and manual)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-55406; EAN 4012927121757"
+  },
+  {
+    "collectionId": "PS2-0128",
+    "title": "Pro Evolution Soccer 2008",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Disc release reference: Italian/Portuguese; box present is PES 6, Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "Disc SLES-54914; mismatched box SLES-54203 / EAN 4012927120088"
+  },
+  {
+    "collectionId": "PS2-0129",
+    "title": "LEGO Football Mania",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Cover: Spanish/Portuguese; game: EN/FR/DE/IT/ES/NL/SV/DA (release reference)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SLES-50937; EAN 5030934030786"
+  },
+  {
+    "collectionId": "PS2-0130",
+    "title": "EyeToy: Play",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Cover: Spanish (EAN variant); game release multilingual, incl. Portuguese",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-51513; UPC 711719476221 / EAN-13 0711719476221"
+  },
+  {
+    "collectionId": "PS2-0131",
+    "title": "EyeToy: Play 2",
+    "platform": "Playstation 2",
+    "region": "PAL",
+    "language": "Game release multilingual incl. Portuguese; box language not confirmed",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SCES-52748; UPC 711719687344 / EAN-13 0711719687344 (owner-read)"
+  },
+  {
+    "collectionId": "PS3-0002",
+    "title": "Final Fantasy XIII",
+    "platform": "Playstation 3",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "BLES-00783"
+  },
+  {
+    "collectionId": "PS3-0003",
+    "title": "Uncharted: Drake's Fortune",
+    "platform": "Playstation 3",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "BCES-00065"
+  },
+  {
+    "collectionId": "PS3-0004",
+    "title": "Army of Two",
+    "platform": "Playstation 3",
+    "region": "PAL",
+    "language": "English/French/German/Spanish/Italian (release languages; physical packaging languages unconfirmed)",
+    "edition": "Platinum",
+    "keepStatus": "Collection",
+    "productCode": "BLES-00168"
+  },
+  {
+    "collectionId": "PS5-0001",
+    "title": "Class of Heroes 3 Remaster",
+    "platform": "Playstation 5",
+    "region": "PAL",
+    "language": "English/French/Spanish/Italian/German (EFIGS physical edition)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "PPSA-26573; EAN 5060690797685"
+  },
+  {
+    "collectionId": "PSP-0002",
+    "title": "Myst",
+    "platform": "PSP",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": "ULES-00412; EAN 5037930120251"
+  },
+  {
+    "collectionId": "PSP-0003",
+    "title": "Need For Speed: Most Wanted 5-1-0",
+    "platform": "PSP",
+    "region": "NTSC-U",
+    "language": "English (US edition; package language inferred)",
+    "edition": "Greatest Hits",
+    "keepStatus": "Sell",
+    "productCode": "ULUS-10036GH; UPC 014633149401"
+  },
+  {
+    "collectionId": "PSP-0004",
+    "title": "Pirates Of The Caribbean: Dead Man's Chest",
+    "platform": "PSP",
+    "region": "PAL",
+    "language": "English (box, UMD and manual)",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": "ULES-00366; EAN 8717418091781"
+  },
+  {
+    "collectionId": "PSP-0005",
+    "title": "Star Wars: Battlefront II",
+    "platform": "PSP",
+    "region": "PAL",
+    "language": "English (box, UMD and manual)",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": "ULES-00183; UPC 023272001933; EAN-13 0023272001933"
+  },
+  {
+    "collectionId": "PSP-0006",
+    "title": "WRC: FIA World Rally Championship",
+    "platform": "PSP",
+    "region": "PAL",
+    "language": "English (box, UMD and manual)",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": "UCES-00005; owner-read UPC/EAN 711719682059 (conflicts with public barcode associations)"
+  },
+  {
+    "collectionId": "PSP-0008",
+    "title": "Grand Theft Auto: Chinatown Wars",
+    "platform": "PSP",
+    "region": "PAL",
+    "language": "English (box, UMD and manual)",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": "ULES-01347; EAN 5026555282369"
+  },
+  {
+    "collectionId": "PSP-0009",
+    "title": "The Sims 2: Pets",
+    "platform": "PSP",
+    "region": "PAL",
+    "language": "Portuguese (owner-identified edition; UMD title printed in English)",
+    "edition": "Standard",
+    "keepStatus": "Sell",
+    "productCode": "ULES-00596; EAN 5030944052518 is from the apparent GTA Vice City Stories outer case, not verified for The Sims 2: Pets"
+  },
+  {
+    "collectionId": "SNES-0001",
+    "title": "The Legend of Zelda: A Link to the Past",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "English GPS release / Portuguese supplementary manual",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-ZL-GPS"
+  },
+  {
+    "collectionId": "SNES-0002",
+    "title": "Cybernator",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-AV-UKV"
+  },
+  {
+    "collectionId": "SNES-0004",
+    "title": "Equinox",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-EX-UKV"
+  },
+  {
+    "collectionId": "SNES-0005",
+    "title": "Super Mario Kart",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-MK-EUR (probable; label unreadable)"
+  },
+  {
+    "collectionId": "SNES-0006",
+    "title": "Super Ghouls 'N Ghosts",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "English",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-CM-GPS"
+  },
+  {
+    "collectionId": "SNES-0007",
+    "title": "Super Mario All-Stars",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-4M-FAH"
+  },
+  {
+    "collectionId": "SNES-0008",
+    "title": "Street Fighter II: The World Warrior",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-S2-NOE"
+  },
+  {
+    "collectionId": "SNES-0009",
+    "title": "Super Mario World",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-MW-GPS"
+  },
+  {
+    "collectionId": "SNES-0010",
+    "title": "Kick Off 3: European Challenge",
+    "platform": "SNES",
+    "region": "PAL",
+    "language": "Unknown",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "SNSP-37-EUR"
+  },
+  {
+    "collectionId": "SWITCH-0001",
+    "title": "The Legend of Zelda: Link's Awakening",
+    "platform": "Nintendo Switch",
+    "region": "PAL",
+    "language": "Unknown (packaging language not reported; EAN 0045496424473)",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "EAN 0045496424473"
+  },
+  {
+    "collectionId": "SWITCH-0002",
+    "title": "Luigi's Mansion 3",
+    "platform": "Nintendo Switch",
+    "region": "Unknown",
+    "language": "Unknown",
+    "edition": "Unknown",
+    "keepStatus": "Collection",
+    "productCode": "EAN 0045496425289"
+  },
+  {
+    "collectionId": "SWITCH-0003",
+    "title": "Xenoblade Chronicles 2",
+    "platform": "Nintendo Switch",
+    "region": "Unknown",
+    "language": "Unknown",
+    "edition": "Unknown",
+    "keepStatus": "Collection",
+    "productCode": "Not reported"
+  },
+  {
+    "collectionId": "SWITCH-0004",
+    "title": "The Legend of Zelda: Skyward Sword HD",
+    "platform": "Nintendo Switch",
+    "region": "Unknown",
+    "language": "Unknown",
+    "edition": "Unknown",
+    "keepStatus": "Collection",
+    "productCode": "Not reported"
+  },
+  {
+    "collectionId": "SWITCH-0005",
+    "title": "The Legend of Zelda: Echoes of Wisdom",
+    "platform": "Nintendo Switch",
+    "region": "Unknown",
+    "language": "Unknown",
+    "edition": "Unknown",
+    "keepStatus": "Collection",
+    "productCode": "Not reported"
+  },
+  {
+    "collectionId": "SWITCH-0006",
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "platform": "Nintendo Switch",
+    "region": "Unknown",
+    "language": "Unknown",
+    "edition": "Unknown",
+    "keepStatus": "Collection",
+    "productCode": "Not reported"
+  },
+  {
+    "collectionId": "SWITCH-0007",
+    "title": "Crypt of the NecroDancer",
+    "platform": "Nintendo Switch",
+    "region": "Unknown",
+    "language": "Unknown",
+    "edition": "Unknown",
+    "keepStatus": "Collection",
+    "productCode": "Not reported"
+  },
+  {
+    "collectionId": "WII-0001",
+    "title": "Kirby's Epic Yarn",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "UKV packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RK5P-UKV; disc RVL-RK5P-EUR-B0; manual RVL-RK5P-UKV"
+  },
+  {
+    "collectionId": "WII-0002",
+    "title": "New Super Mario Bros. Wii",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "EAP manual; cover code obscured",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover code obscured by IGAC; disc RVL-SMNP-EUR-B0; manual RVL-SMNP-EAP"
+  },
+  {
+    "collectionId": "WII-0003",
+    "title": "Mario Sports Mix",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "UKV packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RMKP-UKV-1; disc RVL-RMKP-EUR-B0; manual RVL-RMKP-UKV"
+  },
+  {
+    "collectionId": "WII-0004",
+    "title": "Wii Sports Resort",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "PORT packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RZTP-PORT; disc RVL-RZTP-EUR-B0; manual RVL-RZTP-PORT"
+  },
+  {
+    "collectionId": "WII-0005",
+    "title": "Mario & Sonic at the London 2012 Olympic Games",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "POR packaging",
+    "edition": "Standard — yellow case",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-SIIP-POR; disc RVL-SIIP-EUR-B0; manual RVL-SIIP-POR"
+  },
+  {
+    "collectionId": "WII-0006",
+    "title": "Grand Slam Tennis",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "ESP packaging",
+    "edition": "Wii MotionPlus bundle copy",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-R5TP-ESP1T2; disc RVL-R5TP-EUR; manual RVL-R5TP-ESP"
+  },
+  {
+    "collectionId": "WII-0007",
+    "title": "Link's Crossbow Training",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "UKV packaging",
+    "edition": "Wii Zapper bundle copy",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RZPP-UKV; disc RVL-RZPP-EUR; manual RVL-RZPP-UKV"
+  },
+  {
+    "collectionId": "WII-0008",
+    "title": "Super Monkey Ball: Banana Blitz",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "UKV packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RSMP-UKV; disc RVL-RSMP-EUR; manual RVL-RSMP-UKV"
+  },
+  {
+    "collectionId": "WII-0009",
+    "title": "MadWorld",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "UKV packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RZZP-UKV; disc RVL-RZZP-EUR; manual RVL-RZZP-UKV"
+  },
+  {
+    "collectionId": "WII-0010",
+    "title": "Godzilla: Unleashed",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "EUU packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RGZP-EUU; disc RVL-RGZP-EUR; manual RVL-RGZP-EUU"
+  },
+  {
+    "collectionId": "WII-0011",
+    "title": "Trauma Center: New Blood",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "SWD packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RK2P-SWD; disc RVL-RK2P-EUR; manual RVL-RK2P-SWD"
+  },
+  {
+    "collectionId": "WII-0012",
+    "title": "The Legend of Zelda: Skyward Sword",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "EUR packaging; Portugal retail provenance",
+    "edition": "Limited Edition Wii Remote Plus Bundle",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-SOUP-EUR; disc RVL-SOUP-EUR-B0; manual RVL-SOUP-EUR"
+  },
+  {
+    "collectionId": "WII-0013",
+    "title": "Pokémon Battle Revolution",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "PORT packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RPBP-PORT; disc RVL-RPBP-EUR-B0; manual RVL-RPBP-PORT"
+  },
+  {
+    "collectionId": "WII-0014",
+    "title": "Rygar: The Battle of Argus",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "ITA packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RYGP-ITA; disc RVL-RYGP-EUR; manual RVL-RYGP-ITA"
+  },
+  {
+    "collectionId": "WII-0015",
+    "title": "Xenoblade Chronicles",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "EAP packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-SX4P-EAP; disc RVL-SX4P-EUR-E0; manual RVL-SX4P-EAP"
+  },
+  {
+    "collectionId": "WII-0016",
+    "title": "The Last Story",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "EAP packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-SLSP-EAP; disc RVL-SLSP-EUR-E0; manual RVL-SLSP-EAP"
+  },
+  {
+    "collectionId": "WII-0017",
+    "title": "Project Zero 2: Wii Edition",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "EAP packaging",
+    "edition": "Standard",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-SL2P-EAP; disc RVL-SL2P-EUR-B0; manual RVL-SL2P-EAP"
+  },
+  {
+    "collectionId": "WII-0018",
+    "title": "The Legend of Zelda: Twilight Princess",
+    "platform": "Nintendo Wii",
+    "region": "PAL",
+    "language": "PORT packaging",
+    "edition": "Nintendo Selects",
+    "keepStatus": "Collection",
+    "productCode": "cover RVL-RZDP-PORT; disc RVL-RZDP-EUR-B0; manual RVL-RZDP-PORT"
+  },
+  {
+    "collectionId": "WIIU-0001",
+    "title": "One Piece: Unlimited World Red",
+    "platform": "Nintendo Wii U",
+    "region": "PAL",
+    "language": "Spanish / Portuguese / Italian packaging",
+    "edition": "Standard — Straw Hat Edition code insert present",
+    "keepStatus": "Collection",
+    "productCode": "cover TSA-WUP-AUNP-EUR; disc WUP-P-AUNP-EUR-0; inserts WUP-AUNP-EUR-R + WUP-AUNP-EUR-R2"
+  }
+]
