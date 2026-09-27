@@ -1,1 +1,22 @@
-export const PLATFORM_ARTWORK: Record<string, string> = {};
+export const PLATFORM_ARTWORK: Record<string, string> = {
+  "NES": "/platforms/nes.png",
+  "SNES": "/platforms/snes.png",
+  "Nintendo 64": "/platforms/nintendo-64.png",
+  "GameCube": "/platforms/gamecube.png",
+  "Nintendo Wii": "/platforms/wii.png",
+  "Nintendo Wii U": "/platforms/wii-u.png",
+  "Nintendo Switch": "/platforms/switch.png",
+  "Game Boy": "/platforms/game-boy.png",
+  "Game Boy Color": "/platforms/game-boy-color.png",
+  "GameBoy + Color": "/platforms/game-boy.png",
+  "GameBoy Advance": "/platforms/game-boy-advance.png",
+  "Nintendo DS": "/platforms/nintendo-ds.png",
+  "Nintendo 3DS": "/platforms/nintendo-3ds.png",
+  "Playstation": "/platforms/playstation.png",
+  "Playstation 2": "/platforms/playstation-2.png",
+  "Playstation 3": "/platforms/playstation-3.png",
+  "Playstation 5": "/platforms/playstation-5.png",
+  "PSP": "/platforms/psp.png",
+  "PC": "/platforms/pc.jpg",
+  "Miscellaneous": "/platforms/misc.jpg"
+};
