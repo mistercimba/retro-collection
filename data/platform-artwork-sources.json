@@ -2,101 +2,121 @@
   {
     "platform": "NES",
     "key": "nes",
-    "wikipediaTitle": "Nintendo Entertainment System"
+    "wikipediaTitle": "Nintendo Entertainment System",
+    "importerVersion": 2
   },
   {
     "platform": "SNES",
     "key": "snes",
-    "wikipediaTitle": "Super Nintendo Entertainment System"
+    "wikipediaTitle": "Super Nintendo Entertainment System",
+    "importerVersion": 2
   },
   {
     "platform": "Nintendo 64",
     "key": "nintendo-64",
-    "wikipediaTitle": "Nintendo 64"
+    "wikipediaTitle": "Nintendo 64",
+    "importerVersion": 2
   },
   {
     "platform": "GameCube",
     "key": "gamecube",
-    "wikipediaTitle": "GameCube"
+    "wikipediaTitle": "GameCube",
+    "importerVersion": 2
   },
   {
     "platform": "Nintendo Wii",
     "key": "wii",
-    "wikipediaTitle": "Wii"
+    "wikipediaTitle": "Wii",
+    "importerVersion": 2
   },
   {
     "platform": "Nintendo Wii U",
     "key": "wii-u",
-    "wikipediaTitle": "Wii U"
+    "wikipediaTitle": "Wii U",
+    "importerVersion": 2
   },
   {
     "platform": "Nintendo Switch",
     "key": "switch",
-    "wikipediaTitle": "Nintendo Switch"
+    "wikipediaTitle": "Nintendo Switch",
+    "importerVersion": 2
   },
   {
     "platform": "Game Boy",
     "key": "game-boy",
-    "wikipediaTitle": "Game Boy"
+    "wikipediaTitle": "Game Boy",
+    "importerVersion": 2
   },
   {
     "platform": "Game Boy Color",
     "key": "game-boy-color",
-    "wikipediaTitle": "Game Boy Color"
+    "wikipediaTitle": "Game Boy Color",
+    "importerVersion": 2
   },
   {
     "platform": "GameBoy + Color",
     "key": "game-boy",
-    "wikipediaTitle": "Game Boy"
+    "wikipediaTitle": "Game Boy",
+    "importerVersion": 2
   },
   {
     "platform": "GameBoy Advance",
     "key": "game-boy-advance",
-    "wikipediaTitle": "Game Boy Advance"
+    "wikipediaTitle": "Game Boy Advance",
+    "importerVersion": 2
   },
   {
     "platform": "Nintendo DS",
     "key": "nintendo-ds",
-    "wikipediaTitle": "Nintendo DS"
+    "wikipediaTitle": "Nintendo DS",
+    "importerVersion": 2
   },
   {
     "platform": "Nintendo 3DS",
     "key": "nintendo-3ds",
-    "wikipediaTitle": "Nintendo 3DS"
+    "wikipediaTitle": "Nintendo 3DS",
+    "importerVersion": 2
   },
   {
     "platform": "Playstation",
     "key": "playstation",
-    "wikipediaTitle": "PlayStation (console)"
+    "wikipediaTitle": "PlayStation (console)",
+    "importerVersion": 2
   },
   {
     "platform": "Playstation 2",
     "key": "playstation-2",
-    "wikipediaTitle": "PlayStation 2"
+    "wikipediaTitle": "PlayStation 2",
+    "importerVersion": 2
   },
   {
     "platform": "Playstation 3",
     "key": "playstation-3",
-    "wikipediaTitle": "PlayStation 3"
+    "wikipediaTitle": "PlayStation 3",
+    "importerVersion": 2
   },
   {
     "platform": "Playstation 5",
     "key": "playstation-5",
-    "wikipediaTitle": "PlayStation 5"
+    "wikipediaTitle": "PlayStation 5",
+    "importerVersion": 2
   },
   {
     "platform": "PSP",
     "key": "psp",
-    "wikipediaTitle": "PlayStation Portable"
+    "wikipediaTitle": "PlayStation Portable",
+    "importerVersion": 2
   },
   {
     "platform": "PC",
     "key": "pc",
-    "wikipediaTitle": "Personal computer"
+    "wikipediaTitle": "Personal computer",
+    "importerVersion": 2
   },
   {
     "platform": "Miscellaneous",
     "key": "misc",
-    "wikipediaTitle": "Video game console"
+    "wikipediaTitle": "Video game console",
+    "importerVersion": 2
   }
 ]
