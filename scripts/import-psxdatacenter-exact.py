@@ -46,6 +46,34 @@ def download(url, destination, referer=None):
             time.sleep(attempt)
     raise RuntimeError(f"download failed: {url}: {last}")
 
+def find_front_wrapper_from_game_page(page_url, html, serial):
+    serial_upper = serial.upper()
+    candidates = re.findall(r'href\s*=\s*["\']([^"\']+\.html)["\']', html, flags=re.I)
+    absolute = [urllib.parse.urljoin(page_url, candidate) for candidate in candidates]
+    exact = [
+        url for url in absolute
+        if serial_upper in url.upper() and "-F-ALL.HTML" in url.upper()
+    ]
+    if not exact:
+        raise RuntimeError(f"{serial}: no exact front-cover wrapper found on game page")
+
+    verified = []
+    for wrapper in exact:
+        wrapper_html = fetch_text(wrapper)
+        upper = wrapper_html.upper()
+        if serial_upper not in upper:
+            continue
+        if "FRONT COVER DOWNLOAD" not in upper:
+            continue
+        if "PLATINUM FRONT COVER DOWNLOAD" in upper:
+            continue
+        verified.append((wrapper, wrapper_html))
+
+    if not verified:
+        raise RuntimeError(f"{serial}: exact front-cover wrappers exist but none passed validation")
+    return verified[0]
+
+
 def find_exact_front_image(page_url, html, serial):
     serial_upper = serial.upper()
     html_upper = html.upper()
@@ -107,6 +135,10 @@ for collection_id, target in targets.items():
     image_url = target.get("image")
     if not image_url:
         html = fetch_text(page_url)
+        if "/games2/" in page_url or "/games/" in page_url:
+            wrapper_url, wrapper_html = find_front_wrapper_from_game_page(page_url, html, serial)
+            page_url = wrapper_url
+            html = wrapper_html
         image_url = find_exact_front_image(page_url, html, serial)
 
     if serial.upper() not in image_url.upper() or "-F-ALL." not in image_url.upper():
