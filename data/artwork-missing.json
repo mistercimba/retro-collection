@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T10:58:47Z",
+  "generatedAt": "2026-09-27T11:03:58Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -10,45 +10,9 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 466,
-  "missing": 50,
+  "matched": 485,
+  "missing": 31,
   "entries": [
-    {
-      "collectionId": "GBA-0025",
-      "title": "Yu-Gi-Oh Ultimate Masters Edition",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BY6P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Yu-Gi-Oh Ultimate Masters Edition",
-      "platformId": 5,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Yu-Gi-Oh Ultimate Masters Edition\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0031",
-      "title": "Lord of the Rings: Return of the King",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Lord of the Rings: Return of the King",
-      "platformId": 5,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Lord of the Rings: Return of the King\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
     {
       "collectionId": "GBA-0045",
       "title": "Need For Speed: Carbon Own The City",
@@ -98,24 +62,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0060",
-      "title": "Lord Of The Rings Two Towers",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BLRP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Lord Of The Rings Two Towers",
-      "platformId": 5,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Lord Of The Rings Two Towers\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBA-0062",
       "title": "Zelda NES Classics",
       "platform": "GameBoy Advance",
@@ -134,24 +80,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBC-0011",
-      "title": "Zelda Link's Awakening",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "French",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-ZL-FRA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Zelda Link's Awakening",
-      "platformId": 4,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Zelda Link's Awakening\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBC-0020",
       "title": "Super Mario Land 2",
       "platform": "Game Boy",
@@ -167,35 +95,6 @@
       "platformId": 4,
       "candidates": [],
       "inputKey": "{\"title\":\"Super Mario Land 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0021",
-      "title": "Probotector",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "GPS Variant",
-      "keepStatus": "Collection",
-      "productCode": "DMG-CN-GPS",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Probotector",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 26550,
-          "title": "Probotector",
-          "regionId": 0
-        },
-        {
-          "id": 26552,
-          "title": "Probotector 2",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Probotector\",\"platform\":\"Game Boy\",\"edition\":\"GPS Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -257,72 +156,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBC-0041",
-      "title": "Harry Potter And The Philosopher's Stone",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English / French / German / Spanish / Italian / Dutch / Portuguese / Swedish / Norwegian / Danish / Finnish",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "CGB-BHVP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Harry Potter And The Philosopher's Stone",
-      "platformId": 41,
-      "candidates": [
-        {
-          "id": 21997,
-          "title": "Harry Potter and the Sorcerer's Stone",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Harry Potter And The Philosopher's Stone\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0046",
-      "title": "Sylvester & Tweety Breakfast On The Run",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Sell",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Sylvester & Tweety Breakfast On The Run",
-      "platformId": 41,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Sylvester & Tweety Breakfast On The Run\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0048",
-      "title": "Bugs Bunny & Lola Bunny Operation Carrot Patch",
-      "platform": "Game Boy Color",
-      "region": "PAL",
-      "language": "English / French / German / Spanish / Italian / Dutch",
-      "edition": "UKV-1 Label Variant",
-      "keepStatus": "Collection",
-      "productCode": "DMG-ABLP-UKV-1",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Bugs Bunny & Lola Bunny Operation Carrot Patch",
-      "platformId": 41,
-      "candidates": [
-        {
-          "id": 127082,
-          "title": "Bugs Bunny & Lola Bunny: Operation Carrot Patch",
-          "regionId": 9
-        }
-      ],
-      "inputKey": "{\"title\":\"Bugs Bunny & Lola Bunny Operation Carrot Patch\",\"platform\":\"Game Boy Color\",\"edition\":\"UKV-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "GBC-0052",
       "title": "The Hunt for Red October",
       "platform": "Game Boy",
@@ -344,99 +177,6 @@
         }
       ],
       "inputKey": "{\"title\":\"The Hunt for Red October\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GC-0014",
-      "title": "The Hobbit",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GHBP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Hobbit",
-      "platformId": 2,
-      "candidates": [
-        {
-          "id": 11459,
-          "title": "The Hobbit",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"The Hobbit\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "product-code-not-found-or-title-mismatch",
-      "gametdbCodes": [
-        "GHBP"
-      ]
-    },
-    {
-      "collectionId": "N64-0011",
-      "title": "Lode Runner 3D",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NLRP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Lode Runner 3D",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 1131,
-          "title": "Lode Runner 3-D",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Lode Runner 3D\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0018",
-      "title": "007 GoldenEye",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NGEP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "007 GoldenEye",
-      "platformId": 3,
-      "candidates": [
-        {
-          "id": 160,
-          "title": "GoldenEye 007",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"007 GoldenEye\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "N64-0023",
-      "title": "F1 World Grand Prix",
-      "platform": "Nintendo 64",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NUS-NFWP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "F1 World Grand Prix",
-      "platformId": 3,
-      "candidates": [],
-      "inputKey": "{\"title\":\"F1 World Grand Prix\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -469,30 +209,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "NES-0009",
-      "title": "Terminator 2: Judgement Day",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-62-NOE",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Terminator 2: Judgement Day",
-      "platformId": 7,
-      "candidates": [
-        {
-          "id": 2135,
-          "title": "Terminator 2: Judgment Day",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Terminator 2: Judgement Day\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "NES-0012",
       "title": "The Simpsons: Bart vs. the Space Mutants",
       "platform": "NES",
@@ -514,24 +230,6 @@
         }
       ],
       "inputKey": "{\"title\":\"The Simpsons: Bart vs. the Space Mutants\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "NES-0014",
-      "title": "Teenage Mutant Hero Turtles",
-      "platform": "NES",
-      "region": "PAL-B",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NES-88-GPS",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Teenage Mutant Hero Turtles",
-      "platformId": 7,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Teenage Mutant Hero Turtles\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -598,42 +296,6 @@
         }
       ],
       "inputKey": "{\"title\":\"Guild Wars: Factions\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PC-0008",
-      "title": "Harry Potter Prisoner of Azkaban",
-      "platform": "PC",
-      "region": "PAL",
-      "language": "Portuguese",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Harry Potter Prisoner of Azkaban",
-      "platformId": 1,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Harry Potter Prisoner of Azkaban\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PC-0009",
-      "title": "Magic Battlegrounds",
-      "platform": "PC",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Magic Battlegrounds",
-      "platformId": 1,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Magic Battlegrounds\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -968,42 +630,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "PS2-0026",
-      "title": "Final Fantasy VII Dirge Of Cerberus",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-54185",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Final Fantasy VII Dirge Of Cerberus",
-      "platformId": 11,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Final Fantasy VII Dirge Of Cerberus\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS2-0030",
-      "title": "Devil May Cry 3",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Special Edition",
-      "keepStatus": "Collection",
-      "productCode": "SLES-54186",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Devil May Cry 3",
-      "platformId": 11,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Devil May Cry 3\",\"platform\":\"Playstation 2\",\"edition\":\"Special Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "PS2-0062",
       "title": "Formula One 2005",
       "platform": "Playstation 2",
@@ -1097,30 +723,6 @@
       "platformId": 4980,
       "candidates": [],
       "inputKey": "{\"title\":\"Class of Heroes 3 Remaster\",\"platform\":\"Playstation 5\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "SNES-0008",
-      "title": "Street Fighter II: The World Warrior",
-      "platform": "SNES",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SNSP-S2-NOE",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Street Fighter II: The World Warrior",
-      "platformId": 6,
-      "candidates": [
-        {
-          "id": 3122,
-          "title": "Street Fighter II",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Street Fighter II: The World Warrior\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     }
   ]
