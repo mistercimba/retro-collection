@@ -62,12 +62,13 @@ function fileCore(sourcePath) {
 
 function isStrictPal(sourcePath) {
   const value = normalize(sourcePath);
+  if (/\b(usa|united states|japan|korea|asia|canada)\b/.test(value)) return false;
   return /\b(europe|portugal|united kingdom|uk|france|germany|spain|italy|australia)\b/.test(value);
 }
 
 function hasUnsafeVariant(sourcePath, edition) {
   const value = normalize(sourcePath);
-  if (/\b(virtual console|demo|beta|proto|prototype|aftermarket|unl|not for resale)\b/.test(value)) return true;
+  if (/\b(virtual console|demo|beta|proto|prototype|aftermarket|unl|not for resale|alternate)\b/.test(value)) return true;
 
   const editionNorm = normalize(edition);
   const special = ["platinum", "greatest hits", "player s choice", "players choice", "essentials", "bundle"];
