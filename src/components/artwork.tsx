@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { displayPlatform } from "@/lib/data/platforms";
 
 function initials(value: string) {
@@ -32,12 +32,20 @@ function ArtworkFrame({
 }) {
   const [failed, setFailed] = useState(false);
 
+  useEffect(() => {
+    setFailed(false);
+  }, [src]);
+
   return (
     <div className={`relative ${className}`}>
       {failed ? (
         <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 p-4 text-white">
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">{displayPlatform(platform)}</span>
-          <span className="text-3xl font-black tracking-tight text-white/90">{initials(title) || "GAME"}</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">
+            {displayPlatform(platform)}
+          </span>
+          <span className="text-3xl font-black tracking-tight text-white/90">
+            {initials(title) || "GAME"}
+          </span>
         </div>
       ) : (
         <img
@@ -45,7 +53,6 @@ function ArtworkFrame({
           alt={alt}
           loading={eager ? "eager" : "lazy"}
           decoding="async"
-          referrerPolicy="no-referrer"
           onError={() => setFailed(true)}
           className={imageClassName}
         />
@@ -74,34 +81,22 @@ export function PlatformArtwork({
 }
 
 export function GameArtwork({
+  collectionId,
   title,
   platform,
-  region = "PAL",
-  edition = "",
-  productCode = "",
   className = "aspect-[3/4]",
   eager = false,
 }: {
+  collectionId: string;
   title: string;
   platform: string;
-  region?: string;
-  edition?: string;
-  productCode?: string;
   className?: string;
   eager?: boolean;
 }) {
-  const params = new URLSearchParams({
-    title,
-    platform,
-    region: region || "PAL",
-  });
-  if (edition) params.set("edition", edition);
-  if (productCode) params.set("productCode", productCode);
-
   return (
     <ArtworkFrame
-      src={`/api/artwork/game?${params.toString()}`}
-      alt={`${title} PAL artwork`}
+      src={`/covers/${encodeURIComponent(collectionId)}.png`}
+      alt={`${title} PAL cover`}
       platform={platform}
       title={title}
       eager={eager}
