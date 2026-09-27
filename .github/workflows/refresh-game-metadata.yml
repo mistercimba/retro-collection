@@ -1,0 +1,72 @@
+name: Refresh IGDB game metadata
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: igdb-metadata-refresh-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout selected branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh metadata using the existing IGDB pipeline
+        env:
+          IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+          IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
+          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+          GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+        run: npm run metadata:refresh
+
+      - name: Validate generated snapshot
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const snapshot = JSON.parse(fs.readFileSync('src/data/game-metadata.json', 'utf8'));
+          if (snapshot.schemaVersion !== 1 || !snapshot.refreshedAt || !snapshot.games || Object.keys(snapshot.games).length === 0) {
+            throw new Error('Snapshot IGDB inválido ou vazio.');
+          }
+          const allowed = new Set(['matched', 'ambiguous', 'unmatched']);
+          for (const [id, game] of Object.entries(snapshot.games)) {
+            if (!id || !allowed.has(game.matchStatus)) throw new Error(`Estado de correspondência inválido para ${id || '(sem ID)'}.`);
+            if (game.matchStatus === 'matched' && (game.source !== 'IGDB' || !Array.isArray(game.genres))) {
+              throw new Error(`Metadata IGDB incompleta para ${id}.`);
+            }
+          }
+          console.log(`Snapshot válido: ${Object.keys(snapshot.games).length} cópias.`);
+          NODE
+
+      - name: Test IGDB matching and snapshot behavior
+        run: npm test -- src/lib/data/igdb-refresh.test.ts
+
+      - name: Commit only the metadata snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/game-metadata.json
+          if git diff --cached --quiet; then
+            echo "No metadata snapshot changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh IGDB game metadata"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
