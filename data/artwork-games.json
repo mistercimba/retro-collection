@@ -8,7 +8,8 @@
     "edition": "Limited Edition",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-ECLP-UKV; cartridge: TSA/LNA-CTR-ECLP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0002",
@@ -19,7 +20,8 @@
     "edition": "Big Box",
     "keepStatus": "Collection",
     "productCode": "Box: CTR-P-AKDP; cartridge: not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0003",
@@ -30,7 +32,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: unreadable under EcoPlay sticker; cartridge: LNA-CTR-ACVP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0004",
@@ -41,7 +44,8 @@
     "edition": "Circle Pad Pro Bundle",
     "keepStatus": "Collection",
     "productCode": "Bundle box: CTR-R-ABRP; cartridge: not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0005",
@@ -52,7 +56,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-ACFP-EAP; cartridge: LNA-CTR-ACFP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0006",
@@ -63,7 +68,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-ALCP-EAP; cartridge: LNA-CTR-ALCP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0007",
@@ -74,7 +80,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-EK2P-UKV; cartridge: LNA-CTR-EK2P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0008",
@@ -85,7 +92,8 @@
     "edition": "Nintendo Selects",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-BZLP-EAP; cartridge: LNA-CTR-BZLP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0009",
@@ -96,7 +104,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-BNEP-POR; cartridge: LNA-CTR-BNEP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0010",
@@ -107,7 +116,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-ANRP-EAP; cartridge: LNA-CTR-ANRP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0011",
@@ -118,7 +128,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-ASSP-EAP; cartridge: LNA-CTR-ASSP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0012",
@@ -129,7 +140,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: unreadable; cartridge: LNA-CTR-ALGP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0013",
@@ -140,7 +152,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-AHCP-UXP; cartridge: LNA-CTR-AHCP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0014",
@@ -151,7 +164,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-BSED-EAP; cartridge: LNA-CTR-BSED-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0015",
@@ -162,7 +176,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-BAGP-EAP; cartridge: LNA-CTR-BAGP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0016",
@@ -173,7 +188,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TRA-CTR-BB3P-EAP; cartridge: LNA-CTR-BB3P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0017",
@@ -184,7 +200,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: TSA-CTR-AB2P-EUR; cartridge: LNA-CTR-AB2P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "3DS-0018",
@@ -195,7 +212,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Cartridge: LNA-CTR-AMKP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0001",
@@ -206,7 +224,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BPEP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0002",
@@ -217,7 +236,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BKTP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0003",
@@ -228,7 +248,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0004",
@@ -239,7 +260,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BPRP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0005",
@@ -250,7 +272,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BPGP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0006",
@@ -261,7 +284,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AXPP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0007",
@@ -272,7 +296,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AXVP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0008",
@@ -283,7 +308,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BZMP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0009",
@@ -294,7 +320,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BSBP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0010",
@@ -305,7 +332,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AMTP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0013",
@@ -316,7 +344,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AZLP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0014",
@@ -327,7 +356,8 @@
     "edition": "Bootleg / Reproduction",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0015",
@@ -338,7 +368,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AYCP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0016",
@@ -349,7 +380,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BKHP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0017",
@@ -360,7 +392,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AQWP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0018",
@@ -371,7 +404,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AONP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0019",
@@ -382,7 +416,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-B8CP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0020",
@@ -393,7 +428,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BB2P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0021",
@@ -404,7 +440,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AMKE-USA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0022",
@@ -415,7 +452,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AA2P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0023",
@@ -426,7 +464,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AGSP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0024",
@@ -437,7 +476,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BM5E-USA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0025",
@@ -448,7 +488,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BY6P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0026",
@@ -459,7 +500,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AROP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0027",
@@ -470,7 +512,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AWRP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0028",
@@ -481,7 +524,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-APFE-USA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0029",
@@ -492,7 +536,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AWAP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0030",
@@ -503,7 +548,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-FEBP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0031",
@@ -514,7 +560,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0032",
@@ -525,7 +572,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AWXP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0033",
@@ -536,7 +584,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AFXP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0034",
@@ -547,7 +596,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AMAP-EUR-1",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0035",
@@ -558,7 +608,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-FDKP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0036",
@@ -569,7 +620,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-A2NP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0037",
@@ -580,7 +632,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-ADUP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0038",
@@ -591,7 +644,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AYDP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0039",
@@ -602,7 +656,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-ASEP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0040",
@@ -613,7 +668,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BKZP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0041",
@@ -624,7 +680,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BL8P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0042",
@@ -635,7 +692,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BLSP-EUR-1",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0043",
@@ -646,7 +704,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BE3P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0044",
@@ -657,7 +716,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-A2SP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0045",
@@ -668,7 +728,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BN7P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0046",
@@ -679,7 +740,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-B52P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0047",
@@ -690,7 +752,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AH9P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0048",
@@ -701,7 +764,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BTGX-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0049",
@@ -712,7 +776,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BSTP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0050",
@@ -723,7 +788,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AIHP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0051",
@@ -734,7 +800,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AYHP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0053",
@@ -745,7 +812,8 @@
     "edition": "Bootleg / Reproduction",
     "keepStatus": "Collection",
     "productCode": "E3-0053 (bootleg marking)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0054",
@@ -756,7 +824,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AFZP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0055",
@@ -767,7 +836,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-ATLP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0056",
@@ -778,7 +848,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-A7HP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0057",
@@ -789,7 +860,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AIFP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0058",
@@ -800,7 +872,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-AJDP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0059",
@@ -811,7 +884,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-ASYP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0060",
@@ -822,7 +896,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BLRP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0061",
@@ -833,7 +908,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-BICP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBA-0062",
@@ -844,7 +920,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "AGB-FZLP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0001",
@@ -855,7 +932,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "CGB-BYTP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0002",
@@ -866,7 +944,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AAUP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0003",
@@ -877,7 +956,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-APSU-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0004",
@@ -888,7 +968,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "CGB-AZ8P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0006",
@@ -899,7 +980,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AKBP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0007",
@@ -910,7 +992,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-APAU-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0008",
@@ -921,7 +1004,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AAXP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0010",
@@ -932,7 +1016,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-APEU-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0011",
@@ -943,7 +1028,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-ZL-FRA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0012",
@@ -954,7 +1040,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-KY-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0013",
@@ -965,7 +1052,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-EB-FAH",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0014",
@@ -976,7 +1064,8 @@
     "edition": "Rev 0 (v1.0)",
     "keepStatus": "Collection",
     "productCode": "CGB-AHYP-0 (ROM chip)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0015",
@@ -987,7 +1076,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-BD-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0016",
@@ -998,7 +1088,8 @@
     "edition": "Game Boy Color Rerelease",
     "keepStatus": "Collection",
     "productCode": "DMG-AWLP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0017",
@@ -1009,7 +1100,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "CGB-AW8A-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0018",
@@ -1020,7 +1112,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-RK-USA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0019",
@@ -1031,7 +1124,8 @@
     "edition": "UKV-1 Revision",
     "keepStatus": "Collection",
     "productCode": "DMG-RA-UKV-1",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0020",
@@ -1042,7 +1136,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-MQ-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0021",
@@ -1053,7 +1148,8 @@
     "edition": "GPS Variant",
     "keepStatus": "Collection",
     "productCode": "DMG-CN-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0022",
@@ -1064,7 +1160,8 @@
     "edition": "UKV Cartridge / Rev 1 ROM",
     "keepStatus": "Collection",
     "productCode": "DMG-ML-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0023",
@@ -1075,7 +1172,8 @@
     "edition": "USA / Ultra Games Label",
     "keepStatus": "Collection",
     "productCode": "DMG-NT-USA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0024",
@@ -1086,7 +1184,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-QD-EUR (probable; only EUR suffix readable)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0025",
@@ -1097,7 +1196,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AYXP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0026",
@@ -1108,7 +1208,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-ADDP-EUR-1",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0027",
@@ -1119,7 +1220,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AXQP-NOE",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0028",
@@ -1130,7 +1232,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AD3P-EUR (probable; only EUR suffix readable)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0029",
@@ -1141,7 +1244,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-TS-NOE",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0030",
@@ -1152,7 +1256,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-WJ-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0031",
@@ -1163,7 +1268,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "CGB-BH6P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0032",
@@ -1174,7 +1280,8 @@
     "edition": "Rumble Version",
     "keepStatus": "Collection",
     "productCode": "DMG-VPHP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0033",
@@ -1185,7 +1292,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-ALZP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0034",
@@ -1196,7 +1304,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-GU-USA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0035",
@@ -1207,7 +1316,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-YT-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0036",
@@ -1218,7 +1328,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AGQP-EUR-2",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0037",
@@ -1229,7 +1340,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-TR-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0040",
@@ -1240,7 +1352,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AGLP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0041",
@@ -1251,7 +1364,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "CGB-BHVP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0042",
@@ -1262,7 +1376,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AW-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0043",
@@ -1273,7 +1388,8 @@
     "edition": "EUU-1 Label Variant",
     "keepStatus": "Collection",
     "productCode": "CGB-AO4P-EUU-1",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0044",
@@ -1284,7 +1400,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AAFX-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0045",
@@ -1295,7 +1412,8 @@
     "edition": "UKV-1 Label Variant",
     "keepStatus": "Collection",
     "productCode": "DMG-AYRP-UKV-1",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0046",
@@ -1306,7 +1424,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0047",
@@ -1317,7 +1436,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "CGB-BLDP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0048",
@@ -1328,7 +1448,8 @@
     "edition": "UKV-1 Label Variant",
     "keepStatus": "Collection",
     "productCode": "DMG-ABLP-UKV-1",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0049",
@@ -1339,7 +1460,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "CGB-BABP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0050",
@@ -1350,7 +1472,8 @@
     "edition": "Rev 1 (World ROM)",
     "keepStatus": "Collection",
     "productCode": "DMG-VU-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0051",
@@ -1361,7 +1484,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-AB6P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0052",
@@ -1372,7 +1496,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DMG-HF-USA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GBC-0053",
@@ -1383,7 +1508,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "CGB-AZ7P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0001",
@@ -1394,7 +1520,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GFEP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0002",
@@ -1405,7 +1532,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GPXP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0003",
@@ -1416,7 +1544,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-UGPP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0004",
@@ -1427,7 +1556,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GC6P-FRA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0005",
@@ -1438,7 +1568,8 @@
     "edition": "Limited Edition",
     "keepStatus": "Collection",
     "productCode": "DOL-GZLP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0006",
@@ -1449,7 +1580,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GEDP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0007",
@@ -1460,7 +1592,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GALP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0009",
@@ -1471,7 +1604,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GM4P-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0010",
@@ -1482,7 +1616,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GMPP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0011",
@@ -1493,7 +1628,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GM8P-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0012",
@@ -1504,7 +1640,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GMSP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0013",
@@ -1515,7 +1652,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GSPP-ESP",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0014",
@@ -1526,7 +1664,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GHBP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0015",
@@ -1537,7 +1676,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GPIP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0016",
@@ -1548,7 +1688,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GWRP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0017",
@@ -1559,7 +1700,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "DOL-GMBP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "GC-0018",
@@ -1570,7 +1712,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/manual DOL-GZ2P-HOL / IM-DOL-GZ2P-HOL; disc DL-DOL-GZ2P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0001",
@@ -1581,7 +1724,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NP3P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0002",
@@ -1592,7 +1736,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NZSP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0003",
@@ -1603,7 +1748,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NB7P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0004",
@@ -1614,7 +1760,8 @@
     "edition": "Player's Choice",
     "keepStatus": "Collection",
     "productCode": "NUS-NFXP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0005",
@@ -1625,7 +1772,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NMYP-FRA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0006",
@@ -1636,7 +1784,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NALP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0007",
@@ -1647,7 +1796,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NZLP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0008",
@@ -1658,7 +1808,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NDOP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0009",
@@ -1669,7 +1820,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NKTP-EUR (probable; only EUR suffix legible)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0010",
@@ -1680,7 +1832,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NPUP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0011",
@@ -1691,7 +1844,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NLRP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0012",
@@ -1702,7 +1856,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NYSP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0013",
@@ -1713,7 +1868,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NDYP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0014",
@@ -1724,7 +1880,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NBKP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0016",
@@ -1735,7 +1892,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NSMP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0017",
@@ -1746,7 +1904,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NP0P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0018",
@@ -1757,7 +1916,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NGEP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0019",
@@ -1768,7 +1928,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NPFP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0020",
@@ -1779,7 +1940,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NRWP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0021",
@@ -1790,7 +1952,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NWRP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0022",
@@ -1801,7 +1964,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0023",
@@ -1812,7 +1976,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NFWP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0024",
@@ -1823,7 +1988,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NT2P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0025",
@@ -1834,7 +2000,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NUS-NBLP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "N64-0026",
@@ -1845,7 +2012,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Código físico não lido; NUS-NJFP-EUR é a referência PAL publicada, ainda por confirmar na cópia",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0001",
@@ -1856,7 +2024,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-APHP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0002",
@@ -1867,7 +2036,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-ACHP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0003",
@@ -1878,7 +2048,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-YG4P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0004",
@@ -1889,7 +2060,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-C2SP-PORT; cartridge: NTR-C2SP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0005",
@@ -1900,7 +2072,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-BGTP-EAP; cartridge: NTR-BGTP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0006",
@@ -1911,7 +2084,8 @@
     "edition": "Keyboard Bundle",
     "keepStatus": "Collection",
     "productCode": "Bundle: NTR-UZPP-UKV-CO; cartridge: NTR-UZPP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0007",
@@ -1922,7 +2096,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR P A6BP; cartridge: NTR A6BP EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0008",
@@ -1933,7 +2108,8 @@
     "edition": "Soundtrack Edition",
     "keepStatus": "Collection",
     "productCode": "NTR-YL2P-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0009",
@@ -1944,7 +2120,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-YHNP-ESP",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0010",
@@ -1955,7 +2132,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-IPGP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0011",
@@ -1966,7 +2144,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-ANIP-EUR; cartridge: NTR-ANIP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0012",
@@ -1977,7 +2156,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-B3RP-EAP; cartridge: NTR-B3RP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0013",
@@ -1988,7 +2168,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-CPUP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0014",
@@ -1999,7 +2180,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-BKIP-EAP; cartridge: NTR-BKIP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0015",
@@ -2010,7 +2192,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0016",
@@ -2021,7 +2204,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-B05P-UKV; cartridge: NTR-B05P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0017",
@@ -2032,7 +2216,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "TWL-IRAO-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0018",
@@ -2043,7 +2228,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-AWRP-FHG; cartridge: NTR-AWRP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0019",
@@ -2054,7 +2240,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-ADAP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0020",
@@ -2065,7 +2252,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-ASEP-FHG; cartridge: NTR-ASEP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0021",
@@ -2076,7 +2264,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-AHEP-FRA; cartridge: NTR-AHEP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0022",
@@ -2087,7 +2276,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-C3JP-PORT",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0023",
@@ -2098,7 +2288,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "TLA-NTR-BLFP-PORT",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0024",
@@ -2109,7 +2300,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-ASMP-EIP; cartridge: NTR-ASMP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0025",
@@ -2120,7 +2312,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-ADMP-EAP; cartridge: NTR-ADMP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0026",
@@ -2131,7 +2324,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-AFXP-FRA; cartridge: NTR-AFXP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0027",
@@ -2142,7 +2336,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-ANZP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0028",
@@ -2153,7 +2348,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-ABCP-UKV; cartridge: NTR-ABCP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0029",
@@ -2164,7 +2360,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-A2DP-UKV; cartridge: NTR-A2DP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0030",
@@ -2175,7 +2372,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-YLNE-USA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0031",
@@ -2186,7 +2384,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-UORP-EAP; cartridge: NTR-UORP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0032",
@@ -2197,7 +2396,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-YO8P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0033",
@@ -2208,7 +2408,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-AB7P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0034",
@@ -2219,7 +2420,8 @@
     "edition": "Guitar Grip Bundle",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-YGHX-ESP; cartridge: NTR-YGHX-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0035",
@@ -2230,7 +2432,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-BDRP-UKV; cartridge: NTR-BDRP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0036",
@@ -2241,7 +2444,8 @@
     "edition": "First Hunt Demo",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-AMFP-EU6; cartridge: NTR-AMFP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0037",
@@ -2252,7 +2456,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-ATFP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0038",
@@ -2263,7 +2468,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-AY5P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0039",
@@ -2274,7 +2480,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-BH2X-UXP; cartridge: NTR-BH2P-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0040",
@@ -2285,7 +2492,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-A5FP-PORT; cartridge: NTR-A5FP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0041",
@@ -2296,7 +2504,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: NTR-AFFP-UKV; cartridge: NTR-AFFP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NDS-0042",
@@ -2307,7 +2516,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NTR-YR9P-EUT (packaging; owner-confirmed); NTR-YR9P-EUR (cartridge; previously confirmed); EAN 4012927082898",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0001",
@@ -2318,7 +2528,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-V5-FRG",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0002",
@@ -2329,7 +2540,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-W2-EEC",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0003",
@@ -2340,7 +2552,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-SM-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0004",
@@ -2351,7 +2564,8 @@
     "edition": "Arcade Classics Series",
     "keepStatus": "Collection",
     "productCode": "NES-PP-FRA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0005",
@@ -2362,7 +2576,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-GR-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0006",
@@ -2373,7 +2588,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-MW-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0007",
@@ -2384,7 +2600,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-5Y-NOE",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0008",
@@ -2395,7 +2612,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-UM-FRA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0009",
@@ -2406,7 +2624,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-62-NOE",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0010",
@@ -2417,7 +2636,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-RU-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0012",
@@ -2428,7 +2648,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-Q5-NOE",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0013",
@@ -2439,7 +2660,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-LN-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0014",
@@ -2450,7 +2672,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-88-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0015",
@@ -2461,7 +2684,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-CG-FRA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0016",
@@ -2472,7 +2696,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-AD-ESP",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0017",
@@ -2483,7 +2708,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-W9-NOE",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0018",
@@ -2494,7 +2720,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-VJ-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "NES-0019",
@@ -2505,7 +2732,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "NES-WI-FRG",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0001",
@@ -2516,7 +2744,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0002",
@@ -2527,7 +2756,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0003",
@@ -2538,7 +2768,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0004",
@@ -2549,7 +2780,8 @@
     "edition": "Collector's Edition",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0005",
@@ -2560,7 +2792,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0006",
@@ -2571,7 +2804,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0007",
@@ -2582,7 +2816,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0008",
@@ -2593,7 +2828,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0009",
@@ -2604,7 +2840,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0010",
@@ -2615,7 +2852,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0011",
@@ -2626,7 +2864,8 @@
     "edition": "Big Box",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0012",
@@ -2637,7 +2876,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0013",
@@ -2648,7 +2888,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0014",
@@ -2659,7 +2900,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0015",
@@ -2670,7 +2912,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0016",
@@ -2681,7 +2924,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0017",
@@ -2692,7 +2936,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0018",
@@ -2703,7 +2948,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0019",
@@ -2714,7 +2960,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0020",
@@ -2725,7 +2972,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0021",
@@ -2736,7 +2984,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0022",
@@ -2747,7 +2996,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PC-0023",
@@ -2758,7 +3008,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0001",
@@ -2769,7 +3020,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-01514",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0002",
@@ -2780,7 +3032,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02558; discs: SLES-02558 + SLES-12558",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0003",
@@ -2791,7 +3044,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-03936",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0004",
@@ -2802,7 +3056,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Disc: SLES-02111",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0005",
@@ -2813,7 +3068,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-03221",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0006",
@@ -2824,7 +3080,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-00969",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0007",
@@ -2835,7 +3092,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SCES-00582",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0008",
@@ -2846,7 +3104,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-02754",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0009",
@@ -2857,7 +3116,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-01726; disc: SLES-01726 / 775",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0010",
@@ -2868,7 +3128,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Disc: SLES-03900",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0011",
@@ -2879,7 +3140,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-04034; discs: SLES-04034 + SLES-14034",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0012",
@@ -2890,7 +3152,8 @@
     "edition": "Demo",
     "keepStatus": "Collection",
     "productCode": "Legacy reference: PBPX-95008 (not reverified)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0013",
@@ -2901,7 +3164,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-00972; discs: SLES-00972 / 7082559 + SLES-10972 / 7082559",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0014",
@@ -2912,7 +3176,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-03386; discs: SLES-03386 + SLES-13386 + SLES-23386 + SLES-33386",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0015",
@@ -2923,7 +3188,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-01370; discs: SLES-01370 + SLES-11370",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0016",
@@ -2934,7 +3200,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-03701; disc: SCES-03701-P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0017",
@@ -2945,7 +3212,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-01564; disc: SCES-01564",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0018",
@@ -2956,7 +3224,8 @@
     "edition": "Platinum",
     "keepStatus": "Sell",
     "productCode": "Box: SLES-02801; discs: SLES-02801 + SLES-12801",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0019",
@@ -2967,7 +3236,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02095; disc: SLES-02095",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0020",
@@ -2978,7 +3248,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-00311; disc: SCES-00311 / 9793229",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0021",
@@ -2989,7 +3260,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02965; discs: SLES-02965 + SLES-12965 + SLES-22965 + SLES-32965",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0022",
@@ -3000,7 +3272,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02886; disc: SLES-02886 /P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0023",
@@ -3011,7 +3284,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-02088",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0024",
@@ -3022,7 +3296,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SCES-00891",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0025",
@@ -3033,7 +3308,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/game disc: SCES-03828; advertised Final Fantasy X demo absent",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0026",
@@ -3044,7 +3320,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02067; disc: SLES-02067 /P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0027",
@@ -3055,7 +3332,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-00526; disc: SLES-00526 / 9724728",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0028",
@@ -3066,7 +3344,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02801; discs: SLES-02801 + SLES-12801",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0029",
@@ -3077,7 +3356,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-00598",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0030",
@@ -3088,7 +3368,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SCES-01237",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0031",
@@ -3099,7 +3380,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SCES-00001",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0032",
@@ -3110,7 +3392,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-02993 confirmado; segundo CD presente, código não relido (histórico: SLES-12993)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0033",
@@ -3121,7 +3404,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-03095; disc: SLES-03095 P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0034",
@@ -3132,7 +3416,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-02545; disc: SCES-02545-P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0035",
@@ -3143,7 +3428,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Disc: SCES-01438",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0036",
@@ -3154,7 +3440,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02166; discs: SLES-02166 + SLES-12166 + SLES-22166 + SLES-32166",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0037",
@@ -3165,7 +3452,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-00867; discs: SCES-00867 / 9736820 + SCES-10867 / 9736820 + SCES-20867 / 9736820; demo: SCED-02062 / 9786122",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0038",
@@ -3176,7 +3464,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-02835; disc: SCES-02835 / 9283423",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0039",
@@ -3187,7 +3476,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02732; game disc absent",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0040",
@@ -3198,7 +3488,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-00967; disc: SCES-00967 / 9766421",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0041",
@@ -3209,7 +3500,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Disc: SLES-00327 / 9695028",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0042",
@@ -3220,7 +3512,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-01431; disc: SCES-01431 / 9220824",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0043",
@@ -3231,7 +3524,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-00165; discs: SLES-00165 + SLES-10165",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0044",
@@ -3242,7 +3536,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02055; disc code not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0045",
@@ -3253,7 +3548,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-03972",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0046",
@@ -3264,7 +3560,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-00984; disc code not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0047",
@@ -3275,7 +3572,8 @@
     "edition": "Classics",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-02198",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0048",
@@ -3286,7 +3584,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "Disc 2 / Claire: SLES-10972; Disc 1 / Leon SLES-00972 absent",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0049",
@@ -3297,7 +3596,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-00049",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0050",
@@ -3308,7 +3608,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-00664; disc code not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0051",
@@ -3319,7 +3620,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-00707",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0052",
@@ -3330,7 +3632,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-00593",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0053",
@@ -3341,7 +3644,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-03645; disc: Not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0054",
@@ -3352,7 +3656,8 @@
     "edition": "Platinum",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0055",
@@ -3363,7 +3668,8 @@
     "edition": "NFS / Dance pad bundle",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-03020; disc: Not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0056",
@@ -3374,7 +3680,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-03663",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0057",
@@ -3385,7 +3692,8 @@
     "edition": "Demo",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLED-00725",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0058",
@@ -3396,7 +3704,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-03390; disc: Not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0059",
@@ -3407,7 +3716,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02034; disc: Not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0060",
@@ -3418,7 +3728,8 @@
     "edition": "Platinum",
     "keepStatus": "Sell",
     "productCode": "Box: SLES-03095; original disc: Absent; unrelated disc: SCES-01237 (Tekken 3 Platinum)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0061",
@@ -3429,7 +3740,8 @@
     "edition": "Platinum",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0062",
@@ -3440,7 +3752,8 @@
     "edition": "UK Reprint / pressing #2",
     "keepStatus": "Collection",
     "productCode": "Disc: SLES-01404#2; original box: Absent",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0063",
@@ -3451,7 +3764,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-00718; disc: Not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0064",
@@ -3462,7 +3776,8 @@
     "edition": "Best of Infogrames",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-01816; disc: Not confirmed",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0065",
@@ -3473,7 +3788,8 @@
     "edition": "Classics",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-02339",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0066",
@@ -3484,7 +3800,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Disc: SLES-00024#",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0067",
@@ -3495,7 +3812,8 @@
     "edition": "Demo / Rev.1",
     "keepStatus": "Collection",
     "productCode": "Disc: SCED-01441#",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0068",
@@ -3506,7 +3824,8 @@
     "edition": "Acclaimed Range",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-00278; disc: SLES-00278#",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0069",
@@ -3517,7 +3836,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-00298",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0070",
@@ -3528,7 +3848,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-03217",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0071",
@@ -3539,7 +3860,8 @@
     "edition": "White Label",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-02476",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0072",
@@ -3550,7 +3872,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-02988",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0073",
@@ -3561,7 +3884,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-02534; disc: Absent",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0074",
@@ -3572,7 +3896,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SCES-01523",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0075",
@@ -3583,7 +3908,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-01090",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0076",
@@ -3594,7 +3920,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SCES-01420",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0077",
@@ -3605,7 +3932,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-01748",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0078",
@@ -3616,7 +3944,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-00082; discs: SLES-00082 + SLES-10082",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0079",
@@ -3627,7 +3956,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-01793",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0080",
@@ -3638,7 +3968,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box: SCES-01706; retail game disc: Absent; Hi-Spec Demo SCED-01832: Absent",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0081",
@@ -3649,7 +3980,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SCES-00163",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0082",
@@ -3660,7 +3992,8 @@
     "edition": "Demo / Spanish",
     "keepStatus": "Collection",
     "productCode": "Disc: SCED-04016 / 9431022",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0083",
@@ -3671,7 +4004,8 @@
     "edition": "Best of Infogrames Adventure",
     "keepStatus": "Collection",
     "productCode": "Box: SLES-00461; discs: SLES-00461 + SLES-10461",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0084",
@@ -3682,7 +4016,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-01649",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0085",
@@ -3693,7 +4028,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-00937",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0086",
@@ -3704,7 +4040,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-04061",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-0087",
@@ -3715,7 +4052,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Box/disc: SLES-00386",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS1-EXTRA-0001",
@@ -3726,7 +4064,8 @@
     "edition": "Demo",
     "keepStatus": "Collection",
     "productCode": "Disc: SCED-01982 / 9782629",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0001",
@@ -3737,7 +4076,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53825",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0002",
@@ -3748,7 +4088,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53192",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0003",
@@ -3759,7 +4100,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52534",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0004",
@@ -3770,7 +4112,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-53326",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0005",
@@ -3781,7 +4124,8 @@
     "edition": "DVD Bundle",
     "keepStatus": "Collection",
     "productCode": "SLES-50383",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0006",
@@ -3792,7 +4136,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-50295",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0007",
@@ -3803,7 +4148,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52725",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0008",
@@ -3814,7 +4160,8 @@
     "edition": "Special Edition",
     "keepStatus": "Collection",
     "productCode": "SLES-51113 / SLES-51113-GER",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0009",
@@ -3825,7 +4172,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53459",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0010",
@@ -3836,7 +4184,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51918 / SLES-52822 / SLES-53777",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0011",
@@ -3847,7 +4196,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50112",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0012",
@@ -3858,7 +4208,8 @@
     "edition": "Bonus Disc Bundle",
     "keepStatus": "Collection",
     "productCode": "SCES-50490 + SCED-50907",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0013",
@@ -3869,7 +4220,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51917",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0014",
@@ -3880,7 +4232,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53561",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0015",
@@ -3891,7 +4244,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53557",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0016",
@@ -3902,7 +4256,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51914",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0017",
@@ -3913,7 +4268,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SCES-53133 / SCES-53133/P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0018",
@@ -3924,7 +4280,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-54206",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0019",
@@ -3935,7 +4292,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51759",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0020",
@@ -3946,7 +4304,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54164",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0021",
@@ -3957,7 +4316,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52348",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0022",
@@ -3968,7 +4328,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50111",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0023",
@@ -3979,7 +4340,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52714",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0024",
@@ -3990,7 +4352,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53096",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0025",
@@ -4001,7 +4364,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50358",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0026",
@@ -4012,7 +4376,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54185",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0027",
@@ -4023,7 +4388,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-53346 / SLES-53346/P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0028",
@@ -4034,7 +4400,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0029",
@@ -4045,7 +4412,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0030",
@@ -4056,7 +4424,8 @@
     "edition": "Special Edition",
     "keepStatus": "Collection",
     "productCode": "SLES-54186",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0031",
@@ -4067,7 +4436,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-50967",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0032",
@@ -4078,7 +4448,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51579",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0033",
@@ -4089,7 +4460,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SCES-53285/P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0034",
@@ -4100,7 +4472,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52444",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0035",
@@ -4111,7 +4484,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53200",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0036",
@@ -4122,7 +4496,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-51839 / SLES-51839-P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0037",
@@ -4133,7 +4508,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50224",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0038",
@@ -4144,7 +4520,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-52460",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0039",
@@ -4155,7 +4532,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52541",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0040",
@@ -4166,7 +4544,8 @@
     "edition": "Platinum",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0041",
@@ -4177,7 +4556,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53908 / SLES-53908-P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0042",
@@ -4188,7 +4568,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0043",
@@ -4199,7 +4580,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0044",
@@ -4210,7 +4592,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0045",
@@ -4221,7 +4604,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51661",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0046",
@@ -4232,7 +4616,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50078",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0047",
@@ -4243,7 +4628,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52701",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0048",
@@ -4254,7 +4640,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53796",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0049",
@@ -4265,7 +4652,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52720",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0050",
@@ -4276,7 +4664,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54030",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0051",
@@ -4287,7 +4676,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54793",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0052",
@@ -4298,7 +4688,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-53929",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0053",
@@ -4309,7 +4700,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50074",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0054",
@@ -4320,7 +4712,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-51511",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0055",
@@ -4331,7 +4724,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-50247",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0056",
@@ -4342,7 +4736,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54658",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0057",
@@ -4353,7 +4748,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54489",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0058",
@@ -4364,7 +4760,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52313",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0059",
@@ -4375,7 +4772,8 @@
     "edition": "Platinum",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0060",
@@ -4386,7 +4784,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53028",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0061",
@@ -4397,7 +4796,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50039",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0062",
@@ -4408,7 +4808,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-53033",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0063",
@@ -4419,7 +4820,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53099",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0064",
@@ -4430,7 +4832,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51630",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0065",
@@ -4441,7 +4844,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-52545",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0066",
@@ -4452,7 +4856,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-51466",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0067",
@@ -4463,7 +4868,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54347",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0068",
@@ -4474,7 +4880,8 @@
     "edition": "Platinum",
     "keepStatus": "Sell",
     "productCode": "SLES-51950",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0069",
@@ -4485,7 +4892,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53064",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0070",
@@ -4496,7 +4904,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53676",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0071",
@@ -4507,7 +4916,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-55002",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0072",
@@ -4518,7 +4928,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0073",
@@ -4529,7 +4940,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50044",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0074",
@@ -4540,7 +4952,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0075",
@@ -4551,7 +4964,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53726",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0076",
@@ -4562,7 +4976,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SCES-50139",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0077",
@@ -4573,7 +4988,8 @@
     "edition": "Special 2 Disc Set",
     "keepStatus": "Collection",
     "productCode": "SLES-50382",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0078",
@@ -4584,7 +5000,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-54945",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0079",
@@ -4595,7 +5012,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-52412",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0080",
@@ -4606,7 +5024,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51956",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0081",
@@ -4617,7 +5036,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-50386 / SLES-50386-P#",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0082",
@@ -4628,7 +5048,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51815",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0083",
@@ -4639,7 +5060,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50826",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0084",
@@ -4650,7 +5072,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-53372",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0085",
@@ -4661,7 +5084,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-51177/POR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0086",
@@ -4672,7 +5096,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-55380#",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0087",
@@ -4683,7 +5108,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53402",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0088",
@@ -4694,7 +5120,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53140",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0089",
@@ -4705,7 +5132,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50855",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0090",
@@ -4716,7 +5144,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50310",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0091",
@@ -4727,7 +5156,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-53439/P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0092",
@@ -4738,7 +5168,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52753",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0093",
@@ -4749,7 +5180,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-50410",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0094",
@@ -4760,7 +5192,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52895",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0095",
@@ -4771,7 +5204,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51741",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0096",
@@ -4782,7 +5216,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SCES-50294/P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0097",
@@ -4793,7 +5228,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54767#",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0098",
@@ -4804,7 +5240,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-51227-P",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0099",
@@ -4815,7 +5252,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52214",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0100",
@@ -4826,7 +5264,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50964",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0101",
@@ -4837,7 +5276,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52889",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0102",
@@ -4848,7 +5288,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52967",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0103",
@@ -4859,7 +5300,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SLES-51203",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0104",
@@ -4870,7 +5312,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-53409",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0105",
@@ -4881,7 +5324,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51061",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0106",
@@ -4892,7 +5336,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51873",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0107",
@@ -4903,7 +5348,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53532",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0108",
@@ -4914,7 +5360,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52017",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0109",
@@ -4925,7 +5372,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-53091",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0110",
@@ -4936,7 +5384,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51235",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0111",
@@ -4947,7 +5396,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-51159",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0112",
@@ -4958,7 +5408,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51347",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0113",
@@ -4969,7 +5420,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52908",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0114",
@@ -4980,7 +5432,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50553",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0115",
@@ -4991,7 +5444,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-51931",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0116",
@@ -5002,7 +5456,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54179",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0117",
@@ -5013,7 +5468,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-50522 #2",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0118",
@@ -5024,7 +5480,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-53247; EAN 711719124511 (reported; EAN not independently corroborated)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0119",
@@ -5035,7 +5492,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54786; EAN 5036675010162 (reported; weak marketplace corroboration only)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0120",
@@ -5046,7 +5504,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-52106; EAN 5060034552192",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0121",
@@ -5057,7 +5516,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-54221; EAN 023272329297",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0122",
@@ -5068,7 +5528,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Product code SLES-51950 (reported by Mário); EAN not read",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0123",
@@ -5079,7 +5540,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-55520; EAN 5030917068959",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0124",
@@ -5090,7 +5552,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50350; EAN 3307210403216",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0125",
@@ -5101,7 +5564,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SCES-50034; UPC-A 711719357728 (EAN-13 0711719357728)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0126",
@@ -5112,7 +5576,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "SCES-50934-P; EAN 0711719623717 (as read without leading zero: 711719623717)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0127",
@@ -5123,7 +5588,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-55406; EAN 4012927121757",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0128",
@@ -5134,7 +5600,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "Disc SLES-54914; mismatched box SLES-54203 / EAN 4012927120088",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0129",
@@ -5145,7 +5612,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SLES-50937; EAN 5030934030786",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0130",
@@ -5156,7 +5624,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-51513; UPC 711719476221 / EAN-13 0711719476221",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS2-0131",
@@ -5167,7 +5636,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SCES-52748; UPC 711719687344 / EAN-13 0711719687344 (owner-read)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS3-0002",
@@ -5178,7 +5648,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "BLES-00783",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS3-0003",
@@ -5189,7 +5660,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "BCES-00065",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS3-0004",
@@ -5200,7 +5672,8 @@
     "edition": "Platinum",
     "keepStatus": "Collection",
     "productCode": "BLES-00168",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PS5-0001",
@@ -5211,7 +5684,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "PPSA-26573; EAN 5060690797685",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PSP-0002",
@@ -5222,7 +5696,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "ULES-00412; EAN 5037930120251",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PSP-0003",
@@ -5233,7 +5708,8 @@
     "edition": "Greatest Hits",
     "keepStatus": "Sell",
     "productCode": "ULUS-10036GH; UPC 014633149401",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PSP-0004",
@@ -5244,7 +5720,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "ULES-00366; EAN 8717418091781",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PSP-0005",
@@ -5255,7 +5732,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "ULES-00183; UPC 023272001933; EAN-13 0023272001933",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PSP-0006",
@@ -5266,7 +5744,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "UCES-00005; owner-read UPC/EAN 711719682059 (conflicts with public barcode associations)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PSP-0008",
@@ -5277,7 +5756,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "ULES-01347; EAN 5026555282369",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "PSP-0009",
@@ -5288,7 +5768,8 @@
     "edition": "Standard",
     "keepStatus": "Sell",
     "productCode": "ULES-00596; EAN 5030944052518 is from the apparent GTA Vice City Stories outer case, not verified for The Sims 2: Pets",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0001",
@@ -5299,7 +5780,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-ZL-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0002",
@@ -5310,7 +5792,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-AV-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0004",
@@ -5321,7 +5804,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-EX-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0005",
@@ -5332,7 +5816,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-MK-EUR (probable; label unreadable)",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0006",
@@ -5343,7 +5828,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-CM-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0007",
@@ -5354,7 +5840,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-4M-FAH",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0008",
@@ -5365,7 +5852,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-S2-NOE",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0009",
@@ -5376,7 +5864,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-MW-GPS",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SNES-0010",
@@ -5387,7 +5876,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "SNSP-37-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SWITCH-0001",
@@ -5398,7 +5888,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "EAN 0045496424473",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SWITCH-0002",
@@ -5409,7 +5900,8 @@
     "edition": "Unknown",
     "keepStatus": "Collection",
     "productCode": "EAN 0045496425289",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SWITCH-0003",
@@ -5420,7 +5912,8 @@
     "edition": "Unknown",
     "keepStatus": "Collection",
     "productCode": "Not reported",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SWITCH-0004",
@@ -5431,7 +5924,8 @@
     "edition": "Unknown",
     "keepStatus": "Collection",
     "productCode": "Not reported",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SWITCH-0005",
@@ -5442,7 +5936,8 @@
     "edition": "Unknown",
     "keepStatus": "Collection",
     "productCode": "Not reported",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SWITCH-0006",
@@ -5453,7 +5948,8 @@
     "edition": "Unknown",
     "keepStatus": "Collection",
     "productCode": "Not reported",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "SWITCH-0007",
@@ -5464,7 +5960,8 @@
     "edition": "Unknown",
     "keepStatus": "Collection",
     "productCode": "Not reported",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0001",
@@ -5475,7 +5972,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RK5P-UKV; disc RVL-RK5P-EUR-B0; manual RVL-RK5P-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0002",
@@ -5486,7 +5984,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover code obscured by IGAC; disc RVL-SMNP-EUR-B0; manual RVL-SMNP-EAP",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0003",
@@ -5497,7 +5996,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RMKP-UKV-1; disc RVL-RMKP-EUR-B0; manual RVL-RMKP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0004",
@@ -5508,7 +6008,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RZTP-PORT; disc RVL-RZTP-EUR-B0; manual RVL-RZTP-PORT",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0005",
@@ -5519,7 +6020,8 @@
     "edition": "Standard — yellow case",
     "keepStatus": "Collection",
     "productCode": "cover RVL-SIIP-POR; disc RVL-SIIP-EUR-B0; manual RVL-SIIP-POR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0006",
@@ -5530,7 +6032,8 @@
     "edition": "Wii MotionPlus bundle copy",
     "keepStatus": "Collection",
     "productCode": "cover RVL-R5TP-ESP1T2; disc RVL-R5TP-EUR; manual RVL-R5TP-ESP",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0007",
@@ -5541,7 +6044,8 @@
     "edition": "Wii Zapper bundle copy",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RZPP-UKV; disc RVL-RZPP-EUR; manual RVL-RZPP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0008",
@@ -5552,7 +6056,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RSMP-UKV; disc RVL-RSMP-EUR; manual RVL-RSMP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0009",
@@ -5563,7 +6068,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RZZP-UKV; disc RVL-RZZP-EUR; manual RVL-RZZP-UKV",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0010",
@@ -5574,7 +6080,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RGZP-EUU; disc RVL-RGZP-EUR; manual RVL-RGZP-EUU",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0011",
@@ -5585,7 +6092,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RK2P-SWD; disc RVL-RK2P-EUR; manual RVL-RK2P-SWD",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0012",
@@ -5596,7 +6104,8 @@
     "edition": "Limited Edition Wii Remote Plus Bundle",
     "keepStatus": "Collection",
     "productCode": "cover RVL-SOUP-EUR; disc RVL-SOUP-EUR-B0; manual RVL-SOUP-EUR",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0013",
@@ -5607,7 +6116,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RPBP-PORT; disc RVL-RPBP-EUR-B0; manual RVL-RPBP-PORT",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0014",
@@ -5618,7 +6128,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RYGP-ITA; disc RVL-RYGP-EUR; manual RVL-RYGP-ITA",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0015",
@@ -5629,7 +6140,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-SX4P-EAP; disc RVL-SX4P-EUR-E0; manual RVL-SX4P-EAP",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0016",
@@ -5640,7 +6152,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-SLSP-EAP; disc RVL-SLSP-EUR-E0; manual RVL-SLSP-EAP",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0017",
@@ -5651,7 +6164,8 @@
     "edition": "Standard",
     "keepStatus": "Collection",
     "productCode": "cover RVL-SL2P-EAP; disc RVL-SL2P-EUR-B0; manual RVL-SL2P-EAP",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WII-0018",
@@ -5662,7 +6176,8 @@
     "edition": "Nintendo Selects",
     "keepStatus": "Collection",
     "productCode": "cover RVL-RZDP-PORT; disc RVL-RZDP-EUR-B0; manual RVL-RZDP-PORT",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   },
   {
     "collectionId": "WIIU-0001",
@@ -5673,6 +6188,7 @@
     "edition": "Standard — Straw Hat Edition code insert present",
     "keepStatus": "Collection",
     "productCode": "cover TSA-WUP-AUNP-EUR; disc WUP-P-AUNP-EUR-0; inserts WUP-AUNP-EUR-R + WUP-AUNP-EUR-R2",
-    "artworkPolicy": "PAL"
+    "artworkPolicy": "PAL",
+    "matcherVersion": 2
   }
 ]
