@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:03:58Z",
+  "generatedAt": "2026-09-27T11:11:03Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -7,7 +7,8 @@
     "libretro-nintendo-serial",
     "libretro-strict-title",
     "libretro-redump-serial",
-    "launchbox"
+    "launchbox",
+    "psxdatacenter"
   ],
   "sourceUrl": "https://thegamesdb.net",
   "regionPolicy": "PAL-Europe",
@@ -3915,6 +3916,16 @@
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
     },
+    "PS1-0056": {
+      "file": "/covers/PS1-0056.jpg",
+      "source": "psxdatacenter",
+      "serial": "SLES-03663",
+      "regionName": "PAL",
+      "matchedBy": "exact-physical-serial",
+      "sourcePage": "https://psxdatacenter.com/images/hires/P/H/SLES-03663/SLES-03663-F-ALL.html",
+      "sourceImage": "https://psxdatacenter.com/images/hires/P/H/SLES-03663/SLES-03663-F-ALL.jpg",
+      "matchScore": 1100
+    },
     "PS1-0058": {
       "file": "/covers/PS1-0058.png",
       "source": "libretro-redump-serial",
@@ -5087,6 +5098,16 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_2/master/Named_Boxarts/Star%20Wars%20-%20Battlefront%20(Europe)%20(En%2CEs%2CIt).png",
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
+    },
+    "PS2-0066": {
+      "file": "/covers/PS2-0066.jpg",
+      "source": "psxdatacenter",
+      "serial": "SLES-51466",
+      "regionName": "PAL",
+      "matchedBy": "exact-physical-serial",
+      "sourcePage": "https://psxdatacenter.com/psx2/images2/hires/SLES-51466/SLES-51466-F-ALL.html",
+      "sourceImage": "https://psxdatacenter.com/psx2/images2/hires/SLES-51466/SLES-51466-F-ALL.jpg",
+      "matchScore": 1100
     },
     "PS2-0067": {
       "file": "/covers/PS2-0067.png",
@@ -6567,8 +6588,8 @@
       "matchScore": 1000
     }
   },
-  "matched": 485,
-  "missing": 31,
+  "matched": 487,
+  "missing": 29,
   "reused": 406,
   "apiLookups": 0,
   "remainingMonthlyAllowance": 64

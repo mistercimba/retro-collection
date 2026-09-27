@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:03:58Z",
+  "generatedAt": "2026-09-27T11:11:03Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -10,8 +10,8 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 485,
-  "missing": 31,
+  "matched": 487,
+  "missing": 29,
   "entries": [
     {
       "collectionId": "GBA-0045",
@@ -558,24 +558,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "PS1-0056",
-      "title": "Harry Potter e a Pedra Filosofal",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Portuguese",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "SLES-03663",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Harry Potter e a Pedra Filosofal",
-      "platformId": 10,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Harry Potter e a Pedra Filosofal\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "PS1-0057",
       "title": "Oddworld: Abe's Oddysee DEMO",
       "platform": "Playstation",
@@ -663,24 +645,6 @@
       "platformId": 11,
       "candidates": [],
       "inputKey": "{\"title\":\"Play It Chess Challenger\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS2-0066",
-      "title": "Splinter Cell",
-      "platform": "Playstation 2",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Platinum",
-      "keepStatus": "Collection",
-      "productCode": "SLES-51466",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Splinter Cell",
-      "platformId": 11,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Splinter Cell\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {

@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-09-27T11:11:03Z",
+  "source": "psxdatacenter",
+  "resolved": 2,
+  "remaining": 29,
+  "entries": {
+    "PS1-0056": {
+      "file": "/covers/PS1-0056.jpg",
+      "source": "psxdatacenter",
+      "serial": "SLES-03663",
+      "regionName": "PAL",
+      "matchedBy": "exact-physical-serial",
+      "sourcePage": "https://psxdatacenter.com/images/hires/P/H/SLES-03663/SLES-03663-F-ALL.html",
+      "sourceImage": "https://psxdatacenter.com/images/hires/P/H/SLES-03663/SLES-03663-F-ALL.jpg",
+      "matchScore": 1100
+    },
+    "PS2-0066": {
+      "file": "/covers/PS2-0066.jpg",
+      "source": "psxdatacenter",
+      "serial": "SLES-51466",
+      "regionName": "PAL",
+      "matchedBy": "exact-physical-serial",
+      "sourcePage": "https://psxdatacenter.com/psx2/images2/hires/SLES-51466/SLES-51466-F-ALL.html",
+      "sourceImage": "https://psxdatacenter.com/psx2/images2/hires/SLES-51466/SLES-51466-F-ALL.jpg",
+      "matchScore": 1100
+    }
+  },
+  "skipped": [
+    {
+      "collectionId": "_importerVersion",
+      "reason": "not-in-current-games"
+    }
+  ]
+}
