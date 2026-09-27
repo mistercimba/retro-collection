@@ -2,11 +2,10 @@
 
 ## Estado atual
 
-- Produção: `https://retro-collection-mistercimbas-projects.vercel.app`
-- Build Vercel: **READY**
-- GitHub CI: **verde** (lint + tests + build)
-- Dados: **mock/demo** até configurar a integração Google Sheets
-
+- Código em `main`: [`2a3b3eb`](https://github.com/mistercimba/retro-collection/commit/2a3b3eb07349c2249a3f1fb0a8f8dd772b622852).
+- Artwork local: **516/516 jogos com capa** no manifesto deste commit.
+- Deploy: o check Vercel no commit atual falhou por limite de builds (`build-rate-limit`). O último deploy documentado como **READY** é o do commit antigo `8fd3085`; não deve ser tratado como estado atual.
+- Dados de produção: **por confirmar**. O README anterior dizia mock/demo, enquanto a checklist registava uma confirmação histórica de `provider: google` via `/api/health`. Revalidar no deploy atual antes de afirmar que está ligado à Sheet.
 
 Web app/PWA privada e mobile-first para consultar a coleção retro sem abrir o Google Sheets.
 
@@ -157,7 +156,8 @@ As capas dos jogos e as imagens das plataformas são ficheiros estáticos do pr�
 
 - **516/516 jogos físicos do snapshot atual têm artwork local.**
 - O import tenta primeiro bases estruturadas/serializadas e só aceita fallbacks quando a plataforma, região e identidade do jogo estão suficientemente verificadas.
-- Para jogos PAL, a prioridade é artwork PAL/Europe; para exceções físicas registadas noutra região, segue-se a região real da cópia.
+- Para consolas com variantes regionais, a artwork segue `artworkPolicy` e privilegia caixas PAL/Europe, mesmo quando a cópia física é NTSC. A região da capa fica registada separadamente da região física.
+- Imports curados com política PAL rejeitam imagens NTSC; a exceção NTSC existente está a ser substituída pela caixa PAL NOE de *The Hunt for Red October*. Para PC, onde PAL/NTSC não define a embalagem, uma capa `World` pode ser usada quando não há edição PAL distinta.
 - Capa frontal é preferida; cartucho/disco é aceite quando representa melhor a variante física correta.
 - As imagens aprovadas são descarregadas para `public/covers/` e servidas localmente depois disso.
 - O mapa Collection ID → ficheiro local é gerado em `src/data/game-artwork.ts`.

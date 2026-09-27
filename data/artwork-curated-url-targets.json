@@ -21,11 +21,12 @@
   "GBC-0052": {
     "title": "The Hunt for Red October",
     "platform": "Game Boy",
-    "region": "NTSC",
-    "serial": "DMG-HF-USA",
-    "type": "cartridge",
-    "sourcePage": "https://gbhwdb.gekkio.fi/cartridges/DMG-HFE-0/gekkio-1.html",
-    "sourceImage": "https://gbhwdb.gekkio.fi/static/DMG-HFE-0/gekkio-1_01_front.jpg"
+    "region": "PAL",
+    "artworkVariant": "NOE / Europe",
+    "type": "box-front",
+    "replaceExisting": true,
+    "sourcePage": "https://www.game-boy-database.com/game-HF-2654-NOE.html",
+    "sourceImage": "https://www.game-boy-database.com/vizu/2654.jpg"
   },
   "PS5-0001": {
     "title": "Class of Heroes 3 Remaster",
