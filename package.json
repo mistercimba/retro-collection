@@ -18,9 +18,11 @@
     "artwork:fallback": "node scripts/import-gametdb-fallback.mjs",
     "artwork:sony": "node scripts/import-libretro-serial-artwork.mjs",
     "artwork:nintendo": "node scripts/import-libretro-nintendo-serial-artwork.mjs",
-    "artwork:strict-fallback": "node scripts/import-strict-libretro-fallback.mjs"
+    "artwork:strict-fallback": "node scripts/import-strict-libretro-fallback.mjs",
+    "metadata:refresh": "node scripts/refresh-game-metadata.mjs"
   },
   "dependencies": {
+    "exceljs": "^4.4.0",
     "google-auth-library": "11.1.0",
     "lucide-react": "1.48.0",
     "next": "16.3.6",

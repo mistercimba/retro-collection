@@ -55,6 +55,8 @@ export interface AuditRecord {
 
 export interface CollectionGame extends CollectionItem {
   audit: AuditRecord | null;
+  latestValuation?: ValuationSnapshot | null;
+  purchase?: PurchaseRecord | null;
 }
 
 export interface PlatformStats {
@@ -80,6 +82,54 @@ export interface RawSheetData {
   collection: Record<string, string>[];
   audit: Record<string, string>[];
   platformOverrides?: Record<string, string>;
+  wantlist?: WantTarget[];
+  purchases?: PurchaseRecord[];
+  valuations?: ValuationSnapshot[];
+}
+
+export interface WantTarget {
+  platform: string;
+  priority: string;
+  targetId: string;
+  title: string;
+  reason: string;
+  targetVersion: string;
+  priceCeilingEur: number | null;
+  status: string;
+  notes: string;
+}
+
+export interface WantListEntry extends WantTarget {
+  ownedGame: CollectionGame | null;
+  possibleMatch: CollectionGame | null;
+  planState: "active" | "inactive" | "unknown";
+  matchState: "acquired" | "missing" | "ambiguous";
+  matchReason: string;
+}
+
+export interface PurchaseRecord {
+  purchaseId: string;
+  date: string;
+  source: string;
+  seller: string;
+  listingUrl: string;
+  itemPriceEur: number | null;
+  shippingEur: number | null;
+  feesEur: number | null;
+  totalPaidEur: number | null;
+  bundleId: string;
+  notes: string;
+}
+
+export interface ValuationSnapshot {
+  collectionId: string;
+  catalogId: string;
+  source: string;
+  valueType: string;
+  valueEur: number | null;
+  snapshotDate: string;
+  conditionBasis: string;
+  notes: string;
 }
 
 export type ProviderMode = "google" | "mock";

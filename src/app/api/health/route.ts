@@ -25,8 +25,8 @@ export async function GET() {
         },
       },
     );
-  } catch (error) {
-    console.error("Health check failed", error);
+  } catch {
+    console.error("Health check failed", { code: "COLLECTION_DATA_UNAVAILABLE" });
     return NextResponse.json(
       {
         ok: false,
