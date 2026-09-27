@@ -17,5 +17,24 @@
     "sourcePage": "https://www.ebay.co.uk/itm/316840410442",
     "sourceImage": "https://i.ebayimg.com/images/g/IuoAAOSw8qVoLcKk/s-l400.jpg"
   },
-  "_importerVersion": 1
+  "_importerVersion": 2,
+  "GBC-0052": {
+    "title": "The Hunt for Red October",
+    "platform": "Game Boy",
+    "region": "NTSC",
+    "serial": "DMG-HF-USA",
+    "type": "cartridge",
+    "sourcePage": "https://gbhwdb.gekkio.fi/cartridges/DMG-HFE-0/gekkio-1.html",
+    "sourceImage": "https://gbhwdb.gekkio.fi/static/DMG-HFE-0/gekkio-1_01_front.jpg"
+  },
+  "PS5-0001": {
+    "title": "Class of Heroes 3 Remaster",
+    "platform": "Playstation 5",
+    "region": "PAL",
+    "serial": "PPSA-26573",
+    "type": "cover",
+    "sourcePage": "https://www.ldlc.com/fiche/PB00685536.html",
+    "evidencePage": "https://www.pricecharting.com/game/pal-playstation-5/class-of-heroes-3-remaster",
+    "sourceImage": "https://media.ldlc.com/r1600/mktp/product/productImage/250523/120/3b691aa8ff12476abb27b565734eeed1.webp"
+  }
 }
