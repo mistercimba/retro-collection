@@ -19,12 +19,12 @@
 
 ## Estado de validação
 
-- [x] GitHub Actions passou (lint, testes e build de produção) no commit histórico `8fd3085`.
-- [x] Vercel ficou **READY** no commit histórico `8fd3085`.
-- [x] O snapshot local mapeia capas para **516/516** jogos e tem 0 ficheiros em falta.
-- [ ] Fechar a auditoria regional: o manifesto atual ainda tem uma capa NTSC em `GBC-0052`. Este PR passa a usar a caixa PAL/NOE confirmada e permite substituir a imagem existente; confirmar o manifesto e o ficheiro gerados pelo workflow depois do merge.
-- [ ] Revalidar o deploy de produção de `main`: o check Vercel do commit `2a3b3eb` falhou por limite de builds (`build-rate-limit`). O check Vercel passou na branch deste PR.
-- [ ] Confirmar o provider e os dados no deploy atual. Há documentação contraditória: confirmação histórica de `provider: google` via `/api/health` e uma indicação no README de modo mock/demo.
+- [x] CI GitHub Actions passou (lint, testes TypeScript, testes da política PAL e build) no merge commit `2dbe4b5`.
+- [x] O check Vercel passou no commit final `2b30317`.
+- [x] Artwork local completo: **516/516** jogos com capa, 0 em falta.
+- [x] Capa regional do *The Hunt for Red October* substituída: manifesto marca PAL/NOE; o workflow importou o ficheiro atualizado no commit `2b30317`.
+- [x] A auditoria das 493 capas de consolas não encontrou variantes não europeias nem registos sem evidência PAL/Europe. As capas PC podem usar arte `World`, porque não têm divisão PAL/NTSC.
+- [ ] Confirmar em produção que os headers e totais correspondem à Google Sheet e que `provider: google` está ativo; as notas anteriores sobre o provider são contraditórias.
 
 ## Próximo — qualidade de dados e UX
 

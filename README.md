@@ -2,10 +2,10 @@
 
 ## Estado atual
 
-- Código em `main`: [`2a3b3eb`](https://github.com/mistercimba/retro-collection/commit/2a3b3eb07349c2249a3f1fb0a8f8dd772b622852).
-- Artwork local: **516/516 jogos com capa** no manifesto deste commit.
-- Deploy: o check Vercel no commit atual falhou por limite de builds (`build-rate-limit`). O último deploy documentado como **READY** é o do commit antigo `8fd3085`; não deve ser tratado como estado atual.
-- Dados de produção: **por confirmar**. O README anterior dizia mock/demo, enquanto a checklist registava uma confirmação histórica de `provider: google` via `/api/health`. Revalidar no deploy atual antes de afirmar que está ligado à Sheet.
+- Código em `main`: [`2b30317`](https://github.com/mistercimba/retro-collection/commit/2b303178df41b6e12c5358923e7d6457d86bd43e).
+- Artwork local: **516/516 jogos com capa**, 0 em falta; *The Hunt for Red October* agora usa a caixa PAL/NOE.
+- CI GitHub Actions passou em `2dbe4b5`; o check Vercel passou no commit final `2b30317`.
+- Dados de produção: **por confirmar**. A documentação anterior divergia entre mock/demo e uma confirmação histórica `provider: google` via `/api/health`. Revalidar a ligação atual à Sheet antes de a afirmar como ativa.
 
 Web app/PWA privada e mobile-first para consultar a coleção retro sem abrir o Google Sheets.
 
