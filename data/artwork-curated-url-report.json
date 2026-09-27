@@ -1,28 +1,50 @@
 {
-  "generatedAt": "2026-09-27T11:47:51Z",
-  "resolved": 2,
-  "remaining": 18,
+  "generatedAt": "2026-09-27T11:50:49Z",
+  "resolved": 4,
+  "remaining": 14,
   "entries": {
-    "GBC-0052": {
-      "file": "/covers/GBC-0052.jpg",
+    "GBA-0045": {
+      "file": "/covers/GBA-0045.jpg",
       "source": "curated-exact-url",
-      "serial": "DMG-HF-USA",
-      "regionName": "NTSC",
-      "mediaType": "cartridge",
-      "matchedBy": "manual-exact-serial-verification",
-      "sourcePage": "https://gbhwdb.gekkio.fi/cartridges/DMG-HFE-0/gekkio-1.html",
-      "sourceImage": "https://gbhwdb.gekkio.fi/static/DMG-HFE-0/gekkio-1_01_front.jpg",
-      "matchScore": 1200
-    },
-    "PS5-0001": {
-      "file": "/covers/PS5-0001.jpg",
-      "source": "curated-exact-url",
-      "serial": "PPSA-26573",
+      "serial": "AGB-BN7P-EUR",
       "regionName": "PAL",
       "mediaType": "cover",
       "matchedBy": "manual-exact-serial-verification",
-      "sourcePage": "https://www.ldlc.com/fiche/PB00685536.html",
-      "sourceImage": "https://media.ldlc.com/r1600/mktp/product/productImage/250523/120/3b691aa8ff12476abb27b565734eeed1.webp",
+      "sourcePage": "https://vgcollect.com/item/32462",
+      "sourceImage": "https://vgcollect.com/images/front-box-art/32462.jpg",
+      "matchScore": 1200
+    },
+    "GBA-0047": {
+      "file": "/covers/GBA-0047.jpg",
+      "source": "curated-exact-url",
+      "serial": "AGB-AH9P-EUR",
+      "regionName": "PAL",
+      "mediaType": "cartridge",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.agil-retrogaming.fr/jeux-game-boy-advance-a-vendre/5632-the-hobbit-gba.html",
+      "sourceImage": "https://www.agil-retrogaming.fr/47969-thickbox/the-hobbit-gba.jpg",
+      "matchScore": 1200
+    },
+    "GBC-0025": {
+      "file": "/covers/GBC-0025.jpg",
+      "source": "curated-exact-url",
+      "serial": "DMG-AYXP-EUR",
+      "regionName": "PAL",
+      "mediaType": "cartridge",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://allegro.pl/produkt/harvest-moon-nintendo-game-boy-color-pudelkowa-ea190756-293c-4fde-b9ff-e429ceac1eb0",
+      "sourceImage": "https://a.allegroimg.com/original/1179a7/baac3b8842b090d7b0fea4ce6d13/Harvest-Moon-GAME-BOY-SAM-CARTRIDGE-PAL",
+      "matchScore": 1200
+    },
+    "GBC-0040": {
+      "file": "/covers/GBC-0040.jpg",
+      "source": "curated-exact-url",
+      "serial": "DMG-AGLP-EUR",
+      "regionName": "PAL",
+      "mediaType": "cartridge",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.ricardo.ch/de/a/gameboy-game-watch-gallery-2-1241675664/",
+      "sourceImage": "https://img.ricardostatic.ch/images/329a825d-78d7-4b74-b105-8cf87eee684b/t_1000x750/gameboy-gamewatch-gallery-2",
       "matchScore": 1200
     }
   },
@@ -38,6 +60,14 @@
     {
       "collectionId": "_importerVersion",
       "reason": "not-current-game"
+    },
+    {
+      "collectionId": "GBC-0052",
+      "reason": "already-resolved"
+    },
+    {
+      "collectionId": "PS5-0001",
+      "reason": "already-resolved"
     }
   ]
 }

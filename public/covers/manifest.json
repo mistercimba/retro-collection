@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:47:51Z",
+  "generatedAt": "2026-09-27T11:50:49Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -849,6 +849,17 @@
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
+    "GBA-0045": {
+      "file": "/covers/GBA-0045.jpg",
+      "source": "curated-exact-url",
+      "serial": "AGB-BN7P-EUR",
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://vgcollect.com/item/32462",
+      "sourceImage": "https://vgcollect.com/images/front-box-art/32462.jpg",
+      "matchScore": 1200
+    },
     "GBA-0046": {
       "file": "/covers/GBA-0046.jpg",
       "source": "launchbox",
@@ -861,6 +872,17 @@
       "sourceImage": "https://images.launchbox-app.com/4efeb04a-b661-469a-b2d8-fb3ec65ed00d.jpg",
       "matchScore": 1140,
       "matchedBy": "exact-title-platform-pal-region"
+    },
+    "GBA-0047": {
+      "file": "/covers/GBA-0047.jpg",
+      "source": "curated-exact-url",
+      "serial": "AGB-AH9P-EUR",
+      "regionName": "PAL",
+      "mediaType": "cartridge",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.agil-retrogaming.fr/jeux-game-boy-advance-a-vendre/5632-the-hobbit-gba.html",
+      "sourceImage": "https://www.agil-retrogaming.fr/47969-thickbox/the-hobbit-gba.jpg",
+      "matchScore": 1200
     },
     "GBA-0048": {
       "file": "/covers/GBA-0048.png",
@@ -1362,6 +1384,17 @@
       "nameScore": 1000,
       "fingerprint": "2cba00b7875265f1"
     },
+    "GBC-0025": {
+      "file": "/covers/GBC-0025.jpg",
+      "source": "curated-exact-url",
+      "serial": "DMG-AYXP-EUR",
+      "regionName": "PAL",
+      "mediaType": "cartridge",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://allegro.pl/produkt/harvest-moon-nintendo-game-boy-color-pudelkowa-ea190756-293c-4fde-b9ff-e429ceac1eb0",
+      "sourceImage": "https://a.allegroimg.com/original/1179a7/baac3b8842b090d7b0fea4ce6d13/Harvest-Moon-GAME-BOY-SAM-CARTRIDGE-PAL",
+      "matchScore": 1200
+    },
     "GBC-0026": {
       "file": "/covers/GBC-0026.jpg",
       "source": "launchbox",
@@ -1535,6 +1568,17 @@
       "matchScore": 1580,
       "nameScore": 1000,
       "fingerprint": "0916966fd77826fd"
+    },
+    "GBC-0040": {
+      "file": "/covers/GBC-0040.jpg",
+      "source": "curated-exact-url",
+      "serial": "DMG-AGLP-EUR",
+      "regionName": "PAL",
+      "mediaType": "cartridge",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.ricardo.ch/de/a/gameboy-game-watch-gallery-2-1241675664/",
+      "sourceImage": "https://img.ricardostatic.ch/images/329a825d-78d7-4b74-b105-8cf87eee684b/t_1000x750/gameboy-gamewatch-gallery-2",
+      "matchScore": 1200
     },
     "GBC-0041": {
       "file": "/covers/GBC-0041.jpg",
@@ -6724,8 +6768,8 @@
       "matchScore": 1000
     }
   },
-  "matched": 498,
-  "missing": 18,
+  "matched": 502,
+  "missing": 14,
   "reused": 406,
   "apiLookups": 0,
   "remainingMonthlyAllowance": 64,

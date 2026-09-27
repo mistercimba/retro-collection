@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:47:51Z",
+  "generatedAt": "2026-09-27T11:50:49Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -10,115 +10,9 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 498,
-  "missing": 18,
+  "matched": 502,
+  "missing": 14,
   "entries": [
-    {
-      "collectionId": "GBA-0045",
-      "title": "Need For Speed: Carbon Own The City",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BN7P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Need For Speed: Carbon Own The City",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 22296,
-          "title": "Need for Speed Carbon: Own the City",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Need For Speed: Carbon Own The City\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0047",
-      "title": "The Hobbit",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AH9P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Hobbit",
-      "platformId": 5,
-      "candidates": [
-        {
-          "id": 14704,
-          "title": "The Hobbit: The Prelude to the Lord of the Rings",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"The Hobbit\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0025",
-      "title": "Harvest Moon",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-AYXP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Harvest Moon",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 103051,
-          "title": "Bokujou Monogatari",
-          "regionId": 4
-        },
-        {
-          "id": 18808,
-          "title": "Harvest Moon GB",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Harvest Moon\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0040",
-      "title": "Game & Watch Gallery 2",
-      "platform": "Game Boy",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-AGLP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Game & Watch Gallery 2",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 3186,
-          "title": "Game & Watch Gallery",
-          "regionId": 2
-        },
-        {
-          "id": 99209,
-          "title": "Game & Watch Gallery",
-          "regionId": 4
-        }
-      ],
-      "inputKey": "{\"title\":\"Game & Watch Gallery 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
     {
       "collectionId": "NES-0007",
       "title": "Tom & Jerry: The Ultimate Game of Cat and Mouse!",
