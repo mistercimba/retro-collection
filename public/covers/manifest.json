@@ -1,6 +1,10 @@
 {
-  "generatedAt": "2026-09-27T09:58:36.426Z",
-  "source": "thegamesdb",
+  "generatedAt": "2026-09-27T10:25:07.747Z",
+  "source": "local-artwork",
+  "sources": [
+    "thegamesdb",
+    "gametdb"
+  ],
   "sourceUrl": "https://thegamesdb.net",
   "regionPolicy": "PAL-Europe",
   "region": {
@@ -44,6 +48,58 @@
       "matchScore": 1500,
       "nameScore": 1000,
       "fingerprint": "484efe9a2bbc6306"
+    },
+    "3DS-0003": {
+      "file": "/covers/3DS-0003.jpg",
+      "source": "gametdb",
+      "gametdbId": "ACVP",
+      "gametdbTitle": "Cave Story 3D",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: unreadable under EcoPlay sticker; cartridge: LNA-CTR-ACVP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/3ds/coverHQ/EN/ACVP.jpg",
+      "matchScore": 1000
+    },
+    "3DS-0004": {
+      "file": "/covers/3DS-0004.jpg",
+      "source": "gametdb",
+      "gametdbId": "ABRP",
+      "gametdbTitle": "Resident Evil Revelations",
+      "matchedBy": "physical-product-code",
+      "productCode": "Bundle box: CTR-R-ABRP; cartridge: not confirmed",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/3ds/coverHQ/EN/ABRP.jpg",
+      "matchScore": 1000
+    },
+    "3DS-0005": {
+      "file": "/covers/3DS-0005.jpg",
+      "source": "gametdb",
+      "gametdbId": "ACFP",
+      "gametdbTitle": "Castlevania: Lords of Shadow - Mirror of Fate",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: TSA-CTR-ACFP-EAP; cartridge: LNA-CTR-ACFP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/3ds/coverHQ/EN/ACFP.jpg",
+      "matchScore": 1000
+    },
+    "3DS-0006": {
+      "file": "/covers/3DS-0006.jpg",
+      "source": "gametdb",
+      "gametdbId": "ALCP",
+      "gametdbTitle": "Spirit Camera: The Cursed Memoir",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: TSA-CTR-ALCP-EAP; cartridge: LNA-CTR-ALCP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/3ds/coverHQ/EN/ALCP.jpg",
+      "matchScore": 1000
     },
     "3DS-0007": {
       "file": "/covers/3DS-0007.jpg",
@@ -135,6 +191,32 @@
       "nameScore": 1000,
       "fingerprint": "9241d9d65d2ce7e3"
     },
+    "3DS-0012": {
+      "file": "/covers/3DS-0012.jpg",
+      "source": "gametdb",
+      "gametdbId": "ALGP",
+      "gametdbTitle": "LEGO Star Wars III: The Clone Wars",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: unreadable; cartridge: LNA-CTR-ALGP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/3ds/coverHQ/EN/ALGP.jpg",
+      "matchScore": 1000
+    },
+    "3DS-0013": {
+      "file": "/covers/3DS-0013.jpg",
+      "source": "gametdb",
+      "gametdbId": "AHCP",
+      "gametdbTitle": "James Noir's Hollywood Crimes 3D",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: TSA-CTR-AHCP-UXP; cartridge: LNA-CTR-AHCP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/3ds/coverHQ/EN/AHCP.jpg",
+      "matchScore": 935
+    },
     "3DS-0014": {
       "file": "/covers/3DS-0014.jpg",
       "source": "thegamesdb",
@@ -153,6 +235,19 @@
       "nameScore": 1000,
       "fingerprint": "18ddd9f6cc098f92"
     },
+    "3DS-0015": {
+      "file": "/covers/3DS-0015.jpg",
+      "source": "gametdb",
+      "gametdbId": "BAGP",
+      "gametdbTitle": "Ever Oasis",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: TSA-CTR-BAGP-EAP; cartridge: LNA-CTR-BAGP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/3ds/coverHQ/EN/BAGP.jpg",
+      "matchScore": 1000
+    },
     "3DS-0016": {
       "file": "/covers/3DS-0016.jpg",
       "source": "thegamesdb",
@@ -170,6 +265,19 @@
       "matchScore": 1545,
       "nameScore": 1000,
       "fingerprint": "6cdd12b3136407d1"
+    },
+    "3DS-0017": {
+      "file": "/covers/3DS-0017.jpg",
+      "source": "gametdb",
+      "gametdbId": "AB2P",
+      "gametdbTitle": "Bella Sara: The Magical Horse Adventures",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: TSA-CTR-AB2P-EUR; cartridge: LNA-CTR-AB2P-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/3ds/coverHQ/EN/AB2P.jpg",
+      "matchScore": 1000
     },
     "3DS-0018": {
       "file": "/covers/3DS-0018.jpg",
@@ -801,6 +909,45 @@
       "nameScore": 1000,
       "fingerprint": "0857e96757dd97d2"
     },
+    "GC-0001": {
+      "file": "/covers/GC-0001.png",
+      "source": "gametdb",
+      "gametdbId": "GFEP01",
+      "gametdbTitle": "Fire Emblem: Path of Radiance",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-GFEP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/GFEP01.png",
+      "matchScore": 1000
+    },
+    "GC-0002": {
+      "file": "/covers/GC-0002.png",
+      "source": "gametdb",
+      "gametdbId": "GPXP01",
+      "gametdbTitle": "Pokemon Box: Ruby & Sapphire",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-GPXP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/GPXP01.png",
+      "matchScore": 791
+    },
+    "GC-0003": {
+      "file": "/covers/GC-0003.png",
+      "source": "gametdb",
+      "gametdbId": "UGPP01",
+      "gametdbTitle": "Game Boy Player Start-Up Disc",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-UGPP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/UGPP01.png",
+      "matchScore": 1000
+    },
     "GC-0004": {
       "file": "/covers/GC-0004.jpg",
       "source": "thegamesdb",
@@ -819,6 +966,32 @@
       "nameScore": 1000,
       "fingerprint": "1c293b5058927616"
     },
+    "GC-0005": {
+      "file": "/covers/GC-0005.png",
+      "source": "gametdb",
+      "gametdbId": "GZLP01",
+      "gametdbTitle": "The Legend of Zelda: The Wind Waker",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-GZLP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/GZLP01.png",
+      "matchScore": 876
+    },
+    "GC-0006": {
+      "file": "/covers/GC-0006.png",
+      "source": "gametdb",
+      "gametdbId": "GEDP01",
+      "gametdbTitle": "Eternal Darkness: Sanity's Requiem",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-GEDP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/GEDP01.png",
+      "matchScore": 839
+    },
     "GC-0007": {
       "file": "/covers/GC-0007.jpg",
       "source": "thegamesdb",
@@ -836,6 +1009,32 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "6fa6d25312c76f15"
+    },
+    "GC-0009": {
+      "file": "/covers/GC-0009.png",
+      "source": "gametdb",
+      "gametdbId": "GM4P01",
+      "gametdbTitle": "Mario Kart: Double Dash!!",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-GM4P-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/GM4P01.png",
+      "matchScore": 1000
+    },
+    "GC-0010": {
+      "file": "/covers/GC-0010.png",
+      "source": "gametdb",
+      "gametdbId": "GMPP01",
+      "gametdbTitle": "Mario Party 4",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-GMPP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/GMPP01.png",
+      "matchScore": 1000
     },
     "GC-0011": {
       "file": "/covers/GC-0011.jpg",
@@ -873,6 +1072,19 @@
       "nameScore": 1000,
       "fingerprint": "e813b16bcd7bc79b"
     },
+    "GC-0013": {
+      "file": "/covers/GC-0013.png",
+      "source": "gametdb",
+      "gametdbId": "GSPP69",
+      "gametdbTitle": "The Simpsons: Road Rage",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-GSPP-ESP",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/GSPP69.png",
+      "matchScore": 1000
+    },
     "GC-0015": {
       "file": "/covers/GC-0015.jpg",
       "source": "thegamesdb",
@@ -890,6 +1102,19 @@
       "matchScore": 1545,
       "nameScore": 1000,
       "fingerprint": "e2829dd0aeea7bc5"
+    },
+    "GC-0016": {
+      "file": "/covers/GC-0016.png",
+      "source": "gametdb",
+      "gametdbId": "GWRP01",
+      "gametdbTitle": "Wave Race: Blue Storm",
+      "matchedBy": "physical-product-code",
+      "productCode": "DOL-GWRP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/GWRP01.png",
+      "matchScore": 1000
     },
     "GC-0017": {
       "file": "/covers/GC-0017.jpg",
@@ -1143,6 +1368,45 @@
       "nameScore": 1000,
       "fingerprint": "547ec5d9a9c25c9a"
     },
+    "NDS-0002": {
+      "file": "/covers/NDS-0002.jpg",
+      "source": "gametdb",
+      "gametdbId": "ACHP",
+      "gametdbTitle": "Freshly-Picked: Tingle's Rosy Rupeeland",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-ACHP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/ACHP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0003": {
+      "file": "/covers/NDS-0003.jpg",
+      "source": "gametdb",
+      "gametdbId": "YG4P",
+      "gametdbTitle": "Suikoden: Tierkreis",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-YG4P-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/YG4P.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0004": {
+      "file": "/covers/NDS-0004.jpg",
+      "source": "gametdb",
+      "gametdbId": "C2SP",
+      "gametdbTitle": "Pokémon Mystery Dungeon: Explorers of Sky",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-C2SP-PORT; cartridge: NTR-C2SP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/C2SP.jpg",
+      "matchScore": 1000
+    },
     "NDS-0005": {
       "file": "/covers/NDS-0005.jpg",
       "source": "thegamesdb",
@@ -1179,6 +1443,32 @@
       "nameScore": 1000,
       "fingerprint": "52e5f6bb3da6cf3a"
     },
+    "NDS-0007": {
+      "file": "/covers/NDS-0007.jpg",
+      "source": "gametdb",
+      "gametdbId": "A6BP",
+      "gametdbTitle": "Mega Man Star Force: Leo",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR P A6BP; cartridge: NTR A6BP EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/A6BP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0008": {
+      "file": "/covers/NDS-0008.jpg",
+      "source": "gametdb",
+      "gametdbId": "YL2P",
+      "gametdbTitle": "Luminous Arc 2",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-YL2P-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/YL2P.jpg",
+      "matchScore": 1000
+    },
     "NDS-0009": {
       "file": "/covers/NDS-0009.jpg",
       "source": "thegamesdb",
@@ -1196,6 +1486,45 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "addeb4ddd00ff028"
+    },
+    "NDS-0010": {
+      "file": "/covers/NDS-0010.jpg",
+      "source": "gametdb",
+      "gametdbId": "IPGP",
+      "gametdbTitle": "Pokémon SoulSilver Version",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-IPGP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverM",
+      "sourceImage": "https://art.gametdb.com/ds/coverM/EN/IPGP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0011": {
+      "file": "/covers/NDS-0011.jpg",
+      "source": "gametdb",
+      "gametdbId": "ANIP",
+      "gametdbTitle": "Luminous Arc",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-ANIP-EUR; cartridge: NTR-ANIP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/ANIP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0012": {
+      "file": "/covers/NDS-0012.jpg",
+      "source": "gametdb",
+      "gametdbId": "B3RP",
+      "gametdbTitle": "Pokémon Ranger: Guardian Signs",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-B3RP-EAP; cartridge: NTR-B3RP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/B3RP.jpg",
+      "matchScore": 1000
     },
     "NDS-0013": {
       "file": "/covers/NDS-0013.jpg",
@@ -1305,6 +1634,45 @@
       "nameScore": 1000,
       "fingerprint": "acaaa29753f7e535"
     },
+    "NDS-0019": {
+      "file": "/covers/NDS-0019.jpg",
+      "source": "gametdb",
+      "gametdbId": "ADAP",
+      "gametdbTitle": "Pokémon Diamond Version",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-ADAP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/ADAP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0020": {
+      "file": "/covers/NDS-0020.jpg",
+      "source": "gametdb",
+      "gametdbId": "ASEP",
+      "gametdbTitle": "Children of Mana",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-ASEP-FHG; cartridge: NTR-ASEP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/ASEP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0021": {
+      "file": "/covers/NDS-0021.jpg",
+      "source": "gametdb",
+      "gametdbId": "AHEP",
+      "gametdbTitle": "Heroes of Mana",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-AHEP-FRA; cartridge: NTR-AHEP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/AHEP.jpg",
+      "matchScore": 1000
+    },
     "NDS-0022": {
       "file": "/covers/NDS-0022.jpg",
       "source": "thegamesdb",
@@ -1377,6 +1745,45 @@
       "nameScore": 1000,
       "fingerprint": "b3ab6be6d6448366"
     },
+    "NDS-0026": {
+      "file": "/covers/NDS-0026.jpg",
+      "source": "gametdb",
+      "gametdbId": "AFXP",
+      "gametdbTitle": "Final Fantasy Crystal Chronicles: Ring of Fates",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-AFXP-FRA; cartridge: NTR-AFXP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverM",
+      "sourceImage": "https://art.gametdb.com/ds/coverM/EN/AFXP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0027": {
+      "file": "/covers/NDS-0027.jpg",
+      "source": "gametdb",
+      "gametdbId": "ANZP",
+      "gametdbTitle": "New Zealand Story Revolution",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-ANZP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/ANZP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0028": {
+      "file": "/covers/NDS-0028.jpg",
+      "source": "gametdb",
+      "gametdbId": "ABCP",
+      "gametdbTitle": "Harvest Moon DS",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-ABCP-UKV; cartridge: NTR-ABCP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/ABCP.jpg",
+      "matchScore": 1000
+    },
     "NDS-0029": {
       "file": "/covers/NDS-0029.jpg",
       "source": "thegamesdb",
@@ -1413,6 +1820,58 @@
       "nameScore": 1000,
       "fingerprint": "0300d6f7c5585277"
     },
+    "NDS-0032": {
+      "file": "/covers/NDS-0032.jpg",
+      "source": "gametdb",
+      "gametdbId": "YO8P",
+      "gametdbTitle": "The Legend of Spyro: Dawn of the Dragon",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-YO8P-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/YO8P.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0033": {
+      "file": "/covers/NDS-0033.jpg",
+      "source": "gametdb",
+      "gametdbId": "AB7P",
+      "gametdbTitle": "B-17: Fortress in the Sky",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-AB7P-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/AB7P.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0034": {
+      "file": "/covers/NDS-0034.jpg",
+      "source": "gametdb",
+      "gametdbId": "YGHX",
+      "gametdbTitle": "Guitar Hero: On Tour",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-YGHX-ESP; cartridge: NTR-YGHX-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "IT",
+      "artworkType": "coverM",
+      "sourceImage": "https://art.gametdb.com/ds/coverM/IT/YGHX.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0035": {
+      "file": "/covers/NDS-0035.jpg",
+      "source": "gametdb",
+      "gametdbId": "BDRP",
+      "gametdbTitle": "Drawn to Life: The Next Chapter",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-BDRP-UKV; cartridge: NTR-BDRP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/BDRP.jpg",
+      "matchScore": 1000
+    },
     "NDS-0036": {
       "file": "/covers/NDS-0036.jpg",
       "source": "thegamesdb",
@@ -1430,6 +1889,19 @@
       "matchScore": 1500,
       "nameScore": 1000,
       "fingerprint": "1cb4e91e37c39d4e"
+    },
+    "NDS-0037": {
+      "file": "/covers/NDS-0037.jpg",
+      "source": "gametdb",
+      "gametdbId": "ATFP",
+      "gametdbTitle": "Tootuff: Mission Nadia",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-ATFP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/ATFP.jpg",
+      "matchScore": 1000
     },
     "NDS-0038": {
       "file": "/covers/NDS-0038.jpg",
@@ -1449,6 +1921,19 @@
       "nameScore": 1000,
       "fingerprint": "de8aff8ec8886b1d"
     },
+    "NDS-0039": {
+      "file": "/covers/NDS-0039.jpg",
+      "source": "gametdb",
+      "gametdbId": "BH2X",
+      "gametdbTitle": "Super Scribblenauts",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-BH2X-UXP; cartridge: NTR-BH2P-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/BH2X.jpg",
+      "matchScore": 1000
+    },
     "NDS-0040": {
       "file": "/covers/NDS-0040.jpg",
       "source": "thegamesdb",
@@ -1466,6 +1951,32 @@
       "matchScore": 1530,
       "nameScore": 1000,
       "fingerprint": "241de22b55b0029d"
+    },
+    "NDS-0041": {
+      "file": "/covers/NDS-0041.jpg",
+      "source": "gametdb",
+      "gametdbId": "AFFP",
+      "gametdbTitle": "Final Fantasy III",
+      "matchedBy": "physical-product-code",
+      "productCode": "Box: NTR-AFFP-UKV; cartridge: NTR-AFFP-EUR",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/AFFP.jpg",
+      "matchScore": 1000
+    },
+    "NDS-0042": {
+      "file": "/covers/NDS-0042.jpg",
+      "source": "gametdb",
+      "gametdbId": "YR9P",
+      "gametdbTitle": "Castlevania: Order of Ecclesia",
+      "matchedBy": "physical-product-code",
+      "productCode": "NTR-YR9P-EUT (packaging; owner-confirmed); NTR-YR9P-EUR (cartridge; previously confirmed); EAN 4012927082898",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/ds/coverHQ/EN/YR9P.jpg",
+      "matchScore": 1000
     },
     "NES-0003": {
       "file": "/covers/NES-0003.jpg",
@@ -4383,6 +4894,19 @@
       "nameScore": 1000,
       "fingerprint": "4e64d1beaca3991b"
     },
+    "WII-0003": {
+      "file": "/covers/WII-0003.png",
+      "source": "gametdb",
+      "gametdbId": "RMKP01",
+      "gametdbTitle": "Mario Sports Mix",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-RMKP-UKV-1; disc RVL-RMKP-EUR-B0; manual RVL-RMKP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/RMKP01.png",
+      "matchScore": 1000
+    },
     "WII-0004": {
       "file": "/covers/WII-0004.jpg",
       "source": "thegamesdb",
@@ -4400,6 +4924,45 @@
       "matchScore": 1545,
       "nameScore": 1000,
       "fingerprint": "91b402eb00194223"
+    },
+    "WII-0005": {
+      "file": "/covers/WII-0005.png",
+      "source": "gametdb",
+      "gametdbId": "SIIP8P",
+      "gametdbTitle": "Mario & Sonic at the London 2012 Olympic Games",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-SIIP-POR; disc RVL-SIIP-EUR-B0; manual RVL-SIIP-POR",
+      "regionName": "PAL",
+      "artworkLanguage": "PT",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/PT/SIIP8P.png",
+      "matchScore": 1000
+    },
+    "WII-0006": {
+      "file": "/covers/WII-0006.png",
+      "source": "gametdb",
+      "gametdbId": "R5TP69",
+      "gametdbTitle": "Grand Slam Tennis",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-R5TP-ESP1T2; disc RVL-R5TP-EUR; manual RVL-R5TP-ESP",
+      "regionName": "PAL",
+      "artworkLanguage": "ES",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/ES/R5TP69.png",
+      "matchScore": 1000
+    },
+    "WII-0007": {
+      "file": "/covers/WII-0007.png",
+      "source": "gametdb",
+      "gametdbId": "RZPP01",
+      "gametdbTitle": "Link's Crossbow Training",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-RZPP-UKV; disc RVL-RZPP-EUR; manual RVL-RZPP-UKV",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/RZPP01.png",
+      "matchScore": 1000
     },
     "WII-0008": {
       "file": "/covers/WII-0008.jpg",
@@ -4437,6 +5000,19 @@
       "nameScore": 1000,
       "fingerprint": "48f28caaab75ab2a"
     },
+    "WII-0010": {
+      "file": "/covers/WII-0010.png",
+      "source": "gametdb",
+      "gametdbId": "RGZP70",
+      "gametdbTitle": "Godzilla: Unleashed",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-RGZP-EUU; disc RVL-RGZP-EUR; manual RVL-RGZP-EUU",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/RGZP70.png",
+      "matchScore": 1000
+    },
     "WII-0011": {
       "file": "/covers/WII-0011.jpg",
       "source": "thegamesdb",
@@ -4473,6 +5049,45 @@
       "nameScore": 1000,
       "fingerprint": "c4ecec2e004e270a"
     },
+    "WII-0013": {
+      "file": "/covers/WII-0013.png",
+      "source": "gametdb",
+      "gametdbId": "RPBP01",
+      "gametdbTitle": "Pokémon Battle Revolution",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-RPBP-PORT; disc RVL-RPBP-EUR-B0; manual RVL-RPBP-PORT",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/RPBP01.png",
+      "matchScore": 1000
+    },
+    "WII-0014": {
+      "file": "/covers/WII-0014.png",
+      "source": "gametdb",
+      "gametdbId": "RYGP99",
+      "gametdbTitle": "Rygar: The Battle of Argus",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-RYGP-ITA; disc RVL-RYGP-EUR; manual RVL-RYGP-ITA",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/RYGP99.png",
+      "matchScore": 1000
+    },
+    "WII-0015": {
+      "file": "/covers/WII-0015.png",
+      "source": "gametdb",
+      "gametdbId": "SX4P01",
+      "gametdbTitle": "Xenoblade Chronicles",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-SX4P-EAP; disc RVL-SX4P-EUR-E0; manual RVL-SX4P-EAP",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/SX4P01.png",
+      "matchScore": 1000
+    },
     "WII-0016": {
       "file": "/covers/WII-0016.jpg",
       "source": "thegamesdb",
@@ -4491,6 +5106,19 @@
       "nameScore": 1000,
       "fingerprint": "a262dff5c50b3a98"
     },
+    "WII-0017": {
+      "file": "/covers/WII-0017.png",
+      "source": "gametdb",
+      "gametdbId": "SL2P01",
+      "gametdbTitle": "Project Zero 2: Wii Edition",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover RVL-SL2P-EAP; disc RVL-SL2P-EUR-B0; manual RVL-SL2P-EAP",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "cover",
+      "sourceImage": "https://art.gametdb.com/wii/cover/EN/SL2P01.png",
+      "matchScore": 1000
+    },
     "WII-0018": {
       "file": "/covers/WII-0018.jpg",
       "source": "thegamesdb",
@@ -4508,11 +5136,24 @@
       "matchScore": 1500,
       "nameScore": 1000,
       "fingerprint": "b736076f2808f62d"
+    },
+    "WIIU-0001": {
+      "file": "/covers/WIIU-0001.jpg",
+      "source": "gametdb",
+      "gametdbId": "AUNPAF",
+      "gametdbTitle": "One Piece: Unlimited World Red",
+      "matchedBy": "physical-product-code",
+      "productCode": "cover TSA-WUP-AUNP-EUR; disc WUP-P-AUNP-EUR-0; inserts WUP-AUNP-EUR-R + WUP-AUNP-EUR-R2",
+      "regionName": "PAL",
+      "artworkLanguage": "EN",
+      "artworkType": "coverHQ",
+      "sourceImage": "https://art.gametdb.com/wiiu/coverHQ/EN/AUNPAF.jpg",
+      "matchScore": 1000
     }
   },
-  "matched": 250,
-  "missing": 266,
+  "matched": 299,
+  "missing": 217,
   "reused": 250,
-  "apiLookups": 11,
-  "remainingMonthlyAllowance": 210
+  "apiLookups": 0,
+  "remainingMonthlyAllowance": 206
 }

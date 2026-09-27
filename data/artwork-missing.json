@@ -1,200 +1,15 @@
 {
-  "generatedAt": "2026-09-27T09:58:36.426Z",
-  "source": "thegamesdb",
+  "generatedAt": "2026-09-27T10:25:07.747Z",
+  "source": "local-artwork",
+  "sourcesTried": [
+    "thegamesdb",
+    "gametdb"
+  ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 250,
-  "missing": 266,
+  "matched": 299,
+  "missing": 217,
   "entries": [
-    {
-      "collectionId": "3DS-0003",
-      "title": "Cave Story 3D",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: unreadable under EcoPlay sticker; cartridge: LNA-CTR-ACVP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Cave Story 3D",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 12082,
-          "title": "Cave Story 3D",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Cave Story 3D\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "3DS-0004",
-      "title": "Resident Evil Revelations",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Circle Pad Pro Bundle",
-      "keepStatus": "Collection",
-      "productCode": "Bundle box: CTR-R-ABRP; cartridge: not confirmed",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Resident Evil Revelations",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 12692,
-          "title": "Resident Evil: Revelations",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Resident Evil Revelations\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Circle Pad Pro Bundle\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "3DS-0005",
-      "title": "Castlevania: Lords of Shadow - Mirror of Fate",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: TSA-CTR-ACFP-EAP; cartridge: LNA-CTR-ACFP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Castlevania: Lords of Shadow - Mirror of Fate",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 10864,
-          "title": "Castlevania: Lords of Shadow - Mirror of Fate",
-          "regionId": 9
-        }
-      ],
-      "inputKey": "{\"title\":\"Castlevania: Lords of Shadow - Mirror of Fate\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "3DS-0006",
-      "title": "Spirit Camera: The Cursed Memoir",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: TSA-CTR-ALCP-EAP; cartridge: LNA-CTR-ALCP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Spirit Camera: The Cursed Memoir",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 13307,
-          "title": "Spirit Camera: The Cursed Memoir",
-          "regionId": 1
-        },
-        {
-          "id": 114274,
-          "title": "Spirit Camera: The Cursed Memoir",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Spirit Camera: The Cursed Memoir\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "3DS-0012",
-      "title": "LEGO Star Wars III: The Clone Wars",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: unreadable; cartridge: LNA-CTR-ALGP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "LEGO Star Wars III: The Clone Wars",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 13902,
-          "title": "LEGO Star Wars III: The Clone Wars",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"LEGO Star Wars III: The Clone Wars\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "3DS-0013",
-      "title": "James Noir's Hollywood Crimes",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: TSA-CTR-AHCP-UXP; cartridge: LNA-CTR-AHCP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "James Noir's Hollywood Crimes",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 12998,
-          "title": "James Noir's Hollywood Crimes",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"James Noir's Hollywood Crimes\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "3DS-0015",
-      "title": "Ever Oasis",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: TSA-CTR-BAGP-EAP; cartridge: LNA-CTR-BAGP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Ever Oasis",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 47059,
-          "title": "Ever Oasis",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Ever Oasis\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "3DS-0017",
-      "title": "Bella Sara: The Magical Horse Adventures",
-      "platform": "Nintendo 3DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: TSA-CTR-AB2P-EUR; cartridge: LNA-CTR-AB2P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Bella Sara: The Magical Horse Adventures",
-      "platformId": 4912,
-      "candidates": [
-        {
-          "id": 70988,
-          "title": "Bella Sara: The Magical Horse Adventures",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Bella Sara: The Magical Horse Adventures\",\"platform\":\"Nintendo 3DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
     {
       "collectionId": "GBA-0001",
       "title": "Pokémon Emerald",
@@ -210,7 +25,8 @@
       "searchTitle": "Pokémon Emerald",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Pokémon Emerald\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pokémon Emerald\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0002",
@@ -233,7 +49,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Steel Empire\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Steel Empire\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0004",
@@ -271,7 +88,8 @@
           "regionId": 9
         }
       ],
-      "inputKey": "{\"title\":\"Pokémon FireRed\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pokémon FireRed\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0005",
@@ -304,7 +122,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Pokémon LeafGreen\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pokémon LeafGreen\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0007",
@@ -342,7 +161,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Pokémon Ruby\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pokémon Ruby\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0013",
@@ -359,7 +179,8 @@
       "searchTitle": "The Legend of Zelda: A Link to the Past & Four Swords",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"The Legend of Zelda: A Link to the Past & Four Swords\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Legend of Zelda: A Link to the Past & Four Swords\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0014",
@@ -382,7 +203,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Hello Kitty Happy Party Pals\",\"platform\":\"GameBoy Advance\",\"edition\":\"Bootleg / Reproduction\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Hello Kitty Happy Party Pals\",\"platform\":\"GameBoy Advance\",\"edition\":\"Bootleg / Reproduction\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0015",
@@ -405,7 +227,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Phantasy Star Collection\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Phantasy Star Collection\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0016",
@@ -428,7 +251,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Kill Switch\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Kill Switch\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0017",
@@ -445,7 +269,8 @@
       "searchTitle": "Game & Watch Gallery Advance",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Game & Watch Gallery Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Game & Watch Gallery Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0018",
@@ -468,7 +293,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Bubble Bobble Old & New\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Bubble Bobble Old & New\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0019",
@@ -491,7 +317,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Kingdom Hearts: Chain Of Memories\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Kingdom Hearts: Chain Of Memories\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0020",
@@ -514,7 +341,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Beyblade: G-Revolution\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Beyblade: G-Revolution\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0025",
@@ -531,7 +359,8 @@
       "searchTitle": "Yu-Gi-Oh Ultimate Masters Edition",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Yu-Gi-Oh Ultimate Masters Edition\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Yu-Gi-Oh Ultimate Masters Edition\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0026",
@@ -559,7 +388,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Rocky\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Rocky\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0028",
@@ -582,7 +412,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Barbie and the Magic of Pegasus\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Barbie and the Magic of Pegasus\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0030",
@@ -599,7 +430,8 @@
       "searchTitle": "Excitebike NES Classics",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Excitebike NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Excitebike NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0031",
@@ -616,7 +448,8 @@
       "searchTitle": "Lord of the Rings: Return of the King",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Lord of the Rings: Return of the King\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Lord of the Rings: Return of the King\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0032",
@@ -639,7 +472,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"ESPN Winter X-Games Snowboarding 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"ESPN Winter X-Games Snowboarding 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0033",
@@ -677,7 +511,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Final Fantasy Tactics Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Final Fantasy Tactics Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0035",
@@ -694,7 +529,8 @@
       "searchTitle": "Donkey Kong NES Classics",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Donkey Kong NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Donkey Kong NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0036",
@@ -732,7 +568,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Sonic Advance 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Sonic Advance 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0037",
@@ -755,7 +592,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Driver 2 Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Driver 2 Advance\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0038",
@@ -778,7 +616,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Yu-Gi-Oh Dungeon Dice Monsters\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Yu-Gi-Oh Dungeon Dice Monsters\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0039",
@@ -801,7 +640,8 @@
           "regionId": 9
         }
       ],
-      "inputKey": "{\"title\":\"Spiderman: Mysterio's Menace\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Spiderman: Mysterio's Menace\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0040",
@@ -824,7 +664,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Banjo-Kazooie: Grunty's Revenge\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Banjo-Kazooie: Grunty's Revenge\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0041",
@@ -847,7 +688,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Tomb Raider: Legend\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Tomb Raider: Legend\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0042",
@@ -864,7 +706,8 @@
       "searchTitle": "Lilo & Stitch 2",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Lilo & Stitch 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Lilo & Stitch 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0043",
@@ -887,7 +730,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Star Wars: Episode III Revenge Of The Sith\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Star Wars: Episode III Revenge Of The Sith\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0044",
@@ -910,7 +754,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Spyro 2: Season Of Flame\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Spyro 2: Season Of Flame\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0045",
@@ -933,7 +778,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Need For Speed: Carbon Own The City\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Need For Speed: Carbon Own The City\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0046",
@@ -956,7 +802,8 @@
           "regionId": 9
         }
       ],
-      "inputKey": "{\"title\":\"Crash And Spyro Super Pack Volume 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Crash And Spyro Super Pack Volume 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0047",
@@ -979,7 +826,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"The Hobbit\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Hobbit\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0048",
@@ -1002,7 +850,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Top Gear Rally\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Top Gear Rally\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0049",
@@ -1025,7 +874,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Spyro Fusion\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Spyro Fusion\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0050",
@@ -1048,7 +898,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Mission: Impossible: Operation Surma\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Mission: Impossible: Operation Surma\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0051",
@@ -1071,7 +922,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Starsky & Hutch\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Starsky & Hutch\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0053",
@@ -1094,7 +946,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Tweety & the Magic Gems\",\"platform\":\"GameBoy Advance\",\"edition\":\"Bootleg / Reproduction\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Tweety & the Magic Gems\",\"platform\":\"GameBoy Advance\",\"edition\":\"Bootleg / Reproduction\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0054",
@@ -1122,7 +975,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"F-Zero: Maximum Velocity\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"F-Zero: Maximum Velocity\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0055",
@@ -1145,7 +999,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Disney's Atlantis: The Lost Empire\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Disney's Atlantis: The Lost Empire\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0057",
@@ -1168,7 +1023,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Tom And Jerry: Infurnal Escape\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Tom And Jerry: Infurnal Escape\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0058",
@@ -1191,7 +1047,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"James Pond: Codename Robocod\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"James Pond: Codename Robocod\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0060",
@@ -1208,7 +1065,8 @@
       "searchTitle": "Lord Of The Rings Two Towers",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Lord Of The Rings Two Towers\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Lord Of The Rings Two Towers\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0061",
@@ -1246,7 +1104,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"The Incredibles\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Incredibles\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBA-0062",
@@ -1263,7 +1122,8 @@
       "searchTitle": "Zelda NES Classics",
       "platformId": 5,
       "candidates": [],
-      "inputKey": "{\"title\":\"Zelda NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Zelda NES Classics\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0004",
@@ -1280,7 +1140,8 @@
       "searchTitle": "Zelda Oracle Of Ages",
       "platformId": 41,
       "candidates": [],
-      "inputKey": "{\"title\":\"Zelda Oracle Of Ages\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Zelda Oracle Of Ages\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0008",
@@ -1313,7 +1174,8 @@
           "regionId": 9
         }
       ],
-      "inputKey": "{\"title\":\"Pokemon Silver\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pokemon Silver\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0011",
@@ -1330,7 +1192,8 @@
       "searchTitle": "Zelda Link's Awakening",
       "platformId": 4,
       "candidates": [],
-      "inputKey": "{\"title\":\"Zelda Link's Awakening\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Zelda Link's Awakening\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0013",
@@ -1358,7 +1221,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Star Wars The Empire Strikes Back\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Star Wars The Empire Strikes Back\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0015",
@@ -1381,7 +1245,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Boulder Dash\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Boulder Dash\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0016",
@@ -1404,7 +1269,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Wario Land II\",\"platform\":\"Game Boy\",\"edition\":\"Game Boy Color Rerelease\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Wario Land II\",\"platform\":\"Game Boy\",\"edition\":\"Game Boy Color Rerelease\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0018",
@@ -1427,7 +1293,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Star Trek 25th Anniversary\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Star Trek 25th Anniversary\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0019",
@@ -1460,7 +1327,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"Gargoyle's Quest\",\"platform\":\"Game Boy\",\"edition\":\"UKV-1 Revision\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Gargoyle's Quest\",\"platform\":\"Game Boy\",\"edition\":\"UKV-1 Revision\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0020",
@@ -1477,7 +1345,8 @@
       "searchTitle": "Super Mario Land 2",
       "platformId": 4,
       "candidates": [],
-      "inputKey": "{\"title\":\"Super Mario Land 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Super Mario Land 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0021",
@@ -1505,7 +1374,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Probotector\",\"platform\":\"Game Boy\",\"edition\":\"GPS Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Probotector\",\"platform\":\"Game Boy\",\"edition\":\"GPS Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0023",
@@ -1528,7 +1398,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Teenage Mutant Ninja Turtles Fall Of The Foot Clan\",\"platform\":\"Game Boy\",\"edition\":\"USA / Ultra Games Label\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Teenage Mutant Ninja Turtles Fall Of The Foot Clan\",\"platform\":\"Game Boy\",\"edition\":\"USA / Ultra Games Label\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0025",
@@ -1556,7 +1427,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Harvest Moon\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Harvest Moon\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0026",
@@ -1573,7 +1445,8 @@
       "searchTitle": "Donkey Kong Land 2",
       "platformId": 4,
       "candidates": [],
-      "inputKey": "{\"title\":\"Donkey Kong Land 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Donkey Kong Land 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0029",
@@ -1596,7 +1469,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Bart Simpson's Escape From Camp Deadly\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Bart Simpson's Escape From Camp Deadly\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0030",
@@ -1624,7 +1498,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"Wario Land Super Mario Land 3\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Wario Land Super Mario Land 3\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0031",
@@ -1647,7 +1522,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Harry Potter And The Chamber Of Secrets\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Harry Potter And The Chamber Of Secrets\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0033",
@@ -1670,7 +1546,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Speedy Gonzales Aztec Adventure\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Speedy Gonzales Aztec Adventure\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0034",
@@ -1693,7 +1570,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Barbie Game Girl\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Barbie Game Girl\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0040",
@@ -1721,7 +1599,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"Game & Watch Gallery 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Game & Watch Gallery 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0041",
@@ -1744,7 +1623,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Harry Potter And The Philosopher's Stone\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Harry Potter And The Philosopher's Stone\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0043",
@@ -1772,7 +1652,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Bugs Bunny Crazy Castle 4\",\"platform\":\"Game Boy Color\",\"edition\":\"EUU-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Bugs Bunny Crazy Castle 4\",\"platform\":\"Game Boy Color\",\"edition\":\"EUU-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0044",
@@ -1795,7 +1676,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Golden Goal\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Golden Goal\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0045",
@@ -1812,7 +1694,8 @@
       "searchTitle": "Sylvester & Tweety Breakfast On The Run",
       "platformId": 41,
       "candidates": [],
-      "inputKey": "{\"title\":\"Sylvester & Tweety Breakfast On The Run\",\"platform\":\"Game Boy Color\",\"edition\":\"UKV-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Sylvester & Tweety Breakfast On The Run\",\"platform\":\"Game Boy Color\",\"edition\":\"UKV-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0046",
@@ -1829,7 +1712,8 @@
       "searchTitle": "Sylvester & Tweety Breakfast On The Run",
       "platformId": 41,
       "candidates": [],
-      "inputKey": "{\"title\":\"Sylvester & Tweety Breakfast On The Run\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Sylvester & Tweety Breakfast On The Run\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0047",
@@ -1857,7 +1741,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Laura\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Laura\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0048",
@@ -1880,7 +1765,8 @@
           "regionId": 9
         }
       ],
-      "inputKey": "{\"title\":\"Bugs Bunny & Lola Bunny Operation Carrot Patch\",\"platform\":\"Game Boy Color\",\"edition\":\"UKV-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Bugs Bunny & Lola Bunny Operation Carrot Patch\",\"platform\":\"Game Boy Color\",\"edition\":\"UKV-1 Label Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0049",
@@ -1897,7 +1783,8 @@
       "searchTitle": "Atlantis The Lost Empire",
       "platformId": 41,
       "candidates": [],
-      "inputKey": "{\"title\":\"Atlantis The Lost Empire\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Atlantis The Lost Empire\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0051",
@@ -1925,7 +1812,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Bugs Bunny: Crazy Castle 3\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Bugs Bunny: Crazy Castle 3\",\"platform\":\"Game Boy Color\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0052",
@@ -1948,181 +1836,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"The Hunt for Red October\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0001",
-      "title": "Fire Emblem Path Of Radiance",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GFEP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Fire Emblem Path Of Radiance",
-      "platformId": 2,
-      "candidates": [
-        {
-          "id": 104178,
-          "title": "Fire Emblem Souen no Kiseki",
-          "regionId": 4
-        },
-        {
-          "id": 6978,
-          "title": "Fire Emblem: Path of Radiance",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Fire Emblem Path Of Radiance\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0002",
-      "title": "Pokemon Box",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GPXP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Pokemon Box",
-      "platformId": 2,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Pokemon Box\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0003",
-      "title": "Game Boy Player Start-Up Disc",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-UGPP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Game Boy Player Start-Up Disc",
-      "platformId": 2,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Game Boy Player Start-Up Disc\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0005",
-      "title": "Zelda Wind Waker",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Limited Edition",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GZLP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Zelda Wind Waker",
-      "platformId": 2,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Zelda Wind Waker\",\"platform\":\"GameCube\",\"edition\":\"Limited Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0006",
-      "title": "Eternal Darkness",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GEDP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Eternal Darkness",
-      "platformId": 2,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Eternal Darkness\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0009",
-      "title": "Mario Kart Double Dash",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GM4P-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Mario Kart Double Dash",
-      "platformId": 2,
-      "candidates": [
-        {
-          "id": 115103,
-          "title": "Mario Kart Double Dash [Not for Resale]",
-          "regionId": 1
-        },
-        {
-          "id": 135159,
-          "title": "Mario Kart Double Dash: Retro Track Grand Prix",
-          "regionId": 2
-        },
-        {
-          "id": 137503,
-          "title": "Mario Kart Double Dash!! Plus",
-          "regionId": 1
-        },
-        {
-          "id": 117732,
-          "title": "Mario Kart: Double Dash!!",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Mario Kart Double Dash\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0010",
-      "title": "Mario Party 4",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GMPP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Mario Party 4",
-      "platformId": 2,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Mario Party 4\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0013",
-      "title": "The Simpsons Road Rage",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GSPP-ESP",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Simpsons Road Rage",
-      "platformId": 2,
-      "candidates": [
-        {
-          "id": 15054,
-          "title": "The Simpsons: Road Rage",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"The Simpsons Road Rage\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Hunt for Red October\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GC-0014",
@@ -2145,35 +1860,11 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"The Hobbit\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GC-0016",
-      "title": "Wave Race Blue Storm",
-      "platform": "GameCube",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DOL-GWRP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Wave Race Blue Storm",
-      "platformId": 2,
-      "candidates": [
-        {
-          "id": 92105,
-          "title": "WAVERACE bluestorm",
-          "regionId": 4
-        },
-        {
-          "id": 2328,
-          "title": "Wave Race: Blue Storm",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Wave Race Blue Storm\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Hobbit\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "product-code-not-found-or-title-mismatch",
+      "gametdbCodes": [
+        "GHBP"
+      ]
     },
     {
       "collectionId": "N64-0001",
@@ -2190,7 +1881,8 @@
       "searchTitle": "Pokémon Stadium 2",
       "platformId": 3,
       "candidates": [],
-      "inputKey": "{\"title\":\"Pokémon Stadium 2\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pokémon Stadium 2\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0005",
@@ -2213,7 +1905,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Mortal Kombat Mythologies: Sub-Zero\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Mortal Kombat Mythologies: Sub-Zero\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0006",
@@ -2251,7 +1944,8 @@
           "regionId": 9
         }
       ],
-      "inputKey": "{\"title\":\"Super Smash Bros.\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Super Smash Bros.\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0010",
@@ -2274,7 +1968,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Power Rangers: Lightspeed Rescue\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Power Rangers: Lightspeed Rescue\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0011",
@@ -2297,7 +1992,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Lode Runner 3D\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Lode Runner 3D\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0012",
@@ -2330,7 +2026,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Yoshi's Story\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Yoshi's Story\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0017",
@@ -2347,7 +2044,8 @@
       "searchTitle": "Pokemon Stadium",
       "platformId": 3,
       "candidates": [],
-      "inputKey": "{\"title\":\"Pokemon Stadium\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pokemon Stadium\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0018",
@@ -2370,7 +2068,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"007 GoldenEye\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"007 GoldenEye\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0019",
@@ -2403,7 +2102,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Pokemon Snap\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pokemon Snap\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0020",
@@ -2426,7 +2126,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Turok Rage Wars\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Turok Rage Wars\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0023",
@@ -2443,7 +2144,8 @@
       "searchTitle": "F1 World Grand Prix",
       "platformId": 3,
       "candidates": [],
-      "inputKey": "{\"title\":\"F1 World Grand Prix\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"F1 World Grand Prix\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0024",
@@ -2466,7 +2168,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Turok 2 Seeds Of Evil\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Turok 2 Seeds Of Evil\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0025",
@@ -2494,7 +2197,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"Buck Bumble\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Buck Bumble\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0026",
@@ -2522,399 +2226,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Jet Force Gemini\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0002",
-      "title": "Freshly-Picked Tingle's Rosy Rupeeland",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-ACHP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Freshly-Picked Tingle's Rosy Rupeeland",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 18058,
-          "title": "Freshly-Picked: Tingle's Rosy Rupeeland",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Freshly-Picked Tingle's Rosy Rupeeland\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0003",
-      "title": "Suikoden Tierkreis",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-YG4P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Suikoden Tierkreis",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 11426,
-          "title": "Suikoden Tierkreis",
-          "regionId": 0
-        },
-        {
-          "id": 129668,
-          "title": "Gensō Suikoden Tierkreis",
-          "regionId": 4
-        }
-      ],
-      "inputKey": "{\"title\":\"Suikoden Tierkreis\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0004",
-      "title": "Pokémon Mystery Dungeon: Explorers of Sky",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-C2SP-PORT; cartridge: NTR-C2SP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Pokémon Mystery Dungeon: Explorers of Sky",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 21454,
-          "title": "Pokémon Mystery Dungeon: Explorers of Sky",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Pokémon Mystery Dungeon: Explorers of Sky\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0007",
-      "title": "Mega Man Star Force Leo",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR P A6BP; cartridge: NTR A6BP EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Mega Man Star Force Leo",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 6842,
-          "title": "Mega Man Star Force: Leo",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Mega Man Star Force Leo\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0008",
-      "title": "Luminous Arc 2",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Soundtrack Edition",
-      "keepStatus": "Collection",
-      "productCode": "NTR-YL2P-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Luminous Arc 2",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 11331,
-          "title": "Luminous Arc 2",
-          "regionId": 0
-        },
-        {
-          "id": 11330,
-          "title": "Luminous Arc",
-          "regionId": 0
-        },
-        {
-          "id": 44797,
-          "title": "Luminous Arc 3: Eyes",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Luminous Arc 2\",\"platform\":\"Nintendo DS\",\"edition\":\"Soundtrack Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0010",
-      "title": "Pokémon SoulSilver",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-IPGP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Pokémon SoulSilver",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 107243,
-          "title": "Pokémon SoulSilver (Not for Resale)",
-          "regionId": 1
-        },
-        {
-          "id": 116068,
-          "title": "Pocket Monsters SoulSilver",
-          "regionId": 4
-        },
-        {
-          "id": 118007,
-          "title": "Pokémon Version Argent",
-          "regionId": 2
-        },
-        {
-          "id": 2369,
-          "title": "Pokémon SoulSilver Version",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Pokémon SoulSilver\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0011",
-      "title": "Luminous Arc",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-ANIP-EUR; cartridge: NTR-ANIP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Luminous Arc",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 11330,
-          "title": "Luminous Arc",
-          "regionId": 0
-        },
-        {
-          "id": 11331,
-          "title": "Luminous Arc 2",
-          "regionId": 0
-        },
-        {
-          "id": 44797,
-          "title": "Luminous Arc 3: Eyes",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Luminous Arc\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0012",
-      "title": "Pokémon Ranger: Guardian Signs",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-B3RP-EAP; cartridge: NTR-B3RP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Pokémon Ranger: Guardian Signs",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 19129,
-          "title": "Pokémon Ranger: Guardian Signs",
-          "regionId": 1
-        },
-        {
-          "id": 113128,
-          "title": "Pokemon Ranger: Hikari no Kiseki",
-          "regionId": 4
-        }
-      ],
-      "inputKey": "{\"title\":\"Pokémon Ranger: Guardian Signs\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0019",
-      "title": "Pokémon Diamond",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-ADAP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Pokémon Diamond",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 130474,
-          "title": "Pokemon Diamond Sun and Moon",
-          "regionId": 2
-        },
-        {
-          "id": 1539,
-          "title": "Pokémon Diamond Version",
-          "regionId": 2
-        },
-        {
-          "id": 129670,
-          "title": "Pokémon Diamond Version",
-          "regionId": 4
-        }
-      ],
-      "inputKey": "{\"title\":\"Pokémon Diamond\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0020",
-      "title": "Children of Mana",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-ASEP-FHG; cartridge: NTR-ASEP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Children of Mana",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 6706,
-          "title": "Children of Mana",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Children of Mana\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0021",
-      "title": "Heroes of Mana",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-AHEP-FRA; cartridge: NTR-AHEP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Heroes of Mana",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 11253,
-          "title": "Heroes of Mana",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Heroes of Mana\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0026",
-      "title": "Final Fantasy Crystal Chronicles: Ring of Fates",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-AFXP-FRA; cartridge: NTR-AFXP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Final Fantasy Crystal Chronicles: Ring of Fates",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 11049,
-          "title": "Final Fantasy Crystal Chronicles: Ring of Fates",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Final Fantasy Crystal Chronicles: Ring of Fates\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0027",
-      "title": "New Zealand Story Revolution",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-ANZP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "New Zealand Story Revolution",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 34346,
-          "title": "New Zealand Story Revolution",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"New Zealand Story Revolution\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0028",
-      "title": "Harvest Moon DS",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-ABCP-UKV; cartridge: NTR-ABCP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Harvest Moon DS",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 15220,
-          "title": "Harvest Moon DS",
-          "regionId": 0
-        },
-        {
-          "id": 15218,
-          "title": "Harvest Moon DS: Sunshine Islands",
-          "regionId": 0
-        },
-        {
-          "id": 14404,
-          "title": "Harvest Moon DS: The Tale of Two Towns",
-          "regionId": 0
-        },
-        {
-          "id": 14323,
-          "title": "Harvest Moon DS Cute",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Harvest Moon DS\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Jet Force Gemini\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NDS-0030",
@@ -2937,216 +2250,11 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Looney Tunes: Cartoon Conductor\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0032",
-      "title": "The Legend of Spyro: Dawn of the Dragon",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-YO8P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Legend of Spyro: Dawn of the Dragon",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 41591,
-          "title": "The Legend of Spyro: Dawn of the Dragon",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"The Legend of Spyro: Dawn of the Dragon\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0033",
-      "title": "B-17: Fortress in the Sky",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-AB7P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "B-17: Fortress in the Sky",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 31167,
-          "title": "B-17: Fortress in the Sky",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"B-17: Fortress in the Sky\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0034",
-      "title": "Guitar Hero: On Tour",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Guitar Grip Bundle",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-YGHX-ESP; cartridge: NTR-YGHX-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Guitar Hero: On Tour",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 68341,
-          "title": "Guitar Hero: On Tour - Guitar Grip Bundle",
-          "regionId": 0
-        },
-        {
-          "id": 6809,
-          "title": "Guitar Hero: On Tour",
-          "regionId": 0
-        },
-        {
-          "id": 85465,
-          "title": "Guitar Hero: On Tour & On Tour Decades - Box Set",
-          "regionId": 0
-        },
-        {
-          "id": 6810,
-          "title": "Guitar Hero: On Tour Decades",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Guitar Hero: On Tour\",\"platform\":\"Nintendo DS\",\"edition\":\"Guitar Grip Bundle\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0035",
-      "title": "Drawn to Life: The Next Chapter",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-BDRP-UKV; cartridge: NTR-BDRP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Drawn to Life: The Next Chapter",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 27336,
-          "title": "Drawn To Life: The Next Chapter",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Drawn to Life: The Next Chapter\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0037",
-      "title": "Tootuff: Mission Nadia",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-ATFP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Tootuff: Mission Nadia",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 44656,
-          "title": "Tootuff: Mission Nadia",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Tootuff: Mission Nadia\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0039",
-      "title": "Super Scribblenauts",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-BH2X-UXP; cartridge: NTR-BH2P-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Super Scribblenauts",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 11051,
-          "title": "Super Scribblenauts",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Super Scribblenauts\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0041",
-      "title": "Final Fantasy III",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "Box: NTR-AFFP-UKV; cartridge: NTR-AFFP-EUR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Final Fantasy III",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 2850,
-          "title": "Final Fantasy III",
-          "regionId": 1
-        },
-        {
-          "id": 6909,
-          "title": "Final Fantasy IV",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Final Fantasy III\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "NDS-0042",
-      "title": "Castlevania: Order of Ecclesia",
-      "platform": "Nintendo DS",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "NTR-YR9P-EUT (packaging; owner-confirmed); NTR-YR9P-EUR (cartridge; previously confirmed); EAN 4012927082898",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Castlevania: Order of Ecclesia",
-      "platformId": 8,
-      "candidates": [
-        {
-          "id": 11047,
-          "title": "Castlevania: Order of Ecclesia",
-          "regionId": 0
-        },
-        {
-          "id": 135192,
-          "title": "Castlevania: Order of Ecclesia - Zero Collection",
-          "regionId": 9
-        }
-      ],
-      "inputKey": "{\"title\":\"Castlevania: Order of Ecclesia\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Looney Tunes: Cartoon Conductor\",\"platform\":\"Nintendo DS\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "physical-product-code-not-pal",
+      "gametdbCodes": [
+        "YLNE"
+      ]
     },
     {
       "collectionId": "NES-0001",
@@ -3169,7 +2277,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Jackie Chan's Action Kung Fu\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Jackie Chan's Action Kung Fu\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0002",
@@ -3197,7 +2306,8 @@
           "regionId": 9
         }
       ],
-      "inputKey": "{\"title\":\"Double Dragon II: The Revenge\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Double Dragon II: The Revenge\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0005",
@@ -3235,7 +2345,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Gradius\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Gradius\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0007",
@@ -3263,7 +2374,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Tom & Jerry: The Ultimate Game of Cat and Mouse!\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Tom & Jerry: The Ultimate Game of Cat and Mouse!\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0009",
@@ -3286,7 +2398,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Terminator 2: Judgement Day\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Terminator 2: Judgement Day\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0010",
@@ -3309,7 +2422,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"Disney's Chip 'n Dale Rescue Rangers\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Disney's Chip 'n Dale Rescue Rangers\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0012",
@@ -3332,7 +2446,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"The Simpsons: Bart vs. the Space Mutants\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Simpsons: Bart vs. the Space Mutants\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0013",
@@ -3360,7 +2475,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Little Nemo: The Dream Master\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Little Nemo: The Dream Master\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0014",
@@ -3377,7 +2493,8 @@
       "searchTitle": "Teenage Mutant Hero Turtles",
       "platformId": 7,
       "candidates": [],
-      "inputKey": "{\"title\":\"Teenage Mutant Hero Turtles\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Teenage Mutant Hero Turtles\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0015",
@@ -3400,7 +2517,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"California Games\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"California Games\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0016",
@@ -3423,7 +2541,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"The Battle of Olympus\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Battle of Olympus\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0017",
@@ -3446,7 +2565,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"WWF WrestleMania Challenge\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"WWF WrestleMania Challenge\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0018",
@@ -3469,7 +2589,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Super Spike V'Ball\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Super Spike V'Ball\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NES-0019",
@@ -3492,7 +2613,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Willow\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Willow\",\"platform\":\"NES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0001",
@@ -3530,7 +2652,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Elder Scrolls V: Skyrim\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Elder Scrolls V: Skyrim\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0003",
@@ -3547,7 +2670,8 @@
       "searchTitle": "Guild Wars 2",
       "platformId": 1,
       "candidates": [],
-      "inputKey": "{\"title\":\"Guild Wars 2\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Guild Wars 2\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0004",
@@ -3570,7 +2694,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Guild Wars Nightfall\",\"platform\":\"PC\",\"edition\":\"Collector's Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Guild Wars Nightfall\",\"platform\":\"PC\",\"edition\":\"Collector's Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0005",
@@ -3593,7 +2718,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Guild Wars: Eye Of The North\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Guild Wars: Eye Of The North\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0006",
@@ -3616,7 +2742,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Guild Wars: Factions\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Guild Wars: Factions\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0007",
@@ -3639,7 +2766,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Guild Wars: Nightfall\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Guild Wars: Nightfall\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0008",
@@ -3656,7 +2784,8 @@
       "searchTitle": "Harry Potter Prisoner of Azkaban",
       "platformId": 1,
       "candidates": [],
-      "inputKey": "{\"title\":\"Harry Potter Prisoner of Azkaban\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Harry Potter Prisoner of Azkaban\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0009",
@@ -3673,7 +2802,8 @@
       "searchTitle": "Magic Battlegrounds",
       "platformId": 1,
       "candidates": [],
-      "inputKey": "{\"title\":\"Magic Battlegrounds\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Magic Battlegrounds\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0010",
@@ -3696,7 +2826,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Ms. Pac-Man Quest For The Golden Maze\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Ms. Pac-Man Quest For The Golden Maze\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0013",
@@ -3719,7 +2850,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"The Sims 2: Family Fun Stuff\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Sims 2: Family Fun Stuff\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0014",
@@ -3747,7 +2879,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"The Sims 2: Freetime\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Sims 2: Freetime\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0015",
@@ -3770,7 +2903,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"The Sims 2: Glamor Life Stuff\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Sims 2: Glamor Life Stuff\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0016",
@@ -3793,7 +2927,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"The Sims 2: Nightlife\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Sims 2: Nightlife\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0017",
@@ -3816,7 +2951,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"The Sims 2: Nightlife\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Sims 2: Nightlife\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0018",
@@ -3839,7 +2975,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"The Sims 2: Open for Business\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Sims 2: Open for Business\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0019",
@@ -3867,7 +3004,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"The Sims 2: University\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Sims 2: University\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0020",
@@ -3884,7 +3022,8 @@
       "searchTitle": "The Sims 3",
       "platformId": 1,
       "candidates": [],
-      "inputKey": "{\"title\":\"The Sims 3\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Sims 3\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0021",
@@ -3907,7 +3046,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"URU Ages Beyond Myst\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"URU Ages Beyond Myst\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0022",
@@ -3935,7 +3075,8 @@
           "regionId": 9
         }
       ],
-      "inputKey": "{\"title\":\"World of Goo\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"World of Goo\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PC-0023",
@@ -3973,7 +3114,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"World of Warcraft Battle Chest\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"World of Warcraft Battle Chest\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0009",
@@ -3996,7 +3138,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Bugs Bunny: Lost in Time\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Bugs Bunny: Lost in Time\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0011",
@@ -4029,7 +3172,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Final Fantasy Origins\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Final Fantasy Origins\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0026",
@@ -4046,7 +3190,8 @@
       "searchTitle": "Toy Story 2",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Toy Story 2\",\"platform\":\"Playstation\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Toy Story 2\",\"platform\":\"Playstation\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0035",
@@ -4063,7 +3208,8 @@
       "searchTitle": "Spyro The Dragon",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Spyro The Dragon\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Spyro The Dragon\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0055",
@@ -4086,7 +3232,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Jungle Book Groove Party\",\"platform\":\"Playstation\",\"edition\":\"NFS / Dance pad bundle\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Jungle Book Groove Party\",\"platform\":\"Playstation\",\"edition\":\"NFS / Dance pad bundle\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0056",
@@ -4103,7 +3250,8 @@
       "searchTitle": "Harry Potter e a Pedra Filosofal",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Harry Potter e a Pedra Filosofal\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Harry Potter e a Pedra Filosofal\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0057",
@@ -4120,7 +3268,8 @@
       "searchTitle": "Oddworld: Abe's Oddysee DEMO",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Oddworld: Abe's Oddysee DEMO\",\"platform\":\"Playstation\",\"edition\":\"Demo\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Oddworld: Abe's Oddysee DEMO\",\"platform\":\"Playstation\",\"edition\":\"Demo\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0058",
@@ -4148,7 +3297,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Aqua GT\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Aqua GT\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0065",
@@ -4171,7 +3321,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Arcade Party Pak\",\"platform\":\"Playstation\",\"edition\":\"Classics\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Arcade Party Pak\",\"platform\":\"Playstation\",\"edition\":\"Classics\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0067",
@@ -4188,7 +3339,8 @@
       "searchTitle": "Winter Releases '98",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Winter Releases '98\",\"platform\":\"Playstation\",\"edition\":\"Demo / Rev.1\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Winter Releases '98\",\"platform\":\"Playstation\",\"edition\":\"Demo / Rev.1\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0071",
@@ -4205,7 +3357,8 @@
       "searchTitle": "Caesars Palace 2000",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Caesars Palace 2000\",\"platform\":\"Playstation\",\"edition\":\"White Label\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Caesars Palace 2000\",\"platform\":\"Playstation\",\"edition\":\"White Label\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0073",
@@ -4228,7 +3381,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Vanishing Point\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Vanishing Point\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0082",
@@ -4245,7 +3399,8 @@
       "searchTitle": "Euro Demo 92",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Euro Demo 92\",\"platform\":\"Playstation\",\"edition\":\"Demo / Spanish\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Euro Demo 92\",\"platform\":\"Playstation\",\"edition\":\"Demo / Spanish\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0086",
@@ -4268,7 +3423,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Dalmatians 2\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Dalmatians 2\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-0087",
@@ -4285,7 +3441,8 @@
       "searchTitle": "Advanced Dungeons & Dragons: Iron & Blood – Warriors of Ravenloft",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Advanced Dungeons & Dragons: Iron & Blood – Warriors of Ravenloft\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Advanced Dungeons & Dragons: Iron & Blood – Warriors of Ravenloft\",\"platform\":\"Playstation\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS1-EXTRA-0001",
@@ -4302,7 +3459,8 @@
       "searchTitle": "Ridge Racer Type 4 Collectors Demo",
       "platformId": 10,
       "candidates": [],
-      "inputKey": "{\"title\":\"Ridge Racer Type 4 Collectors Demo\",\"platform\":\"Playstation\",\"edition\":\"Demo\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Ridge Racer Type 4 Collectors Demo\",\"platform\":\"Playstation\",\"edition\":\"Demo\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0001",
@@ -4330,7 +3488,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Project Zero 3\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Project Zero 3\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0002",
@@ -4347,7 +3506,8 @@
       "searchTitle": "Nightmare Before Christmas: Oogie's Revenge",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Nightmare Before Christmas: Oogie's Revenge\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Nightmare Before Christmas: Oogie's Revenge\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0003",
@@ -4370,7 +3530,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Crimson Tears\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Crimson Tears\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0004",
@@ -4403,7 +3564,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Shadow Of The Colossus\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Shadow Of The Colossus\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0007",
@@ -4436,7 +3598,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Need For Speed Underground 2\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Need For Speed Underground 2\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0008",
@@ -4459,7 +3622,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"Zone Of The Enders 2nd Runner\",\"platform\":\"Playstation 2\",\"edition\":\"Special Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Zone Of The Enders 2nd Runner\",\"platform\":\"Playstation 2\",\"edition\":\"Special Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0009",
@@ -4482,7 +3646,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Marc Ecko's Getting Up Contents Under Pressure\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Marc Ecko's Getting Up Contents Under Pressure\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0010",
@@ -4505,7 +3670,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Prince Of Persia Trilogy\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Prince Of Persia Trilogy\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0013",
@@ -4522,7 +3688,8 @@
       "searchTitle": "Beyond Good And Evil",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Beyond Good And Evil\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Beyond Good And Evil\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0015",
@@ -4550,7 +3717,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"Need for Speed Most Wanted\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Need for Speed Most Wanted\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0020",
@@ -4567,7 +3735,8 @@
       "searchTitle": "Dragon Ball Z Budokai Tenkaichi 2",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Dragon Ball Z Budokai Tenkaichi 2\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Dragon Ball Z Budokai Tenkaichi 2\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0021",
@@ -4590,7 +3759,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Seven Samurai 20XX\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Seven Samurai 20XX\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0023",
@@ -4613,7 +3783,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Board Games Gallery (10 Games)\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Board Games Gallery (10 Games)\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0024",
@@ -4636,7 +3807,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Worms 4: Mayhem\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Worms 4: Mayhem\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0026",
@@ -4653,7 +3825,8 @@
       "searchTitle": "Final Fantasy VII Dirge Of Cerberus",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Final Fantasy VII Dirge Of Cerberus\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Final Fantasy VII Dirge Of Cerberus\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0030",
@@ -4670,7 +3843,8 @@
       "searchTitle": "Devil May Cry 3",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Devil May Cry 3\",\"platform\":\"Playstation 2\",\"edition\":\"Special Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Devil May Cry 3\",\"platform\":\"Playstation 2\",\"edition\":\"Special Edition\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0032",
@@ -4693,7 +3867,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Yu-Gi-Oh Duelists Of The Roses\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Yu-Gi-Oh Duelists Of The Roses\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0034",
@@ -4716,7 +3891,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Hyper Street Fighter II: The Anniversary Edition\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Hyper Street Fighter II: The Anniversary Edition\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0037",
@@ -4739,7 +3915,8 @@
           "regionId": 4
         }
       ],
-      "inputKey": "{\"title\":\"Kuri Kuri Mix\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Kuri Kuri Mix\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0038",
@@ -4756,7 +3933,8 @@
       "searchTitle": "Jak 3",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Jak 3\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Jak 3\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0041",
@@ -4779,7 +3957,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Tomb Raider Legend\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Tomb Raider Legend\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0047",
@@ -4807,7 +3986,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Future Tactics\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Future Tactics\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0048",
@@ -4824,7 +4004,8 @@
       "searchTitle": "FIFA Street 2",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"FIFA Street 2\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"FIFA Street 2\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0049",
@@ -4852,7 +4033,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Ford Racing 3\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Ford Racing 3\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0051",
@@ -4869,7 +4051,8 @@
       "searchTitle": "WWE Smackdown Vs. Raw 2008",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"WWE Smackdown Vs. Raw 2008\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"WWE Smackdown Vs. Raw 2008\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0052",
@@ -4886,7 +4069,8 @@
       "searchTitle": "Buzz o Grande Quiz",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Buzz o Grande Quiz\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Buzz o Grande Quiz\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0056",
@@ -4903,7 +4087,8 @@
       "searchTitle": "Star Wars: The Force Unleashed",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Star Wars: The Force Unleashed\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Star Wars: The Force Unleashed\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0057",
@@ -4920,7 +4105,8 @@
       "searchTitle": "WWE Smackdown Vs. Raw 2007",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"WWE Smackdown Vs. Raw 2007\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"WWE Smackdown Vs. Raw 2007\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0058",
@@ -4943,7 +4129,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Space Invaders Anniversary\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Space Invaders Anniversary\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0060",
@@ -4966,7 +4153,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Hitman Blood Money\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Hitman Blood Money\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0062",
@@ -4983,7 +4171,8 @@
       "searchTitle": "Formula One 2005",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Formula One 2005\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Formula One 2005\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0063",
@@ -5006,7 +4195,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Pilot Down: Behind Enemy Lines\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pilot Down: Behind Enemy Lines\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0064",
@@ -5023,7 +4213,8 @@
       "searchTitle": "Play It Chess Challenger",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Play It Chess Challenger\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Play It Chess Challenger\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0066",
@@ -5040,7 +4231,8 @@
       "searchTitle": "Splinter Cell",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Splinter Cell\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Splinter Cell\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0069",
@@ -5057,7 +4249,8 @@
       "searchTitle": "FIFA Street",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"FIFA Street\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"FIFA Street\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0073",
@@ -5074,7 +4267,8 @@
       "searchTitle": "Rayman Revolution",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Rayman Revolution\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Rayman Revolution\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0076",
@@ -5102,7 +4296,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"WRC: World Rally Championship\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"WRC: World Rally Championship\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0078",
@@ -5119,7 +4314,8 @@
       "searchTitle": "Dragon Ball Z: Budokai Tenkaichi 3",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Dragon Ball Z: Budokai Tenkaichi 3\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Dragon Ball Z: Budokai Tenkaichi 3\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0079",
@@ -5142,7 +4338,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Jackie Chan Adventures\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Jackie Chan Adventures\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0081",
@@ -5175,7 +4372,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Crash Bandicoot: The Wrath of Cortex\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Crash Bandicoot: The Wrath of Cortex\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0083",
@@ -5203,7 +4401,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Star Wars: The Clone Wars\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Star Wars: The Clone Wars\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0084",
@@ -5226,7 +4425,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Tourist Trophy: The Real Riding Simulator\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Tourist Trophy: The Real Riding Simulator\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0085",
@@ -5249,7 +4449,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Disney's Treasure Planet\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Disney's Treasure Planet\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0086",
@@ -5275,7 +4476,8 @@
         "score": 1570,
         "hasFrontBoxart": false
       },
-      "inputKey": "{\"title\":\"Sonic Unleashed\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Sonic Unleashed\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0087",
@@ -5298,7 +4500,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Taxi Rider\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Taxi Rider\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0088",
@@ -5336,7 +4539,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Choro Q\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Choro Q\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0090",
@@ -5364,7 +4568,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Freak Out\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Freak Out\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0092",
@@ -5397,7 +4602,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"FlatOut\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"FlatOut\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0093",
@@ -5420,7 +4626,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Ace Combat: Distant Thunder\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Ace Combat: Distant Thunder\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0094",
@@ -5437,7 +4644,8 @@
       "searchTitle": "SpongeBob SquarePants: The Movie",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"SpongeBob SquarePants: The Movie\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"SpongeBob SquarePants: The Movie\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0097",
@@ -5460,7 +4668,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Sniper Assault\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Sniper Assault\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0099",
@@ -5477,7 +4686,8 @@
       "searchTitle": "Disney's The Haunted Mansion",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Disney's The Haunted Mansion\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Disney's The Haunted Mansion\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0100",
@@ -5500,7 +4710,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Antz Extreme Racing\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Antz Extreme Racing\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0101",
@@ -5517,7 +4728,8 @@
       "searchTitle": "Winnie the Pooh's Rumbly Tumbly Adventure",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Winnie the Pooh's Rumbly Tumbly Adventure\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Winnie the Pooh's Rumbly Tumbly Adventure\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0102",
@@ -5540,7 +4752,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Guilty Gear X2 Reload\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Guilty Gear X2 Reload\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0104",
@@ -5573,7 +4786,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Sly 3: Honor Among Thieves\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Sly 3: Honor Among Thieves\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0106",
@@ -5590,7 +4804,8 @@
       "searchTitle": "Medal of Honor: Rising Sun",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Medal of Honor: Rising Sun\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Medal of Honor: Rising Sun\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0110",
@@ -5613,7 +4828,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Raging Blades\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Raging Blades\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0111",
@@ -5630,7 +4846,8 @@
       "searchTitle": "The Getaway",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"The Getaway\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"The Getaway\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0115",
@@ -5668,7 +4885,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Teenage Mutant Ninja Turtles\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Teenage Mutant Ninja Turtles\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0119",
@@ -5691,7 +4909,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Heracles: Chariot Racing\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Heracles: Chariot Racing\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0120",
@@ -5729,7 +4948,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Cabela's Dangerous Hunts\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Cabela's Dangerous Hunts\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0123",
@@ -5752,7 +4972,8 @@
           "regionId": 2
         }
       ],
-      "inputKey": "{\"title\":\"Transformers: Revenge of the Fallen\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Transformers: Revenge of the Fallen\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0126",
@@ -5780,7 +5001,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"WRC II Extreme\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"WRC II Extreme\",\"platform\":\"Playstation 2\",\"edition\":\"Platinum\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0127",
@@ -5797,7 +5019,8 @@
       "searchTitle": "Pro Evolution Soccer 2009",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Pro Evolution Soccer 2009\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pro Evolution Soccer 2009\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0128",
@@ -5814,7 +5037,8 @@
       "searchTitle": "Pro Evolution Soccer 2008",
       "platformId": 11,
       "candidates": [],
-      "inputKey": "{\"title\":\"Pro Evolution Soccer 2008\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pro Evolution Soccer 2008\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS2-0129",
@@ -5837,7 +5061,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"LEGO Football Mania\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"LEGO Football Mania\",\"platform\":\"Playstation 2\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PS5-0001",
@@ -5854,7 +5079,8 @@
       "searchTitle": "Class of Heroes 3 Remaster",
       "platformId": 4980,
       "candidates": [],
-      "inputKey": "{\"title\":\"Class of Heroes 3 Remaster\",\"platform\":\"Playstation 5\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Class of Heroes 3 Remaster\",\"platform\":\"Playstation 5\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PSP-0003",
@@ -5882,7 +5108,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Need For Speed: Most Wanted 5-1-0\",\"platform\":\"PSP\",\"edition\":\"Greatest Hits\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Need For Speed: Most Wanted 5-1-0\",\"platform\":\"PSP\",\"edition\":\"Greatest Hits\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PSP-0004",
@@ -5905,7 +5132,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Pirates Of The Caribbean: Dead Man's Chest\",\"platform\":\"PSP\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Pirates Of The Caribbean: Dead Man's Chest\",\"platform\":\"PSP\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PSP-0005",
@@ -5933,7 +5161,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Star Wars: Battlefront II\",\"platform\":\"PSP\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Star Wars: Battlefront II\",\"platform\":\"PSP\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PSP-0006",
@@ -5961,7 +5190,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"WRC: FIA World Rally Championship\",\"platform\":\"PSP\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"WRC: FIA World Rally Championship\",\"platform\":\"PSP\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "PSP-0008",
@@ -5989,7 +5219,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Grand Theft Auto: Chinatown Wars\",\"platform\":\"PSP\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Grand Theft Auto: Chinatown Wars\",\"platform\":\"PSP\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "SNES-0002",
@@ -6012,7 +5243,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Cybernator\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Cybernator\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "SNES-0006",
@@ -6040,7 +5272,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Super Ghouls 'N Ghosts\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Super Ghouls 'N Ghosts\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "SNES-0008",
@@ -6063,7 +5296,8 @@
           "regionId": 1
         }
       ],
-      "inputKey": "{\"title\":\"Street Fighter II: The World Warrior\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Street Fighter II: The World Warrior\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "SNES-0010",
@@ -6086,252 +5320,8 @@
           "regionId": 0
         }
       ],
-      "inputKey": "{\"title\":\"Kick Off 3: European Challenge\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0003",
-      "title": "Mario Sports Mix",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "UKV packaging",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-RMKP-UKV-1; disc RVL-RMKP-EUR-B0; manual RVL-RMKP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Mario Sports Mix",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 2524,
-          "title": "Mario Sports Mix",
-          "regionId": 2
-        },
-        {
-          "id": 121457,
-          "title": "Mario Sports Mix",
-          "regionId": 4
-        }
-      ],
-      "inputKey": "{\"title\":\"Mario Sports Mix\",\"platform\":\"Nintendo Wii\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0005",
-      "title": "Mario & Sonic at the London 2012 Olympic Games",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "POR packaging",
-      "edition": "Standard — yellow case",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-SIIP-POR; disc RVL-SIIP-EUR-B0; manual RVL-SIIP-POR",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Mario & Sonic at the London 2012 Olympic Games",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 8842,
-          "title": "Mario & Sonic at the London 2012 Olympic Games",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Mario & Sonic at the London 2012 Olympic Games\",\"platform\":\"Nintendo Wii\",\"edition\":\"Standard — yellow case\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0006",
-      "title": "Grand Slam Tennis",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "ESP packaging",
-      "edition": "Wii MotionPlus bundle copy",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-R5TP-ESP1T2; disc RVL-R5TP-EUR; manual RVL-R5TP-ESP",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Grand Slam Tennis",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 7643,
-          "title": "Grand Slam Tennis",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Grand Slam Tennis\",\"platform\":\"Nintendo Wii\",\"edition\":\"Wii MotionPlus bundle copy\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0007",
-      "title": "Link's Crossbow Training",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "UKV packaging",
-      "edition": "Wii Zapper bundle copy",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-RZPP-UKV; disc RVL-RZPP-EUR; manual RVL-RZPP-UKV",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Link's Crossbow Training",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 2248,
-          "title": "Link's Crossbow Training",
-          "regionId": 2
-        },
-        {
-          "id": 109900,
-          "title": "Link's Crossbow Training [Wii Zapper Bundle]",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Link's Crossbow Training\",\"platform\":\"Nintendo Wii\",\"edition\":\"Wii Zapper bundle copy\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0010",
-      "title": "Godzilla: Unleashed",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "EUU packaging",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-RGZP-EUU; disc RVL-RGZP-EUR; manual RVL-RGZP-EUU",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Godzilla: Unleashed",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 7642,
-          "title": "Godzilla: Unleashed",
-          "regionId": 1
-        }
-      ],
-      "inputKey": "{\"title\":\"Godzilla: Unleashed\",\"platform\":\"Nintendo Wii\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0013",
-      "title": "Pokémon Battle Revolution",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "PORT packaging",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-RPBP-PORT; disc RVL-RPBP-EUR-B0; manual RVL-RPBP-PORT",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Pokémon Battle Revolution",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 26526,
-          "title": "Pokémon: Battle Revolution",
-          "regionId": 1
-        },
-        {
-          "id": 115608,
-          "title": "Pokémon: Battle Revolution",
-          "regionId": 4
-        }
-      ],
-      "inputKey": "{\"title\":\"Pokémon Battle Revolution\",\"platform\":\"Nintendo Wii\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0014",
-      "title": "Rygar: The Battle of Argus",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "ITA packaging",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-RYGP-ITA; disc RVL-RYGP-EUR; manual RVL-RYGP-ITA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Rygar: The Battle of Argus",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 9154,
-          "title": "Rygar: The Battle of Argus",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Rygar: The Battle of Argus\",\"platform\":\"Nintendo Wii\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0015",
-      "title": "Xenoblade Chronicles",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "EAP packaging",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-SX4P-EAP; disc RVL-SX4P-EUR-E0; manual RVL-SX4P-EAP",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Xenoblade Chronicles",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 6648,
-          "title": "Xenoblade Chronicles",
-          "regionId": 2
-        }
-      ],
-      "inputKey": "{\"title\":\"Xenoblade Chronicles\",\"platform\":\"Nintendo Wii\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WII-0017",
-      "title": "Project Zero 2: Wii Edition",
-      "platform": "Nintendo Wii",
-      "region": "PAL",
-      "language": "EAP packaging",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "cover RVL-SL2P-EAP; disc RVL-SL2P-EUR-B0; manual RVL-SL2P-EAP",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Project Zero 2: Wii Edition",
-      "platformId": 9,
-      "candidates": [
-        {
-          "id": 25017,
-          "title": "Project Zero 2: Wii Edition",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Project Zero 2: Wii Edition\",\"platform\":\"Nintendo Wii\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "WIIU-0001",
-      "title": "One Piece: Unlimited World Red",
-      "platform": "Nintendo Wii U",
-      "region": "PAL",
-      "language": "Spanish / Portuguese / Italian packaging",
-      "edition": "Standard — Straw Hat Edition code insert present",
-      "keepStatus": "Collection",
-      "productCode": "cover TSA-WUP-AUNP-EUR; disc WUP-P-AUNP-EUR-0; inserts WUP-AUNP-EUR-R + WUP-AUNP-EUR-R2",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "One Piece: Unlimited World Red",
-      "platformId": 38,
-      "candidates": [
-        {
-          "id": 21458,
-          "title": "One Piece: Unlimited World Red",
-          "regionId": 9
-        }
-      ],
-      "inputKey": "{\"title\":\"One Piece: Unlimited World Red\",\"platform\":\"Nintendo Wii U\",\"edition\":\"Standard — Straw Hat Edition code insert present\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+      "inputKey": "{\"title\":\"Kick Off 3: European Challenge\",\"platform\":\"SNES\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     }
   ]
 }

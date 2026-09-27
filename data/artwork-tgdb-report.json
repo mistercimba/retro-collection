@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T09:58:36.426Z",
+  "generatedAt": "2026-09-27T10:23:08.684Z",
   "source": "thegamesdb",
   "region": {
     "id": 6,
@@ -9,8 +9,8 @@
   "matched": 250,
   "missing": 266,
   "reused": 250,
-  "apiLookups": 11,
-  "remainingMonthlyAllowance": 210,
+  "apiLookups": 0,
+  "remainingMonthlyAllowance": 206,
   "platformMapping": {
     "Nintendo 3DS": {
       "id": 4912,
