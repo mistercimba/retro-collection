@@ -17,7 +17,7 @@
     "sourcePage": "https://www.ebay.co.uk/itm/316840410442",
     "sourceImage": "https://i.ebayimg.com/images/g/IuoAAOSw8qVoLcKk/s-l400.jpg"
   },
-  "_importerVersion": 5,
+  "_importerVersion": 6,
   "GBC-0052": {
     "title": "The Hunt for Red October",
     "platform": "Game Boy",
@@ -92,5 +92,61 @@
     "sourcePage": "https://www.vgcollect.com/item/122709",
     "evidencePage": "https://crimson-ceremony.net/demopals/eurodemo/?img=bnl051",
     "sourceImage": "https://vgcollect.com/images/front-box-art/122709.jpg"
+  },
+  "PC-0010": {
+    "title": "Ms. Pac-Man Quest For The Golden Maze",
+    "platform": "PC",
+    "region": "PAL",
+    "type": "cover",
+    "sourcePage": "https://gamesdb.launchbox-app.com/games/images/90214-ms-pac-man-quest-for-the-golden-maze",
+    "sourceImage": "https://images.launchbox-app.com/8aabcdf5-ac17-4ea7-97fa-0bceab288958.png"
+  },
+  "PC-0014": {
+    "title": "The Sims 2: Freetime",
+    "platform": "PC",
+    "region": "PAL",
+    "type": "cover",
+    "sourcePage": "https://strategywiki.org/wiki/The_Sims_2%3A_FreeTime",
+    "sourceImage": "https://cdn.wikimg.net/en/strategywiki/images/7/76/The_Sims_2_FreeTime_Box_Art.jpg"
+  },
+  "PC-0015": {
+    "title": "The Sims 2: Glamor Life Stuff",
+    "platform": "PC",
+    "region": "PAL",
+    "type": "cover",
+    "sourcePage": "https://www.tradera.com/item/3011/697798164/the-sims-glamour-life-stuff-pc",
+    "sourceImage": "https://img.tradera.net/images/915/618648915_c764b659-2acd-44e3-808e-ba39bdd881e2.jpg"
+  },
+  "PC-0016": {
+    "title": "The Sims 2: Nightlife",
+    "platform": "PC",
+    "region": "PAL",
+    "type": "cover",
+    "sourcePage": "https://uk.webuy.com/product-detail/?id=5030930045364",
+    "sourceImage": "https://uk.static.webuy.com/product_images/Gaming/PC%20Games/5030930045364_l.jpg"
+  },
+  "PC-0017": {
+    "title": "The Sims 2: Nightlife",
+    "platform": "PC",
+    "region": "PAL",
+    "type": "cover",
+    "sourcePage": "https://uk.webuy.com/product-detail/?id=5030930045364",
+    "sourceImage": "https://uk.static.webuy.com/product_images/Gaming/PC%20Games/5030930045364_l.jpg"
+  },
+  "PC-0018": {
+    "title": "The Sims 2: Open for Business",
+    "platform": "PC",
+    "region": "PAL",
+    "type": "cover",
+    "sourcePage": "https://www.simsnetwork.com/simpedia/the-sims-2/expansion-packs/the-sims-2-open-for-business",
+    "sourceImage": "https://www.simsnetwork.com/sites/simsnetwork.com/files/styles/snw/public/simpedia/box-arts/ts2-ep3-box.jpg?itok=oB5CjTlY"
+  },
+  "PC-0023": {
+    "title": "World of Warcraft Battle Chest",
+    "platform": "PC",
+    "region": "PAL",
+    "type": "cover",
+    "sourcePage": "https://www.arukereso.hu/jatekprogram-c3255/blizzard-entertainment/world-of-warcraft-battle-chest-pc-p329400609/",
+    "sourceImage": "https://p1.akcdn.net/full/381152063.blizzard-entertainment-world-of-warcraft-battle-chest-pc.jpg"
   }
 }
