@@ -17,7 +17,7 @@
     "sourcePage": "https://www.ebay.co.uk/itm/316840410442",
     "sourceImage": "https://i.ebayimg.com/images/g/IuoAAOSw8qVoLcKk/s-l400.jpg"
   },
-  "_importerVersion": 4,
+  "_importerVersion": 5,
   "GBC-0052": {
     "title": "The Hunt for Red October",
     "platform": "Game Boy",
@@ -72,5 +72,25 @@
     "type": "cartridge",
     "sourcePage": "https://www.ricardo.ch/de/a/gameboy-game-watch-gallery-2-1241675664/",
     "sourceImage": "https://img.ricardostatic.ch/images/329a825d-78d7-4b74-b105-8cf87eee684b/t_1000x750/gameboy-gamewatch-gallery-2"
+  },
+  "NES-0007": {
+    "title": "Tom & Jerry: The Ultimate Game of Cat and Mouse!",
+    "platform": "NES",
+    "region": "PAL-B",
+    "serial": "NES-5Y-NOE",
+    "type": "cover",
+    "sourcePage": "https://www.ebay.com/itm/296595413538",
+    "evidencePage": "https://nescartdb.com/missing",
+    "sourceImage": "https://image.konsolenkost.de/item/images/1028023/full/1028023-0.jpg"
+  },
+  "PS1-0082": {
+    "title": "Euro Demo 92",
+    "platform": "Playstation",
+    "region": "PAL",
+    "serial": "SCED-04016",
+    "type": "cover",
+    "sourcePage": "https://www.vgcollect.com/item/122709",
+    "evidencePage": "https://crimson-ceremony.net/demopals/eurodemo/?img=bnl051",
+    "sourceImage": "https://vgcollect.com/images/front-box-art/122709.jpg"
   }
 }
