@@ -1,0 +1,40 @@
+name: Import LaunchBox fallback artwork
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/import-launchbox-fallback.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: artwork-import-main
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Import exact-title Europe box fronts
+        run: python3 scripts/import-launchbox-fallback.py
+
+      - name: Commit LaunchBox artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/covers src/data/game-artwork.ts data/artwork-missing.json data/artwork-launchbox-report.json
+          if git diff --cached --quiet; then
+            echo "No LaunchBox artwork changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: import LaunchBox PAL fallback artwork"
+          git pull --rebase origin main
+          git push
