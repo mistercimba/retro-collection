@@ -30,3 +30,5 @@ for (const url of coverUrls) {
   const response = await fetch(url, { method: "HEAD", headers: { "User-Agent": "MarioRetroCollection/1.0" } });
   console.log("COVER", url, response.status, response.headers.get("content-type"), response.headers.get("content-length"));
 }
+
+// probe-version: 2
