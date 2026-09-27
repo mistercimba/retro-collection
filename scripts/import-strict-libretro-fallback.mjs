@@ -157,3 +157,5 @@ await fs.writeFile(
 
 console.log(`Strict local libretro fallback covers added: ${Object.keys(entries).length}`);
 console.log(`Total local artwork mappings after merge: ${Object.keys(sorted).length}`);
+
+// importer-version: 2
