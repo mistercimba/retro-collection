@@ -10,6 +10,7 @@ on:
       - "scripts/import-thegamesdb-artwork.mjs"
       - "scripts/import-gametdb-fallback.mjs"
       - "scripts/import-libretro-serial-artwork.mjs"
+      - "scripts/import-libretro-nintendo-serial-artwork.mjs"
   workflow_dispatch:
 
 permissions:
@@ -41,6 +42,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run artwork:sony
 
+      - name: Replace Nintendo artwork with serial-verified PAL covers
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run artwork:nintendo
+
       - name: Show artwork status
         run: npm run artwork:status
 
@@ -48,7 +54,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/covers src/data/game-artwork.ts data/artwork-missing.json data/artwork-tgdb-missing.json data/artwork-tgdb-report.json data/artwork-gametdb-report.json data/artwork-libretro-serial-report.json
+          git add public/covers src/data/game-artwork.ts data/artwork-missing.json data/artwork-tgdb-missing.json data/artwork-tgdb-report.json data/artwork-gametdb-report.json data/artwork-libretro-serial-report.json data/artwork-libretro-nintendo-serial-report.json
           if git diff --cached --quiet; then
             echo "No artwork changes to commit."
             exit 0
