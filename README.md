@@ -154,11 +154,12 @@ Ver `PROJECT_CHECKLIST.md`.
 
 ## Artwork local
 
-As capas dos jogos são ficheiros estáticos do próprio projeto. A aplicação nunca vai procurar capas online durante a navegação.
+As capas dos jogos e as imagens das plataformas são ficheiros estáticos do próprio projeto. A aplicação não procura artwork online durante a navegação.
 
 - Fonte de import inicial: repositórios públicos `libretro-thumbnails`
 - Prioridade: box art PAL/Europe
-- Ficheiro local: `public/covers/<Collection ID>.png`
+- Ficheiro local do jogo: `public/covers/<Collection ID>.png`
+- Imagens locais das consolas: `public/platforms/`
 - Snapshot dos jogos físicos atuais: `data/artwork-games.json`
 - Casos por resolver: `data/artwork-missing.json`
 - Manifesto dos matches: `public/covers/manifest.json`
