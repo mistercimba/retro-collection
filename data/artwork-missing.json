@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:42:54Z",
+  "generatedAt": "2026-09-27T11:45:16Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -10,8 +10,8 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 494,
-  "missing": 22,
+  "matched": 496,
+  "missing": 20,
   "entries": [
     {
       "collectionId": "GBA-0045",
@@ -477,42 +477,6 @@
         }
       ],
       "inputKey": "{\"title\":\"World of Warcraft Battle Chest\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS1-0057",
-      "title": "Oddworld: Abe's Oddysee DEMO",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Demo",
-      "keepStatus": "Collection",
-      "productCode": "Box/disc: SLED-00725",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Oddworld: Abe's Oddysee DEMO",
-      "platformId": 10,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Oddworld: Abe's Oddysee DEMO\",\"platform\":\"Playstation\",\"edition\":\"Demo\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS1-0067",
-      "title": "Winter Releases '98",
-      "platform": "Playstation",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Demo / Rev.1",
-      "keepStatus": "Collection",
-      "productCode": "Disc: SCED-01441#",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Winter Releases '98",
-      "platformId": 10,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Winter Releases '98\",\"platform\":\"Playstation\",\"edition\":\"Demo / Rev.1\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {

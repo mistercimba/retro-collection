@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:42:54Z",
+  "generatedAt": "2026-09-27T11:45:16Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -3976,6 +3976,17 @@
       "sourceImage": "https://psxdatacenter.com/images/hires/P/H/SLES-03663/SLES-03663-F-ALL.jpg",
       "matchScore": 1100
     },
+    "PS1-0057": {
+      "file": "/covers/PS1-0057.jpg",
+      "source": "curated-exact-url",
+      "serial": "SLED-00725",
+      "regionName": "PAL",
+      "mediaType": "disc",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://jojo-funstore.com/products/oddworld-abes-oddysee-demo-ps1-sony-playstation-1-pal-ita-loose-usato",
+      "sourceImage": "https://jojo-funstore.com/cdn/shop/files/oddworld-abe-oddysee-demo-ps1-playstation-1-pal-disco.jpg?v=1712416414",
+      "matchScore": 1200
+    },
     "PS1-0058": {
       "file": "/covers/PS1-0058.png",
       "source": "libretro-redump-serial",
@@ -4095,6 +4106,17 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/master/Named_Boxarts/Tomb%20Raider%20(Europe)%20(EDC).png",
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
+    },
+    "PS1-0067": {
+      "file": "/covers/PS1-0067.jpg",
+      "source": "curated-exact-url",
+      "serial": "SCED-01441",
+      "regionName": "PAL",
+      "mediaType": "disc",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.ebay.co.uk/itm/316840410442",
+      "sourceImage": "https://i.ebayimg.com/images/g/IuoAAOSw8qVoLcKk/s-l400.jpg",
+      "matchScore": 1200
     },
     "PS1-0068": {
       "file": "/covers/PS1-0068.png",
@@ -6680,8 +6702,8 @@
       "matchScore": 1000
     }
   },
-  "matched": 494,
-  "missing": 22,
+  "matched": 496,
+  "missing": 20,
   "reused": 406,
   "apiLookups": 0,
   "remainingMonthlyAllowance": 64,
