@@ -84,12 +84,28 @@ function canonicalTitle(value) {
     .trim();
 }
 
+const ROMAN = new Map([
+  ["i", "1"], ["ii", "2"], ["iii", "3"], ["iv", "4"], ["v", "5"],
+  ["vi", "6"], ["vii", "7"], ["viii", "8"], ["ix", "9"], ["x", "10"],
+]);
+
 function tokenSet(value) {
   return new Set(
     canonicalTitle(value)
       .split(" ")
-      .filter((token) => token.length > 1 && !["and", "of", "for"].includes(token)),
+      .filter((token) =>
+        /^\d+$/.test(token) ||
+        ROMAN.has(token) ||
+        (token.length > 1 && !["and", "of", "for"].includes(token))
+      ),
   );
+}
+
+function numberSignature(value) {
+  return canonicalTitle(value)
+    .split(" ")
+    .filter((token) => /^\d+$/.test(token) || ROMAN.has(token))
+    .map((token) => ROMAN.get(token) ?? token);
 }
 
 function diceCoefficient(a, b) {
@@ -111,6 +127,12 @@ function titleScore(requested, candidate) {
   const a = canonicalTitle(requested);
   const b = canonicalTitle(candidate);
   if (!a || !b) return -Infinity;
+
+  const requestedNumbers = numberSignature(requested);
+  const candidateNumbers = numberSignature(candidate);
+  if (candidateNumbers.some((number) => !requestedNumbers.includes(number))) return -Infinity;
+  if (requestedNumbers.some((number) => !candidateNumbers.includes(number))) return -Infinity;
+
   if (a === b) return 1000;
   if (a.replace(/\s/g, "") === b.replace(/\s/g, "")) return 990;
 
@@ -223,11 +245,18 @@ function parseSerialDat(content) {
   return index;
 }
 
+function isPalSerialComment(comment) {
+  const value = normalize(comment);
+  if (/\b(usa|japan|korea|asia|canada)\b/.test(value)) return false;
+  return /\b(europe|france|germany|spain|italy|australia|netherlands|portugal|sweden|norway|denmark|finland|united kingdom)\b/.test(value);
+}
+
 function chooseSerialIdentity(serialIndex, tokens, game) {
   const candidates = [];
   for (const token of tokens) {
     for (const variant of serialVariants(token)) {
       for (const entry of serialIndex.get(variant) ?? []) {
+        if (!isPalSerialComment(entry.comment)) continue;
         const score = titleScore(game.title, entry.comment);
         if (!Number.isFinite(score)) continue;
         candidates.push({ ...entry, matchedSerial: variant, productCode: token, score });
@@ -284,9 +313,20 @@ function countryPreference(game, filePath) {
   return 25;
 }
 
+function thumbnailIsPhysicalRetail(filePath, game) {
+  const value = normalize(filePath);
+  const edition = normalize(game.edition);
+  const forbidden = ["virtual console", "beta", "demo", "prototype", "proto", "aftermarket", "unl", "not for resale"];
+  for (const term of forbidden) {
+    if (value.includes(term) && !edition.includes(term)) return false;
+  }
+  return true;
+}
+
 function chooseThumbnail(tree, identity, game) {
   const candidates = tree
     .filter(isPalFilename)
+    .filter((filePath) => thumbnailIsPhysicalRetail(filePath, game))
     .map((filePath) => {
       const base = filenameBase(filePath);
       const score = titleScore(identity.comment, base);
@@ -354,6 +394,14 @@ const resolved = [];
 const unresolved = [];
 let added = 0;
 let replaced = 0;
+
+// Revalidate this source from scratch so matcher fixes can remove previously
+// accepted serial-derived artwork instead of pinning a bad match forever.
+for (const game of games) {
+  if (manifest.entries?.[game.collectionId]?.source === "libretro-nintendo-serial") {
+    delete manifest.entries[game.collectionId];
+  }
+}
 
 for (const game of games) {
   const source = SOURCES[game.platform];
