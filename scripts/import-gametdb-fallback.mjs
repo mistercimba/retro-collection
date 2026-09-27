@@ -420,3 +420,5 @@ console.log("");
 console.log(`GameTDB fallback resolved: ${resolved.length}`);
 console.log(`Total local artwork: ${manifest.matched}/${games.length}`);
 console.log(`Still missing: ${unresolved.length}`);
+
+// pipeline-version: 1
