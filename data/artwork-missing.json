@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:46:38Z",
+  "generatedAt": "2026-09-27T11:47:51Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -10,8 +10,8 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 496,
-  "missing": 20,
+  "matched": 498,
+  "missing": 18,
   "entries": [
     {
       "collectionId": "GBA-0045",
@@ -117,30 +117,6 @@
         }
       ],
       "inputKey": "{\"title\":\"Game & Watch Gallery 2\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBC-0052",
-      "title": "The Hunt for Red October",
-      "platform": "Game Boy",
-      "region": "NTSC",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "DMG-HF-USA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Hunt for Red October",
-      "platformId": 4,
-      "candidates": [
-        {
-          "id": 18669,
-          "title": "The Hunt for Red October",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"The Hunt for Red October\",\"platform\":\"Game Boy\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -495,24 +471,6 @@
       "platformId": 10,
       "candidates": [],
       "inputKey": "{\"title\":\"Euro Demo 92\",\"platform\":\"Playstation\",\"edition\":\"Demo / Spanish\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PS5-0001",
-      "title": "Class of Heroes 3 Remaster",
-      "platform": "Playstation 5",
-      "region": "PAL",
-      "language": "English/French/Spanish/Italian/German (EFIGS physical edition)",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "PPSA-26573; EAN 5060690797685",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Class of Heroes 3 Remaster",
-      "platformId": 4980,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Class of Heroes 3 Remaster\",\"platform\":\"Playstation 5\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     }
   ]

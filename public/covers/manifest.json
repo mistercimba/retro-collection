@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:46:38Z",
+  "generatedAt": "2026-09-27T11:47:51Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -1676,6 +1676,17 @@
       "sourceImage": "https://images.launchbox-app.com/86fbf1c4-e7e0-4ab4-b129-4a34f7985582.jpg",
       "matchScore": 1140,
       "matchedBy": "exact-title-platform-pal-region"
+    },
+    "GBC-0052": {
+      "file": "/covers/GBC-0052.jpg",
+      "source": "curated-exact-url",
+      "serial": "DMG-HF-USA",
+      "regionName": "NTSC",
+      "mediaType": "cartridge",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://gbhwdb.gekkio.fi/cartridges/DMG-HFE-0/gekkio-1.html",
+      "sourceImage": "https://gbhwdb.gekkio.fi/static/DMG-HFE-0/gekkio-1_01_front.jpg",
+      "matchScore": 1200
     },
     "GBC-0053": {
       "file": "/covers/GBC-0053.png",
@@ -6065,6 +6076,17 @@
       "nameScore": 1000,
       "fingerprint": "80ebd1f94e68e52a"
     },
+    "PS5-0001": {
+      "file": "/covers/PS5-0001.jpg",
+      "source": "curated-exact-url",
+      "serial": "PPSA-26573",
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.ldlc.com/fiche/PB00685536.html",
+      "sourceImage": "https://media.ldlc.com/r1600/mktp/product/productImage/250523/120/3b691aa8ff12476abb27b565734eeed1.webp",
+      "matchScore": 1200
+    },
     "PSP-0002": {
       "file": "/covers/PSP-0002.jpg",
       "source": "thegamesdb",
@@ -6702,8 +6724,8 @@
       "matchScore": 1000
     }
   },
-  "matched": 496,
-  "missing": 20,
+  "matched": 498,
+  "missing": 18,
   "reused": 406,
   "apiLookups": 0,
   "remainingMonthlyAllowance": 64,
