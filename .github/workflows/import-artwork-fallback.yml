@@ -1,0 +1,43 @@
+name: Import strict PAL fallback artwork
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/import-libretro-pal-fallback.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Import strict PAL fallback artwork
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/import-libretro-pal-fallback.mjs
+
+      - name: Commit fallback artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/covers src/data/game-artwork.ts data/artwork-missing.json data/artwork-libretro-fallback-report.json
+          if git diff --cached --quiet; then
+            echo "No fallback artwork changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: import strict PAL fallback artwork"
+          git pull --rebase origin main
+          git push
