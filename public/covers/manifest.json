@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:52:56Z",
+  "generatedAt": "2026-09-27T11:54:19Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -3036,6 +3036,17 @@
       "nameScore": 1000,
       "fingerprint": "c3d6cc3cb3c37c8b"
     },
+    "NES-0007": {
+      "file": "/covers/NES-0007.jpg",
+      "source": "curated-exact-url",
+      "serial": "NES-5Y-NOE",
+      "regionName": "PAL-B",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.ebay.com/itm/296595413538",
+      "sourceImage": "https://image.konsolenkost.de/item/images/1028023/full/1028023-0.jpg",
+      "matchScore": 1200
+    },
     "NES-0008": {
       "file": "/covers/NES-0008.jpg",
       "source": "thegamesdb",
@@ -3278,6 +3289,17 @@
       "titleScore": 952,
       "matchedBy": "high-confidence-title-platform-pal-region"
     },
+    "PC-0010": {
+      "file": "/covers/PC-0010.jpg",
+      "source": "curated-exact-url",
+      "serial": null,
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://gamesdb.launchbox-app.com/games/images/90214-ms-pac-man-quest-for-the-golden-maze",
+      "sourceImage": "https://images.launchbox-app.com/8aabcdf5-ac17-4ea7-97fa-0bceab288958.png",
+      "matchScore": 1200
+    },
     "PC-0011": {
       "file": "/covers/PC-0011.jpg",
       "source": "thegamesdb",
@@ -3327,6 +3349,61 @@
       "matchScore": 1100,
       "titleScore": 1000,
       "matchedBy": "high-confidence-title-platform-pal-region"
+    },
+    "PC-0014": {
+      "file": "/covers/PC-0014.jpg",
+      "source": "curated-exact-url",
+      "serial": null,
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://strategywiki.org/wiki/The_Sims_2%3A_FreeTime",
+      "sourceImage": "https://cdn.wikimg.net/en/strategywiki/images/7/76/The_Sims_2_FreeTime_Box_Art.jpg",
+      "matchScore": 1200
+    },
+    "PC-0015": {
+      "file": "/covers/PC-0015.jpg",
+      "source": "curated-exact-url",
+      "serial": null,
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.tradera.com/item/3011/697798164/the-sims-glamour-life-stuff-pc",
+      "sourceImage": "https://img.tradera.net/images/915/618648915_c764b659-2acd-44e3-808e-ba39bdd881e2.jpg",
+      "matchScore": 1200
+    },
+    "PC-0016": {
+      "file": "/covers/PC-0016.jpg",
+      "source": "curated-exact-url",
+      "serial": null,
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://uk.webuy.com/product-detail/?id=5030930045364",
+      "sourceImage": "https://uk.static.webuy.com/product_images/Gaming/PC%20Games/5030930045364_l.jpg",
+      "matchScore": 1200
+    },
+    "PC-0017": {
+      "file": "/covers/PC-0017.jpg",
+      "source": "curated-exact-url",
+      "serial": null,
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://uk.webuy.com/product-detail/?id=5030930045364",
+      "sourceImage": "https://uk.static.webuy.com/product_images/Gaming/PC%20Games/5030930045364_l.jpg",
+      "matchScore": 1200
+    },
+    "PC-0018": {
+      "file": "/covers/PC-0018.jpg",
+      "source": "curated-exact-url",
+      "serial": null,
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.simsnetwork.com/simpedia/the-sims-2/expansion-packs/the-sims-2-open-for-business",
+      "sourceImage": "https://www.simsnetwork.com/sites/simsnetwork.com/files/styles/snw/public/simpedia/box-arts/ts2-ep3-box.jpg?itok=oB5CjTlY",
+      "matchScore": 1200
     },
     "PC-0019": {
       "file": "/covers/PC-0019.png",
@@ -3380,6 +3457,17 @@
       "matchScore": 1105,
       "titleScore": 1000,
       "matchedBy": "high-confidence-title-platform-pal-region"
+    },
+    "PC-0023": {
+      "file": "/covers/PC-0023.jpg",
+      "source": "curated-exact-url",
+      "serial": null,
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.arukereso.hu/jatekprogram-c3255/blizzard-entertainment/world-of-warcraft-battle-chest-pc-p329400609/",
+      "sourceImage": "https://p1.akcdn.net/full/381152063.blizzard-entertainment-world-of-warcraft-battle-chest-pc.jpg",
+      "matchScore": 1200
     },
     "PS1-0001": {
       "file": "/covers/PS1-0001.png",
@@ -4417,6 +4505,17 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/master/Named_Boxarts/Mickey's%20Wild%20Adventure%20(Europe)%20(EDC).png",
       "matchedBy": "physical-serial-redump",
       "matchScore": 1045
+    },
+    "PS1-0082": {
+      "file": "/covers/PS1-0082.jpg",
+      "source": "curated-exact-url",
+      "serial": "SCED-04016",
+      "regionName": "PAL",
+      "mediaType": "cover",
+      "matchedBy": "manual-exact-serial-verification",
+      "sourcePage": "https://www.vgcollect.com/item/122709",
+      "sourceImage": "https://vgcollect.com/images/front-box-art/122709.jpg",
+      "matchScore": 1200
     },
     "PS1-0083": {
       "file": "/covers/PS1-0083.png",
@@ -6838,8 +6937,8 @@
       "matchScore": 1000
     }
   },
-  "matched": 507,
-  "missing": 9,
+  "matched": 516,
+  "missing": 0,
   "reused": 406,
   "apiLookups": 0,
   "remainingMonthlyAllowance": 64,
