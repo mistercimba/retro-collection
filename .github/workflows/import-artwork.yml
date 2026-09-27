@@ -11,6 +11,7 @@ on:
       - "scripts/import-gametdb-fallback.mjs"
       - "scripts/import-libretro-serial-artwork.mjs"
       - "scripts/import-libretro-nintendo-serial-artwork.mjs"
+      - "scripts/import-strict-libretro-fallback.mjs"
   workflow_dispatch:
 
 permissions:
