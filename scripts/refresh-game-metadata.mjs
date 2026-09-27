@@ -47,7 +47,7 @@ async function readCollectionWorkbook() {
 
   const auth = new GoogleAuth({
     credentials: { client_email: email, private_key: privateKey },
-    scopes: ["https://www.googleapis.com/auth/drive.readonly"],
+    scopes: ["https://www.googleapis.com/auth/drive.readonly", "https://www.googleapis.com/auth/spreadsheets.readonly"],
   });
   const client = await auth.getClient();
   const { token } = await client.getAccessToken();
@@ -56,14 +56,28 @@ async function readCollectionWorkbook() {
   const metaResponse = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}?fields=mimeType,name`, { headers: { Authorization: `Bearer ${token}` } });
   if (!metaResponse.ok) throw new Error(`Google Drive respondeu ${metaResponse.status} ao ler os metadados do workbook.`);
   const meta = await metaResponse.json();
-  if (meta.mimeType !== "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
-    throw new Error(`O ficheiro ${meta.name ?? fileId} não é um .xlsx. Esta atualização de metadata exige o workbook identificado.`);
-  }
-  const fileResponse = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`, { headers: { Authorization: `Bearer ${token}` } });
-  if (!fileResponse.ok) throw new Error(`Google Drive respondeu ${fileResponse.status} ao descarregar o workbook.`);
-
   const workbook = new ExcelJS.Workbook();
-  await workbook.xlsx.load(Buffer.from(await fileResponse.arrayBuffer()));
+  if (meta.mimeType === "application/vnd.google-apps.spreadsheet") {
+    const sheetsResponse = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${fileId}?fields=sheets.properties.title`, { headers: { Authorization: `Bearer ${token}` } });
+    if (!sheetsResponse.ok) throw new Error(`Google Sheets respondeu ${sheetsResponse.status} ao listar os separadores.`);
+    const sheetNames = (await sheetsResponse.json()).sheets?.map((sheet) => sheet.properties?.title).filter(Boolean) ?? [];
+    const wanted = sheetNames.filter((name) => ["COLLECTION", "GB", "GBC"].includes(name));
+    if (!wanted.includes("COLLECTION")) throw new Error("A Google Sheet não contém o separador COLLECTION.");
+    await Promise.all(wanted.map(async (name) => {
+      const range = name === "COLLECTION" ? "A1:Z1200" : "A1:Z300";
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${fileId}/values/${encodeURIComponent(`'${name}'!${range}`)}?majorDimension=ROWS`;
+      const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+      if (!response.ok) throw new Error(`Google Sheets respondeu ${response.status} ao ler ${name}.`);
+      const rows = (await response.json()).values ?? [];
+      workbook.addWorksheet(name).addRows(rows);
+    }));
+  } else if (meta.mimeType === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
+    const fileResponse = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`, { headers: { Authorization: `Bearer ${token}` } });
+    if (!fileResponse.ok) throw new Error(`Google Drive respondeu ${fileResponse.status} ao descarregar o workbook.`);
+    await workbook.xlsx.load(Buffer.from(await fileResponse.arrayBuffer()));
+  } else {
+    throw new Error(`Formato de workbook não suportado para refresh de metadata (${meta.mimeType ?? "desconhecido"}).`);
+  }
   const sheet = workbook.getWorksheet("COLLECTION");
   if (!sheet) throw new Error("O workbook não contém o separador COLLECTION.");
   const rows = [];

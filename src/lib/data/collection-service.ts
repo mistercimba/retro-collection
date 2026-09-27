@@ -19,8 +19,12 @@ export async function getCollectionGames(): Promise<CollectionGame[]> {
   return (await getAllGames()).filter((game) => game.keepStatus === "Collection");
 }
 
-export async function getSellGames(): Promise<CollectionGame[]> {
-  return (await getAllGames()).filter((game) => game.keepStatus === "Sell");
+export async function getSellAndSoldGames(): Promise<{ forSale: CollectionGame[]; sold: CollectionGame[] }> {
+  const games = await getAllGames();
+  return {
+    forSale: games.filter((game) => game.keepStatus === "Sell"),
+    sold: games.filter((game) => game.keepStatus === "Sold"),
+  };
 }
 
 export async function getGame(collectionId: string): Promise<CollectionGame | null> {
@@ -66,9 +70,10 @@ export async function getStats(): Promise<CollectionStats> {
 export async function getWantlist(): Promise<WantListEntry[]> {
   const [raw, games] = await Promise.all([getDataProvider().read(), getAllGames()]);
   const kept = games.filter((game) => game.keepStatus === "Collection");
-  const priorityOrder: Record<string, number> = { Alta: 0, Média: 1, Baixa: 2, Grail: 3 };
+  const priorityOrder: Record<string, number> = { grail: 0, alta: 0, média: 1, media: 1, baixa: 2 };
   return (raw.wantlist ?? []).map((target) => ({ ...target, ...matchWantTarget(target, kept) })).sort((a, b) =>
-    (priorityOrder[a.priority] ?? 4) - (priorityOrder[b.priority] ?? 4) ||
+    (priorityOrder[a.priority.trim().toLocaleLowerCase("pt-PT")] ?? 3) - (priorityOrder[b.priority.trim().toLocaleLowerCase("pt-PT")] ?? 3) ||
+    Number(b.priceCeilingEur !== null) - Number(a.priceCeilingEur !== null) ||
     a.platform.localeCompare(b.platform, "pt-PT") ||
     a.title.localeCompare(b.title, "pt-PT"),
   );

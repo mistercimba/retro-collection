@@ -32,12 +32,12 @@ export default async function HomePage() {
   const nextTargets = targets.filter((target) => target.planState !== "inactive" && target.matchState !== "acquired").slice(0, 3);
 
   return (
-    <div className="space-y-10 pb-8 sm:space-y-14">
+    <div className="space-y-7 pb-8 sm:space-y-14">
       <section className="archive-hero relative isolate overflow-hidden rounded-[2rem] text-white shadow-[0_24px_70px_-35px_rgba(14,27,45,.75)]">
         <div className="archive-hero-glow" aria-hidden="true" />
         <div className="relative grid gap-8 px-5 py-7 sm:px-9 sm:py-9 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-12 lg:py-12">
           <div className="relative z-20">
-            <div className="mb-7 flex flex-wrap items-center gap-2">
+            <div className="mb-4 flex flex-wrap items-center gap-2 sm:mb-7">
               <span className="archive-eyebrow"><Sparkles className="h-3.5 w-3.5" /> O ARQUIVO DO MÁRIO</span>
               {mode === "google" ? (
                 <span className="data-badge"><span className="live-dot" /> SHEET LIGADA</span>
@@ -45,15 +45,16 @@ export default async function HomePage() {
                 <span className="data-badge data-badge-demo">DADOS DE DEMONSTRAÇÃO</span>
               )}
             </div>
-            <h1 className="max-w-[14ch] text-[2.75rem] font-black leading-[.98] tracking-[-.055em] sm:text-6xl xl:text-7xl">
+            <h1 className="max-w-[14ch] text-[2.05rem] font-black leading-[1] tracking-[-.055em] sm:text-6xl xl:text-7xl">
               Cada jogo tem uma <span className="text-[#d5f36a]">história.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-sm leading-6 text-white/70 sm:text-base sm:leading-7">
+            <p className="mt-3 max-w-xl text-xs leading-5 text-white/70 sm:mt-5 sm:text-base sm:leading-7">
               Uma casa para a coleção que foste construindo: o que já encontraste, o que queres completar e o que ainda anda à procura de prateleira.
             </p>
-            <div className="mt-7 max-w-2xl"><QuickSearch games={games} /></div>
+            <div className="mt-4 max-w-2xl sm:mt-7"><QuickSearch games={games} /></div>
             <div className="mt-4 flex flex-wrap gap-2">
               <Link href="/collection" className="hero-action hero-action-primary"><LibraryBig className="h-4 w-4" /> Explorar coleção <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="/collection/games" className="hero-action hero-action-secondary">Todos os jogos</Link>
               <Link href="/want" className="hero-action hero-action-secondary"><Heart className="h-4 w-4" /> À procura</Link>
             </div>
           </div>
@@ -117,7 +118,7 @@ export default async function HomePage() {
             <div><p className="text-5xl font-black tracking-[-.06em] text-slate-950">{stats.review}</p><p className="mt-1 text-sm font-medium text-slate-500">registos assinalados na coleção</p></div>
             <span className="round-arrow"><ArrowUpRight className="h-5 w-5" /></span>
           </div>
-          <p className="mt-6 border-t border-slate-100 pt-4 text-sm font-bold text-slate-700">Abre a coleção e filtra os itens a rever <ArrowRight className="ml-1 inline h-4 w-4 transition-transform group-hover:translate-x-1" /></p>
+          <p className="mt-6 border-t border-slate-100 pt-4 text-sm font-bold text-slate-700">Abre a biblioteca e consulta os jogos da coleção <ArrowRight className="ml-1 inline h-4 w-4 transition-transform group-hover:translate-x-1" /></p>
         </Link>
       </section>
 

@@ -7,6 +7,8 @@ const CATALOG_PATH = "data/reference/pricecharting-pal-catalog.json";
 
 export type PriceEstimate = { value: number | null; source: string; date: string; basis: string; productUrl: string };
 
+const unavailable = (source: string): PriceEstimate => ({ value: null, source, date: "", basis: "", productUrl: "" });
+
 async function getCatalog(): Promise<PricechartingCatalog | null> {
   const token = process.env.PRICECHARTING_CATALOG_GITHUB_TOKEN;
   if (!token) return null;
@@ -14,11 +16,7 @@ async function getCatalog(): Promise<PricechartingCatalog | null> {
   const url = `https://api.github.com/repos/${CATALOG_REPOSITORY}/contents/${CATALOG_PATH}?ref=${encodeURIComponent(ref)}`;
   try {
     const response = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/vnd.github.raw+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
+      headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github.raw+json", "X-GitHub-Api-Version": "2022-11-28" },
       next: { revalidate: 3600 },
     });
     if (!response.ok) return null;
@@ -30,27 +28,67 @@ async function getCatalog(): Promise<PricechartingCatalog | null> {
   }
 }
 
-export async function getPricechartingEstimate(game: CollectionGame): Promise<PriceEstimate> {
-  if (!process.env.PRICECHARTING_CATALOG_GITHUB_TOKEN) {
-    return { value: null, source: "Catálogo PriceCharting não configurado", date: "", basis: "", productUrl: "" };
-  }
-  const catalog = await getCatalog();
-  if (!catalog) return { value: null, source: "Snapshot PriceCharting indisponível", date: "", basis: "", productUrl: "" };
-  const match = lookupPalPricechartingMatch(catalog, game.platform, game.title, game.edition);
-  if (!match) return { value: null, source: "Sem correspondência PAL única", date: "", basis: "", productUrl: "" };
-  const condition = estimateCondition(game);
-  if (!condition) return { value: null, source: "Condição/completude da cópia insuficiente", date: "", basis: "", productUrl: match.product.pricechartingUrl ?? "" };
-  const usd = selectSnapshotPrice(match.product, condition.label);
-  if (usd === null) return { value: null, source: `Preço ${condition.label} indisponível no snapshot`, date: String(match.product.scrapedAt ?? "").slice(0, 10), basis: condition.label, productUrl: match.product.pricechartingUrl ?? "" };
+async function getEcbRate() {
+  const response = await fetch("https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=1&format=csvdata", { next: { revalidate: 86400 } }).catch(() => null);
+  return response?.ok ? parseEcbUsdEur(await response.text()) : null;
+}
 
-  const fxResponse = await fetch("https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=1&format=csvdata", { next: { revalidate: 86400 } }).catch(() => null);
-  const fx = fxResponse?.ok ? parseEcbUsdEur(await fxResponse.text()) : null;
-  if (!fx) return { value: null, source: "Taxa USD/EUR do BCE indisponível", date: String(match.product.scrapedAt ?? "").slice(0, 10), basis: condition.label, productUrl: match.product.pricechartingUrl ?? "" };
-  return {
-    value: Math.round((usd / fx.rate) * 100) / 100,
-    source: "Catálogo PAL do PriceCharting · BCE",
-    date: String(match.product.scrapedAt ?? "").slice(0, 10),
-    basis: condition.label,
-    productUrl: String(match.product.pricechartingUrl ?? ""),
-  };
+/** Read each external snapshot once, then match every collection copy locally. */
+export async function getPricechartingEstimates(games: CollectionGame[]): Promise<Map<string, PriceEstimate>> {
+  const results = new Map<string, PriceEstimate>();
+  const token = process.env.PRICECHARTING_CATALOG_GITHUB_TOKEN;
+  if (!token) {
+    for (const game of games) results.set(game.collectionId, unavailable("Catálogo PriceCharting não configurado"));
+    return results;
+  }
+
+  const catalog = await getCatalog();
+  if (!catalog) {
+    for (const game of games) results.set(game.collectionId, unavailable("Snapshot PriceCharting indisponível"));
+    return results;
+  }
+
+  const pending: { game: CollectionGame; product: NonNullable<ReturnType<typeof lookupPalPricechartingMatch>>["product"]; basis: string; usd: number }[] = [];
+  for (const game of games) {
+    const match = lookupPalPricechartingMatch(catalog, game.platform, game.title, game.edition);
+    if (!match) {
+      results.set(game.collectionId, unavailable("Sem correspondência PAL única"));
+      continue;
+    }
+    const condition = estimateCondition(game);
+    if (!condition) {
+      results.set(game.collectionId, { value: null, source: "Condição/completude da cópia insuficiente", date: "", basis: "", productUrl: match.product.pricechartingUrl ?? "" });
+      continue;
+    }
+    const usd = selectSnapshotPrice(match.product, condition.label);
+    const date = String(match.product.scrapedAt ?? "").slice(0, 10);
+    if (usd === null) {
+      results.set(game.collectionId, { value: null, source: `Preço ${condition.label} indisponível no snapshot`, date, basis: condition.label, productUrl: match.product.pricechartingUrl ?? "" });
+      continue;
+    }
+    pending.push({ game, product: match.product, basis: condition.label, usd });
+  }
+
+  if (!pending.length) return results;
+  const fx = await getEcbRate();
+  for (const { game, product, basis, usd } of pending) {
+    results.set(game.collectionId, fx ? {
+      value: Math.round((usd / fx.rate) * 100) / 100,
+      source: "Catálogo PAL do PriceCharting · BCE",
+      date: String(product.scrapedAt ?? "").slice(0, 10),
+      basis,
+      productUrl: String(product.pricechartingUrl ?? ""),
+    } : {
+      value: null,
+      source: "Taxa USD/EUR do BCE indisponível",
+      date: String(product.scrapedAt ?? "").slice(0, 10),
+      basis,
+      productUrl: String(product.pricechartingUrl ?? ""),
+    });
+  }
+  return results;
+}
+
+export async function getPricechartingEstimate(game: CollectionGame): Promise<PriceEstimate> {
+  return (await getPricechartingEstimates([game])).get(game.collectionId) ?? unavailable("Estimativa indisponível");
 }

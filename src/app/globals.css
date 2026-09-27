@@ -116,13 +116,19 @@ button, input, select { font: inherit; }
 .want-ambiguous-badge { display: inline-flex; align-items: center; border-radius: 999px; border: 1px solid #f2d08b; background: #fff5d9; padding: .32rem .55rem; color: #865812; font-size: .65rem; font-weight: 900; letter-spacing: .04em; }
 
 @media (max-width: 639px) {
-  .archive-hero .cover-display { min-height: 17rem; max-width: 23rem; }
+  .archive-hero { border-radius: 1.35rem; }
+  .archive-hero > div:nth-child(2) { gap: .9rem; padding: 1.1rem 1rem; }
+  .archive-hero .cover-display { display: none; }
+  .archive-hero > div:last-child > div { padding: .7rem .85rem; }
+  .archive-hero > div:last-child p:first-child { font-size: 1.1rem; }
+  .archive-hero > div:last-child p:last-child { font-size: .55rem; }
   .cover-display-card { width: 34%; }
   .archive-bottom-card { align-items: flex-start; flex-wrap: wrap; }
   .archive-bottom-card .hero-action { width: 100%; }
   .want-hero { padding: 1.25rem; }
   .market-link-grid { grid-template-columns: 1fr; }
   .market-link-grid-compact { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .section-title { font-size: 1.35rem; }
 }
 
 ::selection { background: #bfdbfe; color: #172554; }
