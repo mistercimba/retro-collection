@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { displayPlatform } from "@/lib/data/platforms";
 
 function initials(value: string) {
@@ -30,11 +30,8 @@ function ArtworkFrame({
   imageClassName: string;
   eager?: boolean;
 }) {
-  const [failed, setFailed] = useState(false);
-
-  useEffect(() => {
-    setFailed(false);
-  }, [src]);
+  const [failedSrc, setFailedSrc] = useState<string | null>(null);
+  const failed = failedSrc === src;
 
   return (
     <div className={`relative ${className}`}>
@@ -53,7 +50,7 @@ function ArtworkFrame({
           alt={alt}
           loading={eager ? "eager" : "lazy"}
           decoding="async"
-          onError={() => setFailed(true)}
+          onError={() => setFailedSrc(src)}
           className={imageClassName}
         />
       )}
