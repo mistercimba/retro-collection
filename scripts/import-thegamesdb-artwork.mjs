@@ -15,7 +15,8 @@ const GAMES_FILE = path.join(ROOT, "data", "artwork-games.json");
 const OVERRIDES_FILE = path.join(ROOT, "data", "artwork-overrides.json");
 const COVERS_DIR = path.join(ROOT, "public", "covers");
 const MANIFEST_FILE = path.join(COVERS_DIR, "manifest.json");
-const MISSING_FILE = path.join(ROOT, "data", "artwork-missing.json");
+const TGDB_MISSING_FILE = path.join(ROOT, "data", "artwork-tgdb-missing.json");
+const FINAL_MISSING_FILE = path.join(ROOT, "data", "artwork-missing.json");
 const REPORT_FILE = path.join(ROOT, "data", "artwork-tgdb-report.json");
 const GENERATED_MODULE = path.join(ROOT, "src", "data", "game-artwork.ts");
 
@@ -436,7 +437,7 @@ await fs.mkdir(COVERS_DIR, { recursive: true });
 const games = await readJsonIfExists(GAMES_FILE, []);
 const overrides = await readJsonIfExists(OVERRIDES_FILE, {});
 const existingManifest = await readJsonIfExists(MANIFEST_FILE, { entries: {} });
-const existingMissingFile = await readJsonIfExists(MISSING_FILE, { entries: [] });
+const existingMissingFile = await readJsonIfExists(TGDB_MISSING_FILE, { entries: [] });
 
 const [limitPayload, regionsPayload, countriesPayload, platformsPayload] = await Promise.all([
   apiGet("/v1/API/Limit"),
@@ -461,10 +462,21 @@ for (const localPlatform of [...new Set(games.map((game) => game.platform))]) {
 }
 
 const reusable = new Map();
-if (!FORCE && existingManifest?.source === "thegamesdb") {
+const preservedFallback = new Map();
+for (const game of games) {
+  const entry = existingManifest.entries?.[game.collectionId];
+  if (!entry?.file || entry.source === "thegamesdb") continue;
+  try {
+    await fs.access(path.join(ROOT, "public", entry.file.replace(/^\//, "")));
+    preservedFallback.set(game.collectionId, entry);
+  } catch {}
+}
+
+if (!FORCE) {
   for (const game of games) {
     const override = overrides[game.collectionId] ?? null;
     const entry = existingManifest.entries?.[game.collectionId];
+    if (!entry || (entry.source && entry.source !== "thegamesdb")) continue;
     if (!entry || entry.fingerprint !== fingerprint(game, override) || !entry.file) continue;
     const platform = platformMap.get(game.platform);
     const stillValid =
@@ -516,12 +528,13 @@ console.log(`Games: ${games.length}; API lookups needed: ${uniqueQueries.size}; 
 
 const manifest = {
   generatedAt: new Date().toISOString(),
-  source: "thegamesdb",
+  source: "local-artwork",
+  sources: ["thegamesdb", ...(preservedFallback.size ? ["gametdb"] : [])],
   sourceUrl: "https://thegamesdb.net",
   regionPolicy: "PAL-Europe",
   region: { id: Number(europeRegion.id), name: String(europeRegion.name ?? "Europe") },
   totalOwnedGames: games.length,
-  entries: {},
+  entries: Object.fromEntries(preservedFallback),
 };
 
 const missing = [];
@@ -717,9 +730,7 @@ const artworkMap = Object.fromEntries(
 );
 
 await fs.writeFile(MANIFEST_FILE, JSON.stringify(manifest, null, 2) + "\n");
-await fs.writeFile(
-  MISSING_FILE,
-  JSON.stringify({
+const tgdbMissingText = JSON.stringify({
     generatedAt: manifest.generatedAt,
     source: "thegamesdb",
     regionPolicy: manifest.regionPolicy,
@@ -727,8 +738,10 @@ await fs.writeFile(
     matched,
     missing: missingOutput.length,
     entries: missingOutput,
-  }, null, 2) + "\n",
-);
+  }, null, 2) + "\n";
+
+await fs.writeFile(TGDB_MISSING_FILE, tgdbMissingText);
+await fs.writeFile(FINAL_MISSING_FILE, tgdbMissingText);
 await fs.writeFile(
   REPORT_FILE,
   JSON.stringify({
