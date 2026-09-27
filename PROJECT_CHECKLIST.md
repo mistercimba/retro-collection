@@ -21,8 +21,9 @@
 
 - [x] GitHub Actions passou (lint, testes e build de produção) no commit histórico `8fd3085`.
 - [x] Vercel ficou **READY** no commit histórico `8fd3085`.
-- [x] Artwork local completo no `main`: **516/516** jogos com capa, 0 em falta, conforme `data/artwork-missing.json` e `public/covers/manifest.json` no commit `2a3b3eb`.
-- [ ] Revalidar o deploy atual: o check Vercel do commit `2a3b3eb` falhou por limite de builds (`build-rate-limit`).
+- [x] O snapshot local mapeia capas para **516/516** jogos e tem 0 ficheiros em falta.
+- [ ] Fechar a auditoria regional: o manifesto atual ainda tem uma capa NTSC em `GBC-0052`. Este PR passa a usar a caixa PAL/NOE confirmada e permite substituir a imagem existente; confirmar o manifesto e o ficheiro gerados pelo workflow depois do merge.
+- [ ] Revalidar o deploy de produção de `main`: o check Vercel do commit `2a3b3eb` falhou por limite de builds (`build-rate-limit`). O check Vercel passou na branch deste PR.
 - [ ] Confirmar o provider e os dados no deploy atual. Há documentação contraditória: confirmação histórica de `provider: google` via `/api/health` e uma indicação no README de modo mock/demo.
 
 ## Próximo — qualidade de dados e UX
