@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "check": "npm run lint && npm run test && npm run build",
-    "artwork:import": "node scripts/import-local-artwork.mjs",
+    "artwork:import": "node scripts/import-thegamesdb-artwork.mjs",
     "artwork:status": "node scripts/artwork-status.mjs"
   },
   "dependencies": {
