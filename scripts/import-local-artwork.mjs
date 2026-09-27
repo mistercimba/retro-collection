@@ -176,19 +176,34 @@ async function githubJson(apiPath) {
   };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
-  const response = await fetch(`https://api.github.com${apiPath}`, { headers });
-  if (!response.ok) throw new Error(`GitHub API ${response.status}: ${apiPath}`);
-  return response.json();
+  let lastStatus = 0;
+  for (let attempt = 1; attempt <= 4; attempt += 1) {
+    const response = await fetch(`https://api.github.com${apiPath}`, { headers });
+    lastStatus = response.status;
+    if (response.ok) return response.json();
+    if (![500, 502, 503, 504].includes(response.status) || attempt === 4) {
+      throw new Error(`GitHub API ${response.status}: ${apiPath}`);
+    }
+    await new Promise((resolve) => setTimeout(resolve, attempt * 1500));
+  }
+  throw new Error(`GitHub API ${lastStatus}: ${apiPath}`);
 }
 
 async function loadBoxartTree(repoName) {
-  const payload = await githubJson(`/repos/libretro-thumbnails/${repoName}/git/trees/master?recursive=1`);
+  // Query only the Named_Boxarts subtree. Asking GitHub for the recursive
+  // repository root of very large systems (PS1/PS2) can return 500/truncated trees.
+  const root = await githubJson(`/repos/libretro-thumbnails/${repoName}/git/trees/master`);
+  const boxartRoot = (root.tree ?? []).find((entry) => entry.type === "tree" && entry.path === "Named_Boxarts");
+  if (!boxartRoot?.sha) throw new Error(`Named_Boxarts tree not found for ${repoName}`);
+
+  const payload = await githubJson(`/repos/libretro-thumbnails/${repoName}/git/trees/${boxartRoot.sha}?recursive=1`);
   if (payload.truncated) {
-    throw new Error(`GitHub tree for ${repoName} was truncated; refusing to guess artwork.`);
+    throw new Error(`Named_Boxarts tree for ${repoName} was truncated; refusing to guess artwork.`);
   }
+
   return (payload.tree ?? [])
-    .filter((entry) => entry.type === "blob" && entry.path?.startsWith("Named_Boxarts/") && entry.path.endsWith(".png"))
-    .map((entry) => entry.path);
+    .filter((entry) => entry.type === "blob" && entry.path?.endsWith(".png"))
+    .map((entry) => `Named_Boxarts/${entry.path}`);
 }
 
 function rawUrl(repoName, filePath) {
