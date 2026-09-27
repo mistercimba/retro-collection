@@ -16,7 +16,8 @@
     "artwork:import": "node scripts/import-thegamesdb-artwork.mjs",
     "artwork:status": "node scripts/artwork-status.mjs",
     "artwork:fallback": "node scripts/import-gametdb-fallback.mjs",
-    "artwork:sony": "node scripts/import-libretro-serial-artwork.mjs"
+    "artwork:sony": "node scripts/import-libretro-serial-artwork.mjs",
+    "artwork:nintendo": "node scripts/import-libretro-nintendo-serial-artwork.mjs"
   },
   "dependencies": {
     "google-auth-library": "11.1.0",
