@@ -32,15 +32,15 @@ export function resolveCollectionPlatform(collectionId, platform, overrides = {}
 }
 
 export function resolveIGDBMatch(title, platform, candidates, platformIds) {
-  const exact = findIGDBTitleCandidates(title, candidates, platformIds[platform]);
-  const onPlatform = exact.filter((candidate) => candidate.platforms?.some((entry) => entry.id === platformIds[platform]));
+  const titleMatches = findIGDBTitleCandidates(title, candidates, platformIds[platform]);
+  const onPlatform = titleMatches.filter((candidate) => candidate.platforms?.some((entry) => entry.id === platformIds[platform]));
   if (onPlatform.length === 1) return { status: "matched", candidate: onPlatform[0], candidates: onPlatform };
-  if (onPlatform.length > 1) return { status: "ambiguous", candidate: null, candidates: onPlatform, reason: "multiple-exact-platform-matches" };
+  if (onPlatform.length > 1) return { status: "ambiguous", candidate: null, candidates: onPlatform, reason: "multiple-title-platform-matches" };
   return {
     status: "unmatched",
     candidate: null,
-    candidates: exact,
-    reason: exact.length ? "exact-title-platform-mismatch" : "no-exact-match",
+    candidates: titleMatches,
+    reason: titleMatches.length ? "title-platform-mismatch" : "no-title-match",
   };
 }
 

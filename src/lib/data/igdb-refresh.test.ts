@@ -16,7 +16,7 @@ describe("IGDB matching and snapshot replacement", () => {
   });
 
   it("marks multiple exact platform matches ambiguous", () => {
-    expect(resolveIGDBMatch("Example Game", "NES", [candidate(1, "Example Game"), candidate(2, "Example Game")], platformIds).status).toBe("ambiguous");
+    expect(resolveIGDBMatch("Example Game", "NES", [candidate(1, "Example Game"), candidate(2, "Example Game")], platformIds)).toMatchObject({ status: "ambiguous", reason: "multiple-title-platform-matches" });
   });
 
   it("marks no exact platform match unmatched", () => {
@@ -25,24 +25,24 @@ describe("IGDB matching and snapshot replacement", () => {
 
   it("matches spacing variants only when the compact title and platform identify one candidate", () => {
     expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(3, "ChoroQ", 8)], platformIds)).toMatchObject({ status: "matched", candidate: { id: 3 } });
-    expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(3, "ChoroQ", 4)], platformIds)).toMatchObject({ status: "unmatched", reason: "exact-title-platform-mismatch" });
+    expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(3, "ChoroQ", 4)], platformIds)).toMatchObject({ status: "unmatched", reason: "title-platform-mismatch" });
     expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(7, "Choro Q", 18), candidate(8, "ChoroQ", 8)], platformIds)).toMatchObject({ status: "matched", candidate: { id: 8 } });
   });
 
   it("does not turn compact-key collisions or longer related titles into automatic matches", () => {
     const collision = resolveIGDBMatch("A BC", "Playstation 2", [candidate(4, "AB C", 8), candidate(5, "A B C", 8)], platformIds);
-    expect(collision).toMatchObject({ status: "ambiguous", reason: "multiple-exact-platform-matches" });
+    expect(collision).toMatchObject({ status: "ambiguous", reason: "multiple-title-platform-matches" });
     expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(6, "ChoroQ HG 4", 8)], platformIds).status).toBe("unmatched");
   });
 
   it("rebuilds entries so stale metadata is replaced by explicit ambiguous/unmatched states", () => {
     const previousSnapshot = { COPY: { matchStatus: "matched", aggregatedRating: 99 }, REMOVED: { matchStatus: "matched" } };
     const nextSnapshot = buildGameMetadataSnapshot([
-      { collectionIds: ["COPY"], result: { status: "ambiguous", candidate: null, reason: "multiple-exact-platform-matches", candidates: [candidate(1, "Example Game"), candidate(2, "Example Game")] }, refreshedAt: "2026-09-27" },
+      { collectionIds: ["COPY"], result: { status: "ambiguous", candidate: null, reason: "multiple-title-platform-matches", candidates: [candidate(1, "Example Game"), candidate(2, "Example Game")] }, refreshedAt: "2026-09-27" },
       { collectionIds: ["NEW"], result: { status: "unmatched", candidate: null, reason: "no-exact-match", candidates: [] }, refreshedAt: "2026-09-27" },
     ]);
     expect(previousSnapshot.COPY.aggregatedRating).toBe(99);
-    expect(nextSnapshot.COPY).toMatchObject({ source: "IGDB", matchStatus: "ambiguous", matchReason: "multiple-exact-platform-matches" });
+    expect(nextSnapshot.COPY).toMatchObject({ source: "IGDB", matchStatus: "ambiguous", matchReason: "multiple-title-platform-matches" });
     expect(nextSnapshot.COPY).not.toHaveProperty("aggregatedRating");
     expect(nextSnapshot.NEW).toMatchObject({ matchStatus: "unmatched", matchReason: "no-exact-match" });
     expect(nextSnapshot).not.toHaveProperty("REMOVED");
