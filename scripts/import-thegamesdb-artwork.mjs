@@ -717,7 +717,11 @@ manifest.reused = reusedCount;
 manifest.apiLookups = apiLookups;
 manifest.remainingMonthlyAllowance = lastAllowance;
 
-const referencedFiles = new Set(Object.values(manifest.entries).map((entry) => path.basename(entry.file)));
+const fallbackManifest = await readJsonIfExists(path.join(COVERS_DIR, "libretro-fallback-manifest.json"), { entries: {} });
+const referencedFiles = new Set([
+  ...Object.values(manifest.entries).map((entry) => path.basename(entry.file)),
+  ...Object.values(fallbackManifest.entries ?? {}).map((entry) => path.basename(entry.file)),
+]);
 for (const file of await fs.readdir(COVERS_DIR)) {
   if (file === "manifest.json") continue;
   if (!/\.(png|jpe?g|webp)$/i.test(file)) continue;
