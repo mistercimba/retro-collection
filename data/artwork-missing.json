@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T10:45:03.457Z",
+  "generatedAt": "2026-09-27T10:48:24.378Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -9,8 +9,8 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 404,
-  "missing": 112,
+  "matched": 406,
+  "missing": 110,
   "entries": [
     {
       "collectionId": "GBA-0001",
@@ -167,19 +167,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "GBA-0021",
-      "title": "Mario Kart Super Circuit",
-      "platform": "GameBoy Advance",
-      "region": "NTSC",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AMKE-USA",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-local-artwork-after-fallbacks"
-    },
-    {
       "collectionId": "GBA-0025",
       "title": "Yu-Gi-Oh Ultimate Masters Edition",
       "platform": "GameBoy Advance",
@@ -256,19 +243,6 @@
       "candidates": [],
       "inputKey": "{\"title\":\"Lord of the Rings: Return of the King\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "GBA-0034",
-      "title": "Super Mario Advance",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-AMAP-EUR-1",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-local-artwork-after-fallbacks"
     },
     {
       "collectionId": "GBA-0035",
@@ -742,7 +716,18 @@
       "productCode": "DMG-NT-USA",
       "artworkPolicy": "PAL",
       "matcherVersion": 2,
-      "reason": "no-local-artwork-after-fallbacks"
+      "reason": "no-pal-game",
+      "searchTitle": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
+      "platformId": 4,
+      "candidates": [
+        {
+          "id": 6024,
+          "title": "Teenage Mutant Ninja Turtles: Fall of the Foot Clan",
+          "regionId": 2
+        }
+      ],
+      "inputKey": "{\"title\":\"Teenage Mutant Ninja Turtles Fall Of The Foot Clan\",\"platform\":\"Game Boy\",\"edition\":\"USA / Ultra Games Label\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "GBC-0025",
@@ -1144,7 +1129,18 @@
       "productCode": "NUS-NLRP-EUR",
       "artworkPolicy": "PAL",
       "matcherVersion": 2,
-      "reason": "no-local-artwork-after-fallbacks"
+      "reason": "no-pal-game",
+      "searchTitle": "Lode Runner 3D",
+      "platformId": 3,
+      "candidates": [
+        {
+          "id": 1131,
+          "title": "Lode Runner 3-D",
+          "regionId": 1
+        }
+      ],
+      "inputKey": "{\"title\":\"Lode Runner 3D\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "N64-0017",
@@ -1199,7 +1195,12 @@
       "productCode": "NUS-NFWP-EUR",
       "artworkPolicy": "PAL",
       "matcherVersion": 2,
-      "reason": "no-local-artwork-after-fallbacks"
+      "reason": "no-confident-title-match",
+      "searchTitle": "F1 World Grand Prix",
+      "platformId": 3,
+      "candidates": [],
+      "inputKey": "{\"title\":\"F1 World Grand Prix\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
+      "fallbackReason": "gametdb-unsupported-platform"
     },
     {
       "collectionId": "NDS-0030",

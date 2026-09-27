@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-27T10:44:01.415Z",
+  "generatedAt": "2026-09-27T10:47:12.517Z",
   "source": "thegamesdb",
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 408,
-  "missing": 108,
+  "matched": 406,
+  "missing": 110,
   "entries": [
     {
       "collectionId": "GBA-0001",
@@ -268,23 +268,6 @@
         }
       ],
       "inputKey": "{\"title\":\"Spiderman: Mysterio's Menace\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
-    },
-    {
-      "collectionId": "GBA-0042",
-      "title": "Lilo & Stitch 2",
-      "platform": "GameBoy Advance",
-      "region": "PAL",
-      "language": "English",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "AGB-BLSP-EUR-1",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Lilo & Stitch 2",
-      "platformId": 5,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Lilo & Stitch 2\",\"platform\":\"GameBoy Advance\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
       "collectionId": "GBA-0045",
@@ -689,6 +672,29 @@
       "inputKey": "{\"title\":\"Probotector\",\"platform\":\"Game Boy\",\"edition\":\"GPS Variant\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
+      "collectionId": "GBC-0023",
+      "title": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
+      "platform": "Game Boy",
+      "region": "NTSC",
+      "language": "English",
+      "edition": "USA / Ultra Games Label",
+      "keepStatus": "Collection",
+      "productCode": "DMG-NT-USA",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-pal-game",
+      "searchTitle": "Teenage Mutant Ninja Turtles Fall Of The Foot Clan",
+      "platformId": 4,
+      "candidates": [
+        {
+          "id": 6024,
+          "title": "Teenage Mutant Ninja Turtles: Fall of the Foot Clan",
+          "regionId": 2
+        }
+      ],
+      "inputKey": "{\"title\":\"Teenage Mutant Ninja Turtles Fall Of The Foot Clan\",\"platform\":\"Game Boy\",\"edition\":\"USA / Ultra Games Label\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
       "collectionId": "GBC-0025",
       "title": "Harvest Moon",
       "platform": "Game Boy",
@@ -1059,6 +1065,29 @@
       "inputKey": "{\"title\":\"The Hobbit\",\"platform\":\"GameCube\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
+      "collectionId": "N64-0011",
+      "title": "Lode Runner 3D",
+      "platform": "Nintendo 64",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "NUS-NLRP-EUR",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-pal-game",
+      "searchTitle": "Lode Runner 3D",
+      "platformId": 3,
+      "candidates": [
+        {
+          "id": 1131,
+          "title": "Lode Runner 3-D",
+          "regionId": 1
+        }
+      ],
+      "inputKey": "{\"title\":\"Lode Runner 3D\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
       "collectionId": "N64-0017",
       "title": "Pokemon Stadium",
       "platform": "Nintendo 64",
@@ -1097,6 +1126,23 @@
         }
       ],
       "inputKey": "{\"title\":\"007 GoldenEye\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
+    },
+    {
+      "collectionId": "N64-0023",
+      "title": "F1 World Grand Prix",
+      "platform": "Nintendo 64",
+      "region": "PAL",
+      "language": "Unknown",
+      "edition": "Standard",
+      "keepStatus": "Collection",
+      "productCode": "NUS-NFWP-EUR",
+      "artworkPolicy": "PAL",
+      "matcherVersion": 2,
+      "reason": "no-confident-title-match",
+      "searchTitle": "F1 World Grand Prix",
+      "platformId": 3,
+      "candidates": [],
+      "inputKey": "{\"title\":\"F1 World Grand Prix\",\"platform\":\"Nintendo 64\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}"
     },
     {
       "collectionId": "NDS-0030",

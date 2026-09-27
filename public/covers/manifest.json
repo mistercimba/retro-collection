@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T10:45:03.457Z",
+  "generatedAt": "2026-09-27T10:48:24.378Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -473,6 +473,24 @@
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
     },
+    "GBA-0021": {
+      "file": "/covers/GBA-0021.jpg",
+      "source": "thegamesdb",
+      "tgdbGameId": 95441,
+      "tgdbTitle": "Mario Kart: Super Circuit",
+      "matchedName": "Mario Kart: Super Circuit",
+      "platformId": 5,
+      "platformName": "Nintendo Game Boy Advance",
+      "regionId": 6,
+      "regionName": "PAL",
+      "countryId": 18,
+      "countryName": "United Kingdom of Great Britain and Northern Ireland",
+      "imageId": 353939,
+      "sourceImage": "boxart/front/95441-1.jpg",
+      "matchScore": 1590,
+      "nameScore": 1000,
+      "fingerprint": "3223c898ec088447"
+    },
     "GBA-0022": {
       "file": "/covers/GBA-0022.png",
       "source": "libretro-nintendo-serial",
@@ -580,6 +598,24 @@
       "sourceImage": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Final%20Fantasy%20Tactics%20Advance%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
       "matchedBy": "physical-product-code-serial-database",
       "matchScore": 1055
+    },
+    "GBA-0034": {
+      "file": "/covers/GBA-0034.jpg",
+      "source": "thegamesdb",
+      "tgdbGameId": 95436,
+      "tgdbTitle": "Super Mario Advance",
+      "matchedName": "Super Mario Advance",
+      "platformId": 5,
+      "platformName": "Nintendo Game Boy Advance",
+      "regionId": 6,
+      "regionName": "PAL",
+      "countryId": 18,
+      "countryName": "United Kingdom of Great Britain and Northern Ireland",
+      "imageId": 321902,
+      "sourceImage": "boxart/front/95436-1.jpg",
+      "matchScore": 1590,
+      "nameScore": 1000,
+      "fingerprint": "8e508ac0f7fbb7b3"
     },
     "GBA-0036": {
       "file": "/covers/GBA-0036.png",
@@ -5627,9 +5663,9 @@
       "matchScore": 1000
     }
   },
-  "matched": 404,
-  "missing": 112,
-  "reused": 408,
-  "apiLookups": 0,
-  "remainingMonthlyAllowance": 85
+  "matched": 406,
+  "missing": 110,
+  "reused": 404,
+  "apiLookups": 5,
+  "remainingMonthlyAllowance": 74
 }
