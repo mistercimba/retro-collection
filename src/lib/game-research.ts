@@ -4,6 +4,7 @@ import type { CollectionGame } from "@/lib/data/types";
 import { formatPlaytime } from "@/lib/external-game-data.logic";
 import type { MatchedGameMetadata } from "@/lib/game-metadata";
 import { getPricechartingEstimate, type PriceEstimate } from "@/lib/pricecharting-catalog";
+import { findIGDBTitleCandidates } from "../../scripts/igdb-refresh-logic.mjs";
 
 export type Research = {
   metadata: (MatchedGameMetadata & { timeToBeat: { main: string; extras: string; completionist: string } }) | null;
@@ -42,8 +43,8 @@ const getCachedIgdbMetadata = unstable_cache(async (title: string, platformId: n
   if (!token) throw new Error("IGDB token unavailable");
   const escaped = title.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
   const candidates = await igdbRequest<Candidate>("games", `fields id,name,summary,first_release_date,genres.name,game_modes.name,themes.name,player_perspectives.name,aggregated_rating,aggregated_rating_count,rating,rating_count,platforms.id,involved_companies.developer,involved_companies.publisher,involved_companies.company.name; search "${escaped}"; limit 25;`, token, clientId);
-  const exact = candidates.filter((candidate) => candidate.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() === title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim());
-  const matches = exact.filter((candidate) => candidate.platforms?.some((entry) => entry.id === platformId));
+  const titleMatches = findIGDBTitleCandidates(title, candidates, platformId);
+  const matches = titleMatches.filter((candidate) => candidate.platforms?.some((entry) => entry.id === platformId));
   if (matches.length !== 1) return { metadata: null, metadataState: matches.length > 1 ? "ambiguous" as const : "unmatched" as const };
   const candidate = matches[0];
   const times = await igdbRequest<{ hastily?: number; normally?: number; completely?: number }>("game_time_to_beats", `fields hastily,normally,completely; where game_id = ${candidate.id}; limit 1;`, token, clientId);
@@ -76,7 +77,7 @@ async function loadMetascore(game: CollectionGame) {
   const platformNames: Record<string, string[]> = { Playstation: ["PlayStation"], "Playstation 2": ["PlayStation 2"], "Playstation 3": ["PlayStation 3"], "Playstation 5": ["PlayStation 5"], "Nintendo Switch": ["Nintendo Switch"], "Nintendo Wii": ["Wii"], "Nintendo Wii U": ["Wii U"], PC: ["PC"] };
   const aliases = platformNames[game.platform];
   if (!aliases) return { value: null, source: "Metascore indisponível para esta plataforma", url: "" };
-  const results = (payload.results ?? []).filter((item) => item.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() === game.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim());
+  const results = findIGDBTitleCandidates(game.title, payload.results ?? []);
   if (results.length !== 1) return { value: null, source: "Metascore não disponível para correspondência segura", url: "" };
   const platformScores = (results[0].metacritic_platforms ?? []).filter((entry) => aliases.includes(entry.platform.name));
   if (platformScores.length !== 1 || !platformScores[0].metascore) return { value: null, source: "Metascore não disponível para esta plataforma", url: "" };

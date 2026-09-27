@@ -34,7 +34,7 @@ export default async function GamePage({ params }: { params: Promise<{ collectio
     <section aria-label="Resumo do jogo" className="grid grid-cols-2 gap-2 sm:grid-cols-4">
       <Metric icon={<BadgeEuro />} label="Valor estimado" value={research.estimate.value === null ? "Não disponível" : formatEuro(research.estimate.value)} detail={research.estimate.basis ? `${research.estimate.basis} · ${research.estimate.date || "snapshot"}` : "PriceCharting PAL"} />
       <Metric icon={<Star />} label="Metascore" value={research.metascore.value === null ? "Não disponível" : `${research.metascore.value}/100`} detail={research.metascore.value === null ? "RAWG / Metacritic" : "RAWG / Metacritic"} />
-      <Metric icon={<Clock3 />} label="Main Story" value={metadata?.timeToBeat?.main || "Não disponível"} detail="HowLongToBeat via IGDB" />
+      <Metric icon={<Clock3 />} label="Main Story" value={metadata?.timeToBeat?.main || "Não disponível"} detail="Playtime · IGDB" />
       <Metric icon={<PackageCheck />} label="A tua avaliação" value="Não registada" detail="Sem avaliação na Sheet" />
     </section>
 

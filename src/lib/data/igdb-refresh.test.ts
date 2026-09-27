@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildGameMetadataSnapshot, resolveCollectionPlatform, resolveIGDBMatch } from "../../../scripts/igdb-refresh-logic.mjs";
 
-const platformIds = { NES: 18 };
+const platformIds = { NES: 18, "Playstation 2": 8, "Nintendo 64": 4 };
 const candidate = (id: number, name: string, platformId = 18) => ({ id, name, platforms: [{ id: platformId, name: "Nintendo Entertainment System" }] });
 
 describe("IGDB matching and snapshot replacement", () => {
@@ -21,6 +21,18 @@ describe("IGDB matching and snapshot replacement", () => {
 
   it("marks no exact platform match unmatched", () => {
     expect(resolveIGDBMatch("Example Game", "NES", [candidate(1, "Different Game")], platformIds).status).toBe("unmatched");
+  });
+
+  it("matches spacing variants only when the compact title and platform identify one candidate", () => {
+    expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(3, "ChoroQ", 8)], platformIds)).toMatchObject({ status: "matched", candidate: { id: 3 } });
+    expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(3, "ChoroQ", 4)], platformIds)).toMatchObject({ status: "unmatched", reason: "exact-title-platform-mismatch" });
+    expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(7, "Choro Q", 18), candidate(8, "ChoroQ", 8)], platformIds)).toMatchObject({ status: "matched", candidate: { id: 8 } });
+  });
+
+  it("does not turn compact-key collisions or longer related titles into automatic matches", () => {
+    const collision = resolveIGDBMatch("A BC", "Playstation 2", [candidate(4, "AB C", 8), candidate(5, "A B C", 8)], platformIds);
+    expect(collision).toMatchObject({ status: "ambiguous", reason: "multiple-exact-platform-matches" });
+    expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(6, "ChoroQ HG 4", 8)], platformIds).status).toBe("unmatched");
   });
 
   it("rebuilds entries so stale metadata is replaced by explicit ambiguous/unmatched states", () => {
