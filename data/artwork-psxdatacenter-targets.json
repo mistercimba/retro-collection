@@ -13,5 +13,23 @@
     "title": "Splinter Cell",
     "image": "https://psxdatacenter.com/psx2/images2/hires/SLES-51466/SLES-51466-F-ALL.jpg"
   },
-  "_importerVersion": 2
+  "_importerVersion": 3,
+  "PS2-0062": {
+    "serial": "SCES-53033",
+    "page": "https://psxdatacenter.com/psx2/images2/hires/SCES-53033/SCES-53033-F-ALL.html",
+    "platform": "Playstation 2",
+    "title": "Formula One 2005"
+  },
+  "PS2-0064": {
+    "serial": "SLES-51630",
+    "page": "https://psxdatacenter.com/psx2/images2/hires/SLES-51630/SLES-51630-F-ALL.html",
+    "platform": "Playstation 2",
+    "title": "Play It Chess Challenger"
+  },
+  "PS2-0129": {
+    "serial": "SLES-50937",
+    "page": "https://psxdatacenter.com/psx2/images2/hires/SLES-50937/SLES-50937-F-ALL.html",
+    "platform": "Playstation 2",
+    "title": "LEGO Football Mania"
+  }
 }
