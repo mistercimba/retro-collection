@@ -3,13 +3,15 @@
     "serial": "SLES-03663",
     "page": "https://psxdatacenter.com/images/hires/P/H/SLES-03663/SLES-03663-F-ALL.html",
     "platform": "Playstation",
-    "title": "Harry Potter e a Pedra Filosofal"
+    "title": "Harry Potter e a Pedra Filosofal",
+    "image": "https://psxdatacenter.com/images/hires/P/H/SLES-03663/SLES-03663-F-ALL.jpg"
   },
   "PS2-0066": {
     "serial": "SLES-51466",
     "page": "https://psxdatacenter.com/psx2/images2/hires/SLES-51466/SLES-51466-F-ALL.html",
     "platform": "Playstation 2",
-    "title": "Splinter Cell"
+    "title": "Splinter Cell",
+    "image": "https://psxdatacenter.com/psx2/images2/hires/SLES-51466/SLES-51466-F-ALL.jpg"
   },
-  "_importerVersion": 1
+  "_importerVersion": 2
 }
