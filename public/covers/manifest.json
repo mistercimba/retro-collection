@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:50:49Z",
+  "generatedAt": "2026-09-27T11:52:56Z",
   "source": "local-artwork",
   "sources": [
     "thegamesdb",
@@ -3182,6 +3182,20 @@
       "nameScore": 1000,
       "fingerprint": "77a57d1b21d12a8e"
     },
+    "PC-0003": {
+      "file": "/covers/PC-0003.png",
+      "source": "launchbox",
+      "launchboxDatabaseId": 861,
+      "launchboxTitle": "Guild Wars 2",
+      "matchedName": "Guild Wars 2",
+      "platformName": "Windows",
+      "regionName": "",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/e3fd15ab-ab82-4cbb-8ab2-76ed41f0b395.png",
+      "matchScore": 1100,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
+    },
     "PC-0004": {
       "file": "/covers/PC-0004.jpg",
       "source": "launchbox",
@@ -3194,6 +3208,34 @@
       "sourceImage": "https://images.launchbox-app.com/r2_7565e128-06c1-4ddb-8b78-01b40c11296c.jpg",
       "matchScore": 1140,
       "matchedBy": "exact-title-platform-pal-region"
+    },
+    "PC-0005": {
+      "file": "/covers/PC-0005.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 3950,
+      "launchboxTitle": "Guild Wars: Eye of the North",
+      "matchedName": "Guild Wars: Eye of the North",
+      "platformName": "Windows",
+      "regionName": "",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/42d006b4-4294-4564-8df6-7f47f477bd68.jpg",
+      "matchScore": 1100,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
+    },
+    "PC-0006": {
+      "file": "/covers/PC-0006.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 3951,
+      "launchboxTitle": "Guild Wars: Factions",
+      "matchedName": "Guild Wars: Factions",
+      "platformName": "Windows",
+      "regionName": "",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/7595e031-9243-4ea0-b260-65a052acc8e8.jpg",
+      "matchScore": 1100,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
     },
     "PC-0007": {
       "file": "/covers/PC-0007.jpg",
@@ -3272,6 +3314,20 @@
       "nameScore": 1000,
       "fingerprint": "0434a3fbae677853"
     },
+    "PC-0013": {
+      "file": "/covers/PC-0013.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 13831,
+      "launchboxTitle": "The Sims 2: Family Fun Stuff",
+      "matchedName": "The Sims 2: Family Fun Stuff",
+      "platformName": "Windows",
+      "regionName": "",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/94186e79-9077-46d4-8b1d-8ef9d1982a33.jpg",
+      "matchScore": 1100,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
+    },
     "PC-0019": {
       "file": "/covers/PC-0019.png",
       "source": "launchbox",
@@ -3310,6 +3366,20 @@
       "sourceImage": "https://images.launchbox-app.com/c83c2a10-fe72-46a6-8702-8c1fdb49145f.jpg",
       "matchScore": 1140,
       "matchedBy": "exact-title-platform-pal-region"
+    },
+    "PC-0022": {
+      "file": "/covers/PC-0022.jpg",
+      "source": "launchbox",
+      "launchboxDatabaseId": 1312,
+      "launchboxTitle": "World of Goo",
+      "matchedName": "World of Goo",
+      "platformName": "Windows",
+      "regionName": "World",
+      "imageType": "Box - Front",
+      "sourceImage": "https://images.launchbox-app.com/62a935de-e1b6-48fe-9e31-d334eef99f59.jpg",
+      "matchScore": 1105,
+      "titleScore": 1000,
+      "matchedBy": "high-confidence-title-platform-pal-region"
     },
     "PS1-0001": {
       "file": "/covers/PS1-0001.png",
@@ -6768,8 +6838,8 @@
       "matchScore": 1000
     }
   },
-  "matched": 502,
-  "missing": 14,
+  "matched": 507,
+  "missing": 9,
   "reused": 406,
   "apiLookups": 0,
   "remainingMonthlyAllowance": 64,

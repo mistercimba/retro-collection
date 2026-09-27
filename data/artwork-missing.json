@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T11:50:49Z",
+  "generatedAt": "2026-09-27T11:52:56Z",
   "source": "local-artwork",
   "sourcesTried": [
     "thegamesdb",
@@ -10,8 +10,8 @@
   ],
   "regionPolicy": "PAL-Europe",
   "totalOwnedGames": 516,
-  "matched": 502,
-  "missing": 14,
+  "matched": 507,
+  "missing": 9,
   "entries": [
     {
       "collectionId": "NES-0007",
@@ -43,72 +43,6 @@
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
-      "collectionId": "PC-0003",
-      "title": "Guild Wars 2",
-      "platform": "PC",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-confident-title-match",
-      "searchTitle": "Guild Wars 2",
-      "platformId": 1,
-      "candidates": [],
-      "inputKey": "{\"title\":\"Guild Wars 2\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PC-0005",
-      "title": "Guild Wars: Eye Of The North",
-      "platform": "PC",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Guild Wars: Eye Of The North",
-      "platformId": 1,
-      "candidates": [
-        {
-          "id": 3950,
-          "title": "Guild Wars: Eye of the North",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Guild Wars: Eye Of The North\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PC-0006",
-      "title": "Guild Wars: Factions",
-      "platform": "PC",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "Guild Wars: Factions",
-      "platformId": 1,
-      "candidates": [
-        {
-          "id": 3951,
-          "title": "Guild Wars Factions",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"Guild Wars: Factions\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
       "collectionId": "PC-0010",
       "title": "Ms. Pac-Man Quest For The Golden Maze",
       "platform": "PC",
@@ -130,30 +64,6 @@
         }
       ],
       "inputKey": "{\"title\":\"Ms. Pac-Man Quest For The Golden Maze\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PC-0013",
-      "title": "The Sims 2: Family Fun Stuff",
-      "platform": "PC",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "The Sims 2: Family Fun Stuff",
-      "platformId": 1,
-      "candidates": [
-        {
-          "id": 13831,
-          "title": "The Sims 2: Family Fun Stuff",
-          "regionId": 0
-        }
-      ],
-      "inputKey": "{\"title\":\"The Sims 2: Family Fun Stuff\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
@@ -279,35 +189,6 @@
         }
       ],
       "inputKey": "{\"title\":\"The Sims 2: Open for Business\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
-      "fallbackReason": "gametdb-unsupported-platform"
-    },
-    {
-      "collectionId": "PC-0022",
-      "title": "World of Goo",
-      "platform": "PC",
-      "region": "PAL",
-      "language": "Unknown",
-      "edition": "Standard",
-      "keepStatus": "Collection",
-      "productCode": "",
-      "artworkPolicy": "PAL",
-      "matcherVersion": 2,
-      "reason": "no-pal-game",
-      "searchTitle": "World of Goo",
-      "platformId": 1,
-      "candidates": [
-        {
-          "id": 1312,
-          "title": "World of Goo",
-          "regionId": 9
-        },
-        {
-          "id": 17432,
-          "title": "World of Zoo",
-          "regionId": 9
-        }
-      ],
-      "inputKey": "{\"title\":\"World of Goo\",\"platform\":\"PC\",\"edition\":\"Standard\",\"regionPolicy\":\"PAL-Europe\",\"override\":null}",
       "fallbackReason": "gametdb-unsupported-platform"
     },
     {
