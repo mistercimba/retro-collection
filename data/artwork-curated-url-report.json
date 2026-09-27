@@ -1,32 +1,17 @@
 {
-  "generatedAt": "2026-09-27T11:45:16Z",
-  "resolved": 2,
+  "generatedAt": "2026-09-27T11:46:38Z",
+  "resolved": 0,
   "remaining": 20,
-  "entries": {
-    "PS1-0057": {
-      "file": "/covers/PS1-0057.jpg",
-      "source": "curated-exact-url",
-      "serial": "SLED-00725",
-      "regionName": "PAL",
-      "mediaType": "disc",
-      "matchedBy": "manual-exact-serial-verification",
-      "sourcePage": "https://jojo-funstore.com/products/oddworld-abes-oddysee-demo-ps1-sony-playstation-1-pal-ita-loose-usato",
-      "sourceImage": "https://jojo-funstore.com/cdn/shop/files/oddworld-abe-oddysee-demo-ps1-playstation-1-pal-disco.jpg?v=1712416414",
-      "matchScore": 1200
-    },
-    "PS1-0067": {
-      "file": "/covers/PS1-0067.jpg",
-      "source": "curated-exact-url",
-      "serial": "SCED-01441",
-      "regionName": "PAL",
-      "mediaType": "disc",
-      "matchedBy": "manual-exact-serial-verification",
-      "sourcePage": "https://www.ebay.co.uk/itm/316840410442",
-      "sourceImage": "https://i.ebayimg.com/images/g/IuoAAOSw8qVoLcKk/s-l400.jpg",
-      "matchScore": 1200
-    }
-  },
+  "entries": {},
   "skipped": [
+    {
+      "collectionId": "PS1-0057",
+      "reason": "already-resolved"
+    },
+    {
+      "collectionId": "PS1-0067",
+      "reason": "already-resolved"
+    },
     {
       "collectionId": "_importerVersion",
       "reason": "not-current-game"
