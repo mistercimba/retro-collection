@@ -4,6 +4,8 @@ import time
 import urllib.request
 from pathlib import Path
 
+from artwork_region_policy import validate_artwork_region
+
 ROOT = Path(__file__).resolve().parents[1]
 TARGETS = ROOT / "data" / "artwork-curated-url-targets.json"
 GAMES = ROOT / "data" / "artwork-games.json"
@@ -44,16 +46,21 @@ for cid,target in targets.items():
         skipped.append({"collectionId":cid,"reason":"not-current-game"})
         continue
     if cid not in missing_ids:
-        skipped.append({"collectionId":cid,"reason":"already-resolved"})
-        continue
+        if not target.get("replaceExisting"):
+            skipped.append({"collectionId":cid,"reason":"already-resolved"})
+            continue
+        if cid not in manifest.get("entries", {}):
+            raise RuntimeError(f"{cid}: replaceExisting requires a current manifest entry")
     if game.get("platform") != target.get("platform"):
         raise RuntimeError(f"{cid}: platform mismatch")
-    target_region = str(target.get("region") or "").upper()
-    game_region = str(game.get("region") or "").upper()
-    if not target_region:
-        raise RuntimeError(f"{cid}: curated target must explicitly declare its region")
-    if game_region and not game_region.startswith(target_region) and not target_region.startswith(game_region):
-        raise RuntimeError(f"{cid}: curated target region {target_region} does not match collection region {game_region}")
+    try:
+        validate_artwork_region(
+            target.get("region"),
+            game.get("region"),
+            game.get("artworkPolicy"),
+        )
+    except ValueError as error:
+        raise RuntimeError(f"{cid}: {error}") from error
 
     ext=".jpg"
     dest=COVERS / f"{cid}{ext}"
@@ -64,9 +71,11 @@ for cid,target in targets.items():
         "file":f"/covers/{cid}{ext}",
         "source":"curated-exact-url",
         "serial":target.get("serial"),
+        "productCode":game.get("productCode"),
         "regionName":target.get("region"),
+        "artworkVariant":target.get("artworkVariant"),
         "mediaType":target.get("type","cover"),
-        "matchedBy":"manual-exact-serial-verification",
+        "matchedBy":"manual-exact-title-platform-region",
         "sourcePage":target["sourcePage"],
         "sourceImage":target["sourceImage"],
         "matchScore":1200
