@@ -266,8 +266,13 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
     candidate_ids = set()
 
     print("Indexing exact title/platform matches...")
-    for event, elem in ET.iterparse(xml_path, events=("end",)):
-        if elem.tag == "Game":
+    depth = 0
+    for event, elem in ET.iterparse(xml_path, events=("start", "end")):
+        if event == "start":
+            depth += 1
+            continue
+
+        if depth == 2 and elem.tag == "Game":
             dbid = elem.findtext("DatabaseID")
             name = elem.findtext("Name") or ""
             platform = elem.findtext("Platform") or ""
@@ -275,25 +280,33 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
                 for local_platform in target_platforms:
                     if not platform_matches(local_platform, platform):
                         continue
-                    if canonical(name) in names_by_platform.get(local_platform, set()) or strip_article(name) in {strip_article(v) for v in names_by_platform.get(local_platform, set())}:
+                    local_names = names_by_platform.get(local_platform, set())
+                    if canonical(name) in local_names or strip_article(name) in {strip_article(v) for v in local_names}:
                         games_meta[dbid] = {"name": name, "platform": platform, "alternates": []}
                         candidate_ids.add(dbid)
                         break
             elem.clear()
-        elif elem.tag == "GameAlternateName":
+        elif depth == 2 and elem.tag == "GameAlternateName":
             dbid = elem.findtext("DatabaseID")
             if dbid in games_meta:
                 alt = elem.findtext("AlternateName") or ""
                 region = elem.findtext("Region") or ""
                 games_meta[dbid]["alternates"].append({"name": alt, "region": region})
             elem.clear()
-        else:
+        elif depth == 2:
             elem.clear()
+
+        depth -= 1
 
     images_by_id = {dbid: [] for dbid in candidate_ids}
     print(f"Indexing Europe/PAL front covers for {len(candidate_ids)} candidate games...")
-    for event, elem in ET.iterparse(xml_path, events=("end",)):
-        if elem.tag == "GameImage":
+    depth = 0
+    for event, elem in ET.iterparse(xml_path, events=("start", "end")):
+        if event == "start":
+            depth += 1
+            continue
+
+        if depth == 2 and elem.tag == "GameImage":
             dbid = elem.findtext("DatabaseID")
             if dbid in images_by_id:
                 image_type = elem.findtext("Type") or ""
@@ -306,8 +319,10 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
                         "type": image_type,
                     })
             elem.clear()
-        else:
+        elif depth == 2:
             elem.clear()
+
+        depth -= 1
 
     resolved = {}
     review = []
