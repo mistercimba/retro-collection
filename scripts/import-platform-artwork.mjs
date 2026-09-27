@@ -30,13 +30,23 @@ async function resolveImage(title) {
     pilicense: "any",
     titles: title,
   });
-  const response = await fetch(`https://en.wikipedia.org/w/api.php?${params.toString()}`, {
-    headers: { "User-Agent": "MarioRetroCollection-platform-importer" },
-  });
-  if (!response.ok) throw new Error(`Wikipedia API returned ${response.status} for ${title}`);
-  const payload = await response.json();
-  const page = payload.query?.pages?.[0];
-  return page?.thumbnail?.source || page?.original?.source || null;
+
+  for (let attempt = 1; attempt <= 5; attempt += 1) {
+    const response = await fetch(`https://en.wikipedia.org/w/api.php?${params.toString()}`, {
+      headers: { "User-Agent": "MarioRetroCollection-platform-importer/1.0" },
+    });
+    if (response.ok) {
+      const payload = await response.json();
+      const page = payload.query?.pages?.[0];
+      return page?.thumbnail?.source || page?.original?.source || null;
+    }
+    if (response.status !== 429 || attempt === 5) {
+      throw new Error(`Wikipedia API returned ${response.status} for ${title}`);
+    }
+    const retryAfter = Number(response.headers.get("retry-after") ?? 0);
+    await new Promise((resolve) => setTimeout(resolve, Math.max(retryAfter * 1000, attempt * 2000)));
+  }
+  return null;
 }
 
 const mapping = {};
@@ -62,6 +72,7 @@ for (const source of sources) {
   await fs.writeFile(path.join(outDir, `${source.key}.${ext}`), Buffer.from(await response.arrayBuffer()));
   mapping[source.platform] = file;
   console.log(`${source.platform} -> ${file}`);
+  await new Promise((resolve) => setTimeout(resolve, 450));
 }
 
 const moduleText =
