@@ -150,3 +150,24 @@ npm run check
 ## Próximas fases
 
 Ver `PROJECT_CHECKLIST.md`.
+
+
+## Artwork local
+
+As capas dos jogos são ficheiros estáticos do próprio projeto. A aplicação nunca vai procurar capas online durante a navegação.
+
+- Fonte de import inicial: repositórios públicos `libretro-thumbnails`
+- Prioridade: box art PAL/Europe
+- Ficheiro local: `public/covers/<Collection ID>.png`
+- Snapshot dos jogos físicos atuais: `data/artwork-games.json`
+- Casos por resolver: `data/artwork-missing.json`
+- Manifesto dos matches: `public/covers/manifest.json`
+
+Comandos:
+
+```bash
+npm run artwork:import
+npm run artwork:status
+```
+
+O importador é incremental: capas locais existentes são reutilizadas. Uma capa só volta a ser descarregada com `npm run artwork:import -- --force`.
