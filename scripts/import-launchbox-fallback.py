@@ -242,7 +242,11 @@ def region_priority(region, game):
         return 80
     if region_norm == "australia":
         return 70
-    return 60
+    if region_norm == "world":
+        return 55
+    if region_norm == "":
+        return 50
+    return 0
 
 
 def download(url, destination):
@@ -353,7 +357,10 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
                 image_type = elem.findtext("Type") or ""
                 region = elem.findtext("Region") or ""
                 filename = elem.findtext("FileName") or ""
-                if image_type == "Box - Front" and normalize(region) in PAL_REGIONS and filename:
+                region_norm = normalize(region)
+                if image_type == "Box - Front" and filename and (
+                    region_norm in PAL_REGIONS or region_norm in {"world", ""}
+                ):
                     images_by_id[dbid].append({
                         "filename": filename,
                         "region": region,
@@ -396,6 +403,17 @@ with tempfile.TemporaryDirectory(prefix="launchbox-artwork-") as tmp:
                 continue
 
             images = images_by_id.get(dbid, [])
+            if game["platform"] != "PC":
+                images = [image for image in images if normalize(image["region"]) in PAL_REGIONS]
+            else:
+                # PC releases are not PAL/NTSC video standards. Prefer Europe/UK,
+                # then World/unregioned box art, while still requiring an exact
+                # Windows/PC title match.
+                images = [
+                    image for image in images
+                    if normalize(image["region"]) in PAL_REGIONS or normalize(image["region"]) in {"world", ""}
+                ]
+
             if not images:
                 continue
 
