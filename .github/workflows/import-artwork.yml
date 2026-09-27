@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - "data/artwork-games.json"
+      - "data/artwork-overrides.json"
+      - "scripts/import-thegamesdb-artwork.mjs"
   workflow_dispatch:
 
 permissions:
@@ -24,9 +26,9 @@ jobs:
         with:
           node-version: 22
 
-      - name: Import PAL box art
+      - name: Import PAL box art from TheGamesDB
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          THEGAMESDB_API_KEY: ${{ secrets.THEGAMESDB_API_KEY }}
         run: npm run artwork:import
 
       - name: Show artwork status
@@ -36,11 +38,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/covers data/artwork-missing.json
+          git add public/covers src/data/game-artwork.ts data/artwork-missing.json data/artwork-tgdb-report.json
           if git diff --cached --quiet; then
             echo "No artwork changes to commit."
             exit 0
           fi
-          git commit -m "chore: import local PAL game artwork"
+          git commit -m "chore: import local PAL artwork from TheGamesDB"
           git pull --rebase origin main
           git push
