@@ -2,11 +2,10 @@
 
 ## Estado atual
 
-- Produção: `https://retro-collection-mistercimbas-projects.vercel.app`
-- Build Vercel: **READY**
-- GitHub CI: **verde** (lint + tests + build)
-- Dados: **mock/demo** até configurar a integração Google Sheets
-
+- Código em `main`: [`2a3b3eb`](https://github.com/mistercimba/retro-collection/commit/2a3b3eb07349c2249a3f1fb0a8f8dd772b622852).
+- Artwork local: **516/516 jogos com capa** no manifesto deste commit.
+- Deploy: o check Vercel no commit atual falhou por limite de builds (`build-rate-limit`). O último deploy documentado como **READY** é o do commit antigo `8fd3085`; não deve ser tratado como estado atual.
+- Dados de produção: **por confirmar**. O README anterior dizia mock/demo, enquanto a checklist registava uma confirmação histórica de `provider: google` via `/api/health`. Revalidar no deploy atual antes de afirmar que está ligado à Sheet.
 
 Web app/PWA privada e mobile-first para consultar a coleção retro sem abrir o Google Sheets.
 
