@@ -1,0 +1,3739 @@
+{
+  "generatedAt": "2026-09-27T09:18:25.404Z",
+  "source": "libretro-thumbnails",
+  "sourceUrl": "https://github.com/libretro-thumbnails",
+  "totalOwnedGames": 516,
+  "entries": {
+    "3DS-0001": {
+      "file": "/covers/3DS-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Pokemon Alpha Sapphire (Europe) (En,Ja,Fr,De,Es,It,Ko) (Rev 2).png",
+      "matchScore": 1195
+    },
+    "3DS-0002": {
+      "file": "/covers/3DS-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Kid Icarus - Uprising (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "3DS-0003": {
+      "file": "/covers/3DS-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Cave Story 3D (Europe).png",
+      "matchScore": 1195
+    },
+    "3DS-0004": {
+      "file": "/covers/3DS-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Resident Evil - Revelations (Europe) (En,Ja,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "3DS-0005": {
+      "file": "/covers/3DS-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Castlevania - Lords of Shadow - Mirror of Fate (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "3DS-0006": {
+      "file": "/covers/3DS-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Spirit Camera - The Cursed Memoir (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "3DS-0007": {
+      "file": "/covers/3DS-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Pokemon Y (Europe) (En,Ja,Fr,De,Es,It,Ko).png",
+      "matchScore": 1195
+    },
+    "3DS-0008": {
+      "file": "/covers/3DS-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - A Link Between Worlds (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1258
+    },
+    "3DS-0009": {
+      "file": "/covers/3DS-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Pokemon Moon (Europe) (En,Ja,Fr,De,Es,It,Zh,Ko).png",
+      "matchScore": 1160
+    },
+    "3DS-0010": {
+      "file": "/covers/3DS-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Star Fox 64 3D (Europe) (En,Fr,De,Es,It) (Rev 2).png",
+      "matchScore": 1160
+    },
+    "3DS-0011": {
+      "file": "/covers/3DS-0011.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Super Street Fighter IV - 3D Edition (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "3DS-0012": {
+      "file": "/covers/3DS-0012.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/LEGO Star Wars III - The Clone Wars (Europe) (En,Fr,De,Es,It,Da) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "3DS-0013": {
+      "file": "/covers/3DS-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/James Noir's Hollywood Crimes 3D (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1246
+    },
+    "3DS-0014": {
+      "file": "/covers/3DS-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Bravely Second - End Layer (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "3DS-0015": {
+      "file": "/covers/3DS-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Ever Oasis (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1160
+    },
+    "3DS-0016": {
+      "file": "/covers/3DS-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Story of Seasons - Trio of Towns (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "3DS-0017": {
+      "file": "/covers/3DS-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Bella Sara - The Magical Horse Adventures (Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi).png",
+      "matchScore": 1160
+    },
+    "3DS-0018": {
+      "file": "/covers/3DS-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourcePath": "Named_Boxarts/Mario Kart 7 (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "GBA-0001": {
+      "file": "/covers/GBA-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Pokemon - Emerald Version (USA, Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0002": {
+      "file": "/covers/GBA-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Steel Empire (Europe).png",
+      "matchScore": 1195
+    },
+    "GBA-0003": {
+      "file": "/covers/GBA-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Ninja Cop (Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0004": {
+      "file": "/covers/GBA-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Pokemon - FireRed Version (USA, Europe) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "GBA-0005": {
+      "file": "/covers/GBA-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Pokemon - LeafGreen Version (USA, Europe) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "GBA-0006": {
+      "file": "/covers/GBA-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Pokemon - Sapphire Version (USA, Europe) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "GBA-0007": {
+      "file": "/covers/GBA-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Pokemon - Ruby Version (USA, Europe) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "GBA-0008": {
+      "file": "/covers/GBA-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - The Minish Cap (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1175
+    },
+    "GBA-0009": {
+      "file": "/covers/GBA-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Sonic Battle (Europe) (En,Ja,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0010": {
+      "file": "/covers/GBA-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Metroid Fusion (Europe) (En,Fr,De,Es,It) (Virtual Console).png",
+      "matchScore": 1160
+    },
+    "GBA-0013": {
+      "file": "/covers/GBA-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - A Link to the Past _ Four Swords (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1158
+    },
+    "GBA-0014": {
+      "file": "/covers/GBA-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Hello Kitty - Happy Party Pals (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1160
+    },
+    "GBA-0015": {
+      "file": "/covers/GBA-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Phantasy Star Collection (Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0016": {
+      "file": "/covers/GBA-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Kill Switch (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0017": {
+      "file": "/covers/GBA-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Game _ Watch Gallery Advance (Europe) (Virtual Console).png",
+      "matchScore": 1158
+    },
+    "GBA-0018": {
+      "file": "/covers/GBA-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Bubble Bobble - Old _ New (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1157
+    },
+    "GBA-0019": {
+      "file": "/covers/GBA-0019.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Kingdom Hearts - Chain of Memories (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0020": {
+      "file": "/covers/GBA-0020.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Beyblade G-Revolution (Europe) (En,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0021": {
+      "file": "/covers/GBA-0021.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Mario Kart - Super Circuit (Europe) (Virtual Console).png",
+      "matchScore": 1160
+    },
+    "GBA-0022": {
+      "file": "/covers/GBA-0022.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1299
+    },
+    "GBA-0023": {
+      "file": "/covers/GBA-0023.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Golden Sun (USA, Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0024": {
+      "file": "/covers/GBA-0024.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Mario vs. Donkey Kong (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0025": {
+      "file": "/covers/GBA-0025.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Yu-Gi-Oh! - Ultimate Masters Edition - World Championship Tournament 2006 (Europe) (En,Ja,Fr,De,Es,It).png",
+      "matchScore": 1211
+    },
+    "GBA-0026": {
+      "file": "/covers/GBA-0026.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Rocky (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0027": {
+      "file": "/covers/GBA-0027.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Advance Wars (Europe) (En,Fr,De,Es) (Virtual Console).png",
+      "matchScore": 1160
+    },
+    "GBA-0028": {
+      "file": "/covers/GBA-0028.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Barbie and the Magic of Pegasus (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1160
+    },
+    "GBA-0029": {
+      "file": "/covers/GBA-0029.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Wario Land 4 (USA, Europe) (Virtual Console).png",
+      "matchScore": 1160
+    },
+    "GBA-0030": {
+      "file": "/covers/GBA-0030.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Classic NES Series - Excitebike (USA, Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0031": {
+      "file": "/covers/GBA-0031.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Lord of the Rings, The - The Return of the King (USA, Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1169
+    },
+    "GBA-0032": {
+      "file": "/covers/GBA-0032.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/ESPN Winter X-Games Snowboarding 2 (Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0033": {
+      "file": "/covers/GBA-0033.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Final Fantasy Tactics Advance (Europe) (En,Fr,De,Es,It) (Virtual Console).png",
+      "matchScore": 1160
+    },
+    "GBA-0034": {
+      "file": "/covers/GBA-0034.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1292
+    },
+    "GBA-0035": {
+      "file": "/covers/GBA-0035.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Classic NES Series - Donkey Kong (USA, Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0036": {
+      "file": "/covers/GBA-0036.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Sonic Advance (Europe) (En,Ja,Fr,De,Es).png",
+      "matchScore": 1325
+    },
+    "GBA-0037": {
+      "file": "/covers/GBA-0037.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Driver 2 Advance (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "GBA-0038": {
+      "file": "/covers/GBA-0038.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Yu-Gi-Oh! - Dungeon Dice Monsters (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0039": {
+      "file": "/covers/GBA-0039.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Spider-Man - Mysterio's Menace (USA, Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0040": {
+      "file": "/covers/GBA-0040.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Banjo-Kazooie - Grunty's Revenge (Europe) (En,Fr,De).png",
+      "matchScore": 1195
+    },
+    "GBA-0041": {
+      "file": "/covers/GBA-0041.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Lara Croft Tomb Raider - Legend (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1161
+    },
+    "GBA-0042": {
+      "file": "/covers/GBA-0042.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Lilo _ Stitch 2 (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1128
+    },
+    "GBA-0043": {
+      "file": "/covers/GBA-0043.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Star Wars - Episode III - Revenge of the Sith (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1160
+    },
+    "GBA-0044": {
+      "file": "/covers/GBA-0044.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Spyro 2 - Season of Flame (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0045": {
+      "file": "/covers/GBA-0045.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Need for Speed - Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0046": {
+      "file": "/covers/GBA-0046.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Crash _ Spyro Super Pack Volume 2 (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1157
+    },
+    "GBA-0048": {
+      "file": "/covers/GBA-0048.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Top Gear Rally (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0049": {
+      "file": "/covers/GBA-0049.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Spyro Fusion (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0050": {
+      "file": "/covers/GBA-0050.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Mission Impossible - Operation Surma (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0051": {
+      "file": "/covers/GBA-0051.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Starsky _ Hutch (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1132
+    },
+    "GBA-0053": {
+      "file": "/covers/GBA-0053.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Tweety and the Magic Gems (Europe).png",
+      "matchScore": 1160
+    },
+    "GBA-0054": {
+      "file": "/covers/GBA-0054.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/F-Zero - Maximum Velocity (USA, Europe) (Virtual Console).png",
+      "matchScore": 1160
+    },
+    "GBA-0055": {
+      "file": "/covers/GBA-0055.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Atlantis - The Lost Empire (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1162
+    },
+    "GBA-0056": {
+      "file": "/covers/GBA-0056.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Harry Potter and the Chamber of Secrets (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).png",
+      "matchScore": 1160
+    },
+    "GBA-0057": {
+      "file": "/covers/GBA-0057.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Tom and Jerry in Infurnal Escape (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1131
+    },
+    "GBA-0058": {
+      "file": "/covers/GBA-0058.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/James Pond - Codename Robocod (Europe) (En,Fr,De,Es,It,Nl,Pt).png",
+      "matchScore": 1160
+    },
+    "GBA-0059": {
+      "file": "/covers/GBA-0059.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Spyro - Season of Ice (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "GBA-0060": {
+      "file": "/covers/GBA-0060.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Lord of the Rings, The - The Two Towers (USA, Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1174
+    },
+    "GBA-0061": {
+      "file": "/covers/GBA-0061.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Incredibles, The (Europe) (Fr,Nl).png",
+      "matchScore": 1197
+    },
+    "GBA-0062": {
+      "file": "/covers/GBA-0062.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Advance",
+      "sourcePath": "Named_Boxarts/Classic NES Series - The Legend of Zelda (USA, Europe).png",
+      "matchScore": 1057
+    },
+    "GBC-0001": {
+      "file": "/covers/GBC-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Pokemon - Crystal Version (USA, Europe) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "GBC-0002": {
+      "file": "/covers/GBC-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible).png",
+      "matchScore": 1160
+    },
+    "GBC-0003": {
+      "file": "/covers/GBC-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Pokemon - Yellow Version - Special Pikachu Edition (USA, Europe) (CGB+SGB Enhanced).png",
+      "matchScore": 1160
+    },
+    "GBC-0004": {
+      "file": "/covers/GBC-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Oracle of Ages (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1070
+    },
+    "GBC-0006": {
+      "file": "/covers/GBC-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Kirby's Dream Land (USA, Europe).png",
+      "matchScore": 1292
+    },
+    "GBC-0007": {
+      "file": "/covers/GBC-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Pokemon - Red Version (USA, Europe) (SGB Enhanced).png",
+      "matchScore": 1160
+    },
+    "GBC-0008": {
+      "file": "/covers/GBC-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Pokemon - Silver Version (USA, Europe) (SGB Enhanced) (GB Compatible).png",
+      "matchScore": 1160
+    },
+    "GBC-0010": {
+      "file": "/covers/GBC-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Pokemon - Blue Version (USA, Europe) (SGB Enhanced).png",
+      "matchScore": 1160
+    },
+    "GBC-0011": {
+      "file": "/covers/GBC-0011.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Link's Awakening (USA, Europe) (Rev 1).png",
+      "matchScore": 1099
+    },
+    "GBC-0012": {
+      "file": "/covers/GBC-0012.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Kirby's Dream Land 2 (USA, Europe) (SGB Enhanced).png",
+      "matchScore": 1292
+    },
+    "GBC-0013": {
+      "file": "/covers/GBC-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Star Wars - The Empire Strikes Back (USA, Europe).png",
+      "matchScore": 1160
+    },
+    "GBC-0014": {
+      "file": "/covers/GBC-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Super Mario Bros. Deluxe (Europe) (Rev 2).png",
+      "matchScore": 1160
+    },
+    "GBC-0015": {
+      "file": "/covers/GBC-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Boulder Dash (Europe).png",
+      "matchScore": 1160
+    },
+    "GBC-0016": {
+      "file": "/covers/GBC-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Wario Land II (USA, Europe) (SGB Enhanced).png",
+      "matchScore": 1160
+    },
+    "GBC-0017": {
+      "file": "/covers/GBC-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Wario Land 2 (USA, Europe) (SGB Enhanced) (GB Compatible).png",
+      "matchScore": 1153
+    },
+    "GBC-0018": {
+      "file": "/covers/GBC-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Star Trek - 25th Anniversary (USA, Europe).png",
+      "matchScore": 1160
+    },
+    "GBC-0019": {
+      "file": "/covers/GBC-0019.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Gargoyle's Quest (Europe) (Rev 1).png",
+      "matchScore": 1195
+    },
+    "GBC-0020": {
+      "file": "/covers/GBC-0020.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Super Mario Land (World) (Rev 1).png",
+      "matchScore": 1221
+    },
+    "GBC-0021": {
+      "file": "/covers/GBC-0021.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Probotector 2 (Europe) (SGB Enhanced).png",
+      "matchScore": 1289
+    },
+    "GBC-0022": {
+      "file": "/covers/GBC-0022.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Super Mario Land 2 - 6 Golden Coins (USA, Europe) (Rev 1).png",
+      "matchScore": 1171
+    },
+    "GBC-0023": {
+      "file": "/covers/GBC-0023.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Teenage Mutant Hero Turtles - Fall of the Foot Clan (Europe).png",
+      "matchScore": 1043
+    },
+    "GBC-0024": {
+      "file": "/covers/GBC-0024.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Donkey Kong Land (USA, Europe) (SGB Enhanced).png",
+      "matchScore": 1179
+    },
+    "GBC-0026": {
+      "file": "/covers/GBC-0026.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Donkey Kong Land (USA, Europe) (SGB Enhanced).png",
+      "matchScore": 1290
+    },
+    "GBC-0027": {
+      "file": "/covers/GBC-0027.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Pokemon Trading Card Game (Europe) (En,Es,It) (Rev 1) (SGB Enhanced) (GB Compatible).png",
+      "matchScore": 1195
+    },
+    "GBC-0028": {
+      "file": "/covers/GBC-0028.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Donkey Kong Land III (USA, Europe) (Rev 1) (SGB Enhanced).png",
+      "matchScore": 1160
+    },
+    "GBC-0029": {
+      "file": "/covers/GBC-0029.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Bart Simpson's Escape from Camp Deadly (USA, Europe).png",
+      "matchScore": 1195
+    },
+    "GBC-0030": {
+      "file": "/covers/GBC-0030.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Wario Land - Super Mario Land 3 (World).png",
+      "matchScore": 1090
+    },
+    "GBC-0031": {
+      "file": "/covers/GBC-0031.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Harry Potter and the Chamber of Secrets (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,Da).png",
+      "matchScore": 1160
+    },
+    "GBC-0032": {
+      "file": "/covers/GBC-0032.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Pokemon Pinball (Europe) (En,Fr,De,Es,It) (Rumble Version) (SGB Enhanced) (GB Compatible).png",
+      "matchScore": 1195
+    },
+    "GBC-0033": {
+      "file": "/covers/GBC-0033.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Speedy Gonzales - Aztec Adventure (USA, Europe) (GB Compatible).png",
+      "matchScore": 1195
+    },
+    "GBC-0034": {
+      "file": "/covers/GBC-0034.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Barbie - Game Girl (USA, Europe).png",
+      "matchScore": 1160
+    },
+    "GBC-0035": {
+      "file": "/covers/GBC-0035.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Donkey Kong Land 2 (USA, Europe) (SGB Enhanced).png",
+      "matchScore": 1290
+    },
+    "GBC-0036": {
+      "file": "/covers/GBC-0036.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Game _ Watch Gallery 3 (USA, Europe) (SGB Enhanced) (GB Compatible).png",
+      "matchScore": 1144
+    },
+    "GBC-0037": {
+      "file": "/covers/GBC-0037.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Tetris 2 (USA, Europe) (Rev 1) (SGB Enhanced).png",
+      "matchScore": 1313
+    },
+    "GBC-0040": {
+      "file": "/covers/GBC-0040.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Game _ Watch Gallery (Europe) (SGB Enhanced).png",
+      "matchScore": 1135
+    },
+    "GBC-0041": {
+      "file": "/covers/GBC-0041.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Harry Potter and the Sorcerer's Stone (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi).png",
+      "matchScore": 935
+    },
+    "GBC-0042": {
+      "file": "/covers/GBC-0042.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Alleyway (World).png",
+      "matchScore": 1090
+    },
+    "GBC-0043": {
+      "file": "/covers/GBC-0043.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Bugs Bunny - Crazy Castle 3 (USA, Europe) (GB Compatible).png",
+      "matchScore": 1167
+    },
+    "GBC-0044": {
+      "file": "/covers/GBC-0044.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Golden Goal (Europe) (En,Fr,De,Es,It,Nl,Sv) (GB Compatible).png",
+      "matchScore": 1160
+    },
+    "GBC-0045": {
+      "file": "/covers/GBC-0045.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Sylvester _ Tweety - Breakfast on the Run (Europe) (En,Fr,De,Es,It,Nl) (GB Compatible).png",
+      "matchScore": 1195
+    },
+    "GBC-0046": {
+      "file": "/covers/GBC-0046.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Sylvester _ Tweety - Breakfast on the Run (Europe) (En,Fr,De,Es,It,Nl) (GB Compatible).png",
+      "matchScore": 1160
+    },
+    "GBC-0047": {
+      "file": "/covers/GBC-0047.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Laura (Europe) (En,Fr,De,Es,It,Nl,Sv,Da).png",
+      "matchScore": 1160
+    },
+    "GBC-0048": {
+      "file": "/covers/GBC-0048.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Bugs Bunny _ Lola Bunny - Operation Carrot Patch (Europe) (En,Fr,De,Es,It,Nl) (GB Compatible).png",
+      "matchScore": 1197
+    },
+    "GBC-0049": {
+      "file": "/covers/GBC-0049.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Atlantis - The Lost Empire (Europe) (En,Es,It).png",
+      "matchScore": 1195
+    },
+    "GBC-0050": {
+      "file": "/covers/GBC-0050.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Dr. Mario (World) (Rev 1).png",
+      "matchScore": 1090
+    },
+    "GBC-0051": {
+      "file": "/covers/GBC-0051.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Bugs Bunny - Crazy Castle 3 (USA, Europe) (GB Compatible).png",
+      "matchScore": 1160
+    },
+    "GBC-0052": {
+      "file": "/covers/GBC-0052.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy",
+      "sourcePath": "Named_Boxarts/Hunt for Red October, The (USA, Europe).png",
+      "matchScore": 1167
+    },
+    "GBC-0053": {
+      "file": "/covers/GBC-0053.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Oracle of Seasons (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1171
+    },
+    "GC-0001": {
+      "file": "/covers/GC-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Fire Emblem - Path of Radiance (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "GC-0002": {
+      "file": "/covers/GC-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Pokemon Box - Ruby _ Sapphire (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1129
+    },
+    "GC-0003": {
+      "file": "/covers/GC-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Game Boy Player Start-Up Disc (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "GC-0004": {
+      "file": "/covers/GC-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Pokemon Colosseum (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "GC-0005": {
+      "file": "/covers/GC-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - The Wind Waker (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1076
+    },
+    "GC-0006": {
+      "file": "/covers/GC-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Eternal Darkness - Sanity's Requiem (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1149
+    },
+    "GC-0007": {
+      "file": "/covers/GC-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Super Smash Bros. Melee (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "GC-0009": {
+      "file": "/covers/GC-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "GC-0010": {
+      "file": "/covers/GC-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Mario Party 4 (Europe) (En,Fr,De,Es,It) (Rev 2).png",
+      "matchScore": 1195
+    },
+    "GC-0011": {
+      "file": "/covers/GC-0011.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Metroid Prime 2 - Echoes (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1199
+    },
+    "GC-0012": {
+      "file": "/covers/GC-0012.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Super Mario Sunshine (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "GC-0013": {
+      "file": "/covers/GC-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Simpsons, The - Road Rage (Europe) (En,Fr,De).png",
+      "matchScore": 1188
+    },
+    "GC-0015": {
+      "file": "/covers/GC-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Pikmin 2 (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1313
+    },
+    "GC-0016": {
+      "file": "/covers/GC-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Wave Race - Blue Storm (Europe, Australia).png",
+      "matchScore": 1205
+    },
+    "GC-0017": {
+      "file": "/covers/GC-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Super Monkey Ball 2 (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1292
+    },
+    "GC-0018": {
+      "file": "/covers/GC-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_GameCube",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Twilight Princess (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1176
+    },
+    "N64-0001": {
+      "file": "/covers/N64-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Pokemon Stadium (Europe) (Rev 1).png",
+      "matchScore": 1291
+    },
+    "N64-0002": {
+      "file": "/covers/N64-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Majora's Mask (Europe) (En,Fr,De,Es) (Rev 1) (Debug).png",
+      "matchScore": 1165
+    },
+    "N64-0003": {
+      "file": "/covers/N64-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Banjo-Tooie (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1160
+    },
+    "N64-0004": {
+      "file": "/covers/N64-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Lylat Wars (Australia) (En,Fr,De).png",
+      "matchScore": 1000
+    },
+    "N64-0005": {
+      "file": "/covers/N64-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Mortal Kombat Mythologies - Sub-Zero (Europe).png",
+      "matchScore": 1195
+    },
+    "N64-0006": {
+      "file": "/covers/N64-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Super Smash Bros. (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "N64-0007": {
+      "file": "/covers/N64-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Ocarina of Time (Europe) (Debug) (GameCube).png",
+      "matchScore": 1171
+    },
+    "N64-0008": {
+      "file": "/covers/N64-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Donkey Kong 64 (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1160
+    },
+    "N64-0009": {
+      "file": "/covers/N64-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Mario Kart 64 (Europe) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "N64-0010": {
+      "file": "/covers/N64-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Power Rangers - Lightspeed Rescue (Europe).png",
+      "matchScore": 1160
+    },
+    "N64-0011": {
+      "file": "/covers/N64-0011.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Lode Runner 3-D (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1113
+    },
+    "N64-0012": {
+      "file": "/covers/N64-0012.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Yoshi's Story (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "N64-0013": {
+      "file": "/covers/N64-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Diddy Kong Racing (Europe) (En,Fr,De) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "N64-0014": {
+      "file": "/covers/N64-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Banjo-Kazooie (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "N64-0016": {
+      "file": "/covers/N64-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Super Mario 64 (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "N64-0017": {
+      "file": "/covers/N64-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Pokemon Stadium 2 (Europe).png",
+      "matchScore": 1291
+    },
+    "N64-0018": {
+      "file": "/covers/N64-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/GoldenEye 007 (Europe).png",
+      "matchScore": 1158
+    },
+    "N64-0019": {
+      "file": "/covers/N64-0019.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Pokemon Snap (Europe).png",
+      "matchScore": 1160
+    },
+    "N64-0020": {
+      "file": "/covers/N64-0020.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Turok - Rage Wars (Europe) (En,Fr,It).png",
+      "matchScore": 1195
+    },
+    "N64-0021": {
+      "file": "/covers/N64-0021.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Wave Race 64 - Kawasaki Jet Ski (Europe) (En,De).png",
+      "matchScore": 1094
+    },
+    "N64-0022": {
+      "file": "/covers/N64-0022.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Wave Race 64 - Kawasaki Jet Ski (Europe) (En,De).png",
+      "matchScore": 1094
+    },
+    "N64-0023": {
+      "file": "/covers/N64-0023.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/F-1 World Grand Prix (Europe).png",
+      "matchScore": 1250
+    },
+    "N64-0024": {
+      "file": "/covers/N64-0024.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Turok 2 - Seeds of Evil (Europe) - SymbolicLink.png",
+      "matchScore": 1184
+    },
+    "N64-0025": {
+      "file": "/covers/N64-0025.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Buck Bumble (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "N64-0026": {
+      "file": "/covers/N64-0026.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_64",
+      "sourcePath": "Named_Boxarts/Jet Force Gemini (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1160
+    },
+    "NDS-0001": {
+      "file": "/covers/NDS-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Pokemon Mystery Dungeon - Blue Rescue Team (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "NDS-0002": {
+      "file": "/covers/NDS-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Freshly-Picked - Tingle's Rosy Rupeeland (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0003": {
+      "file": "/covers/NDS-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Suikoden - Tierkreis (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0004": {
+      "file": "/covers/NDS-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Pokemon Mystery Dungeon - Explorers of Sky (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0005": {
+      "file": "/covers/NDS-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Ghost Trick - Phantom Detective (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0006": {
+      "file": "/covers/NDS-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Learn with Pokemon - Typing Adventure (Europe).png",
+      "matchScore": 1195
+    },
+    "NDS-0007": {
+      "file": "/covers/NDS-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Mega Man Star Force - Leo (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0008": {
+      "file": "/covers/NDS-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Luminous Arc (Europe).png",
+      "matchScore": 1324
+    },
+    "NDS-0009": {
+      "file": "/covers/NDS-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Flower, Sun and Rain - Murder and Mystery in Paradise (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1116
+    },
+    "NDS-0010": {
+      "file": "/covers/NDS-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Pokemon - SoulSilver Version (Europe).png",
+      "matchScore": 1160
+    },
+    "NDS-0011": {
+      "file": "/covers/NDS-0011.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Luminous Arc 2 (Europe).png",
+      "matchScore": 1324
+    },
+    "NDS-0012": {
+      "file": "/covers/NDS-0012.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Pokemon Ranger - Guardian Signs (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0013": {
+      "file": "/covers/NDS-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Pokemon - Platinum Version (Europe).png",
+      "matchScore": 1160
+    },
+    "NDS-0014": {
+      "file": "/covers/NDS-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Spirit Tracks (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1166
+    },
+    "NDS-0015": {
+      "file": "/covers/NDS-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Spirit Tracks (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1166
+    },
+    "NDS-0016": {
+      "file": "/covers/NDS-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Golden Sun - Dark Dawn (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "NDS-0017": {
+      "file": "/covers/NDS-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Pokemon - White Version 2 (USA, Europe) (NDSi Enhanced).png",
+      "matchScore": 1290
+    },
+    "NDS-0018": {
+      "file": "/covers/NDS-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Advance Wars - Dual Strike (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0019": {
+      "file": "/covers/NDS-0019.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Pokemon - Diamond Version (Europe) (Rev 5).png",
+      "matchScore": 1160
+    },
+    "NDS-0020": {
+      "file": "/covers/NDS-0020.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Children of Mana (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0021": {
+      "file": "/covers/NDS-0021.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Heroes of Mana (Europe).png",
+      "matchScore": 1230
+    },
+    "NDS-0022": {
+      "file": "/covers/NDS-0022.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Professor Layton and the Lost Future (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "NDS-0023": {
+      "file": "/covers/NDS-0023.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Professor Layton and the Spectre's Call (Europe).png",
+      "matchScore": 1160
+    },
+    "NDS-0024": {
+      "file": "/covers/NDS-0024.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Super Mario 64 DS (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0025": {
+      "file": "/covers/NDS-0025.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Welcome to Animal Crossing - Wild World (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1278
+    },
+    "NDS-0026": {
+      "file": "/covers/NDS-0026.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Final Fantasy Crystal Chronicles - Ring of Fates (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1195
+    },
+    "NDS-0027": {
+      "file": "/covers/NDS-0027.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/New Zealand Story Revolution (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0028": {
+      "file": "/covers/NDS-0028.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Harvest Moon DS (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1195
+    },
+    "NDS-0029": {
+      "file": "/covers/NDS-0029.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/New Super Mario Bros. (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "NDS-0030": {
+      "file": "/covers/NDS-0030.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Looney Tunes - Cartoon Concerto (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 942
+    },
+    "NDS-0031": {
+      "file": "/covers/NDS-0031.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/WarioWare - Touched! (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1019
+    },
+    "NDS-0032": {
+      "file": "/covers/NDS-0032.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Legend of Spyro, The - Dawn of the Dragon (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1166
+    },
+    "NDS-0033": {
+      "file": "/covers/NDS-0033.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/B-17 - Fortress in the Sky (Europe) (En,Fr,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0034": {
+      "file": "/covers/NDS-0034.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Guitar Hero - On Tour - Decades (Europe) (Fr,De,Es,It).png",
+      "matchScore": 1251
+    },
+    "NDS-0035": {
+      "file": "/covers/NDS-0035.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Drawn to Life - The Next Chapter (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1195
+    },
+    "NDS-0036": {
+      "file": "/covers/NDS-0036.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Metroid Prime - Hunters (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "NDS-0037": {
+      "file": "/covers/NDS-0037.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Tootuff - Mission Nadia (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "NDS-0038": {
+      "file": "/covers/NDS-0038.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Let's Yoga! (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0039": {
+      "file": "/covers/NDS-0039.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Super Scribblenauts (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1160
+    },
+    "NDS-0040": {
+      "file": "/covers/NDS-0040.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Professor Layton and the Curious Village (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NDS-0041": {
+      "file": "/covers/NDS-0041.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Final Fantasy III (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "NDS-0042": {
+      "file": "/covers/NDS-0042.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourcePath": "Named_Boxarts/Castlevania - Order of Ecclesia (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "NES-0001": {
+      "file": "/covers/NES-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Jackie Chan's Action Kung Fu (Europe).png",
+      "matchScore": 1160
+    },
+    "NES-0002": {
+      "file": "/covers/NES-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Double Dragon II - The Revenge (Europe).png",
+      "matchScore": 1160
+    },
+    "NES-0003": {
+      "file": "/covers/NES-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Mario Bros. 2 (Europe) (Virtual Console).png",
+      "matchScore": 1326
+    },
+    "NES-0004": {
+      "file": "/covers/NES-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Popeye (World) (Rev 1).png",
+      "matchScore": 1090
+    },
+    "NES-0005": {
+      "file": "/covers/NES-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Gradius (Europe).png",
+      "matchScore": 1160
+    },
+    "NES-0006": {
+      "file": "/covers/NES-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Mario Bros. (Europe).png",
+      "matchScore": 1291
+    },
+    "NES-0007": {
+      "file": "/covers/NES-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Tom _ Jerry - The Ultimate Game of Cat and Mouse! (Europe).png",
+      "matchScore": 1208
+    },
+    "NES-0008": {
+      "file": "/covers/NES-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Mario Bros. (Europe).png",
+      "matchScore": 1326
+    },
+    "NES-0010": {
+      "file": "/covers/NES-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Chip 'n Dale - Rescue Rangers (Europe).png",
+      "matchScore": 1155
+    },
+    "NES-0012": {
+      "file": "/covers/NES-0012.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Simpsons, The - Bart vs. the Space Mutants (Europe).png",
+      "matchScore": 1206
+    },
+    "NES-0013": {
+      "file": "/covers/NES-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Little Nemo - The Dream Master (Europe).png",
+      "matchScore": 1160
+    },
+    "NES-0014": {
+      "file": "/covers/NES-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Teenage Mutant Hero Turtles - Tournament Fighters (Europe).png",
+      "matchScore": 1177
+    },
+    "NES-0015": {
+      "file": "/covers/NES-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/California Games (Europe).png",
+      "matchScore": 1195
+    },
+    "NES-0016": {
+      "file": "/covers/NES-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Battle of Olympus, The (Europe).png",
+      "matchScore": 1201
+    },
+    "NES-0017": {
+      "file": "/covers/NES-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/WWF WrestleMania - Challenge (Europe).png",
+      "matchScore": 1195
+    },
+    "NES-0018": {
+      "file": "/covers/NES-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Spike V'Ball (Europe).png",
+      "matchScore": 1160
+    },
+    "NES-0019": {
+      "file": "/covers/NES-0019.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Willow (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0001": {
+      "file": "/covers/PS1-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Silent Hill (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS1-0002": {
+      "file": "/covers/PS1-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Parasite Eve II (Europe) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0003": {
+      "file": "/covers/PS1-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Digimon World 2003 (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1250
+    },
+    "PS1-0004": {
+      "file": "/covers/PS1-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Ehrgeiz - God Bless the Ring (Europe).png",
+      "matchScore": 1002
+    },
+    "PS1-0005": {
+      "file": "/covers/PS1-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Dino Crisis (Europe).png",
+      "matchScore": 1286
+    },
+    "PS1-0006": {
+      "file": "/covers/PS1-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Resident Evil - Director's Cut (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0007": {
+      "file": "/covers/PS1-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Nightmare Creatures II (Europe) (En,Fr,De).png",
+      "matchScore": 1212
+    },
+    "PS1-0008": {
+      "file": "/covers/PS1-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Vagrant Story (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0009": {
+      "file": "/covers/PS1-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Bugs Bunny - Lost in Time (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1160
+    },
+    "PS1-0010": {
+      "file": "/covers/PS1-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Digimon Digital Card Battle (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0011": {
+      "file": "/covers/PS1-0011.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Final Fantasy Origins - Final Fantasy (Europe).png",
+      "matchScore": 1293
+    },
+    "PS1-0013": {
+      "file": "/covers/PS1-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Resident Evil (Europe) (EDC).png",
+      "matchScore": 1290
+    },
+    "PS1-0014": {
+      "file": "/covers/PS1-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Fear Effect 2 - Retro Helix (Europe) (En,Fr,De) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0015": {
+      "file": "/covers/PS1-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Metal Gear Solid (Europe) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0016": {
+      "file": "/covers/PS1-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Syphon Filter (Europe, Australia).png",
+      "matchScore": 1300
+    },
+    "PS1-0017": {
+      "file": "/covers/PS1-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Ape Escape (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0018": {
+      "file": "/covers/PS1-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Alone in the Dark - The New Nightmare (Europe) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0019": {
+      "file": "/covers/PS1-0019.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/ISS Pro Evolution 2 (Europe) (En,Fr,De).png",
+      "matchScore": 1292
+    },
+    "PS1-0020": {
+      "file": "/covers/PS1-0020.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/MediEvil 2 (Europe) (En,Fr,De).png",
+      "matchScore": 1284
+    },
+    "PS1-0021": {
+      "file": "/covers/PS1-0021.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Final Fantasy IX (Europe) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0022": {
+      "file": "/covers/PS1-0022.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Spider-Man (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0023": {
+      "file": "/covers/PS1-0023.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Croc 2 (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
+      "matchScore": 1160
+    },
+    "PS1-0024": {
+      "file": "/covers/PS1-0024.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Disney's Action Game featuring Hercules (Europe).png",
+      "matchScore": 970
+    },
+    "PS1-0025": {
+      "file": "/covers/PS1-0025.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Final Fantasy VI (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS1-0026": {
+      "file": "/covers/PS1-0026.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Disney-Pixar Toy Story 2 - Buzz Lightyear to the Rescue! (Europe) (Rev 1).png",
+      "matchScore": 968
+    },
+    "PS1-0027": {
+      "file": "/covers/PS1-0027.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Pandemonium 2 (Europe).png",
+      "matchScore": 989
+    },
+    "PS1-0028": {
+      "file": "/covers/PS1-0028.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Alone in the Dark - The New Nightmare (Europe) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0029": {
+      "file": "/covers/PS1-0029.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Jersey Devil (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "PS1-0030": {
+      "file": "/covers/PS1-0030.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Tekken (Europe).png",
+      "matchScore": 1278
+    },
+    "PS1-0031": {
+      "file": "/covers/PS1-0031.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Ridge Racer Type 4 (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS1-0032": {
+      "file": "/covers/PS1-0032.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Driver (Europe).png",
+      "matchScore": 1278
+    },
+    "PS1-0033": {
+      "file": "/covers/PS1-0033.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Disney's Donald Duck - Quack Attack (Europe) (En,Fr,De,It).png",
+      "matchScore": 1215
+    },
+    "PS1-0034": {
+      "file": "/covers/PS1-0034.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/MediEvil (Europe).png",
+      "matchScore": 1284
+    },
+    "PS1-0035": {
+      "file": "/covers/PS1-0035.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Spyro the Dragon (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS1-0036": {
+      "file": "/covers/PS1-0036.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Fear Effect (Europe) (En,Es,It) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0037": {
+      "file": "/covers/PS1-0037.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Final Fantasy VII (Europe) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0038": {
+      "file": "/covers/PS1-0038.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Spyro - Year of the Dragon (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0039": {
+      "file": "/covers/PS1-0039.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Resident Evil - Survivor (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0040": {
+      "file": "/covers/PS1-0040.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Crash Bandicoot 2 - Cortex Strikes Back (Europe, Australia) (En,Fr,De,Es,It) (EDC).png",
+      "matchScore": 1170
+    },
+    "PS1-0041": {
+      "file": "/covers/PS1-0041.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/WipEout 2097 (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0042": {
+      "file": "/covers/PS1-0042.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Disney's Tarzan (Europe).png",
+      "matchScore": 1091
+    },
+    "PS1-0043": {
+      "file": "/covers/PS1-0043.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Chronicles of the Sword (Europe) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0044": {
+      "file": "/covers/PS1-0044.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Tony Hawk's Skateboarding (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0045": {
+      "file": "/covers/PS1-0045.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Harry Potter and the Chamber of Secrets (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "PS1-0046": {
+      "file": "/covers/PS1-0046.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Gran Turismo 2 (Europe) (En,Fr,De,Es,It) (Disc 1) (Arcade Mode).png",
+      "matchScore": 1289
+    },
+    "PS1-0047": {
+      "file": "/covers/PS1-0047.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Hot Wheels - Turbo Racing (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "PS1-0048": {
+      "file": "/covers/PS1-0048.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Resident Evil (Europe) (EDC).png",
+      "matchScore": 1290
+    },
+    "PS1-0049": {
+      "file": "/covers/PS1-0049.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Rayman (Europe) (En,Fr,De) (EDC).png",
+      "matchScore": 1160
+    },
+    "PS1-0050": {
+      "file": "/covers/PS1-0050.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Oddworld - Abe's Oddysee (Europe).png",
+      "matchScore": 1250
+    },
+    "PS1-0051": {
+      "file": "/covers/PS1-0051.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Risk (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1160
+    },
+    "PS1-0052": {
+      "file": "/covers/PS1-0052.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Croc - Legend of the Gobbos (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0053": {
+      "file": "/covers/PS1-0053.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Tony Hawk's Pro Skater 2 (Europe, Australia).png",
+      "matchScore": 1177
+    },
+    "PS1-0054": {
+      "file": "/covers/PS1-0054.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Disney-Pixar A Bug's Life (Europe).png",
+      "matchScore": 1092
+    },
+    "PS1-0055": {
+      "file": "/covers/PS1-0055.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Walt Disney's The Jungle Book - Groove Party (Europe).png",
+      "matchScore": 1162
+    },
+    "PS1-0057": {
+      "file": "/covers/PS1-0057.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Oddworld - Abe's Oddysee (Europe).png",
+      "matchScore": 1223
+    },
+    "PS1-0058": {
+      "file": "/covers/PS1-0058.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Aqua GT (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1160
+    },
+    "PS1-0059": {
+      "file": "/covers/PS1-0059.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Star Wars - Episode I - The Phantom Menace (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0060": {
+      "file": "/covers/PS1-0060.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Disney's Donald Duck - Quack Attack (Europe) (En,Fr,De,It).png",
+      "matchScore": 1215
+    },
+    "PS1-0061": {
+      "file": "/covers/PS1-0061.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Rayman (Europe) (En,Fr,De) (EDC).png",
+      "matchScore": 1160
+    },
+    "PS1-0062": {
+      "file": "/covers/PS1-0062.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Grand Theft Auto (Europe) (En,Fr,De,It) (EDC).png",
+      "matchScore": 1291
+    },
+    "PS1-0063": {
+      "file": "/covers/PS1-0063.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Tomb Raider II - Starring Lara Croft (Europe) (EDC).png",
+      "matchScore": 1097
+    },
+    "PS1-0064": {
+      "file": "/covers/PS1-0064.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Driver (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0065": {
+      "file": "/covers/PS1-0065.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Arcade Party Pak (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS1-0066": {
+      "file": "/covers/PS1-0066.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Tomb Raider (Europe) (EDC).png",
+      "matchScore": 1160
+    },
+    "PS1-0068": {
+      "file": "/covers/PS1-0068.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Bust-A-Move 2 - Arcade Edition (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0069": {
+      "file": "/covers/PS1-0069.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Formula 1 (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0070": {
+      "file": "/covers/PS1-0070.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Mat Hoffman's Pro BMX (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS1-0071": {
+      "file": "/covers/PS1-0071.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Caesars Palace 2000 - Millennium Gold Edition (Europe).png",
+      "matchScore": 1091
+    },
+    "PS1-0072": {
+      "file": "/covers/PS1-0072.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Who Wants to Be a Millionaire - Junior (Europe).png",
+      "matchScore": 1240
+    },
+    "PS1-0073": {
+      "file": "/covers/PS1-0073.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Vanishing Point (Europe) (En,Fr,De,Es).png",
+      "matchScore": 1160
+    },
+    "PS1-0074": {
+      "file": "/covers/PS1-0074.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Disney-Pixar A Bug's Life (Europe).png",
+      "matchScore": 1092
+    },
+    "PS1-0075": {
+      "file": "/covers/PS1-0075.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Skullmonkeys (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0076": {
+      "file": "/covers/PS1-0076.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Crash Bandicoot 3 - Warped (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS1-0077": {
+      "file": "/covers/PS1-0077.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Asterix (Europe) (De,Es,It) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0078": {
+      "file": "/covers/PS1-0078.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/G-Police (Europe) (Disc 1).png",
+      "matchScore": 1160
+    },
+    "PS1-0079": {
+      "file": "/covers/PS1-0079.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Guardian's Crusade (Europe).png",
+      "matchScore": 1160
+    },
+    "PS1-0080": {
+      "file": "/covers/PS1-0080.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Ridge Racer Type 4 (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS1-0081": {
+      "file": "/covers/PS1-0081.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Mickey's Wild Adventure (Europe) (EDC).png",
+      "matchScore": 1160
+    },
+    "PS1-0083": {
+      "file": "/covers/PS1-0083.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Heart of Darkness (Europe) (Disc 1) (EDC).png",
+      "matchScore": 1160
+    },
+    "PS1-0084": {
+      "file": "/covers/PS1-0084.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Tomb Raider III - Adventures of Lara Croft (Europe) (Rev 1) (EDC).png",
+      "matchScore": 1160
+    },
+    "PS1-0085": {
+      "file": "/covers/PS1-0085.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Warzone 2100 (Europe) (En,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS1-0086": {
+      "file": "/covers/PS1-0086.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Dalmatians 2 (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "PS1-0087": {
+      "file": "/covers/PS1-0087.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Advanced Dungeons _ Dragons - Iron _ Blood - Warriors of Ravenloft (Europe).png",
+      "matchScore": 1164
+    },
+    "PS1-EXTRA-0001": {
+      "file": "/covers/PS1-EXTRA-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourcePath": "Named_Boxarts/Ridge Racer Type 4 (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 992
+    },
+    "PS2-0001": {
+      "file": "/covers/PS2-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Project Zero (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1287
+    },
+    "PS2-0002": {
+      "file": "/covers/PS2-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Tim Burton's The Nightmare Before Christmas - Oogie's Revenge (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1202
+    },
+    "PS2-0003": {
+      "file": "/covers/PS2-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Crimson Tears (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "PS2-0004": {
+      "file": "/covers/PS2-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Shadow of the Colossus + Ico (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1214
+    },
+    "PS2-0005": {
+      "file": "/covers/PS2-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Metal Gear Solid 2 - Substance (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1192
+    },
+    "PS2-0006": {
+      "file": "/covers/PS2-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Dark Cloud (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0007": {
+      "file": "/covers/PS2-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
+      "matchScore": 1294
+    },
+    "PS2-0008": {
+      "file": "/covers/PS2-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Zone of the Enders - The 2nd Runner (Europe) (En,Fr,De,Es,It) (Special Edition).png",
+      "matchScore": 1197
+    },
+    "PS2-0009": {
+      "file": "/covers/PS2-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Marc Ecko's Getting Up - Contents Under Pressure (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0011": {
+      "file": "/covers/PS2-0011.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Shadow of Memories (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0012": {
+      "file": "/covers/PS2-0012.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Final Fantasy X-2 (Europe, Australia).png",
+      "matchScore": 1300
+    },
+    "PS2-0013": {
+      "file": "/covers/PS2-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Beyond Good _ Evil (Europe, Australia) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1173
+    },
+    "PS2-0014": {
+      "file": "/covers/PS2-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Canis Canem Edit (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0015": {
+      "file": "/covers/PS2-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Need for Speed - Most Wanted - Black Edition (Europe, Australia) (En,Fr,De).png",
+      "matchScore": 1191
+    },
+    "PS2-0016": {
+      "file": "/covers/PS2-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Onimusha 3 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0017": {
+      "file": "/covers/PS2-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/God of War II (Europe, Australia) (En,Fr,De,Es,It,Ru).png",
+      "matchScore": 1207
+    },
+    "PS2-0018": {
+      "file": "/covers/PS2-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/God of War (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1294
+    },
+    "PS2-0019": {
+      "file": "/covers/PS2-0019.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Maximo vs Army of Zin (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0020": {
+      "file": "/covers/PS2-0020.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Dragon Ball Z - Budokai Tenkaichi (Europe, Australia) (En,Ja,Fr,De,Es,It).png",
+      "matchScore": 1305
+    },
+    "PS2-0021": {
+      "file": "/covers/PS2-0021.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Seven Samurai 20XX (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0022": {
+      "file": "/covers/PS2-0022.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Zone of the Enders (Europe) (En,Fr,De,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0024": {
+      "file": "/covers/PS2-0024.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Worms 4 - Mayhem (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0025": {
+      "file": "/covers/PS2-0025.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Devil May Cry 2 (Europe) (En,Fr,De,Es,It) (Disc 1).png",
+      "matchScore": 1289
+    },
+    "PS2-0026": {
+      "file": "/covers/PS2-0026.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Dirge of Cerberus - Final Fantasy VII (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1181
+    },
+    "PS2-0027": {
+      "file": "/covers/PS2-0027.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Dragon Ball Z - Budokai (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1303
+    },
+    "PS2-0028": {
+      "file": "/covers/PS2-0028.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Sonic Gems Collection (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0029": {
+      "file": "/covers/PS2-0029.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Sonic Gems Collection (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0030": {
+      "file": "/covers/PS2-0030.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Devil May Cry (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1289
+    },
+    "PS2-0031": {
+      "file": "/covers/PS2-0031.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Kingdom Hearts II (Europe, Australia).png",
+      "matchScore": 1218
+    },
+    "PS2-0032": {
+      "file": "/covers/PS2-0032.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Yu-Gi-Oh! The Duelists of the Roses (Europe) (Fr,De,Es,It).png",
+      "matchScore": 1165
+    },
+    "PS2-0033": {
+      "file": "/covers/PS2-0033.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Ratchet - Gladiator (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0034": {
+      "file": "/covers/PS2-0034.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Hyper Street Fighter II - The Anniversary Edition (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0035": {
+      "file": "/covers/PS2-0035.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Dragon Ball Z - Budokai Tenkaichi 2 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1305
+    },
+    "PS2-0036": {
+      "file": "/covers/PS2-0036.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Dragon Ball Z - Budokai (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1303
+    },
+    "PS2-0037": {
+      "file": "/covers/PS2-0037.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Kuri Kuri Mix (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "PS2-0038": {
+      "file": "/covers/PS2-0038.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Jak 3 (Europe, Australia) (En,Fr,De,Es,It,Pt,Ru).png",
+      "matchScore": 1170
+    },
+    "PS2-0039": {
+      "file": "/covers/PS2-0039.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Grand Theft Auto - San Andreas (Europe, Australia) (En,Fr,De,Es,It) (v1.03).png",
+      "matchScore": 1170
+    },
+    "PS2-0040": {
+      "file": "/covers/PS2-0040.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Jak 3 (Europe, Australia) (En,Fr,De,Es,It,Pt,Ru).png",
+      "matchScore": 1170
+    },
+    "PS2-0041": {
+      "file": "/covers/PS2-0041.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Lara Croft Tomb Raider - Legend (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1161
+    },
+    "PS2-0042": {
+      "file": "/covers/PS2-0042.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Need for Speed - Carbon (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0043": {
+      "file": "/covers/PS2-0043.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Need for Speed - Carbon (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0044": {
+      "file": "/covers/PS2-0044.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Need for Speed - Carbon (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0045": {
+      "file": "/covers/PS2-0045.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Dynasty Warriors 4 - Empires (Europe).png",
+      "matchScore": 1181
+    },
+    "PS2-0047": {
+      "file": "/covers/PS2-0047.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Future Tactics - The Uprising (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1151
+    },
+    "PS2-0048": {
+      "file": "/covers/PS2-0048.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/FIFA Street (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
+      "matchScore": 1287
+    },
+    "PS2-0049": {
+      "file": "/covers/PS2-0049.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Ford Racing 3 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0050": {
+      "file": "/covers/PS2-0050.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Black (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0051": {
+      "file": "/covers/PS2-0051.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/WWE SmackDown vs. Raw 2008 (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0052": {
+      "file": "/covers/PS2-0052.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Buzz! O Grande Quiz (Portugal).png",
+      "matchScore": 1000
+    },
+    "PS2-0053": {
+      "file": "/covers/PS2-0053.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Unreal Tournament (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0054": {
+      "file": "/covers/PS2-0054.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Crash Nitro Kart (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1160
+    },
+    "PS2-0055": {
+      "file": "/covers/PS2-0055.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Onimusha - Warlords (Europe) (En,Fr,De).png",
+      "matchScore": 1160
+    },
+    "PS2-0056": {
+      "file": "/covers/PS2-0056.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Star Wars - The Force Unleashed (Europe, Australia).png",
+      "matchScore": 970
+    },
+    "PS2-0057": {
+      "file": "/covers/PS2-0057.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/WWE SmackDown vs. Raw 2007 (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0058": {
+      "file": "/covers/PS2-0058.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Space Invaders Anniversary (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0059": {
+      "file": "/covers/PS2-0059.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/FIFA Street (Europe) (En,Fr,De,Es,It,Nl,Sv).png",
+      "matchScore": 1287
+    },
+    "PS2-0060": {
+      "file": "/covers/PS2-0060.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Hitman - Blood Money (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0061": {
+      "file": "/covers/PS2-0061.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/International Superstar Soccer 2 (Europe) (En,De).png",
+      "matchScore": 1295
+    },
+    "PS2-0063": {
+      "file": "/covers/PS2-0063.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Pilot Down - Behind Enemy Lines (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0064": {
+      "file": "/covers/PS2-0064.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Chess Challenger (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 975
+    },
+    "PS2-0065": {
+      "file": "/covers/PS2-0065.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Star Wars - Battlefront II (Europe) (En,Es,It).png",
+      "matchScore": 1232
+    },
+    "PS2-0066": {
+      "file": "/covers/PS2-0066.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Tom Clancy's Splinter Cell (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1125
+    },
+    "PS2-0067": {
+      "file": "/covers/PS2-0067.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Sims 2, The - Pets (Europe, Australia) (En,Fr,De,Es,It,Nl,Sv,No,Da,Fi,Pl) (v2.00).png",
+      "matchScore": 1146
+    },
+    "PS2-0068": {
+      "file": "/covers/PS2-0068.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Sonic Heroes (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0069": {
+      "file": "/covers/PS2-0069.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/FIFA Street 2 (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1287
+    },
+    "PS2-0070": {
+      "file": "/covers/PS2-0070.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/WWE SmackDown! vs. Raw 2006 (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0071": {
+      "file": "/covers/PS2-0071.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Need for Speed - ProStreet (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0072": {
+      "file": "/covers/PS2-0072.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Need for Speed - ProStreet (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0073": {
+      "file": "/covers/PS2-0073.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Rayman Revolution (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0074": {
+      "file": "/covers/PS2-0074.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Harry Potter and the Goblet of Fire (Europe) (En,Nl,Sv,No,Da,Fi,Pl).png",
+      "matchScore": 1160
+    },
+    "PS2-0075": {
+      "file": "/covers/PS2-0075.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Harry Potter and the Goblet of Fire (Europe) (En,Nl,Sv,No,Da,Fi,Pl).png",
+      "matchScore": 1160
+    },
+    "PS2-0076": {
+      "file": "/covers/PS2-0076.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/WRC - World Rally Championship (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi).png",
+      "matchScore": 1260
+    },
+    "PS2-0077": {
+      "file": "/covers/PS2-0077.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Silent Hill 2 (Europe) (En,Ja,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0078": {
+      "file": "/covers/PS2-0078.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Dragon Ball Z - Budokai Tenkaichi (Europe, Australia) (En,Ja,Fr,De,Es,It).png",
+      "matchScore": 1305
+    },
+    "PS2-0079": {
+      "file": "/covers/PS2-0079.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Jackie Chan Adventures (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt).png",
+      "matchScore": 1170
+    },
+    "PS2-0080": {
+      "file": "/covers/PS2-0080.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Bionicle (Europe) (En,Fr,De,Es,It,Da).png",
+      "matchScore": 1160
+    },
+    "PS2-0081": {
+      "file": "/covers/PS2-0081.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Crash Bandicoot - The Wrath of Cortex (Europe) (En,Fr,De,Es,It,Nl) (v1.03).png",
+      "matchScore": 1160
+    },
+    "PS2-0082": {
+      "file": "/covers/PS2-0082.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Final Fantasy X (Europe, Australia).png",
+      "matchScore": 1300
+    },
+    "PS2-0083": {
+      "file": "/covers/PS2-0083.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Star Wars - The Clone Wars (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0084": {
+      "file": "/covers/PS2-0084.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Tourist Trophy - The Real Riding Simulator (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0085": {
+      "file": "/covers/PS2-0085.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Disney's Treasure Planet (Europe) (En,Es,It,Sv,Da).png",
+      "matchScore": 1160
+    },
+    "PS2-0086": {
+      "file": "/covers/PS2-0086.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Sonic Unleashed (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 970
+    },
+    "PS2-0087": {
+      "file": "/covers/PS2-0087.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Taxi Rider (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0088": {
+      "file": "/covers/PS2-0088.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Choro Q (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0089": {
+      "file": "/covers/PS2-0089.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Mundial 2002 Challenge (Portugal).png",
+      "matchScore": 1000
+    },
+    "PS2-0090": {
+      "file": "/covers/PS2-0090.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Freak Out (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0091": {
+      "file": "/covers/PS2-0091.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Crash Tag Team Racing (Europe, Australia) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1170
+    },
+    "PS2-0092": {
+      "file": "/covers/PS2-0092.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/FlatOut 2 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1292
+    },
+    "PS2-0093": {
+      "file": "/covers/PS2-0093.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Ace Combat - Distant Thunder (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0094": {
+      "file": "/covers/PS2-0094.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Nickelodeon SpongeBob SquarePants - The Movie (Europe, Australia).png",
+      "matchScore": 1218
+    },
+    "PS2-0096": {
+      "file": "/covers/PS2-0096.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Gran Turismo 3 - A-Spec (Europe, Australia) (En,Fr,De,Es,It) (v1.00).png",
+      "matchScore": 1170
+    },
+    "PS2-0097": {
+      "file": "/covers/PS2-0097.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Sniper Assault (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0098": {
+      "file": "/covers/PS2-0098.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Lara Croft Tomb Raider - The Angel of Darkness (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1203
+    },
+    "PS2-0099": {
+      "file": "/covers/PS2-0099.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Disney's The Haunted Mansion (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0100": {
+      "file": "/covers/PS2-0100.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Antz Extreme Racing (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0101": {
+      "file": "/covers/PS2-0101.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Disney's Winnie the Pooh's Rumbly Tumbly Adventure (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1237
+    },
+    "PS2-0102": {
+      "file": "/covers/PS2-0102.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Guilty Gear X2 Reload - The Midnight Carnival (Europe).png",
+      "matchScore": 1147
+    },
+    "PS2-0103": {
+      "file": "/covers/PS2-0103.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Enter the Matrix (Europe) (En,Fr,De,Es,It) (v1.01).png",
+      "matchScore": 1160
+    },
+    "PS2-0104": {
+      "file": "/covers/PS2-0104.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Sly 3 - Honor Among Thieves (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0105": {
+      "file": "/covers/PS2-0105.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Grand Theft Auto - Vice City Stories (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1243
+    },
+    "PS2-0106": {
+      "file": "/covers/PS2-0106.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Medal of Honor - Rising Sun (Europe, Australia) (En,It,Nl,Sv,Da).png",
+      "matchScore": 1170
+    },
+    "PS2-0107": {
+      "file": "/covers/PS2-0107.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/FIFA 06 (Europe) (En,Nl,Sv,No,Da,Pl,El,Hu).png",
+      "matchScore": 1160
+    },
+    "PS2-0108": {
+      "file": "/covers/PS2-0108.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Lord of the Rings, The - The Return of the King (Europe) (En,Nl,Pt,Sv,Pl).png",
+      "matchScore": 1175
+    },
+    "PS2-0109": {
+      "file": "/covers/PS2-0109.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Predator - Concrete Jungle (Europe).png",
+      "matchScore": 1160
+    },
+    "PS2-0110": {
+      "file": "/covers/PS2-0110.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Raging Blades (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0111": {
+      "file": "/covers/PS2-0111.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Getaway, The (Europe) (En,Fr,De,Es,It) (v1.03).png",
+      "matchScore": 1153
+    },
+    "PS2-0112": {
+      "file": "/covers/PS2-0112.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Die Hard - Vendetta (Europe) (En,Fr,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0113": {
+      "file": "/covers/PS2-0113.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Urbz, The - Sims in the City (Europe) (En,Fr,De,Es,It,Nl,Sv,No,Da,Fi,Pl).png",
+      "matchScore": 1150
+    },
+    "PS2-0114": {
+      "file": "/covers/PS2-0114.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Project Eden (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0115": {
+      "file": "/covers/PS2-0115.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Teenage Mutant Ninja Turtles - Mutant Melee (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1238
+    },
+    "PS2-0116": {
+      "file": "/covers/PS2-0116.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Disney Pirates of the Caribbean - At World's End (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1332
+    },
+    "PS2-0117": {
+      "file": "/covers/PS2-0117.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Disney's Peter Pan - The Legend of Never Land (Europe) (En,Es).png",
+      "matchScore": 1160
+    },
+    "PS2-0118": {
+      "file": "/covers/PS2-0118.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/WRC - Rally Evolved (Europe, Australia) (En,Fr,De,Es,It,Pt,No,Fi) (v2.00).png",
+      "matchScore": 1170
+    },
+    "PS2-0119": {
+      "file": "/covers/PS2-0119.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Heracles - Chariot Racing (Europe) (En,Fr).png",
+      "matchScore": 1160
+    },
+    "PS2-0120": {
+      "file": "/covers/PS2-0120.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Cabela's Dangerous Hunts (Europe, Australia).png",
+      "matchScore": 1170
+    },
+    "PS2-0121": {
+      "file": "/covers/PS2-0121.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/LEGO Star Wars II - The Original Trilogy (Europe, Australia) (En,Fr,De,Es,It,Da).png",
+      "matchScore": 1170
+    },
+    "PS2-0122": {
+      "file": "/covers/PS2-0122.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Sonic Heroes (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "PS2-0123": {
+      "file": "/covers/PS2-0123.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Transformers - Revenge of the Fallen (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0124": {
+      "file": "/covers/PS2-0124.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Disney's Tarzan - Freeride (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PS2-0125": {
+      "file": "/covers/PS2-0125.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/MotoGP 3 (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1288
+    },
+    "PS2-0126": {
+      "file": "/covers/PS2-0126.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/WRC II Extreme (Europe, Australia) (En,Fr,De,Es,It,Pt,Fi).png",
+      "matchScore": 1170
+    },
+    "PS2-0127": {
+      "file": "/covers/PS2-0127.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/PES 2009 - Pro Evolution Soccer (Europe) (En,Es,It,Pt).png",
+      "matchScore": 1109
+    },
+    "PS2-0128": {
+      "file": "/covers/PS2-0128.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/PES 2008 - Pro Evolution Soccer (Europe) (En,Es).png",
+      "matchScore": 1109
+    },
+    "PS2-0129": {
+      "file": "/covers/PS2-0129.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/Football Mania (Europe) (En,Fr,De,Es,It,Nl,Sv,Da).png",
+      "matchScore": 1079
+    },
+    "PS2-0130": {
+      "file": "/covers/PS2-0130.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/EyeToy - Play 2 (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi,El) (v1.00).png",
+      "matchScore": 1297
+    },
+    "PS2-0131": {
+      "file": "/covers/PS2-0131.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourcePath": "Named_Boxarts/EyeToy - Play (Europe, Australia) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi).png",
+      "matchScore": 1297
+    },
+    "PS3-0002": {
+      "file": "/covers/PS3-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_3",
+      "sourcePath": "Named_Boxarts/Final Fantasy XIII-2 (Europe).png",
+      "matchScore": 1292
+    },
+    "PSP-0003": {
+      "file": "/covers/PSP-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_Portable",
+      "sourcePath": "Named_Boxarts/Need for Speed - Most Wanted - 5-1-0 (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "PSP-0006": {
+      "file": "/covers/PSP-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_Portable",
+      "sourcePath": "Named_Boxarts/WRC - FIA World Rally Championship (Europe) (En,Fr,De,Es,It) (v1.02).png",
+      "matchScore": 1250
+    },
+    "PSP-0008": {
+      "file": "/covers/PSP-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_Portable",
+      "sourcePath": "Named_Boxarts/Grand Theft Auto - Chinatown Wars (Europe) (En,Fr,De,Es,It) (v1.01).png",
+      "matchScore": 1160
+    },
+    "SNES-0001": {
+      "file": "/covers/SNES-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - A Link to the Past (Europe).png",
+      "matchScore": 1166
+    },
+    "SNES-0002": {
+      "file": "/covers/SNES-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Cybernator (Europe).png",
+      "matchScore": 1195
+    },
+    "SNES-0004": {
+      "file": "/covers/SNES-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Equinox (Europe).png",
+      "matchScore": 1195
+    },
+    "SNES-0005": {
+      "file": "/covers/SNES-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Mario Kart (Europe).png",
+      "matchScore": 1160
+    },
+    "SNES-0006": {
+      "file": "/covers/SNES-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Ghouls 'N Ghosts (Europe).png",
+      "matchScore": 1160
+    },
+    "SNES-0007": {
+      "file": "/covers/SNES-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Mario All-Stars and Super Mario World (Europe).png",
+      "matchScore": 1293
+    },
+    "SNES-0008": {
+      "file": "/covers/SNES-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Street Fighter II (Europe) (Virtual Console).png",
+      "matchScore": 1035
+    },
+    "SNES-0009": {
+      "file": "/covers/SNES-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Super Mario World (Europe) (Rev 1).png",
+      "matchScore": 1250
+    },
+    "SNES-0010": {
+      "file": "/covers/SNES-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System",
+      "sourcePath": "Named_Boxarts/Kick Off 3 - European Challenge (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "WII-0001": {
+      "file": "/covers/WII-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Kirby's Epic Yarn (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "WII-0002": {
+      "file": "/covers/WII-0002.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/New Super Mario Bros. Wii (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1160
+    },
+    "WII-0003": {
+      "file": "/covers/WII-0003.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Mario Sports Mix (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "WII-0004": {
+      "file": "/covers/WII-0004.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Wii Sports + Wii Sports Resort (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1300
+    },
+    "WII-0005": {
+      "file": "/covers/WII-0005.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Mario _ Sonic at the London 2012 Olympic Games (Europe) (En,Fr,De,Es,It,Nl).png",
+      "matchScore": 1166
+    },
+    "WII-0006": {
+      "file": "/covers/WII-0006.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Grand Slam Tennis (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "WII-0007": {
+      "file": "/covers/WII-0007.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Link's Crossbow Training (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "WII-0008": {
+      "file": "/covers/WII-0008.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Super Monkey Ball - Banana Blitz (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "WII-0009": {
+      "file": "/covers/WII-0009.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/MadWorld (Europe) (En,Fr,Es,It).png",
+      "matchScore": 1285
+    },
+    "WII-0010": {
+      "file": "/covers/WII-0010.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Godzilla - Unleashed (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 960
+    },
+    "WII-0011": {
+      "file": "/covers/WII-0011.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Trauma Center - New Blood (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "WII-0012": {
+      "file": "/covers/WII-0012.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Skyward Sword (Europe) (En,Fr,De,Es,It) (Rev 1).png",
+      "matchScore": 1166
+    },
+    "WII-0013": {
+      "file": "/covers/WII-0013.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Pokemon Battle Revolution (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1170
+    },
+    "WII-0014": {
+      "file": "/covers/WII-0014.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Rygar - The Battle of Argus (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1195
+    },
+    "WII-0015": {
+      "file": "/covers/WII-0015.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Xenoblade Chronicles (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "WII-0016": {
+      "file": "/covers/WII-0016.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Last Story, The (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1156
+    },
+    "WII-0017": {
+      "file": "/covers/WII-0017.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Project Zero 2 - Wii Edition (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1160
+    },
+    "WII-0018": {
+      "file": "/covers/WII-0018.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
+      "sourcePath": "Named_Boxarts/Legend of Zelda, The - Twilight Princess (Europe, Australia) (En,Fr,De,Es,It).png",
+      "matchScore": 1186
+    },
+    "WIIU-0001": {
+      "file": "/covers/WIIU-0001.png",
+      "region": "PAL",
+      "type": "box-front",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii_U",
+      "sourcePath": "Named_Boxarts/One Piece - Unlimited World Red (Europe) (En,Fr,De,Es,It).png",
+      "matchScore": 1050
+    }
+  },
+  "matched": 466,
+  "missing": 50,
+  "unsupported": 31
+}
