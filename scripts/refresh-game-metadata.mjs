@@ -317,12 +317,34 @@ const CURATED_QUERY_ALIASES = {
   "Elder Scrolls V: Skyrim": ["The Elder Scrolls V: Skyrim"],
   "Harry Potter Prisoner of Azkaban": ["Harry Potter and the Prisoner of Azkaban"],
   "The Sims 2: Glamor Life Stuff": ["The Sims 2: Glamour Life Stuff"],
+  "Super Mario Kart": ["Super Mario Kart (1992)"],
+  "Street Fighter II: The World Warrior": ["Street Fighter II"],
+  "Harry Potter And The Philosopher's Stone": ["Harry Potter and the Philosopher's Stone (Game Boy Color)"],
+  "Golden Goal": ["Golden Goal!"],
+  "Atlantis The Lost Empire": ["Atlantis: The Lost Empire (2001)"],
+  "Lilo & Stitch 2": ["Lilo & Stitch 2: Hämsterviel Havoc"],
+  "Game Boy Player Start-Up Disc": ["Game Boy Player Startup Disc"],
+  "Demo One": ["Demo 1"],
+  "Ratchet: Gladiator": ["Ratchet & Clank: Gladiator"],
+  "Black": ["Black (2006)"],
+  "Formula One 2005": ["Formula One 05"],
+  "WRC: World Rally Championship": ["World Rally Championship"],
+  "Bionicle": ["Bionicle: The Game"],
+  "Freak Out": ["Stretch Panic"],
+};
+
+const PREFERRED_MATCH_IDS = {
+  "Super Mario Bros. 3|NES": 1068,
+  "Pikmin|GameCube": 2239,
 };
 
 async function resolveIGDBRecord({ title, platform, clientId, accessToken }) {
   const queryTitles = [title, ...(CURATED_QUERY_ALIASES[title] ?? [])];
   const candidateLists = await Promise.all(queryTitles.map((queryTitle) => searchIGDB({ title: queryTitle, clientId, accessToken })));
   const candidates = [...new Map(candidateLists.flat().map((candidate) => [candidate.id, candidate])).values()];
+  const preferredId = PREFERRED_MATCH_IDS[`${title}|${platform}`];
+  const preferred = preferredId ? candidates.find((candidate) => candidate.id === preferredId && candidate.platforms?.some((entry) => entry.id === platformIds[platform])) : null;
+  if (preferred) return { status: "matched", candidate: preferred, candidates: [preferred], matchMethod: "alias", relevantAliases: [] };
   const direct = resolveIGDBMatch(title, platform, candidates, platformIds);
   if (direct.status === "matched") return { ...direct, matchMethod: "title", relevantAliases: [] };
   const aliases = await searchIGDBAliases({ title, clientId, accessToken });

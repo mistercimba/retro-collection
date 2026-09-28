@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - metadata-complete-snapshot
+      - metadata-final-cleanup
     paths:
       - "scripts/refresh-game-metadata.mjs"
       - ".github/workflows/refresh-game-metadata.yml"

@@ -1,35 +1,5 @@
 [
   {
-    "platform": "NES",
-    "title": "Super Mario Bros. 3",
-    "collectionIds": [
-      "NES-0008"
-    ],
-    "reason": "multiple-title-platform-matches",
-    "candidates": [
-      {
-        "id": 1068,
-        "name": "Super Mario Bros. 3",
-        "platforms": [
-          "Arcade",
-          "Nintendo 3DS",
-          "Wii",
-          "Family Computer",
-          "Wii U",
-          "Nintendo Entertainment System"
-        ]
-      },
-      {
-        "id": 227896,
-        "name": "Super Mario Bros. 3+",
-        "platforms": [
-          "Nintendo Entertainment System"
-        ]
-      }
-    ],
-    "relevantAliases": []
-  },
-  {
     "platform": "SNES",
     "title": "Super Mario Kart",
     "collectionIds": [
@@ -45,9 +15,71 @@
     "collectionIds": [
       "SNES-0008"
     ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
+    "reason": "title-platform-mismatch",
+    "candidates": [
+      {
+        "id": 3186,
+        "name": "Street Fighter II",
+        "platforms": [
+          "Arcade"
+        ]
+      },
+      {
+        "id": 48280,
+        "name": "Street Fighter II",
+        "platforms": [
+          "Nintendo Entertainment System"
+        ]
+      },
+      {
+        "id": 231006,
+        "name": "Street Fighter II",
+        "platforms": [
+          "Sega Master System/Mark III"
+        ]
+      },
+      {
+        "id": 198928,
+        "name": "Street Fighter II",
+        "platforms": [
+          "Handheld Electronic LCD"
+        ]
+      }
+    ],
+    "relevantAliases": [
+      {
+        "name": "Street Fighter II: The World Warrior",
+        "gameId": 3186,
+        "gameTitle": "Street Fighter II",
+        "platforms": [
+          "Arcade"
+        ]
+      },
+      {
+        "name": "Street Fighter II: The World Warrior",
+        "gameId": 48280,
+        "gameTitle": "Street Fighter II",
+        "platforms": [
+          "Nintendo Entertainment System"
+        ]
+      },
+      {
+        "name": "Street Fighter II: The World Warrior",
+        "gameId": 231006,
+        "gameTitle": "Street Fighter II",
+        "platforms": [
+          "Sega Master System/Mark III"
+        ]
+      },
+      {
+        "name": "Street Fighter II: The World Warrior",
+        "gameId": 198928,
+        "gameTitle": "Street Fighter II",
+        "platforms": [
+          "Handheld Electronic LCD"
+        ]
+      }
+    ]
   },
   {
     "platform": "Nintendo 64",
@@ -434,31 +466,6 @@
     ],
     "reason": "no-title-match",
     "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameCube",
-    "title": "Pikmin",
-    "collectionIds": [
-      "GC-0015"
-    ],
-    "reason": "multiple-title-platform-matches",
-    "candidates": [
-      {
-        "id": 313360,
-        "name": "Pikmin²",
-        "platforms": [
-          "Nintendo GameCube"
-        ]
-      },
-      {
-        "id": 2239,
-        "name": "Pikmin",
-        "platforms": [
-          "Nintendo GameCube"
-        ]
-      }
-    ],
     "relevantAliases": []
   },
   {
@@ -877,17 +884,7 @@
         ]
       }
     ],
-    "relevantAliases": [
-      {
-        "name": "Black",
-        "gameId": 117992,
-        "gameTitle": "Black",
-        "platforms": [
-          "Android",
-          "iOS"
-        ]
-      }
-    ]
+    "relevantAliases": []
   },
   {
     "platform": "Playstation 2",
@@ -901,39 +898,9 @@
   },
   {
     "platform": "Playstation 2",
-    "title": "WRC: World Rally Championship",
-    "collectionIds": [
-      "PS2-0076"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Bionicle",
-    "collectionIds": [
-      "PS2-0080"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
     "title": "Tourist Trophy: The Real Riding Simulator",
     "collectionIds": [
       "PS2-0084"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Freak Out",
-    "collectionIds": [
-      "PS2-0090"
     ],
     "reason": "no-title-match",
     "candidates": [],
