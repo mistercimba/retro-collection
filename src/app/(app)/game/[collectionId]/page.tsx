@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, BadgeEuro, Clock3, PackageCheck, ShieldAlert, Star, Tag } from "lucide-react";
+import { ArrowLeft, BadgeEuro, Clock3, ShieldAlert, Star, Tag } from "lucide-react";
 import { notFound } from "next/navigation";
 import { GameArtwork } from "@/components/artwork";
 import { MarketSearchLinks } from "@/components/market-search-links";
@@ -15,6 +15,8 @@ export default async function GamePage({ params }: { params: Promise<{ collectio
   if (!game) notFound();
   const research = await getGameResearch(game);
   const metadata = research.metadata;
+  const hasPlaytime = Boolean(metadata?.timeToBeat?.main || metadata?.timeToBeat?.extras || metadata?.timeToBeat?.completionist);
+  const playtimeMissing = hasPlaytime ? "Não disponível" : "Sem dados no IGDB";
   const attention = game.needsReview || Boolean(game.audit?.missingComponents && !/^(none|no|n\/a|—)$/i.test(game.audit.missingComponents.trim())) || /pending|review|rever/i.test(game.audit?.auditStatus ?? "");
   const copyAndAuditRows: [string, string][] = [
     ["Completude", game.overallStatus], ["Condição", game.conditionGrade], ["Media", game.media], ["Caixa", game.box], ["Manual", game.manual], ["Extras", game.extras], ["Label", game.label], ["Selado", game.sealed],
@@ -33,9 +35,9 @@ export default async function GamePage({ params }: { params: Promise<{ collectio
 
     <section aria-label="Resumo do jogo" className="grid grid-cols-2 gap-2 sm:grid-cols-4">
       <Metric icon={<BadgeEuro />} label="Valor estimado" value={research.estimate.value === null ? "Não disponível" : formatEuro(research.estimate.value)} detail={research.estimate.basis ? `${research.estimate.basis} · ${research.estimate.date || "snapshot"}` : "PriceCharting PAL"} />
+      <Metric icon={<Tag />} label="Género" value={metadata?.genres.join(", ") || "Não disponível"} detail="Catálogo · IGDB" />
       <Metric icon={<Star />} label="Metascore" value={research.metascore.value === null ? "Não disponível" : `${research.metascore.value}/100`} detail={research.metascore.value === null ? "RAWG / Metacritic" : "RAWG / Metacritic"} />
-      <Metric icon={<Clock3 />} label="Main Story" value={metadata?.timeToBeat?.main || "Não disponível"} detail="Playtime · IGDB" />
-      <Metric icon={<PackageCheck />} label="A tua avaliação" value="Não registada" detail="Sem avaliação na Sheet" />
+      <Metric icon={<Clock3 />} label="Duração" value={metadata?.timeToBeat?.main || playtimeMissing} detail="Main Story · IGDB" />
     </section>
 
     <div className="grid gap-3 lg:grid-cols-[1fr_1.1fr]">
@@ -57,7 +59,7 @@ export default async function GamePage({ params }: { params: Promise<{ collectio
     <Section title="Catálogo" icon={<Tag className="h-4 w-4" />}>
       {metadata?.summary && <p className="mb-3 text-xs leading-5 text-slate-600">{metadata.summary}</p>}
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">{catalogRows.map(([label, value]) => <div key={label} className="min-w-0 rounded-xl bg-slate-50 px-3 py-2"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{label}</p><p className="mt-0.5 break-words text-xs font-semibold text-slate-800">{value}</p></div>)}</div>
-      <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-600"><span>Main + Extras: <strong>{metadata?.timeToBeat?.extras || "Não disponível"}</strong></span><span>Completionist: <strong>{metadata?.timeToBeat?.completionist || "Não disponível"}</strong></span>{metadata?.aggregatedRating !== null && metadata?.aggregatedRating !== undefined && <span>IGDB: <strong>{metadata.aggregatedRating.toFixed(1)}/100</strong></span>}</div>
+      <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-600"><span>Main + Extras: <strong>{metadata?.timeToBeat?.extras || playtimeMissing}</strong></span><span>Completionist: <strong>{metadata?.timeToBeat?.completionist || playtimeMissing}</strong></span>{metadata?.aggregatedRating !== null && metadata?.aggregatedRating !== undefined && <span>IGDB: <strong>{metadata.aggregatedRating.toFixed(1)}/100</strong></span>}</div>
       {!metadata && <p className="mt-2 text-[11px] text-slate-500">Metadata IGDB: {research.metadataState === "ambiguous" ? "correspondência ambígua" : research.metadataState === "unmatched" ? "sem correspondência segura" : research.metadataState === "not-configured" ? "credenciais não configuradas" : "indisponível"}.</p>}
       {metadata?.refreshedAt && <p className="mt-2 text-[10px] text-slate-400">IGDB · atualizado {metadata.refreshedAt.slice(0, 10)}.</p>}
       <div className="mt-3 border-t border-slate-100 pt-3"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Metascore</p><span className="text-xs font-bold text-slate-800">{research.metascore.value === null ? "Não disponível" : `${research.metascore.value}/100`}</span><span className="ml-2 text-[10px] text-slate-500">Dados fornecidos por <a className="underline" href="https://rawg.io/" target="_blank" rel="noreferrer">RAWG</a>.</span>{research.metascore.url && research.metascore.value !== null && <a className="ml-2 text-[10px] font-bold text-emerald-800 underline" href={research.metascore.url} target="_blank" rel="noreferrer">Metacritic</a>}</div>

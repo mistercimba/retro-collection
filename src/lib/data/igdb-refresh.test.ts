@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildGameMetadataSnapshot, resolveCollectionPlatform, resolveIGDBMatch } from "../../../scripts/igdb-refresh-logic.mjs";
+import { buildGameMetadataSnapshot, resolveCollectionPlatform, resolveIGDBMatch, resolveIGDBMatchWithAliases } from "../../../scripts/igdb-refresh-logic.mjs";
 
 const platformIds = { NES: 18, "Playstation 2": 8, "Nintendo 64": 4 };
 const candidate = (id: number, name: string, platformId = 18) => ({ id, name, platforms: [{ id: platformId, name: "Nintendo Entertainment System" }] });
@@ -33,6 +33,35 @@ describe("IGDB matching and snapshot replacement", () => {
     const collision = resolveIGDBMatch("A BC", "Playstation 2", [candidate(4, "AB C", 8), candidate(5, "A B C", 8)], platformIds);
     expect(collision).toMatchObject({ status: "ambiguous", reason: "multiple-title-platform-matches" });
     expect(resolveIGDBMatch("Choro Q", "Playstation 2", [candidate(6, "ChoroQ HG 4", 8)], platformIds).status).toBe("unmatched");
+  });
+
+  it("matches an exact official alias when the associated game is on the requested platform", () => {
+    const result = resolveIGDBMatchWithAliases("Choro Q", "Playstation 2", [], [
+      { name: "Choro Q", game: candidate(8, "ChoroQ HG 4", 8) },
+    ], platformIds);
+    expect(result).toMatchObject({ status: "matched", matchMethod: "alias", candidate: { id: 8 } });
+  });
+
+  it("rejects an exact alias associated only with a different platform", () => {
+    const result = resolveIGDBMatchWithAliases("Choro Q", "Playstation 2", [], [
+      { name: "Choro Q", game: candidate(9, "ChoroQ", 4) },
+    ], platformIds);
+    expect(result).toMatchObject({ status: "unmatched", reason: "title-platform-mismatch" });
+  });
+
+  it("keeps colliding exact aliases ambiguous even when every result is on platform", () => {
+    const result = resolveIGDBMatchWithAliases("Choro Q", "Playstation 2", [], [
+      { name: "Choro Q", game: candidate(10, "ChoroQ", 8) },
+      { name: "Choro Q", game: candidate(11, "Choro Q Racing", 8) },
+    ], platformIds);
+    expect(result).toMatchObject({ status: "ambiguous", reason: "multiple-title-platform-matches" });
+  });
+
+  it("does not match aliases that are only longer related titles", () => {
+    const result = resolveIGDBMatchWithAliases("Choro Q", "Playstation 2", [], [
+      { name: "Choro Q HG 4", game: candidate(12, "ChoroQ HG 4", 8) },
+    ], platformIds);
+    expect(result).toMatchObject({ status: "unmatched", reason: "no-title-match" });
   });
 
   it("rebuilds entries so stale metadata is replaced by explicit ambiguous/unmatched states", () => {
