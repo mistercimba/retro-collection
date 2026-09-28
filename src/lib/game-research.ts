@@ -5,7 +5,8 @@ import { formatPlaytime } from "@/lib/external-game-data.logic";
 import { getGameMetadata, type MatchedGameMetadata } from "@/lib/game-metadata";
 import { resolveCatalogResearch, type ResearchPlaytime } from "@/lib/game-research.logic";
 import { getPricechartingEstimate, type PriceEstimate } from "@/lib/pricecharting-catalog";
-import { findIGDBTitleCandidates } from "../../scripts/igdb-refresh-logic.mjs";
+import { isIGDBTitleEquivalent, resolveIGDBMatch, resolveIGDBMatchWithAliases, type IGDBAliasResult } from "../../scripts/igdb-refresh-logic.mjs";
+import { selectRawgMetascore, selectRawgSearchGame, type RawgGameDetails, type RawgSearchGame } from "@/lib/rawg-metacritic.logic";
 
 export type Research = {
   metadata: (MatchedGameMetadata & { timeToBeat: { main: string; extras: string; completionist: string } }) | null;
@@ -39,19 +40,55 @@ async function igdbRequest<T>(endpoint: string, query: string, token: string, cl
 
 type Candidate = { id: number; name: string; summary?: string; first_release_date?: number; genres?: { name: string }[]; game_modes?: { name: string }[]; themes?: { name: string }[]; player_perspectives?: { name: string }[]; aggregated_rating?: number; aggregated_rating_count?: number; rating?: number; rating_count?: number; platforms?: { id: number }[]; involved_companies?: { developer?: boolean; publisher?: boolean; company?: { name: string } }[] };
 
+function escapeIGDBSearch(value: string) {
+  return value.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
+}
+
+const IGDB_GAME_FIELDS = "id,name,summary,first_release_date,genres.name,game_modes.name,themes.name,player_perspectives.name,aggregated_rating,aggregated_rating_count,rating,rating_count,platforms.id,platforms.name,involved_companies.developer,involved_companies.publisher,involved_companies.company.name";
+
+async function loadIGDBAliasCandidates(title: string, token: string, clientId: string): Promise<IGDBAliasResult<Candidate>[]> {
+  const escaped = escapeIGDBSearch(title);
+  const aliasRecords = await igdbRequest<{ alternative_name?: string; game?: number }>(
+    "search",
+    `fields alternative_name,game; search "${escaped}"; limit 50;`,
+    token,
+    clientId,
+  );
+  const aliases = aliasRecords
+    .filter((entry): entry is { alternative_name: string; game: number } => Boolean(entry.alternative_name && entry.game))
+    .filter((entry) => isIGDBTitleEquivalent(title, entry.alternative_name));
+  const ids = [...new Set(aliases.map((entry) => entry.game))];
+  if (!ids.length) return [];
+  const games = await igdbRequest<Candidate>("games", `fields ${IGDB_GAME_FIELDS}; where id = (${ids.join(",")}); limit ${ids.length};`, token, clientId);
+  const byId = new Map(games.map((game) => [game.id, game]));
+  return aliases.flatMap((entry) => {
+    const game = byId.get(entry.game);
+    return game ? [{ name: entry.alternative_name, game }] : [];
+  });
+}
+
+async function findIGDBMatch(title: string, platform: string, candidates: Candidate[], token: string, clientId: string) {
+  const initial = resolveIGDBMatch(title, platform, candidates, IGDB_PLATFORM_IDS);
+  if (initial.status === "matched") return initial;
+  const aliases = await loadIGDBAliasCandidates(title, token, clientId);
+  return resolveIGDBMatchWithAliases(title, platform, candidates, aliases, IGDB_PLATFORM_IDS);
+}
+
+const IGDB_PLATFORM_IDS: Record<string, number> = { NES: 18, SNES: 19, "Nintendo 64": 4, GameCube: 21, "Nintendo Wii": 5, "Nintendo Wii U": 41, "Nintendo Switch": 130, "Game Boy": 33, "Game Boy Color": 22, "GameBoy Advance": 24, "Nintendo DS": 20, "Nintendo 3DS": 37, Playstation: 7, "Playstation 2": 8, "Playstation 3": 9, "Playstation 5": 167, PSP: 38, PC: 6 };
+
 const getCachedIgdbMetadata = unstable_cache(async (title: string, platformId: number, clientId: string) => {
   const token = await igdbToken();
   if (!token) throw new Error("IGDB token unavailable");
-  const escaped = title.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
-  const candidates = await igdbRequest<Candidate>("games", `fields id,name,summary,first_release_date,genres.name,game_modes.name,themes.name,player_perspectives.name,aggregated_rating,aggregated_rating_count,rating,rating_count,platforms.id,involved_companies.developer,involved_companies.publisher,involved_companies.company.name; search "${escaped}"; limit 25;`, token, clientId);
-  const titleMatches = findIGDBTitleCandidates(title, candidates, platformId);
-  const matches = titleMatches.filter((candidate) => candidate.platforms?.some((entry) => entry.id === platformId));
-  if (matches.length !== 1) return { metadata: null, metadataState: matches.length > 1 ? "ambiguous" as const : "unmatched" as const };
-  const candidate = matches[0];
+  const escaped = escapeIGDBSearch(title);
+  const candidates = await igdbRequest<Candidate>("games", `fields ${IGDB_GAME_FIELDS}; search "${escaped}"; limit 25;`, token, clientId);
+  const platform = Object.keys(IGDB_PLATFORM_IDS).find((key) => IGDB_PLATFORM_IDS[key] === platformId) ?? "";
+  const result = await findIGDBMatch(title, platform, candidates, token, clientId);
+  if (result.status !== "matched") return { metadata: null, metadataState: result.status as "ambiguous" | "unmatched" };
+  const candidate = result.candidate;
   const times = await igdbRequest<{ hastily?: number; normally?: number; completely?: number }>("game_time_to_beats", `fields hastily,normally,completely; where game_id = ${candidate.id}; limit 1;`, token, clientId);
   const companies = candidate.involved_companies ?? [];
   return { metadata: { matchStatus: "matched" as const, source: "IGDB", sourceGameId: candidate.id, title: candidate.name, summary: candidate.summary ?? "", firstReleaseDate: candidate.first_release_date ? new Date(candidate.first_release_date * 1000).toISOString().slice(0, 10) : "", genres: (candidate.genres ?? []).map((item) => item.name), gameModes: (candidate.game_modes ?? []).map((item) => item.name), themes: (candidate.themes ?? []).map((item) => item.name), perspectives: (candidate.player_perspectives ?? []).map((item) => item.name), developers: companies.filter((item) => item.developer).map((item) => item.company?.name ?? "").filter(Boolean), publishers: companies.filter((item) => item.publisher).map((item) => item.company?.name ?? "").filter(Boolean), aggregatedRating: candidate.aggregated_rating ?? null, aggregatedRatingCount: candidate.aggregated_rating_count ?? 0, userRating: candidate.rating ?? null, userRatingCount: candidate.rating_count ?? 0, refreshedAt: new Date().toISOString(), timeToBeat: { main: formatPlaytime(times[0]?.hastily), extras: formatPlaytime(times[0]?.normally), completionist: formatPlaytime(times[0]?.completely) } }, metadataState: "matched" as const };
-}, ["igdb-metadata-v1"], { revalidate: 86400 });
+}, ["igdb-metadata-v2-aliases"], { revalidate: 86400 });
 
 const getCachedIgdbPlaytime = unstable_cache(async (sourceGameId: number, clientId: string): Promise<ResearchPlaytime> => {
   const token = await igdbToken();
@@ -89,22 +126,34 @@ async function loadIgdb(game: CollectionGame): Promise<Pick<Research, "metadata"
 async function loadMetascore(game: CollectionGame) {
   const key = process.env.RAWG_API_KEY;
   if (!key || !process.env.APP_PASSWORD) return { value: null, source: key ? "Disponível apenas numa app protegida por password" : "Metascore indisponível", url: "" };
-  const params = new URLSearchParams({ search: game.title, page_size: "40", key });
+  const platformNames: Record<string, string[]> = { Playstation: ["PlayStation"], "Playstation 2": ["PlayStation 2"], "Playstation 3": ["PlayStation 3"], "Playstation 5": ["PlayStation 5"], "Nintendo Switch": ["Nintendo Switch"], "Nintendo Wii": ["Wii"], "Nintendo Wii U": ["Wii U"], PC: ["PC"] };
+  const platforms = platformNames[game.platform];
+  if (!platforms) return { value: null, source: "Metascore indisponível para esta plataforma", url: "" };
+
+  const params = new URLSearchParams({ search: game.title, page_size: "40", search_exact: "true", search_precise: "true", key });
   let response: Response;
   try { response = await fetch(`https://api.rawg.io/api/games?${params}`, { next: { revalidate: 86400 } }); }
   catch { return { value: null, source: "RAWG temporariamente indisponível", url: "" }; }
   if (!response.ok) return { value: null, source: "Metascore indisponível", url: "" };
-  let payload: { results?: { name: string; metacritic_url?: string; metacritic_platforms?: { metascore: number; url?: string; platform: { name: string } }[] }[] };
+  let payload: { results?: RawgSearchGame[] };
   try { payload = await response.json(); }
   catch { return { value: null, source: "RAWG temporariamente indisponível", url: "" }; }
-  const platformNames: Record<string, string[]> = { Playstation: ["PlayStation"], "Playstation 2": ["PlayStation 2"], "Playstation 3": ["PlayStation 3"], "Playstation 5": ["PlayStation 5"], "Nintendo Switch": ["Nintendo Switch"], "Nintendo Wii": ["Wii"], "Nintendo Wii U": ["Wii U"], PC: ["PC"] };
-  const aliases = platformNames[game.platform];
-  if (!aliases) return { value: null, source: "Metascore indisponível para esta plataforma", url: "" };
-  const results = findIGDBTitleCandidates(game.title, payload.results ?? []);
-  if (results.length !== 1) return { value: null, source: "Metascore não disponível para correspondência segura", url: "" };
-  const platformScores = (results[0].metacritic_platforms ?? []).filter((entry) => aliases.includes(entry.platform.name));
-  if (platformScores.length !== 1 || !platformScores[0].metascore) return { value: null, source: "Metascore não disponível para esta plataforma", url: "" };
-  return { value: platformScores[0].metascore, source: "RAWG / Metacritic", url: platformScores[0].url ?? results[0].metacritic_url ?? "https://www.metacritic.com/" };
+  const selected = selectRawgSearchGame(game.title, platforms, payload.results ?? []);
+  if (selected.status === "ambiguous") return { value: null, source: "Metascore não disponível para correspondência segura", url: "" };
+  if (selected.status !== "matched") return { value: null, source: "Metascore não disponível para esta plataforma", url: "" };
+
+  const detailParams = new URLSearchParams({ key });
+  let detailResponse: Response;
+  try { detailResponse = await fetch(`https://api.rawg.io/api/games/${selected.game.id}?${detailParams}`, { next: { revalidate: 86400 } }); }
+  catch { return { value: null, source: "RAWG temporariamente indisponível", url: "" }; }
+  if (!detailResponse.ok) return { value: null, source: "Metascore indisponível", url: "" };
+  let detail: RawgGameDetails;
+  try { detail = await detailResponse.json(); }
+  catch { return { value: null, source: "RAWG temporariamente indisponível", url: "" }; }
+  const score = selectRawgMetascore(detail, platforms);
+  return score
+    ? { value: score.value, source: "RAWG / Metacritic", url: score.url }
+    : { value: null, source: "Metascore não disponível para esta plataforma", url: "" };
 }
 
 export async function getGameResearch(game: CollectionGame): Promise<Research> {

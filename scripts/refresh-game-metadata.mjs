@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import ExcelJS from "exceljs";
 import { GoogleAuth } from "google-auth-library";
-import { buildGameMetadataSnapshot, normalizeIGDBTitle, resolveCollectionPlatform, resolveIGDBMatch } from "./igdb-refresh-logic.mjs";
+import { buildGameMetadataSnapshot, isIGDBTitleEquivalent, normalizeIGDBTitle, resolveCollectionPlatform, resolveIGDBMatch, resolveIGDBMatchWithAliases } from "./igdb-refresh-logic.mjs";
 
 const root = process.cwd();
 const metadataPath = path.join(root, "src/data/game-metadata.json");
@@ -112,6 +112,14 @@ async function getIGDBToken() {
   return result.access_token;
 }
 
+let lastIGDBRequestAt = 0;
+async function waitForIGDBRateLimit() {
+  const interval = 260;
+  const delay = interval - (Date.now() - lastIGDBRequestAt);
+  if (delay > 0) await new Promise((resolve) => setTimeout(resolve, delay));
+  lastIGDBRequestAt = Date.now();
+}
+
 async function searchIGDB({ title, clientId, accessToken }) {
   const escapedTitle = title.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
   const query = [
@@ -120,6 +128,7 @@ async function searchIGDB({ title, clientId, accessToken }) {
     "involved_companies.developer,involved_companies.publisher,involved_companies.company.name;",
     `search \"${escapedTitle}\"; limit 25;`,
   ].join(" ");
+  await waitForIGDBRateLimit();
   const response = await fetch("https://api.igdb.com/v4/games", {
     method: "POST",
     headers: { "Client-ID": clientId, Authorization: `Bearer ${accessToken}`, Accept: "application/json", "Content-Type": "text/plain" },
@@ -127,6 +136,44 @@ async function searchIGDB({ title, clientId, accessToken }) {
   });
   if (!response.ok) throw new Error(`IGDB respondeu ${response.status} para ${title}.`);
   return response.json();
+}
+
+async function searchIGDBAliases({ title, clientId, accessToken }) {
+  const escapedTitle = title.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
+  await waitForIGDBRateLimit();
+  const response = await fetch("https://api.igdb.com/v4/search", {
+    method: "POST",
+    headers: { "Client-ID": clientId, Authorization: `Bearer ${accessToken}`, Accept: "application/json", "Content-Type": "text/plain" },
+    body: `fields alternative_name,game; search "${escapedTitle}"; limit 50;`,
+  });
+  if (!response.ok) throw new Error(`IGDB respondeu ${response.status} ao pesquisar aliases para ${title}.`);
+  const searchResults = await response.json();
+  const aliases = (Array.isArray(searchResults) ? searchResults : [])
+    .filter((entry) => typeof entry.alternative_name === "string" && Number.isInteger(entry.game))
+    .filter((entry) => isIGDBTitleEquivalent(title, entry.alternative_name));
+  const gameIds = [...new Set(aliases.map((entry) => entry.game))];
+  if (!gameIds.length) return [];
+
+  await waitForIGDBRateLimit();
+  const gameResponse = await fetch("https://api.igdb.com/v4/games", {
+    method: "POST",
+    headers: { "Client-ID": clientId, Authorization: `Bearer ${accessToken}`, Accept: "application/json", "Content-Type": "text/plain" },
+    body: `fields id,name,platforms.id,platforms.name; where id = (${gameIds.join(",")}); limit ${gameIds.length};`,
+  });
+  if (!gameResponse.ok) throw new Error(`IGDB respondeu ${gameResponse.status} ao resolver jogos associados a aliases de ${title}.`);
+  const gamesById = new Map((await gameResponse.json()).map((game) => [game.id, game]));
+  return aliases.flatMap((entry) => {
+    const game = gamesById.get(entry.game);
+    return game ? [{ name: entry.alternative_name, game }] : [];
+  });
+}
+
+async function resolveIGDBRecord({ title, platform, clientId, accessToken }) {
+  const candidates = await searchIGDB({ title, clientId, accessToken });
+  const direct = resolveIGDBMatch(title, platform, candidates, platformIds);
+  if (direct.status === "matched") return { ...direct, matchMethod: "title", relevantAliases: [] };
+  const aliases = await searchIGDBAliases({ title, clientId, accessToken });
+  return resolveIGDBMatchWithAliases(title, platform, candidates, aliases, platformIds);
 }
 
 const records = await readCollectionWorkbook();
@@ -146,9 +193,15 @@ let matched = 0;
 let ambiguous = 0;
 let unmatched = 0;
 let refreshed = 0;
+let matchedWithGenre = 0;
+let matchedWithDeveloper = 0;
+let matchedWithPublisher = 0;
+let matchedWithCriticRating = 0;
+let aliasResolved = 0;
+const unresolvedReasonCounts = {};
 for (const group of groups.values()) {
   const result = platformIds[group.platform]
-    ? resolveIGDBMatch(group.title, group.platform, await searchIGDB({ ...group, clientId, accessToken }), platformIds)
+    ? await resolveIGDBRecord({ ...group, clientId, accessToken })
     : { status: "unmatched", candidate: null, candidates: [], reason: "unsupported-platform" };
   const refreshedAt = new Date().toISOString();
   if (result.status === "matched") {
@@ -174,6 +227,11 @@ for (const group of groups.values()) {
     };
     result.metadata = metadata;
     matched += group.records.length;
+    if (candidate.genres?.length) matchedWithGenre += group.records.length;
+    if (metadata.developers.length) matchedWithDeveloper += group.records.length;
+    if (metadata.publishers.length) matchedWithPublisher += group.records.length;
+    if (candidate.aggregated_rating !== undefined && candidate.aggregated_rating !== null) matchedWithCriticRating += group.records.length;
+    if (result.matchMethod === "alias") aliasResolved += group.records.length;
   } else {
     if (result.status === "ambiguous") ambiguous += group.records.length;
     else unmatched += group.records.length;
@@ -182,8 +240,15 @@ for (const group of groups.values()) {
       title: group.title,
       collectionIds: group.records.map((record) => record["Collection ID"]),
       reason: result.reason,
-      candidates: result.candidates.slice(0, 8).map((game) => ({ id: game.id, name: game.name, platforms: (game.platforms ?? []).map((entry) => entry.name) })),
+      candidates: result.candidates.map((game) => ({ id: game.id, name: game.name, platforms: (game.platforms ?? []).map((entry) => entry.name) })),
+      relevantAliases: (result.relevantAliases ?? []).map((alias) => ({
+        name: alias.name,
+        gameId: alias.game.id,
+        gameTitle: alias.game.name,
+        platforms: (alias.game.platforms ?? []).map((entry) => entry.name),
+      })),
     });
+    unresolvedReasonCounts[result.reason] = (unresolvedReasonCounts[result.reason] ?? 0) + group.records.length;
   }
   resolvedGroups.push({ collectionIds: group.records.map((record) => record["Collection ID"]), result, refreshedAt });
   refreshed += 1;
@@ -195,3 +260,16 @@ const gamesById = buildGameMetadataSnapshot(resolvedGroups);
 await fs.writeFile(metadataPath, `${JSON.stringify({ schemaVersion: 1, refreshedAt: new Date().toISOString(), games: gamesById }, null, 2)}\n`);
 await fs.writeFile(reviewPath, `${JSON.stringify(needsReview, null, 2)}\n`);
 console.log(`Metadata IGDB atualizada: ${matched} correspondências; ${ambiguous} ambiguidades; ${unmatched} sem correspondência (${needsReview.length} grupos para rever).`);
+console.log("Cobertura IGDB:");
+console.log(JSON.stringify({
+  totalCopies: records.length,
+  matched,
+  ambiguous,
+  unmatched,
+  matchedWithGenre,
+  matchedWithDeveloper,
+  matchedWithPublisher,
+  matchedWithIGDBCriticRating: matchedWithCriticRating,
+  resolvedThroughAlias: aliasResolved,
+  unresolvedByReason: unresolvedReasonCounts,
+}, null, 2));
