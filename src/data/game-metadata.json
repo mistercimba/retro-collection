@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "refreshedAt": "2026-09-28T08:19:16.948Z",
+  "refreshedAt": "2026-09-28T09:46:39.537Z",
   "games": {
     "NES-0001": {
       "matchStatus": "matched",
@@ -37,7 +37,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 70.10438340393004,
       "userRatingCount": 16,
-      "refreshedAt": "2026-09-28T08:15:25.033Z"
+      "refreshedAt": "2026-09-28T09:42:30.926Z"
     },
     "NES-0002": {
       "matchStatus": "matched",
@@ -73,7 +73,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 74.63985718986567,
       "userRatingCount": 35,
-      "refreshedAt": "2026-09-28T08:15:25.534Z"
+      "refreshedAt": "2026-09-28T09:42:31.300Z"
     },
     "NES-0003": {
       "matchStatus": "matched",
@@ -109,7 +109,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 83.55924117893152,
       "userRatingCount": 1327,
-      "refreshedAt": "2026-09-28T08:15:25.937Z"
+      "refreshedAt": "2026-09-28T09:42:31.804Z"
     },
     "NES-0004": {
       "matchStatus": "matched",
@@ -142,7 +142,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 42.6266579988577,
       "userRatingCount": 16,
-      "refreshedAt": "2026-09-28T08:15:26.459Z"
+      "refreshedAt": "2026-09-28T09:42:32.263Z"
     },
     "NES-0005": {
       "matchStatus": "matched",
@@ -174,7 +174,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 59.00290979165759,
       "userRatingCount": 20,
-      "refreshedAt": "2026-09-28T08:15:26.990Z"
+      "refreshedAt": "2026-09-28T09:42:32.708Z"
     },
     "NES-0006": {
       "matchStatus": "matched",
@@ -208,7 +208,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 76.53770982993301,
       "userRatingCount": 557,
-      "refreshedAt": "2026-09-28T08:15:27.554Z"
+      "refreshedAt": "2026-09-28T09:42:33.151Z"
     },
     "NES-0007": {
       "matchStatus": "matched",
@@ -239,7 +239,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 61.07640434674282,
       "userRatingCount": 17,
-      "refreshedAt": "2026-09-28T08:15:27.934Z"
+      "refreshedAt": "2026-09-28T09:42:33.588Z"
     },
     "NES-0008": {
       "source": "IGDB",
@@ -266,14 +266,14 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:15:28.322Z"
+      "refreshedAt": "2026-09-28T09:42:34.274Z"
     },
     "NES-0009": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:28.692Z"
+      "refreshedAt": "2026-09-28T09:42:34.886Z"
     },
     "NES-0010": {
       "matchStatus": "matched",
@@ -309,7 +309,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 78.50980099638757,
       "userRatingCount": 141,
-      "refreshedAt": "2026-09-28T08:15:29.214Z"
+      "refreshedAt": "2026-09-28T09:42:35.323Z"
     },
     "NES-0012": {
       "matchStatus": "matched",
@@ -346,7 +346,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 59.22454170996309,
       "userRatingCount": 34,
-      "refreshedAt": "2026-09-28T08:15:29.830Z"
+      "refreshedAt": "2026-09-28T09:42:35.686Z"
     },
     "NES-0013": {
       "matchStatus": "matched",
@@ -379,14 +379,22 @@
       "aggregatedRatingCount": 0,
       "userRating": 76.0131503756394,
       "userRatingCount": 23,
-      "refreshedAt": "2026-09-28T08:15:30.339Z"
+      "refreshedAt": "2026-09-28T09:42:36.128Z"
     },
     "NES-0014": {
       "source": "IGDB",
       "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:30.846Z"
+      "matchReason": "title-platform-mismatch",
+      "candidates": [
+        {
+          "id": 218922,
+          "name": "Teenage Mutant Ninja Turtles",
+          "platforms": [
+            "Handheld Electronic LCD"
+          ]
+        }
+      ],
+      "refreshedAt": "2026-09-28T09:42:37.069Z"
     },
     "NES-0015": {
       "matchStatus": "matched",
@@ -417,7 +425,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:15:31.369Z"
+      "refreshedAt": "2026-09-28T09:42:37.503Z"
     },
     "NES-0016": {
       "matchStatus": "matched",
@@ -451,7 +459,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 69.78455612483653,
       "userRatingCount": 14,
-      "refreshedAt": "2026-09-28T08:15:31.854Z"
+      "refreshedAt": "2026-09-28T09:42:37.936Z"
     },
     "NES-0017": {
       "matchStatus": "matched",
@@ -480,7 +488,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:15:32.337Z"
+      "refreshedAt": "2026-09-28T09:42:38.366Z"
     },
     "NES-0018": {
       "matchStatus": "matched",
@@ -515,7 +523,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 86.36582848320825,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:15:32.849Z"
+      "refreshedAt": "2026-09-28T09:42:38.833Z"
     },
     "NES-0019": {
       "matchStatus": "matched",
@@ -550,7 +558,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 67.81765694022104,
       "userRatingCount": 18,
-      "refreshedAt": "2026-09-28T08:15:33.391Z"
+      "refreshedAt": "2026-09-28T09:42:39.332Z"
     },
     "SNES-0001": {
       "matchStatus": "matched",
@@ -587,7 +595,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 91.93819987766346,
       "userRatingCount": 1726,
-      "refreshedAt": "2026-09-28T08:15:33.935Z"
+      "refreshedAt": "2026-09-28T09:42:39.769Z"
     },
     "SNES-0002": {
       "matchStatus": "matched",
@@ -622,7 +630,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 70.02417345457862,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:15:34.308Z"
+      "refreshedAt": "2026-09-28T09:42:40.196Z"
     },
     "SNES-0004": {
       "matchStatus": "matched",
@@ -653,14 +661,14 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:15:34.813Z"
+      "refreshedAt": "2026-09-28T09:42:40.635Z"
     },
     "SNES-0005": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:35.326Z"
+      "refreshedAt": "2026-09-28T09:42:41.322Z"
     },
     "SNES-0006": {
       "matchStatus": "matched",
@@ -698,7 +706,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 74.36438187487654,
       "userRatingCount": 94,
-      "refreshedAt": "2026-09-28T08:15:35.893Z"
+      "refreshedAt": "2026-09-28T09:42:41.754Z"
     },
     "SNES-0007": {
       "matchStatus": "matched",
@@ -734,14 +742,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 86.26449679760142,
       "userRatingCount": 244,
-      "refreshedAt": "2026-09-28T08:15:36.274Z"
+      "refreshedAt": "2026-09-28T09:42:42.188Z"
     },
     "SNES-0008": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:36.795Z"
+      "refreshedAt": "2026-09-28T09:42:42.872Z"
     },
     "SNES-0009": {
       "matchStatus": "matched",
@@ -778,7 +786,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 91.69458163555106,
       "userRatingCount": 2042,
-      "refreshedAt": "2026-09-28T08:15:37.315Z"
+      "refreshedAt": "2026-09-28T09:42:43.329Z"
     },
     "SNES-0010": {
       "matchStatus": "matched",
@@ -808,7 +816,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:15:37.801Z"
+      "refreshedAt": "2026-09-28T09:42:43.762Z"
     },
     "N64-0001": {
       "matchStatus": "matched",
@@ -846,7 +854,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 76.21316026604306,
       "userRatingCount": 180,
-      "refreshedAt": "2026-09-28T08:15:38.296Z"
+      "refreshedAt": "2026-09-28T09:42:44.193Z"
     },
     "N64-0002": {
       "matchStatus": "matched",
@@ -882,7 +890,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 86.53941704006323,
       "userRatingCount": 875,
-      "refreshedAt": "2026-09-28T08:15:38.813Z"
+      "refreshedAt": "2026-09-28T09:42:44.629Z"
     },
     "N64-0003": {
       "matchStatus": "matched",
@@ -920,14 +928,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 86.14036427983565,
       "userRatingCount": 178,
-      "refreshedAt": "2026-09-28T08:15:39.333Z"
+      "refreshedAt": "2026-09-28T09:42:44.991Z"
     },
     "N64-0004": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:39.851Z"
+      "refreshedAt": "2026-09-28T09:42:45.679Z"
     },
     "N64-0005": {
       "matchStatus": "matched",
@@ -963,7 +971,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 48.3036658206086,
       "userRatingCount": 54,
-      "refreshedAt": "2026-09-28T08:15:40.361Z"
+      "refreshedAt": "2026-09-28T09:42:46.111Z"
     },
     "N64-0006": {
       "matchStatus": "matched",
@@ -1001,7 +1009,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 81.16188516545455,
       "userRatingCount": 473,
-      "refreshedAt": "2026-09-28T08:15:40.763Z"
+      "refreshedAt": "2026-09-28T09:42:46.556Z"
     },
     "N64-0007": {
       "matchStatus": "matched",
@@ -1038,7 +1046,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 91.53012925023057,
       "userRatingCount": 2170,
-      "refreshedAt": "2026-09-28T08:15:41.275Z"
+      "refreshedAt": "2026-09-28T09:42:46.988Z"
     },
     "N64-0008": {
       "matchStatus": "matched",
@@ -1074,7 +1082,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 74.02389361177356,
       "userRatingCount": 191,
-      "refreshedAt": "2026-09-28T08:15:41.772Z"
+      "refreshedAt": "2026-09-28T09:42:47.424Z"
     },
     "N64-0009": {
       "matchStatus": "matched",
@@ -1111,7 +1119,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 82.29475337695834,
       "userRatingCount": 608,
-      "refreshedAt": "2026-09-28T08:15:42.569Z"
+      "refreshedAt": "2026-09-28T09:42:47.860Z"
     },
     "N64-0010": {
       "matchStatus": "matched",
@@ -1148,7 +1156,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 47.32962223298085,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:15:43.096Z"
+      "refreshedAt": "2026-09-28T09:42:48.335Z"
     },
     "N64-0011": {
       "matchStatus": "matched",
@@ -1181,7 +1189,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 53.29656988541073,
       "userRatingCount": 5,
-      "refreshedAt": "2026-09-28T08:15:43.584Z"
+      "refreshedAt": "2026-09-28T09:42:48.698Z"
     },
     "N64-0012": {
       "matchStatus": "matched",
@@ -1217,7 +1225,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 72.79032059663953,
       "userRatingCount": 114,
-      "refreshedAt": "2026-09-28T08:15:44.117Z"
+      "refreshedAt": "2026-09-28T09:42:49.130Z"
     },
     "N64-0013": {
       "matchStatus": "matched",
@@ -1253,7 +1261,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 79.15822199721634,
       "userRatingCount": 195,
-      "refreshedAt": "2026-09-28T08:15:44.678Z"
+      "refreshedAt": "2026-09-28T09:42:49.564Z"
     },
     "N64-0014": {
       "matchStatus": "matched",
@@ -1289,7 +1297,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 85.43888944053946,
       "userRatingCount": 371,
-      "refreshedAt": "2026-09-28T08:15:45.301Z"
+      "refreshedAt": "2026-09-28T09:42:50.009Z"
     },
     "N64-0016": {
       "matchStatus": "matched",
@@ -1325,7 +1333,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 88.66236798718005,
       "userRatingCount": 2080,
-      "refreshedAt": "2026-09-28T08:15:45.683Z"
+      "refreshedAt": "2026-09-28T09:42:50.454Z"
     },
     "N64-0017": {
       "matchStatus": "matched",
@@ -1364,22 +1372,26 @@
       "aggregatedRatingCount": 0,
       "userRating": 72.5756115696085,
       "userRatingCount": 294,
-      "refreshedAt": "2026-09-28T08:15:46.191Z"
+      "refreshedAt": "2026-09-28T09:42:50.967Z"
     },
     "N64-0018": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "title-platform-mismatch",
-      "candidates": [
-        {
-          "id": 217634,
-          "name": "007 GoldenEye",
-          "platforms": [
-            "Handheld Electronic LCD"
-          ]
-        }
-      ],
-      "refreshedAt": "2026-09-28T08:15:46.600Z"
+      "sourceGameId": 1638,
+      "title": "GoldenEye 007",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:42:51.909Z"
     },
     "N64-0019": {
       "matchStatus": "matched",
@@ -1415,7 +1427,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 76.03054528689218,
       "userRatingCount": 254,
-      "refreshedAt": "2026-09-28T08:15:47.007Z"
+      "refreshedAt": "2026-09-28T09:42:52.356Z"
     },
     "N64-0020": {
       "matchStatus": "matched",
@@ -1449,7 +1461,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 69.71380535622232,
       "userRatingCount": 15,
-      "refreshedAt": "2026-09-28T08:15:47.506Z"
+      "refreshedAt": "2026-09-28T09:42:52.799Z"
     },
     "N64-0021": {
       "source": "IGDB",
@@ -1472,7 +1484,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:15:47.891Z"
+      "refreshedAt": "2026-09-28T09:42:53.480Z"
     },
     "N64-0023": {
       "matchStatus": "matched",
@@ -1512,7 +1524,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 75.4225820224339,
       "userRatingCount": 14,
-      "refreshedAt": "2026-09-28T08:15:48.402Z"
+      "refreshedAt": "2026-09-28T09:42:53.920Z"
     },
     "N64-0024": {
       "matchStatus": "matched",
@@ -1549,7 +1561,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 74.19402569995088,
       "userRatingCount": 77,
-      "refreshedAt": "2026-09-28T08:15:48.912Z"
+      "refreshedAt": "2026-09-28T09:42:54.287Z"
     },
     "N64-0025": {
       "matchStatus": "matched",
@@ -1584,7 +1596,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 50.50853886671333,
       "userRatingCount": 10,
-      "refreshedAt": "2026-09-28T08:15:49.418Z"
+      "refreshedAt": "2026-09-28T09:42:54.751Z"
     },
     "N64-0026": {
       "matchStatus": "matched",
@@ -1621,35 +1633,35 @@
       "aggregatedRatingCount": 0,
       "userRating": 80.27966856139383,
       "userRatingCount": 56,
-      "refreshedAt": "2026-09-28T08:15:49.803Z"
+      "refreshedAt": "2026-09-28T09:42:55.230Z"
     },
     "GBC-0001": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:50.322Z"
+      "refreshedAt": "2026-09-28T09:42:55.919Z"
     },
     "GBC-0002": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:50.859Z"
+      "refreshedAt": "2026-09-28T09:42:56.532Z"
     },
     "GBC-0003": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:51.375Z"
+      "refreshedAt": "2026-09-28T09:42:57.213Z"
     },
     "GBC-0004": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:51.902Z"
+      "refreshedAt": "2026-09-28T09:42:57.891Z"
     },
     "GBC-0006": {
       "matchStatus": "matched",
@@ -1683,35 +1695,35 @@
       "aggregatedRatingCount": 0,
       "userRating": 78.96840947634972,
       "userRatingCount": 75,
-      "refreshedAt": "2026-09-28T08:15:52.278Z"
+      "refreshedAt": "2026-09-28T09:42:58.329Z"
     },
     "GBC-0007": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:52.903Z"
+      "refreshedAt": "2026-09-28T09:42:59.077Z"
     },
     "GBC-0008": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:53.401Z"
+      "refreshedAt": "2026-09-28T09:42:59.762Z"
     },
     "GBC-0010": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:53.978Z"
+      "refreshedAt": "2026-09-28T09:43:00.443Z"
     },
     "GBC-0011": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:54.484Z"
+      "refreshedAt": "2026-09-28T09:43:01.133Z"
     },
     "GBC-0012": {
       "matchStatus": "matched",
@@ -1745,7 +1757,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 77.84602430020988,
       "userRatingCount": 190,
-      "refreshedAt": "2026-09-28T08:15:54.971Z"
+      "refreshedAt": "2026-09-28T09:43:01.579Z"
     },
     "GBC-0013": {
       "source": "IGDB",
@@ -1768,7 +1780,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:15:55.363Z"
+      "refreshedAt": "2026-09-28T09:43:02.267Z"
     },
     "GBC-0014": {
       "matchStatus": "matched",
@@ -1804,7 +1816,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 68.35826171660504,
       "userRatingCount": 45,
-      "refreshedAt": "2026-09-28T08:15:55.749Z"
+      "refreshedAt": "2026-09-28T09:43:02.720Z"
     },
     "GBC-0015": {
       "matchStatus": "matched",
@@ -1836,7 +1848,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:15:56.269Z"
+      "refreshedAt": "2026-09-28T09:43:03.159Z"
     },
     "GBC-0016": {
       "matchStatus": "matched",
@@ -1869,7 +1881,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 78.95161593750304,
       "userRatingCount": 49,
-      "refreshedAt": "2026-09-28T08:15:56.651Z"
+      "refreshedAt": "2026-09-28T09:43:03.593Z"
     },
     "GBC-0017": {
       "matchStatus": "matched",
@@ -1901,7 +1913,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 79.89463062410393,
       "userRatingCount": 57,
-      "refreshedAt": "2026-09-28T08:15:57.112Z"
+      "refreshedAt": "2026-09-28T09:43:04.028Z"
     },
     "GBC-0018": {
       "matchStatus": "matched",
@@ -1935,7 +1947,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:15:57.488Z"
+      "refreshedAt": "2026-09-28T09:43:04.464Z"
     },
     "GBC-0019": {
       "matchStatus": "matched",
@@ -1970,14 +1982,14 @@
       "aggregatedRatingCount": 1,
       "userRating": 68.85721912643746,
       "userRatingCount": 32,
-      "refreshedAt": "2026-09-28T08:15:57.880Z"
+      "refreshedAt": "2026-09-28T09:43:04.902Z"
     },
     "GBC-0020": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:15:58.262Z"
+      "refreshedAt": "2026-09-28T09:43:05.583Z"
     },
     "GBC-0021": {
       "source": "IGDB",
@@ -2000,7 +2012,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:15:58.639Z"
+      "refreshedAt": "2026-09-28T09:43:06.263Z"
     },
     "GBC-0022": {
       "matchStatus": "matched",
@@ -2035,7 +2047,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 74.32111753333886,
       "userRatingCount": 314,
-      "refreshedAt": "2026-09-28T08:15:59.167Z"
+      "refreshedAt": "2026-09-28T09:43:06.699Z"
     },
     "GBC-0023": {
       "matchStatus": "matched",
@@ -2067,7 +2079,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 59.52655346567074,
       "userRatingCount": 34,
-      "refreshedAt": "2026-09-28T08:15:59.679Z"
+      "refreshedAt": "2026-09-28T09:43:07.127Z"
     },
     "GBC-0024": {
       "source": "IGDB",
@@ -2091,7 +2103,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:16:00.091Z"
+      "refreshedAt": "2026-09-28T09:43:07.816Z"
     },
     "GBC-0025": {
       "source": "IGDB",
@@ -2110,7 +2122,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:16:00.492Z"
+      "refreshedAt": "2026-09-28T09:43:08.434Z"
     },
     "GBC-0026": {
       "matchStatus": "matched",
@@ -2144,7 +2156,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 78.90975355613985,
       "userRatingCount": 21,
-      "refreshedAt": "2026-09-28T08:16:00.869Z"
+      "refreshedAt": "2026-09-28T09:43:08.866Z"
     },
     "GBC-0027": {
       "matchStatus": "matched",
@@ -2180,7 +2192,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 73.37092250842058,
       "userRatingCount": 146,
-      "refreshedAt": "2026-09-28T08:16:01.390Z"
+      "refreshedAt": "2026-09-28T09:43:09.298Z"
     },
     "GBC-0028": {
       "matchStatus": "matched",
@@ -2214,7 +2226,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 76.75823670457724,
       "userRatingCount": 13,
-      "refreshedAt": "2026-09-28T08:16:01.907Z"
+      "refreshedAt": "2026-09-28T09:43:09.659Z"
     },
     "GBC-0029": {
       "matchStatus": "matched",
@@ -2244,7 +2256,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 59.83484742239789,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:16:02.447Z"
+      "refreshedAt": "2026-09-28T09:43:10.028Z"
     },
     "GBC-0030": {
       "matchStatus": "matched",
@@ -2277,7 +2289,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 80.08242115803058,
       "userRatingCount": 130,
-      "refreshedAt": "2026-09-28T08:16:02.828Z"
+      "refreshedAt": "2026-09-28T09:43:10.472Z"
     },
     "GBC-0031": {
       "matchStatus": "matched",
@@ -2311,7 +2323,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 60.53309582740358,
       "userRatingCount": 15,
-      "refreshedAt": "2026-09-28T08:16:03.352Z"
+      "refreshedAt": "2026-09-28T09:43:10.842Z"
     },
     "GBC-0032": {
       "matchStatus": "matched",
@@ -2344,7 +2356,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 68.04029155510635,
       "userRatingCount": 121,
-      "refreshedAt": "2026-09-28T08:16:03.873Z"
+      "refreshedAt": "2026-09-28T09:43:11.277Z"
     },
     "GBC-0033": {
       "matchStatus": "matched",
@@ -2371,7 +2383,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:04.391Z"
+      "refreshedAt": "2026-09-28T09:43:11.715Z"
     },
     "GBC-0034": {
       "matchStatus": "matched",
@@ -2401,7 +2413,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 57.99575077252999,
       "userRatingCount": 5,
-      "refreshedAt": "2026-09-28T08:16:04.931Z"
+      "refreshedAt": "2026-09-28T09:43:12.188Z"
     },
     "GBC-0035": {
       "matchStatus": "matched",
@@ -2435,7 +2447,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 69.87918806580223,
       "userRatingCount": 31,
-      "refreshedAt": "2026-09-28T08:16:05.377Z"
+      "refreshedAt": "2026-09-28T09:43:12.619Z"
     },
     "GBC-0036": {
       "matchStatus": "matched",
@@ -2468,7 +2480,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 69.71361368475337,
       "userRatingCount": 13,
-      "refreshedAt": "2026-09-28T08:16:05.773Z"
+      "refreshedAt": "2026-09-28T09:43:13.126Z"
     },
     "GBC-0037": {
       "matchStatus": "matched",
@@ -2494,7 +2506,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:06.384Z"
+      "refreshedAt": "2026-09-28T09:43:13.525Z"
     },
     "GBC-0040": {
       "matchStatus": "matched",
@@ -2525,14 +2537,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 67.99298904370139,
       "userRatingCount": 10,
-      "refreshedAt": "2026-09-28T08:16:06.760Z"
+      "refreshedAt": "2026-09-28T09:43:13.960Z"
     },
     "GBC-0041": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:07.394Z"
+      "refreshedAt": "2026-09-28T09:43:14.647Z"
     },
     "GBC-0042": {
       "matchStatus": "matched",
@@ -2568,28 +2580,28 @@
       "aggregatedRatingCount": 1,
       "userRating": 70.50486753494118,
       "userRatingCount": 21,
-      "refreshedAt": "2026-09-28T08:16:07.820Z"
+      "refreshedAt": "2026-09-28T09:43:15.090Z"
     },
     "GBC-0043": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:08.319Z"
+      "refreshedAt": "2026-09-28T09:43:15.776Z"
     },
     "GBC-0044": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:08.697Z"
+      "refreshedAt": "2026-09-28T09:43:16.459Z"
     },
     "GBC-0045": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:09.068Z"
+      "refreshedAt": "2026-09-28T09:43:17.122Z"
     },
     "GBC-0047": {
       "matchStatus": "matched",
@@ -2618,21 +2630,21 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:09.637Z"
+      "refreshedAt": "2026-09-28T09:43:17.564Z"
     },
     "GBC-0048": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:10.017Z"
+      "refreshedAt": "2026-09-28T09:43:18.244Z"
     },
     "GBC-0049": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:10.406Z"
+      "refreshedAt": "2026-09-28T09:43:18.859Z"
     },
     "GBC-0050": {
       "matchStatus": "matched",
@@ -2665,7 +2677,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 67.34202562672053,
       "userRatingCount": 9,
-      "refreshedAt": "2026-09-28T08:16:10.792Z"
+      "refreshedAt": "2026-09-28T09:43:19.302Z"
     },
     "GBC-0051": {
       "matchStatus": "matched",
@@ -2699,7 +2711,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:11.310Z"
+      "refreshedAt": "2026-09-28T09:43:19.739Z"
     },
     "GBC-0052": {
       "matchStatus": "matched",
@@ -2734,7 +2746,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 73,
       "userRatingCount": 1,
-      "refreshedAt": "2026-09-28T08:16:11.827Z"
+      "refreshedAt": "2026-09-28T09:43:20.179Z"
     },
     "GBC-0053": {
       "matchStatus": "matched",
@@ -2768,14 +2780,14 @@
       "aggregatedRatingCount": 2,
       "userRating": 81.29578080690139,
       "userRatingCount": 200,
-      "refreshedAt": "2026-09-28T08:16:12.328Z"
+      "refreshedAt": "2026-09-28T09:43:20.606Z"
     },
     "GBA-0001": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:12.781Z"
+      "refreshedAt": "2026-09-28T09:43:21.287Z"
     },
     "GBA-0002": {
       "matchStatus": "matched",
@@ -2807,42 +2819,42 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:13.288Z"
+      "refreshedAt": "2026-09-28T09:43:21.722Z"
     },
     "GBA-0003": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:13.696Z"
+      "refreshedAt": "2026-09-28T09:43:22.412Z"
     },
     "GBA-0004": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:14.200Z"
+      "refreshedAt": "2026-09-28T09:43:23.094Z"
     },
     "GBA-0005": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:14.591Z"
+      "refreshedAt": "2026-09-28T09:43:23.783Z"
     },
     "GBA-0006": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:15.176Z"
+      "refreshedAt": "2026-09-28T09:43:24.463Z"
     },
     "GBA-0007": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:15.581Z"
+      "refreshedAt": "2026-09-28T09:43:25.089Z"
     },
     "GBA-0008": {
       "matchStatus": "matched",
@@ -2875,7 +2887,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 84.46955802211113,
       "userRatingCount": 438,
-      "refreshedAt": "2026-09-28T08:16:15.958Z"
+      "refreshedAt": "2026-09-28T09:43:25.520Z"
     },
     "GBA-0009": {
       "matchStatus": "matched",
@@ -2909,7 +2921,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 65.32832679893735,
       "userRatingCount": 44,
-      "refreshedAt": "2026-09-28T08:16:16.464Z"
+      "refreshedAt": "2026-09-28T09:43:25.957Z"
     },
     "GBA-0010": {
       "matchStatus": "matched",
@@ -2944,7 +2956,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 84.46714746312823,
       "userRatingCount": 312,
-      "refreshedAt": "2026-09-28T08:16:16.902Z"
+      "refreshedAt": "2026-09-28T09:43:26.391Z"
     },
     "GBA-0013": {
       "matchStatus": "matched",
@@ -2980,7 +2992,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 82.22229697413246,
       "userRatingCount": 33,
-      "refreshedAt": "2026-09-28T08:16:17.418Z"
+      "refreshedAt": "2026-09-28T09:43:26.825Z"
     },
     "GBA-0014": {
       "matchStatus": "matched",
@@ -3009,7 +3021,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:17.832Z"
+      "refreshedAt": "2026-09-28T09:43:27.251Z"
     },
     "GBA-0015": {
       "matchStatus": "matched",
@@ -3042,7 +3054,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:18.253Z"
+      "refreshedAt": "2026-09-28T09:43:27.685Z"
     },
     "GBA-0016": {
       "source": "IGDB",
@@ -3059,14 +3071,14 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:16:18.818Z"
+      "refreshedAt": "2026-09-28T09:43:28.626Z"
     },
     "GBA-0017": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:19.185Z"
+      "refreshedAt": "2026-09-28T09:43:29.244Z"
     },
     "GBA-0018": {
       "matchStatus": "matched",
@@ -3098,7 +3110,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:19.564Z"
+      "refreshedAt": "2026-09-28T09:43:29.673Z"
     },
     "GBA-0019": {
       "matchStatus": "matched",
@@ -3135,7 +3147,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 78.32164210045093,
       "userRatingCount": 127,
-      "refreshedAt": "2026-09-28T08:16:20.055Z"
+      "refreshedAt": "2026-09-28T09:43:30.109Z"
     },
     "GBA-0020": {
       "matchStatus": "matched",
@@ -3167,7 +3179,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 69.91681668632441,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:16:20.566Z"
+      "refreshedAt": "2026-09-28T09:43:30.537Z"
     },
     "GBA-0021": {
       "matchStatus": "matched",
@@ -3204,14 +3216,14 @@
       "aggregatedRatingCount": 1,
       "userRating": 75.65055004904076,
       "userRatingCount": 186,
-      "refreshedAt": "2026-09-28T08:16:21.045Z"
+      "refreshedAt": "2026-09-28T09:43:30.980Z"
     },
     "GBA-0022": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:21.565Z"
+      "refreshedAt": "2026-09-28T09:43:31.664Z"
     },
     "GBA-0023": {
       "matchStatus": "matched",
@@ -3245,7 +3257,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 81.66832618595993,
       "userRatingCount": 146,
-      "refreshedAt": "2026-09-28T08:16:22.087Z"
+      "refreshedAt": "2026-09-28T09:43:32.094Z"
     },
     "GBA-0024": {
       "matchStatus": "matched",
@@ -3277,14 +3289,14 @@
       "aggregatedRatingCount": 1,
       "userRating": 77.14238466882946,
       "userRatingCount": 53,
-      "refreshedAt": "2026-09-28T08:16:22.466Z"
+      "refreshedAt": "2026-09-28T09:43:32.536Z"
     },
     "GBA-0025": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:22.842Z"
+      "refreshedAt": "2026-09-28T09:43:33.262Z"
     },
     "GBA-0026": {
       "matchStatus": "matched",
@@ -3305,7 +3317,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:23.223Z"
+      "refreshedAt": "2026-09-28T09:43:33.700Z"
     },
     "GBA-0027": {
       "matchStatus": "matched",
@@ -3344,7 +3356,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 84.12132375323043,
       "userRatingCount": 140,
-      "refreshedAt": "2026-09-28T08:16:23.629Z"
+      "refreshedAt": "2026-09-28T09:43:34.144Z"
     },
     "GBA-0028": {
       "matchStatus": "matched",
@@ -3378,7 +3390,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:24.147Z"
+      "refreshedAt": "2026-09-28T09:43:34.630Z"
     },
     "GBA-0029": {
       "matchStatus": "matched",
@@ -3414,28 +3426,37 @@
       "aggregatedRatingCount": 2,
       "userRating": 77.30902526936433,
       "userRatingCount": 77,
-      "refreshedAt": "2026-09-28T08:16:24.650Z"
+      "refreshedAt": "2026-09-28T09:43:35.065Z"
     },
     "GBA-0030": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:25.145Z"
+      "refreshedAt": "2026-09-28T09:43:35.753Z"
     },
     "GBA-0031": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:25.636Z"
+      "refreshedAt": "2026-09-28T09:43:36.431Z"
     },
     "GBA-0032": {
       "source": "IGDB",
       "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:26.000Z"
+      "matchReason": "title-platform-mismatch",
+      "candidates": [
+        {
+          "id": 47303,
+          "name": "Winter X-Games Snowboarding 2002",
+          "platforms": [
+            "Xbox",
+            "PlayStation 2"
+          ]
+        }
+      ],
+      "refreshedAt": "2026-09-28T09:43:37.375Z"
     },
     "GBA-0033": {
       "matchStatus": "matched",
@@ -3471,7 +3492,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 81.83204271910428,
       "userRatingCount": 148,
-      "refreshedAt": "2026-09-28T08:16:26.383Z"
+      "refreshedAt": "2026-09-28T09:43:37.861Z"
     },
     "GBA-0034": {
       "matchStatus": "matched",
@@ -3507,14 +3528,14 @@
       "aggregatedRatingCount": 2,
       "userRating": 79.43478342442079,
       "userRatingCount": 45,
-      "refreshedAt": "2026-09-28T08:16:26.767Z"
+      "refreshedAt": "2026-09-28T09:43:38.450Z"
     },
     "GBA-0035": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:27.265Z"
+      "refreshedAt": "2026-09-28T09:43:39.133Z"
     },
     "GBA-0036": {
       "matchStatus": "matched",
@@ -3552,7 +3573,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 72.31526849542546,
       "userRatingCount": 68,
-      "refreshedAt": "2026-09-28T08:16:27.778Z"
+      "refreshedAt": "2026-09-28T09:43:39.493Z"
     },
     "GBA-0037": {
       "matchStatus": "matched",
@@ -3585,7 +3606,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:28.328Z"
+      "refreshedAt": "2026-09-28T09:43:39.920Z"
     },
     "GBA-0038": {
       "matchStatus": "matched",
@@ -3620,14 +3641,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 49.94516229724886,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:16:28.838Z"
+      "refreshedAt": "2026-09-28T09:43:40.357Z"
     },
     "GBA-0039": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:29.313Z"
+      "refreshedAt": "2026-09-28T09:43:41.036Z"
     },
     "GBA-0040": {
       "matchStatus": "matched",
@@ -3662,7 +3683,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 43.16552651383154,
       "userRatingCount": 23,
-      "refreshedAt": "2026-09-28T08:16:29.858Z"
+      "refreshedAt": "2026-09-28T09:43:41.467Z"
     },
     "GBA-0041": {
       "matchStatus": "matched",
@@ -3695,14 +3716,14 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:30.250Z"
+      "refreshedAt": "2026-09-28T09:43:41.901Z"
     },
     "GBA-0042": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:30.617Z"
+      "refreshedAt": "2026-09-28T09:43:42.580Z"
     },
     "GBA-0043": {
       "matchStatus": "matched",
@@ -3736,7 +3757,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 76.39181805871182,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:16:31.127Z"
+      "refreshedAt": "2026-09-28T09:43:43.017Z"
     },
     "GBA-0044": {
       "matchStatus": "matched",
@@ -3767,7 +3788,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 64.41991152209012,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:16:31.562Z"
+      "refreshedAt": "2026-09-28T09:43:43.455Z"
     },
     "GBA-0045": {
       "matchStatus": "matched",
@@ -3798,14 +3819,14 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:32.095Z"
+      "refreshedAt": "2026-09-28T09:43:43.901Z"
     },
     "GBA-0046": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:32.601Z"
+      "refreshedAt": "2026-09-28T09:43:44.582Z"
     },
     "GBA-0047": {
       "matchStatus": "matched",
@@ -3832,7 +3853,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:33.091Z"
+      "refreshedAt": "2026-09-28T09:43:45.015Z"
     },
     "GBA-0048": {
       "matchStatus": "matched",
@@ -3862,14 +3883,26 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:33.625Z"
+      "refreshedAt": "2026-09-28T09:43:45.379Z"
     },
     "GBA-0049": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:34.146Z"
+      "sourceGameId": 1590,
+      "title": "Spyro Orange: The Cortex Conspiracy",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:43:46.367Z"
     },
     "GBA-0050": {
       "matchStatus": "matched",
@@ -3892,7 +3925,7 @@
       "aggregatedRatingCount": 1,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:34.662Z"
+      "refreshedAt": "2026-09-28T09:43:46.799Z"
     },
     "GBA-0051": {
       "matchStatus": "matched",
@@ -3921,7 +3954,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:35.041Z"
+      "refreshedAt": "2026-09-28T09:43:47.229Z"
     },
     "GBA-0053": {
       "matchStatus": "matched",
@@ -3946,7 +3979,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:35.409Z"
+      "refreshedAt": "2026-09-28T09:43:47.653Z"
     },
     "GBA-0054": {
       "matchStatus": "matched",
@@ -3982,7 +4015,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 65.35888813578677,
       "userRatingCount": 29,
-      "refreshedAt": "2026-09-28T08:16:35.788Z"
+      "refreshedAt": "2026-09-28T09:43:48.096Z"
     },
     "GBA-0055": {
       "matchStatus": "matched",
@@ -4011,7 +4044,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:36.292Z"
+      "refreshedAt": "2026-09-28T09:43:48.527Z"
     },
     "GBA-0056": {
       "matchStatus": "matched",
@@ -4038,14 +4071,26 @@
       "aggregatedRatingCount": 0,
       "userRating": 55.08554808076624,
       "userRatingCount": 8,
-      "refreshedAt": "2026-09-28T08:16:36.809Z"
+      "refreshedAt": "2026-09-28T09:43:48.965Z"
     },
     "GBA-0057": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:37.304Z"
+      "sourceGameId": 8029,
+      "title": "Tom and Jerry in Infurnal Escape",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:43:49.907Z"
     },
     "GBA-0058": {
       "matchStatus": "matched",
@@ -4077,7 +4122,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:37.791Z"
+      "refreshedAt": "2026-09-28T09:43:50.273Z"
     },
     "GBA-0059": {
       "matchStatus": "matched",
@@ -4109,14 +4154,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 69.45619961066944,
       "userRatingCount": 16,
-      "refreshedAt": "2026-09-28T08:16:38.169Z"
+      "refreshedAt": "2026-09-28T09:43:50.703Z"
     },
     "GBA-0060": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:38.752Z"
+      "refreshedAt": "2026-09-28T09:43:51.383Z"
     },
     "GBA-0061": {
       "matchStatus": "matched",
@@ -4139,14 +4184,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 67.3568210642481,
       "userRatingCount": 5,
-      "refreshedAt": "2026-09-28T08:16:39.178Z"
+      "refreshedAt": "2026-09-28T09:43:51.752Z"
     },
     "GBA-0062": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:39.663Z"
+      "refreshedAt": "2026-09-28T09:43:52.433Z"
     },
     "NDS-0001": {
       "matchStatus": "matched",
@@ -4179,7 +4224,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 75.88375583668223,
       "userRatingCount": 86,
-      "refreshedAt": "2026-09-28T08:16:40.182Z"
+      "refreshedAt": "2026-09-28T09:43:52.962Z"
     },
     "NDS-0002": {
       "matchStatus": "matched",
@@ -4211,7 +4256,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 79.96271686843012,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:16:40.662Z"
+      "refreshedAt": "2026-09-28T09:43:53.392Z"
     },
     "NDS-0003": {
       "matchStatus": "matched",
@@ -4241,7 +4286,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 77.72257609412938,
       "userRatingCount": 18,
-      "refreshedAt": "2026-09-28T08:16:41.163Z"
+      "refreshedAt": "2026-09-28T09:43:53.819Z"
     },
     "NDS-0004": {
       "matchStatus": "matched",
@@ -4275,7 +4320,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 83.13300803551127,
       "userRatingCount": 79,
-      "refreshedAt": "2026-09-28T08:16:41.649Z"
+      "refreshedAt": "2026-09-28T09:43:54.251Z"
     },
     "NDS-0005": {
       "matchStatus": "matched",
@@ -4311,7 +4356,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 89.99724546150205,
       "userRatingCount": 102,
-      "refreshedAt": "2026-09-28T08:16:42.163Z"
+      "refreshedAt": "2026-09-28T09:43:54.679Z"
     },
     "NDS-0006": {
       "matchStatus": "matched",
@@ -4341,7 +4386,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 68,
       "userRatingCount": 2,
-      "refreshedAt": "2026-09-28T08:16:42.700Z"
+      "refreshedAt": "2026-09-28T09:43:55.107Z"
     },
     "NDS-0007": {
       "matchStatus": "matched",
@@ -4377,7 +4422,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 79.84942648506276,
       "userRatingCount": 11,
-      "refreshedAt": "2026-09-28T08:16:43.074Z"
+      "refreshedAt": "2026-09-28T09:43:55.535Z"
     },
     "NDS-0008": {
       "matchStatus": "matched",
@@ -4413,7 +4458,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 52.21737052261936,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:16:43.572Z"
+      "refreshedAt": "2026-09-28T09:43:55.963Z"
     },
     "NDS-0009": {
       "source": "IGDB",
@@ -4428,14 +4473,14 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:16:43.950Z"
+      "refreshedAt": "2026-09-28T09:43:56.642Z"
     },
     "NDS-0010": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:44.458Z"
+      "refreshedAt": "2026-09-28T09:43:57.321Z"
     },
     "NDS-0011": {
       "matchStatus": "matched",
@@ -4472,7 +4517,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 54.63902913970713,
       "userRatingCount": 9,
-      "refreshedAt": "2026-09-28T08:16:44.945Z"
+      "refreshedAt": "2026-09-28T09:43:57.682Z"
     },
     "NDS-0012": {
       "matchStatus": "matched",
@@ -4508,14 +4553,14 @@
       "aggregatedRatingCount": 2,
       "userRating": 70.98151249251649,
       "userRatingCount": 47,
-      "refreshedAt": "2026-09-28T08:16:45.470Z"
+      "refreshedAt": "2026-09-28T09:43:58.109Z"
     },
     "NDS-0013": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:45.952Z"
+      "refreshedAt": "2026-09-28T09:43:58.813Z"
     },
     "NDS-0014": {
       "matchStatus": "matched",
@@ -4549,7 +4594,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 75.84942779245104,
       "userRatingCount": 191,
-      "refreshedAt": "2026-09-28T08:16:46.478Z"
+      "refreshedAt": "2026-09-28T09:43:59.245Z"
     },
     "NDS-0016": {
       "matchStatus": "matched",
@@ -4580,14 +4625,14 @@
       "aggregatedRatingCount": 4,
       "userRating": 70.10876243480637,
       "userRatingCount": 33,
-      "refreshedAt": "2026-09-28T08:16:46.842Z"
+      "refreshedAt": "2026-09-28T09:43:59.683Z"
     },
     "NDS-0017": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:47.325Z"
+      "refreshedAt": "2026-09-28T09:44:00.294Z"
     },
     "NDS-0018": {
       "matchStatus": "matched",
@@ -4624,7 +4669,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 85.90557470898514,
       "userRatingCount": 62,
-      "refreshedAt": "2026-09-28T08:16:47.704Z"
+      "refreshedAt": "2026-09-28T09:44:00.727Z"
     },
     "NDS-0019": {
       "source": "IGDB",
@@ -4639,7 +4684,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:16:48.223Z"
+      "refreshedAt": "2026-09-28T09:44:01.597Z"
     },
     "NDS-0020": {
       "matchStatus": "matched",
@@ -4676,7 +4721,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 62.69644829558242,
       "userRatingCount": 13,
-      "refreshedAt": "2026-09-28T08:16:48.706Z"
+      "refreshedAt": "2026-09-28T09:44:02.032Z"
     },
     "NDS-0021": {
       "matchStatus": "matched",
@@ -4704,21 +4749,21 @@
       "aggregatedRatingCount": 2,
       "userRating": 69.743178681315,
       "userRatingCount": 5,
-      "refreshedAt": "2026-09-28T08:16:49.082Z"
+      "refreshedAt": "2026-09-28T09:44:02.458Z"
     },
     "NDS-0022": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:49.462Z"
+      "refreshedAt": "2026-09-28T09:44:03.137Z"
     },
     "NDS-0023": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:16:49.835Z"
+      "refreshedAt": "2026-09-28T09:44:03.880Z"
     },
     "NDS-0024": {
       "matchStatus": "matched",
@@ -4754,7 +4799,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 80.82080365332425,
       "userRatingCount": 215,
-      "refreshedAt": "2026-09-28T08:16:50.348Z"
+      "refreshedAt": "2026-09-28T09:44:04.389Z"
     },
     "NDS-0025": {
       "matchStatus": "matched",
@@ -4788,7 +4833,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 78.43819692034563,
       "userRatingCount": 155,
-      "refreshedAt": "2026-09-28T08:16:50.901Z"
+      "refreshedAt": "2026-09-28T09:44:04.835Z"
     },
     "NDS-0026": {
       "matchStatus": "matched",
@@ -4819,7 +4864,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 70.00891968587251,
       "userRatingCount": 17,
-      "refreshedAt": "2026-09-28T08:16:51.280Z"
+      "refreshedAt": "2026-09-28T09:44:05.347Z"
     },
     "NDS-0027": {
       "matchStatus": "matched",
@@ -4845,7 +4890,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 63,
       "userRatingCount": 3,
-      "refreshedAt": "2026-09-28T08:16:51.775Z"
+      "refreshedAt": "2026-09-28T09:44:05.774Z"
     },
     "NDS-0028": {
       "matchStatus": "matched",
@@ -4880,7 +4925,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 77.97722007803077,
       "userRatingCount": 16,
-      "refreshedAt": "2026-09-28T08:16:52.260Z"
+      "refreshedAt": "2026-09-28T09:44:06.224Z"
     },
     "NDS-0029": {
       "matchStatus": "matched",
@@ -4916,7 +4961,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 80.67155639624124,
       "userRatingCount": 412,
-      "refreshedAt": "2026-09-28T08:16:52.640Z"
+      "refreshedAt": "2026-09-28T09:44:06.665Z"
     },
     "NDS-0030": {
       "matchStatus": "matched",
@@ -4941,7 +4986,7 @@
       "aggregatedRatingCount": 2,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:53.016Z"
+      "refreshedAt": "2026-09-28T09:44:07.091Z"
     },
     "NDS-0031": {
       "matchStatus": "matched",
@@ -4975,7 +5020,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 76.66872377190816,
       "userRatingCount": 13,
-      "refreshedAt": "2026-09-28T08:16:53.495Z"
+      "refreshedAt": "2026-09-28T09:44:07.522Z"
     },
     "NDS-0032": {
       "matchStatus": "matched",
@@ -4996,7 +5041,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:53.999Z"
+      "refreshedAt": "2026-09-28T09:44:07.955Z"
     },
     "NDS-0033": {
       "matchStatus": "matched",
@@ -5019,7 +5064,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:54.439Z"
+      "refreshedAt": "2026-09-28T09:44:08.330Z"
     },
     "NDS-0034": {
       "matchStatus": "matched",
@@ -5053,7 +5098,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 59.52039715263552,
       "userRatingCount": 15,
-      "refreshedAt": "2026-09-28T08:16:54.813Z"
+      "refreshedAt": "2026-09-28T09:44:08.770Z"
     },
     "NDS-0035": {
       "matchStatus": "matched",
@@ -5086,7 +5131,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 82.40651800210284,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:16:55.203Z"
+      "refreshedAt": "2026-09-28T09:44:09.240Z"
     },
     "NDS-0036": {
       "matchStatus": "matched",
@@ -5122,7 +5167,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 69.96029204679017,
       "userRatingCount": 57,
-      "refreshedAt": "2026-09-28T08:16:55.572Z"
+      "refreshedAt": "2026-09-28T09:44:09.740Z"
     },
     "NDS-0037": {
       "matchStatus": "matched",
@@ -5145,7 +5190,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:55.940Z"
+      "refreshedAt": "2026-09-28T09:44:10.140Z"
     },
     "NDS-0038": {
       "matchStatus": "matched",
@@ -5177,7 +5222,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 50,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:16:56.360Z"
+      "refreshedAt": "2026-09-28T09:44:10.573Z"
     },
     "NDS-0039": {
       "matchStatus": "matched",
@@ -5211,7 +5256,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 75.8230018253196,
       "userRatingCount": 26,
-      "refreshedAt": "2026-09-28T08:16:56.756Z"
+      "refreshedAt": "2026-09-28T09:44:11.006Z"
     },
     "NDS-0040": {
       "matchStatus": "matched",
@@ -5246,7 +5291,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 81.92446524760297,
       "userRatingCount": 200,
-      "refreshedAt": "2026-09-28T08:16:57.240Z"
+      "refreshedAt": "2026-09-28T09:44:11.437Z"
     },
     "NDS-0041": {
       "matchStatus": "matched",
@@ -5281,7 +5326,7 @@
       "aggregatedRatingCount": 9,
       "userRating": 68.21169838823384,
       "userRatingCount": 125,
-      "refreshedAt": "2026-09-28T08:16:57.643Z"
+      "refreshedAt": "2026-09-28T09:44:11.895Z"
     },
     "NDS-0042": {
       "matchStatus": "matched",
@@ -5317,7 +5362,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 82.54660903133276,
       "userRatingCount": 93,
-      "refreshedAt": "2026-09-28T08:16:58.142Z"
+      "refreshedAt": "2026-09-28T09:44:12.338Z"
     },
     "3DS-0001": {
       "matchStatus": "matched",
@@ -5356,7 +5401,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 80.03239396534343,
       "userRatingCount": 229,
-      "refreshedAt": "2026-09-28T08:16:58.509Z"
+      "refreshedAt": "2026-09-28T09:44:12.770Z"
     },
     "3DS-0002": {
       "matchStatus": "matched",
@@ -5391,7 +5436,7 @@
       "aggregatedRatingCount": 8,
       "userRating": 80.50689232265347,
       "userRatingCount": 91,
-      "refreshedAt": "2026-09-28T08:16:58.889Z"
+      "refreshedAt": "2026-09-28T09:44:13.202Z"
     },
     "3DS-0003": {
       "matchStatus": "matched",
@@ -5425,7 +5470,7 @@
       "aggregatedRatingCount": 5,
       "userRating": 89.17296257937207,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:16:59.508Z"
+      "refreshedAt": "2026-09-28T09:44:13.637Z"
     },
     "3DS-0004": {
       "matchStatus": "matched",
@@ -5462,7 +5507,7 @@
       "aggregatedRatingCount": 27,
       "userRating": 73.94455713606814,
       "userRatingCount": 199,
-      "refreshedAt": "2026-09-28T08:16:59.999Z"
+      "refreshedAt": "2026-09-28T09:44:14.083Z"
     },
     "3DS-0005": {
       "matchStatus": "matched",
@@ -5497,7 +5542,7 @@
       "aggregatedRatingCount": 10,
       "userRating": 65.78279544454682,
       "userRatingCount": 34,
-      "refreshedAt": "2026-09-28T08:17:00.377Z"
+      "refreshedAt": "2026-09-28T09:44:14.514Z"
     },
     "3DS-0006": {
       "matchStatus": "matched",
@@ -5527,7 +5572,7 @@
       "aggregatedRatingCount": 3,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:17:00.853Z"
+      "refreshedAt": "2026-09-28T09:44:14.873Z"
     },
     "3DS-0007": {
       "matchStatus": "matched",
@@ -5565,7 +5610,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 78.74565692948111,
       "userRatingCount": 332,
-      "refreshedAt": "2026-09-28T08:17:01.263Z"
+      "refreshedAt": "2026-09-28T09:44:15.309Z"
     },
     "3DS-0008": {
       "matchStatus": "matched",
@@ -5602,7 +5647,7 @@
       "aggregatedRatingCount": 15,
       "userRating": 87.25145949175798,
       "userRatingCount": 718,
-      "refreshedAt": "2026-09-28T08:17:01.762Z"
+      "refreshedAt": "2026-09-28T09:44:15.737Z"
     },
     "3DS-0009": {
       "matchStatus": "matched",
@@ -5639,7 +5684,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 76.19815501103947,
       "userRatingCount": 255,
-      "refreshedAt": "2026-09-28T08:17:02.259Z"
+      "refreshedAt": "2026-09-28T09:44:16.170Z"
     },
     "3DS-0010": {
       "matchStatus": "matched",
@@ -5674,7 +5719,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 81.67960200672181,
       "userRatingCount": 55,
-      "refreshedAt": "2026-09-28T08:17:02.763Z"
+      "refreshedAt": "2026-09-28T09:44:16.600Z"
     },
     "3DS-0011": {
       "matchStatus": "matched",
@@ -5708,7 +5753,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 77.10138546608341,
       "userRatingCount": 16,
-      "refreshedAt": "2026-09-28T08:17:03.264Z"
+      "refreshedAt": "2026-09-28T09:44:17.032Z"
     },
     "3DS-0012": {
       "matchStatus": "matched",
@@ -5745,7 +5790,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 59.72061578797174,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:17:03.643Z"
+      "refreshedAt": "2026-09-28T09:44:17.468Z"
     },
     "3DS-0013": {
       "matchStatus": "matched",
@@ -5772,7 +5817,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:17:04.018Z"
+      "refreshedAt": "2026-09-28T09:44:17.897Z"
     },
     "3DS-0014": {
       "matchStatus": "matched",
@@ -5806,7 +5851,7 @@
       "aggregatedRatingCount": 12,
       "userRating": 70.30661714341807,
       "userRatingCount": 20,
-      "refreshedAt": "2026-09-28T08:17:04.391Z"
+      "refreshedAt": "2026-09-28T09:44:18.261Z"
     },
     "3DS-0015": {
       "matchStatus": "matched",
@@ -5840,7 +5885,7 @@
       "aggregatedRatingCount": 10,
       "userRating": 57.79947511910326,
       "userRatingCount": 16,
-      "refreshedAt": "2026-09-28T08:17:04.908Z"
+      "refreshedAt": "2026-09-28T09:44:18.623Z"
     },
     "3DS-0016": {
       "matchStatus": "matched",
@@ -5873,7 +5918,7 @@
       "aggregatedRatingCount": 13,
       "userRating": 80.13830676375024,
       "userRatingCount": 8,
-      "refreshedAt": "2026-09-28T08:17:05.327Z"
+      "refreshedAt": "2026-09-28T09:44:19.056Z"
     },
     "3DS-0017": {
       "matchStatus": "matched",
@@ -5895,7 +5940,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:17:05.863Z"
+      "refreshedAt": "2026-09-28T09:44:19.412Z"
     },
     "3DS-0018": {
       "matchStatus": "matched",
@@ -5932,7 +5977,7 @@
       "aggregatedRatingCount": 6,
       "userRating": 81.41547766662774,
       "userRatingCount": 277,
-      "refreshedAt": "2026-09-28T08:17:06.240Z"
+      "refreshedAt": "2026-09-28T09:44:19.845Z"
     },
     "GC-0001": {
       "matchStatus": "matched",
@@ -5969,21 +6014,21 @@
       "aggregatedRatingCount": 1,
       "userRating": 84.15135180267168,
       "userRatingCount": 124,
-      "refreshedAt": "2026-09-28T08:17:06.749Z"
+      "refreshedAt": "2026-09-28T09:44:20.279Z"
     },
     "GC-0002": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:07.124Z"
+      "refreshedAt": "2026-09-28T09:44:20.889Z"
     },
     "GC-0003": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:07.488Z"
+      "refreshedAt": "2026-09-28T09:44:21.569Z"
     },
     "GC-0004": {
       "matchStatus": "matched",
@@ -6018,14 +6063,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 71.8330579189947,
       "userRatingCount": 132,
-      "refreshedAt": "2026-09-28T08:17:07.869Z"
+      "refreshedAt": "2026-09-28T09:44:22.034Z"
     },
     "GC-0005": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:08.245Z"
+      "refreshedAt": "2026-09-28T09:44:22.713Z"
     },
     "GC-0006": {
       "source": "IGDB",
@@ -6040,7 +6085,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:08.626Z"
+      "refreshedAt": "2026-09-28T09:44:23.397Z"
     },
     "GC-0007": {
       "matchStatus": "matched",
@@ -6075,7 +6120,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 88.74026913657852,
       "userRatingCount": 1106,
-      "refreshedAt": "2026-09-28T08:17:09.007Z"
+      "refreshedAt": "2026-09-28T09:44:23.831Z"
     },
     "GC-0009": {
       "matchStatus": "matched",
@@ -6111,7 +6156,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 83.00314183050568,
       "userRatingCount": 387,
-      "refreshedAt": "2026-09-28T08:17:09.492Z"
+      "refreshedAt": "2026-09-28T09:44:24.198Z"
     },
     "GC-0010": {
       "matchStatus": "matched",
@@ -6147,7 +6192,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 73.86681426546347,
       "userRatingCount": 107,
-      "refreshedAt": "2026-09-28T08:17:10.021Z"
+      "refreshedAt": "2026-09-28T09:44:24.648Z"
     },
     "GC-0011": {
       "matchStatus": "matched",
@@ -6182,7 +6227,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 91.67491796717076,
       "userRatingCount": 888,
-      "refreshedAt": "2026-09-28T08:17:10.400Z"
+      "refreshedAt": "2026-09-28T09:44:25.111Z"
     },
     "GC-0012": {
       "matchStatus": "matched",
@@ -6217,7 +6262,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 81.64065306317839,
       "userRatingCount": 529,
-      "refreshedAt": "2026-09-28T08:17:10.885Z"
+      "refreshedAt": "2026-09-28T09:44:25.543Z"
     },
     "GC-0013": {
       "matchStatus": "matched",
@@ -6250,7 +6295,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 61.33593727812369,
       "userRatingCount": 58,
-      "refreshedAt": "2026-09-28T08:17:11.461Z"
+      "refreshedAt": "2026-09-28T09:44:25.973Z"
     },
     "GC-0014": {
       "matchStatus": "matched",
@@ -6284,7 +6329,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 74.61729783039718,
       "userRatingCount": 38,
-      "refreshedAt": "2026-09-28T08:17:11.834Z"
+      "refreshedAt": "2026-09-28T09:44:26.408Z"
     },
     "GC-0015": {
       "source": "IGDB",
@@ -6306,7 +6351,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:12.217Z"
+      "refreshedAt": "2026-09-28T09:44:27.132Z"
     },
     "GC-0016": {
       "matchStatus": "matched",
@@ -6341,7 +6386,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 73.47729122473187,
       "userRatingCount": 20,
-      "refreshedAt": "2026-09-28T08:17:12.609Z"
+      "refreshedAt": "2026-09-28T09:44:27.569Z"
     },
     "GC-0017": {
       "matchStatus": "matched",
@@ -6375,7 +6420,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 68.61008428134616,
       "userRatingCount": 54,
-      "refreshedAt": "2026-09-28T08:17:13.041Z"
+      "refreshedAt": "2026-09-28T09:44:28.006Z"
     },
     "GC-0018": {
       "matchStatus": "matched",
@@ -6409,7 +6454,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 85.39364327978396,
       "userRatingCount": 706,
-      "refreshedAt": "2026-09-28T08:17:13.528Z"
+      "refreshedAt": "2026-09-28T09:44:28.440Z"
     },
     "WII-0001": {
       "matchStatus": "matched",
@@ -6443,7 +6488,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 70.70399099374397,
       "userRatingCount": 82,
-      "refreshedAt": "2026-09-28T08:17:13.902Z"
+      "refreshedAt": "2026-09-28T09:44:28.799Z"
     },
     "WII-0002": {
       "matchStatus": "matched",
@@ -6478,7 +6523,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 81.76520131661171,
       "userRatingCount": 345,
-      "refreshedAt": "2026-09-28T08:17:14.380Z"
+      "refreshedAt": "2026-09-28T09:44:29.233Z"
     },
     "WII-0003": {
       "matchStatus": "matched",
@@ -6513,7 +6558,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 70.16987402290872,
       "userRatingCount": 27,
-      "refreshedAt": "2026-09-28T08:17:14.765Z"
+      "refreshedAt": "2026-09-28T09:44:29.594Z"
     },
     "WII-0004": {
       "matchStatus": "matched",
@@ -6550,7 +6595,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 78.50709731576745,
       "userRatingCount": 215,
-      "refreshedAt": "2026-09-28T08:17:15.147Z"
+      "refreshedAt": "2026-09-28T09:44:30.030Z"
     },
     "WII-0005": {
       "matchStatus": "matched",
@@ -6584,7 +6629,7 @@
       "aggregatedRatingCount": 5,
       "userRating": 67.10833357510552,
       "userRatingCount": 34,
-      "refreshedAt": "2026-09-28T08:17:15.652Z"
+      "refreshedAt": "2026-09-28T09:44:30.474Z"
     },
     "WII-0006": {
       "matchStatus": "matched",
@@ -6612,7 +6657,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 69.64798315734177,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:17:16.024Z"
+      "refreshedAt": "2026-09-28T09:44:30.903Z"
     },
     "WII-0007": {
       "matchStatus": "matched",
@@ -6646,7 +6691,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 71.17463213468207,
       "userRatingCount": 28,
-      "refreshedAt": "2026-09-28T08:17:16.392Z"
+      "refreshedAt": "2026-09-28T09:44:31.333Z"
     },
     "WII-0008": {
       "matchStatus": "matched",
@@ -6680,7 +6725,7 @@
       "aggregatedRatingCount": 5,
       "userRating": 86.27200755054625,
       "userRatingCount": 9,
-      "refreshedAt": "2026-09-28T08:17:16.969Z"
+      "refreshedAt": "2026-09-28T09:44:31.770Z"
     },
     "PS1-0001": {
       "matchStatus": "matched",
@@ -6714,7 +6759,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 83.92367551805651,
       "userRatingCount": 586,
-      "refreshedAt": "2026-09-28T08:17:17.496Z"
+      "refreshedAt": "2026-09-28T09:44:32.139Z"
     },
     "PS1-0002": {
       "matchStatus": "matched",
@@ -6750,14 +6795,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 78.90145503698487,
       "userRatingCount": 84,
-      "refreshedAt": "2026-09-28T08:17:17.997Z"
+      "refreshedAt": "2026-09-28T09:44:32.575Z"
     },
     "PS1-0003": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:18.488Z"
+      "refreshedAt": "2026-09-28T09:44:33.260Z"
     },
     "PS1-0004": {
       "matchStatus": "matched",
@@ -6800,7 +6845,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 62.60203620920259,
       "userRatingCount": 22,
-      "refreshedAt": "2026-09-28T08:17:19.009Z"
+      "refreshedAt": "2026-09-28T09:44:33.697Z"
     },
     "PS1-0005": {
       "matchStatus": "matched",
@@ -6841,7 +6886,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 82.26018353514384,
       "userRatingCount": 167,
-      "refreshedAt": "2026-09-28T08:17:19.527Z"
+      "refreshedAt": "2026-09-28T09:44:34.130Z"
     },
     "PS1-0006": {
       "matchStatus": "matched",
@@ -6876,7 +6921,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 78.16619935100152,
       "userRatingCount": 62,
-      "refreshedAt": "2026-09-28T08:17:19.905Z"
+      "refreshedAt": "2026-09-28T09:44:34.561Z"
     },
     "PS1-0007": {
       "matchStatus": "matched",
@@ -6910,7 +6955,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 70.74260151081496,
       "userRatingCount": 50,
-      "refreshedAt": "2026-09-28T08:17:20.291Z"
+      "refreshedAt": "2026-09-28T09:44:35.040Z"
     },
     "PS1-0008": {
       "matchStatus": "matched",
@@ -6945,7 +6990,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 82.47817519315582,
       "userRatingCount": 90,
-      "refreshedAt": "2026-09-28T08:17:20.667Z"
+      "refreshedAt": "2026-09-28T09:44:35.399Z"
     },
     "PS1-0009": {
       "matchStatus": "matched",
@@ -6979,7 +7024,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 79.92367690888955,
       "userRatingCount": 99,
-      "refreshedAt": "2026-09-28T08:17:21.196Z"
+      "refreshedAt": "2026-09-28T09:44:35.830Z"
     },
     "PS1-0010": {
       "matchStatus": "matched",
@@ -7015,7 +7060,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 72.15643016856937,
       "userRatingCount": 18,
-      "refreshedAt": "2026-09-28T08:17:21.580Z"
+      "refreshedAt": "2026-09-28T09:44:36.257Z"
     },
     "PS1-0011": {
       "matchStatus": "matched",
@@ -7051,14 +7096,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 77.6075633693728,
       "userRatingCount": 26,
-      "refreshedAt": "2026-09-28T08:17:21.972Z"
+      "refreshedAt": "2026-09-28T09:44:36.692Z"
     },
     "PS1-0012": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:22.347Z"
+      "refreshedAt": "2026-09-28T09:44:37.376Z"
     },
     "PS1-0013": {
       "matchStatus": "matched",
@@ -7096,7 +7141,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 83.67381179738206,
       "userRatingCount": 602,
-      "refreshedAt": "2026-09-28T08:17:22.728Z"
+      "refreshedAt": "2026-09-28T09:44:37.814Z"
     },
     "PS1-0014": {
       "matchStatus": "matched",
@@ -7133,7 +7178,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 72.21707961865239,
       "userRatingCount": 24,
-      "refreshedAt": "2026-09-28T08:17:23.193Z"
+      "refreshedAt": "2026-09-28T09:44:38.246Z"
     },
     "PS1-0015": {
       "matchStatus": "matched",
@@ -7169,7 +7214,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 90.51490490358663,
       "userRatingCount": 1708,
-      "refreshedAt": "2026-09-28T08:17:23.593Z"
+      "refreshedAt": "2026-09-28T09:44:38.701Z"
     },
     "PS1-0016": {
       "matchStatus": "matched",
@@ -7203,7 +7248,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 76.02076080727753,
       "userRatingCount": 46,
-      "refreshedAt": "2026-09-28T08:17:23.967Z"
+      "refreshedAt": "2026-09-28T09:44:39.131Z"
     },
     "PS1-0017": {
       "matchStatus": "matched",
@@ -7234,7 +7279,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 77.47604138041551,
       "userRatingCount": 103,
-      "refreshedAt": "2026-09-28T08:17:24.361Z"
+      "refreshedAt": "2026-09-28T09:44:39.492Z"
     },
     "PS1-0019": {
       "matchStatus": "matched",
@@ -7267,7 +7312,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 70.54145859967196,
       "userRatingCount": 24,
-      "refreshedAt": "2026-09-28T08:17:24.738Z"
+      "refreshedAt": "2026-09-28T09:44:39.923Z"
     },
     "PS1-0020": {
       "matchStatus": "matched",
@@ -7303,7 +7348,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 77.71057001670239,
       "userRatingCount": 148,
-      "refreshedAt": "2026-09-28T08:17:25.226Z"
+      "refreshedAt": "2026-09-28T09:44:40.371Z"
     },
     "PS1-0021": {
       "matchStatus": "matched",
@@ -7341,7 +7386,7 @@
       "aggregatedRatingCount": 6,
       "userRating": 88.15572291247456,
       "userRatingCount": 963,
-      "refreshedAt": "2026-09-28T08:17:25.735Z"
+      "refreshedAt": "2026-09-28T09:44:40.808Z"
     },
     "PS1-0022": {
       "matchStatus": "matched",
@@ -7377,7 +7422,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 77.1586639062915,
       "userRatingCount": 305,
-      "refreshedAt": "2026-09-28T08:17:26.150Z"
+      "refreshedAt": "2026-09-28T09:44:41.248Z"
     },
     "PS1-0023": {
       "matchStatus": "matched",
@@ -7409,7 +7454,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 68.09283783215328,
       "userRatingCount": 45,
-      "refreshedAt": "2026-09-28T08:17:26.654Z"
+      "refreshedAt": "2026-09-28T09:44:41.684Z"
     },
     "PS1-0024": {
       "source": "IGDB",
@@ -7447,9 +7492,23 @@
             "Commodore 16",
             "Commodore Plus/4"
           ]
+        },
+        {
+          "id": 205929,
+          "name": "Disney's Hercules",
+          "platforms": [
+            "Handheld Electronic LCD"
+          ]
+        },
+        {
+          "id": 140649,
+          "name": "Disney's Hercules",
+          "platforms": [
+            "Game Boy"
+          ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:27.145Z"
+      "refreshedAt": "2026-09-28T09:44:42.625Z"
     },
     "PS1-0025": {
       "matchStatus": "matched",
@@ -7487,7 +7546,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 88.01401935303153,
       "userRatingCount": 17,
-      "refreshedAt": "2026-09-28T08:17:27.524Z"
+      "refreshedAt": "2026-09-28T09:44:43.115Z"
     },
     "PS1-0026": {
       "source": "IGDB",
@@ -7502,7 +7561,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:28.031Z"
+      "refreshedAt": "2026-09-28T09:44:43.819Z"
     },
     "PS1-0027": {
       "matchStatus": "matched",
@@ -7542,7 +7601,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 70.38575439351128,
       "userRatingCount": 56,
-      "refreshedAt": "2026-09-28T08:17:28.409Z"
+      "refreshedAt": "2026-09-28T09:44:44.259Z"
     },
     "PS1-0028": {
       "matchStatus": "matched",
@@ -7579,7 +7638,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 68.88736936181962,
       "userRatingCount": 58,
-      "refreshedAt": "2026-09-28T08:17:28.781Z"
+      "refreshedAt": "2026-09-28T09:44:44.687Z"
     },
     "PS1-0029": {
       "matchStatus": "matched",
@@ -7613,7 +7672,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 64.87462688646451,
       "userRatingCount": 19,
-      "refreshedAt": "2026-09-28T08:17:29.161Z"
+      "refreshedAt": "2026-09-28T09:44:45.216Z"
     },
     "PS1-0030": {
       "matchStatus": "matched",
@@ -7648,7 +7707,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 75.47385815356206,
       "userRatingCount": 75,
-      "refreshedAt": "2026-09-28T08:17:29.545Z"
+      "refreshedAt": "2026-09-28T09:44:45.647Z"
     },
     "PS1-0031": {
       "matchStatus": "matched",
@@ -7683,28 +7742,37 @@
       "aggregatedRatingCount": 1,
       "userRating": 73.58746531479515,
       "userRatingCount": 36,
-      "refreshedAt": "2026-09-28T08:17:30.058Z"
+      "refreshedAt": "2026-09-28T09:44:46.015Z"
     },
     "PS1-0032": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:30.439Z"
+      "refreshedAt": "2026-09-28T09:44:46.703Z"
     },
     "PS1-0033": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:30.818Z"
+      "refreshedAt": "2026-09-28T09:44:47.382Z"
     },
     "PS1-0034": {
       "source": "IGDB",
       "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:31.325Z"
+      "matchReason": "title-platform-mismatch",
+      "candidates": [
+        {
+          "id": 329195,
+          "name": "MediEvil II",
+          "platforms": [
+            "PlayStation 4",
+            "PlayStation 5"
+          ]
+        }
+      ],
+      "refreshedAt": "2026-09-28T09:44:48.324Z"
     },
     "PS1-0035": {
       "source": "IGDB",
@@ -7730,7 +7798,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:31.701Z"
+      "refreshedAt": "2026-09-28T09:44:48.938Z"
     },
     "PS1-0036": {
       "matchStatus": "matched",
@@ -7767,7 +7835,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 75.49495757352103,
       "userRatingCount": 38,
-      "refreshedAt": "2026-09-28T08:17:32.209Z"
+      "refreshedAt": "2026-09-28T09:44:49.372Z"
     },
     "PS1-0037": {
       "source": "IGDB",
@@ -7791,7 +7859,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:32.766Z"
+      "refreshedAt": "2026-09-28T09:44:50.075Z"
     },
     "PS1-0038": {
       "matchStatus": "matched",
@@ -7826,7 +7894,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 80.9531200036063,
       "userRatingCount": 217,
-      "refreshedAt": "2026-09-28T08:17:33.250Z"
+      "refreshedAt": "2026-09-28T09:44:50.501Z"
     },
     "PS1-0039": {
       "matchStatus": "matched",
@@ -7861,7 +7929,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 57.74742567961642,
       "userRatingCount": 74,
-      "refreshedAt": "2026-09-28T08:17:33.682Z"
+      "refreshedAt": "2026-09-28T09:44:50.934Z"
     },
     "PS1-0040": {
       "matchStatus": "matched",
@@ -7897,14 +7965,26 @@
       "aggregatedRatingCount": 0,
       "userRating": 83.20883618159871,
       "userRatingCount": 540,
-      "refreshedAt": "2026-09-28T08:17:34.308Z"
+      "refreshedAt": "2026-09-28T09:44:51.361Z"
     },
     "PS1-0041": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:34.685Z"
+      "sourceGameId": 1538,
+      "title": "Wipeout XL",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:44:52.302Z"
     },
     "PS1-0042": {
       "source": "IGDB",
@@ -7949,16 +8029,30 @@
           "platforms": [
             "Handheld Electronic LCD"
           ]
+        },
+        {
+          "id": 205926,
+          "name": "Disney's Tarzan",
+          "platforms": [
+            "Handheld Electronic LCD"
+          ]
+        },
+        {
+          "id": 116135,
+          "name": "Disney's Tarzan",
+          "platforms": [
+            "Game Boy Color"
+          ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:35.188Z"
+      "refreshedAt": "2026-09-28T09:44:53.253Z"
     },
     "PS1-EXTRA-0001": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:35.696Z"
+      "refreshedAt": "2026-09-28T09:44:53.931Z"
     },
     "PS1-0043": {
       "matchStatus": "matched",
@@ -7993,14 +8087,14 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:17:36.197Z"
+      "refreshedAt": "2026-09-28T09:44:54.365Z"
     },
     "PS1-0044": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:36.709Z"
+      "refreshedAt": "2026-09-28T09:44:55.050Z"
     },
     "PS1-0045": {
       "matchStatus": "matched",
@@ -8029,7 +8123,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 73.1368228044417,
       "userRatingCount": 28,
-      "refreshedAt": "2026-09-28T08:17:37.235Z"
+      "refreshedAt": "2026-09-28T09:44:55.486Z"
     },
     "PS1-0046": {
       "matchStatus": "matched",
@@ -8064,7 +8158,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 81.99959962067783,
       "userRatingCount": 289,
-      "refreshedAt": "2026-09-28T08:17:37.738Z"
+      "refreshedAt": "2026-09-28T09:44:55.903Z"
     },
     "PS1-0047": {
       "matchStatus": "matched",
@@ -8097,7 +8191,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 63.92559194267037,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:17:38.254Z"
+      "refreshedAt": "2026-09-28T09:44:56.329Z"
     },
     "PS1-0049": {
       "matchStatus": "matched",
@@ -8131,7 +8225,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 77.50611807350586,
       "userRatingCount": 222,
-      "refreshedAt": "2026-09-28T08:17:38.645Z"
+      "refreshedAt": "2026-09-28T09:44:56.782Z"
     },
     "PS1-0050": {
       "matchStatus": "matched",
@@ -8170,7 +8264,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 82.55309213884887,
       "userRatingCount": 254,
-      "refreshedAt": "2026-09-28T08:17:39.024Z"
+      "refreshedAt": "2026-09-28T09:44:57.214Z"
     },
     "PS1-0051": {
       "source": "IGDB",
@@ -8227,7 +8321,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:39.556Z"
+      "refreshedAt": "2026-09-28T09:44:57.896Z"
     },
     "PS1-0052": {
       "matchStatus": "matched",
@@ -8258,7 +8352,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 69.443503969551,
       "userRatingCount": 78,
-      "refreshedAt": "2026-09-28T08:17:40.131Z"
+      "refreshedAt": "2026-09-28T09:44:58.324Z"
     },
     "PS1-0053": {
       "matchStatus": "matched",
@@ -8289,28 +8383,28 @@
       "aggregatedRatingCount": 0,
       "userRating": 72.25339685962122,
       "userRatingCount": 22,
-      "refreshedAt": "2026-09-28T08:17:40.515Z"
+      "refreshedAt": "2026-09-28T09:44:58.756Z"
     },
     "PS1-0055": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:41.025Z"
+      "refreshedAt": "2026-09-28T09:44:59.435Z"
     },
     "PS1-0056": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:41.501Z"
+      "refreshedAt": "2026-09-28T09:45:00.114Z"
     },
     "PS1-0057": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:41.993Z"
+      "refreshedAt": "2026-09-28T09:45:00.724Z"
     },
     "PS1-0058": {
       "matchStatus": "matched",
@@ -8342,7 +8436,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:17:42.540Z"
+      "refreshedAt": "2026-09-28T09:45:01.154Z"
     },
     "PS1-0059": {
       "matchStatus": "matched",
@@ -8374,7 +8468,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 58.24789239778675,
       "userRatingCount": 93,
-      "refreshedAt": "2026-09-28T08:17:43.037Z"
+      "refreshedAt": "2026-09-28T09:45:01.583Z"
     },
     "PS1-0062": {
       "matchStatus": "matched",
@@ -8407,7 +8501,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 73.29431912020931,
       "userRatingCount": 33,
-      "refreshedAt": "2026-09-28T08:17:43.441Z"
+      "refreshedAt": "2026-09-28T09:45:02.021Z"
     },
     "PS1-0063": {
       "matchStatus": "matched",
@@ -8441,7 +8535,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 80.19206711944807,
       "userRatingCount": 331,
-      "refreshedAt": "2026-09-28T08:17:43.972Z"
+      "refreshedAt": "2026-09-28T09:45:02.467Z"
     },
     "PS1-0064": {
       "matchStatus": "matched",
@@ -8474,7 +8568,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 76.16510102118602,
       "userRatingCount": 231,
-      "refreshedAt": "2026-09-28T08:17:44.489Z"
+      "refreshedAt": "2026-09-28T09:45:02.917Z"
     },
     "PS1-0065": {
       "matchStatus": "matched",
@@ -8505,7 +8599,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:17:44.867Z"
+      "refreshedAt": "2026-09-28T09:45:03.396Z"
     },
     "PS1-0066": {
       "matchStatus": "matched",
@@ -8542,14 +8636,14 @@
       "aggregatedRatingCount": 1,
       "userRating": 80.75923581623312,
       "userRatingCount": 481,
-      "refreshedAt": "2026-09-28T08:17:45.439Z"
+      "refreshedAt": "2026-09-28T09:45:03.842Z"
     },
     "PS1-0067": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:45.925Z"
+      "refreshedAt": "2026-09-28T09:45:04.521Z"
     },
     "PS1-0068": {
       "matchStatus": "matched",
@@ -8587,7 +8681,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 69.97769315917921,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:17:46.307Z"
+      "refreshedAt": "2026-09-28T09:45:05.075Z"
     },
     "PS1-0069": {
       "matchStatus": "matched",
@@ -8623,7 +8717,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 70.01749550299151,
       "userRatingCount": 8,
-      "refreshedAt": "2026-09-28T08:17:46.925Z"
+      "refreshedAt": "2026-09-28T09:45:05.512Z"
     },
     "PS1-0070": {
       "matchStatus": "matched",
@@ -8657,14 +8751,26 @@
       "aggregatedRatingCount": 0,
       "userRating": 70.04807185534017,
       "userRatingCount": 31,
-      "refreshedAt": "2026-09-28T08:17:47.438Z"
+      "refreshedAt": "2026-09-28T09:45:05.947Z"
     },
     "PS1-0071": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:47.817Z"
+      "sourceGameId": 45807,
+      "title": "Caesars Palace 2000: Millennium Gold Edition",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:45:06.891Z"
     },
     "PS1-0072": {
       "matchStatus": "matched",
@@ -8697,7 +8803,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 73.71254221616988,
       "userRatingCount": 26,
-      "refreshedAt": "2026-09-28T08:17:48.338Z"
+      "refreshedAt": "2026-09-28T09:45:07.332Z"
     },
     "PS1-0073": {
       "matchStatus": "matched",
@@ -8727,7 +8833,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 50.40136098194686,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:17:48.711Z"
+      "refreshedAt": "2026-09-28T09:45:07.761Z"
     },
     "PS1-0074": {
       "matchStatus": "matched",
@@ -8763,7 +8869,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 71.05020999163402,
       "userRatingCount": 63,
-      "refreshedAt": "2026-09-28T08:17:49.247Z"
+      "refreshedAt": "2026-09-28T09:45:08.192Z"
     },
     "PS1-0075": {
       "matchStatus": "matched",
@@ -8797,14 +8903,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 71.1243502551105,
       "userRatingCount": 17,
-      "refreshedAt": "2026-09-28T08:17:49.732Z"
+      "refreshedAt": "2026-09-28T09:45:08.617Z"
     },
     "PS1-0076": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:50.236Z"
+      "refreshedAt": "2026-09-28T09:45:09.400Z"
     },
     "PS1-0077": {
       "source": "IGDB",
@@ -8833,9 +8939,30 @@
           "platforms": [
             "Game Boy"
           ]
+        },
+        {
+          "id": 265029,
+          "name": "Astérix",
+          "platforms": [
+            "Nintendo Entertainment System"
+          ]
+        },
+        {
+          "id": 265030,
+          "name": "Astérix",
+          "platforms": [
+            "Sega Master System/Mark III"
+          ]
+        },
+        {
+          "id": 218909,
+          "name": "Astérix",
+          "platforms": [
+            "Handheld Electronic LCD"
+          ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:17:50.672Z"
+      "refreshedAt": "2026-09-28T09:45:10.347Z"
     },
     "PS1-0078": {
       "matchStatus": "matched",
@@ -8868,7 +8995,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 69.51597071214385,
       "userRatingCount": 15,
-      "refreshedAt": "2026-09-28T08:17:51.168Z"
+      "refreshedAt": "2026-09-28T09:45:10.789Z"
     },
     "PS1-0079": {
       "matchStatus": "matched",
@@ -8905,14 +9032,23 @@
       "aggregatedRatingCount": 1,
       "userRating": 68.04057351335021,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:17:51.685Z"
+      "refreshedAt": "2026-09-28T09:45:11.220Z"
     },
     "PS1-0080": {
       "source": "IGDB",
       "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:52.175Z"
+      "matchReason": "title-platform-mismatch",
+      "candidates": [
+        {
+          "id": 242360,
+          "name": "R4: Ridge Racer Type 4",
+          "platforms": [
+            "PlayStation 4",
+            "PlayStation 5"
+          ]
+        }
+      ],
+      "refreshedAt": "2026-09-28T09:45:12.159Z"
     },
     "PS1-0081": {
       "matchStatus": "matched",
@@ -8945,14 +9081,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 62.90264064762304,
       "userRatingCount": 8,
-      "refreshedAt": "2026-09-28T08:17:52.804Z"
+      "refreshedAt": "2026-09-28T09:45:12.597Z"
     },
     "PS1-0082": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:53.170Z"
+      "refreshedAt": "2026-09-28T09:45:13.277Z"
     },
     "PS1-0083": {
       "matchStatus": "matched",
@@ -8986,7 +9122,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 79.76737067034091,
       "userRatingCount": 83,
-      "refreshedAt": "2026-09-28T08:17:54.201Z"
+      "refreshedAt": "2026-09-28T09:45:13.715Z"
     },
     "PS1-0084": {
       "matchStatus": "matched",
@@ -9020,7 +9156,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 76.99729403122949,
       "userRatingCount": 191,
-      "refreshedAt": "2026-09-28T08:17:54.862Z"
+      "refreshedAt": "2026-09-28T09:45:14.155Z"
     },
     "PS1-0085": {
       "matchStatus": "matched",
@@ -9052,7 +9188,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 79.84540236018331,
       "userRatingCount": 15,
-      "refreshedAt": "2026-09-28T08:17:55.405Z"
+      "refreshedAt": "2026-09-28T09:45:14.582Z"
     },
     "PS1-0086": {
       "matchStatus": "matched",
@@ -9075,28 +9211,28 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:17:55.901Z"
+      "refreshedAt": "2026-09-28T09:45:15.013Z"
     },
     "PS1-0087": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:56.268Z"
+      "refreshedAt": "2026-09-28T09:45:15.700Z"
     },
     "PS2-0001": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:56.770Z"
+      "refreshedAt": "2026-09-28T09:45:16.310Z"
     },
     "PS2-0002": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:57.293Z"
+      "refreshedAt": "2026-09-28T09:45:16.992Z"
     },
     "PS2-0003": {
       "matchStatus": "matched",
@@ -9127,7 +9263,7 @@
       "aggregatedRatingCount": 2,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:17:57.770Z"
+      "refreshedAt": "2026-09-28T09:45:17.377Z"
     },
     "PS2-0004": {
       "matchStatus": "matched",
@@ -9163,14 +9299,14 @@
       "aggregatedRatingCount": 4,
       "userRating": 89.1256770150716,
       "userRatingCount": 1336,
-      "refreshedAt": "2026-09-28T08:17:58.272Z"
+      "refreshedAt": "2026-09-28T09:45:17.816Z"
     },
     "PS2-0005": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:17:58.659Z"
+      "refreshedAt": "2026-09-28T09:45:18.427Z"
     },
     "PS2-0006": {
       "matchStatus": "matched",
@@ -9204,7 +9340,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 81.07321311214454,
       "userRatingCount": 80,
-      "refreshedAt": "2026-09-28T08:17:59.036Z"
+      "refreshedAt": "2026-09-28T09:45:18.867Z"
     },
     "PS2-0007": {
       "matchStatus": "matched",
@@ -9238,14 +9374,14 @@
       "aggregatedRatingCount": 3,
       "userRating": 83.19197625132539,
       "userRatingCount": 882,
-      "refreshedAt": "2026-09-28T08:17:59.541Z"
+      "refreshedAt": "2026-09-28T09:45:19.301Z"
     },
     "PS2-0008": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:00.042Z"
+      "refreshedAt": "2026-09-28T09:45:19.986Z"
     },
     "PS2-0009": {
       "matchStatus": "matched",
@@ -9282,7 +9418,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 70.41611553960485,
       "userRatingCount": 38,
-      "refreshedAt": "2026-09-28T08:18:00.415Z"
+      "refreshedAt": "2026-09-28T09:45:20.438Z"
     },
     "PS2-0010": {
       "matchStatus": "matched",
@@ -9314,14 +9450,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 79.25193263878641,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:18:00.794Z"
+      "refreshedAt": "2026-09-28T09:45:20.869Z"
     },
     "PS2-0011": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:01.160Z"
+      "refreshedAt": "2026-09-28T09:45:21.556Z"
     },
     "PS2-0012": {
       "matchStatus": "matched",
@@ -9360,21 +9496,21 @@
       "aggregatedRatingCount": 2,
       "userRating": 87.80930033161607,
       "userRatingCount": 1100,
-      "refreshedAt": "2026-09-28T08:18:01.686Z"
+      "refreshedAt": "2026-09-28T09:45:21.994Z"
     },
     "PS2-0013": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:02.252Z"
+      "refreshedAt": "2026-09-28T09:45:22.676Z"
     },
     "PS2-0014": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:02.787Z"
+      "refreshedAt": "2026-09-28T09:45:23.353Z"
     },
     "PS2-0015": {
       "matchStatus": "matched",
@@ -9407,14 +9543,26 @@
       "aggregatedRatingCount": 2,
       "userRating": 74.46503722017945,
       "userRatingCount": 30,
-      "refreshedAt": "2026-09-28T08:18:03.397Z"
+      "refreshedAt": "2026-09-28T09:45:23.721Z"
     },
     "PS2-0016": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:03.779Z"
+      "sourceGameId": 11758,
+      "title": "Onimusha 3: Demon Siege",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:45:24.663Z"
     },
     "PS2-0017": {
       "matchStatus": "matched",
@@ -9450,14 +9598,14 @@
       "aggregatedRatingCount": 3,
       "userRating": 83.49687876574225,
       "userRatingCount": 1063,
-      "refreshedAt": "2026-09-28T08:18:04.296Z"
+      "refreshedAt": "2026-09-28T09:45:25.106Z"
     },
     "PS2-0018": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:04.712Z"
+      "refreshedAt": "2026-09-28T09:45:25.790Z"
     },
     "PS2-0019": {
       "matchStatus": "matched",
@@ -9484,7 +9632,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 85.68670126630751,
       "userRatingCount": 10,
-      "refreshedAt": "2026-09-28T08:18:05.214Z"
+      "refreshedAt": "2026-09-28T09:45:26.219Z"
     },
     "PS2-0020": {
       "matchStatus": "matched",
@@ -9518,7 +9666,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 79.23617684648279,
       "userRatingCount": 116,
-      "refreshedAt": "2026-09-28T08:18:05.711Z"
+      "refreshedAt": "2026-09-28T09:45:26.587Z"
     },
     "PS2-0021": {
       "matchStatus": "matched",
@@ -9546,7 +9694,7 @@
       "aggregatedRatingCount": 1,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:06.186Z"
+      "refreshedAt": "2026-09-28T09:45:27.014Z"
     },
     "PS2-0022": {
       "matchStatus": "matched",
@@ -9579,7 +9727,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 74.38267270456222,
       "userRatingCount": 45,
-      "refreshedAt": "2026-09-28T08:18:06.693Z"
+      "refreshedAt": "2026-09-28T09:45:27.445Z"
     },
     "PS2-0023": {
       "matchStatus": "matched",
@@ -9602,7 +9750,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:07.054Z"
+      "refreshedAt": "2026-09-28T09:45:27.800Z"
     },
     "PS2-0024": {
       "matchStatus": "matched",
@@ -9636,7 +9784,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 61.96209225639308,
       "userRatingCount": 57,
-      "refreshedAt": "2026-09-28T08:18:07.544Z"
+      "refreshedAt": "2026-09-28T09:45:28.230Z"
     },
     "PS2-0025": {
       "matchStatus": "matched",
@@ -9669,14 +9817,14 @@
       "aggregatedRatingCount": 4,
       "userRating": 81.00691659039595,
       "userRatingCount": 379,
-      "refreshedAt": "2026-09-28T08:18:08.028Z"
+      "refreshedAt": "2026-09-28T09:45:28.670Z"
     },
     "PS2-0026": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:08.553Z"
+      "refreshedAt": "2026-09-28T09:45:29.351Z"
     },
     "PS2-0027": {
       "matchStatus": "matched",
@@ -9709,7 +9857,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 79.84239361778344,
       "userRatingCount": 143,
-      "refreshedAt": "2026-09-28T08:18:09.061Z"
+      "refreshedAt": "2026-09-28T09:45:29.782Z"
     },
     "PS2-0028": {
       "matchStatus": "matched",
@@ -9746,7 +9894,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 84.89271105313819,
       "userRatingCount": 20,
-      "refreshedAt": "2026-09-28T08:18:09.554Z"
+      "refreshedAt": "2026-09-28T09:45:30.208Z"
     },
     "PS2-0029": {
       "matchStatus": "matched",
@@ -9783,14 +9931,14 @@
       "aggregatedRatingCount": 1,
       "userRating": 84.89271105313819,
       "userRatingCount": 20,
-      "refreshedAt": "2026-09-28T08:18:09.554Z"
+      "refreshedAt": "2026-09-28T09:45:30.208Z"
     },
     "PS2-0030": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:09.926Z"
+      "refreshedAt": "2026-09-28T09:45:30.819Z"
     },
     "PS2-0031": {
       "source": "IGDB",
@@ -9812,21 +9960,21 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:18:10.440Z"
+      "refreshedAt": "2026-09-28T09:45:31.505Z"
     },
     "PS2-0032": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:10.836Z"
+      "refreshedAt": "2026-09-28T09:45:32.186Z"
     },
     "PS2-0033": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:11.338Z"
+      "refreshedAt": "2026-09-28T09:45:32.864Z"
     },
     "PS2-0034": {
       "matchStatus": "matched",
@@ -9858,7 +10006,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 70.34935817376524,
       "userRatingCount": 8,
-      "refreshedAt": "2026-09-28T08:18:11.814Z"
+      "refreshedAt": "2026-09-28T09:45:33.290Z"
     },
     "PS2-0035": {
       "matchStatus": "matched",
@@ -9891,7 +10039,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 72.57895331991233,
       "userRatingCount": 90,
-      "refreshedAt": "2026-09-28T08:18:12.317Z"
+      "refreshedAt": "2026-09-28T09:45:33.766Z"
     },
     "PS2-0036": {
       "matchStatus": "matched",
@@ -9924,14 +10072,14 @@
       "aggregatedRatingCount": 2,
       "userRating": 71.60711971337484,
       "userRatingCount": 84,
-      "refreshedAt": "2026-09-28T08:18:12.819Z"
+      "refreshedAt": "2026-09-28T09:45:34.197Z"
     },
     "PS2-0037": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:13.336Z"
+      "refreshedAt": "2026-09-28T09:45:34.874Z"
     },
     "PS2-0038": {
       "matchStatus": "matched",
@@ -9967,7 +10115,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 75.3634588107098,
       "userRatingCount": 205,
-      "refreshedAt": "2026-09-28T08:18:13.823Z"
+      "refreshedAt": "2026-09-28T09:45:35.305Z"
     },
     "PS2-0039": {
       "matchStatus": "matched",
@@ -10005,7 +10153,7 @@
       "aggregatedRatingCount": 6,
       "userRating": 90.09005640875478,
       "userRatingCount": 4069,
-      "refreshedAt": "2026-09-28T08:18:14.323Z"
+      "refreshedAt": "2026-09-28T09:45:35.739Z"
     },
     "PS2-0041": {
       "matchStatus": "matched",
@@ -10038,7 +10186,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:14.820Z"
+      "refreshedAt": "2026-09-28T09:45:36.170Z"
     },
     "PS2-0042": {
       "matchStatus": "matched",
@@ -10068,7 +10216,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 74.47109225509134,
       "userRatingCount": 18,
-      "refreshedAt": "2026-09-28T08:18:15.305Z"
+      "refreshedAt": "2026-09-28T09:45:36.608Z"
     },
     "PS2-0043": {
       "matchStatus": "matched",
@@ -10098,7 +10246,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 74.47109225509134,
       "userRatingCount": 18,
-      "refreshedAt": "2026-09-28T08:18:15.305Z"
+      "refreshedAt": "2026-09-28T09:45:36.608Z"
     },
     "PS2-0045": {
       "matchStatus": "matched",
@@ -10134,21 +10282,21 @@
       "aggregatedRatingCount": 1,
       "userRating": 69.23736977664817,
       "userRatingCount": 39,
-      "refreshedAt": "2026-09-28T08:18:15.814Z"
+      "refreshedAt": "2026-09-28T09:45:37.048Z"
     },
     "PS2-0046": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:16.206Z"
+      "refreshedAt": "2026-09-28T09:45:37.700Z"
     },
     "PS2-0047": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:16.720Z"
+      "refreshedAt": "2026-09-28T09:45:38.390Z"
     },
     "PS2-0048": {
       "matchStatus": "matched",
@@ -10182,7 +10330,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 72.2665299576959,
       "userRatingCount": 78,
-      "refreshedAt": "2026-09-28T08:18:17.303Z"
+      "refreshedAt": "2026-09-28T09:45:38.820Z"
     },
     "PS2-0049": {
       "matchStatus": "matched",
@@ -10215,7 +10363,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 63.78025404205908,
       "userRatingCount": 14,
-      "refreshedAt": "2026-09-28T08:18:17.864Z"
+      "refreshedAt": "2026-09-28T09:45:39.257Z"
     },
     "PS2-0050": {
       "source": "IGDB",
@@ -10231,7 +10379,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:18:18.379Z"
+      "refreshedAt": "2026-09-28T09:45:40.090Z"
     },
     "PS2-0051": {
       "matchStatus": "matched",
@@ -10266,14 +10414,14 @@
       "aggregatedRatingCount": 6,
       "userRating": 70.69899984493739,
       "userRatingCount": 54,
-      "refreshedAt": "2026-09-28T08:18:18.862Z"
+      "refreshedAt": "2026-09-28T09:45:40.519Z"
     },
     "PS2-0052": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:19.357Z"
+      "refreshedAt": "2026-09-28T09:45:41.196Z"
     },
     "PS2-0053": {
       "matchStatus": "matched",
@@ -10309,7 +10457,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 84.12912100355074,
       "userRatingCount": 286,
-      "refreshedAt": "2026-09-28T08:18:19.733Z"
+      "refreshedAt": "2026-09-28T09:45:41.636Z"
     },
     "PS2-0054": {
       "matchStatus": "matched",
@@ -10344,7 +10492,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 69.30376901059125,
       "userRatingCount": 75,
-      "refreshedAt": "2026-09-28T08:18:20.224Z"
+      "refreshedAt": "2026-09-28T09:45:42.094Z"
     },
     "PS2-0055": {
       "matchStatus": "matched",
@@ -10380,7 +10528,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 80.22867361587274,
       "userRatingCount": 101,
-      "refreshedAt": "2026-09-28T08:18:20.595Z"
+      "refreshedAt": "2026-09-28T09:45:42.528Z"
     },
     "PS2-0056": {
       "matchStatus": "matched",
@@ -10411,7 +10559,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:21.106Z"
+      "refreshedAt": "2026-09-28T09:45:42.977Z"
     },
     "PS2-0057": {
       "matchStatus": "matched",
@@ -10443,7 +10591,7 @@
       "aggregatedRatingCount": 7,
       "userRating": 74.14126027728959,
       "userRatingCount": 71,
-      "refreshedAt": "2026-09-28T08:18:21.492Z"
+      "refreshedAt": "2026-09-28T09:45:43.406Z"
     },
     "PS2-0058": {
       "matchStatus": "matched",
@@ -10470,7 +10618,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:21.855Z"
+      "refreshedAt": "2026-09-28T09:45:43.834Z"
     },
     "PS2-0060": {
       "matchStatus": "matched",
@@ -10503,7 +10651,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 82.82378639699513,
       "userRatingCount": 566,
-      "refreshedAt": "2026-09-28T08:18:22.354Z"
+      "refreshedAt": "2026-09-28T09:45:44.269Z"
     },
     "PS2-0061": {
       "source": "IGDB",
@@ -10526,14 +10674,14 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:18:22.914Z"
+      "refreshedAt": "2026-09-28T09:45:44.951Z"
     },
     "PS2-0062": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:23.383Z"
+      "refreshedAt": "2026-09-28T09:45:45.631Z"
     },
     "PS2-0063": {
       "matchStatus": "matched",
@@ -10566,14 +10714,26 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:23.899Z"
+      "refreshedAt": "2026-09-28T09:45:46.066Z"
     },
     "PS2-0064": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:24.386Z"
+      "sourceGameId": 118566,
+      "title": "Chess Challenger",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:45:46.936Z"
     },
     "PS2-0065": {
       "matchStatus": "matched",
@@ -10611,14 +10771,14 @@
       "aggregatedRatingCount": 5,
       "userRating": 80.48616323335406,
       "userRatingCount": 362,
-      "refreshedAt": "2026-09-28T08:18:24.771Z"
+      "refreshedAt": "2026-09-28T09:45:47.375Z"
     },
     "PS2-0066": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:25.300Z"
+      "refreshedAt": "2026-09-28T09:45:48.060Z"
     },
     "PS2-0067": {
       "matchStatus": "matched",
@@ -10651,7 +10811,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 75.1685393258427,
       "userRatingCount": 5,
-      "refreshedAt": "2026-09-28T08:18:25.786Z"
+      "refreshedAt": "2026-09-28T09:45:48.496Z"
     },
     "PS2-0069": {
       "matchStatus": "matched",
@@ -10684,7 +10844,7 @@
       "aggregatedRatingCount": 11,
       "userRating": 76.68426151619997,
       "userRatingCount": 69,
-      "refreshedAt": "2026-09-28T08:18:26.300Z"
+      "refreshedAt": "2026-09-28T09:45:48.890Z"
     },
     "PS2-0070": {
       "matchStatus": "matched",
@@ -10719,7 +10879,7 @@
       "aggregatedRatingCount": 5,
       "userRating": 66.55764722007346,
       "userRatingCount": 58,
-      "refreshedAt": "2026-09-28T08:18:26.777Z"
+      "refreshedAt": "2026-09-28T09:45:49.324Z"
     },
     "PS2-0071": {
       "matchStatus": "matched",
@@ -10751,14 +10911,26 @@
       "aggregatedRatingCount": 0,
       "userRating": 74.27063950942524,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:18:27.162Z"
+      "refreshedAt": "2026-09-28T09:45:49.756Z"
     },
     "PS2-0073": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:27.641Z"
+      "sourceGameId": 44702,
+      "title": "Rayman 2: Revolution",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:45:50.697Z"
     },
     "PS2-0075": {
       "matchStatus": "matched",
@@ -10792,14 +10964,14 @@
       "aggregatedRatingCount": 4,
       "userRating": 60.5764590562094,
       "userRatingCount": 154,
-      "refreshedAt": "2026-09-28T08:18:28.142Z"
+      "refreshedAt": "2026-09-28T09:45:51.130Z"
     },
     "PS2-0076": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:28.518Z"
+      "refreshedAt": "2026-09-28T09:45:51.815Z"
     },
     "PS2-0077": {
       "matchStatus": "matched",
@@ -10834,7 +11006,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 91.01821140754629,
       "userRatingCount": 1215,
-      "refreshedAt": "2026-09-28T08:18:28.898Z"
+      "refreshedAt": "2026-09-28T09:45:52.256Z"
     },
     "PS2-0078": {
       "matchStatus": "matched",
@@ -10869,7 +11041,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 79.19020997495794,
       "userRatingCount": 278,
-      "refreshedAt": "2026-09-28T08:18:29.410Z"
+      "refreshedAt": "2026-09-28T09:45:52.683Z"
     },
     "PS2-0079": {
       "matchStatus": "matched",
@@ -10903,14 +11075,14 @@
       "aggregatedRatingCount": 0,
       "userRating": 68.83960292039556,
       "userRatingCount": 9,
-      "refreshedAt": "2026-09-28T08:18:29.799Z"
+      "refreshedAt": "2026-09-28T09:45:53.116Z"
     },
     "PS2-0080": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:30.323Z"
+      "refreshedAt": "2026-09-28T09:45:53.803Z"
     },
     "PS2-0081": {
       "matchStatus": "matched",
@@ -10942,7 +11114,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 68.2038074784139,
       "userRatingCount": 186,
-      "refreshedAt": "2026-09-28T08:18:30.688Z"
+      "refreshedAt": "2026-09-28T09:45:54.192Z"
     },
     "PS2-0082": {
       "matchStatus": "matched",
@@ -10980,7 +11152,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 65.5527921154569,
       "userRatingCount": 202,
-      "refreshedAt": "2026-09-28T08:18:31.071Z"
+      "refreshedAt": "2026-09-28T09:45:54.558Z"
     },
     "PS2-0083": {
       "matchStatus": "matched",
@@ -11014,14 +11186,14 @@
       "aggregatedRatingCount": 1,
       "userRating": 61.8114771331398,
       "userRatingCount": 30,
-      "refreshedAt": "2026-09-28T08:18:31.594Z"
+      "refreshedAt": "2026-09-28T09:45:55.013Z"
     },
     "PS2-0084": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:32.094Z"
+      "refreshedAt": "2026-09-28T09:45:55.697Z"
     },
     "PS2-0085": {
       "matchStatus": "matched",
@@ -11056,7 +11228,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 58.97349852164921,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:18:32.699Z"
+      "refreshedAt": "2026-09-28T09:45:56.063Z"
     },
     "PS2-0086": {
       "matchStatus": "matched",
@@ -11090,7 +11262,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 54.95835756407047,
       "userRatingCount": 33,
-      "refreshedAt": "2026-09-28T08:18:33.219Z"
+      "refreshedAt": "2026-09-28T09:45:56.526Z"
     },
     "PS2-0087": {
       "matchStatus": "matched",
@@ -11116,7 +11288,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:33.601Z"
+      "refreshedAt": "2026-09-28T09:45:56.955Z"
     },
     "PS2-0088": {
       "matchStatus": "matched",
@@ -11151,21 +11323,21 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:34.053Z"
+      "refreshedAt": "2026-09-28T09:45:57.389Z"
     },
     "PS2-0089": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:34.426Z"
+      "refreshedAt": "2026-09-28T09:45:58.072Z"
     },
     "PS2-0090": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:34.911Z"
+      "refreshedAt": "2026-09-28T09:45:58.692Z"
     },
     "PS2-0091": {
       "matchStatus": "matched",
@@ -11201,7 +11373,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 68.58426551159654,
       "userRatingCount": 86,
-      "refreshedAt": "2026-09-28T08:18:35.416Z"
+      "refreshedAt": "2026-09-28T09:45:59.197Z"
     },
     "PS2-0092": {
       "matchStatus": "matched",
@@ -11237,28 +11409,28 @@
       "aggregatedRatingCount": 2,
       "userRating": 74.83206771740997,
       "userRatingCount": 196,
-      "refreshedAt": "2026-09-28T08:18:35.903Z"
+      "refreshedAt": "2026-09-28T09:45:59.633Z"
     },
     "PS2-0093": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:36.378Z"
+      "refreshedAt": "2026-09-28T09:46:00.344Z"
     },
     "PS2-0094": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:36.877Z"
+      "refreshedAt": "2026-09-28T09:46:01.028Z"
     },
     "PS2-0095": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:37.347Z"
+      "refreshedAt": "2026-09-28T09:46:01.759Z"
     },
     "PS2-0096": {
       "matchStatus": "matched",
@@ -11293,7 +11465,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 84.60231293001443,
       "userRatingCount": 135,
-      "refreshedAt": "2026-09-28T08:18:37.853Z"
+      "refreshedAt": "2026-09-28T09:46:02.212Z"
     },
     "PS2-0097": {
       "matchStatus": "matched",
@@ -11320,7 +11492,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:38.343Z"
+      "refreshedAt": "2026-09-28T09:46:02.572Z"
     },
     "PS2-0098": {
       "matchStatus": "matched",
@@ -11354,7 +11526,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 62.06420672182421,
       "userRatingCount": 114,
-      "refreshedAt": "2026-09-28T08:18:38.842Z"
+      "refreshedAt": "2026-09-28T09:46:03.003Z"
     },
     "PS2-0099": {
       "matchStatus": "matched",
@@ -11389,7 +11561,7 @@
       "aggregatedRatingCount": 1,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:39.347Z"
+      "refreshedAt": "2026-09-28T09:46:03.443Z"
     },
     "PS2-0100": {
       "matchStatus": "matched",
@@ -11423,14 +11595,14 @@
       "aggregatedRatingCount": 1,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:39.859Z"
+      "refreshedAt": "2026-09-28T09:46:03.805Z"
     },
     "PS2-0101": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:40.365Z"
+      "refreshedAt": "2026-09-28T09:46:04.487Z"
     },
     "PS2-0102": {
       "matchStatus": "matched",
@@ -11467,7 +11639,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 91.46679268150405,
       "userRatingCount": 33,
-      "refreshedAt": "2026-09-28T08:18:40.866Z"
+      "refreshedAt": "2026-09-28T09:46:04.925Z"
     },
     "PS2-0103": {
       "matchStatus": "matched",
@@ -11503,7 +11675,7 @@
       "aggregatedRatingCount": 6,
       "userRating": 63.36286643158324,
       "userRatingCount": 156,
-      "refreshedAt": "2026-09-28T08:18:41.376Z"
+      "refreshedAt": "2026-09-28T09:46:05.359Z"
     },
     "PS2-0104": {
       "matchStatus": "matched",
@@ -11540,7 +11712,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 74.57220452371088,
       "userRatingCount": 110,
-      "refreshedAt": "2026-09-28T08:18:41.759Z"
+      "refreshedAt": "2026-09-28T09:46:05.792Z"
     },
     "PS2-0105": {
       "matchStatus": "matched",
@@ -11578,7 +11750,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 87.32099784239108,
       "userRatingCount": 3160,
-      "refreshedAt": "2026-09-28T08:18:42.272Z"
+      "refreshedAt": "2026-09-28T09:46:06.250Z"
     },
     "PS2-0106": {
       "matchStatus": "matched",
@@ -11613,14 +11785,26 @@
       "aggregatedRatingCount": 1,
       "userRating": 67.71045387498131,
       "userRatingCount": 94,
-      "refreshedAt": "2026-09-28T08:18:42.768Z"
+      "refreshedAt": "2026-09-28T09:46:06.680Z"
     },
     "PS2-0107": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:43.253Z"
+      "sourceGameId": 700,
+      "title": "FIFA Soccer 06",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:46:07.621Z"
     },
     "PS2-0108": {
       "matchStatus": "matched",
@@ -11656,7 +11840,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 76.39526662696244,
       "userRatingCount": 280,
-      "refreshedAt": "2026-09-28T08:18:43.628Z"
+      "refreshedAt": "2026-09-28T09:46:08.054Z"
     },
     "PS2-0109": {
       "matchStatus": "matched",
@@ -11689,7 +11873,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 72.15746042598448,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:18:44.122Z"
+      "refreshedAt": "2026-09-28T09:46:08.418Z"
     },
     "PS2-0110": {
       "matchStatus": "matched",
@@ -11714,7 +11898,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:44.618Z"
+      "refreshedAt": "2026-09-28T09:46:08.855Z"
     },
     "PS2-0111": {
       "matchStatus": "matched",
@@ -11749,7 +11933,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 74.66345995392103,
       "userRatingCount": 36,
-      "refreshedAt": "2026-09-28T08:18:45.151Z"
+      "refreshedAt": "2026-09-28T09:46:09.323Z"
     },
     "PS2-0112": {
       "matchStatus": "matched",
@@ -11783,7 +11967,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 30.41115955329868,
       "userRatingCount": 8,
-      "refreshedAt": "2026-09-28T08:18:45.671Z"
+      "refreshedAt": "2026-09-28T09:46:09.772Z"
     },
     "PS2-0113": {
       "matchStatus": "matched",
@@ -11813,7 +11997,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 70.49183629101721,
       "userRatingCount": 39,
-      "refreshedAt": "2026-09-28T08:18:46.172Z"
+      "refreshedAt": "2026-09-28T09:46:10.201Z"
     },
     "PS2-0114": {
       "matchStatus": "matched",
@@ -11851,7 +12035,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 69.94652782720964,
       "userRatingCount": 17,
-      "refreshedAt": "2026-09-28T08:18:46.769Z"
+      "refreshedAt": "2026-09-28T09:46:10.637Z"
     },
     "PS2-0115": {
       "matchStatus": "matched",
@@ -11884,7 +12068,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 60.67752112953265,
       "userRatingCount": 50,
-      "refreshedAt": "2026-09-28T08:18:47.286Z"
+      "refreshedAt": "2026-09-28T09:46:11.129Z"
     },
     "PS2-0116": {
       "matchStatus": "matched",
@@ -11917,14 +12101,14 @@
       "aggregatedRatingCount": 4,
       "userRating": 51.083757144849,
       "userRatingCount": 38,
-      "refreshedAt": "2026-09-28T08:18:47.670Z"
+      "refreshedAt": "2026-09-28T09:46:11.560Z"
     },
     "PS2-0117": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:48.163Z"
+      "refreshedAt": "2026-09-28T09:46:12.243Z"
     },
     "PS2-0118": {
       "matchStatus": "matched",
@@ -11955,7 +12139,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 60.98503377963468,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:18:48.684Z"
+      "refreshedAt": "2026-09-28T09:46:12.717Z"
     },
     "PS2-0119": {
       "matchStatus": "matched",
@@ -11981,7 +12165,7 @@
       "aggregatedRatingCount": 2,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:49.185Z"
+      "refreshedAt": "2026-09-28T09:46:13.147Z"
     },
     "PS2-0120": {
       "matchStatus": "matched",
@@ -12019,7 +12203,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:49.670Z"
+      "refreshedAt": "2026-09-28T09:46:13.581Z"
     },
     "PS2-0121": {
       "matchStatus": "matched",
@@ -12055,7 +12239,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 80.09118104142902,
       "userRatingCount": 23,
-      "refreshedAt": "2026-09-28T08:18:50.181Z"
+      "refreshedAt": "2026-09-28T09:46:14.017Z"
     },
     "PS2-0122": {
       "matchStatus": "matched",
@@ -12090,7 +12274,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 66.27516975078177,
       "userRatingCount": 230,
-      "refreshedAt": "2026-09-28T08:18:50.679Z"
+      "refreshedAt": "2026-09-28T09:46:14.443Z"
     },
     "PS2-0123": {
       "source": "IGDB",
@@ -12119,14 +12303,14 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:18:51.185Z"
+      "refreshedAt": "2026-09-28T09:46:15.134Z"
     },
     "PS2-0124": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:51.688Z"
+      "refreshedAt": "2026-09-28T09:46:15.826Z"
     },
     "PS2-0125": {
       "matchStatus": "matched",
@@ -12156,7 +12340,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 69.7968551526443,
       "userRatingCount": 7,
-      "refreshedAt": "2026-09-28T08:18:52.192Z"
+      "refreshedAt": "2026-09-28T09:46:16.359Z"
     },
     "PS2-0126": {
       "matchStatus": "matched",
@@ -12188,7 +12372,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 78.82122732119262,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:18:52.689Z"
+      "refreshedAt": "2026-09-28T09:46:16.721Z"
     },
     "PS2-0127": {
       "matchStatus": "matched",
@@ -12219,7 +12403,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:53.188Z"
+      "refreshedAt": "2026-09-28T09:46:17.186Z"
     },
     "PS2-0128": {
       "matchStatus": "matched",
@@ -12249,14 +12433,14 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:53.721Z"
+      "refreshedAt": "2026-09-28T09:46:17.555Z"
     },
     "PS2-0129": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:54.190Z"
+      "refreshedAt": "2026-09-28T09:46:18.237Z"
     },
     "PS2-0130": {
       "matchStatus": "matched",
@@ -12292,7 +12476,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 73.4856648983071,
       "userRatingCount": 18,
-      "refreshedAt": "2026-09-28T08:18:54.752Z"
+      "refreshedAt": "2026-09-28T09:46:18.698Z"
     },
     "PS2-0131": {
       "matchStatus": "matched",
@@ -12328,7 +12512,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 61.05021021741639,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:18:55.235Z"
+      "refreshedAt": "2026-09-28T09:46:19.132Z"
     },
     "PS3-0002": {
       "matchStatus": "matched",
@@ -12362,7 +12546,7 @@
       "aggregatedRatingCount": 9,
       "userRating": 72.67534066326814,
       "userRatingCount": 422,
-      "refreshedAt": "2026-09-28T08:18:55.725Z"
+      "refreshedAt": "2026-09-28T09:46:19.565Z"
     },
     "PS3-0003": {
       "matchStatus": "matched",
@@ -12398,7 +12582,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 76.10859086674823,
       "userRatingCount": 1207,
-      "refreshedAt": "2026-09-28T08:18:56.245Z"
+      "refreshedAt": "2026-09-28T09:46:20.010Z"
     },
     "PS3-0004": {
       "matchStatus": "matched",
@@ -12432,7 +12616,7 @@
       "aggregatedRatingCount": 5,
       "userRating": 66.05355591879197,
       "userRatingCount": 110,
-      "refreshedAt": "2026-09-28T08:18:56.743Z"
+      "refreshedAt": "2026-09-28T09:46:20.386Z"
     },
     "PS5-0001": {
       "matchStatus": "matched",
@@ -12465,14 +12649,14 @@
       "aggregatedRatingCount": 1,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:18:57.262Z"
+      "refreshedAt": "2026-09-28T09:46:20.816Z"
     },
     "PC-0001": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:18:57.787Z"
+      "refreshedAt": "2026-09-28T09:46:21.499Z"
     },
     "PC-0002": {
       "matchStatus": "matched",
@@ -12513,7 +12697,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 80.15918256915239,
       "userRatingCount": 115,
-      "refreshedAt": "2026-09-28T08:18:58.298Z"
+      "refreshedAt": "2026-09-28T09:46:21.941Z"
     },
     "PC-0003": {
       "matchStatus": "matched",
@@ -12548,7 +12732,7 @@
       "aggregatedRatingCount": 9,
       "userRating": 79.99972446979083,
       "userRatingCount": 323,
-      "refreshedAt": "2026-09-28T08:18:58.800Z"
+      "refreshedAt": "2026-09-28T09:46:22.381Z"
     },
     "PC-0004": {
       "matchStatus": "matched",
@@ -12588,7 +12772,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 82.47848403797946,
       "userRatingCount": 40,
-      "refreshedAt": "2026-09-28T08:18:59.316Z"
+      "refreshedAt": "2026-09-28T09:46:22.813Z"
     },
     "PC-0007": {
       "matchStatus": "matched",
@@ -12628,7 +12812,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 82.47848403797946,
       "userRatingCount": 40,
-      "refreshedAt": "2026-09-28T08:18:59.316Z"
+      "refreshedAt": "2026-09-28T09:46:22.813Z"
     },
     "PC-0005": {
       "matchStatus": "matched",
@@ -12668,7 +12852,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 86.49529503871904,
       "userRatingCount": 30,
-      "refreshedAt": "2026-09-28T08:18:59.803Z"
+      "refreshedAt": "2026-09-28T09:46:23.245Z"
     },
     "PC-0006": {
       "matchStatus": "matched",
@@ -12706,21 +12890,33 @@
       "aggregatedRatingCount": 3,
       "userRating": 79.86781777321895,
       "userRatingCount": 46,
-      "refreshedAt": "2026-09-28T08:19:00.318Z"
+      "refreshedAt": "2026-09-28T09:46:23.677Z"
     },
     "PC-0008": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:19:00.690Z"
+      "refreshedAt": "2026-09-28T09:46:24.359Z"
     },
     "PC-0009": {
+      "matchStatus": "matched",
       "source": "IGDB",
-      "matchStatus": "unmatched",
-      "matchReason": "no-title-match",
-      "candidates": [],
-      "refreshedAt": "2026-09-28T08:19:01.204Z"
+      "sourceGameId": 5907,
+      "title": "Magic: The Gathering - Battlegrounds",
+      "summary": "",
+      "firstReleaseDate": "",
+      "genres": [],
+      "gameModes": [],
+      "themes": [],
+      "perspectives": [],
+      "developers": [],
+      "publishers": [],
+      "aggregatedRating": null,
+      "aggregatedRatingCount": 0,
+      "userRating": null,
+      "userRatingCount": 0,
+      "refreshedAt": "2026-09-28T09:46:25.302Z"
     },
     "PC-0010": {
       "matchStatus": "matched",
@@ -12752,7 +12948,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:19:01.698Z"
+      "refreshedAt": "2026-09-28T09:46:25.738Z"
     },
     "PC-0011": {
       "source": "IGDB",
@@ -12797,7 +12993,7 @@
           ]
         }
       ],
-      "refreshedAt": "2026-09-28T08:19:02.303Z"
+      "refreshedAt": "2026-09-28T09:46:26.352Z"
     },
     "PC-0012": {
       "matchStatus": "matched",
@@ -12834,7 +13030,7 @@
       "aggregatedRatingCount": 7,
       "userRating": 79.12749558210604,
       "userRatingCount": 545,
-      "refreshedAt": "2026-09-28T08:19:02.881Z"
+      "refreshedAt": "2026-09-28T09:46:26.804Z"
     },
     "PC-0013": {
       "matchStatus": "matched",
@@ -12872,7 +13068,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 47.9866402715237,
       "userRatingCount": 10,
-      "refreshedAt": "2026-09-28T08:19:03.257Z"
+      "refreshedAt": "2026-09-28T09:46:27.235Z"
     },
     "PC-0014": {
       "matchStatus": "matched",
@@ -12908,14 +13104,14 @@
       "aggregatedRatingCount": 1,
       "userRating": 60.02919784988598,
       "userRatingCount": 15,
-      "refreshedAt": "2026-09-28T08:19:03.739Z"
+      "refreshedAt": "2026-09-28T09:46:27.670Z"
     },
     "PC-0015": {
       "source": "IGDB",
       "matchStatus": "unmatched",
       "matchReason": "no-title-match",
       "candidates": [],
-      "refreshedAt": "2026-09-28T08:19:04.107Z"
+      "refreshedAt": "2026-09-28T09:46:28.349Z"
     },
     "PC-0016": {
       "matchStatus": "matched",
@@ -12952,7 +13148,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 80.04035331205762,
       "userRatingCount": 30,
-      "refreshedAt": "2026-09-28T08:19:04.605Z"
+      "refreshedAt": "2026-09-28T09:46:28.782Z"
     },
     "PC-0017": {
       "matchStatus": "matched",
@@ -12989,7 +13185,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 80.04035331205762,
       "userRatingCount": 30,
-      "refreshedAt": "2026-09-28T08:19:04.605Z"
+      "refreshedAt": "2026-09-28T09:46:28.782Z"
     },
     "PC-0018": {
       "matchStatus": "matched",
@@ -13026,7 +13222,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 79.90734354734892,
       "userRatingCount": 25,
-      "refreshedAt": "2026-09-28T08:19:05.092Z"
+      "refreshedAt": "2026-09-28T09:46:29.145Z"
     },
     "PC-0019": {
       "matchStatus": "matched",
@@ -13063,7 +13259,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 79.92313073837259,
       "userRatingCount": 31,
-      "refreshedAt": "2026-09-28T08:19:05.591Z"
+      "refreshedAt": "2026-09-28T09:46:29.575Z"
     },
     "PC-0020": {
       "matchStatus": "matched",
@@ -13099,7 +13295,7 @@
       "aggregatedRatingCount": 9,
       "userRating": 79.69446348864633,
       "userRatingCount": 641,
-      "refreshedAt": "2026-09-28T08:19:06.147Z"
+      "refreshedAt": "2026-09-28T09:46:30.032Z"
     },
     "PC-0021": {
       "matchStatus": "matched",
@@ -13131,7 +13327,7 @@
       "aggregatedRatingCount": 0,
       "userRating": 79.76315403101793,
       "userRatingCount": 8,
-      "refreshedAt": "2026-09-28T08:19:06.681Z"
+      "refreshedAt": "2026-09-28T09:46:30.466Z"
     },
     "PC-0022": {
       "matchStatus": "matched",
@@ -13170,7 +13366,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 79.58084364546912,
       "userRatingCount": 340,
-      "refreshedAt": "2026-09-28T08:19:07.164Z"
+      "refreshedAt": "2026-09-28T09:46:30.907Z"
     },
     "PC-0023": {
       "matchStatus": "matched",
@@ -13206,7 +13402,7 @@
       "aggregatedRatingCount": 0,
       "userRating": null,
       "userRatingCount": 0,
-      "refreshedAt": "2026-09-28T08:19:07.676Z"
+      "refreshedAt": "2026-09-28T09:46:31.267Z"
     },
     "WII-0009": {
       "matchStatus": "matched",
@@ -13241,7 +13437,7 @@
       "aggregatedRatingCount": 5,
       "userRating": 73.97673771958227,
       "userRatingCount": 45,
-      "refreshedAt": "2026-09-28T08:19:08.162Z"
+      "refreshedAt": "2026-09-28T09:46:31.728Z"
     },
     "WII-0010": {
       "matchStatus": "matched",
@@ -13274,7 +13470,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 69.32552224367248,
       "userRatingCount": 13,
-      "refreshedAt": "2026-09-28T08:19:08.656Z"
+      "refreshedAt": "2026-09-28T09:46:32.147Z"
     },
     "WII-0011": {
       "matchStatus": "matched",
@@ -13307,7 +13503,7 @@
       "aggregatedRatingCount": 3,
       "userRating": 83.70579142065048,
       "userRatingCount": 6,
-      "refreshedAt": "2026-09-28T08:19:09.160Z"
+      "refreshedAt": "2026-09-28T09:46:32.576Z"
     },
     "WII-0012": {
       "matchStatus": "matched",
@@ -13342,7 +13538,7 @@
       "aggregatedRatingCount": 7,
       "userRating": 81.89057987805647,
       "userRatingCount": 398,
-      "refreshedAt": "2026-09-28T08:19:09.639Z"
+      "refreshedAt": "2026-09-28T09:46:33.010Z"
     },
     "WII-0013": {
       "matchStatus": "matched",
@@ -13378,7 +13574,7 @@
       "aggregatedRatingCount": 4,
       "userRating": 68.14372931968347,
       "userRatingCount": 77,
-      "refreshedAt": "2026-09-28T08:19:10.180Z"
+      "refreshedAt": "2026-09-28T09:46:33.446Z"
     },
     "WII-0014": {
       "matchStatus": "matched",
@@ -13405,7 +13601,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 65.80268534734384,
       "userRatingCount": 5,
-      "refreshedAt": "2026-09-28T08:19:10.746Z"
+      "refreshedAt": "2026-09-28T09:46:33.881Z"
     },
     "WII-0015": {
       "matchStatus": "matched",
@@ -13440,7 +13636,7 @@
       "aggregatedRatingCount": 6,
       "userRating": 85.76573922313321,
       "userRatingCount": 144,
-      "refreshedAt": "2026-09-28T08:19:11.287Z"
+      "refreshedAt": "2026-09-28T09:46:34.259Z"
     },
     "WII-0016": {
       "matchStatus": "matched",
@@ -13479,7 +13675,7 @@
       "aggregatedRatingCount": 6,
       "userRating": 77.00119262181533,
       "userRatingCount": 28,
-      "refreshedAt": "2026-09-28T08:19:11.803Z"
+      "refreshedAt": "2026-09-28T09:46:34.697Z"
     },
     "WII-0017": {
       "matchStatus": "matched",
@@ -13512,7 +13708,7 @@
       "aggregatedRatingCount": 1,
       "userRating": 77,
       "userRatingCount": 3,
-      "refreshedAt": "2026-09-28T08:19:12.179Z"
+      "refreshedAt": "2026-09-28T09:46:35.168Z"
     },
     "WII-0018": {
       "matchStatus": "matched",
@@ -13545,7 +13741,7 @@
       "aggregatedRatingCount": 2,
       "userRating": 79.6148567356896,
       "userRatingCount": 101,
-      "refreshedAt": "2026-09-28T08:19:12.787Z"
+      "refreshedAt": "2026-09-28T09:46:35.603Z"
     },
     "WIIU-0001": {
       "matchStatus": "matched",
@@ -13578,7 +13774,7 @@
       "aggregatedRatingCount": 9,
       "userRating": 63.78160495152297,
       "userRatingCount": 12,
-      "refreshedAt": "2026-09-28T08:19:13.319Z"
+      "refreshedAt": "2026-09-28T09:46:36.040Z"
     },
     "SWITCH-0001": {
       "matchStatus": "matched",
@@ -13612,7 +13808,7 @@
       "aggregatedRatingCount": 14,
       "userRating": 82.50103427067371,
       "userRatingCount": 308,
-      "refreshedAt": "2026-09-28T08:19:13.804Z"
+      "refreshedAt": "2026-09-28T09:46:36.479Z"
     },
     "SWITCH-0002": {
       "matchStatus": "matched",
@@ -13651,7 +13847,7 @@
       "aggregatedRatingCount": 14,
       "userRating": 83.43370273816225,
       "userRatingCount": 219,
-      "refreshedAt": "2026-09-28T08:19:14.232Z"
+      "refreshedAt": "2026-09-28T09:46:36.916Z"
     },
     "SWITCH-0003": {
       "matchStatus": "matched",
@@ -13685,7 +13881,7 @@
       "aggregatedRatingCount": 14,
       "userRating": 89.96356931856816,
       "userRatingCount": 198,
-      "refreshedAt": "2026-09-28T08:19:14.778Z"
+      "refreshedAt": "2026-09-28T09:46:37.379Z"
     },
     "SWITCH-0004": {
       "matchStatus": "matched",
@@ -13718,7 +13914,7 @@
       "aggregatedRatingCount": 7,
       "userRating": 77.39203344177933,
       "userRatingCount": 70,
-      "refreshedAt": "2026-09-28T08:19:15.269Z"
+      "refreshedAt": "2026-09-28T09:46:37.809Z"
     },
     "SWITCH-0005": {
       "matchStatus": "matched",
@@ -13754,7 +13950,7 @@
       "aggregatedRatingCount": 7,
       "userRating": 83.37712156199947,
       "userRatingCount": 82,
-      "refreshedAt": "2026-09-28T08:19:15.762Z"
+      "refreshedAt": "2026-09-28T09:46:38.239Z"
     },
     "SWITCH-0006": {
       "matchStatus": "matched",
@@ -13790,7 +13986,7 @@
       "aggregatedRatingCount": 27,
       "userRating": 92.49753934254271,
       "userRatingCount": 2979,
-      "refreshedAt": "2026-09-28T08:19:16.141Z"
+      "refreshedAt": "2026-09-28T09:46:38.681Z"
     },
     "SWITCH-0007": {
       "matchStatus": "matched",
@@ -13829,7 +14025,7 @@
       "aggregatedRatingCount": 9,
       "userRating": 77.09649780753534,
       "userRatingCount": 167,
-      "refreshedAt": "2026-09-28T08:19:16.667Z"
+      "refreshedAt": "2026-09-28T09:46:39.256Z"
     }
   }
 }
