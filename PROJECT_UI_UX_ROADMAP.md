@@ -133,7 +133,7 @@ Avoid:
 | Phase 2 | P1 | Lists, filters and browsing quality | ✅ COMPLETE |
 | Phase 3 | P1 | Game detail hierarchy and density | ✅ COMPLETE |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ✅ COMPLETE |
-| Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ✅ COMPLETE |
+| Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ⚠️ PARTIAL |
 | Phase 6 | P2 | Polish and secondary UX improvements | ☐ Not started |
 
 Do not start a later phase while earlier P0 work is incomplete unless there is a concrete blocker.
@@ -793,8 +793,6 @@ Never cache:
 - service-account secrets;
 - private API secrets.
 
-### Explicit non-goals
-
 ### Phase 5 implementation notes
 
 - Snapshot route requires the existing authenticated session and responds `private, no-store`.
@@ -802,6 +800,8 @@ Never cache:
 - Service worker stores `/offline.html` only. It does not cache private documents, API responses, credentials, or mutations.
 - Offline page supports title/ID search, platform filtering, read-only detail, cover reference and freshness timestamp.
 - Offline behavior still needs a real browser/device check; the worker environment does not currently expose an authenticated production browser session.
+
+### Explicit non-goals
 
 Offline mode does **not** need to:
 - refresh market prices;
