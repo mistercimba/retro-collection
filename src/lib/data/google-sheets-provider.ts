@@ -2,6 +2,7 @@ import ExcelJS from "exceljs";
 import { GoogleAuth } from "google-auth-library";
 import type { CollectionDataProvider } from "./provider";
 import type { PurchaseRecord, RawSheetData, ValuationSnapshot, WantTarget } from "./types";
+import { measureServerWork, recordServerPerf } from "../server-perf";
 
 const XLSX_MIME = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 let workbookCache: { data: RawSheetData; expiresAt: number } | null = null;
@@ -155,7 +156,7 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
     const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
     if (!spreadsheetId) throw new Error("GOOGLE_SHEETS_SPREADSHEET_ID em falta.");
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${encodeURIComponent(range)}?majorDimension=ROWS`;
-    const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` }, next: { revalidate: 60 } });
+    const response = await measureServerWork("google.sheet_range", () => fetch(url, { headers: { Authorization: `Bearer ${token}` }, next: { revalidate: 60 } }));
     if (!response.ok) throw new Error(`Google Sheets respondeu ${response.status} ao ler ${range}.`);
     const body = (await response.json()) as { values?: string[][] };
     return body.values ?? [];
@@ -164,23 +165,24 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
   private async readDriveWorkbook(token: string): Promise<RawSheetData> {
     const id = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
     if (!id) throw new Error("GOOGLE_SHEETS_SPREADSHEET_ID em falta.");
-    const metadataResponse = await fetch(`https://www.googleapis.com/drive/v3/files/${id}?fields=mimeType,name`, {
+    const metadataResponse = await measureServerWork("google.drive_metadata", () => fetch(`https://www.googleapis.com/drive/v3/files/${id}?fields=mimeType,name`, {
       headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 300 },
-    });
+    }));
     if (!metadataResponse.ok) throw new Error(`Google Drive respondeu ${metadataResponse.status} ao identificar o ficheiro.`);
     const metadata = (await metadataResponse.json()) as { mimeType?: string; name?: string };
     if (metadata.mimeType !== XLSX_MIME) {
       return this.readNativeSheet(token);
     }
 
-    const response = await fetch(`https://www.googleapis.com/drive/v3/files/${id}?alt=media`, {
+    const response = await measureServerWork("google.workbook_download", () => fetch(`https://www.googleapis.com/drive/v3/files/${id}?alt=media`, {
       headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 60 },
-    });
+    }));
     if (!response.ok) throw new Error(`Google Drive respondeu ${response.status} ao descarregar ${metadata.name ?? "a coleção"}.`);
+    const workbookBytes = await measureServerWork("google.workbook_body", () => response.arrayBuffer());
     const workbook = new ExcelJS.Workbook();
-    await workbook.xlsx.load(Buffer.from(await response.arrayBuffer()) as never);
+    await measureServerWork("google.xlsx_parse", async () => workbook.xlsx.load(Buffer.from(workbookBytes) as never));
 
     const collectionSheet = workbook.getWorksheet("COLLECTION");
     const auditSheet = workbook.getWorksheet("AUDIT LOG");
@@ -208,10 +210,10 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
   private async readNativeSheet(token: string): Promise<RawSheetData> {
     const id = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
     if (!id) throw new Error("GOOGLE_SHEETS_SPREADSHEET_ID em falta.");
-    const metadataResponse = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${id}?fields=sheets.properties.title`, {
+    const metadataResponse = await measureServerWork("google.sheet_metadata", () => fetch(`https://sheets.googleapis.com/v4/spreadsheets/${id}?fields=sheets.properties.title`, {
       headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 300 },
-    });
+    }));
     if (!metadataResponse.ok) throw new Error(`Google Sheets respondeu ${metadataResponse.status} ao listar os separadores.`);
     const metadata = await metadataResponse.json() as { sheets?: { properties?: { title?: string } }[] };
     const names = (metadata.sheets ?? []).map((sheet) => sheet.properties?.title ?? "").filter(Boolean);
@@ -219,10 +221,10 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
     const wanted = names.filter((name) => ["COLLECTION", "AUDIT LOG", "GB", "GBC", "PURCHASES", "VALUATIONS"].includes(name) || normalizedHeader(name).includes("plan"));
     const workbook = new ExcelJS.Workbook();
     const ranges = new Map(wanted.map((name) => [name, name === "AUDIT LOG" ? "A1:U1200" : ["GB", "GBC"].includes(name) ? "A1:Z300" : normalizedHeader(name).includes("plan") ? "A1:Z1500" : "A1:Z1200"]));
-    const values = await Promise.all(wanted.map(async (name) => {
+    const values = await measureServerWork("google.sheet_ranges_parallel", () => Promise.all(wanted.map(async (name) => {
       const range = `'${name.replaceAll("'", "''")}'!${ranges.get(name)}`;
       return [name, await this.getRange(range, token)] as const;
-    }));
+    })));
     for (const [name, rows] of values) workbook.addWorksheet(name).addRows(rows);
     const platformOverrides: Record<string, string> = {};
     for (const [sheetName, platform] of [["GB", "Game Boy"], ["GBC", "Game Boy Color"]]) {
@@ -244,8 +246,15 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
   }
 
   async read(): Promise<RawSheetData> {
-    if (workbookCache && workbookCache.expiresAt > Date.now()) return workbookCache.data;
-    if (workbookRead) return workbookRead;
+    if (workbookCache && workbookCache.expiresAt > Date.now()) {
+      recordServerPerf("google.provider_cache", 0, "hit");
+      return workbookCache.data;
+    }
+    if (workbookRead) {
+      recordServerPerf("google.provider_cache", 0, "in-flight");
+      return measureServerWork("google.provider_wait", () => workbookRead!);
+    }
+    recordServerPerf("google.provider_cache", 0, "miss");
     workbookRead = this.load();
     try {
       const data = await workbookRead;
@@ -257,7 +266,7 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
   }
 
   private async load(): Promise<RawSheetData> {
-    const token = await this.credentials();
+    const token = await measureServerWork("google.auth_token", () => this.credentials());
     return this.readDriveWorkbook(token);
   }
 }
