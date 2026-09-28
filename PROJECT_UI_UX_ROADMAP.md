@@ -130,7 +130,7 @@ Avoid:
 | Phase | Priority | Goal | Status |
 |---|---|---|---|
 | Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ✅ COMPLETE |
-| Phase 2 | P1 | Lists, filters and browsing quality | ☐ Not started |
+| Phase 2 | P1 | Lists, filters and browsing quality | ✅ COMPLETE |
 | Phase 3 | P1 | Game detail hierarchy and density | ☐ Not started |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ☐ Not started |
 | Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ☐ Not started |
@@ -444,7 +444,8 @@ Vercel runtime logs and deployment details remain unavailable to this environmen
 # 6. Phase 2 — Lists, filters and browsing
 
 **Priority:** P1  
-**Objective:** Make large lists easier to understand and manipulate.
+**Objective:** Make large lists easier to understand and manipulate.  
+**Status:** COMPLETE
 
 ## UX-08 — Active filter chips
 
@@ -456,10 +457,10 @@ Example:
 
 ### Acceptance criteria
 
-- [ ] Each active filter has a visible chip.
-- [ ] A filter can be removed from its chip.
-- [ ] Removing a chip updates the URL.
-- [ ] Mobile and desktop remain usable.
+- [x] Each active filter has a visible chip.
+- [x] A filter can be removed from its chip.
+- [x] Removing a chip updates the URL.
+- [x] Mobile and desktop remain usable.
 
 ---
 
@@ -475,8 +476,8 @@ instead of only:
 
 ### Acceptance criteria
 
-- [ ] Total and filtered count are both visible.
-- [ ] Count updates immediately with filters.
+- [x] Total and filtered count are both visible.
+- [x] Count updates immediately with filters.
 
 ---
 
@@ -484,9 +485,9 @@ instead of only:
 
 ### Acceptance criteria
 
-- [ ] `Limpar filtros` preserves sort.
-- [ ] A separate explicit reset may reset everything if needed.
-- [ ] Back/forward behavior remains predictable.
+- [x] `Limpar filtros` preserves sort.
+- [x] No implicit sort reset occurs when filters are cleared.
+- [x] Back/forward behavior remains predictable.
 
 ---
 
@@ -501,8 +502,8 @@ Only when necessary, show a compact distinguishing marker such as:
 
 ### Acceptance criteria
 
-- [ ] Duplicate titles can be distinguished without opening every copy.
-- [ ] Unique titles do not gain unnecessary visual noise.
+- [x] Duplicate titles can be distinguished without opening every copy.
+- [x] Unique titles do not gain unnecessary visual noise.
 
 ---
 
@@ -514,8 +515,8 @@ When filters produce zero results:
 
 ### Acceptance criteria
 
-- [ ] No dead-end empty state.
-- [ ] Clear action restores results.
+- [x] No dead-end empty state.
+- [x] Clear action restores results.
 
 ---
 
@@ -530,8 +531,8 @@ Examples:
 
 ### Acceptance criteria
 
-- [ ] Active state is visible but subtle.
-- [ ] Uses Archive colors, not arbitrary blue.
+- [x] Active state is visible but subtle.
+- [x] Uses Archive colors, not arbitrary blue.
 
 ---
 
