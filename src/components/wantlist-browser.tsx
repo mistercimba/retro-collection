@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Heart, Target, X } from "lucide-react";
+import { ArrowUpRight, Heart, Target, X } from "lucide-react";\nimport { MobileFilterDialog } from "./mobile-filter-dialog";
 import type { WantListEntry } from "@/lib/data/types";
 import { displayPlatform } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
@@ -110,7 +110,7 @@ export function WantlistBrowser({ targets, initialSearch = "" }: { targets: Want
       <ActiveFilterChips filters={activeFilters} />
       {filtersOpen && <>
         <div className="mt-3 hidden grid-cols-2 gap-2 md:grid lg:grid-cols-5">{controls}</div>
-        <div className="fixed inset-0 z-[70] flex items-end bg-slate-950/40 md:hidden" role="presentation" onClick={() => setFiltersOpen(false)}><section role="dialog" aria-modal="true" aria-label="Filtros da lista à procura" className="max-h-[82dvh] w-full overflow-y-auto rounded-t-3xl bg-slate-50 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]" onClick={(event) => event.stopPropagation()}><div className="mb-4 flex items-center justify-between"><h2 className="font-black">Filtros</h2><button type="button" onClick={() => setFiltersOpen(false)} aria-label="Fechar filtros" className="rounded-full p-2 hover:bg-white"><X className="h-5 w-5" /></button></div><div className="grid gap-2">{controls}</div><button type="button" onClick={() => setFiltersOpen(false)} className="mt-3 min-h-11 w-full rounded-xl bg-emerald-950 font-bold text-white">Ver {filtered.length} alvos</button></section></div>
+        <MobileFilterDialog open={filtersOpen} onClose={() => setFiltersOpen(false)} label="Filtros da lista à procura"><div className="mb-4 flex items-center justify-between"><h2 className="font-black">Filtros</h2><button type="button" onClick={() => setFiltersOpen(false)} aria-label="Fechar filtros" className="grid h-11 w-11 place-items-center rounded-full hover:bg-white"><X className="h-5 w-5" /></button></div><div className="grid gap-2">{controls}</div><button type="button" onClick={() => setFiltersOpen(false)} className="mt-3 min-h-11 w-full rounded-xl bg-emerald-950 font-bold text-white">Ver {filtered.length} alvos</button></MobileFilterDialog>
       </>}
     </div>
     <div className="flex items-center justify-between text-xs font-semibold text-slate-500"><span>{filtered.length} de {active.length} alvos</span><span>Ordenação: {sortOptions.find((option) => option.value === sort)?.label}</span></div>
