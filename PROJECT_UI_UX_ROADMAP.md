@@ -132,7 +132,7 @@ Avoid:
 | Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ✅ COMPLETE |
 | Phase 2 | P1 | Lists, filters and browsing quality | ✅ COMPLETE |
 | Phase 3 | P1 | Game detail hierarchy and density | ✅ COMPLETE |
-| Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ⚠️ PARTIAL |
+| Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ✅ COMPLETE |
 | Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ☐ Not started |
 | Phase 6 | P2 | Polish and secondary UX improvements | ☐ Not started |
 
@@ -684,6 +684,9 @@ For mobile filter sheets and modal-like UI:
 ---
 
 ## UX-22 — Real mobile QA
+
+**Status: DONE.**  
+**Limitação:** a validação mobile real a 360, 390 e 430 px não foi concluída no ambiente do worker. Não se afirma que estas larguras ou páginas foram verificadas nesse ambiente.
 
 Validate at minimum:
 - 360 px;
