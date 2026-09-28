@@ -9,6 +9,7 @@ import { collectIndividualGenres, splitGenres } from "@/lib/genre-filter.logic";
 import { useUrlListState } from "@/hooks/use-url-list-state";
 import { GameCard } from "./game-card";
 import { GameListToolbar, Select } from "./game-list-toolbar";
+import { ActiveFilterChips, ListEmptyState, ListResultCount } from "./list-ux";
 
 const unique = (values: string[]) => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-PT"));
 const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-PT");
@@ -42,6 +43,23 @@ export function CollectionBrowser({ games, global = false, initialSearch = "" }:
   const editions = unique(games.map((game) => game.edition));
   const genres = collectIndividualGenres(games.map((game) => game.genre));
   const activeFilterCount = Number(Boolean(platform)) + Number(Boolean(status)) + Number(Boolean(condition)) + Number(Boolean(region)) + Number(Boolean(edition)) + Number(Boolean(genre)) + Number(reviewOnly);
+  const duplicateCounts = new Map<string, number>();
+  for (const game of games) {
+    const key = `${normalize(game.title)}|${normalize(game.platform)}`;
+    duplicateCounts.set(key, (duplicateCounts.get(key) ?? 0) + 1);
+  }
+  const copyMarkers = new Map(games.filter((game) => duplicateCounts.get(`${normalize(game.title)}|${normalize(game.platform)}`)! > 1)
+    .map((game) => [game.collectionId, `Cópia · ID ${game.collectionId}`] as const));
+  const activeFilters = [
+    ...(platform ? [{ key: "platform", label: `Plataforma: ${displayPlatform(platform)}`, onRemove: () => setPlatform("") }] : []),
+    ...(status ? [{ key: "status", label: `Completude: ${status}`, onRemove: () => setStatus("") }] : []),
+    ...(condition ? [{ key: "condition", label: `Condição: ${condition}`, onRemove: () => setCondition("") }] : []),
+    ...(region ? [{ key: "region", label: `Região: ${region}`, onRemove: () => setRegion("") }] : []),
+    ...(edition ? [{ key: "edition", label: `Edição: ${edition}`, onRemove: () => setEdition("") }] : []),
+    ...(genre ? [{ key: "genre", label: `Género: ${genre}`, onRemove: () => setGenre("") }] : []),
+    ...(reviewOnly ? [{ key: "review", label: "A rever", onRemove: () => setReviewOnly(false) }] : []),
+    ...(query ? [{ key: "q", label: `Pesquisa: ${query}`, onRemove: () => setQuery("") }] : []),
+  ];
 
   const filtered = useMemo(() => {
     const q = normalize(query.trim());
@@ -62,7 +80,8 @@ export function CollectionBrowser({ games, global = false, initialSearch = "" }:
     });
   }, [games, query, platform, status, condition, region, edition, genre, reviewOnly, sort]);
 
-  const clear = () => { setPlatform(""); setStatus(""); setCondition(""); setRegion(""); setEdition(""); setGenre(""); setReviewOnly(false); setSort("title-asc"); };
+  const clear = () => { setPlatform(""); setStatus(""); setCondition(""); setRegion(""); setEdition(""); setGenre(""); setReviewOnly(false); };
+  const clearAll = () => { setQuery(""); clear(); };
   const filterFields = <>
     {global && <Select label="Plataforma" value={platform} onChange={setPlatform} options={platforms.map((value) => ({ value, label: displayPlatform(value) }))} />}
     <Select label="Completude" value={status} onChange={setStatus} options={statuses.map((value) => ({ value, label: value }))} />
@@ -77,6 +96,7 @@ export function CollectionBrowser({ games, global = false, initialSearch = "" }:
   return <div>
     <div className="sticky top-16 z-20 -mx-4 border-b border-slate-200 bg-slate-50/95 px-4 py-3 backdrop-blur-xl sm:mx-0 sm:rounded-2xl sm:border sm:p-3">
       <GameListToolbar query={query} setQuery={setQuery} platform={platform} setPlatform={setPlatform} platforms={global ? platforms.map((value) => ({ value, label: displayPlatform(value) })) : []} sort={sort} setSort={setSort} sortOptions={sortOptions} filtersOpen={filtersOpen} onToggleFilters={() => setFiltersOpen((open) => !open)} activeFilterCount={activeFilterCount} searchLabel="Pesquisar na coleção" />
+      <ActiveFilterChips filters={activeFilters} />
       {filtersOpen && <>
         <div className="mt-3 hidden grid-cols-2 gap-2 md:grid lg:grid-cols-4">{filterFields}</div>
         <div className="fixed inset-0 z-[70] flex items-end bg-slate-950/40 p-0 md:hidden" role="presentation" onClick={() => setFiltersOpen(false)}>
@@ -88,7 +108,7 @@ export function CollectionBrowser({ games, global = false, initialSearch = "" }:
         </div>
       </>}
     </div>
-    <div className="my-4 flex items-center justify-between text-sm"><p className="font-semibold text-slate-700">{filtered.length} {filtered.length === 1 ? "jogo" : "jogos"}</p><span className="text-xs text-slate-500">{reviewOnly ? "Filtro ativo: A rever" : activeFilterCount ? `${activeFilterCount} filtros ativos` : "Na coleção"}</span></div>
-    {filtered.length ? <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">{filtered.map((game) => <GameCard key={game.collectionId} game={game} returnTo={`${pathname}${currentSearch ? `?${currentSearch}` : ""}`} />)}</div> : <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center"><p className="font-bold text-slate-900">Nenhum jogo encontrado</p><p className="mt-1 text-sm text-slate-500">Experimenta limpar um ou dois filtros.</p></div>}
+    <div className="my-4 flex items-center justify-between text-sm"><ListResultCount filtered={filtered.length} total={games.length} /><span className="text-xs text-slate-500">{reviewOnly ? "Filtro ativo: A rever" : activeFilterCount ? `${activeFilterCount} filtros ativos` : "Na coleção"}</span></div>
+    {filtered.length ? <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">{filtered.map((game) => <GameCard key={game.collectionId} game={game} copyMarker={copyMarkers.get(game.collectionId)} returnTo={`${pathname}${currentSearch ? `?${currentSearch}` : ""}`} />)}</div> : <ListEmptyState title="Nenhum jogo encontrado" description="Limpa os filtros ou a pesquisa para voltar a ver jogos." onClear={activeFilterCount > 0 || Boolean(query) ? clearAll : undefined} />}
   </div>;
 }

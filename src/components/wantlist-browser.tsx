@@ -9,6 +9,7 @@ import { displayPlatform } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
 import { MarketSearchLinks } from "./market-search-links";
 import { GameListToolbar, Select } from "./game-list-toolbar";
+import { ActiveFilterChips, ListEmptyState } from "./list-ux";
 import { collectWantlistRegions, collectWantlistVariants, normalizeWantlistRegion, normalizeWantlistVariant } from "@/lib/wantlist-facets.logic";
 import { useUrlListState } from "@/hooks/use-url-list-state";
 
@@ -48,6 +49,15 @@ export function WantlistBrowser({ targets, initialSearch = "" }: { targets: Want
   const variants = collectWantlistVariants(active.map((target) => target.targetVersion));
   const priorities = unique(active.map((target) => target.priority));
   const activeFilterCount = Number(Boolean(platform)) + Number(Boolean(priority)) + Number(Boolean(region)) + Number(Boolean(variant)) + Number(Boolean(ceiling)) + Number(Boolean(ambiguity));
+  const activeFilters = [
+    ...(platform ? [{ key: "platform", label: `Plataforma: ${displayPlatform(platform)}`, onRemove: () => setPlatform("") }] : []),
+    ...(priority ? [{ key: "priority", label: `Prioridade: ${priority}`, onRemove: () => setPriority("") }] : []),
+    ...(region ? [{ key: "region", label: `Região: ${region}`, onRemove: () => setRegion("") }] : []),
+    ...(variant ? [{ key: "variant", label: `Variante: ${variant}`, onRemove: () => setVariant("") }] : []),
+    ...(ceiling ? [{ key: "ceiling", label: ceiling === "defined" ? "Teto: com teto" : "Teto: sem teto", onRemove: () => setCeiling("") }] : []),
+    ...(ambiguity ? [{ key: "ambiguity", label: ambiguity === "ambiguous" ? "Match: ambíguo" : "Match: sem ambiguidade", onRemove: () => setAmbiguity("") }] : []),
+    ...(query ? [{ key: "q", label: `Pesquisa: ${query}`, onRemove: () => setQuery("") }] : []),
+  ];
 
   const filtered = (() => {
     const q = normalize(query.trim());
@@ -72,7 +82,8 @@ export function WantlistBrowser({ targets, initialSearch = "" }: { targets: Want
     });
   })();
 
-  const clear = () => { setPlatform(""); setPriority(""); setRegion(""); setVariant(""); setCeiling(""); setAmbiguity(""); setSort("recommended"); };
+  const clear = () => { setPlatform(""); setPriority(""); setRegion(""); setVariant(""); setCeiling(""); setAmbiguity(""); };
+  const clearAll = () => { setQuery(""); clear(); };
   const controls = <>
     <Select label="Plataforma" value={platform} onChange={setPlatform} options={platforms.map((value) => ({ value, label: displayPlatform(value) }))} />
     <Select label="Prioridade" value={priority} onChange={setPriority} options={priorities.map((value) => ({ value, label: value }))} />
@@ -96,6 +107,7 @@ export function WantlistBrowser({ targets, initialSearch = "" }: { targets: Want
     <section className="grid grid-cols-2 gap-2 sm:grid-cols-5">{[[counts.missing, "em falta"], [counts.grails, "Grails"], [counts.high, "prioridade alta"], [counts.noCeiling, "sem teto"], [counts.ambiguous, "ambíguos"]].map(([value, label]) => <div key={String(label)} className="rounded-xl border border-slate-200 bg-white p-3"><p className="text-xl font-black text-slate-950">{value}</p><p className="text-[10px] font-bold uppercase tracking-wide text-slate-500">{label}</p></div>)}</section>
     <div className="rounded-2xl border border-slate-200 bg-white p-3">
       <GameListToolbar query={query} setQuery={setQuery} platform="" setPlatform={() => undefined} platforms={[]} sort={sort} setSort={setSort} sortOptions={sortOptions} filtersOpen={filtersOpen} onToggleFilters={() => setFiltersOpen((open) => !open)} activeFilterCount={activeFilterCount} searchLabel="Pesquisar À procura" />
+      <ActiveFilterChips filters={activeFilters} />
       {filtersOpen && <>
         <div className="mt-3 hidden grid-cols-2 gap-2 md:grid lg:grid-cols-5">{controls}</div>
         <div className="fixed inset-0 z-[70] flex items-end bg-slate-950/40 md:hidden" role="presentation" onClick={() => setFiltersOpen(false)}><section role="dialog" aria-modal="true" aria-label="Filtros da lista à procura" className="max-h-[82dvh] w-full overflow-y-auto rounded-t-3xl bg-slate-50 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]" onClick={(event) => event.stopPropagation()}><div className="mb-4 flex items-center justify-between"><h2 className="font-black">Filtros</h2><button type="button" onClick={() => setFiltersOpen(false)} aria-label="Fechar filtros" className="rounded-full p-2 hover:bg-white"><X className="h-5 w-5" /></button></div><div className="grid gap-2">{controls}</div><button type="button" onClick={() => setFiltersOpen(false)} className="mt-3 min-h-11 w-full rounded-xl bg-emerald-950 font-bold text-white">Ver {filtered.length} alvos</button></section></div>
@@ -116,7 +128,7 @@ export function WantlistBrowser({ targets, initialSearch = "" }: { targets: Want
           </div><ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-slate-300" aria-hidden="true" /></div>
         </article>;
       })}
-    </div> : <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center text-sm text-slate-500">Não há alvos com estes filtros.</div>}
+    </div> : <ListEmptyState title={active.length ? "Nenhum alvo encontrado" : "Não há alvos ativos"} description={active.length ? "Limpa os filtros ou a pesquisa para voltar a ver alvos." : "Os alvos ativos vão aparecer aqui."} onClear={active.length && (activeFilterCount > 0 || Boolean(query)) ? clearAll : undefined} /> }
     {inactive.length > 0 && <details className="rounded-2xl border border-slate-200 bg-white p-4"><summary className="cursor-pointer text-sm font-bold text-slate-700">{inactive.length} alvo{inactive.length === 1 ? "" : "s"} inativo{inactive.length === 1 ? "" : "s"} segundo o plano da coleção</summary><ul className="mt-3 space-y-2 text-sm text-slate-600">{inactive.map((target) => <li key={`${target.platform}:${target.targetId}:${target.title}`} className="flex flex-wrap justify-between gap-2"><span>{target.title} · {displayPlatform(target.platform)}</span><span className="text-xs font-semibold text-slate-400">{target.status || "Inativo"}</span></li>)}</ul></details>}
   </div>;
 }
