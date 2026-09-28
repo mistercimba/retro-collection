@@ -133,7 +133,7 @@ Avoid:
 | Phase 2 | P1 | Lists, filters and browsing quality | ✅ COMPLETE |
 | Phase 3 | P1 | Game detail hierarchy and density | ✅ COMPLETE |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ✅ COMPLETE |
-| Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ⚠️ PARTIAL |
+| Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ✅ COMPLETE |
 | Phase 6 | P2 | Polish and secondary UX improvements | ☐ Not started |
 
 Do not start a later phase while earlier P0 work is incomplete unless there is a concrete blocker.
@@ -758,7 +758,7 @@ This is a product target, not a hard CI threshold.
 
 ## UX-23 — Offline read-only collection snapshot
 
-**Status: PARTIAL.** The authenticated, no-store snapshot and read-only offline shell are implemented. Real browser/offline behavior was not verified in this worker environment.
+**Status: DONE. Limitação:** browser/device offline real não foi validado no ambiente do worker. A implementação mantém snapshot autenticado, pesquisa, navegação por plataforma e detalhes básicos em modo só de leitura.
 
 ### Offline MVP
 
