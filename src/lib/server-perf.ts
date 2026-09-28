@@ -43,7 +43,7 @@ export async function collectServerPerf<T>(work: () => Promise<T>): Promise<{ va
 }
 
 export function toServerTimingHeader(spans: ServerPerfSpan[], totalMs: number): string {
-  const entries = spans.map(({ name, durationMs }) => `${name.replace(/[^a-zA-Z0-9_-]/g, "_")};dur=${durationMs}`);
+  const entries = spans.map(({ name, durationMs, cache }) => `${name.replace(/[^a-zA-Z0-9_-]/g, "_")};dur=${durationMs}${cache ? `;desc="${cache}"` : ""}`);
   entries.push(`loader_total;dur=${Math.round(totalMs * 10) / 10}`);
   return entries.join(", ");
 }

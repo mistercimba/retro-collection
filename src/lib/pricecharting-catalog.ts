@@ -29,13 +29,17 @@ async function getCatalog(): Promise<PricechartingCatalog | null> {
   }
 }
 
+export function getPricechartingCatalogSnapshot(): Promise<PricechartingCatalog | null> {
+  return getCatalog();
+}
+
 async function getEcbRate() {
   const response = await measureServerFetch("ecb.fx_fetch", () => fetch("https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=1&format=csvdata", { next: { revalidate: 86400 } }).catch(() => null));
   return response?.ok ? measureServerWork("ecb.fx_parse", async () => parseEcbUsdEur(await response.text())) : null;
 }
 
 /** Read each external snapshot once, then match every collection copy locally. */
-export async function getPricechartingEstimates(games: CollectionGame[]): Promise<Map<string, PriceEstimate>> {
+export async function getPricechartingEstimates(games: CollectionGame[], catalogSnapshot?: Promise<PricechartingCatalog | null>): Promise<Map<string, PriceEstimate>> {
   const results = new Map<string, PriceEstimate>();
   const token = process.env.PRICECHARTING_CATALOG_GITHUB_TOKEN;
   if (!token) {
@@ -43,7 +47,7 @@ export async function getPricechartingEstimates(games: CollectionGame[]): Promis
     return results;
   }
 
-  const catalog = await getCatalog();
+  const catalog = await (catalogSnapshot ?? getCatalog());
   if (!catalog) {
     for (const game of games) results.set(game.collectionId, unavailable("Snapshot PriceCharting indisponível"));
     return results;
