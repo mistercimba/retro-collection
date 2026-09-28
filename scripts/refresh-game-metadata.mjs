@@ -317,7 +317,7 @@ for (const group of groups.values()) {
 }
 
 const gamesById = buildGameMetadataSnapshot(resolvedGroups);
-await fs.writeFile(metadataPath, `${JSON.stringify({ schemaVersion: 1, refreshedAt: new Date().toISOString(), games: gamesById }, null, 2)}\n`);
+await fs.writeFile(metadataPath, `${JSON.stringify({ schemaVersion: 2, refreshedAt: new Date().toISOString(), games: gamesById }, null, 2)}\n`);
 await fs.writeFile(reviewPath, `${JSON.stringify(needsReview, null, 2)}\n`);
 console.log(`Metadata IGDB atualizada: ${matched} correspondências; ${ambiguous} ambiguidades; ${unmatched} sem correspondência (${needsReview.length} grupos para rever).`);
 console.log("Cobertura IGDB:");

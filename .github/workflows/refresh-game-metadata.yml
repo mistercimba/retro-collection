@@ -45,7 +45,7 @@ jobs:
           import fs from 'node:fs';
           const snapshot = JSON.parse(fs.readFileSync('src/data/game-metadata.json', 'utf8'));
           const review = JSON.parse(fs.readFileSync('data/game-metadata-review.json', 'utf8'));
-          if (snapshot.schemaVersion !== 1 || !snapshot.refreshedAt || !snapshot.games || Object.keys(snapshot.games).length === 0) {
+          if (snapshot.schemaVersion !== 2 || !snapshot.refreshedAt || !snapshot.games || Object.keys(snapshot.games).length === 0) {
             throw new Error('Snapshot IGDB inválido ou vazio.');
           }
           if (!Array.isArray(review)) throw new Error('Relatório de revisão IGDB inválido.');
