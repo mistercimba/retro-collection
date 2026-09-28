@@ -131,7 +131,7 @@ Avoid:
 |---|---|---|---|
 | Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ✅ COMPLETE |
 | Phase 2 | P1 | Lists, filters and browsing quality | ✅ COMPLETE |
-| Phase 3 | P1 | Game detail hierarchy and density | ☐ Not started |
+| Phase 3 | P1 | Game detail hierarchy and density | ✅ COMPLETE |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ☐ Not started |
 | Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ☐ Not started |
 | Phase 6 | P2 | Polish and secondary UX improvements | ☐ Not started |
@@ -539,7 +539,8 @@ Examples:
 # 7. Phase 3 — Game detail page
 
 **Priority:** P1  
-**Objective:** Improve hierarchy without throwing away the current useful summary.
+**Objective:** Improve hierarchy without throwing away the current useful summary.  
+**Status:** COMPLETE
 
 Do **not** fully adopt a physical-copy-only first viewport.
 
@@ -567,10 +568,10 @@ Do not restore `A tua avaliação` until the product has a meaningful personal r
 
 ### Acceptance criteria
 
-- [ ] Genre comes from validated metadata snapshot.
-- [ ] Metascore remains explicitly RAWG/Metacritic.
-- [ ] IGDB rating is never labelled as Metascore.
-- [ ] Duration uses UX-01 logic.
+- [x] Genre comes from validated metadata snapshot.
+- [x] Metascore remains explicitly RAWG/Metacritic.
+- [x] IGDB rating is never labelled as Metascore.
+- [x] Duration uses UX-01 logic.
 
 ---
 
@@ -586,11 +587,11 @@ If something is wrong:
 
 ### Acceptance criteria
 
-- [ ] Completeness visible without scrolling far.
-- [ ] Condition visible.
-- [ ] Audit state/date visible.
-- [ ] Missing components are immediately obvious.
-- [ ] Does not create another tall card.
+- [x] Completeness visible without scrolling far.
+- [x] Condition visible.
+- [x] Audit state/date visible.
+- [x] Missing components are immediately obvious.
+- [x] Does not create another tall card.
 
 ---
 
@@ -605,9 +606,9 @@ Review:
 
 ### Acceptance criteria
 
-- [ ] Catalog content appears earlier in a normal desktop viewport.
-- [ ] No large empty blocks beside dense content.
-- [ ] Mobile remains readable.
+- [x] Catalog content appears earlier in a normal desktop viewport.
+- [x] No large empty blocks beside dense content.
+- [x] Mobile remains readable.
 
 ---
 
@@ -616,6 +617,11 @@ Review:
 Collection ID, internal IDs, long notes and maintenance metadata should remain available but not dominate the page.
 
 Use collapsed/secondary technical sections where appropriate.
+
+### Acceptance criteria
+
+- [x] Internal IDs and collection ID remain available in secondary technical details.
+- [x] Long notes and maintenance metadata do not dominate the first view.
 
 ---
 
