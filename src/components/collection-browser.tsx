@@ -49,7 +49,7 @@ export function CollectionBrowser({ games, global = false, initialSearch = "" }:
     duplicateCounts.set(key, (duplicateCounts.get(key) ?? 0) + 1);
   }
   const copyMarkers = new Map(games.filter((game) => duplicateCounts.get(`${normalize(game.title)}|${normalize(game.platform)}`)! > 1)
-    .map((game) => [game.collectionId, `Cópia · ID ${game.collectionId}`]));
+    .map((game) => [game.collectionId, `Cópia · ID ${game.collectionId}`] as const));
   const activeFilters = [
     ...(platform ? [{ key: "platform", label: `Plataforma: ${displayPlatform(platform)}`, onRemove: () => setPlatform("") }] : []),
     ...(status ? [{ key: "status", label: `Completude: ${status}`, onRemove: () => setStatus("") }] : []),
