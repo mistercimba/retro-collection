@@ -1,0 +1,40 @@
+name: Refresh collection snapshot
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - collection-snapshot
+    paths:
+      - "scripts/refresh-collection-snapshot.mjs"
+      - ".github/workflows/refresh-collection-snapshot.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/refresh-collection-snapshot.mjs
+        env:
+          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+          GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+      - name: Commit snapshot
+        run: |
+          if git diff --quiet -- src/data/collection-snapshot.json; then
+            echo "Snapshot unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/collection-snapshot.json
+          git commit -m "chore: refresh collection snapshot"
+          git push
