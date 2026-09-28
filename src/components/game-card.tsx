@@ -7,7 +7,7 @@ import { GameArtwork } from "./artwork";
 import { StatusPill } from "./status-pill";
 import { MarketSearchLinks } from "./market-search-links";
 
-export function GameCard({ game, sale = false, returnTo }: { game: CollectionListGame; sale?: boolean; returnTo?: string }) {
+export function GameCard({ game, sale = false, returnTo, copyMarker }: { game: CollectionListGame; sale?: boolean; returnTo?: string; copyMarker?: string }) {
   const detailPath = `/game/${encodeURIComponent(game.collectionId)}${returnTo ? `?from=${encodeURIComponent(returnTo)}` : ""}`;
   return (
     <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-emerald-300 hover:shadow-md">
@@ -24,6 +24,7 @@ export function GameCard({ game, sale = false, returnTo }: { game: CollectionLis
           <span className="mt-1 truncate text-[11px] text-slate-500">{game.genre || "Género não disponível"}</span>
           <span className="mt-auto flex flex-wrap items-center gap-1.5 pt-2">
             <StatusPill tone={game.overallStatus.toLowerCase().includes("incomplete") ? "warn" : "neutral"}>{game.overallStatus || "Estado n/d"}</StatusPill>
+            {copyMarker && <StatusPill tone="neutral">{copyMarker}</StatusPill>}
             {sale && <StatusPill tone="bad">Para vender</StatusPill>}
             <span className="ml-auto flex items-center gap-1 text-xs font-bold text-slate-900"><BadgeEuro className="h-3.5 w-3.5 text-emerald-800" />{formatEuro(game.currentValueEur)}</span>
           </span>
