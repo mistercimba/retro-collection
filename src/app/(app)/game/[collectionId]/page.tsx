@@ -5,6 +5,7 @@ import { GameArtwork } from "@/components/artwork";
 import { MarketSearchLinks } from "@/components/market-search-links";
 import { StatusPill } from "@/components/status-pill";
 import { getGame } from "@/lib/data/collection-service";
+import { isAuditCompleted } from "@/lib/data/collection-integrity";
 import { displayPlatform } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
 import { getGameResearch } from "@/lib/game-research";
@@ -21,7 +22,13 @@ export default async function GamePage({ params, searchParams }: { params: Promi
   const metadata = research.metadata;
   const bestPlaytime = getBestPlaytime(metadata?.timeToBeat);
   const playtimeMissing = "Sem dados no IGDB";
-  const attention = game.needsReview || Boolean(game.audit?.missingComponents && !/^(none|no|n\/a|—)$/i.test(game.audit.missingComponents.trim())) || /pending|review|rever/i.test(game.audit?.auditStatus ?? "");
+  const missingComponents = game.audit?.missingComponents?.trim() ?? "";
+  const hasMissingComponents = Boolean(missingComponents && !/^(none|no|n\/a|—)$/i.test(missingComponents));
+  const attention = game.needsReview || hasMissingComponents || /pending|review|rever/i.test(game.audit?.auditStatus ?? "");
+  const auditLabel = game.audit?.auditStatus
+    ? isAuditCompleted(game.audit.auditStatus) ? "Auditada" : game.audit.auditStatus
+    : "Sem auditoria registada";
+  const auditLabelWithDate = game.audit?.auditDate ? `${auditLabel} · ${game.audit.auditDate}` : auditLabel;
   const copyAndAuditRows: [string, string][] = [
     ["Completude", game.overallStatus], ["Condição", game.conditionGrade], ["Media", game.media], ["Caixa", game.box], ["Manual", game.manual], ["Extras", game.extras], ["Label", game.label], ["Selado", game.sealed],
     ["Auditoria física", game.audit?.auditStatus || "Sem auditoria registada"], ["Data da auditoria", game.audit?.auditDate || ""], ["Funcional", game.audit?.functionalStatus || ""], ["Código do produto", game.audit?.productCode || ""], ["Componentes em falta", game.audit?.missingComponents || ""],
@@ -44,34 +51,53 @@ export default async function GamePage({ params, searchParams }: { params: Promi
       <Metric icon={<Clock3 />} label="Duração" value={bestPlaytime?.value ?? playtimeMissing} detail={bestPlaytime ? `${bestPlaytime.category} · IGDB` : "Sem duração publicada no IGDB"} />
     </section>
 
-    <div className="grid gap-3 lg:grid-cols-[1fr_1.1fr]">
-      <Section title="Estado da cópia e auditoria" icon={<ShieldAlert className="h-4 w-4" />}>
-        <CompactRows rows={copyAndAuditRows} emphasize="Componentes em falta" />
-        {game.audit?.auditNotes && <details open={attention} className="mt-3 border-t border-slate-100 pt-2"><summary className="cursor-pointer text-xs font-bold text-slate-600">Notas da auditoria</summary><p className="mt-2 whitespace-pre-wrap text-xs leading-5 text-slate-600">{game.audit.auditNotes}</p></details>}
-      </Section>
-      <Section title="Preço e aquisição" icon={<BadgeEuro className="h-4 w-4" />}>
-        <CompactRows rows={[
-          ["Estimativa atual", research.estimate.value === null ? "Não disponível" : formatEuro(research.estimate.value)], ["Fonte / condição", [research.estimate.source, research.estimate.basis].filter(Boolean).join(" · ") || "Não disponível"], ["Snapshot", research.estimate.date || "Não disponível"],
-          ["Último valor da coleção", game.latestValuation?.valueEur !== null && game.latestValuation?.valueEur !== undefined ? formatEuro(game.latestValuation.valueEur) : "Não registado"], ["CeX cash registado", formatEuro(game.cexCashEur)], ["Custo alocado", formatEuro(game.allocatedCostEur)],
-          ...(game.purchase ? [["Compra", `${game.purchase.date || "Data n/d"} · ${game.purchase.source || game.purchase.purchaseId}`] as [string, string], ["Total pago", formatEuro(game.purchase.totalPaidEur)] as [string, string]] : []),
-        ]} />
-        {research.estimate.productUrl && <a className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-emerald-800 underline" href={research.estimate.productUrl} target="_blank" rel="noreferrer">Produto PAL no PriceCharting <ArrowLeft className="h-3 w-3 rotate-180" /></a>}
-        {game.purchase?.listingUrl && <a className="ml-3 mt-2 inline-flex items-center gap-1 text-xs font-bold text-emerald-800 underline" href={game.purchase.listingUrl} target="_blank" rel="noreferrer">Anúncio original <ArrowLeft className="h-3 w-3 rotate-180" /></a>}
-      </Section>
-    </div>
+    <section aria-label="Estado físico da cópia" className="flex flex-wrap items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3.5 py-3">
+      <span className="mr-1 text-xs font-black text-slate-700">Estado físico</span>
+      <StatusPill tone={/incomplete|incompleto/i.test(game.overallStatus) ? "warn" : "neutral"}>{game.overallStatus || "Completude não registada"}</StatusPill>
+      <StatusPill>{game.conditionGrade || "Condição não registada"}</StatusPill>
+      <StatusPill tone={attention ? "warn" : isAuditCompleted(game.audit?.auditStatus) ? "good" : "neutral"}>{auditLabelWithDate}</StatusPill>
+      {game.needsReview && <StatusPill tone="warn">A rever</StatusPill>}
+      {hasMissingComponents && <span className="text-xs font-bold text-rose-700">Falta: {missingComponents}</span>}
+      {!hasMissingComponents && missingComponents && <span className="text-xs text-slate-600">Sem componentes em falta</span>}
+    </section>
+
+    <Section title="Preço e aquisição" icon={<BadgeEuro className="h-4 w-4" />}>
+      <CompactRows rows={[
+        ["Estimativa atual", research.estimate.value === null ? "Não disponível" : formatEuro(research.estimate.value)], ["Fonte / condição", [research.estimate.source, research.estimate.basis].filter(Boolean).join(" · ") || "Não disponível"], ["Snapshot", research.estimate.date || "Não disponível"],
+        ["Último valor da coleção", game.latestValuation?.valueEur !== null && game.latestValuation?.valueEur !== undefined ? formatEuro(game.latestValuation.valueEur) : "Não registado"], ["CeX cash registado", formatEuro(game.cexCashEur)], ["Custo alocado", formatEuro(game.allocatedCostEur)],
+        ...(game.purchase ? [["Compra", `${game.purchase.date || "Data n/d"} · ${game.purchase.source || game.purchase.purchaseId}`] as [string, string], ["Total pago", formatEuro(game.purchase.totalPaidEur)] as [string, string]] : []),
+      ]} />
+      {research.estimate.productUrl && <a className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-emerald-800 underline" href={research.estimate.productUrl} target="_blank" rel="noreferrer">Produto PAL no PriceCharting <ArrowLeft className="h-3 w-3 rotate-180" /></a>}
+      {game.purchase?.listingUrl && <a className="ml-3 mt-2 inline-flex items-center gap-1 text-xs font-bold text-emerald-800 underline" href={game.purchase.listingUrl} target="_blank" rel="noreferrer">Anúncio original <ArrowLeft className="h-3 w-3 rotate-180" /></a>}
+    </Section>
 
     <Section title="Catálogo" icon={<Tag className="h-4 w-4" />}>
       {metadata?.summary && <p className="mb-3 text-xs leading-5 text-slate-600">{metadata.summary}</p>}
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">{catalogRows.map(([label, value]) => <div key={label} className="min-w-0 rounded-xl bg-slate-50 px-3 py-2"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{label}</p><p className="mt-0.5 break-words text-xs font-semibold text-slate-800">{value}</p></div>)}</div>
-      <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-600"><span>Main Story: <strong>{metadata?.timeToBeat?.main || playtimeMissing}</strong></span><span>Main + Extras: <strong>{metadata?.timeToBeat?.extras || playtimeMissing}</strong></span><span>Completionist: <strong>{metadata?.timeToBeat?.completionist || playtimeMissing}</strong></span>{metadata?.aggregatedRating !== null && metadata?.aggregatedRating !== undefined && <span>IGDB: <strong>{metadata.aggregatedRating.toFixed(1)}/100</strong></span>}</div>
       {!metadata && <p className="mt-2 text-[11px] text-slate-500">Metadata IGDB: {research.metadataState === "ambiguous" ? "correspondência ambígua" : research.metadataState === "unmatched" ? "sem correspondência segura" : research.metadataState === "not-configured" ? "credenciais não configuradas" : "indisponível"}.</p>}
       {metadata?.refreshedAt && <p className="mt-2 text-[10px] text-slate-400">IGDB · atualizado {metadata.refreshedAt.slice(0, 10)}.</p>}
-      <div className="mt-3 border-t border-slate-100 pt-3"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Metascore</p><span className="text-xs font-bold text-slate-800">{research.metascore.value === null ? "Não disponível" : `${research.metascore.value}/100`}</span><span className="ml-2 text-[10px] text-slate-500">Dados fornecidos por <a className="underline" href="https://rawg.io/" target="_blank" rel="noreferrer">RAWG</a>.</span>{research.metascore.url && research.metascore.value !== null && <a className="ml-2 text-[10px] font-bold text-emerald-800 underline" href={research.metascore.url} target="_blank" rel="noreferrer">Metacritic</a>}</div>
+      <details className="mt-3 border-t border-slate-100 pt-2">
+        <summary className="cursor-pointer text-xs font-bold text-slate-600">Duração e avaliação IGDB</summary>
+        <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-600">
+          <span>Main Story: <strong>{metadata?.timeToBeat?.main || playtimeMissing}</strong></span>
+          <span>Main + Extras: <strong>{metadata?.timeToBeat?.extras || playtimeMissing}</strong></span>
+          <span>Completionist: <strong>{metadata?.timeToBeat?.completionist || playtimeMissing}</strong></span>
+          {metadata?.aggregatedRating !== null && metadata?.aggregatedRating !== undefined && <span>IGDB rating: <strong>{metadata.aggregatedRating.toFixed(1)}/100</strong></span>}
+        </div>
+      </details>
     </Section>
+
+    <details open={attention} className="rounded-2xl border border-slate-200 bg-white p-3.5">
+      <summary className="flex cursor-pointer items-center gap-2 text-sm font-bold text-slate-700"><ShieldAlert className="h-4 w-4" aria-hidden="true" />Estado da cópia e auditoria{attention ? " · requer atenção" : ""}</summary>
+      <div className="mt-3">
+        <CompactRows rows={copyAndAuditRows} emphasize="Componentes em falta" />
+        {game.audit?.auditNotes && <details className="mt-3 border-t border-slate-100 pt-2"><summary className="cursor-pointer text-xs font-bold text-slate-600">Notas da auditoria</summary><p className="mt-2 whitespace-pre-wrap text-xs leading-5 text-slate-600">{game.audit.auditNotes}</p></details>}
+      </div>
+    </details>
 
     <section className="rounded-2xl border border-slate-200 bg-white px-3.5 py-3"><div className="flex flex-wrap items-center justify-between gap-2"><div><p className="text-xs font-black text-slate-950">Pesquisar em</p><p className="text-[10px] text-slate-500">Atalhos para preço e mercado</p></div><MarketSearchLinks title={game.title} platform={game.platform} compact /></div></section>
 
-    <details open={attention} className="rounded-2xl border border-slate-200 bg-white p-4"><summary className="cursor-pointer text-sm font-bold text-slate-700">Detalhes técnicos e notas{attention ? " · requer atenção" : ""}</summary><div className="mt-3 grid gap-3 sm:grid-cols-2"><CompactRows rows={[["Catalog ID", game.catalogId], ["Idioma", game.language], ["Tipo", game.itemType], ["Data de aquisição", game.acquiredDate], ["Collection ID", game.collectionId], ["Região", game.region], ["Edição", game.edition]]} />{game.notes && <div className="rounded-xl bg-slate-50 p-3"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Notas da coleção</p><p className="mt-1 whitespace-pre-wrap text-xs leading-5 text-slate-700">{game.notes}</p></div>}</div></details>
+    <details className="rounded-2xl border border-slate-200 bg-white p-3.5"><summary className="cursor-pointer text-sm font-bold text-slate-700">Detalhes técnicos e notas{attention ? " · requer atenção" : ""}</summary><div className="mt-3 grid gap-3 sm:grid-cols-2"><CompactRows rows={[["Catalog ID", game.catalogId], ["Idioma", game.language], ["Tipo", game.itemType], ["Data de aquisição", game.acquiredDate], ["Collection ID", game.collectionId], ["Região", game.region], ["Edição", game.edition]]} />{game.notes && <div className="rounded-xl bg-slate-50 p-3"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Notas da coleção</p><p className="mt-1 whitespace-pre-wrap text-xs leading-5 text-slate-700">{game.notes}</p></div>}</div></details>
   </div>;
 }
 
