@@ -18,14 +18,14 @@ Web app/PWA privada e mobile-first para consultar a coleção retro sem abrir o 
 - `/sell` para duplicados/PSP marcados `Sell`.
 - Modo mock quando não existem credenciais Google.
 - Leitura server-side do Google Sheets; as credenciais nunca são enviadas ao browser.
-- Password opcional com cookie HttpOnly através de `APP_PASSWORD`.
+- Password obrigatória em produção, com cookie HttpOnly através de `APP_PASSWORD`.
 - Manifest + service worker simples para instalação como PWA; nesta fase não guarda páginas privadas em cache.
 
 A Google Sheet continua a ser a **source of truth**. Esta primeira fase é read-only.
 
 ## Requisitos
 
-1. Node.js 20.9 ou superior.
+1. Node.js 22.x.
 2. npm.
 3. Para dados reais: uma conta Google Cloud e acesso à sheet `Mario Retro Collection OS`.
 
@@ -39,7 +39,7 @@ npm run dev
 
 Abre `http://localhost:3000`.
 
-Se não preencheres as credenciais Google, a app abre automaticamente em **modo demonstração** com dados mock.
+Em desenvolvimento, sem configuração Google, a app abre em **modo demonstração**. Se começares a configurar Google mas faltar uma variável, a app falha claramente em vez de ocultar o erro com dados mock. Em produção, configura `DATA_PROVIDER=google`; sem credenciais reais, não serve demonstração.
 
 ## Ligar à Google Sheet real
 
@@ -47,7 +47,7 @@ Se não preencheres as credenciais Google, a app abre automaticamente em **modo 
 
 1. Abre Google Cloud Console.
 2. Cria um projeto (por exemplo `retro-collection`).
-3. Em **APIs & Services > Library**, ativa **Google Sheets API**.
+3. Em **APIs & Services > Library**, ativa **Google Drive API** e **Google Sheets API**. A configuração atual é uma Google Sheet nativa; o Drive API identifica o ficheiro e o Sheets API lê os separadores.
 
 ### 2. Criar Service Account
 
@@ -57,7 +57,7 @@ Se não preencheres as credenciais Google, a app abre automaticamente em **modo 
 4. Abre a service account > **Keys > Add key > Create new key > JSON**.
 5. Guarda o JSON em local seguro. **Nunca o metas no GitHub.**
 
-### 3. Partilhar a sheet
+### 3. Partilhar o ficheiro
 
 No JSON tens um campo `client_email`, semelhante a:
 
@@ -65,12 +65,12 @@ No JSON tens um campo `client_email`, semelhante a:
 retro-collection@project-id.iam.gserviceaccount.com
 ```
 
-Na Google Sheet, carrega em **Partilhar** e adiciona esse email como **Viewer/Leitor**.
+No ficheiro `Mario Retro Collection`, carrega em **Partilhar** e adiciona esse email como **Viewer/Leitor**. A app só faz leitura; não altera nem reestrutura o workbook.
 
 ### 4. Configurar `.env.local`
 
 ```env
-GOOGLE_SHEETS_SPREADSHEET_ID=1AqBr6wzbnDB1eWVc-ZG_IF5gTjJyFSCUmbARAtN8FLA
+GOOGLE_SHEETS_SPREADSHEET_ID=your-google-sheet-id
 GOOGLE_SERVICE_ACCOUNT_EMAIL=retro-collection@project-id.iam.gserviceaccount.com
 GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
 DATA_PROVIDER=auto
@@ -83,13 +83,29 @@ Reinicia `npm run dev`. No início do dashboard deixa de aparecer o aviso de mod
 
 ## Como os dados são lidos
 
-A app lê apenas:
+A app lê os separadores relevantes do ficheiro:
 
 - `COLLECTION!A1:Z1200`
 - `AUDIT LOG!A1:U1200`
 - `GB!B6:B300` e `GBC!B6:B300` apenas para preservar a separação Game Boy / Game Boy Color
+- separadores `<plataforma> PLAN` (com o título `PLAN DE COLEÇÃO`) para gerar a wishlist viva
+- `PURCHASES` e `VALUATIONS` para contexto de compra e snapshots de valor
 
 `COLLECTION` é a fonte canónica. Os detalhes de auditoria são ligados por `Collection ID`.
+
+### Wishlist e pesquisa de mercado
+
+`/want` apresenta os alvos ativos dos planos por prioridade, limite de preço e motivo. Só marca um alvo como adquirido quando o estado do PLAN é ativo e título, plataforma e variante registada são compatíveis; estados desconhecidos, edições/regiões em falta e correspondências incertas ficam visíveis para revisão. Cada jogo tem atalhos para pesquisas em PriceCharting, CeX Portugal, Vinted, OLX, eBay, HowLongToBeat e Metacritic. Estes são links de pesquisa, não cotações automáticas.
+
+### Dados de catálogo, notas, duração e valor
+
+Os detalhes são carregados no servidor quando se abre uma ficha e ficam em cache por 24 horas (o snapshot de preços por uma hora). A wishlist continua a ser recalculada a partir da coleção e do estado dos separadores PLAN.
+
+- **IGDB:** configura `IGDB_CLIENT_ID` e `IGDB_CLIENT_SECRET` (credenciais Twitch). Correspondência exige título exato normalizado e plataforma exata; fichas ambíguas ou sem correspondência não recebem dados. Géneros, sinopse, lançamento, estúdios, modos, temas, ratings IGDB e tempos `Main Story`, `Main + Extras` e `Completionist` vêm das APIs oficiais IGDB. Sem credenciais ou sem dados, a ficha indica indisponibilidade.
+- **Metascore:** configura `RAWG_API_KEY`. Só é mostrado quando título e plataforma correspondem de forma única, usando a nota específica dessa plataforma. A atribuição à RAWG aparece junto ao dado. A app só consulta RAWG quando `APP_PASSWORD` protege a coleção e não guarda os dados RAWG no repositório. Sem chave ou match seguro, aparece “Não disponível”. Não é usado scraping do Metacritic.
+- **Valor atual:** a app lê, em cache de uma hora, o snapshot PAL já validado em `mistercimba/vinted-retro-search`. Como esse repositório é privado, configura `PRICECHARTING_CATALOG_GITHUB_TOKEN` com um Fine-grained PAT de leitura de Contents limitado apenas a esse repositório. O match é exato por plataforma/título/alias e só aceita um produto único; variante incerta fica sem preço. A condição `Loose`, `CIB` ou `New` vem dos dados da cópia, o valor USD é convertido para EUR pela taxa do BCE e a ficha mostra a data do snapshot e o link direto do produto. Esta app não usa a API paga nem faz scraping PriceCharting. CeX, Vinted, OLX e eBay permanecem atalhos de pesquisa.
+
+Define estas variáveis também no ambiente de deploy para obter dados reais. A app não altera o workbook. `npm run metadata:refresh` continua disponível como ferramenta local de snapshot IGDB, mas não é necessário para a atualização normal das fichas.
 
 No browsing normal aparecem apenas linhas com `Keep Status = Collection`.
 
@@ -97,7 +113,7 @@ No browsing normal aparecem apenas linhas com `Keep Status = Collection`.
 
 ## Password da app
 
-`APP_PASSWORD` é opcional em desenvolvimento. Em produção é altamente recomendado porque a app mostra uma coleção pessoal.
+`APP_PASSWORD` é opcional em desenvolvimento e obrigatório em produção porque a app mostra uma coleção pessoal e consulta RAWG apenas com acesso privado.
 
 Quando configurada:
 
@@ -117,10 +133,15 @@ Quando configurada:
    - `GOOGLE_SERVICE_ACCOUNT_EMAIL`
    - `GOOGLE_PRIVATE_KEY`
    - `APP_PASSWORD`
-   - opcionalmente `DATA_PROVIDER=google`
+   - `DATA_PROVIDER=google`
+   - `IGDB_CLIENT_ID`
+   - `IGDB_CLIENT_SECRET`
+   - `RAWG_API_KEY`
+   - `PRICECHARTING_CATALOG_GITHUB_TOKEN`
+   - opcionalmente `PRICECHARTING_CATALOG_REF=main`
 6. Deploy.
 
-Se usares `DATA_PROVIDER=google`, um deploy sem credenciais falha de propósito em vez de mostrar mock data.
+Os valores privados acima nunca devem ser commitados. Define as variáveis em Preview e Production no Vercel antes do deploy. Configuração Google incompleta ou ausência de password em produção causa erro explícito; o build não usa mock silenciosamente.
 
 ## Confirmar que estás a ler a sheet real
 
@@ -174,4 +195,3 @@ Comandos:
 npm run artwork:import
 npm run artwork:status
 ```
-

@@ -77,6 +77,14 @@ export class MockProvider implements CollectionDataProvider {
       c("PSP-0001", "LEGO Star Wars II: The Original Trilogy", "PSP", { Edition: "Platinum", "Keep Status": "Sold", "Market Value EUR": "4,29" }),
     ];
     const audit = collection.filter((row) => row["Collection ID"] !== "PS1-0073").map((row) => a(row["Collection ID"], row.Title, row.Platform, row.Manual === "No" ? { "Missing Components": "Manual", Completeness: "Incomplete" } : {}));
-    return { collection, audit };
+    return {
+      collection,
+      audit,
+      wantlist: [
+        { platform: "GameCube", priority: "Alta", targetId: "NOVO", title: "Luigi's Mansion", reason: "Exclusivo de lançamento emblemático.", targetVersion: "PAL; CIB bom estado", priceCeilingEur: null, status: "PESQUISAR PREÇO", notes: "Lacuna central first-party." },
+        { platform: "Nintendo 64", priority: "Média", targetId: "NOVO", title: "F-Zero X", reason: "Clássico Nintendo de corridas.", targetVersion: "PAL original; loose funcional", priceCeilingEur: null, status: "PESQUISAR PREÇO", notes: "Loose é o alvo racional." },
+        { platform: "Playstation 2", priority: "Grail", targetId: "NOVO", title: "Rule of Rose", reason: "Grail pessoal; só numa oportunidade excecional.", targetVersion: "PAL original; verificar edição e estado", priceCeilingEur: null, status: "WATCH", notes: "Não forçar a compra." },
+      ],
+    };
   }
 }

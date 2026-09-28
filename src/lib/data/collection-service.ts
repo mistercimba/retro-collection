@@ -1,7 +1,9 @@
 import { getDataProvider, getProviderMode } from "./provider";
 import { joinCollectionWithAudit, parseAuditRow, parseCollectionRow } from "./parsers";
 import { platformSlug } from "./platforms";
-import type { CollectionGame, CollectionStats } from "./types";
+import { matchWantTarget } from "./wishlist-matching";
+import { isAuditCompleted, selectLatestValuation } from "./collection-integrity";
+import type { CollectionGame, CollectionStats, WantListEntry } from "./types";
 
 export async function getAllGames(): Promise<CollectionGame[]> {
   const raw = await getDataProvider().read();
@@ -17,12 +19,23 @@ export async function getCollectionGames(): Promise<CollectionGame[]> {
   return (await getAllGames()).filter((game) => game.keepStatus === "Collection");
 }
 
-export async function getSellGames(): Promise<CollectionGame[]> {
-  return (await getAllGames()).filter((game) => game.keepStatus === "Sell");
+export async function getSellAndSoldGames(): Promise<{ forSale: CollectionGame[]; sold: CollectionGame[] }> {
+  const games = await getAllGames();
+  return {
+    forSale: games.filter((game) => game.keepStatus === "Sell"),
+    sold: games.filter((game) => game.keepStatus === "Sold"),
+  };
 }
 
 export async function getGame(collectionId: string): Promise<CollectionGame | null> {
-  return (await getAllGames()).find((game) => game.collectionId === collectionId) ?? null;
+  const [raw, games] = await Promise.all([getDataProvider().read(), getAllGames()]);
+  const game = games.find((item) => item.collectionId === collectionId);
+  if (!game) return null;
+  return {
+    ...game,
+    latestValuation: selectLatestValuation(game.collectionId, game.catalogId, raw.valuations ?? []),
+    purchase: (raw.purchases ?? []).find((purchase) => purchase.purchaseId === game.purchaseId) ?? null,
+  };
 }
 
 export async function getStats(): Promise<CollectionStats> {
@@ -36,7 +49,7 @@ export async function getStats(): Promise<CollectionStats> {
         platform,
         slug: platformSlug(platform),
         count: items.length,
-        audited: items.filter((game) => game.audit).length,
+        audited: items.filter((game) => isAuditCompleted(game.audit?.auditStatus)).length,
         review: items.filter((game) => game.needsReview).length,
         marketValueEur: items.reduce((sum, game) => sum + (game.marketValueEur ?? 0), 0),
       };
@@ -48,10 +61,22 @@ export async function getStats(): Promise<CollectionStats> {
     sell: sell.length,
     sold: games.filter((g) => g.keepStatus === "Sold").length,
     review: kept.filter((g) => g.needsReview).length,
-    auditRecords: games.filter((g) => g.audit).length,
+    auditRecords: games.filter((game) => isAuditCompleted(game.audit?.auditStatus)).length,
     marketValueEur: kept.reduce((sum, game) => sum + (game.marketValueEur ?? 0), 0),
     platforms,
   };
+}
+
+export async function getWantlist(): Promise<WantListEntry[]> {
+  const [raw, games] = await Promise.all([getDataProvider().read(), getAllGames()]);
+  const kept = games.filter((game) => game.keepStatus === "Collection");
+  const priorityOrder: Record<string, number> = { grail: 0, alta: 0, média: 1, media: 1, baixa: 2 };
+  return (raw.wantlist ?? []).map((target) => ({ ...target, ...matchWantTarget(target, kept) })).sort((a, b) =>
+    (priorityOrder[a.priority.trim().toLocaleLowerCase("pt-PT")] ?? 3) - (priorityOrder[b.priority.trim().toLocaleLowerCase("pt-PT")] ?? 3) ||
+    Number(b.priceCeilingEur !== null) - Number(a.priceCeilingEur !== null) ||
+    a.platform.localeCompare(b.platform, "pt-PT") ||
+    a.title.localeCompare(b.title, "pt-PT"),
+  );
 }
 
 export const dataMode = getProviderMode;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Gamepad2, LibraryBig, LogOut, Menu, ShoppingBag, Sparkles } from "lucide-react";
+import { Gamepad2, Heart, LibraryBig, LogOut, ShoppingBag, Sparkles } from "lucide-react";
 import { authEnabled } from "@/lib/auth";
 
 export function Header() {
@@ -14,11 +14,11 @@ export function Header() {
         <nav className="hidden items-center gap-1 md:flex">
           <Link className="nav-link" href="/"><Sparkles className="h-4 w-4" />Início</Link>
           <Link className="nav-link" href="/collection"><LibraryBig className="h-4 w-4" />Coleção</Link>
+          <Link className="nav-link" href="/want"><Heart className="h-4 w-4" />À procura</Link>
           <Link className="nav-link" href="/sell"><ShoppingBag className="h-4 w-4" />Venda</Link>
         </nav>
         <div className="flex items-center gap-2">
           {authEnabled() && <form action="/logout" method="post"><button className="icon-button" title="Terminar sessão"><LogOut className="h-4 w-4" /></button></form>}
-          <span className="icon-button md:hidden"><Menu className="h-4 w-4" /></span>
         </div>
       </div>
     </header>
