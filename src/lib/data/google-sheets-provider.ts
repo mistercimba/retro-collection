@@ -266,18 +266,29 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
       return measureServerWork("google.provider_wait", () => workbookRead!);
     }
     recordServerPerf("google.provider_cache", 0, "miss");
-    workbookRead = measureServerWork("google.provider_load", () => this.load());
-    try {
-      const data = await workbookRead;
-      workbookCache = { data, expiresAt: Date.now() + 60_000 };
-      return data;
-    } catch (error) {
-      if (!workbookCache) throw error;
-      console.warn("Google Sheets refresh failed; serving the last in-memory collection snapshot.", error);
-      return workbookCache.data;
-    } finally {
-      workbookRead = null;
-    }
+    const pending = measureServerWork("google.provider_load", () => this.load())
+      .then((data) => {
+        workbookCache = { data, expiresAt: Date.now() + 60_000 };
+        return data;
+      })
+      .catch((error: unknown) => {
+        const upstreamStatus = error instanceof Error
+          ? error.message.match(/Google (?:Sheets|Drive) respondeu (\d{3})/)?.[1] ?? null
+          : null;
+        console.error("google_provider_refresh_failed", {
+          errorName: error instanceof Error ? error.name : "UnknownError",
+          upstreamStatus,
+          hasSnapshot: Boolean(workbookCache),
+        });
+        if (!workbookCache) throw error;
+        console.warn("google_provider_stale_snapshot_served");
+        return workbookCache.data;
+      })
+      .finally(() => {
+        workbookRead = null;
+      });
+    workbookRead = pending;
+    return pending;
   }
 
   private async load(): Promise<RawSheetData> {
