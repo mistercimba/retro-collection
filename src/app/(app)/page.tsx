@@ -20,15 +20,21 @@ import { collectServerPerf, measureServerWork, toServerTimingHeader } from "@/li
 
 export default async function HomePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const measured = await collectServerPerf(() => Promise.all([
-    measureServerWork("home.stats", getStats),
-    measureServerWork("home.games", getAllGames),
-    measureServerWork("home.wantlist", getWantlist),
+    homeStep("stats", getStats),
+    homeStep("games", getAllGames),
+    homeStep("wantlist", getWantlist),
     measureServerWork("home.search_params", () => searchParams),
   ]));
   const [stats, games, targets, query] = measured.value;
   const quickSearch = new URLSearchParams();
   if (typeof query.q === "string") quickSearch.set("q", query.q);
-  const mode = dataMode();
+  let mode: ReturnType<typeof dataMode>;
+  try {
+    mode = dataMode();
+  } catch (error) {
+    logHomeFailure("provider_mode", error);
+    throw error;
+  }
   const kept = games.filter((game) => game.keepStatus === "Collection");
   const covers = [...kept]
     .filter((game) => game.marketValueEur !== null)
@@ -183,6 +189,23 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       </section>
     </div>
   );
+}
+
+function homeStep<T>(step: "stats" | "games" | "wantlist", work: () => Promise<T>): Promise<T> {
+  return measureServerWork(`home.${step}`, work).catch((error: unknown) => {
+    logHomeFailure(step, error);
+    throw error;
+  });
+}
+
+function logHomeFailure(step: string, error: unknown): void {
+  const message = error instanceof Error ? error.message : "";
+  const upstreamStatus = message.match(/Google (?:Sheets|Drive) respondeu (\d{3})/)?.[1] ?? null;
+  console.error("home_server_render_failed", {
+    step,
+    errorName: error instanceof Error ? error.name : "UnknownError",
+    upstreamStatus,
+  });
 }
 
 function HeroStat({ value, label }: { value: string; label: string }) {
