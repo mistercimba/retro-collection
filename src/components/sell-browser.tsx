@@ -35,7 +35,7 @@ export function SellBrowser({ forSale, sold, initialSearch = "" }: { forSale: Co
     duplicateCounts.set(key, (duplicateCounts.get(key) ?? 0) + 1);
   }
   const copyMarkers = new Map(source.filter((game) => duplicateCounts.get(`${normalize(game.title)}|${normalize(game.platform)}`)! > 1)
-    .map((game) => [game.collectionId, `Cópia · ID ${game.collectionId}`]));
+    .map((game) => [game.collectionId, `Cópia · ID ${game.collectionId}`] as const));
   const activeFilters = [
     ...(platform ? [{ key: "platform", label: `Plataforma: ${displayPlatform(platform)}`, onRemove: () => setPlatform("") }] : []),
     ...(query ? [{ key: "q", label: `Pesquisa: ${query}`, onRemove: () => setQuery("") }] : []),
