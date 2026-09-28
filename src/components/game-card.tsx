@@ -6,12 +6,15 @@ import { formatEuro } from "@/lib/format";
 import { GameArtwork } from "./artwork";
 import { StatusPill } from "./status-pill";
 import { MarketSearchLinks } from "./market-search-links";
+import { saveListScrollPosition } from "@/hooks/use-list-scroll-restoration";
 
 export function GameCard({ game, sale = false, returnTo, copyMarker }: { game: CollectionListGame; sale?: boolean; returnTo?: string; copyMarker?: string }) {
   const detailPath = `/game/${encodeURIComponent(game.collectionId)}${returnTo ? `?from=${encodeURIComponent(returnTo)}` : ""}`;
   return (
     <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-emerald-300 hover:shadow-md">
-      <Link href={detailPath} className="group flex min-w-0 gap-3 p-3.5">
+      <Link href={detailPath} className="group flex min-w-0 gap-3 p-3.5" onClick={(event) => {
+        if (returnTo && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && event.button === 0) saveListScrollPosition(returnTo);
+      }}>
         <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="h-[5.75rem] w-[4.3rem] shrink-0 rounded-lg bg-slate-50" />
         <span className="flex min-w-0 flex-1 flex-col">
           <span className="flex items-start justify-between gap-2">

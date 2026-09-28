@@ -12,6 +12,7 @@ import { GameCard } from "./game-card";
 import { GameListToolbar } from "./game-list-toolbar";
 import { useUrlListState } from "@/hooks/use-url-list-state";
 import { ActiveFilterChips, ListEmptyState, ListResultCount } from "./list-ux";
+import { useListScrollRestoration } from "@/hooks/use-list-scroll-restoration";
 
 type SoldRecord = CollectionGame & SaleNoteFacts;
 const byTitle = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title, "pt-PT");
@@ -21,6 +22,7 @@ const DEFAULTS = { tab: "sell", q: "", platform: "", sort: "value-desc" };
 export function SellBrowser({ forSale, sold, initialSearch = "" }: { forSale: CollectionListGame[]; sold: SoldRecord[]; initialSearch?: string }) {
   const pathname = usePathname();
   const { state, update, currentSearch } = useUrlListState(DEFAULTS, initialSearch);
+  useListScrollRestoration();
   const tab = (state.tab === "sold" ? "sold" : "sell") as "sell" | "sold";
   const { q: query, platform, sort } = state;
   const effectiveSort = tab === "sold" && sort === "value-desc" ? "date-desc" : sort;
