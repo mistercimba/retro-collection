@@ -184,27 +184,29 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
     const workbook = new ExcelJS.Workbook();
     await measureServerWork("google.xlsx_parse", async () => workbook.xlsx.load(Buffer.from(workbookBytes) as never));
 
-    const collectionSheet = workbook.getWorksheet("COLLECTION");
-    const auditSheet = workbook.getWorksheet("AUDIT LOG");
-    if (!collectionSheet || !auditSheet) throw new Error("O workbook tem de conter os separadores COLLECTION e AUDIT LOG.");
+    return measureServerWork("google.xlsx_to_records", async () => {
+      const collectionSheet = workbook.getWorksheet("COLLECTION");
+      const auditSheet = workbook.getWorksheet("AUDIT LOG");
+      if (!collectionSheet || !auditSheet) throw new Error("O workbook tem de conter os separadores COLLECTION e AUDIT LOG.");
 
-    const platformOverrides: Record<string, string> = {};
-    for (const [sheetName, platform] of [["GB", "Game Boy"], ["GBC", "Game Boy Color"]]) {
-      const sheet = workbook.getWorksheet(sheetName);
-      if (!sheet) continue;
-      for (const row of worksheetRows(sheet, 6)) {
-        const idValue = row[1]?.trim();
-        if (idValue) platformOverrides[idValue] = platform;
+      const platformOverrides: Record<string, string> = {};
+      for (const [sheetName, platform] of [["GB", "Game Boy"], ["GBC", "Game Boy Color"]]) {
+        const sheet = workbook.getWorksheet(sheetName);
+        if (!sheet) continue;
+        for (const row of worksheetRows(sheet, 6)) {
+          const idValue = row[1]?.trim();
+          if (idValue) platformOverrides[idValue] = platform;
+        }
       }
-    }
-    return {
-      collection: rowsToObjects(worksheetRows(collectionSheet)),
-      audit: rowsToObjects(worksheetRows(auditSheet)),
-      platformOverrides,
-      wantlist: parsePlanTargets(workbook),
-      purchases: parsePurchases(workbook),
-      valuations: parseValuations(workbook),
-    };
+      return {
+        collection: rowsToObjects(worksheetRows(collectionSheet)),
+        audit: rowsToObjects(worksheetRows(auditSheet)),
+        platformOverrides,
+        wantlist: parsePlanTargets(workbook),
+        purchases: parsePurchases(workbook),
+        valuations: parseValuations(workbook),
+      };
+    });
   }
 
   private async readNativeSheet(token: string): Promise<RawSheetData> {
@@ -225,24 +227,26 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
       const range = `'${name.replaceAll("'", "''")}'!${ranges.get(name)}`;
       return [name, await this.getRange(range, token)] as const;
     })));
-    for (const [name, rows] of values) workbook.addWorksheet(name).addRows(rows);
-    const platformOverrides: Record<string, string> = {};
-    for (const [sheetName, platform] of [["GB", "Game Boy"], ["GBC", "Game Boy Color"]]) {
-      const sheet = workbook.getWorksheet(sheetName);
-      if (!sheet) continue;
-      for (const row of worksheetRows(sheet, 6)) {
-        const collectionId = row[1]?.trim();
-        if (collectionId) platformOverrides[collectionId] = platform;
+    return measureServerWork("google.sheet_transform", async () => {
+      for (const [name, rows] of values) workbook.addWorksheet(name).addRows(rows);
+      const platformOverrides: Record<string, string> = {};
+      for (const [sheetName, platform] of [["GB", "Game Boy"], ["GBC", "Game Boy Color"]]) {
+        const sheet = workbook.getWorksheet(sheetName);
+        if (!sheet) continue;
+        for (const row of worksheetRows(sheet, 6)) {
+          const collectionId = row[1]?.trim();
+          if (collectionId) platformOverrides[collectionId] = platform;
+        }
       }
-    }
-    return {
-      collection: rowsToObjects(worksheetRows(workbook.getWorksheet("COLLECTION")!)),
-      audit: rowsToObjects(worksheetRows(workbook.getWorksheet("AUDIT LOG")!)),
-      platformOverrides,
-      wantlist: parsePlanTargets(workbook),
-      purchases: parsePurchases(workbook),
-      valuations: parseValuations(workbook),
-    };
+      return {
+        collection: rowsToObjects(worksheetRows(workbook.getWorksheet("COLLECTION")!)),
+        audit: rowsToObjects(worksheetRows(workbook.getWorksheet("AUDIT LOG")!)),
+        platformOverrides,
+        wantlist: parsePlanTargets(workbook),
+        purchases: parsePurchases(workbook),
+        valuations: parseValuations(workbook),
+      };
+    });
   }
 
   async read(): Promise<RawSheetData> {
