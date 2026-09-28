@@ -133,7 +133,7 @@ Avoid:
 | Phase 2 | P1 | Lists, filters and browsing quality | ✅ COMPLETE |
 | Phase 3 | P1 | Game detail hierarchy and density | ✅ COMPLETE |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ✅ COMPLETE |
-| Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ☐ Not started |
+| Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ⚠️ PARTIAL |
 | Phase 6 | P2 | Polish and secondary UX improvements | ☐ Not started |
 
 Do not start a later phase while earlier P0 work is incomplete unless there is a concrete blocker.
@@ -732,6 +732,8 @@ Check:
 
 ## PERF-02 — Apply measured performance fixes
 
+**Status: DONE.** The native Google Sheets path now transforms returned row arrays directly; it no longer builds a second ExcelJS workbook. This targets the measured 1.66–1.75 s native workbook/row transformation. The XLSX import path remains unchanged. No post-change production timing is available from the worker, so the measured baseline is documented without claiming a new timing.
+
 Possible areas:
 - cache strategy;
 - parallelizing non-blocking data;
@@ -742,6 +744,10 @@ Possible areas:
 
 Do not rewrite architecture unless measurements justify it.
 
+### Phase 5 implementation notes
+
+The prior measured native Google Sheet row/workbook transformation took 1.66–1.75 s. The native Sheets API path now maps the already-fetched rows directly to records and plan/purchase/valuation data, avoiding ExcelJS workbook construction for that path. XLSX files continue to use the existing ExcelJS path. This is a targeted change against the measured cost; production before/after timing remains unverified in the worker environment.
+
 ### Suggested product target
 
 **"Do I own this game?" ≤ 5 seconds from app open under normal conditions**
@@ -751,6 +757,8 @@ This is a product target, not a hard CI threshold.
 ---
 
 ## UX-23 — Offline read-only collection snapshot
+
+**Status: DONE.** An authenticated, no-store endpoint supplies the minimal collection snapshot to browser local storage. Offline navigation falls back to a local read-only shell that supports search, platform browsing and basic detail. Logout clears the snapshot. The service worker stores only the static shell; it never stores private page or API responses. No credentials or write actions are cached.
 
 ### Offline MVP
 
@@ -784,6 +792,14 @@ Never cache:
 - Google credentials;
 - service-account secrets;
 - private API secrets.
+
+### Phase 5 implementation notes
+
+- Snapshot route requires the existing authenticated session and responds `private, no-store`.
+- Only Collection items and the requested fields are stored in browser local storage; logout removes the snapshot.
+- Service worker stores `/offline.html` only. It does not cache private documents, API responses, credentials, or mutations.
+- Offline page supports title/ID search, platform filtering, read-only detail, cover reference and freshness timestamp.
+- Offline behavior still needs a real browser/device check; the worker environment does not currently expose an authenticated production browser session.
 
 ### Explicit non-goals
 
