@@ -2,7 +2,8 @@ import "server-only";
 import { unstable_cache } from "next/cache";
 import type { CollectionGame } from "@/lib/data/types";
 import { formatPlaytime } from "@/lib/external-game-data.logic";
-import type { MatchedGameMetadata } from "@/lib/game-metadata";
+import { getGameMetadata, type MatchedGameMetadata } from "@/lib/game-metadata";
+import { resolveCatalogResearch, type ResearchPlaytime } from "@/lib/game-research.logic";
 import { getPricechartingEstimate, type PriceEstimate } from "@/lib/pricecharting-catalog";
 import { findIGDBTitleCandidates } from "../../scripts/igdb-refresh-logic.mjs";
 
@@ -52,6 +53,28 @@ const getCachedIgdbMetadata = unstable_cache(async (title: string, platformId: n
   return { metadata: { matchStatus: "matched" as const, source: "IGDB", sourceGameId: candidate.id, title: candidate.name, summary: candidate.summary ?? "", firstReleaseDate: candidate.first_release_date ? new Date(candidate.first_release_date * 1000).toISOString().slice(0, 10) : "", genres: (candidate.genres ?? []).map((item) => item.name), gameModes: (candidate.game_modes ?? []).map((item) => item.name), themes: (candidate.themes ?? []).map((item) => item.name), perspectives: (candidate.player_perspectives ?? []).map((item) => item.name), developers: companies.filter((item) => item.developer).map((item) => item.company?.name ?? "").filter(Boolean), publishers: companies.filter((item) => item.publisher).map((item) => item.company?.name ?? "").filter(Boolean), aggregatedRating: candidate.aggregated_rating ?? null, aggregatedRatingCount: candidate.aggregated_rating_count ?? 0, userRating: candidate.rating ?? null, userRatingCount: candidate.rating_count ?? 0, refreshedAt: new Date().toISOString(), timeToBeat: { main: formatPlaytime(times[0]?.hastily), extras: formatPlaytime(times[0]?.normally), completionist: formatPlaytime(times[0]?.completely) } }, metadataState: "matched" as const };
 }, ["igdb-metadata-v1"], { revalidate: 86400 });
 
+const getCachedIgdbPlaytime = unstable_cache(async (sourceGameId: number, clientId: string): Promise<ResearchPlaytime> => {
+  const token = await igdbToken();
+  if (!token) throw new Error("IGDB token unavailable");
+  const times = await igdbRequest<{ hastily?: number; normally?: number; completely?: number }>(
+    "game_time_to_beats",
+    `fields hastily,normally,completely; where game_id = ${sourceGameId}; limit 1;`,
+    token,
+    clientId,
+  );
+  return {
+    main: formatPlaytime(times[0]?.hastily),
+    extras: formatPlaytime(times[0]?.normally),
+    completionist: formatPlaytime(times[0]?.completely),
+  };
+}, ["igdb-playtime-by-game-v1"], { revalidate: 86400 });
+
+async function loadSnapshotPlaytime(sourceGameId: number): Promise<ResearchPlaytime> {
+  const clientId = process.env.IGDB_CLIENT_ID;
+  if (!clientId || !process.env.IGDB_CLIENT_SECRET) throw new Error("IGDB is not configured");
+  return getCachedIgdbPlaytime(sourceGameId, clientId);
+}
+
 async function loadIgdb(game: CollectionGame): Promise<Pick<Research, "metadata" | "metadataState">> {
   if (!process.env.IGDB_CLIENT_ID || !process.env.IGDB_CLIENT_SECRET) return { metadata: null, metadataState: "not-configured" };
   const platformId = IGDB_PLATFORMS[game.platform];
@@ -85,6 +108,10 @@ async function loadMetascore(game: CollectionGame) {
 }
 
 export async function getGameResearch(game: CollectionGame): Promise<Research> {
-  const [catalog, metascore, estimate] = await Promise.all([loadIgdb(game), loadMetascore(game), getPricechartingEstimate(game)]);
+  const [catalog, metascore, estimate] = await Promise.all([
+    resolveCatalogResearch(getGameMetadata(game.collectionId), loadSnapshotPlaytime, () => loadIgdb(game)),
+    loadMetascore(game),
+    getPricechartingEstimate(game),
+  ]);
   return { ...catalog, metascore, estimate };
 }
