@@ -8,7 +8,7 @@ export function MobileFilterDialog({ open, onClose, label, children }: {
   label: string;
   children: ReactNode;
 }) {
-  const dialogRef = useRef<HTMLElement>(null);
+  const dialogRef = useRef<HTMLElement | null>(null);
   const closeRef = useRef(onClose);
   closeRef.current = onClose;
 
