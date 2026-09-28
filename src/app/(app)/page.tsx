@@ -16,9 +16,16 @@ import { dataMode, getAllGames, getStats, getWantlist } from "@/lib/data/collect
 import { displayPlatform } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
 import { isAuditCompleted } from "@/lib/data/collection-integrity";
+import { collectServerPerf, measureServerWork, toServerTimingHeader } from "@/lib/server-perf";
 
 export default async function HomePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
-  const [stats, games, targets, query] = await Promise.all([getStats(), getAllGames(), getWantlist(), searchParams]);
+  const measured = await collectServerPerf(() => Promise.all([
+    measureServerWork("home.stats", getStats),
+    measureServerWork("home.games", getAllGames),
+    measureServerWork("home.wantlist", getWantlist),
+    measureServerWork("home.search_params", () => searchParams),
+  ]));
+  const [stats, games, targets, query] = measured.value;
   const quickSearch = new URLSearchParams();
   if (typeof query.q === "string") quickSearch.set("q", query.q);
   const mode = dataMode();
@@ -35,6 +42,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
 
   return (
     <div className="space-y-7 pb-8 sm:space-y-14">
+      <meta name="server-timing" content={toServerTimingHeader(measured.spans, measured.totalMs)} />
       <section className="archive-hero relative isolate overflow-hidden rounded-[2rem] text-white shadow-[0_24px_70px_-35px_rgba(14,27,45,.75)]">
         <div className="archive-hero-glow" aria-hidden="true" />
         <div className="relative grid gap-8 px-5 py-7 sm:px-9 sm:py-9 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-12 lg:py-12">
