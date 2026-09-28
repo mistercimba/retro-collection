@@ -129,7 +129,7 @@ Avoid:
 
 | Phase | Priority | Goal | Status |
 |---|---|---|---|
-| Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ◐ UX complete; PERF-01 partially diagnosed |
+| Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ◐ UX complete; PERF-01 data path measured, SSR/cache attribution partial |
 | Phase 2 | P1 | Lists, filters and browsing quality | ☐ Not started |
 | Phase 3 | P1 | Game detail hierarchy and density | ☐ Not started |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ☐ Not started |
@@ -380,21 +380,47 @@ Report:
 
 - [x] No speculative architecture change before measurement.
 - [x] At least Home and `/collection` are measured.
-- [ ] External API calls are not unnecessarily blocking initial render (GitHub snapshot and ECB FX fetch remain on `/collection`'s server-render path; no refactor was made in this phase).
+- [x] Independent PriceCharting snapshot loading no longer waits for the Google Sheet read; only the local match and required FX conversion remain after both inputs are ready.
 - [x] A target is proposed based on actual measurements.
 
 ### Phase 1 diagnostic notes
 
-Production browser measurements before this phase, sampled with approximately 500 ms polling (content visible is approximate):
+Production browser measurements before instrumentation, sampled with approximately 500 ms polling (content visible is approximate):
 
 | Page | Cold navigation | Warm navigation | Content visible |
 |---|---:|---:|---:|
 | Home | 808 ms | 4,448 ms | 4,103 ms cold |
 | `/collection` | 597 ms | 7,013 ms | 4,894 ms cold |
 
-These do not isolate server-render, provider or external-request time. The warm samples were slower, so cold start alone does not explain the delay. Code-path inspection shows both pages await Google Sheets data; `/collection` additionally awaits the PriceCharting catalog snapshot and ECB FX data. Home does not request PriceCharting, IGDB or RAWG; list genre data comes from the committed IGDB snapshot. IGDB/RAWG are not called for these list routes. The Google Sheets provider has a 60-second in-process cache and coalesces concurrent reads; underlying Google fetches use 60/300-second revalidation, PriceCharting snapshot 3600 seconds and ECB FX 86400 seconds.
+Request-scoped timings were then added to the authenticated Home and Collection pages. The diagnostic exposes only stage names, durations, and safe cache hints; it includes no Sheet content, titles, IDs, request URLs or credentials. Production browser requests produced these measurements:
 
-Vercel runtime-log access returned HTTP 403 in this environment. Per-stage timings, actual cache hit/miss events, cold-start duration, Google Sheet fetch duration and server-render duration therefore remain unmeasured. These numbers diagnose the visible delay's likely blocking dependencies but do not establish a single confirmed root cause. No speculative performance refactor was made. Proposed follow-up target for PERF-02: meaningful content within 3 seconds warm and 4 seconds cold on both routes, measured with server-side spans available.
+| Page / stage | First request after deploy | Subsequent requests | Notes |
+|---|---:|---:|---|
+| Home data loader | 5.33 s | 3.23–3.74 s | A browser reload reached the Home heading in 4.78 s. Google Sheet data is the only remote dependency; IGDB/RAWG/PriceCharting are not called. |
+| `/collection` data loader, before parallel fix | 5.90 s | 6.46 s | Google and PriceCharting work were serialized. |
+| `/collection` data loader, after parallel fix | 5.03–8.31 s on misses | 2.75 s on a cache hit | Miss samples included a 3.75 s Google sheet-metadata call; the slowest measured browser-to-heading request was 16.37 s, while a later same-instance cache-hit reload reached the heading in 4.45 s. Another miss request reached the heading in 6.99 s. |
+
+The first request after deploy is not proof of a cold function start. The Google provider reported `miss` on first requests, `in-flight` for concurrent Home reads, and a `hit` on an immediate same-instance `/collection` reload. Thus the 60-second module-memory cache can serve a warm request, but the available observations show that Vercel instance reuse is variable. Google/PriceCharting/ECB fetch responses supplied no Vercel/Next cache-status header, so their framework fetch-cache hit/miss state remains `unknown` rather than inferred from latency.
+
+| Data stage | Observed range |
+|---|---:|
+| Google auth token | 67–235 ms |
+| Application layout auth check | 3–12 ms |
+| Google Drive file metadata | 200–487 ms |
+| Google Sheet tab metadata | 269 ms–3.75 s |
+| Google range requests | 278–765 ms each; 558–867 ms for the parallel group |
+| Native Sheet workbook/row transformation | 1.66–1.75 s |
+| Google provider total | 3.00–6.73 s |
+| PriceCharting GitHub fetch | 246–538 ms |
+| PriceCharting snapshot JSON parse | 788–1,113 ms |
+| PAL local match across the collection | 1.40–1.69 s |
+| ECB fetch + parse | 6–51 ms |
+
+The main Home bottleneck is Google Sheets access plus ~1.7 s of native workbook/row transformation; the Sheet tab-metadata endpoint is the most variable stage. On a Google cache miss, `/collection` also does ~1.4–1.7 s of PriceCharting local matching after the concurrent snapshot load. On a provider cache hit, the remaining `/collection` data loader measured 2.75 s, mostly snapshot parse and matching. ECB is negligible. Multi-second warm misses and the slow metadata sample show that cold start alone does not explain the delay. A slow Google metadata request followed by workbook work can produce the 8–10 s tail; browser-to-heading timings vary further and are not a pure SSR measurement.
+
+The one low-risk fix was to start the PriceCharting snapshot fetch in parallel with the Google collection read. Matching and FX conversion still happen after both inputs are ready, so values and business logic are unchanged. Similar Google cache-miss samples fell from 5.90–6.46 s before the change to 5.03–5.51 s in typical post-change requests (about 0.4–1.4 s saved); the variable Google metadata request still produced an 8.31 s loader. A warm provider cache hit reduced the loader to 2.75 s. No broad caching/data-layer changes were made.
+
+Vercel runtime logs and deployment details remain unavailable to this environment (API returned HTTP 403). The stage timings measure the real page loaders and root-layout auth, and browser-to-heading timings include network, streaming and rendering; the pure React/server-render remainder and underlying Next fetch-cache HIT/MISS cannot be isolated with the available Vercel/browser interfaces. Therefore PERF-01's full server-render/cache-attribution requirement remains partially open. Proposed follow-up target for PERF-02 remains meaningful content within 3 seconds warm and 4 seconds cold on both routes; no PERF-02 work was started.
 
 ---
 
@@ -407,9 +433,9 @@ Vercel runtime-log access returned HTTP 403 in this environment. Per-stage timin
 - [x] terminology is consistent;
 - [x] list state survives navigation;
 - [x] "A rever" is a one-click action;
-- [ ] initial load has been measured and root-caused (browser timings and dependency paths recorded, but Vercel server/cache stage telemetry was inaccessible);
-- [ ] production is green;
-- [ ] Mário can validate everything from the production UI only.
+- [ ] initial load is fully measured through server render and external cache state (page loaders, layout auth and browser-visible timing are measured; pure SSR and Next fetch-cache hit/miss remain inaccessible);
+- [x] production is green;
+- [x] Mário can validate everything from the production UI only.
 
 ---
 
