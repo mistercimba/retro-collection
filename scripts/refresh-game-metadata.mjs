@@ -168,6 +168,57 @@ async function searchIGDBAliases({ title, clientId, accessToken }) {
   });
 }
 
+function formatPlaytime(seconds) {
+  if (!seconds || !Number.isFinite(seconds) || seconds <= 0) return "";
+  const hours = Math.round(seconds / 3600);
+  if (hours < 1) return "< 1 h";
+  const weeks = Math.floor(hours / 168);
+  const days = Math.floor((hours % 168) / 24);
+  const remainder = hours % 24;
+  return [weeks ? `${weeks} sem.` : "", days ? `${days} d` : "", remainder ? `${remainder} h` : ""].filter(Boolean).join(" ");
+}
+
+async function getIGDBPlaytime(gameId, clientId, accessToken) {
+  await waitForIGDBRateLimit();
+  const response = await fetch("https://api.igdb.com/v4/game_time_to_beats", {
+    method: "POST",
+    headers: { "Client-ID": clientId, Authorization: `Bearer ${accessToken}`, Accept: "application/json", "Content-Type": "text/plain" },
+    body: `fields hastily,normally,completely; where game_id = ${gameId}; limit 1;`,
+  });
+  if (!response.ok) return { main: "", extras: "", completionist: "" };
+  const [time] = await response.json();
+  return { main: formatPlaytime(time?.hastily), extras: formatPlaytime(time?.normally), completionist: formatPlaytime(time?.completely) };
+}
+
+const RAWG_PLATFORMS = {
+  Playstation: ["PlayStation"], "Playstation 2": ["PlayStation 2"], "Playstation 3": ["PlayStation 3"], "Playstation 5": ["PlayStation 5"],
+  "Nintendo Switch": ["Nintendo Switch"], "Nintendo Wii": ["Wii"], "Nintendo Wii U": ["Wii U"], PC: ["PC"],
+};
+
+async function getRawgMetascore(title, platform) {
+  const key = process.env.RAWG_API_KEY;
+  const platforms = RAWG_PLATFORMS[platform];
+  if (!key || !platforms) return { value: null, source: "indisponível", url: "" };
+  const params = new URLSearchParams({ search: title, page_size: "40", search_exact: "true", search_precise: "true", key });
+  let searchResponse;
+  try { searchResponse = await fetch(`https://api.rawg.io/api/games?${params}`); } catch { return { value: null, source: "indisponível", url: "" }; }
+  if (!searchResponse.ok) return { value: null, source: "indisponível", url: "" };
+  const payload = await searchResponse.json();
+  const normalize = (value) => String(value ?? "").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const matches = (payload.results ?? []).filter((game) => normalize(game.name) === normalize(title) && (game.platforms ?? []).some((entry) => platforms.includes(entry.platform?.name)));
+  const unique = [...new Map(matches.map((game) => [game.id, game])).values()];
+  if (unique.length !== 1) return { value: null, source: "indisponível", url: "" };
+  let detailResponse;
+  try { detailResponse = await fetch(`https://api.rawg.io/api/games/${unique[0].id}?key=${encodeURIComponent(key)}`); } catch { return { value: null, source: "indisponível", url: "" }; }
+  if (!detailResponse.ok) return { value: null, source: "indisponível", url: "" };
+  const detail = await detailResponse.json();
+  const entries = (detail.metacritic_platforms ?? []).filter((entry) => platforms.includes(entry.platform?.name) && Number.isFinite(entry.metascore));
+  if (entries.length === 1) return { value: entries[0].metascore, source: "RAWG / Metacritic", url: entries[0].url ?? detail.metacritic_url ?? "" };
+  return entries.length === 0 && Number.isFinite(detail.metacritic) && (detail.platforms ?? []).length === 1
+    ? { value: detail.metacritic, source: "RAWG / Metacritic", url: detail.metacritic_url ?? "" }
+    : { value: null, source: "indisponível", url: "" };
+}
+
 async function resolveIGDBRecord({ title, platform, clientId, accessToken }) {
   const candidates = await searchIGDB({ title, clientId, accessToken });
   const direct = resolveIGDBMatch(title, platform, candidates, platformIds);
@@ -207,9 +258,18 @@ for (const group of groups.values()) {
   if (result.status === "matched") {
     const candidate = result.candidate;
     const involved = candidate.involved_companies ?? [];
+    const playtime = await getIGDBPlaytime(candidate.id, clientId, accessToken);
+    const rawgScore = await getRawgMetascore(candidate.name, group.platform);
+    const fallbackScore = rawgScore.value ?? (typeof candidate.aggregated_rating === "number" ? candidate.aggregated_rating : null);
     const metadata = {
       source: "IGDB",
       sourceGameId: candidate.id,
+      externalIds: { igdb: candidate.id },
+      playtime,
+      reviewScore: fallbackScore,
+      reviewScoreSource: rawgScore.value !== null ? rawgScore.source : fallbackScore !== null ? "IGDB aggregated rating" : "indisponível",
+      reviewScoreUrl: rawgScore.url,
+
       title: candidate.name,
       summary: candidate.summary ?? "",
       firstReleaseDate: candidate.first_release_date ? new Date(candidate.first_release_date * 1000).toISOString().slice(0, 10) : "",
@@ -230,7 +290,7 @@ for (const group of groups.values()) {
     if (candidate.genres?.length) matchedWithGenre += group.records.length;
     if (metadata.developers.length) matchedWithDeveloper += group.records.length;
     if (metadata.publishers.length) matchedWithPublisher += group.records.length;
-    if (candidate.aggregated_rating !== undefined && candidate.aggregated_rating !== null) matchedWithCriticRating += group.records.length;
+    if (rawgScore.value !== null || fallbackScore !== null) matchedWithCriticRating += group.records.length;
     if (result.matchMethod === "alias") aliasResolved += group.records.length;
   } else {
     if (result.status === "ambiguous") ambiguous += group.records.length;

@@ -1,5 +1,7 @@
 import snapshot from "@/data/game-metadata.json";
 
+export type PlaytimeSnapshot = { main: string; extras: string; completionist: string };
+
 export type MatchedGameMetadata = {
   matchStatus: "matched";
   source: string;
@@ -17,8 +19,12 @@ export type MatchedGameMetadata = {
   aggregatedRatingCount: number;
   userRating: number | null;
   userRatingCount: number;
+  playtime: PlaytimeSnapshot;
+  reviewScore: number | null;
+  reviewScoreSource: string;
+  reviewScoreUrl: string;
+  externalIds: Record<string, string | number>;
   refreshedAt: string;
-  timeToBeat?: { main: string; extras: string; completionist: string };
 };
 
 export type UnresolvedGameMetadata = {
