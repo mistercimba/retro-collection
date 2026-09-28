@@ -1,7 +1,8 @@
 import { ArrowUpRight, Clock3, ExternalLink, Search } from "lucide-react";
 import { displayPlatform } from "@/lib/data/platforms";
 
-type MarketSearchLinksProps = { title: string; platform: string; compact?: boolean };
+type MarketContext = "collection" | "sell" | "wantlist";
+type MarketSearchLinksProps = { title: string; platform: string; compact?: boolean; context?: MarketContext };
 
 function buildSearchLinks(title: string, platform: string) {
   const query = `${title} ${displayPlatform(platform)}`.trim();
@@ -20,10 +21,11 @@ function buildSearchLinks(title: string, platform: string) {
   ];
 }
 
-export function MarketSearchLinks({ title, platform, compact = false }: MarketSearchLinksProps) {
+export function MarketSearchLinks({ title, platform, compact = false, context = "collection" }: MarketSearchLinksProps) {
   const links = buildSearchLinks(title, platform);
   if (compact) {
-    const primary = links.filter((link) => link.label === "PriceCharting" || link.label === "Vinted");
+    const primaryLabels = context === "sell" ? ["PriceCharting", "CeX Portugal"] : context === "wantlist" ? ["Vinted", "OLX"] : ["PriceCharting", "Vinted"];
+    const primary = links.filter((link) => primaryLabels.includes(link.label));
     const more = links.filter((link) => !primary.includes(link));
     return (
       <div className="flex flex-wrap items-center gap-2 text-xs">

@@ -44,7 +44,7 @@ export function getSafeListReturnPath(value: string | string[] | undefined): str
   try {
     const url = new URL(value, "https://retro-collection.invalid");
     if (url.origin !== "https://retro-collection.invalid") return null;
-    const allowed = url.pathname === "/collection" || url.pathname === "/collection/games" || url.pathname === "/want" || url.pathname === "/sell" || /^\/platform\/[a-z0-9-]+$/.test(url.pathname);
+    const allowed = url.pathname === "/collection" || url.pathname === "/collection/games" || url.pathname === "/want" || url.pathname === "/sell" || url.pathname === "/search" || /^\/platform\/[a-z0-9-]+$/.test(url.pathname);
     return allowed ? `${url.pathname}${url.search}${url.hash}` : null;
   } catch {
     return null;
@@ -62,6 +62,7 @@ export function listReturnLabel(path: string, platforms: string[]): string {
   if (pathname === "/collection/games") return "Todos os jogos";
   if (pathname === "/want") return "À procura";
   if (pathname === "/sell") return "Para vender";
+  if (pathname === "/search") return "Resultados da pesquisa";
   const match = pathname.match(/^\/platform\/([a-z0-9-]+)/);
   if (match) {
     const platform = platforms.find((item) => platformSlug(item) === match[1]);

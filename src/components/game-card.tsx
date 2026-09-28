@@ -31,7 +31,7 @@ export function GameCard({ game, sale = false, returnTo, copyMarker }: { game: C
           <span className="mt-1 truncate text-[10px] text-slate-400">{game.region || "Região n/d"}{game.edition ? ` · ${game.edition}` : ""}{game.conditionGrade ? ` · ${game.conditionGrade}` : ""}</span>
         </span>
       </Link>
-      {sale && <div className="border-t border-slate-100 px-3.5 py-2.5"><p className="mb-1 text-[10px] font-semibold text-slate-500">{game.priceEstimate.value !== null ? `PriceCharting · ${game.priceEstimate.basis} · ${game.priceEstimate.date || "snapshot"}` : game.currentValueEur !== null ? "Valor registado na coleção" : "Valor não disponível"}{game.cexCashEur !== null ? ` · CeX cash ${formatEuro(game.cexCashEur)}` : ""}</p><MarketSearchLinks title={game.title} platform={game.platform} compact /></div>}
+      {sale && <div className="border-t border-slate-100 px-3.5 py-2.5"><p className="mb-1 text-[10px] font-semibold text-slate-500">{game.priceEstimate.value !== null ? `PriceCharting · ${game.priceEstimate.basis} · ${game.priceEstimate.date || "snapshot"}` : game.currentValueEur !== null ? "Valor registado na coleção" : "Valor não disponível"}{game.cexCashEur !== null ? ` · CeX cash ${formatEuro(game.cexCashEur)}` : ""}</p><MarketSearchLinks title={game.title} platform={game.platform} compact context="sell" /></div>}
     </article>
   );
 }

@@ -12,6 +12,7 @@ describe("URL-backed list state", () => {
 
   it("keeps only safe, same-site list return destinations", () => {
     expect(getSafeListReturnPath("/platform/ps2?genre=Action&review=1")).toBe("/platform/ps2?genre=Action&review=1");
+    expect(getSafeListReturnPath("/search?q=Pokemon")).toBe("/search?q=Pokemon");
     expect(getSafeListReturnPath("https://example.com/steal")).toBeNull();
     expect(getSafeListReturnPath("//example.com/steal")).toBeNull();
     expect(getSafeListReturnPath("/login")).toBeNull();
@@ -22,5 +23,6 @@ describe("URL-backed list state", () => {
     expect(listReturnLabel("/want?sort=priority", [])).toBe("À procura");
     expect(listReturnLabel("/collection?q=Silent+Hill", [])).toBe("Coleção");
     expect(listReturnLabel("/platform/ps2", ["Playstation 2"])).toBe("PlayStation 2");
+    expect(listReturnLabel("/search?q=Pokemon", [])).toBe("Resultados da pesquisa");
   });
 });

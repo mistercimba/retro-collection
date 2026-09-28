@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Heart, Target, X } from "lucide-react";
+import { BadgeEuro, Heart, Target, X } from "lucide-react";
 import { MobileFilterDialog } from "./mobile-filter-dialog";
 import type { WantListEntry } from "@/lib/data/types";
 import { displayPlatform } from "@/lib/data/platforms";
@@ -120,13 +120,16 @@ export function WantlistBrowser({ targets, initialSearch = "" }: { targets: Want
         const key = target.priority.trim().toLocaleLowerCase("pt-PT");
         return <article key={`${target.platform}:${target.targetId}:${target.title}`} className="px-3 py-3 sm:px-4">
             <div className="flex items-start gap-3"><span className={`mt-0.5 inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-[10px] font-black ${priorityStyle[key] ?? "want-priority-low"}`}><Target className="h-3 w-3" aria-hidden="true" />{target.priority || "Sem prioridade"}</span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-x-2 gap-y-1"><h2 className="min-w-0 text-sm font-extrabold leading-tight text-slate-950">{target.title}</h2>{target.matchState === "ambiguous" && <span className="want-ambiguous-badge">Ambíguo</span>}{target.planState === "unknown" && <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-900">Estado do alvo por confirmar</span>}</div>
-            <p className="mt-1 text-[11px] font-semibold text-slate-500">{displayPlatform(target.platform)}{target.targetVersion ? ` · ${target.targetVersion}` : ""}{target.priceCeilingEur !== null ? ` · teto ${formatEuro(target.priceCeilingEur)}` : " · sem teto"}</p>
+            <div className="mt-2 flex flex-wrap items-center gap-2">
+              <p className="text-[11px] font-semibold text-slate-500">{displayPlatform(target.platform)}{target.targetVersion ? ` · Versão alvo: ${target.targetVersion}` : ""}</p>
+              {target.priceCeilingEur !== null ? <p className="inline-flex items-center gap-1.5 rounded-lg border border-lime-200 bg-lime-50 px-2.5 py-1.5 text-[11px] text-lime-950"><BadgeEuro className="h-3.5 w-3.5" aria-hidden="true" /><span>Máximo a pagar</span><strong className="text-sm">{formatEuro(target.priceCeilingEur)}</strong></p> : <p className="rounded-lg bg-amber-50 px-2.5 py-1.5 text-[11px] font-bold text-amber-900">Teto por definir</p>}
+            </div>
             {target.reason && <p className="mt-1 line-clamp-2 text-xs leading-4 text-slate-600">{target.reason}</p>}
-            {target.possibleMatch && <p className="mt-1 text-[11px] leading-4 text-amber-800">Possível cópia: <Link className="font-bold underline" href={`/game/${encodeURIComponent(target.possibleMatch.collectionId)}?from=${encodeURIComponent(`${pathname}${currentSearch ? `?${currentSearch}` : ""}`)}`}>{target.possibleMatch.title} · {target.possibleMatch.region || "região n/d"}</Link>. Mantida como ambígua.</p>}
+            {target.possibleMatch && <div className="mt-2 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2"><p className="text-[10px] font-black uppercase tracking-wide text-amber-900">Possível correspondência na coleção</p><Link className="mt-1 inline-flex min-h-9 items-center font-bold text-amber-950 underline decoration-amber-400 underline-offset-2" href={`/game/${encodeURIComponent(target.possibleMatch.collectionId)}?from=${encodeURIComponent(`${pathname}${currentSearch ? `?${currentSearch}` : ""}`)}`}>Confirmar cópia: {target.possibleMatch.title} · {target.possibleMatch.region || "região n/d"}</Link><p className="text-[10px] text-amber-800">Confirma antes de comprar; o alvo continua ambíguo.</p></div>}
             {target.matchReason === "unknown-plan-state" && <p className="mt-1 text-[11px] text-amber-800">Estado do alvo não reconhecido; não foi marcado como adquirido.</p>}
             {target.notes && <details className="mt-1 text-[11px] text-slate-500"><summary className="cursor-pointer font-semibold">Notas do alvo</summary><p className="mt-1 whitespace-pre-wrap">{target.notes}</p></details>}
-            <div className="mt-2"><MarketSearchLinks title={target.title} platform={target.platform} compact /></div>
-          </div><ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-slate-300" aria-hidden="true" /></div>
+            <div className="mt-2"><MarketSearchLinks title={target.title} platform={target.platform} compact context="wantlist" /></div>
+          </div></div>
         </article>;
       })}
     </div> : <ListEmptyState title={active.length ? "Nenhum alvo encontrado" : "Não há alvos ativos"} description={active.length ? "Limpa os filtros ou a pesquisa para voltar a ver alvos." : "Os alvos ativos vão aparecer aqui."} onClear={active.length && (activeFilterCount > 0 || Boolean(query)) ? clearAll : undefined} /> }

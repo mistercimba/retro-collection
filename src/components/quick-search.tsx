@@ -8,15 +8,7 @@ import { useUrlListState } from "@/hooks/use-url-list-state";
 import type { CollectionGame } from "@/lib/data/types";
 import { displayPlatform } from "@/lib/data/platforms";
 import { GameArtwork } from "@/components/artwork";
-
-function normalizeSearch(value: string) {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLocaleLowerCase("pt-PT")
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
+import { findQuickSearchMatches } from "@/lib/quick-search.logic";
 
 const DEFAULTS = { q: "" };
 
@@ -28,20 +20,8 @@ export function QuickSearch({ games, initialSearch = "" }: { games: CollectionGa
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
-  const results = useMemo(() => {
-    const q = normalizeSearch(query);
-    if (q.length < 2) return [];
-    const tokens = q.split(/\s+/).filter(Boolean);
-
-    return games
-      .filter((game) => {
-        const haystack = normalizeSearch(
-          [game.title, game.platform, displayPlatform(game.platform), game.collectionId, game.edition, game.region, game.overallStatus].join(" "),
-        );
-        return tokens.every((token) => haystack.includes(token));
-      })
-      .slice(0, 10);
-  }, [games, query]);
+  const allResults = useMemo(() => findQuickSearchMatches(games, query), [games, query]);
+  const results = allResults.slice(0, 10);
 
   useEffect(() => {
     const onPointerDown = (event: PointerEvent) => {
@@ -133,6 +113,15 @@ export function QuickSearch({ games, initialSearch = "" }: { games: CollectionGa
             ))
           ) : (
             <p className="px-4 py-4 text-sm text-slate-500">Nada encontrado.</p>
+          )}
+          {allResults.length > 10 && (
+            <Link
+              href={`/search?q=${encodeURIComponent(query.trim())}`}
+              className="block border-t border-slate-100 px-4 py-3 text-sm font-bold text-emerald-900 hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-emerald-800"
+              onClick={() => setOpen(false)}
+            >
+              Ver todos os resultados para “{query.trim()}” ({allResults.length})
+            </Link>
           )}
         </div>
       )}

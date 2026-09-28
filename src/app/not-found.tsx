@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Gamepad2 } from "lucide-react";
+import { ArrowLeft, Gamepad2, LibraryBig } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -11,9 +11,14 @@ export default function NotFound() {
         <p className="mt-6 text-xs font-black uppercase tracking-[0.18em] text-[var(--archive-green)]">404</p>
         <h1 className="mt-2 text-3xl font-black text-slate-950">Esse jogo não está aqui.</h1>
         <p className="mt-2 text-sm leading-6 text-slate-600">O endereço pode estar errado ou o item já não existir na fonte de dados.</p>
-        <Link href="/" className="mx-auto mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[var(--archive-green)] px-4 py-2.5 text-sm font-bold text-white hover:bg-emerald-900 focus-visible:outline-offset-4">
-          <ArrowLeft className="h-4 w-4" /> Voltar ao início
-        </Link>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          <Link href="/" className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-[var(--archive-green)] px-4 py-2.5 text-sm font-bold text-white hover:bg-emerald-900 focus-visible:outline-offset-4">
+            <ArrowLeft className="h-4 w-4" /> Voltar ao início
+          </Link>
+          <Link href="/collection/games" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[var(--archive-green)] px-4 py-2.5 text-sm font-bold text-[var(--archive-green)] hover:bg-white focus-visible:outline-offset-4">
+            <LibraryBig className="h-4 w-4" /> Abrir coleção
+          </Link>
+        </div>
       </div>
     </main>
   );

@@ -134,7 +134,7 @@ Avoid:
 | Phase 3 | P1 | Game detail hierarchy and density | ✅ COMPLETE |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ✅ COMPLETE |
 | Phase 5 | P1 strategic | Performance improvements and offline-read-only capability | ✅ COMPLETE |
-| Phase 6 | P2 | Polish and secondary UX improvements | ☐ Not started |
+| Phase 6 | P2 | Polish and secondary UX improvements | ✅ COMPLETE |
 
 Do not start a later phase while earlier P0 work is incomplete unless there is a concrete blocker.
 
@@ -819,6 +819,8 @@ Offline mode does **not** need to:
 
 ## UX-24 — Wantlist shopping mode
 
+**Status: DONE.** Purchase ceilings are visually prominent, possible matches have a clear confirmation action, and decorative non-clickable arrows are removed. Wantlist priority chips remain consistent.
+
 Possible work:
 - visually emphasize purchase ceiling;
 - remove fake arrow affordance if card is not clickable;
@@ -829,6 +831,8 @@ Possible work:
 ---
 
 ## UX-25 — Quick Search "view all"
+
+**Status: DONE.** Quick Search offers a full-results link when there are more than 10 matches. The results page searches all collection statuses and preserves its return path from game detail.
 
 If Quick Search has more than 10 results:
 
@@ -844,6 +848,8 @@ Recent-search history is not required for initial implementation.
 
 ## UX-26 — Contextual market actions
 
+**Status: DONE.** Compact market links now prioritize PriceCharting + Vinted for collection, PriceCharting + CeX for selling, and Vinted + OLX for wantlist targets.
+
 Possible default priorities:
 - Collection: PriceCharting + Vinted
 - Para vender: PriceCharting + CeX
@@ -855,6 +861,8 @@ Only implement if current links genuinely feel noisy.
 
 ## UX-27 — Loading skeleton refinement
 
+**Status: DONE.** Home, platform browsing, all games, platform detail, wantlist, sell, game detail, and search now use page-shaped loading states.
+
 Keep skeletons.
 
 Improve them so each page's skeleton resembles its actual layout rather than using generic tall cards.
@@ -864,6 +872,8 @@ This is polish **after** actual loading performance has been addressed.
 ---
 
 ## UX-28 — Error and 404 polish
+
+**Status: DONE.** Error copy no longer assumes a Google Sheet failure. Recovery links reach Home and Collection; 404 offers both destinations, with retry retained on errors.
 
 Errors should:
 - use user language;
