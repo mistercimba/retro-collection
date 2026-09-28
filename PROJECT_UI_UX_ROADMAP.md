@@ -758,7 +758,7 @@ This is a product target, not a hard CI threshold.
 
 ## UX-23 — Offline read-only collection snapshot
 
-**Status: DONE.** An authenticated, no-store endpoint supplies the minimal collection snapshot to browser local storage. Offline navigation falls back to a local read-only shell that supports search, platform browsing and basic detail. Logout clears the snapshot. The service worker stores only the static shell; it never stores private page or API responses. No credentials or write actions are cached.
+**Status: PARTIAL.** The authenticated, no-store snapshot and read-only offline shell are implemented. Real browser/offline behavior was not verified in this worker environment.
 
 ### Offline MVP
 
