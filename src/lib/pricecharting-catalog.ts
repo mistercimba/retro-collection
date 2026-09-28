@@ -1,7 +1,7 @@
 import "server-only";
 import type { CollectionGame } from "@/lib/data/types";
 import { estimateCondition, lookupPalPricechartingMatch, parseEcbUsdEur, selectSnapshotPrice, type PricechartingCatalog } from "@/lib/external-game-data.logic";
-import { measureServerWork } from "./server-perf";
+import { measureServerFetch, measureServerWork } from "./server-perf";
 
 const CATALOG_REPOSITORY = "mistercimba/vinted-retro-search";
 const CATALOG_PATH = "data/reference/pricecharting-pal-catalog.json";
@@ -16,7 +16,7 @@ async function getCatalog(): Promise<PricechartingCatalog | null> {
   const ref = process.env.PRICECHARTING_CATALOG_REF || "main";
   const url = `https://api.github.com/repos/${CATALOG_REPOSITORY}/contents/${CATALOG_PATH}?ref=${encodeURIComponent(ref)}`;
   try {
-    const response = await measureServerWork("pricecharting.github_fetch", () => fetch(url, {
+    const response = await measureServerFetch("pricecharting.github_fetch", () => fetch(url, {
       headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github.raw+json", "X-GitHub-Api-Version": "2022-11-28" },
       next: { revalidate: 3600 },
     }));
@@ -30,7 +30,7 @@ async function getCatalog(): Promise<PricechartingCatalog | null> {
 }
 
 async function getEcbRate() {
-  const response = await measureServerWork("ecb.fx_fetch", () => fetch("https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=1&format=csvdata", { next: { revalidate: 86400 } }).catch(() => null));
+  const response = await measureServerFetch("ecb.fx_fetch", () => fetch("https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=1&format=csvdata", { next: { revalidate: 86400 } }).catch(() => null));
   return response?.ok ? measureServerWork("ecb.fx_parse", async () => parseEcbUsdEur(await response.text())) : null;
 }
 
