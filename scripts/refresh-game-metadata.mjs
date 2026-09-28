@@ -219,12 +219,115 @@ async function getRawgMetascore(title, platform) {
     : { value: null, source: "indisponível", url: "" };
 }
 
+const CURATED_QUERY_ALIASES = {
+  "Terminator 2: Judgement Day": ["Terminator 2: Judgment Day"],
+  "Teenage Mutant Hero Turtles": ["Teenage Mutant Ninja Turtles"],
+  "Street Fighter II: The World Warrior": ["Street Fighter 2: The World Warrior"],
+  "Lylat Wars": ["Star Fox 64"],
+  "Pokemon Crystal": ["Pokémon Crystal Version"],
+  "Pokemon Gold": ["Pokémon Gold Version"],
+  "Pokemon Yellow": ["Pokémon Yellow Version: Special Pikachu Edition"],
+  "Zelda Oracle Of Ages": ["The Legend of Zelda: Oracle of Ages"],
+  "Pokemon Red": ["Pokémon Red Version"],
+  "Pokemon Silver": ["Pokémon Silver Version"],
+  "Pokemon Blue": ["Pokémon Blue Version"],
+  "Zelda Link's Awakening": ["The Legend of Zelda: Link's Awakening"],
+  "Super Mario Land 2": ["Super Mario Land 2: 6 Golden Coins"],
+  "Harvest Moon": ["Harvest Moon GB"],
+  "Harry Potter And The Philosopher's Stone": ["Harry Potter and the Philosopher's Stone"],
+  "Bugs Bunny Crazy Castle 4": ["The Bugs Bunny Crazy Castle 4"],
+  "Sylvester & Tweety Breakfast On The Run": ["Sylvester & Tweety: Breakfast on the Run"],
+  "Bugs Bunny & Lola Bunny Operation Carrot Patch": ["Bugs Bunny & Lola Bunny: Operation Carrot Patch"],
+  "Atlantis The Lost Empire": ["Atlantis: The Lost Empire"],
+  "Pokémon Emerald": ["Pokémon Emerald Version"],
+  "Ninja Cop": ["Ninja Five-O"],
+  "Pokémon FireRed": ["Pokémon FireRed Version"],
+  "Pokémon LeafGreen": ["Pokémon LeafGreen Version"],
+  "Pokémon Sapphire": ["Pokémon Sapphire Version"],
+  "Pokémon Ruby": ["Pokémon Ruby Version"],
+  "Game & Watch Gallery Advance": ["Game & Watch Gallery 4"],
+  "Super Mario Advance 2": ["Super Mario World: Super Mario Advance 2"],
+  "Yu-Gi-Oh Ultimate Masters Edition": ["Yu-Gi-Oh! Ultimate Masters: World Championship Tournament 2006"],
+  "Excitebike NES Classics": ["Excitebike"],
+  "Lord of the Rings: Return of the King": ["The Lord of the Rings: The Return of the King"],
+  "ESPN Winter X-Games Snowboarding 2": ["ESPN Winter X-Games Snowboarding 2002"],
+  "Donkey Kong NES Classics": ["Donkey Kong"],
+  "Spiderman: Mysterio's Menace": ["Spider-Man: Mysterio's Menace"],
+  "Lilo & Stitch 2": ["Lilo & Stitch 2: Haemsterviel Havoc"],
+  "Crash And Spyro Super Pack Volume 2": ["Crash & Spyro Super Pack: Volume 2"],
+  "Lord Of The Rings Two Towers": ["The Lord of the Rings: The Two Towers"],
+  "Zelda NES Classics": ["The Legend of Zelda"],
+  "Flower, Sun and Rain": ["Flower, Sun, and Rain"],
+  "Pokémon SoulSilver": ["Pokémon SoulSilver Version"],
+  "Pokémon Platinum": ["Pokémon Platinum Version"],
+  "Pokémon White": ["Pokémon White Version"],
+  "Pokémon Diamond": ["Pokémon Diamond Version"],
+  "Professor Layton and the Lost Future": ["Professor Layton and the Unwound Future"],
+  "Professor Layton and the Spectre's Call": ["Professor Layton and the Last Specter"],
+  "Pokemon Box": ["Pokémon Box: Ruby & Sapphire"],
+  "Game Boy Player Start-Up Disc": ["Game Boy Player"],
+  "Zelda Wind Waker": ["The Legend of Zelda: The Wind Waker"],
+  "Eternal Darkness": ["Eternal Darkness: Sanity's Requiem"],
+  "Digimon World 2003": ["Digimon World 3"],
+  "Hercules": ["Disney's Hercules"],
+  "Toy Story 2": ["Toy Story 2: Buzz Lightyear to the Rescue"],
+  "Driver 2": ["Driver 2: Back on the Streets"],
+  "Donald Duck Quack Attack": ["Donald Duck: Quack Attack"],
+  "MediEvil 2": ["MediEvil II"],
+  "Tarzan": ["Disney's Tarzan"],
+  "Ridge Racer Type 4": ["R4: Ridge Racer Type 4"],
+  "Tony Hawk's Skateboarding": ["Tony Hawk's Pro Skater"],
+  "Jungle Book Groove Party": ["The Jungle Book: Rhythm n' Groove"],
+  "Harry Potter e a Pedra Filosofal": ["Harry Potter and the Philosopher's Stone"],
+  "Oddworld: Abe's Oddysee DEMO": ["Oddworld: Abe's Oddysee"],
+  "Crash Bandicoot 3: Warped": ["Crash Bandicoot: Warped"],
+  "Advanced Dungeons & Dragons: Iron & Blood – Warriors of Ravenloft": ["Iron & Blood: Warriors of Ravenloft"],
+  "Project Zero 3": ["Fatal Frame III: The Tormented"],
+  "Nightmare Before Christmas: Oogie's Revenge": ["The Nightmare Before Christmas: Oogie's Revenge"],
+  "Metal Gear Solid 2": ["Metal Gear Solid 2: Sons of Liberty"],
+  "Zone Of The Enders 2nd Runner": ["Zone of the Enders: The 2nd Runner"],
+  "Shadow of Memories": ["Shadow of Destiny"],
+  "Beyond Good And Evil": ["Beyond Good & Evil"],
+  "Canis Canem Edit": ["Bully"],
+  "God Of War 2": ["God of War II"],
+  "Final Fantasy VII Dirge Of Cerberus": ["Dirge of Cerberus: Final Fantasy VII"],
+  "Devil May Cry 3": ["Devil May Cry 3: Dante's Awakening"],
+  "Yu-Gi-Oh Duelists Of The Roses": ["Yu-Gi-Oh! The Duelists of the Roses"],
+  "Ratchet: Gladiator": ["Ratchet & Clank: Deadlocked"],
+  "Kuri Kuri Mix": ["We Love Katamari"],
+  "Time Splitters": ["TimeSplitters 2"],
+  "Future Tactics": ["Future Tactics: The Uprising"],
+  "Black": ["Black"],
+  "Buzz o Grande Quiz": ["Buzz! The Big Quiz"],
+  "International Superstar Soccer": ["International Superstar Soccer 2"],
+  "Formula One 2005": ["Formula One 05"],
+  "Splinter Cell": ["Tom Clancy's Splinter Cell"],
+  "WRC: World Rally Championship": ["WRC: World Rally Championship"],
+  "Bionicle": ["Bionicle"],
+  "Tourist Trophy: The Real Riding Simulator": ["Tourist Trophy: The Real Riding Simulator"],
+  "Mundial 2002 Challenge": ["2002 FIFA World Cup"],
+  "Freak Out": ["Freak Out"],
+  "Ace Combat: Distant Thunder": ["Ace Combat 04: Shattered Skies"],
+  "SpongeBob SquarePants: The Movie": ["The SpongeBob SquarePants Movie"],
+  "1945 I&II: The Arcade Games": ["1945 I & II: The Arcade Games"],
+  "Winnie the Pooh's Rumbly Tumbly Adventure": ["Winnie the Pooh's Rumbly Tumbly Adventure"],
+  "Disney's Peter Pan: The Legend of Never-Land": ["Peter Pan: The Legend of Never Land"],
+  "Disney's Tarzan Freeride": ["Disney's Tarzan: Freeride"],
+  "LEGO Football Mania": ["LEGO Football Mania"],
+  "Elder Scrolls V: Skyrim": ["The Elder Scrolls V: Skyrim"],
+  "Harry Potter Prisoner of Azkaban": ["Harry Potter and the Prisoner of Azkaban"],
+  "The Sims 2: Glamor Life Stuff": ["The Sims 2: Glamour Life Stuff"],
+};
+
 async function resolveIGDBRecord({ title, platform, clientId, accessToken }) {
-  const candidates = await searchIGDB({ title, clientId, accessToken });
+  const queryTitles = [title, ...(CURATED_QUERY_ALIASES[title] ?? [])];
+  const candidateLists = await Promise.all(queryTitles.map((queryTitle) => searchIGDB({ title: queryTitle, clientId, accessToken })));
+  const candidates = [...new Map(candidateLists.flat().map((candidate) => [candidate.id, candidate])).values()];
   const direct = resolveIGDBMatch(title, platform, candidates, platformIds);
   if (direct.status === "matched") return { ...direct, matchMethod: "title", relevantAliases: [] };
   const aliases = await searchIGDBAliases({ title, clientId, accessToken });
-  return resolveIGDBMatchWithAliases(title, platform, candidates, aliases, platformIds);
+  const curatedAliases = queryTitles.slice(1).flatMap((queryTitle) => candidates.filter((candidate) => candidate.name && isIGDBTitleEquivalent(candidate.name, queryTitle)).map((game) => ({ name: title, game })));
+  return resolveIGDBMatchWithAliases(title, platform, candidates, [...aliases, ...curatedAliases], platformIds);
 }
 
 const records = await readCollectionWorkbook();
@@ -317,7 +420,7 @@ for (const group of groups.values()) {
 }
 
 const gamesById = buildGameMetadataSnapshot(resolvedGroups);
-await fs.writeFile(metadataPath, `${JSON.stringify({ schemaVersion: 1, refreshedAt: new Date().toISOString(), games: gamesById }, null, 2)}\n`);
+await fs.writeFile(metadataPath, `${JSON.stringify({ schemaVersion: 2, refreshedAt: new Date().toISOString(), games: gamesById }, null, 2)}\n`);
 await fs.writeFile(reviewPath, `${JSON.stringify(needsReview, null, 2)}\n`);
 console.log(`Metadata IGDB atualizada: ${matched} correspondências; ${ambiguous} ambiguidades; ${unmatched} sem correspondência (${needsReview.length} grupos para rever).`);
 console.log("Cobertura IGDB:");

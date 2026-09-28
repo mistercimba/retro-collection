@@ -30,43 +30,6 @@
     "relevantAliases": []
   },
   {
-    "platform": "NES",
-    "title": "Terminator 2: Judgement Day",
-    "collectionIds": [
-      "NES-0009"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "NES",
-    "title": "Teenage Mutant Hero Turtles",
-    "collectionIds": [
-      "NES-0014"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
-      {
-        "id": 218922,
-        "name": "Teenage Mutant Ninja Turtles",
-        "platforms": [
-          "Handheld Electronic LCD"
-        ]
-      }
-    ],
-    "relevantAliases": [
-      {
-        "name": "Teenage Mutant Hero Turtles",
-        "gameId": 218922,
-        "gameTitle": "Teenage Mutant Ninja Turtles",
-        "platforms": [
-          "Handheld Electronic LCD"
-        ]
-      }
-    ]
-  },
-  {
     "platform": "SNES",
     "title": "Super Mario Kart",
     "collectionIds": [
@@ -81,16 +44,6 @@
     "title": "Street Fighter II: The World Warrior",
     "collectionIds": [
       "SNES-0008"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Nintendo 64",
-    "title": "Lylat Wars",
-    "collectionIds": [
-      "N64-0004"
     ],
     "reason": "no-title-match",
     "candidates": [],
@@ -123,86 +76,6 @@
     "relevantAliases": []
   },
   {
-    "platform": "Game Boy Color",
-    "title": "Pokemon Crystal",
-    "collectionIds": [
-      "GBC-0001"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy Color",
-    "title": "Pokemon Gold",
-    "collectionIds": [
-      "GBC-0002"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy",
-    "title": "Pokemon Yellow",
-    "collectionIds": [
-      "GBC-0003"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy Color",
-    "title": "Zelda Oracle Of Ages",
-    "collectionIds": [
-      "GBC-0004"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy",
-    "title": "Pokemon Red",
-    "collectionIds": [
-      "GBC-0007"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy Color",
-    "title": "Pokemon Silver",
-    "collectionIds": [
-      "GBC-0008"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy",
-    "title": "Pokemon Blue",
-    "collectionIds": [
-      "GBC-0010"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy",
-    "title": "Zelda Link's Awakening",
-    "collectionIds": [
-      "GBC-0011"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
     "platform": "Game Boy",
     "title": "Star Wars The Empire Strikes Back",
     "collectionIds": [
@@ -226,16 +99,6 @@
         ]
       }
     ],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy",
-    "title": "Super Mario Land 2",
-    "collectionIds": [
-      "GBC-0020"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
     "relevantAliases": []
   },
   {
@@ -286,28 +149,6 @@
         "platforms": [
           "Game Boy Color",
           "Game Boy"
-        ]
-      }
-    ],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Game Boy",
-    "title": "Harvest Moon",
-    "collectionIds": [
-      "GBC-0025"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
-      {
-        "id": 3376,
-        "name": "Harvest Moon",
-        "platforms": [
-          "Satellaview",
-          "Super Nintendo Entertainment System",
-          "Wii",
-          "Wii U",
-          "Super Famicom"
         ]
       }
     ],
@@ -375,66 +216,6 @@
   },
   {
     "platform": "GameBoy Advance",
-    "title": "Pokémon Emerald",
-    "collectionIds": [
-      "GBA-0001"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Ninja Cop",
-    "collectionIds": [
-      "GBA-0003"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Pokémon FireRed",
-    "collectionIds": [
-      "GBA-0004"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Pokémon LeafGreen",
-    "collectionIds": [
-      "GBA-0005"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Pokémon Sapphire",
-    "collectionIds": [
-      "GBA-0006"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Pokémon Ruby",
-    "collectionIds": [
-      "GBA-0007"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
     "title": "Kill Switch",
     "collectionIds": [
       "GBA-0016"
@@ -466,43 +247,55 @@
   },
   {
     "platform": "GameBoy Advance",
-    "title": "Game & Watch Gallery Advance",
-    "collectionIds": [
-      "GBA-0017"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Super Mario Advance 2",
-    "collectionIds": [
-      "GBA-0022"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Yu-Gi-Oh Ultimate Masters Edition",
-    "collectionIds": [
-      "GBA-0025"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
     "title": "Excitebike NES Classics",
     "collectionIds": [
       "GBA-0030"
     ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
+    "reason": "title-platform-mismatch",
+    "candidates": [
+      {
+        "id": 214457,
+        "name": "Excitebike",
+        "platforms": [
+          "PC-8800 Series",
+          "Sharp X1"
+        ]
+      },
+      {
+        "id": 4600,
+        "name": "Excitebike",
+        "platforms": [
+          "Arcade",
+          "Wii",
+          "Family Computer",
+          "Wii U",
+          "Nintendo Entertainment System"
+        ]
+      }
+    ],
+    "relevantAliases": [
+      {
+        "name": "Excitebike NES Classics",
+        "gameId": 214457,
+        "gameTitle": "Excitebike",
+        "platforms": [
+          "PC-8800 Series",
+          "Sharp X1"
+        ]
+      },
+      {
+        "name": "Excitebike NES Classics",
+        "gameId": 4600,
+        "gameTitle": "Excitebike",
+        "platforms": [
+          "Arcade",
+          "Wii",
+          "Family Computer",
+          "Wii U",
+          "Nintendo Entertainment System"
+        ]
+      }
+    ]
   },
   {
     "platform": "GameBoy Advance",
@@ -510,58 +303,54 @@
     "collectionIds": [
       "GBA-0031"
     ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "ESPN Winter X-Games Snowboarding 2",
-    "collectionIds": [
-      "GBA-0032"
-    ],
-    "reason": "title-platform-mismatch",
+    "reason": "multiple-title-platform-matches",
     "candidates": [
       {
-        "id": 47303,
-        "name": "Winter X-Games Snowboarding 2002",
+        "id": 308133,
+        "name": "The Lord of the Rings: The Return of the King",
         "platforms": [
-          "Xbox",
-          "PlayStation 2"
+          "Game Boy Advance"
+        ]
+      },
+      {
+        "id": 135708,
+        "name": "The Lord of the Rings: The Return of the King",
+        "platforms": [
+          "Game Boy Advance"
         ]
       }
     ],
     "relevantAliases": [
       {
-        "name": "ESPN Winter X Games Snowboarding 2",
-        "gameId": 47303,
-        "gameTitle": "Winter X-Games Snowboarding 2002",
+        "name": "Lord of the Rings: Return of the King",
+        "gameId": 308133,
+        "gameTitle": "The Lord of the Rings: The Return of the King",
+        "platforms": [
+          "Game Boy Advance"
+        ]
+      },
+      {
+        "name": "Lord of the Rings: Return of the King",
+        "gameId": 135708,
+        "gameTitle": "The Lord of the Rings: The Return of the King",
+        "platforms": [
+          "Game Boy Advance"
+        ]
+      },
+      {
+        "name": "Lord of the Rings: Return of the King",
+        "gameId": 2973,
+        "gameTitle": "The Lord of the Rings: The Return of the King",
         "platforms": [
           "Xbox",
+          "Nintendo GameCube",
+          "PC (Microsoft Windows)",
+          "Mac",
+          "Legacy Mobile Device",
           "PlayStation 2"
         ]
       }
     ]
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Donkey Kong NES Classics",
-    "collectionIds": [
-      "GBA-0035"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Spiderman: Mysterio's Menace",
-    "collectionIds": [
-      "GBA-0039"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
   },
   {
     "platform": "GameBoy Advance",
@@ -575,33 +364,40 @@
   },
   {
     "platform": "GameBoy Advance",
-    "title": "Crash And Spyro Super Pack Volume 2",
-    "collectionIds": [
-      "GBA-0046"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
-    "title": "Lord Of The Rings Two Towers",
-    "collectionIds": [
-      "GBA-0060"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameBoy Advance",
     "title": "Zelda NES Classics",
     "collectionIds": [
       "GBA-0062"
     ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
+    "reason": "title-platform-mismatch",
+    "candidates": [
+      {
+        "id": 1022,
+        "name": "The Legend of Zelda",
+        "platforms": [
+          "Family Computer Disk System",
+          "Nintendo 3DS",
+          "Wii",
+          "Family Computer",
+          "Wii U",
+          "Nintendo Entertainment System"
+        ]
+      }
+    ],
+    "relevantAliases": [
+      {
+        "name": "Zelda NES Classics",
+        "gameId": 1022,
+        "gameTitle": "The Legend of Zelda",
+        "platforms": [
+          "Family Computer Disk System",
+          "Nintendo 3DS",
+          "Wii",
+          "Family Computer",
+          "Wii U",
+          "Nintendo Entertainment System"
+        ]
+      }
+    ]
   },
   {
     "platform": "Nintendo DS",
@@ -619,94 +415,16 @@
         ]
       }
     ],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Nintendo DS",
-    "title": "Pokémon SoulSilver",
-    "collectionIds": [
-      "NDS-0010"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Nintendo DS",
-    "title": "Pokémon Platinum",
-    "collectionIds": [
-      "NDS-0013"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Nintendo DS",
-    "title": "Pokémon White",
-    "collectionIds": [
-      "NDS-0017"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Nintendo DS",
-    "title": "Pokémon Diamond",
-    "collectionIds": [
-      "NDS-0019"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
-      {
-        "id": 163099,
-        "name": "Pokémon Diamond",
-        "platforms": [
-          "Game Boy Color"
-        ]
-      }
-    ],
     "relevantAliases": [
       {
-        "name": "Pokemon Diamond",
-        "gameId": 163099,
-        "gameTitle": "Pokémon Diamond",
+        "name": "Flower, Sun and Rain",
+        "gameId": 18123,
+        "gameTitle": "Flower, Sun, and Rain",
         "platforms": [
-          "Game Boy Color"
+          "PlayStation 2"
         ]
       }
     ]
-  },
-  {
-    "platform": "Nintendo DS",
-    "title": "Professor Layton and the Lost Future",
-    "collectionIds": [
-      "NDS-0022"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Nintendo DS",
-    "title": "Professor Layton and the Spectre's Call",
-    "collectionIds": [
-      "NDS-0023"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameCube",
-    "title": "Pokemon Box",
-    "collectionIds": [
-      "GC-0002"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
   },
   {
     "platform": "GameCube",
@@ -716,34 +434,6 @@
     ],
     "reason": "no-title-match",
     "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameCube",
-    "title": "Zelda Wind Waker",
-    "collectionIds": [
-      "GC-0005"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "GameCube",
-    "title": "Eternal Darkness",
-    "collectionIds": [
-      "GC-0006"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
-      {
-        "id": 176035,
-        "name": "Eternal Darkness",
-        "platforms": [
-          "Nintendo 64"
-        ]
-      }
-    ],
     "relevantAliases": []
   },
   {
@@ -769,16 +459,6 @@
         ]
       }
     ],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation",
-    "title": "Digimon World 2003",
-    "collectionIds": [
-      "PS1-0003"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
     "relevantAliases": []
   },
   {
@@ -862,36 +542,24 @@
         "platforms": [
           "Game Boy"
         ]
-      }
-    ]
-  },
-  {
-    "platform": "Playstation",
-    "title": "Toy Story 2",
-    "collectionIds": [
-      "PS1-0026"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
+      },
       {
-        "id": 165581,
-        "name": "Toy Story 2",
+        "name": "Hercules",
+        "gameId": 205929,
+        "gameTitle": "Disney's Hercules",
         "platforms": [
-          "Game Boy Color"
+          "Handheld Electronic LCD"
+        ]
+      },
+      {
+        "name": "Hercules",
+        "gameId": 140649,
+        "gameTitle": "Disney's Hercules",
+        "platforms": [
+          "Game Boy"
         ]
       }
-    ],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation",
-    "title": "Driver 2",
-    "collectionIds": [
-      "PS1-0032"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
+    ]
   },
   {
     "platform": "Playstation",
@@ -902,35 +570,6 @@
     "reason": "no-title-match",
     "candidates": [],
     "relevantAliases": []
-  },
-  {
-    "platform": "Playstation",
-    "title": "MediEvil 2",
-    "collectionIds": [
-      "PS1-0034"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
-      {
-        "id": 329195,
-        "name": "MediEvil II",
-        "platforms": [
-          "PlayStation 4",
-          "PlayStation 5"
-        ]
-      }
-    ],
-    "relevantAliases": [
-      {
-        "name": "MediEvil 2",
-        "gameId": 329195,
-        "gameTitle": "MediEvil II",
-        "platforms": [
-          "PlayStation 4",
-          "PlayStation 5"
-        ]
-      }
-    ]
   },
   {
     "platform": "Playstation",
@@ -990,100 +629,9 @@
   },
   {
     "platform": "Playstation",
-    "title": "Tarzan",
-    "collectionIds": [
-      "PS1-0042"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
-      {
-        "id": 304200,
-        "name": "Tarzan",
-        "platforms": [
-          "Atari 2600"
-        ]
-      },
-      {
-        "id": 28468,
-        "name": "Tarzan",
-        "platforms": [
-          "BBC Microcomputer System",
-          "Commodore C64/128/MAX",
-          "ZX Spectrum",
-          "Acorn Electron",
-          "Amstrad CPC"
-        ]
-      },
-      {
-        "id": 25728,
-        "name": "Tarzan",
-        "platforms": [
-          "ColecoVision"
-        ]
-      },
-      {
-        "id": 214885,
-        "name": "Tarzan",
-        "platforms": [
-          "Super Nintendo Entertainment System"
-        ]
-      },
-      {
-        "id": 284219,
-        "name": "Tarzan",
-        "platforms": [
-          "Handheld Electronic LCD"
-        ]
-      },
-      {
-        "id": 205926,
-        "name": "Disney's Tarzan",
-        "platforms": [
-          "Handheld Electronic LCD"
-        ]
-      },
-      {
-        "id": 116135,
-        "name": "Disney's Tarzan",
-        "platforms": [
-          "Game Boy Color"
-        ]
-      }
-    ],
-    "relevantAliases": [
-      {
-        "name": "Tarzan",
-        "gameId": 205926,
-        "gameTitle": "Disney's Tarzan",
-        "platforms": [
-          "Handheld Electronic LCD"
-        ]
-      },
-      {
-        "name": "Tarzan",
-        "gameId": 116135,
-        "gameTitle": "Disney's Tarzan",
-        "platforms": [
-          "Game Boy Color"
-        ]
-      }
-    ]
-  },
-  {
-    "platform": "Playstation",
     "title": "Ridge Racer Type 4 Collectors Demo",
     "collectionIds": [
       "PS1-EXTRA-0001"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation",
-    "title": "Tony Hawk's Skateboarding",
-    "collectionIds": [
-      "PS1-0044"
     ],
     "reason": "no-title-match",
     "candidates": [],
@@ -1171,29 +719,9 @@
   },
   {
     "platform": "Playstation",
-    "title": "Oddworld: Abe's Oddysee DEMO",
-    "collectionIds": [
-      "PS1-0057"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation",
     "title": "Winter Releases '98",
     "collectionIds": [
       "PS1-0067"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation",
-    "title": "Crash Bandicoot 3: Warped",
-    "collectionIds": [
-      "PS1-0076"
     ],
     "reason": "no-title-match",
     "candidates": [],
@@ -1289,148 +817,9 @@
   },
   {
     "platform": "Playstation",
-    "title": "Ridge Racer Type 4",
-    "collectionIds": [
-      "PS1-0080"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
-      {
-        "id": 242360,
-        "name": "R4: Ridge Racer Type 4",
-        "platforms": [
-          "PlayStation 4",
-          "PlayStation 5"
-        ]
-      }
-    ],
-    "relevantAliases": [
-      {
-        "name": "Ridge Racer Type 4",
-        "gameId": 242360,
-        "gameTitle": "R4: Ridge Racer Type 4",
-        "platforms": [
-          "PlayStation 4",
-          "PlayStation 5"
-        ]
-      }
-    ]
-  },
-  {
-    "platform": "Playstation",
     "title": "Euro Demo 92",
     "collectionIds": [
       "PS1-0082"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation",
-    "title": "Advanced Dungeons & Dragons: Iron & Blood – Warriors of Ravenloft",
-    "collectionIds": [
-      "PS1-0087"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Project Zero 3",
-    "collectionIds": [
-      "PS2-0001"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Nightmare Before Christmas: Oogie's Revenge",
-    "collectionIds": [
-      "PS2-0002"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Metal Gear Solid 2",
-    "collectionIds": [
-      "PS2-0005"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Zone Of The Enders 2nd Runner",
-    "collectionIds": [
-      "PS2-0008"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Shadow of Memories",
-    "collectionIds": [
-      "PS2-0011"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Beyond Good And Evil",
-    "collectionIds": [
-      "PS2-0013"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Canis Canem Edit",
-    "collectionIds": [
-      "PS2-0014"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "God Of War 2",
-    "collectionIds": [
-      "PS2-0018"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Final Fantasy VII Dirge Of Cerberus",
-    "collectionIds": [
-      "PS2-0026"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Devil May Cry 3",
-    "collectionIds": [
-      "PS2-0030"
     ],
     "reason": "no-title-match",
     "candidates": [],
@@ -1463,49 +852,9 @@
   },
   {
     "platform": "Playstation 2",
-    "title": "Yu-Gi-Oh Duelists Of The Roses",
-    "collectionIds": [
-      "PS2-0032"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
     "title": "Ratchet: Gladiator",
     "collectionIds": [
       "PS2-0033"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Kuri Kuri Mix",
-    "collectionIds": [
-      "PS2-0037"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Time Splitters",
-    "collectionIds": [
-      "PS2-0046"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Future Tactics",
-    "collectionIds": [
-      "PS2-0047"
     ],
     "reason": "no-title-match",
     "candidates": [],
@@ -1528,59 +877,23 @@
         ]
       }
     ],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Buzz o Grande Quiz",
-    "collectionIds": [
-      "PS2-0052"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "International Superstar Soccer",
-    "collectionIds": [
-      "PS2-0061"
-    ],
-    "reason": "title-platform-mismatch",
-    "candidates": [
+    "relevantAliases": [
       {
-        "id": 9861,
-        "name": "International Superstar Soccer",
+        "name": "Black",
+        "gameId": 117992,
+        "gameTitle": "Black",
         "platforms": [
-          "Super Nintendo Entertainment System",
-          "Super Famicom"
-        ]
-      },
-      {
-        "id": 131795,
-        "name": "International Superstar Soccer",
-        "platforms": [
-          "Game Boy"
+          "Android",
+          "iOS"
         ]
       }
-    ],
-    "relevantAliases": []
+    ]
   },
   {
     "platform": "Playstation 2",
     "title": "Formula One 2005",
     "collectionIds": [
       "PS2-0062"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Splinter Cell",
-    "collectionIds": [
-      "PS2-0066"
     ],
     "reason": "no-title-match",
     "candidates": [],
@@ -1618,16 +931,6 @@
   },
   {
     "platform": "Playstation 2",
-    "title": "Mundial 2002 Challenge",
-    "collectionIds": [
-      "PS2-0089"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
     "title": "Freak Out",
     "collectionIds": [
       "PS2-0090"
@@ -1638,49 +941,9 @@
   },
   {
     "platform": "Playstation 2",
-    "title": "Ace Combat: Distant Thunder",
-    "collectionIds": [
-      "PS2-0093"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "SpongeBob SquarePants: The Movie",
-    "collectionIds": [
-      "PS2-0094"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "1945 I&II: The Arcade Games",
-    "collectionIds": [
-      "PS2-0095"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
     "title": "Winnie the Pooh's Rumbly Tumbly Adventure",
     "collectionIds": [
       "PS2-0101"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "Playstation 2",
-    "title": "Disney's Peter Pan: The Legend of Never-Land",
-    "collectionIds": [
-      "PS2-0117"
     ],
     "reason": "no-title-match",
     "candidates": [],
@@ -1740,26 +1003,6 @@
   },
   {
     "platform": "PC",
-    "title": "Elder Scrolls V: Skyrim",
-    "collectionIds": [
-      "PC-0001"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "PC",
-    "title": "Harry Potter Prisoner of Azkaban",
-    "collectionIds": [
-      "PC-0008"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
-    "relevantAliases": []
-  },
-  {
-    "platform": "PC",
     "title": "Myst",
     "collectionIds": [
       "PC-0011"
@@ -1804,16 +1047,6 @@
         ]
       }
     ],
-    "relevantAliases": []
-  },
-  {
-    "platform": "PC",
-    "title": "The Sims 2: Glamor Life Stuff",
-    "collectionIds": [
-      "PC-0015"
-    ],
-    "reason": "no-title-match",
-    "candidates": [],
     "relevantAliases": []
   }
 ]
