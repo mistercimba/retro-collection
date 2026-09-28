@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
-import { X } from "lucide-react";
+import { X } from "lucide-react";\nimport { MobileFilterDialog } from "./mobile-filter-dialog";
 import type { CollectionListGame } from "@/lib/game-list-data";
 import { displayPlatform } from "@/lib/data/platforms";
 import { collectIndividualGenres, splitGenres } from "@/lib/genre-filter.logic";
@@ -99,13 +99,11 @@ export function CollectionBrowser({ games, global = false, initialSearch = "" }:
       <ActiveFilterChips filters={activeFilters} />
       {filtersOpen && <>
         <div className="mt-3 hidden grid-cols-2 gap-2 md:grid lg:grid-cols-4">{filterFields}</div>
-        <div className="fixed inset-0 z-[70] flex items-end bg-slate-950/40 p-0 md:hidden" role="presentation" onClick={() => setFiltersOpen(false)}>
-          <section role="dialog" aria-modal="true" aria-label="Filtros da coleção" className="max-h-[82dvh] w-full overflow-y-auto rounded-t-3xl bg-slate-50 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] shadow-2xl" onClick={(event) => event.stopPropagation()}>
-            <div className="mb-4 flex items-center justify-between"><h2 className="font-black text-slate-950">Filtros</h2><button type="button" onClick={() => setFiltersOpen(false)} aria-label="Fechar filtros" className="rounded-full p-2 hover:bg-white"><X className="h-5 w-5" /></button></div>
-            <div className="grid gap-2">{filterFields}</div>
-            <button type="button" onClick={() => setFiltersOpen(false)} className="mt-3 min-h-11 w-full rounded-xl bg-emerald-900 px-4 text-sm font-bold text-white">Ver {filtered.length} jogos</button>
-          </section>
-        </div>
+        <MobileFilterDialog open={filtersOpen} onClose={() => setFiltersOpen(false)} label="Filtros da coleção">
+          <div className="mb-4 flex items-center justify-between"><h2 className="font-black text-slate-950">Filtros</h2><button type="button" onClick={() => setFiltersOpen(false)} aria-label="Fechar filtros" className="grid h-11 w-11 place-items-center rounded-full hover:bg-white"><X className="h-5 w-5" /></button></div>
+          <div className="grid gap-2">{filterFields}</div>
+          <button type="button" onClick={() => setFiltersOpen(false)} className="mt-3 min-h-11 w-full rounded-xl bg-emerald-900 px-4 text-sm font-bold text-white">Ver {filtered.length} jogos</button>
+        </MobileFilterDialog>
       </>}
     </div>
     <div className="my-4 flex items-center justify-between text-sm"><ListResultCount filtered={filtered.length} total={games.length} /><span className="text-xs text-slate-500">{reviewOnly ? "Filtro ativo: A rever" : activeFilterCount ? `${activeFilterCount} filtros ativos` : "Na coleção"}</span></div>
