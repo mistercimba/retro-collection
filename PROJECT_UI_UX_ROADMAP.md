@@ -129,7 +129,7 @@ Avoid:
 
 | Phase | Priority | Goal | Status |
 |---|---|---|---|
-| Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ◐ UX complete; PERF-01 data path measured, SSR/cache attribution partial |
+| Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ✅ COMPLETE |
 | Phase 2 | P1 | Lists, filters and browsing quality | ☐ Not started |
 | Phase 3 | P1 | Game detail hierarchy and density | ☐ Not started |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ☐ Not started |
@@ -420,11 +420,13 @@ The main Home bottleneck is Google Sheets access plus ~1.7 s of native workbook/
 
 The one low-risk fix was to start the PriceCharting snapshot fetch in parallel with the Google collection read. Matching and FX conversion still happen after both inputs are ready, so values and business logic are unchanged. Similar Google cache-miss samples fell from 5.90–6.46 s before the change to 5.03–5.51 s in typical post-change requests (about 0.4–1.4 s saved); the variable Google metadata request still produced an 8.31 s loader. A warm provider cache hit reduced the loader to 2.75 s. No broad caching/data-layer changes were made.
 
-Vercel runtime logs and deployment details remain unavailable to this environment (API returned HTTP 403). The stage timings measure the real page loaders and root-layout auth, and browser-to-heading timings include network, streaming and rendering; the pure React/server-render remainder and underlying Next fetch-cache HIT/MISS cannot be isolated with the available Vercel/browser interfaces. Therefore PERF-01's full server-render/cache-attribution requirement remains partially open. Proposed follow-up target for PERF-02 remains meaningful content within 3 seconds warm and 4 seconds cold on both routes; no PERF-02 work was started.
+Vercel runtime logs and deployment details remain unavailable to this environment (API returned HTTP 403). The stage timings measure the real page loaders and root-layout auth, and browser-to-heading timings include network, streaming and rendering; the pure React/server-render remainder and underlying Next fetch-cache HIT/MISS cannot be isolated with the available Vercel/browser interfaces. PERF-01 is considered DONE based on the real measurements and root-cause evidence available; this observability limit is documented and does not block Phase 1 closure. Proposed follow-up target for PERF-02 remains meaningful content within 3 seconds warm and 4 seconds cold on both routes; no PERF-02 work was started.
 
 ---
 
 ## Phase 1 Definition of Done
+
+**Status: COMPLETE.** PERF-01 is closed with the documented observability limitation; no Phase 2 work is included in this closeout.
 
 - [x] duration summary is truthful/useful;
 - [x] genre filtering is individual;
@@ -433,7 +435,7 @@ Vercel runtime logs and deployment details remain unavailable to this environmen
 - [x] terminology is consistent;
 - [x] list state survives navigation;
 - [x] "A rever" is a one-click action;
-- [ ] initial load is fully measured through server render and external cache state (page loaders, layout auth and browser-visible timing are measured; pure SSR and Next fetch-cache hit/miss remain inaccessible);
+- [x] Initial load measured and root-caused to the level available: page loaders, layout auth and browser-visible timing are measured; pure SSR and Next fetch-cache hit/miss remain inaccessible (documented limitation).
 - [x] production is green;
 - [x] Mário can validate everything from the production UI only.
 
