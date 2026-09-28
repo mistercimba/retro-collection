@@ -2,6 +2,12 @@ name: Refresh IGDB game metadata
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - metadata-complete-snapshot
+    paths:
+      - "scripts/refresh-game-metadata.mjs"
+      - ".github/workflows/refresh-game-metadata.yml"
 
 permissions:
   contents: write
