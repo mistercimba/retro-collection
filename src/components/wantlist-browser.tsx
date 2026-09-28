@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Heart, Target, X } from "lucide-react";\nimport { MobileFilterDialog } from "./mobile-filter-dialog";
+import { ArrowUpRight, Heart, Target, X } from "lucide-react";
+import { MobileFilterDialog } from "./mobile-filter-dialog";
 import type { WantListEntry } from "@/lib/data/types";
 import { displayPlatform } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
