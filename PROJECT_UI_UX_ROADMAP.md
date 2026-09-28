@@ -129,7 +129,7 @@ Avoid:
 
 | Phase | Priority | Goal | Status |
 |---|---|---|---|
-| Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ☐ Not started |
+| Phase 1 | P0 | Immediate friction, navigation, labels, filters, accessibility, performance diagnosis | ◐ UX complete; PERF-01 partially diagnosed |
 | Phase 2 | P1 | Lists, filters and browsing quality | ☐ Not started |
 | Phase 3 | P1 | Game detail hierarchy and density | ☐ Not started |
 | Phase 4 | P1 | Design consistency, accessibility and real mobile validation | ☐ Not started |
@@ -170,10 +170,10 @@ Examples:
 
 ### Acceptance criteria
 
-- [ ] The card never says "Main Story" when displaying a different category.
-- [ ] A secondary playtime value is promoted when Main Story is missing.
-- [ ] Missing data is clearly identified as a source limitation, not a matching error.
-- [ ] Existing IGDB matching behavior is unchanged.
+- [x] The card never says "Main Story" when displaying a different category.
+- [x] A secondary playtime value is promoted when Main Story is missing.
+- [x] Missing data is clearly identified as a source limitation, not a matching error.
+- [x] Existing IGDB matching behavior is unchanged.
 
 ---
 
@@ -194,11 +194,11 @@ Filtering by any one of them should include the game.
 
 ### Acceptance criteria
 
-- [ ] Genre dropdown/chips contain individual genres only.
-- [ ] No combined genre strings appear as filter options.
-- [ ] Multi-genre games appear under every relevant genre.
-- [ ] Works on `/collection/games` and platform pages.
-- [ ] Existing search/sort behavior remains intact.
+- [x] Genre dropdown/chips contain individual genres only.
+- [x] No combined genre strings appear as filter options.
+- [x] Multi-genre games appear under every relevant genre.
+- [x] Works on `/collection/games` and platform pages.
+- [x] Existing search/sort behavior remains intact.
 
 ---
 
@@ -235,11 +235,11 @@ The original detailed requirement/variant text may still be shown inside the row
 
 ### Acceptance criteria
 
-- [ ] Region filtering is concise.
-- [ ] Variant filtering uses normalized short labels.
-- [ ] Long descriptions are not used as dropdown option values.
-- [ ] Existing ambiguous-target behavior remains unchanged.
-- [ ] No source PLAN/Sheet data is modified.
+- [x] Region filtering is concise.
+- [x] Variant filtering uses normalized short labels.
+- [x] Long descriptions are not used as dropdown option values.
+- [x] Existing ambiguous-target behavior remains unchanged.
+- [x] No source PLAN/Sheet data is modified.
 
 ---
 
@@ -254,11 +254,11 @@ The original detailed requirement/variant text may still be shown inside the row
 
 ### Acceptance criteria
 
-- [ ] À procura search has an accessible name.
-- [ ] Collection search has an accessible name.
-- [ ] Quick Search has an accessible name.
-- [ ] Logout/icon-only controls have accessible labels.
-- [ ] No duplicate or misleading labels are introduced.
+- [x] À procura search has an accessible name.
+- [x] Collection search has an accessible name.
+- [x] Quick Search has an accessible name.
+- [x] Logout/icon-only controls have accessible labels.
+- [x] No duplicate or misleading labels are introduced.
 
 ---
 
@@ -277,10 +277,10 @@ The original detailed requirement/variant text may still be shown inside the row
 
 ### Acceptance criteria
 
-- [ ] No visible `Collection`, `Sell`, `Sold` states remain where a Portuguese user-facing label should exist.
-- [ ] Navigation uses `Coleção`, `À procura`, `Para vender`.
-- [ ] Sell page uses `Para vender` and `Vendidos`.
-- [ ] Internal source terminology is not exposed unnecessarily.
+- [x] No visible `Collection`, `Sell`, `Sold` states remain where a Portuguese user-facing label should exist.
+- [x] Navigation uses `Coleção`, `À procura`, `Para vender`.
+- [x] Sell page uses `Para vender` and `Vendidos`.
+- [x] Internal source terminology is not exposed unnecessarily.
 
 ---
 
@@ -316,12 +316,12 @@ Example:
 
 ### Acceptance criteria
 
-- [ ] Opening a game from a platform and going back preserves platform context.
-- [ ] Filters survive back/forward navigation.
-- [ ] Sort survives back/forward navigation.
-- [ ] Search survives back/forward navigation.
-- [ ] Browser scroll restoration works where supported.
-- [ ] Directly opening a game URL still provides a predictable route back to Collection.
+- [x] Opening a game from a platform and going back preserves platform context.
+- [x] Filters survive back/forward navigation.
+- [x] Sort survives back/forward navigation.
+- [x] Search survives back/forward navigation.
+- [x] Browser scroll restoration works where supported.
+- [x] Directly opening a game URL still provides a predictable route back to Collection.
 
 ---
 
@@ -335,9 +335,9 @@ Example:
 
 ### Acceptance criteria
 
-- [ ] Home → "A rever" reaches the relevant games in one interaction.
-- [ ] Platform-level review indicators filter within that platform.
-- [ ] The list clearly indicates that a review filter is active.
+- [x] Home → "A rever" reaches the relevant games in one interaction.
+- [x] Platform-level review indicators filter within that platform.
+- [x] The list clearly indicates that a review filter is active.
 
 ---
 
@@ -378,23 +378,36 @@ Report:
 
 ### Acceptance criteria
 
-- [ ] No speculative architecture change before measurement.
-- [ ] At least Home and `/collection` are measured.
-- [ ] External API calls are not unnecessarily blocking initial render.
-- [ ] A target is proposed based on actual measurements.
+- [x] No speculative architecture change before measurement.
+- [x] At least Home and `/collection` are measured.
+- [ ] External API calls are not unnecessarily blocking initial render (GitHub snapshot and ECB FX fetch remain on `/collection`'s server-render path; no refactor was made in this phase).
+- [x] A target is proposed based on actual measurements.
+
+### Phase 1 diagnostic notes
+
+Production browser measurements before this phase, sampled with approximately 500 ms polling (content visible is approximate):
+
+| Page | Cold navigation | Warm navigation | Content visible |
+|---|---:|---:|---:|
+| Home | 808 ms | 4,448 ms | 4,103 ms cold |
+| `/collection` | 597 ms | 7,013 ms | 4,894 ms cold |
+
+These do not isolate server-render, provider or external-request time. The warm samples were slower, so cold start alone does not explain the delay. Code-path inspection shows both pages await Google Sheets data; `/collection` additionally awaits the PriceCharting catalog snapshot and ECB FX data. Home does not request PriceCharting, IGDB or RAWG; list genre data comes from the committed IGDB snapshot. IGDB/RAWG are not called for these list routes. The Google Sheets provider has a 60-second in-process cache and coalesces concurrent reads; underlying Google fetches use 60/300-second revalidation, PriceCharting snapshot 3600 seconds and ECB FX 86400 seconds.
+
+Vercel runtime-log access returned HTTP 403 in this environment. Per-stage timings, actual cache hit/miss events, cold-start duration, Google Sheet fetch duration and server-render duration therefore remain unmeasured. These numbers diagnose the visible delay's likely blocking dependencies but do not establish a single confirmed root cause. No speculative performance refactor was made. Proposed follow-up target for PERF-02: meaningful content within 3 seconds warm and 4 seconds cold on both routes, measured with server-side spans available.
 
 ---
 
 ## Phase 1 Definition of Done
 
-- [ ] duration summary is truthful/useful;
-- [ ] genre filtering is individual;
-- [ ] wantlist region/variant filtering is concise;
-- [ ] accessibility labels are fixed;
-- [ ] terminology is consistent;
-- [ ] list state survives navigation;
-- [ ] "A rever" is a one-click action;
-- [ ] initial load has been measured and root-caused;
+- [x] duration summary is truthful/useful;
+- [x] genre filtering is individual;
+- [x] wantlist region/variant filtering is concise;
+- [x] accessibility labels are fixed;
+- [x] terminology is consistent;
+- [x] list state survives navigation;
+- [x] "A rever" is a one-click action;
+- [ ] initial load has been measured and root-caused (browser timings and dependency paths recorded, but Vercel server/cache stage telemetry was inaccessible);
 - [ ] production is green;
 - [ ] Mário can validate everything from the production UI only.
 
