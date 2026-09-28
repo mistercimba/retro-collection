@@ -14,6 +14,10 @@ const DEFAULTS = { q: "" };
 
 export function QuickSearch({ games, initialSearch = "" }: { games: CollectionGame[]; initialSearch?: string }) {
   const pathname = usePathname();
+  return <QuickSearchInput key={pathname} games={games} initialSearch={initialSearch} pathname={pathname} />;
+}
+
+function QuickSearchInput({ games, initialSearch, pathname }: { games: CollectionGame[]; initialSearch: string; pathname: string }) {
   const { state, update, currentSearch } = useUrlListState(DEFAULTS, initialSearch);
   const query = state.q;
   const setQuery = (value: string) => update("q", value, "replace");

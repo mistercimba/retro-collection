@@ -11,6 +11,7 @@ import { useUrlListState } from "@/hooks/use-url-list-state";
 import { GameCard } from "./game-card";
 import { GameListToolbar, Select } from "./game-list-toolbar";
 import { ActiveFilterChips, ListEmptyState, ListResultCount } from "./list-ux";
+import { useListScrollRestoration } from "@/hooks/use-list-scroll-restoration";
 
 const unique = (values: string[]) => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-PT"));
 const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-PT");
@@ -25,6 +26,7 @@ const DEFAULTS = { q: "", platform: "", status: "", condition: "", region: "", e
 export function CollectionBrowser({ games, global = false, initialSearch = "" }: { games: CollectionListGame[]; global?: boolean; initialSearch?: string }) {
   const pathname = usePathname();
   const { state, update, currentSearch } = useUrlListState(DEFAULTS, initialSearch);
+  useListScrollRestoration();
   const { q: query, platform, status, condition, region, edition, genre, review: reviewOnly, sort } = state;
   const setQuery = (value: string) => update("q", value, "replace");
   const setPlatform = (value: string) => update("platform", value);

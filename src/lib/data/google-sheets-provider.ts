@@ -271,6 +271,10 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
       const data = await workbookRead;
       workbookCache = { data, expiresAt: Date.now() + 60_000 };
       return data;
+    } catch (error) {
+      if (!workbookCache) throw error;
+      console.warn("Google Sheets refresh failed; serving the last in-memory collection snapshot.", error);
+      return workbookCache.data;
     } finally {
       workbookRead = null;
     }
