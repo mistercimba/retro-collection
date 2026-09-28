@@ -2,7 +2,7 @@ import ExcelJS from "exceljs";
 import { GoogleAuth } from "google-auth-library";
 import type { CollectionDataProvider } from "./provider";
 import type { PurchaseRecord, RawSheetData, ValuationSnapshot, WantTarget } from "./types";
-import { measureServerWork, recordServerPerf } from "../server-perf";
+import { measureServerFetch, measureServerWork, recordServerPerf } from "../server-perf";
 
 const XLSX_MIME = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 let workbookCache: { data: RawSheetData; expiresAt: number } | null = null;
@@ -156,7 +156,7 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
     const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
     if (!spreadsheetId) throw new Error("GOOGLE_SHEETS_SPREADSHEET_ID em falta.");
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${encodeURIComponent(range)}?majorDimension=ROWS`;
-    const response = await measureServerWork("google.sheet_range", () => fetch(url, { headers: { Authorization: `Bearer ${token}` }, next: { revalidate: 60 } }));
+    const response = await measureServerFetch("google.sheet_range", () => fetch(url, { headers: { Authorization: `Bearer ${token}` }, next: { revalidate: 60 } }));
     if (!response.ok) throw new Error(`Google Sheets respondeu ${response.status} ao ler ${range}.`);
     const body = (await response.json()) as { values?: string[][] };
     return body.values ?? [];
@@ -165,7 +165,7 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
   private async readDriveWorkbook(token: string): Promise<RawSheetData> {
     const id = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
     if (!id) throw new Error("GOOGLE_SHEETS_SPREADSHEET_ID em falta.");
-    const metadataResponse = await measureServerWork("google.drive_metadata", () => fetch(`https://www.googleapis.com/drive/v3/files/${id}?fields=mimeType,name`, {
+    const metadataResponse = await measureServerFetch("google.drive_metadata", () => fetch(`https://www.googleapis.com/drive/v3/files/${id}?fields=mimeType,name`, {
       headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 300 },
     }));
@@ -175,7 +175,7 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
       return this.readNativeSheet(token);
     }
 
-    const response = await measureServerWork("google.workbook_download", () => fetch(`https://www.googleapis.com/drive/v3/files/${id}?alt=media`, {
+    const response = await measureServerFetch("google.workbook_download", () => fetch(`https://www.googleapis.com/drive/v3/files/${id}?alt=media`, {
       headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 60 },
     }));
@@ -210,7 +210,7 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
   private async readNativeSheet(token: string): Promise<RawSheetData> {
     const id = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
     if (!id) throw new Error("GOOGLE_SHEETS_SPREADSHEET_ID em falta.");
-    const metadataResponse = await measureServerWork("google.sheet_metadata", () => fetch(`https://sheets.googleapis.com/v4/spreadsheets/${id}?fields=sheets.properties.title`, {
+    const metadataResponse = await measureServerFetch("google.sheet_metadata", () => fetch(`https://sheets.googleapis.com/v4/spreadsheets/${id}?fields=sheets.properties.title`, {
       headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 300 },
     }));
@@ -255,7 +255,7 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
       return measureServerWork("google.provider_wait", () => workbookRead!);
     }
     recordServerPerf("google.provider_cache", 0, "miss");
-    workbookRead = this.load();
+    workbookRead = measureServerWork("google.provider_load", () => this.load());
     try {
       const data = await workbookRead;
       workbookCache = { data, expiresAt: Date.now() + 60_000 };
