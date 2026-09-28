@@ -21,7 +21,7 @@ export default async function GamePage({ params, searchParams }: { params: Promi
   const research = await getGameResearch(game);
   const metadata = research.metadata;
   const bestPlaytime = getBestPlaytime(metadata?.timeToBeat);
-  const playtimeMissing = "Sem dados no IGDB";
+  const playtimeMissing = "Sem dados no snapshot";
   const missingComponents = game.audit?.missingComponents?.trim() ?? "";
   const hasMissingComponents = Boolean(missingComponents && !/^(none|no|n\/a|—)$/i.test(missingComponents));
   const attention = game.needsReview || hasMissingComponents || /pending|review|rever/i.test(game.audit?.auditStatus ?? "");
@@ -46,9 +46,9 @@ export default async function GamePage({ params, searchParams }: { params: Promi
 
     <section aria-label="Resumo do jogo" className="grid grid-cols-2 gap-2 sm:grid-cols-4">
       <Metric icon={<BadgeEuro />} label="Valor estimado" value={research.estimate.value === null ? "Não disponível" : formatEuro(research.estimate.value)} detail={research.estimate.basis ? `${research.estimate.basis} · ${research.estimate.date || "snapshot"}` : "PriceCharting PAL"} />
-      <Metric icon={<Tag />} label="Género" value={metadata?.genres.join(", ") || "Não disponível"} detail="Catálogo · IGDB" />
-      <Metric icon={<Star />} label="Metascore" value={research.metascore.value === null ? "Não disponível" : `${research.metascore.value}/100`} detail="RAWG / Metacritic" />
-      <Metric icon={<Clock3 />} label="Duração" value={bestPlaytime?.value ?? playtimeMissing} detail={bestPlaytime ? `${bestPlaytime.category} · IGDB` : "Sem duração publicada no IGDB"} />
+      <Metric icon={<Tag />} label="Género" value={metadata?.genres.join(", ") || "Não disponível"} detail={`Metadata · ${metadata?.source ?? "snapshot"}`} />
+      <Metric icon={<Star />} label="Metascore" value={research.metascore.value === null ? "Não disponível" : `${research.metascore.value}/100`} detail={research.metascore.source} />
+      <Metric icon={<Clock3 />} label="Duração" value={bestPlaytime?.value ?? playtimeMissing} detail={bestPlaytime ? `${bestPlaytime.category} · Metadata snapshot` : "Sem duração publicada no IGDB"} />
     </section>
 
     <section aria-label="Estado físico da cópia" className="flex flex-wrap items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3.5 py-3">
@@ -74,15 +74,15 @@ export default async function GamePage({ params, searchParams }: { params: Promi
     <Section title="Catálogo" icon={<Tag className="h-4 w-4" />}>
       {metadata?.summary && <p className="mb-3 text-xs leading-5 text-slate-600">{metadata.summary}</p>}
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">{catalogRows.map(([label, value]) => <div key={label} className="min-w-0 rounded-xl bg-slate-50 px-3 py-2"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{label}</p><p className="mt-0.5 break-words text-xs font-semibold text-slate-800">{value}</p></div>)}</div>
-      {!metadata && <p className="mt-2 text-[11px] text-slate-500">Metadata IGDB: {research.metadataState === "ambiguous" ? "correspondência ambígua" : research.metadataState === "unmatched" ? "sem correspondência segura" : research.metadataState === "not-configured" ? "credenciais não configuradas" : "indisponível"}.</p>}
+      {!metadata && <p className="mt-2 text-[11px] text-slate-500">Metadata snapshot: {research.metadataState === "ambiguous" ? "correspondência ambígua" : research.metadataState === "unmatched" ? "sem correspondência segura" : research.metadataState === "not-configured" ? "credenciais não configuradas" : "indisponível"}.</p>}
       {metadata?.refreshedAt && <p className="mt-2 text-[10px] text-slate-400">IGDB · atualizado {metadata.refreshedAt.slice(0, 10)}.</p>}
       <details className="mt-3 border-t border-slate-100 pt-2">
-        <summary className="cursor-pointer text-xs font-bold text-slate-600">Duração e avaliação IGDB</summary>
+        <summary className="cursor-pointer text-xs font-bold text-slate-600">Duração e avaliação</summary>
         <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-600">
           <span>Main Story: <strong>{metadata?.timeToBeat?.main || playtimeMissing}</strong></span>
           <span>Main + Extras: <strong>{metadata?.timeToBeat?.extras || playtimeMissing}</strong></span>
           <span>Completionist: <strong>{metadata?.timeToBeat?.completionist || playtimeMissing}</strong></span>
-          {metadata?.aggregatedRating !== null && metadata?.aggregatedRating !== undefined && <span>IGDB rating: <strong>{metadata.aggregatedRating.toFixed(1)}/100</strong></span>}
+          {research.metascore.value !== null && <span>{research.metascore.source}: <strong>{research.metascore.value}/100</strong></span>}
         </div>
       </details>
     </Section>
