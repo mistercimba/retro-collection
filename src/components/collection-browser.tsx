@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
-import { X } from "lucide-react";\nimport { MobileFilterDialog } from "./mobile-filter-dialog";
+import { X } from "lucide-react";
+import { MobileFilterDialog } from "./mobile-filter-dialog";
 import type { CollectionListGame } from "@/lib/game-list-data";
 import { displayPlatform } from "@/lib/data/platforms";
 import { collectIndividualGenres, splitGenres } from "@/lib/genre-filter.logic";
