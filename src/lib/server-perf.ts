@@ -1,0 +1,35 @@
+import { AsyncLocalStorage } from "node:async_hooks";
+import { performance } from "node:perf_hooks";
+
+export type ServerPerfSpan = { name: string; durationMs: number; cache?: "hit" | "miss" | "in-flight" | "unknown" };
+type PerfScope = { spans: ServerPerfSpan[] };
+
+const scope = new AsyncLocalStorage<PerfScope>();
+
+export async function measureServerWork<T>(name: string, work: () => Promise<T>, cache?: ServerPerfSpan["cache"]): Promise<T> {
+  const active = scope.getStore();
+  if (!active) return work();
+  const started = performance.now();
+  try {
+    return await work();
+  } finally {
+    active.spans.push({ name, durationMs: Math.round((performance.now() - started) * 10) / 10, ...(cache ? { cache } : {}) });
+  }
+}
+
+export function recordServerPerf(name: string, durationMs: number, cache?: ServerPerfSpan["cache"]): void {
+  scope.getStore()?.spans.push({ name, durationMs: Math.round(durationMs * 10) / 10, ...(cache ? { cache } : {}) });
+}
+
+export async function collectServerPerf<T>(work: () => Promise<T>): Promise<{ value: T; spans: ServerPerfSpan[]; totalMs: number }> {
+  const active: PerfScope = { spans: [] };
+  const started = performance.now();
+  const value = await scope.run(active, work);
+  return { value, spans: active.spans, totalMs: Math.round((performance.now() - started) * 10) / 10 };
+}
+
+export function toServerTimingHeader(spans: ServerPerfSpan[], totalMs: number): string {
+  const entries = spans.map(({ name, durationMs }) => `${name.replace(/[^a-zA-Z0-9_-]/g, "_")};dur=${durationMs}`);
+  entries.push(`loader_total;dur=${Math.round(totalMs * 10) / 10}`);
+  return entries.join(", ");
+}
