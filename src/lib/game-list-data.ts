@@ -2,7 +2,7 @@ import "server-only";
 import { getCollectionGames } from "@/lib/data/collection-service";
 import type { CollectionGame } from "@/lib/data/types";
 import { getGameMetadata } from "@/lib/game-metadata";
-import { getPricechartingEstimates, type PriceEstimate } from "@/lib/pricecharting-catalog";
+import { getPricechartingCatalogSnapshot, getPricechartingEstimates, type PriceEstimate } from "@/lib/pricecharting-catalog";
 
 export type CollectionListGame = CollectionGame & {
   genre: string;
@@ -11,8 +11,7 @@ export type CollectionListGame = CollectionGame & {
   priceEstimate: PriceEstimate;
 };
 
-export async function enrichGameList(games: CollectionGame[]): Promise<CollectionListGame[]> {
-  const estimates = await getPricechartingEstimates(games);
+function withEstimates(games: CollectionGame[], estimates: Map<string, PriceEstimate>): CollectionListGame[] {
   return games.map((game) => {
     const metadata = getGameMetadata(game.collectionId);
     const priceEstimate = estimates.get(game.collectionId) ?? { value: null, source: "Estimativa indisponível", date: "", basis: "", productUrl: "" };
@@ -26,8 +25,14 @@ export async function enrichGameList(games: CollectionGame[]): Promise<Collectio
   });
 }
 
+export async function enrichGameList(games: CollectionGame[]): Promise<CollectionListGame[]> {
+  return withEstimates(games, await getPricechartingEstimates(games));
+}
+
 export async function getCollectionListGames(): Promise<CollectionListGame[]> {
-  return enrichGameList(await getCollectionGames());
+  const [games, catalog] = await Promise.all([getCollectionGames(), getPricechartingCatalogSnapshot()]);
+  const estimates = await getPricechartingEstimates(games, Promise.resolve(catalog));
+  return withEstimates(games, estimates);
 }
 
 export function collectionValue(games: Pick<CollectionListGame, "currentValueEur">[]) {
