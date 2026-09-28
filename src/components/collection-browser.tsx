@@ -1,9 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
 import type { CollectionListGame } from "@/lib/game-list-data";
 import { displayPlatform } from "@/lib/data/platforms";
+import { collectIndividualGenres, splitGenres } from "@/lib/genre-filter.logic";
+import { useUrlListState } from "@/hooks/use-url-list-state";
 import { GameCard } from "./game-card";
 import { GameListToolbar, Select } from "./game-list-toolbar";
 
@@ -15,17 +18,21 @@ const sortOptions = [
   { value: "value-asc", label: "Valor crescente" },
   { value: "value-desc", label: "Valor decrescente" },
 ];
+const DEFAULTS = { q: "", platform: "", status: "", condition: "", region: "", edition: "", genre: "", review: false, sort: "title-asc" };
 
-export function CollectionBrowser({ games, global = false }: { games: CollectionListGame[]; global?: boolean }) {
-  const [query, setQuery] = useState("");
-  const [platform, setPlatform] = useState("");
-  const [status, setStatus] = useState("");
-  const [condition, setCondition] = useState("");
-  const [region, setRegion] = useState("");
-  const [edition, setEdition] = useState("");
-  const [genre, setGenre] = useState("");
-  const [reviewOnly, setReviewOnly] = useState(false);
-  const [sort, setSort] = useState("title-asc");
+export function CollectionBrowser({ games, global = false, initialSearch = "" }: { games: CollectionListGame[]; global?: boolean; initialSearch?: string }) {
+  const pathname = usePathname();
+  const { state, update, currentSearch } = useUrlListState(DEFAULTS, initialSearch);
+  const { q: query, platform, status, condition, region, edition, genre, review: reviewOnly, sort } = state;
+  const setQuery = (value: string) => update("q", value, "replace");
+  const setPlatform = (value: string) => update("platform", value);
+  const setStatus = (value: string) => update("status", value);
+  const setCondition = (value: string) => update("condition", value);
+  const setRegion = (value: string) => update("region", value);
+  const setEdition = (value: string) => update("edition", value);
+  const setGenre = (value: string) => update("genre", value);
+  const setReviewOnly = (value: boolean) => update("review", value);
+  const setSort = (value: string) => update("sort", value);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const platforms = unique(games.map((game) => game.platform));
@@ -33,14 +40,14 @@ export function CollectionBrowser({ games, global = false }: { games: Collection
   const conditions = unique(games.map((game) => game.conditionGrade));
   const regions = unique(games.map((game) => game.region));
   const editions = unique(games.map((game) => game.edition));
-  const genres = unique(games.map((game) => game.genre));
+  const genres = collectIndividualGenres(games.map((game) => game.genre));
   const activeFilterCount = Number(Boolean(platform)) + Number(Boolean(status)) + Number(Boolean(condition)) + Number(Boolean(region)) + Number(Boolean(edition)) + Number(Boolean(genre)) + Number(reviewOnly);
 
   const filtered = useMemo(() => {
     const q = normalize(query.trim());
     const result = games.filter((game) => {
       const haystack = normalize(`${game.title} ${game.platform} ${game.collectionId} ${game.edition} ${game.region} ${game.genre}`);
-      return (!q || haystack.includes(q)) && (!platform || game.platform === platform) && (!status || game.overallStatus === status) && (!condition || game.conditionGrade === condition) && (!region || game.region === region) && (!edition || game.edition === edition) && (!genre || game.genre.split(", ").includes(genre)) && (!reviewOnly || game.needsReview);
+      return (!q || haystack.includes(q)) && (!platform || game.platform === platform) && (!status || game.overallStatus === status) && (!condition || game.conditionGrade === condition) && (!region || game.region === region) && (!edition || game.edition === edition) && (!genre || splitGenres(game.genre).includes(genre)) && (!reviewOnly || game.needsReview);
     });
     return [...result].sort((a, b) => {
       if (sort === "value-asc" || sort === "value-desc") {
@@ -69,7 +76,7 @@ export function CollectionBrowser({ games, global = false }: { games: Collection
 
   return <div>
     <div className="sticky top-16 z-20 -mx-4 border-b border-slate-200 bg-slate-50/95 px-4 py-3 backdrop-blur-xl sm:mx-0 sm:rounded-2xl sm:border sm:p-3">
-      <GameListToolbar query={query} setQuery={setQuery} platform={platform} setPlatform={setPlatform} platforms={global ? platforms.map((value) => ({ value, label: displayPlatform(value) })) : []} sort={sort} setSort={setSort} sortOptions={sortOptions} filtersOpen={filtersOpen} onToggleFilters={() => setFiltersOpen((open) => !open)} activeFilterCount={activeFilterCount} />
+      <GameListToolbar query={query} setQuery={setQuery} platform={platform} setPlatform={setPlatform} platforms={global ? platforms.map((value) => ({ value, label: displayPlatform(value) })) : []} sort={sort} setSort={setSort} sortOptions={sortOptions} filtersOpen={filtersOpen} onToggleFilters={() => setFiltersOpen((open) => !open)} activeFilterCount={activeFilterCount} searchLabel="Pesquisar na coleção" />
       {filtersOpen && <>
         <div className="mt-3 hidden grid-cols-2 gap-2 md:grid lg:grid-cols-4">{filterFields}</div>
         <div className="fixed inset-0 z-[70] flex items-end bg-slate-950/40 p-0 md:hidden" role="presentation" onClick={() => setFiltersOpen(false)}>
@@ -81,7 +88,7 @@ export function CollectionBrowser({ games, global = false }: { games: Collection
         </div>
       </>}
     </div>
-    <div className="my-4 flex items-center justify-between text-sm"><p className="font-semibold text-slate-700">{filtered.length} {filtered.length === 1 ? "jogo" : "jogos"}</p><span className="text-xs text-slate-500">{activeFilterCount ? `${activeFilterCount} filtros ativos` : "Coleção"}</span></div>
-    {filtered.length ? <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">{filtered.map((game) => <GameCard key={game.collectionId} game={game} />)}</div> : <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center"><p className="font-bold text-slate-900">Nenhum jogo encontrado</p><p className="mt-1 text-sm text-slate-500">Experimenta limpar um ou dois filtros.</p></div>}
+    <div className="my-4 flex items-center justify-between text-sm"><p className="font-semibold text-slate-700">{filtered.length} {filtered.length === 1 ? "jogo" : "jogos"}</p><span className="text-xs text-slate-500">{reviewOnly ? "Filtro ativo: A rever" : activeFilterCount ? `${activeFilterCount} filtros ativos` : "Na coleção"}</span></div>
+    {filtered.length ? <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">{filtered.map((game) => <GameCard key={game.collectionId} game={game} returnTo={`${pathname}${currentSearch ? `?${currentSearch}` : ""}`} />)}</div> : <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center"><p className="font-bold text-slate-900">Nenhum jogo encontrado</p><p className="mt-1 text-sm text-slate-500">Experimenta limpar um ou dois filtros.</p></div>}
   </div>;
 }

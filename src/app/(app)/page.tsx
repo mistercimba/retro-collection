@@ -17,8 +17,10 @@ import { displayPlatform } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
 import { isAuditCompleted } from "@/lib/data/collection-integrity";
 
-export default async function HomePage() {
-  const [stats, games, targets] = await Promise.all([getStats(), getAllGames(), getWantlist()]);
+export default async function HomePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const [stats, games, targets, query] = await Promise.all([getStats(), getAllGames(), getWantlist(), searchParams]);
+  const quickSearch = new URLSearchParams();
+  if (typeof query.q === "string") quickSearch.set("q", query.q);
   const mode = dataMode();
   const kept = games.filter((game) => game.keepStatus === "Collection");
   const covers = [...kept]
@@ -51,7 +53,7 @@ export default async function HomePage() {
             <p className="mt-3 max-w-xl text-xs leading-5 text-white/70 sm:mt-5 sm:text-base sm:leading-7">
               Uma casa para a coleção que foste construindo: o que já encontraste, o que queres completar e o que ainda anda à procura de prateleira.
             </p>
-            <div className="mt-4 max-w-2xl sm:mt-7"><QuickSearch games={games} /></div>
+            <div className="mt-4 max-w-2xl sm:mt-7"><QuickSearch games={games} initialSearch={quickSearch.toString()} /></div>
             <div className="mt-4 flex flex-wrap gap-2">
               <Link href="/collection" className="hero-action hero-action-primary"><LibraryBig className="h-4 w-4" /> Explorar coleção <ArrowRight className="h-4 w-4" /></Link>
               <Link href="/collection/games" className="hero-action hero-action-secondary">Todos os jogos</Link>
@@ -76,7 +78,7 @@ export default async function HomePage() {
         <div className="relative grid grid-cols-2 border-t border-white/10 bg-black/10 sm:grid-cols-4">
           <HeroStat value={String(stats.kept)} label="na coleção" />
           <HeroStat value={String(stats.platforms.length)} label="plataformas" />
-          <HeroStat value={String(stats.sell)} label="à procura de casa" />
+          <HeroStat value={String(stats.sell)} label="para vender" />
           <HeroStat value={formatEuro(stats.marketValueEur)} label="valor registado" />
         </div>
       </section>
@@ -106,7 +108,7 @@ export default async function HomePage() {
           <div className="mt-6 h-2 overflow-hidden rounded-full bg-slate-100"><div className="h-full rounded-full bg-[#214a3d] transition-all" style={{ width: `${auditProgress}%` }} /></div>
         </div>
 
-        <Link href="/collection" className="dashboard-panel dashboard-panel-attention group p-5 sm:p-7">
+        <Link href="/collection/games?review=1" className="dashboard-panel dashboard-panel-attention group p-5 sm:p-7">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="section-kicker">PEDIDO DE ATENÇÃO</p>
@@ -118,14 +120,14 @@ export default async function HomePage() {
             <div><p className="text-5xl font-black tracking-[-.06em] text-slate-950">{stats.review}</p><p className="mt-1 text-sm font-medium text-slate-500">registos assinalados na coleção</p></div>
             <span className="round-arrow"><ArrowUpRight className="h-5 w-5" /></span>
           </div>
-          <p className="mt-6 border-t border-slate-100 pt-4 text-sm font-bold text-slate-700">Abre a biblioteca e consulta os jogos da coleção <ArrowRight className="ml-1 inline h-4 w-4 transition-transform group-hover:translate-x-1" /></p>
+          <p className="mt-6 border-t border-slate-100 pt-4 text-sm font-bold text-slate-700">Ver os registos assinalados <ArrowRight className="ml-1 inline h-4 w-4 transition-transform group-hover:translate-x-1" /></p>
         </Link>
       </section>
 
       <section>
         <div className="mb-5 flex items-end justify-between gap-4">
           <div><p className="section-kicker">CAÇADA EM CURSO</p><h2 className="section-title">O que procurar a seguir</h2></div>
-          <Link href="/want" className="section-link">Abrir wantlist <ArrowRight className="h-4 w-4" /></Link>
+          <Link href="/want" className="section-link">Abrir À procura <ArrowRight className="h-4 w-4" /></Link>
         </div>
         {nextTargets.length ? <div className="grid gap-3 md:grid-cols-3">
           {nextTargets.map((target, index) => {
@@ -140,7 +142,7 @@ export default async function HomePage() {
               </div>
             </article>;
           })}
-        </div> : <div className="dashboard-panel px-5 py-6 text-sm text-slate-600">A wantlist está vazia. Quando adicionares novos alvos aos PLANs, aparecem aqui.</div>}
+        </div> : <div className="dashboard-panel px-5 py-6 text-sm text-slate-600">A lista À procura está vazia. Os alvos adicionados ao plano da coleção aparecem aqui.</div>}
       </section>
 
       <section>
@@ -169,7 +171,7 @@ export default async function HomePage() {
           <h2 className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">A coleção não acaba no que já tens.</h2>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-white/65">Consulta os alvos em falta, acompanha os upgrades e mantém as próximas caçadas à distância de um toque.</p>
         </div>
-        <Link href="/want" className="hero-action hero-action-primary shrink-0">Ver wantlist <ArrowRight className="h-4 w-4" /></Link>
+        <Link href="/want" className="hero-action hero-action-primary shrink-0">Ver À procura <ArrowRight className="h-4 w-4" /></Link>
       </section>
     </div>
   );

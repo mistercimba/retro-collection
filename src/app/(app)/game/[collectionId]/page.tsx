@@ -8,15 +8,19 @@ import { getGame } from "@/lib/data/collection-service";
 import { displayPlatform } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
 import { getGameResearch } from "@/lib/game-research";
+import { getBestPlaytime } from "@/lib/playtime-summary.logic";
+import { getSafeListReturnPath, listReturnLabel } from "@/lib/list-url-state.logic";
 
-export default async function GamePage({ params }: { params: Promise<{ collectionId: string }> }) {
-  const { collectionId } = await params;
+export default async function GamePage({ params, searchParams }: { params: Promise<{ collectionId: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const [{ collectionId }, query] = await Promise.all([params, searchParams]);
   const game = await getGame(decodeURIComponent(collectionId));
   if (!game) notFound();
+  const returnTo = getSafeListReturnPath(query.from) ?? "/collection/games";
+  const returnLabel = listReturnLabel(returnTo, [game.platform]);
   const research = await getGameResearch(game);
   const metadata = research.metadata;
-  const hasPlaytime = Boolean(metadata?.timeToBeat?.main || metadata?.timeToBeat?.extras || metadata?.timeToBeat?.completionist);
-  const playtimeMissing = hasPlaytime ? "Não disponível" : "Sem dados no IGDB";
+  const bestPlaytime = getBestPlaytime(metadata?.timeToBeat);
+  const playtimeMissing = "Sem dados no IGDB";
   const attention = game.needsReview || Boolean(game.audit?.missingComponents && !/^(none|no|n\/a|—)$/i.test(game.audit.missingComponents.trim())) || /pending|review|rever/i.test(game.audit?.auditStatus ?? "");
   const copyAndAuditRows: [string, string][] = [
     ["Completude", game.overallStatus], ["Condição", game.conditionGrade], ["Media", game.media], ["Caixa", game.box], ["Manual", game.manual], ["Extras", game.extras], ["Label", game.label], ["Selado", game.sealed],
@@ -27,17 +31,17 @@ export default async function GamePage({ params }: { params: Promise<{ collectio
   ];
 
   return <div className="mx-auto max-w-5xl space-y-4 pb-6">
-    <Link href="/collection/games" className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-800"><ArrowLeft className="h-3.5 w-3.5" />Todos os jogos</Link>
+    <Link href={returnTo} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-800"><ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />{returnLabel}</Link>
     <header className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-3.5 sm:gap-5 sm:p-5">
       <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="h-32 w-24 shrink-0 rounded-xl bg-slate-50 sm:h-40 sm:w-28" eager />
-      <div className="min-w-0 flex-1"><div className="flex flex-wrap gap-1.5"><StatusPill tone={game.keepStatus === "Collection" ? "good" : game.keepStatus === "Sell" ? "bad" : "neutral"}>{game.keepStatus}</StatusPill>{game.needsReview && <StatusPill tone="warn">A rever</StatusPill>}</div><p className="mt-2 text-[10px] font-black uppercase tracking-[.14em] text-emerald-800">{displayPlatform(game.platform)}</p><h1 className="mt-1 text-xl font-black leading-tight tracking-tight text-slate-950 sm:text-3xl">{game.title}</h1><p className="mt-1 truncate font-mono text-[10px] text-slate-400">{game.collectionId}</p><div className="mt-2 flex flex-wrap gap-1.5">{[game.region, game.edition, game.overallStatus].filter(Boolean).map((item) => <StatusPill key={item}>{item}</StatusPill>)}</div></div>
+      <div className="min-w-0 flex-1"><div className="flex flex-wrap gap-1.5"><StatusPill tone={game.keepStatus === "Collection" ? "good" : game.keepStatus === "Sell" ? "bad" : "neutral"}>{displayKeepStatus(game.keepStatus)}</StatusPill>{game.needsReview && <StatusPill tone="warn">A rever</StatusPill>}</div><p className="mt-2 text-[10px] font-black uppercase tracking-[.14em] text-emerald-800">{displayPlatform(game.platform)}</p><h1 className="mt-1 text-xl font-black leading-tight tracking-tight text-slate-950 sm:text-3xl">{game.title}</h1><p className="mt-1 truncate font-mono text-[10px] text-slate-400">{game.collectionId}</p><div className="mt-2 flex flex-wrap gap-1.5">{[game.region, game.edition, game.overallStatus].filter(Boolean).map((item) => <StatusPill key={item}>{item}</StatusPill>)}</div></div>
     </header>
 
     <section aria-label="Resumo do jogo" className="grid grid-cols-2 gap-2 sm:grid-cols-4">
       <Metric icon={<BadgeEuro />} label="Valor estimado" value={research.estimate.value === null ? "Não disponível" : formatEuro(research.estimate.value)} detail={research.estimate.basis ? `${research.estimate.basis} · ${research.estimate.date || "snapshot"}` : "PriceCharting PAL"} />
       <Metric icon={<Tag />} label="Género" value={metadata?.genres.join(", ") || "Não disponível"} detail="Catálogo · IGDB" />
       <Metric icon={<Star />} label="Metascore" value={research.metascore.value === null ? "Não disponível" : `${research.metascore.value}/100`} detail={research.metascore.value === null ? "RAWG / Metacritic" : "RAWG / Metacritic"} />
-      <Metric icon={<Clock3 />} label="Duração" value={metadata?.timeToBeat?.main || playtimeMissing} detail="Main Story · IGDB" />
+      <Metric icon={<Clock3 />} label="Duração" value={bestPlaytime?.value ?? playtimeMissing} detail={bestPlaytime ? `${bestPlaytime.category} · IGDB` : "Sem duração publicada no IGDB"} />
     </section>
 
     <div className="grid gap-3 lg:grid-cols-[1fr_1.1fr]">
@@ -59,7 +63,7 @@ export default async function GamePage({ params }: { params: Promise<{ collectio
     <Section title="Catálogo" icon={<Tag className="h-4 w-4" />}>
       {metadata?.summary && <p className="mb-3 text-xs leading-5 text-slate-600">{metadata.summary}</p>}
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">{catalogRows.map(([label, value]) => <div key={label} className="min-w-0 rounded-xl bg-slate-50 px-3 py-2"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{label}</p><p className="mt-0.5 break-words text-xs font-semibold text-slate-800">{value}</p></div>)}</div>
-      <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-600"><span>Main + Extras: <strong>{metadata?.timeToBeat?.extras || playtimeMissing}</strong></span><span>Completionist: <strong>{metadata?.timeToBeat?.completionist || playtimeMissing}</strong></span>{metadata?.aggregatedRating !== null && metadata?.aggregatedRating !== undefined && <span>IGDB: <strong>{metadata.aggregatedRating.toFixed(1)}/100</strong></span>}</div>
+      <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-600"><span>Main Story: <strong>{metadata?.timeToBeat?.main || playtimeMissing}</strong></span><span>Main + Extras: <strong>{metadata?.timeToBeat?.extras || playtimeMissing}</strong></span><span>Completionist: <strong>{metadata?.timeToBeat?.completionist || playtimeMissing}</strong></span>{metadata?.aggregatedRating !== null && metadata?.aggregatedRating !== undefined && <span>IGDB: <strong>{metadata.aggregatedRating.toFixed(1)}/100</strong></span>}</div>
       {!metadata && <p className="mt-2 text-[11px] text-slate-500">Metadata IGDB: {research.metadataState === "ambiguous" ? "correspondência ambígua" : research.metadataState === "unmatched" ? "sem correspondência segura" : research.metadataState === "not-configured" ? "credenciais não configuradas" : "indisponível"}.</p>}
       {metadata?.refreshedAt && <p className="mt-2 text-[10px] text-slate-400">IGDB · atualizado {metadata.refreshedAt.slice(0, 10)}.</p>}
       <div className="mt-3 border-t border-slate-100 pt-3"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Metascore</p><span className="text-xs font-bold text-slate-800">{research.metascore.value === null ? "Não disponível" : `${research.metascore.value}/100`}</span><span className="ml-2 text-[10px] text-slate-500">Dados fornecidos por <a className="underline" href="https://rawg.io/" target="_blank" rel="noreferrer">RAWG</a>.</span>{research.metascore.url && research.metascore.value !== null && <a className="ml-2 text-[10px] font-bold text-emerald-800 underline" href={research.metascore.url} target="_blank" rel="noreferrer">Metacritic</a>}</div>
@@ -69,6 +73,13 @@ export default async function GamePage({ params }: { params: Promise<{ collectio
 
     <details open={attention} className="rounded-2xl border border-slate-200 bg-white p-4"><summary className="cursor-pointer text-sm font-bold text-slate-700">Detalhes técnicos e notas{attention ? " · requer atenção" : ""}</summary><div className="mt-3 grid gap-3 sm:grid-cols-2"><CompactRows rows={[["Catalog ID", game.catalogId], ["Idioma", game.language], ["Tipo", game.itemType], ["Data de aquisição", game.acquiredDate], ["Collection ID", game.collectionId], ["Região", game.region], ["Edição", game.edition]]} />{game.notes && <div className="rounded-xl bg-slate-50 p-3"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Notas da coleção</p><p className="mt-1 whitespace-pre-wrap text-xs leading-5 text-slate-700">{game.notes}</p></div>}</div></details>
   </div>;
+}
+
+function displayKeepStatus(status: string): string {
+  if (status === "Collection") return "Na coleção";
+  if (status === "Sell") return "Para vender";
+  if (status === "Sold") return "Vendidos";
+  return status;
 }
 
 function Metric({ icon, label, value, detail }: { icon: React.ReactNode; label: string; value: string; detail: string }) {

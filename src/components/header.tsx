@@ -15,10 +15,10 @@ export function Header() {
           <Link className="nav-link" href="/"><Sparkles className="h-4 w-4" />Início</Link>
           <Link className="nav-link" href="/collection"><LibraryBig className="h-4 w-4" />Coleção</Link>
           <Link className="nav-link" href="/want"><Heart className="h-4 w-4" />À procura</Link>
-          <Link className="nav-link" href="/sell"><ShoppingBag className="h-4 w-4" />Venda</Link>
+          <Link className="nav-link" href="/sell"><ShoppingBag className="h-4 w-4" />Para vender</Link>
         </nav>
         <div className="flex items-center gap-2">
-          {authEnabled() && <form action="/logout" method="post"><button className="icon-button" title="Terminar sessão"><LogOut className="h-4 w-4" /></button></form>}
+          {authEnabled() && <form action="/logout" method="post"><button type="submit" className="icon-button" title="Terminar sessão" aria-label="Terminar sessão"><LogOut className="h-4 w-4" aria-hidden="true" /></button></form>}
         </div>
       </div>
     </header>

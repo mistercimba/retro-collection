@@ -18,7 +18,7 @@ export function MobileNav() {
         <Link href="/" className={navLink("/")} aria-current={isActive("/") ? "page" : undefined}><Home className="h-5 w-5" /><span>Início</span></Link>
         <Link href="/collection" className={navLink("/collection")} aria-current={isActive("/collection") ? "page" : undefined}><LibraryBig className="h-5 w-5" /><span>Coleção</span></Link>
         <Link href="/want" className={navLink("/want")} aria-current={isActive("/want") ? "page" : undefined}><Heart className="h-5 w-5" /><span>À procura</span></Link>
-        <Link href="/sell" className={navLink("/sell")} aria-current={isActive("/sell") ? "page" : undefined}><ShoppingBag className="h-5 w-5" /><span>Venda</span></Link>
+        <Link href="/sell" className={navLink("/sell")} aria-current={isActive("/sell") ? "page" : undefined}><ShoppingBag className="h-5 w-5" /><span>Para vender</span></Link>
       </div>
     </nav>
   );
