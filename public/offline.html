@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#142f51">
+<title>Retro Collection · Offline</title>
+<style>
+:root{font-family:Arial,sans-serif;color:#0f172a;background:#f8fafc}body{margin:0}main{max-width:52rem;margin:0 auto;padding:1.25rem 1rem 3rem}h1{font-size:1.5rem;margin:.25rem 0}.muted{color:#64748b;font-size:.875rem}.badge{display:inline-block;background:#ecfdf5;color:#065f46;border-radius:999px;padding:.35rem .65rem;font-size:.75rem;font-weight:700}label{display:block;font-size:.75rem;font-weight:700;color:#475569;margin:.8rem 0 .3rem}input,select{box-sizing:border-box;width:100%;border:1px solid #cbd5e1;border-radius:.7rem;background:white;padding:.75rem;font:inherit}.controls{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1.1rem 0}.card{display:flex;gap:.8rem;align-items:center;background:white;border:1px solid #e2e8f0;border-radius:1rem;padding:.7rem;margin:.5rem 0;color:inherit;text-decoration:none}.card img,.cover{width:3.5rem;height:4.4rem;object-fit:contain;background:#f1f5f9;border-radius:.45rem}.card strong{display:block}.card small{color:#64748b}.details{background:white;border:1px solid #e2e8f0;border-radius:1rem;padding:1rem;margin-top:1rem}.details img{width:6rem;height:8rem;object-fit:contain;background:#f1f5f9;border-radius:.6rem;float:right}dl{display:grid;grid-template-columns:8rem 1fr;gap:.4rem;font-size:.85rem}dt{color:#64748b}dd{margin:0;font-weight:600;overflow-wrap:anywhere}.empty{border:1px dashed #cbd5e1;border-radius:1rem;padding:1rem;color:#475569}.back{color:#047857;font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="/">Retro Collection</a>
+<p><span class="badge" id="freshness">Offline</span></p>
+<h1 id="heading">Coleção</h1>
+<p class="muted" id="summary">A carregar snapshot guardado…</p>
+<div id="browser">
+<div class="controls">
+<div><label for="search">Pesquisar coleção</label><input id="search" type="search" placeholder="Título ou Collection ID"></div>
+<div><label for="platform">Plataforma</label><select id="platform"><option value="">Todas</option></select></div>
+</div>
+<div id="results"></div>
+</div>
+<section id="detail" class="details" hidden></section>
+</main>
+<script>
+(function(){
+  var KEY="retro-collection-offline-v1";
+  var snapshot=null;
+  var items=[];
+  var idMatch=location.pathname.match(/\/game\/([^/]+)/);
+  try { snapshot=JSON.parse(localStorage.getItem(KEY)||"null"); } catch(e) {}
+  if(!snapshot||!Array.isArray(snapshot.items)){
+    document.getElementById("summary").textContent="Snapshot offline indisponível. Liga-te e abre a coleção primeiro.";
+    document.getElementById("results").innerHTML='<p class="empty">Sem dados guardados.</p>';
+    return;
+  }
+  items=snapshot.items;
+  var date=new Date(snapshot.capturedAt);
+  document.getElementById("freshness").textContent="Offline · dados de "+(isNaN(date.getTime())?"data desconhecida":date.toLocaleString("pt-PT"));
+  document.getElementById("summary").textContent=items.length+" jogos guardados. Modo só de leitura.";
+  var platforms=Array.from(new Set(items.map(function(item){return item.platform}).filter(Boolean))).sort(function(a,b){return a.localeCompare(b,"pt-PT")});
+  var select=document.getElementById("platform");
+  platforms.forEach(function(platform){var option=document.createElement("option");option.value=platform;option.textContent=platform;select.appendChild(option)});
+  function cover(item){return item.coverRef&&item.coverRef.indexOf("/covers/")===0?item.coverRef:""}
+  function text(tag,value,className){var el=document.createElement(tag);el.textContent=value||"—";if(className)el.className=className;return el}
+  if(idMatch){
+    var id=decodeURIComponent(idMatch[1]);
+    var game=items.find(function(item){return item.collectionId===id});
+    document.getElementById("browser").hidden=true;
+    document.getElementById("detail").hidden=false;
+    var panel=document.getElementById("detail");
+    document.getElementById("heading").textContent=game?game.title:"Jogo não encontrado";
+    if(!game){panel.appendChild(text("p","Este jogo não existe no snapshot guardado.","empty"));return}
+    var image=document.createElement("img");image.alt="";image.src=cover(game);if(!image.src)image.hidden=true;panel.appendChild(image);
+    panel.appendChild(text("p",game.platform,"muted"));
+    var fields=[["Collection ID",game.collectionId],["Região",game.region],["Edição",game.edition],["Completude",game.completeness],["Condição",game.condition],["Auditoria",game.auditStatus],["Data da auditoria",game.auditDate],["Último valor conhecido",game.marketValueEur==null?"Não disponível":new Intl.NumberFormat("pt-PT",{style:"currency",currency:"EUR"}).format(game.marketValueEur)]];
+    var dl=document.createElement("dl");fields.forEach(function(pair){dl.appendChild(text("dt",pair[0]));dl.appendChild(text("dd",pair[1]))});panel.appendChild(dl);
+    return;
+  }
+  function render(){
+    var query=document.getElementById("search").value.trim().toLocaleLowerCase("pt-PT");
+    var platform=select.value;
+    var matches=items.filter(function(item){
+      var textValue=(item.title+" "+item.collectionId+" "+item.region+" "+item.edition).toLocaleLowerCase("pt-PT");
+      return (!query||textValue.indexOf(query)>=0)&&(!platform||item.platform===platform);
+    });
+    var results=document.getElementById("results");results.replaceChildren();
+    document.getElementById("heading").textContent=platform||"Coleção";
+    document.getElementById("summary").textContent=matches.length+" de "+items.length+" jogos · leitura offline";
+    if(!matches.length){results.appendChild(text("p","Sem jogos. Altera a pesquisa ou plataforma.","empty"));return}
+    matches.forEach(function(item){
+      var link=document.createElement("a");link.className="card";link.href="/game/"+encodeURIComponent(item.collectionId);
+      var path=cover(item);if(path){var image=document.createElement("img");image.src=path;image.alt="";image.loading="lazy";link.appendChild(image)}
+      var body=document.createElement("span");body.appendChild(text("strong",item.title));body.appendChild(text("small",[item.platform,item.region,item.edition].filter(Boolean).join(" · ")));link.appendChild(body);results.appendChild(link);
+    });
+  }
+  document.getElementById("search").addEventListener("input",render);
+  select.addEventListener("change",render);
+  render();
+})();
+</script>
+</body>
+</html>

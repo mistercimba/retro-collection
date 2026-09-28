@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Gamepad2, LogOut } from "lucide-react";
+import { Gamepad2 } from "lucide-react";
 import { DesktopNav } from "./desktop-nav";
 import { authEnabled } from "@/lib/auth";
+import { LogoutButton } from "./logout-button";
 
 export function Header() {
   return (
@@ -14,7 +15,7 @@ export function Header() {
         </Link>
         <DesktopNav />
         <div className="flex items-center gap-2">
-          {authEnabled() && <form action="/logout" method="post"><button type="submit" className="icon-button" title="Terminar sessão" aria-label="Terminar sessão"><LogOut className="h-4 w-4" aria-hidden="true" /></button></form>}
+          {authEnabled() && <LogoutButton />}
         </div>
       </div>
     </header>

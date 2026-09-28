@@ -59,46 +59,46 @@ function platformFromPlanTab(name: string): string {
   return labels[source] ?? source;
 }
 
-export function parsePlanTargets(workbook: ExcelJS.Workbook): WantTarget[] {
-  const targets: WantTarget[] = [];
-  for (const sheet of workbook.worksheets) {
-    if (!normalizedHeader(sheet.name).includes("plan") && !normalizedHeader(cellText(sheet.getCell(1, 1).value)).includes("plan de colecao")) continue;
-    const rows = worksheetRows(sheet);
-    const headerIndex = rows.findIndex((row) => {
-      const headers = row.map(normalizedHeader);
-      return headers.includes("id alvo") && headers.includes("jogo em falta");
-    });
-    if (headerIndex < 0) continue;
+function parsePlanTargetRows(name: string, values: string[][]): WantTarget[] {
+  const rows = values.filter((row) => row.some((cell) => cell.trim()));
+  const headerIndex = rows.findIndex((row) => {
+    const headers = row.map(normalizedHeader);
+    return headers.includes("id alvo") && headers.includes("jogo em falta");
+  });
+  if (headerIndex < 0) return [];
 
-    const headers = rows[headerIndex].map(normalizedHeader);
-    const column = (name: string) => headers.indexOf(normalizedHeader(name));
-    const get = (row: string[], name: string) => row[column(name)]?.trim() ?? "";
-    for (const row of rows.slice(headerIndex + 1)) {
-      const title = get(row, "Jogo em falta");
-      const targetId = get(row, "ID/alvo");
-      if (!title || !targetId) continue;
-      const ceiling = get(row, "Teto validado");
-      const price = parseAmount(ceiling);
-      targets.push({
-        platform: platformFromPlanTab(sheet.name),
-        priority: get(row, "Prioridade"),
-        targetId,
-        title,
-        reason: get(row, "Porque importa"),
-        targetVersion: get(row, "Versão / condição alvo"),
-        priceCeilingEur: price,
-        status: get(row, "Estado"),
-        notes: get(row, "Notas / pesquisa"),
-      });
-    }
+  const headers = rows[headerIndex].map(normalizedHeader);
+  const column = (field: string) => headers.indexOf(normalizedHeader(field));
+  const get = (row: string[], field: string) => row[column(field)]?.trim() ?? "";
+  const targets: WantTarget[] = [];
+  for (const row of rows.slice(headerIndex + 1)) {
+    const title = get(row, "Jogo em falta");
+    const targetId = get(row, "ID/alvo");
+    if (!title || !targetId) continue;
+    targets.push({
+      platform: platformFromPlanTab(name),
+      priority: get(row, "Prioridade"),
+      targetId,
+      title,
+      reason: get(row, "Porque importa"),
+      targetVersion: get(row, "Versão / condição alvo"),
+      priceCeilingEur: parseAmount(get(row, "Teto validado")),
+      status: get(row, "Estado"),
+      notes: get(row, "Notas / pesquisa"),
+    });
   }
   return targets;
 }
 
-function parsePurchases(workbook: ExcelJS.Workbook): PurchaseRecord[] {
-  const sheet = workbook.getWorksheet("PURCHASES");
-  if (!sheet) return [];
-  return rowsToObjects(worksheetRows(sheet)).map((row) => ({
+export function parsePlanTargets(workbook: ExcelJS.Workbook): WantTarget[] {
+  return workbook.worksheets.flatMap((sheet) => {
+    if (!normalizedHeader(sheet.name).includes("plan") && !normalizedHeader(cellText(sheet.getCell(1, 1).value)).includes("plan de colecao")) return [];
+    return parsePlanTargetRows(sheet.name, worksheetRows(sheet));
+  });
+}
+
+function parsePurchaseRows(rows: Record<string, string>[]): PurchaseRecord[] {
+  return rows.map((row) => ({
     purchaseId: row["Purchase ID"] ?? "",
     date: row.Date ?? "",
     source: row.Source ?? "",
@@ -113,10 +113,13 @@ function parsePurchases(workbook: ExcelJS.Workbook): PurchaseRecord[] {
   })).filter((purchase) => purchase.purchaseId);
 }
 
-function parseValuations(workbook: ExcelJS.Workbook): ValuationSnapshot[] {
-  const sheet = workbook.getWorksheet("VALUATIONS");
-  if (!sheet) return [];
-  return rowsToObjects(worksheetRows(sheet)).map((row) => ({
+function parsePurchases(workbook: ExcelJS.Workbook): PurchaseRecord[] {
+  const sheet = workbook.getWorksheet("PURCHASES");
+  return sheet ? parsePurchaseRows(rowsToObjects(worksheetRows(sheet))) : [];
+}
+
+function parseValuationRows(rows: Record<string, string>[]): ValuationSnapshot[] {
+  return rows.map((row) => ({
     collectionId: row["Collection ID"] ?? "",
     catalogId: row["Catalog ID"] ?? "",
     source: row.Source ?? "",
@@ -126,6 +129,11 @@ function parseValuations(workbook: ExcelJS.Workbook): ValuationSnapshot[] {
     conditionBasis: row["Condition Basis"] ?? "",
     notes: row.Notes ?? "",
   })).filter((valuation) => valuation.collectionId || valuation.catalogId);
+}
+
+function parseValuations(workbook: ExcelJS.Workbook): ValuationSnapshot[] {
+  const sheet = workbook.getWorksheet("VALUATIONS");
+  return sheet ? parseValuationRows(rowsToObjects(worksheetRows(sheet))) : [];
 }
 
 function parseAmount(value: string | undefined): number | null {
@@ -221,30 +229,29 @@ export class GoogleSheetsProvider implements CollectionDataProvider {
     const names = (metadata.sheets ?? []).map((sheet) => sheet.properties?.title ?? "").filter(Boolean);
     if (!names.includes("COLLECTION") || !names.includes("AUDIT LOG")) throw new Error("A Google Sheet tem de conter COLLECTION e AUDIT LOG.");
     const wanted = names.filter((name) => ["COLLECTION", "AUDIT LOG", "GB", "GBC", "PURCHASES", "VALUATIONS"].includes(name) || normalizedHeader(name).includes("plan"));
-    const workbook = new ExcelJS.Workbook();
-    const ranges = new Map(wanted.map((name) => [name, name === "AUDIT LOG" ? "A1:U1200" : ["GB", "GBC"].includes(name) ? "A1:Z300" : normalizedHeader(name).includes("plan") ? "A1:Z1500" : "A1:Z1200"]));
     const values = await measureServerWork("google.sheet_ranges_parallel", () => Promise.all(wanted.map(async (name) => {
-      const range = `'${name.replaceAll("'", "''")}'!${ranges.get(name)}`;
+      const range = `'${name.replaceAll("'", "''")}'!${name === "AUDIT LOG" ? "A1:U1200" : ["GB", "GBC"].includes(name) ? "A1:Z300" : normalizedHeader(name).includes("plan") ? "A1:Z1500" : "A1:Z1200"}`;
       return [name, await this.getRange(range, token)] as const;
     })));
+
     return measureServerWork("google.sheet_transform", async () => {
-      for (const [name, rows] of values) workbook.addWorksheet(name).addRows(rows);
+      const rowsByName = new Map(values);
       const platformOverrides: Record<string, string> = {};
       for (const [sheetName, platform] of [["GB", "Game Boy"], ["GBC", "Game Boy Color"]]) {
-        const sheet = workbook.getWorksheet(sheetName);
-        if (!sheet) continue;
-        for (const row of worksheetRows(sheet, 6)) {
+        for (const row of (rowsByName.get(sheetName) ?? []).slice(5)) {
           const collectionId = row[1]?.trim();
           if (collectionId) platformOverrides[collectionId] = platform;
         }
       }
+      const records = (name: string) => rowsToObjects(rowsByName.get(name) ?? []);
+      const planNames = wanted.filter((name) => normalizedHeader(name).includes("plan"));
       return {
-        collection: rowsToObjects(worksheetRows(workbook.getWorksheet("COLLECTION")!)),
-        audit: rowsToObjects(worksheetRows(workbook.getWorksheet("AUDIT LOG")!)),
+        collection: records("COLLECTION"),
+        audit: records("AUDIT LOG"),
         platformOverrides,
-        wantlist: parsePlanTargets(workbook),
-        purchases: parsePurchases(workbook),
-        valuations: parseValuations(workbook),
+        wantlist: planNames.flatMap((name) => parsePlanTargetRows(name, rowsByName.get(name) ?? [])),
+        purchases: parsePurchaseRows(records("PURCHASES")),
+        valuations: parseValuationRows(records("VALUATIONS")),
       };
     });
   }
