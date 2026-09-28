@@ -17,6 +17,20 @@ export async function measureServerWork<T>(name: string, work: () => Promise<T>,
   }
 }
 
+export async function measureServerFetch<T extends Response | null>(name: string, work: () => Promise<T>): Promise<T> {
+  const started = performance.now();
+  let response: T | undefined;
+  try {
+    response = await work();
+    return response;
+  } finally {
+    const hint = response?.headers.get("x-vercel-cache") ?? response?.headers.get("x-nextjs-cache") ?? response?.headers.get("x-cache");
+    const normalized = hint?.toLowerCase();
+    const cache: ServerPerfSpan["cache"] = normalized === "hit" || normalized === "stale" ? "hit" : normalized === "miss" || normalized === "revalidated" ? "miss" : "unknown";
+    recordServerPerf(name, performance.now() - started, cache);
+  }
+}
+
 export function recordServerPerf(name: string, durationMs: number, cache?: ServerPerfSpan["cache"]): void {
   scope.getStore()?.spans.push({ name, durationMs: Math.round(durationMs * 10) / 10, ...(cache ? { cache } : {}) });
 }
