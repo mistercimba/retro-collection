@@ -119,7 +119,7 @@ export async function editGame(form: FormData) {
     const current = library.collection[index];
     const paid = money(form, "paid");
     const purchaseDate = text(form, "purchaseDate");
-    const purchaseInput = paid !== null || purchaseDate || text(form, "source") || text(form, "seller") || text(form, "listingUrl") || text(form, "purchaseNotes");
+    const purchaseInput = Boolean(current.purchaseId) || paid !== null || purchaseDate || text(form, "source") || text(form, "seller") || text(form, "listingUrl") || text(form, "purchaseNotes");
     let purchaseId = current.purchaseId;
 
     if (purchaseInput) {
@@ -198,7 +198,12 @@ export async function removeCollectionGame(form: FormData) {
   await updateLibrary((library) => {
     const game = library.collection.find((item) => item.collectionId === id);
     platform = game?.platform ?? "";
+    const purchaseId = game?.purchaseId ?? "";
     library.collection = library.collection.filter((item) => item.collectionId !== id);
+    library.valuations = library.valuations.filter((item) => item.collectionId !== id);
+    if (purchaseId && !library.collection.some((item) => item.purchaseId === purchaseId)) {
+      library.purchases = library.purchases.filter((item) => item.purchaseId !== purchaseId);
+    }
     return library;
   });
   revalidatePath("/");

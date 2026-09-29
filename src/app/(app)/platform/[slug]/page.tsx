@@ -4,7 +4,7 @@ import {notFound} from "next/navigation";
 import {PlatformLibraryBrowser} from "@/components/platform-library-browser";
 import {getCollectionGames,getWantlist} from "@/lib/data/collection-service";
 import {displayPlatform,platformFromSlug,platformReleaseYear} from "@/lib/data/platforms";
-import {getGameMetadata} from "@/lib/game-metadata";
+import {findGameMetadataByTitle,getGameMetadata} from "@/lib/game-metadata";
 
 export default async function PlatformPage({params,searchParams}:{params:Promise<{slug:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{slug},query,collectionGames,wantlist]=await Promise.all([params,searchParams,getCollectionGames(),getWantlist()]);
@@ -14,7 +14,7 @@ export default async function PlatformPage({params,searchParams}:{params:Promise
 
  const rawGames=collectionGames.filter(x=>x.platform===platform);
  const targets=wantlist.filter(x=>x.platform===platform&&x.planState!=="inactive"&&x.matchState!=="acquired");
- const collection=rawGames.map(x=>{const meta=getGameMetadata(x.collectionId);return {collectionId:x.collectionId,title:x.title,genre:meta?.matchStatus==="matched"?(meta.genres??[]).join(", "):"",valueEur:x.marketValueEur,condition:x.conditionGrade,completeness:x.overallStatus}});
+ const collection=rawGames.map(x=>{const meta=getGameMetadata(x.collectionId)??findGameMetadataByTitle(x.title);return {collectionId:x.collectionId,title:x.title,genre:meta?.matchStatus==="matched"?(meta.genres??[]).join(", "):"",valueEur:x.marketValueEur,condition:x.conditionGrade,completeness:x.overallStatus}});
  const wishlist=targets.map(x=>({targetId:x.targetId,title:x.title,priority:x.priority,targetVersion:x.targetVersion,priceCeilingEur:x.priceCeilingEur}));
 
  return <div className="space-y-5 pb-8">

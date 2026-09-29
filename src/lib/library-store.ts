@@ -1,7 +1,6 @@
 import "server-only";
+import { cache } from "react";
 import { get, put } from "@vercel/blob";
-import { SnapshotProvider } from "@/lib/data/snapshot-provider";
-import { joinCollectionWithAudit, parseAuditRow, parseCollectionRow } from "@/lib/data/parsers";
 import type { LibraryData } from "@/lib/data/types";
 
 const LIBRARY_PATH = "retro-collection/library.json";
@@ -18,44 +17,20 @@ function validLibrary(value: unknown): value is LibraryData {
 }
 
 async function readBlobLibrary(): Promise<LibraryData | null> {
-  try {
-    const result = await get(LIBRARY_PATH, { access: "private", useCache: false });
-    if (!result) return null;
-    const payload = JSON.parse(await new Response(result.stream).text()) as unknown;
-    return validLibrary(payload) ? payload : null;
-  } catch {
-    return null;
-  }
+  const result = await get(LIBRARY_PATH, { access: "private", useCache: false });
+  if (!result) return null;
+  const payload = JSON.parse(await new Response(result.stream).text()) as unknown;
+  if (!validLibrary(payload)) throw new Error("A library.json no Blob é inválida.");
+  return payload;
 }
 
-async function migrateLegacySnapshot(): Promise<LibraryData> {
-  const raw = await new SnapshotProvider().read();
-  const collection = raw.collection
-    .map(parseCollectionRow)
-    .filter((item) => item.collectionId && item.title)
-    .map((item) => ({ ...item, platform: raw.platformOverrides?.[item.collectionId] ?? item.platform }));
-  const audit = raw.audit.map(parseAuditRow).filter((entry) => entry.collectionId);
-  return {
-    schemaVersion: 1,
-    updatedAt: new Date().toISOString(),
-    collection: joinCollectionWithAudit(collection, audit),
-    wishlist: raw.wantlist ?? [],
-    purchases: raw.purchases ?? [],
-    valuations: raw.valuations ?? [],
-  };
+async function readRequiredLibrary(): Promise<LibraryData> {
+  const library = await readBlobLibrary();
+  if (!library) throw new Error("A library.json não existe no Blob privado.");
+  return library;
 }
 
-export async function getLibrary(): Promise<LibraryData> {
-  const stored = await readBlobLibrary();
-  if (stored) return stored;
-  const migrated = await migrateLegacySnapshot();
-  try {
-    return await saveLibrary(migrated);
-  } catch (error) {
-    console.error("library_seed_failed", { errorName: error instanceof Error ? error.name : "UnknownError" });
-    return migrated;
-  }
-}
+export const getLibrary = cache(readRequiredLibrary);
 
 export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
   const next: LibraryData = { ...data, schemaVersion: 1, updatedAt: new Date().toISOString() };
@@ -69,10 +44,10 @@ export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
 }
 
 export async function updateLibrary(mutator: (current: LibraryData) => LibraryData): Promise<LibraryData> {
-  const current = await getLibrary();
+  const current = await readRequiredLibrary();
   return saveLibrary(mutator(structuredClone(current)));
 }
 
-export async function getLibraryStorageMode(): Promise<"blob" | "snapshot-fallback"> {
-  return (await readBlobLibrary()) ? "blob" : "snapshot-fallback";
+export async function getLibraryStorageMode(): Promise<"blob" | "missing"> {
+  return (await readBlobLibrary()) ? "blob" : "missing";
 }

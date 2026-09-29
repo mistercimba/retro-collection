@@ -1,6 +1,6 @@
 import "server-only";
 import type { CollectionGame } from "@/lib/data/types";
-import { getGameMetadata, type MatchedGameMetadata } from "@/lib/game-metadata";
+import { findGameMetadataByTitle, getGameMetadata, type MatchedGameMetadata } from "@/lib/game-metadata";
 import { resolveCatalogResearch, type ResearchPlaytime } from "@/lib/game-research.logic";
 import { getPricechartingEstimate, getPricechartingGuide, type PriceEstimate, type PriceGuide } from "@/lib/pricecharting-catalog";
 
@@ -13,7 +13,7 @@ export type Research = {
 };
 
 export async function getGameResearch(game: CollectionGame): Promise<Research> {
-  const snapshot = getGameMetadata(game.collectionId);
+  const snapshot = getGameMetadata(game.collectionId) ?? findGameMetadataByTitle(game.title);
   const catalog = resolveCatalogResearch(snapshot);
   const [estimate, priceGuide] = await Promise.all([getPricechartingEstimate(game), getPricechartingGuide(game.platform, game.title, game.edition)]);
   const score = snapshot?.matchStatus === "matched" ? snapshot.reviewScore : null;
