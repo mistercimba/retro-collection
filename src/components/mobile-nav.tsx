@@ -6,7 +6,7 @@ import { Heart, Home, LibraryBig } from "lucide-react";
 
 export function MobileNav() {
   const pathname = usePathname();
-  const active = (href: string) => href === "/" ? pathname === "/" : href === "/collection" ? pathname.startsWith("/collection") || pathname.startsWith("/platform/") || pathname.startsWith("/game/") : pathname.startsWith("/want");
+  const active = (href: string) => href === "/" ? pathname === "/" : href === "/collection" ? pathname.startsWith("/collection") || pathname.startsWith("/platform/") || pathname.startsWith("/game/") : pathname.startsWith("/want") || pathname.startsWith("/wish/");
   const cls = (href: string) => "mobile-nav-link" + (active(href) ? " mobile-nav-link-active" : "");
 
   return <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl md:hidden">
