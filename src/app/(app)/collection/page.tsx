@@ -31,7 +31,10 @@ export default async function CollectionPage() {
         <Input name="overallStatus" label="Completude" placeholder="CIB / Loose" />
         <Input name="conditionGrade" label="Condição" />
         <Input name="paid" label="Preço pago (€)" type="number" step="0.01" />
-        <Input name="acquiredDate" label="Data de compra" type="date" />
+        <Input name="source" label="Onde comprei" placeholder="Feira, Vinted, CeX…" />
+        <Input name="purchaseDate" label="Data de compra" type="date" />
+        <Input name="seller" label="Vendedor" />
+        <Input name="listingUrl" label="Link do anúncio" type="url" />
         <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" className="field-input min-h-20" /></label>
         <button className="min-h-11 rounded-xl bg-emerald-950 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à coleção</button>
       </form>
