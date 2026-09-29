@@ -19,7 +19,8 @@
     "artwork:sony": "node scripts/import-libretro-serial-artwork.mjs",
     "artwork:nintendo": "node scripts/import-libretro-nintendo-serial-artwork.mjs",
     "artwork:strict-fallback": "node scripts/import-strict-libretro-fallback.mjs",
-    "metadata:refresh": "node scripts/refresh-game-metadata.mjs"
+    "metadata:refresh": "node scripts/refresh-game-metadata.mjs",
+    "collection:refresh": "node scripts/refresh-collection-snapshot.mjs"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

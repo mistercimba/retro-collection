@@ -132,4 +132,4 @@ export interface ValuationSnapshot {
   notes: string;
 }
 
-export type ProviderMode = "google" | "mock";
+export type ProviderMode = "snapshot" | "google" | "mock";

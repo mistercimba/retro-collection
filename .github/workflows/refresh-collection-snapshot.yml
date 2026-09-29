@@ -1,0 +1,66 @@
+name: Build encrypted collection snapshot
+
+on:
+  push:
+    branches:
+      - snapshot-build
+    paths:
+      - "scripts/refresh-collection-snapshot.mjs"
+      - "src/lib/data/snapshot-provider.ts"
+      - "src/lib/data/provider.ts"
+      - "src/lib/data/types.ts"
+      - "package.json"
+      - ".github/workflows/refresh-collection-snapshot.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collection-snapshot-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout snapshot branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh encrypted collection snapshot
+        env:
+          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+          GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+        run: npm run collection:refresh
+
+      - name: Validate snapshot and app
+        env:
+          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+          GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+          APP_PASSWORD: snapshot-build-check
+        run: npm run check
+
+      - name: Commit validated snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/collection-snapshot.json
+          if git diff --cached --quiet; then
+            echo "No snapshot change to commit."
+            exit 0
+          fi
+          git commit -m "fix: publish encrypted collection snapshot [snapshot-ready]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
