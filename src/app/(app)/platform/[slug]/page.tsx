@@ -1,20 +1,66 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
-import { CollectionBrowser } from "@/components/collection-browser";
-import { getCollectionListGames, collectionValue } from "@/lib/game-list-data";
-import { displayPlatform, platformFromSlug } from "@/lib/data/platforms";
+import { GameArtwork } from "@/components/artwork";
+import { MarketSearchLinks } from "@/components/market-search-links";
+import { getCollectionListGames } from "@/lib/game-list-data";
+import { getWantlist } from "@/lib/data/collection-service";
+import { displayPlatform, platformFromSlug, platformReleaseYear } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
-import { isAuditCompleted } from "@/lib/data/collection-integrity";
-import { searchParamsToString } from "@/lib/list-url-state.logic";
+import { getGameMetadata } from "@/lib/game-metadata";
 
 export default async function PlatformPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
-  const [{ slug }, games, query] = await Promise.all([params, getCollectionListGames(), searchParams]);
-  const platform = platformFromSlug(slug, [...new Set(games.map((game) => game.platform))]);
+  const [{ slug }, query, allGames, wantlist] = await Promise.all([params, searchParams, getCollectionListGames(), getWantlist()]);
+  const knownPlatforms = [...new Set([...allGames.map((game) => game.platform), ...wantlist.map((target) => target.platform)])];
+  const platform = platformFromSlug(slug, knownPlatforms);
   if (!platform) notFound();
-  const platformGames = games.filter((game) => game.platform === platform);
-  const audited = platformGames.filter((game) => isAuditCompleted(game.audit?.auditStatus)).length;
-  const value = collectionValue(platformGames);
-  const reviewCount = platformGames.filter((game) => game.needsReview).length;
-  return <div><Link href="/collection" className="mb-3 inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-800"><ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />Todas as plataformas</Link><header className="mb-4"><p className="section-kicker">PLATAFORMA</p><h1 className="section-title">{displayPlatform(platform)}</h1><div className="mt-2 flex flex-wrap gap-2 text-xs"><span className="rounded-full bg-white px-3 py-1.5 font-bold ring-1 ring-slate-200">{platformGames.length} jogos</span><span className="rounded-full bg-white px-3 py-1.5 font-bold ring-1 ring-slate-200">{audited}/{platformGames.length} auditados</span>{reviewCount > 0 && <Link href={`/platform/${slug}?review=1`} className="rounded-full bg-amber-50 px-3 py-1.5 font-bold text-amber-900 ring-1 ring-amber-200">A rever: {reviewCount}</Link>}<span className="rounded-full bg-white px-3 py-1.5 font-bold ring-1 ring-slate-200">{value === null ? "Valor n/d" : formatEuro(value)}</span></div></header><CollectionBrowser games={platformGames} initialSearch={searchParamsToString(query)} /></div>;
+
+  const tab = query.tab === "wishlist" ? "wishlist" : "collection";
+  const rawQuery = typeof query.q === "string" ? query.q : "";
+  const q = rawQuery.trim().toLocaleLowerCase("pt-PT");
+  const platformGames = allGames.filter((game) => game.platform === platform);
+  const platformTargets = wantlist.filter((target) => target.platform === platform && target.planState !== "inactive" && target.matchState !== "acquired");
+  const filteredGames = q ? platformGames.filter((game) => game.title.toLocaleLowerCase("pt-PT").includes(q)) : platformGames;
+  const filteredTargets = q ? platformTargets.filter((target) => target.title.toLocaleLowerCase("pt-PT").includes(q)) : platformTargets;
+  const value = platformGames.reduce((sum, game) => sum + (game.currentValueEur ?? 0), 0);
+
+  return <div className="space-y-4 pb-8">
+    <Link href="/" className="inline-flex items-center gap-1 text-xs font-bold text-slate-500"><ArrowLeft className="h-3.5 w-3.5" />Consolas</Link>
+
+    <header>
+      <div className="flex items-baseline gap-3"><h1 className="text-2xl font-black text-slate-950">{displayPlatform(platform)}</h1><span className="text-sm font-bold text-slate-400">{platformReleaseYear(platform) < 9990 ? platformReleaseYear(platform) : ""}</span></div>
+      <p className="mt-1 text-sm text-slate-500">{platformGames.length} jogos · {formatEuro(value)}</p>
+    </header>
+
+    <nav className="grid grid-cols-2 overflow-hidden rounded-xl border border-slate-200 bg-white p-1">
+      <Link href={"/platform/" + slug} className={"rounded-lg px-3 py-2 text-center text-sm font-black " + (tab === "collection" ? "bg-emerald-950 text-white" : "text-slate-600")}>Coleção · {platformGames.length}</Link>
+      <Link href={"/platform/" + slug + "?tab=wishlist"} className={"rounded-lg px-3 py-2 text-center text-sm font-black " + (tab === "wishlist" ? "bg-rose-700 text-white" : "text-slate-600")}>Wishlist · {platformTargets.length}</Link>
+    </nav>
+
+    <form className="flex gap-2">
+      <input type="hidden" name="tab" value={tab} />
+      <input name="q" defaultValue={rawQuery} className="min-h-11 min-w-0 flex-1 rounded-xl border border-slate-200 bg-white px-3 text-sm outline-none focus:border-emerald-600" placeholder={tab === "collection" ? "Procurar nesta coleção…" : "Procurar nesta wishlist…"} />
+      <button className="rounded-xl border border-slate-200 bg-white px-4 text-sm font-bold">Procurar</button>
+    </form>
+
+    {tab === "collection" ? <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+      {filteredGames.length ? filteredGames.map((game) => {
+        const metadata = getGameMetadata(game.collectionId);
+        const genres = metadata?.matchStatus === "matched" ? metadata.genres.slice(0, 2).join(" · ") : "—";
+        return <Link key={game.collectionId} href={"/game/" + encodeURIComponent(game.collectionId) + "?from=" + encodeURIComponent("/platform/" + slug)} className="grid grid-cols-[48px_minmax(0,1fr)_auto] items-center gap-3 border-b border-slate-100 px-3 py-2.5 last:border-0 hover:bg-slate-50">
+          <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="h-14 w-11 rounded-lg bg-slate-50" />
+          <span className="min-w-0"><strong className="block truncate text-sm text-slate-950">{game.title}</strong><span className="mt-0.5 block truncate text-xs text-slate-500">{genres}</span></span>
+          <strong className="text-sm text-slate-900">{formatEuro(game.currentValueEur)}</strong>
+        </Link>;
+      }) : <p className="p-4 text-sm text-slate-500">Nenhum jogo encontrado.</p>}
+    </div> : <div className="space-y-2">
+      {filteredTargets.length ? filteredTargets.map((target) => <article key={target.platform + ":" + target.targetId + ":" + target.title} className="rounded-2xl border border-slate-200 bg-white p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0"><h2 className="text-sm font-black text-slate-950">{target.title}</h2><p className="mt-1 text-xs text-slate-500">{target.priority || "Sem prioridade"}{target.targetVersion ? " · " + target.targetVersion : ""}</p></div>
+          <div className="shrink-0 text-right"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Máximo</p><p className="text-lg font-black text-rose-700">{target.priceCeilingEur === null ? "—" : formatEuro(target.priceCeilingEur)}</p></div>
+        </div>
+        <div className="mt-3"><MarketSearchLinks title={target.title} platform={target.platform} compact context="wantlist" /></div>
+      </article>) : <p className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-500">Nenhum alvo encontrado.</p>}
+    </div>}
+  </div>;
 }
