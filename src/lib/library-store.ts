@@ -1,4 +1,5 @@
 import "server-only";
+import { cache } from "react";
 import { get, put } from "@vercel/blob";
 import { SnapshotProvider } from "@/lib/data/snapshot-provider";
 import { joinCollectionWithAudit, parseAuditRow, parseCollectionRow } from "@/lib/data/parsers";
@@ -46,7 +47,7 @@ async function migrateLegacySnapshot(): Promise<LibraryData> {
   };
 }
 
-export async function getLibrary(): Promise<LibraryData> {
+async function readLibrary(): Promise<LibraryData> {
   const stored = await readBlobLibrary();
   if (stored) return stored;
   const migrated = await migrateLegacySnapshot();
@@ -57,6 +58,8 @@ export async function getLibrary(): Promise<LibraryData> {
     return migrated;
   }
 }
+
+export const getLibrary = cache(readLibrary);
 
 export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
   const next: LibraryData = { ...data, schemaVersion: 1, updatedAt: new Date().toISOString() };
