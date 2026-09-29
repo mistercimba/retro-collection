@@ -19,8 +19,8 @@ export default async function WantPage() {
     <header className="collection-hero wishlist-hero"><p className="eyebrow text-rose-700">WISHLIST</p><h1 className="mt-1 text-3xl font-black text-slate-950">{active.length} jogos em falta</h1><p className="mt-1 text-sm font-semibold text-slate-500">Escolhe uma consola.</p></header>
     <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
       {groups.map((group) => <Link key={group.platform} href={"/platform/" + platformSlug(group.platform) + "?tab=wishlist"} className="console-card group">
-        <div className="flex items-baseline justify-between gap-2"><strong className="text-sm font-black text-slate-950">{displayPlatform(group.platform)}</strong><span className="text-[11px] text-slate-400">{platformReleaseYear(group.platform) < 9990 ? platformReleaseYear(group.platform) : "—"}</span></div>
-        <p className="mt-2 text-xs text-slate-500">{group.count} alvos</p>
+        <span className="h-24 w-28 shrink-0 overflow-hidden rounded-2xl bg-white/65"><PlatformArtwork platform={group.platform} className="h-full w-full" /></span>
+        <span className="min-w-0 flex-1"><span className="flex items-baseline justify-between gap-2"><strong className="truncate text-base font-black text-slate-950">{displayPlatform(group.platform)}</strong><span className="text-xs font-black text-slate-400">{platformReleaseYear(group.platform) < 9990 ? platformReleaseYear(group.platform) : "—"}</span></span><p className="mt-2 text-xs font-semibold text-slate-500">{group.count} jogos em falta</p></span>
       </Link>)}
     </section>
 
