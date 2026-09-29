@@ -4,6 +4,7 @@ import { addCollectionGame } from "@/lib/library-actions";
 import { getStats } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
+import { ActionSubmitButton } from "@/components/action-submit-button";
 
 export const metadata = { title: "Coleção" };
 
@@ -36,7 +37,7 @@ export default async function CollectionPage() {
         <Input name="seller" label="Vendedor" />
         <Input name="listingUrl" label="Link do anúncio" type="url" />
         <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" className="field-input min-h-20" /></label>
-        <button className="min-h-11 rounded-xl bg-emerald-950 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à coleção</button>
+        <ActionSubmitButton pendingLabel="A adicionar à coleção…" className="min-h-11 rounded-xl bg-emerald-950 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à coleção</ActionSubmitButton>
       </form>
     </details>
   </div>;

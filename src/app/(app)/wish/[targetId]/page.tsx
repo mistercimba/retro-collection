@@ -10,6 +10,7 @@ import {displayPlatform,platformSlug} from "@/lib/data/platforms";
 import {findGameMetadataByTitle} from "@/lib/game-metadata";
 import {getPricechartingGuide} from "@/lib/pricecharting-catalog";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
+import { ActionSubmitButton } from "@/components/action-submit-button";
 
 export default async function WishDetailPage({params,searchParams}:{params:Promise<{targetId:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{targetId},query,targets]=await Promise.all([params,searchParams,getWantlist()]);
@@ -57,7 +58,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
     <label><span className="field-label">Prioridade</span><select name="priority" defaultValue={target.priority||"Média"} className="field-input"><option>Alta</option><option>Média</option><option>Baixa</option><option>Grail</option></select></label>
     <Field name="priceCeilingEur" label="Máximo que pago (€)" value={target.priceCeilingEur??""} type="number" step="0.01"/><Field name="targetVersion" label="Versão alvo" value={target.targetVersion}/><Field name="reason" label="Porque quero" value={target.reason}/>
     <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" defaultValue={target.notes} className="field-input min-h-20"/></label>
-    <button className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">Guardar wishlist</button>
+    <ActionSubmitButton pendingLabel="A guardar…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">Guardar wishlist</ActionSubmitButton>
    </form>
   </details>
 
@@ -67,13 +68,13 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
     <Hidden target={target}/>
     <Field name="paid" label="Preço pago (€)" value="" type="number" step="0.01" required/><Field name="source" label="Onde comprei" value="" placeholder="Feira, Vinted, CeX…"/><Field name="purchaseDate" label="Data" value="" type="date"/><Field name="conditionGrade" label="Condição" value=""/><Field name="overallStatus" label="Completude" value="" placeholder="CIB / Loose / Incompleto"/><Field name="region" label="Região" value="" placeholder="PAL"/><Field name="edition" label="Edição" value="" placeholder="Standard"/><Field name="language" label="Idioma" value=""/><Field name="seller" label="Vendedor" value=""/><Field name="listingUrl" label="Link do anúncio" value="" type="url"/>
     <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" className="field-input min-h-20"/></label>
-    <button className="min-h-11 rounded-xl bg-emerald-900 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à coleção</button>
+    <ActionSubmitButton pendingLabel="A adicionar à coleção…" className="min-h-11 rounded-xl bg-emerald-900 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à coleção</ActionSubmitButton>
    </form>
   </details>
 
   <details className="rounded-2xl border border-rose-200 bg-rose-50/70 p-4">
    <summary className="cursor-pointer text-xs font-black text-rose-800">Zona perigosa</summary>
-   <form action={removeWishlistGame} className="mt-3"><Hidden target={target}/><button className="min-h-10 rounded-xl bg-rose-800 px-4 text-sm font-black text-white">Remover da wishlist</button></form>
+   <form action={removeWishlistGame} className="mt-3"><Hidden target={target}/><ActionSubmitButton pendingLabel="A remover…" className="min-h-10 rounded-xl bg-rose-800 px-4 text-sm font-black text-white">Remover da wishlist</ActionSubmitButton></form>
   </details>
  </div>;
 }

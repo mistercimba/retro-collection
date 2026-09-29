@@ -3,6 +3,7 @@ import { PlatformArtwork } from "@/components/artwork";
 import { addWishlistGame } from "@/lib/library-actions";
 import { getStats, getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, platformSlug, sortPlatformsByRelease } from "@/lib/data/platforms";
+import { ActionSubmitButton } from "@/components/action-submit-button";
 
 export const metadata = { title: "Wishlist" };
 
@@ -34,7 +35,7 @@ export default async function WantPage() {
         <Input name="targetVersion" label="Versão alvo" placeholder="PAL · CIB" />
         <Input name="reason" label="Porque quero" />
         <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" className="field-input min-h-20" /></label>
-        <button className="min-h-11 rounded-xl bg-rose-700 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à wishlist</button>
+        <ActionSubmitButton pendingLabel="A adicionar à wishlist…" className="min-h-11 rounded-xl bg-rose-700 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à wishlist</ActionSubmitButton>
       </form>
     </details>
   </div>;

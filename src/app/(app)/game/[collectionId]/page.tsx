@@ -10,6 +10,7 @@ import {displayPlatform,platformSlug} from "@/lib/data/platforms";
 import {formatEuro} from "@/lib/format";
 import {getGameResearch} from "@/lib/game-research";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
+import { ActionSubmitButton } from "@/components/action-submit-button";
 
 export default async function GamePage({params,searchParams}:{params:Promise<{collectionId:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{collectionId},query]=await Promise.all([params,searchParams]);
@@ -60,14 +61,14 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
     <Field name="region" label="Região" value={game.region}/><Field name="edition" label="Edição" value={game.edition}/><Field name="language" label="Idioma" value={game.language}/><Field name="overallStatus" label="Completude" value={game.overallStatus}/><Field name="conditionGrade" label="Condição" value={game.conditionGrade}/>
     <Field name="paid" label="Preço pago (€)" value={game.purchase?.totalPaidEur??game.allocatedCostEur??""} type="number" step="0.01"/><Field name="source" label="Onde comprei" value={game.purchase?.source??""}/><Field name="purchaseDate" label="Data de compra" value={game.purchase?.date||game.acquiredDate||""} type="date"/><Field name="seller" label="Vendedor" value={game.purchase?.seller??""}/><Field name="listingUrl" label="Link do anúncio" value={game.purchase?.listingUrl??""} type="url"/><Field name="purchaseNotes" label="Notas da compra" value={game.purchase?.notes??""}/>
     <label className="sm:col-span-2"><span className="field-label">Notas da cópia</span><textarea name="notes" defaultValue={game.notes} className="field-input min-h-24"/></label>
-    <button className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">Guardar alterações</button>
+    <ActionSubmitButton pendingLabel="A guardar…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">Guardar alterações</ActionSubmitButton>
    </form>
   </details>
 
   <details className="rounded-2xl border border-rose-200 bg-rose-50/70 p-4">
    <summary className="cursor-pointer text-xs font-black text-rose-800">Zona perigosa</summary>
    <p className="mt-2 text-xs text-rose-700">Só abre isto para remover mesmo o jogo.</p>
-   <form action={removeCollectionGame} className="mt-3"><input type="hidden" name="collectionId" value={game.collectionId}/><button className="min-h-10 rounded-xl bg-rose-800 px-4 text-sm font-black text-white">Remover da coleção</button></form>
+   <form action={removeCollectionGame} className="mt-3"><input type="hidden" name="collectionId" value={game.collectionId}/><ActionSubmitButton pendingLabel="A remover…" className="min-h-10 rounded-xl bg-rose-800 px-4 text-sm font-black text-white">Remover da coleção</ActionSubmitButton></form>
   </details>
  </div>;
 }
