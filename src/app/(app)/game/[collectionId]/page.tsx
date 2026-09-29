@@ -5,7 +5,7 @@ import { GameArtwork } from "@/components/artwork";
 import { MarketSearchLinks } from "@/components/market-search-links";
 import { editGame, removeCollectionGame } from "@/lib/library-actions";
 import { getGame } from "@/lib/data/collection-service";
-import { displayPlatform } from "@/lib/data/platforms";
+import { displayPlatform, platformSlug } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
 import { getGameResearch } from "@/lib/game-research";
 import { getSafeListReturnPath } from "@/lib/list-url-state.logic";
@@ -15,7 +15,7 @@ export default async function GamePage({ params, searchParams }: { params: Promi
   const game = await getGame(decodeURIComponent(collectionId));
   if (!game) notFound();
 
-  const returnTo = getSafeListReturnPath(query.from) ?? `/platform/${game.platform === "Playstation 2" ? "ps2" : ""}`;
+  const returnTo = getSafeListReturnPath(query.from) ?? `/platform/${platformSlug(game.platform)}`;
   const research = await getGameResearch(game);
   const metadata = research.metadata;
   const year = metadata?.firstReleaseDate ? metadata.firstReleaseDate.slice(0, 4) : "—";

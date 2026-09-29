@@ -22,9 +22,11 @@ async function guard() {
 function nextId(platform: string, games: CollectionGame[]) {
   const same = games.filter((game) => game.platform === platform);
   const prefixes = same.map((game) => game.collectionId.match(/^([A-Z0-9]+)-\d+$/)?.[1]).filter(Boolean) as string[];
-  const prefix = prefixes.sort((a, b) =>
+  const inferred = prefixes.sort((a, b) =>
     prefixes.filter((value) => value === b).length - prefixes.filter((value) => value === a).length,
-  )[0] ?? platform.toUpperCase().replace(/[^A-Z0-9]+/g, "").slice(0, 6) || "GAME";
+  )[0];
+  const fallback = platform.toUpperCase().replace(/[^A-Z0-9]+/g, "").slice(0, 6) || "GAME";
+  const prefix = inferred ?? fallback;
   const max = same.reduce((current, game) => {
     const match = game.collectionId.match(new RegExp(`^${prefix}-(\\d+)$`));
     return match ? Math.max(current, Number(match[1])) : current;

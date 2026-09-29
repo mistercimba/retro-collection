@@ -39,6 +39,8 @@ export default async function CollectionPage() {
   </div>;
 }
 
-function Input({ name, label, ...props }: { name: string; label: string; [key: string]: string | boolean | undefined }) {
+type InputProps = { name: string; label: string; type?: string; step?: string; required?: boolean; placeholder?: string };
+
+function Input({ name, label, ...props }: InputProps) {
   return <label><span className="field-label">{label}</span><input name={name} className="field-input" {...props} /></label>;
 }

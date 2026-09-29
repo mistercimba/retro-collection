@@ -28,7 +28,7 @@ export default async function WantPage() {
       <form action={addWishlistGame} className="mt-4 grid gap-2 sm:grid-cols-2">
         <Input name="title" label="Jogo" required />
         <Input name="platform" label="Consola" required placeholder="Nintendo DS" />
-        <label><span className="field-label">Prioridade</span><select name="priority" className="field-input"><option>Alta</option><option selected>Média</option><option>Baixa</option><option>Grail</option></select></label>
+        <label><span className="field-label">Prioridade</span><select name="priority" defaultValue="Média" className="field-input"><option>Alta</option><option>Média</option><option>Baixa</option><option>Grail</option></select></label>
         <Input name="priceCeilingEur" label="Máximo que pago (€)" type="number" step="0.01" />
         <Input name="targetVersion" label="Versão alvo" placeholder="PAL · CIB" />
         <Input name="reason" label="Porque quero" />
@@ -39,6 +39,8 @@ export default async function WantPage() {
   </div>;
 }
 
-function Input({ name, label, ...props }: { name: string; label: string; [key: string]: string | boolean | undefined }) {
+type InputProps = { name: string; label: string; type?: string; step?: string; required?: boolean; placeholder?: string };
+
+function Input({ name, label, ...props }: InputProps) {
   return <label><span className="field-label">{label}</span><input name={name} className="field-input" {...props} /></label>;
 }
