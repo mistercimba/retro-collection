@@ -8,7 +8,7 @@ import { getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformFromSlug, platformReleaseYear } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
 import { getGameMetadata } from "@/lib/game-metadata";
-import { purchaseWishlistGame, removeWishlistGame } from "@/lib/library-actions";
+import { editWishlistGame, purchaseWishlistGame, removeWishlistGame } from "@/lib/library-actions";
 
 export default async function PlatformPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const [{ slug }, query, allGames, wantlist] = await Promise.all([params, searchParams, getCollectionListGames(), getWantlist()]);
@@ -63,6 +63,21 @@ export default async function PlatformPage({ params, searchParams }: { params: P
         <div className="mt-3"><MarketSearchLinks title={target.title} platform={target.platform} compact context="wantlist" /></div>
 
         <details className="mt-3 border-t border-slate-100 pt-3">
+          <summary className="cursor-pointer text-xs font-black text-slate-700">Editar wishlist</summary>
+          <form action={editWishlistGame} className="mt-3 grid gap-2 sm:grid-cols-2">
+            <input type="hidden" name="targetId" value={target.targetId} />
+            <input type="hidden" name="title" value={target.title} />
+            <input type="hidden" name="platform" value={target.platform} />
+            <label><span className="field-label">Prioridade</span><select name="priority" defaultValue={target.priority || "Média"} className="field-input"><option>Alta</option><option>Média</option><option>Baixa</option><option>Grail</option></select></label>
+            <Input name="priceCeilingEur" label="Máximo que pago (€)" type="number" step="0.01" defaultValue={target.priceCeilingEur ?? ""} />
+            <Input name="targetVersion" label="Versão alvo" defaultValue={target.targetVersion} />
+            <Input name="reason" label="Porque quero" defaultValue={target.reason} />
+            <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" defaultValue={target.notes} className="field-input min-h-20" /></label>
+            <button className="min-h-10 rounded-xl border border-slate-200 bg-white px-4 text-sm font-black text-slate-800 sm:col-span-2">Guardar wishlist</button>
+          </form>
+        </details>
+
+        <details className="mt-3 border-t border-slate-100 pt-3">
           <summary className="cursor-pointer text-xs font-black text-emerald-900">Comprei este jogo</summary>
           <form action={purchaseWishlistGame} className="mt-3 grid gap-2 sm:grid-cols-2">
             <input type="hidden" name="targetId" value={target.targetId} />
@@ -70,7 +85,7 @@ export default async function PlatformPage({ params, searchParams }: { params: P
             <input type="hidden" name="platform" value={target.platform} />
             <Input name="paid" label="Preço pago (€)" type="number" step="0.01" required />
             <Input name="source" label="Onde comprei" placeholder="Feira, Vinted, CeX…" />
-            <Input name="date" label="Data" type="date" />
+            <Input name="purchaseDate" label="Data" type="date" />
             <Input name="conditionGrade" label="Condição" placeholder="Bom" />
             <Input name="overallStatus" label="Completude" placeholder="CIB / Loose / Incompleto" />
             <Input name="region" label="Região" placeholder="PAL" />
@@ -92,7 +107,7 @@ export default async function PlatformPage({ params, searchParams }: { params: P
   </div>;
 }
 
-type InputProps = { name: string; label: string; type?: string; step?: string; required?: boolean; placeholder?: string };
+type InputProps = { name: string; label: string; type?: string; step?: string; required?: boolean; placeholder?: string; defaultValue?: string | number };
 
 function Input({ name, label, ...props }: InputProps) {
   return <label><span className="field-label">{label}</span><input name={name} className="field-input" {...props} /></label>;

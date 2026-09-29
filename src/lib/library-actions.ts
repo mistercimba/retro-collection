@@ -81,22 +81,62 @@ function blankGame(input: {
   };
 }
 
+function purchaseFromForm(form: FormData, purchaseId: string, previous?: PurchaseRecord): PurchaseRecord {
+  const paid = money(form, "paid");
+  return {
+    purchaseId,
+    date: text(form, "purchaseDate"),
+    source: text(form, "source"),
+    seller: text(form, "seller"),
+    listingUrl: text(form, "listingUrl"),
+    itemPriceEur: paid,
+    shippingEur: previous?.shippingEur ?? null,
+    feesEur: previous?.feesEur ?? null,
+    totalPaidEur: paid,
+    bundleId: previous?.bundleId ?? "",
+    notes: text(form, "purchaseNotes"),
+  };
+}
+
 export async function editGame(form: FormData) {
   await guard();
   const id = text(form, "collectionId");
   if (!id) return;
+
   await updateLibrary((library) => {
-    library.collection = library.collection.map((game) => game.collectionId !== id ? game : {
-      ...game,
+    const index = library.collection.findIndex((game) => game.collectionId === id);
+    if (index < 0) return library;
+
+    const current = library.collection[index];
+    const paid = money(form, "paid");
+    const purchaseDate = text(form, "purchaseDate");
+    const purchaseInput = paid !== null || purchaseDate || text(form, "source") || text(form, "seller") || text(form, "listingUrl") || text(form, "purchaseNotes");
+    let purchaseId = current.purchaseId;
+
+    if (purchaseInput) {
+      const existingIndex = purchaseId ? library.purchases.findIndex((purchase) => purchase.purchaseId === purchaseId) : -1;
+      if (!purchaseId) purchaseId = `APP-${Date.now()}`;
+      const previous = existingIndex >= 0 ? library.purchases[existingIndex] : undefined;
+      const nextPurchase = purchaseFromForm(form, purchaseId, previous);
+      if (existingIndex >= 0) library.purchases[existingIndex] = nextPurchase;
+      else library.purchases.push(nextPurchase);
+    }
+
+    library.collection[index] = {
+      ...current,
       edition: text(form, "edition"),
       region: text(form, "region"),
       language: text(form, "language"),
       overallStatus: text(form, "overallStatus"),
       conditionGrade: text(form, "conditionGrade"),
+      acquiredDate: purchaseDate || current.acquiredDate,
+      purchaseId,
+      allocatedCostEur: paid,
       notes: text(form, "notes"),
-    });
+    };
     return library;
   });
+
   revalidatePath(`/game/${encodeURIComponent(id)}`);
   revalidatePath("/");
   revalidatePath("/collection");
@@ -108,9 +148,17 @@ export async function addCollectionGame(form: FormData) {
   const platform = text(form, "platform");
   if (!title || !platform) return;
   let created = "";
+
   await updateLibrary((library) => {
     const collectionId = nextId(platform, library.collection);
+    const paid = money(form, "paid");
+    const date = text(form, "purchaseDate");
+    const hasPurchase = paid !== null || date || text(form, "source") || text(form, "seller") || text(form, "listingUrl");
+    const purchaseId = hasPurchase ? `APP-${Date.now()}` : "";
     created = collectionId;
+
+    if (hasPurchase) library.purchases.push(purchaseFromForm(form, purchaseId));
+
     library.collection.push(blankGame({
       collectionId,
       title,
@@ -120,13 +168,14 @@ export async function addCollectionGame(form: FormData) {
       language: text(form, "language"),
       condition: text(form, "conditionGrade"),
       completeness: text(form, "overallStatus"),
-      acquiredDate: text(form, "acquiredDate"),
-      purchaseId: "",
-      paid: money(form, "paid"),
+      acquiredDate: date,
+      purchaseId,
+      paid,
       notes: text(form, "notes"),
     }));
     return library;
   });
+
   revalidatePath("/");
   revalidatePath("/collection");
   revalidatePath(`/platform/${platformSlug(platform)}`);
@@ -138,8 +187,9 @@ export async function removeCollectionGame(form: FormData) {
   const id = text(form, "collectionId");
   let platform = "";
   await updateLibrary((library) => {
-    platform = library.collection.find((game) => game.collectionId === id)?.platform ?? "";
-    library.collection = library.collection.filter((game) => game.collectionId !== id);
+    const game = library.collection.find((item) => item.collectionId === id);
+    platform = game?.platform ?? "";
+    library.collection = library.collection.filter((item) => item.collectionId !== id);
     return library;
   });
   revalidatePath("/");
@@ -172,6 +222,30 @@ export async function addWishlistGame(form: FormData) {
   revalidatePath(`/platform/${platformSlug(platform)}`);
 }
 
+export async function editWishlistGame(form: FormData) {
+  await guard();
+  const targetId = text(form, "targetId");
+  const title = text(form, "title");
+  const platform = text(form, "platform");
+  await updateLibrary((library) => {
+    library.wishlist = library.wishlist.map((target) =>
+      target.targetId === targetId && target.title === title && target.platform === platform
+        ? {
+            ...target,
+            priority: text(form, "priority") || target.priority,
+            targetVersion: text(form, "targetVersion"),
+            priceCeilingEur: money(form, "priceCeilingEur"),
+            reason: text(form, "reason"),
+            notes: text(form, "notes"),
+          }
+        : target,
+    );
+    return library;
+  });
+  revalidatePath("/want");
+  revalidatePath(`/platform/${platformSlug(platform)}`);
+}
+
 export async function removeWishlistGame(form: FormData) {
   await guard();
   const targetId = text(form, "targetId");
@@ -194,7 +268,7 @@ export async function purchaseWishlistGame(form: FormData) {
   const platform = text(form, "platform");
   const paid = money(form, "paid");
   const source = text(form, "source");
-  const date = text(form, "date") || new Date().toISOString().slice(0, 10);
+  const date = text(form, "purchaseDate") || new Date().toISOString().slice(0, 10);
   let created = "";
 
   await updateLibrary((library) => {
@@ -204,20 +278,6 @@ export async function purchaseWishlistGame(form: FormData) {
     const collectionId = nextId(platform, library.collection);
     const purchaseId = `APP-${Date.now()}`;
     created = collectionId;
-
-    const purchase: PurchaseRecord = {
-      purchaseId,
-      date,
-      source,
-      seller: text(form, "seller"),
-      listingUrl: text(form, "listingUrl"),
-      itemPriceEur: paid,
-      shippingEur: null,
-      feesEur: null,
-      totalPaidEur: paid,
-      bundleId: "",
-      notes: text(form, "notes"),
-    };
 
     library.collection.push(blankGame({
       collectionId,
@@ -233,7 +293,11 @@ export async function purchaseWishlistGame(form: FormData) {
       paid,
       notes: text(form, "notes"),
     }));
-    library.purchases.push(purchase);
+    library.purchases.push({
+      ...purchaseFromForm(form, purchaseId),
+      date,
+      source,
+    });
     library.wishlist = library.wishlist.filter((item) =>
       !(item.targetId === targetId && item.title === title && item.platform === platform),
     );

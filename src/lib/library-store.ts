@@ -47,18 +47,13 @@ async function migrateLegacySnapshot(): Promise<LibraryData> {
 }
 
 export async function getLibrary(): Promise<LibraryData> {
-  if (memory) return memory;
   const stored = await readBlobLibrary();
-  if (stored) {
-    memory = stored;
-    return stored;
-  }
+  if (stored) return stored;
   const migrated = await migrateLegacySnapshot();
   try {
     return await saveLibrary(migrated);
   } catch (error) {
     console.error("library_seed_failed", { errorName: error instanceof Error ? error.name : "UnknownError" });
-    memory = migrated;
     return migrated;
   }
 }

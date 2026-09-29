@@ -135,3 +135,9 @@ button, input, select { font: inherit; }
 }
 
 ::selection { background: var(--archive-selection); color: var(--archive-ink); }
+
+
+.field-label { display: block; margin-bottom: .35rem; color: #64748b; font-size: .68rem; font-weight: 800; }
+.field-input { width: 100%; min-height: 2.75rem; border: 1px solid #dbe3ea; border-radius: .75rem; background: #fff; padding: .65rem .75rem; color: #0f172a; font-size: .875rem; outline: none; }
+textarea.field-input { resize: vertical; }
+.field-input:focus { border-color: var(--archive-focus); box-shadow: 0 0 0 3px rgba(49,91,71,.12); }

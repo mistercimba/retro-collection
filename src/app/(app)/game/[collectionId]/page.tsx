@@ -62,7 +62,13 @@ export default async function GamePage({ params, searchParams }: { params: Promi
         <Field name="language" label="Idioma" value={game.language} />
         <Field name="overallStatus" label="Completude" value={game.overallStatus} />
         <Field name="conditionGrade" label="Condição" value={game.conditionGrade} />
-        <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" defaultValue={game.notes} className="field-input min-h-24" /></label>
+        <Field name="paid" label="Preço pago (€)" value={game.purchase?.totalPaidEur ?? game.allocatedCostEur ?? ""} type="number" step="0.01" />
+        <Field name="source" label="Onde comprei" value={game.purchase?.source ?? ""} />
+        <Field name="purchaseDate" label="Data de compra" value={game.purchase?.date || game.acquiredDate || ""} type="date" />
+        <Field name="seller" label="Vendedor" value={game.purchase?.seller ?? ""} />
+        <Field name="listingUrl" label="Link do anúncio" value={game.purchase?.listingUrl ?? ""} type="url" />
+        <Field name="purchaseNotes" label="Notas da compra" value={game.purchase?.notes ?? ""} />
+        <label className="sm:col-span-2"><span className="field-label">Notas da cópia</span><textarea name="notes" defaultValue={game.notes} className="field-input min-h-24" /></label>
         <button className="min-h-11 rounded-xl bg-emerald-950 px-4 text-sm font-black text-white sm:col-span-2">Guardar alterações</button>
       </form>
     </details>
@@ -82,6 +88,6 @@ function Info({ label, value }: { label: string; value: string }) {
   return <div className="rounded-xl bg-slate-50 px-3 py-2"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{label}</p><p className="mt-0.5 text-sm font-semibold text-slate-800">{value || "—"}</p></div>;
 }
 
-function Field({ name, label, value }: { name: string; label: string; value: string }) {
-  return <label><span className="field-label">{label}</span><input name={name} defaultValue={value} className="field-input" /></label>;
+function Field({ name, label, value, type = "text", step }: { name: string; label: string; value: string | number; type?: string; step?: string }) {
+  return <label><span className="field-label">{label}</span><input name={name} type={type} step={step} defaultValue={value} className="field-input" /></label>;
 }
