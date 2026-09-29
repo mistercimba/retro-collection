@@ -29,7 +29,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
  const next=index>=0&&index<siblings.length-1?siblings[index+1]:null;
 
  return <div className="mx-auto max-w-4xl space-y-5 pb-10">
-  <div className="flex items-center justify-between gap-3"><Link href={back} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Wishlist</Link><div className="flex gap-2">{previous&&<Link prefetch={false} href={siblingHref(previous)} className="reference-link">← Anterior</Link>}{next&&<Link prefetch={false} href={siblingHref(next)} className="reference-link">Seguinte →</Link>}</div></div>
+  <div className="flex items-center justify-between gap-3"><Link href={back} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Wishlist</Link><div className="flex gap-2">{previous&&<Link href={siblingHref(previous)} className="reference-link">← Anterior</Link>}{next&&<Link href={siblingHref(next)} className="reference-link">Seguinte →</Link>}</div></div>
   <section className="collection-panel grid gap-6 p-4 sm:grid-cols-[240px_minmax(0,1fr)] sm:p-6">
    <WishlistArtwork title={target.title} platform={target.platform} className="mx-auto h-[330px] w-[240px] sm:mx-0"/>
    <div className="min-w-0">
