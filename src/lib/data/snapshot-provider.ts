@@ -1,4 +1,3 @@
-import "server-only";
 import { createDecipheriv, createHash } from "node:crypto";
 import collectionSnapshot from "@/data/collection-snapshot.json";
 import type { CollectionDataProvider } from "./provider";
