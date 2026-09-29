@@ -13,7 +13,7 @@ export function normalizeMatchText(value: string): string {
 
 export function classifyPlanState(status: string): PlanState {
   const normalized = normalizeMatchText(status).toUpperCase();
-  if (["PESQUISAR PRECO", "WATCH"].includes(normalized)) return "active";
+  if (["PESQUISAR PRECO", "WATCH", "ACTIVE", "ATIVO"].includes(normalized)) return "active";
   if (/^(FORA DA BUYLIST|INATIVO|PAUSADO|CANCELADO|REMOVIDO|ADQUIRIDO|COMPRADO)( |$)/.test(normalized)) return "inactive";
   return "unknown";
 }

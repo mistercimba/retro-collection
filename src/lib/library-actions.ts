@@ -19,6 +19,15 @@ async function guard() {
   if (!(await isAuthenticated())) throw new Error("Não autenticado.");
 }
 
+function wishlistDetailPath(targetId: string, platform: string, title: string) {
+  const params = new URLSearchParams({
+    platform,
+    title,
+    from: `/platform/${platformSlug(platform)}?tab=wishlist`,
+  });
+  return `/wish/${encodeURIComponent(targetId)}?${params.toString()}`;
+}
+
 function nextId(platform: string, games: CollectionGame[]) {
   const same = games.filter((game) => game.platform === platform);
   const prefixes = same.map((game) => game.collectionId.match(/^([A-Z0-9]+)-\d+$/)?.[1]).filter(Boolean) as string[];
@@ -220,6 +229,7 @@ export async function addWishlistGame(form: FormData) {
   });
   revalidatePath("/want");
   revalidatePath(`/platform/${platformSlug(platform)}`);
+  redirect(wishlistDetailPath(target.targetId, target.platform, target.title));
 }
 
 export async function editWishlistGame(form: FormData) {
@@ -244,6 +254,8 @@ export async function editWishlistGame(form: FormData) {
   });
   revalidatePath("/want");
   revalidatePath(`/platform/${platformSlug(platform)}`);
+  revalidatePath(`/wish/${encodeURIComponent(targetId)}`);
+  redirect(wishlistDetailPath(targetId, platform, title));
 }
 
 export async function removeWishlistGame(form: FormData) {
@@ -259,6 +271,8 @@ export async function removeWishlistGame(form: FormData) {
   });
   revalidatePath("/want");
   revalidatePath(`/platform/${platformSlug(platform)}`);
+  revalidatePath(`/wish/${encodeURIComponent(targetId)}`);
+  redirect(`/platform/${platformSlug(platform)}?tab=wishlist`);
 }
 
 export async function purchaseWishlistGame(form: FormData) {

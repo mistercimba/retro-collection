@@ -13,15 +13,23 @@ import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 
 export default async function WishDetailPage({params,searchParams}:{params:Promise<{targetId:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{targetId},query,targets]=await Promise.all([params,searchParams,getWantlist()]);
- const target=targets.find(x=>x.targetId===decodeURIComponent(targetId));
+ const decodedId=decodeURIComponent(targetId);
+ const wantedPlatform=typeof query.platform==="string"?query.platform:"";
+ const wantedTitle=typeof query.title==="string"?query.title:"";
+ const target=targets.find(x=>x.targetId===decodedId&&(!wantedPlatform||x.platform===wantedPlatform)&&(!wantedTitle||x.title===wantedTitle))??targets.find(x=>x.targetId===decodedId);
  if(!target) notFound();
  const guide=await getPricechartingGuide(target.platform,target.title,target.targetVersion);
  const metadata=findGameMetadataByTitle(target.title);
  const back=getSafeListReturnPath(query.from)??`/platform/${platformSlug(target.platform)}?tab=wishlist`;
  const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
+ const siblings=targets.filter(x=>x.platform===target.platform&&x.planState!=="inactive"&&x.matchState!=="acquired").sort((a,b)=>a.title.localeCompare(b.title,"pt-PT"));
+ const index=siblings.findIndex(x=>x.targetId===target.targetId&&x.title===target.title);
+ const siblingHref=(item:typeof target)=>`/wish/${encodeURIComponent(item.targetId)}?platform=${encodeURIComponent(item.platform)}&title=${encodeURIComponent(item.title)}&from=${encodeURIComponent(back)}`;
+ const previous=index>0?siblings[index-1]:null;
+ const next=index>=0&&index<siblings.length-1?siblings[index+1]:null;
 
  return <div className="mx-auto max-w-4xl space-y-5 pb-10">
-  <Link href={back} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Wishlist</Link>
+  <div className="flex items-center justify-between gap-3"><Link href={back} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Wishlist</Link><div className="flex gap-2">{previous&&<Link prefetch={false} href={siblingHref(previous)} className="reference-link">← Anterior</Link>}{next&&<Link prefetch={false} href={siblingHref(next)} className="reference-link">Seguinte →</Link>}</div></div>
   <section className="collection-panel grid gap-6 p-4 sm:grid-cols-[240px_minmax(0,1fr)] sm:p-6">
    <WishlistArtwork title={target.title} platform={target.platform} className="mx-auto h-[330px] w-[240px] sm:mx-0"/>
    <div className="min-w-0">

@@ -4,8 +4,7 @@ import {notFound} from "next/navigation";
 import {PlatformLibraryBrowser} from "@/components/platform-library-browser";
 import {getCollectionGames,getWantlist} from "@/lib/data/collection-service";
 import {displayPlatform,platformFromSlug,platformReleaseYear} from "@/lib/data/platforms";
-import {enrichGameList} from "@/lib/game-list-data";
-import {getPricechartingGuides} from "@/lib/pricecharting-catalog";
+import {getGameMetadata} from "@/lib/game-metadata";
 
 export default async function PlatformPage({params,searchParams}:{params:Promise<{slug:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{slug},query,collectionGames,wantlist]=await Promise.all([params,searchParams,getCollectionGames(),getWantlist()]);
@@ -15,12 +14,8 @@ export default async function PlatformPage({params,searchParams}:{params:Promise
 
  const rawGames=collectionGames.filter(x=>x.platform===platform);
  const targets=wantlist.filter(x=>x.platform===platform&&x.planState!=="inactive"&&x.matchState!=="acquired");
- const[games,guides]=await Promise.all([
-  enrichGameList(rawGames),
-  getPricechartingGuides(targets.map(x=>({key:x.targetId+":"+x.title,platform:x.platform,title:x.title,edition:x.targetVersion})))
- ]);
- const collection=games.map(x=>({collectionId:x.collectionId,title:x.title,genre:x.genre,valueEur:x.currentValueEur,condition:x.conditionGrade,completeness:x.overallStatus}));
- const wishlist=targets.map(x=>({targetId:x.targetId,title:x.title,priority:x.priority,targetVersion:x.targetVersion,priceCeilingEur:x.priceCeilingEur,guide:guides.get(x.targetId+":"+x.title)??{looseEur:null,cibEur:null,newEur:null,source:"Preço indisponível",date:"",productUrl:""}}));
+ const collection=rawGames.map(x=>{const meta=getGameMetadata(x.collectionId);return {collectionId:x.collectionId,title:x.title,genre:meta?.matchStatus==="matched"?(meta.genres??[]).join(", "):"",valueEur:x.marketValueEur,condition:x.conditionGrade,completeness:x.overallStatus}});
+ const wishlist=targets.map(x=>({targetId:x.targetId,title:x.title,priority:x.priority,targetVersion:x.targetVersion,priceCeilingEur:x.priceCeilingEur}));
 
  return <div className="space-y-5 pb-8">
   <Link href="/" className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Consolas</Link>

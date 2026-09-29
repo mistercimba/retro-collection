@@ -1,12 +1,10 @@
 import "server-only";
-import { cache } from "react";
 import { get, put } from "@vercel/blob";
 import { SnapshotProvider } from "@/lib/data/snapshot-provider";
 import { joinCollectionWithAudit, parseAuditRow, parseCollectionRow } from "@/lib/data/parsers";
 import type { LibraryData } from "@/lib/data/types";
 
 const LIBRARY_PATH = "retro-collection/library.json";
-let memory: LibraryData | null = null;
 
 function validLibrary(value: unknown): value is LibraryData {
   if (!value || typeof value !== "object") return false;
@@ -47,7 +45,7 @@ async function migrateLegacySnapshot(): Promise<LibraryData> {
   };
 }
 
-async function readLibrary(): Promise<LibraryData> {
+export async function getLibrary(): Promise<LibraryData> {
   const stored = await readBlobLibrary();
   if (stored) return stored;
   const migrated = await migrateLegacySnapshot();
@@ -59,8 +57,6 @@ async function readLibrary(): Promise<LibraryData> {
   }
 }
 
-export const getLibrary = cache(readLibrary);
-
 export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
   const next: LibraryData = { ...data, schemaVersion: 1, updatedAt: new Date().toISOString() };
   await put(LIBRARY_PATH, JSON.stringify(next), {
@@ -69,7 +65,6 @@ export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
     contentType: "application/json",
     cacheControlMaxAge: 60,
   });
-  memory = next;
   return next;
 }
 
