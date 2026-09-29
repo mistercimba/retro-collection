@@ -1,6 +1,6 @@
 import "server-only";
 import { get, put } from "@vercel/blob";
-import { getDataProvider } from "@/lib/data/provider";
+import { SnapshotProvider } from "@/lib/data/snapshot-provider";
 import { joinCollectionWithAudit, parseAuditRow, parseCollectionRow } from "@/lib/data/parsers";
 import type { LibraryData } from "@/lib/data/types";
 
@@ -30,7 +30,7 @@ async function readBlobLibrary(): Promise<LibraryData | null> {
 }
 
 async function migrateLegacySnapshot(): Promise<LibraryData> {
-  const raw = await getDataProvider().read();
+  const raw = await new SnapshotProvider().read();
   const collection = raw.collection
     .map(parseCollectionRow)
     .filter((item) => item.collectionId && item.title)
@@ -54,8 +54,13 @@ export async function getLibrary(): Promise<LibraryData> {
     return stored;
   }
   const migrated = await migrateLegacySnapshot();
-  memory = migrated;
-  return migrated;
+  try {
+    return await saveLibrary(migrated);
+  } catch (error) {
+    console.error("library_seed_failed", { errorName: error instanceof Error ? error.name : "UnknownError" });
+    memory = migrated;
+    return migrated;
+  }
 }
 
 export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
