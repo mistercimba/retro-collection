@@ -2,7 +2,7 @@
   "name": "retro-collection",
   "version": "0.1.0",
   "private": true,
-  "description": "Mobile-first personal retro game collection browser backed by Google Sheets.",
+  "description": "Mobile-first personal retro game collection browser.",
   "engines": {
     "node": "22.x"
   },
@@ -28,7 +28,8 @@
     "lucide-react": "1.48.0",
     "next": "16.3.6",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "@vercel/blob": "2.6.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.3",

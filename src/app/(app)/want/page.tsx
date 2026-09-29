@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { addWishlistGame } from "@/lib/library-actions";
 import { getStats, getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, platformSlug, sortPlatformsByRelease } from "@/lib/data/platforms";
 
@@ -21,5 +22,23 @@ export default async function WantPage() {
         <p className="mt-2 text-xs text-slate-500">{group.count} alvos</p>
       </Link>)}
     </section>
+
+    <details className="rounded-2xl border border-slate-200 bg-white p-4">
+      <summary className="cursor-pointer text-sm font-black text-slate-900">+ Adicionar à wishlist</summary>
+      <form action={addWishlistGame} className="mt-4 grid gap-2 sm:grid-cols-2">
+        <Input name="title" label="Jogo" required />
+        <Input name="platform" label="Consola" required placeholder="Nintendo DS" />
+        <label><span className="field-label">Prioridade</span><select name="priority" className="field-input"><option>Alta</option><option selected>Média</option><option>Baixa</option><option>Grail</option></select></label>
+        <Input name="priceCeilingEur" label="Máximo que pago (€)" type="number" step="0.01" />
+        <Input name="targetVersion" label="Versão alvo" placeholder="PAL · CIB" />
+        <Input name="reason" label="Porque quero" />
+        <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" className="field-input min-h-20" /></label>
+        <button className="min-h-11 rounded-xl bg-rose-700 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à wishlist</button>
+      </form>
+    </details>
   </div>;
+}
+
+function Input({ name, label, ...props }: { name: string; label: string; [key: string]: string | boolean | undefined }) {
+  return <label><span className="field-label">{label}</span><input name={name} className="field-input" {...props} /></label>;
 }

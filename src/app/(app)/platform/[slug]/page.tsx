@@ -8,6 +8,7 @@ import { getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformFromSlug, platformReleaseYear } from "@/lib/data/platforms";
 import { formatEuro } from "@/lib/format";
 import { getGameMetadata } from "@/lib/game-metadata";
+import { purchaseWishlistGame, removeWishlistGame } from "@/lib/library-actions";
 
 export default async function PlatformPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const [{ slug }, query, allGames, wantlist] = await Promise.all([params, searchParams, getCollectionListGames(), getWantlist()]);
@@ -60,7 +61,37 @@ export default async function PlatformPage({ params, searchParams }: { params: P
           <div className="shrink-0 text-right"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Máximo</p><p className="text-lg font-black text-rose-700">{target.priceCeilingEur === null ? "—" : formatEuro(target.priceCeilingEur)}</p></div>
         </div>
         <div className="mt-3"><MarketSearchLinks title={target.title} platform={target.platform} compact context="wantlist" /></div>
+
+        <details className="mt-3 border-t border-slate-100 pt-3">
+          <summary className="cursor-pointer text-xs font-black text-emerald-900">Comprei este jogo</summary>
+          <form action={purchaseWishlistGame} className="mt-3 grid gap-2 sm:grid-cols-2">
+            <input type="hidden" name="targetId" value={target.targetId} />
+            <input type="hidden" name="title" value={target.title} />
+            <input type="hidden" name="platform" value={target.platform} />
+            <Input name="paid" label="Preço pago (€)" type="number" step="0.01" required />
+            <Input name="source" label="Onde comprei" placeholder="Feira, Vinted, CeX…" />
+            <Input name="date" label="Data" type="date" />
+            <Input name="conditionGrade" label="Condição" placeholder="Bom" />
+            <Input name="overallStatus" label="Completude" placeholder="CIB / Loose / Incompleto" />
+            <Input name="region" label="Região" placeholder="PAL" />
+            <Input name="edition" label="Edição" placeholder="Standard" />
+            <Input name="language" label="Idioma" />
+            <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" className="field-input min-h-20" /></label>
+            <button className="min-h-11 rounded-xl bg-emerald-950 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à coleção</button>
+          </form>
+        </details>
+
+        <form action={removeWishlistGame} className="mt-2">
+          <input type="hidden" name="targetId" value={target.targetId} />
+          <input type="hidden" name="title" value={target.title} />
+          <input type="hidden" name="platform" value={target.platform} />
+          <button className="text-[11px] font-bold text-slate-400 hover:text-rose-700">Remover da wishlist</button>
+        </form>
       </article>) : <p className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-500">Nenhum alvo encontrado.</p>}
     </div>}
   </div>;
+}
+
+function Input({ name, label, ...props }: { name: string; label: string; [key: string]: string | boolean | undefined }) {
+  return <label><span className="field-label">{label}</span><input name={name} className="field-input" {...props} /></label>;
 }

@@ -132,4 +132,13 @@ export interface ValuationSnapshot {
   notes: string;
 }
 
+export interface LibraryData {
+  schemaVersion: 1;
+  updatedAt: string;
+  collection: CollectionGame[];
+  wishlist: WantTarget[];
+  purchases: PurchaseRecord[];
+  valuations: ValuationSnapshot[];
+}
+
 export type ProviderMode = "snapshot" | "google" | "mock";
