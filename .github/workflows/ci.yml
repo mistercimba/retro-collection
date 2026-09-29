@@ -6,7 +6,7 @@ on:
 
 jobs:
   check:
-    if: github.ref != 'refs/heads/snapshot-build' && github.ref != 'refs/heads/feature/simple-library-v1' && github.ref != 'refs/heads/feature/app-library-v1' && !contains(github.event.head_commit.message, '[snapshot-ready]')
+    if: github.ref != 'refs/heads/snapshot-build' && github.ref != 'refs/heads/feature/simple-library-v1' && github.ref != 'refs/heads/feature/app-library-v1' && github.head_ref != 'feature/app-library-v1' && !contains(github.event.head_commit.message, '[snapshot-ready]')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
