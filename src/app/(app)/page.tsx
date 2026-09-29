@@ -25,10 +25,7 @@ export default async function HomePage() {
     <div className="rounded-2xl bg-[#17382e] p-3 md:hidden"><QuickSearch games={games} /></div>
 
     <section>
-      <div className="mb-3 flex items-end justify-between gap-3">
-        <div><h2 className="text-lg font-black text-slate-950">Consolas</h2><p className="text-xs text-slate-500">Por ano de lançamento</p></div>
-        <Link href="/want" className="text-xs font-bold text-emerald-800">Wishlist →</Link>
-      </div>
+      <div className="mb-4"><h2 className="text-xl font-black text-slate-950">Consolas</h2><p className="text-xs font-semibold text-slate-500">Por ano de lançamento</p></div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {platforms.map((platform) => <Link key={platform.platform} href={"/platform/" + platform.slug} className="console-card group">
           <span className="grid h-24 w-28 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white/65"><PlatformArtwork platform={platform.platform} className="h-full w-full" /></span>
