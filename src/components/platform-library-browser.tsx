@@ -9,7 +9,7 @@ import type {PriceGuide} from "@/lib/pricecharting-catalog";
 
 type C={collectionId:string;title:string;genre:string;valueEur:number|null;condition:string;completeness:string};
 type W={targetId:string;title:string;priority:string;targetVersion:string;priceCeilingEur:number|null;guide:PriceGuide};
-const rank=(v:string)=>({grail:0,alta:1,"média":2,media:2,baixa:3}[v.toLocaleLowerCase("pt-PT")]??9);
+const PRIORITY_RANK:Record<string,number>={grail:0,alta:1,"média":2,media:2,baixa:3};\nconst rank=(v:string)=>PRIORITY_RANK[v.toLocaleLowerCase("pt-PT")]??9;
 const market=(v:W)=>v.guide.cibEur??v.guide.looseEur??v.guide.newEur;
 
 export function PlatformLibraryBrowser({slug,platform,initialTab,collection,wishlist}:{slug:string;platform:string;initialTab:"collection"|"wishlist";collection:C[];wishlist:W[]}){
