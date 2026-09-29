@@ -1,5 +1,5 @@
 import { createDecipheriv, createHash } from "node:crypto";
-import collectionSnapshot from "@/data/collection-snapshot.json";
+import collectionSnapshot from "../../data/collection-snapshot.json";
 import type { CollectionDataProvider } from "./provider";
 import type { RawSheetData } from "./types";
 
