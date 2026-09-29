@@ -1,10 +1,12 @@
 import {NextRequest,NextResponse} from "next/server";
 import {getWantlist} from "@/lib/data/collection-service";
 import {getPricechartingGuides} from "@/lib/pricecharting-catalog";
+import {isAuthenticated} from "@/lib/auth";
 
 export const dynamic="force-dynamic";
 
 export async function GET(request:NextRequest){
+ if(!(await isAuthenticated()))return NextResponse.json({error:"unauthorized"},{status:401});
  const platform=request.nextUrl.searchParams.get("platform")?.trim()??"";
  if(!platform)return NextResponse.json({prices:{}},{status:400});
  const targets=(await getWantlist()).filter(x=>x.platform===platform&&x.planState!=="inactive"&&x.matchState!=="acquired");
