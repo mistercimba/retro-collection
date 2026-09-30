@@ -182,6 +182,35 @@ const importedKeys = new Set();
 const localCandidates = new Map();
 const unresolved = [];
 const sourceErrors = [];
+const withdrawnAmbiguous = [];
+
+// Revalidate earlier imports under the same parser before trusting an existing
+// manifest entry. Source revision/language metadata must not hide duplicates.
+for (const [key, entry] of Object.entries(manifest.entries)) {
+  if (entry.source !== "libretro-thumbnails") continue;
+  const repository = entry.sourceRepo?.split("/")[1];
+  if (!repository) throw new Error(`Missing provenance for ${entry.title}`);
+  if (!localCandidates.has(repository)) localCandidates.set(repository, await loadTree(repository));
+  const tree = localCandidates.get(repository);
+  const candidates = tree.files.map((sourcePath) => ({
+    sourcePath, title: sourceArtworkTitle(sourcePath), region: sourceArtworkRegion(sourcePath),
+  }));
+  const matches = findExactSourceMatches(entry, candidates);
+  if (matches.length === 1 && `Named_Boxarts/${matches[0].sourcePath}` === entry.sourcePath) continue;
+  delete manifest.entries[key];
+  withdrawnAmbiguous.push({ title: entry.title, platform: entry.platform, candidateCount: matches.length });
+  previousReasons.set(sha(key), {
+    identityHash: sha(key), title: entry.title, platform: entry.platform,
+    reason: matches.length > 1 ? "ambiguous-source-candidates" : "source-match-no-longer-valid",
+    candidateCount: matches.length,
+  });
+  if (!Object.values(manifest.entries).some((other) => other.file === entry.file)) {
+    filesUsed.delete(entry.file);
+    await fs.unlink(path.join(ROOT, "public", entry.file.replace(/^\//, ""))).catch((error) => {
+      if (error.code !== "ENOENT") throw error;
+    });
+  }
+}
 
 for (const target of uniqueTargets) {
   const key = identityKey(target);
@@ -315,6 +344,13 @@ for (const item of unresolved) unresolvedByHash.set(item.identityHash, item);
 const reusedHashes = new Set([...reused].map((key) => sha(key)));
 const finalUnresolved = [...unresolvedByHash.values()].filter((entry) => !reusedHashes.has(entry.identityHash));
 const orphaned = Object.keys(manifest.entries).filter((key) => !currentKeys.has(key));
+const manifestFiles = new Set(Object.values(manifest.entries).map((entry) => entry.file));
+for (const fileName of await fs.readdir(COVERS_DIR)) {
+  if (/^[a-f0-9]{20}\.(png|jpg)$/.test(fileName) && !manifestFiles.has(`/covers/wishlist/${fileName}`)) {
+    await fs.unlink(path.join(COVERS_DIR, fileName));
+    filesUsed.delete(`/covers/wishlist/${fileName}`);
+  }
+}
 manifest.generatedAt = new Date().toISOString();
 manifest.entries = Object.fromEntries(Object.entries(manifest.entries).sort(([a], [b]) => a.localeCompare(b)));
 await fs.mkdir(path.dirname(MANIFEST_FILE), { recursive: true });
@@ -361,7 +397,7 @@ await fs.writeFile(REPORT_FILE, JSON.stringify({
 }, null, 2) + "\n");
 
 console.log(JSON.stringify({
-  newlyImported, selectedPlatforms, activeWishlistTotal, dedicatedArtwork: dedicatedCount, reusedCollectionArtwork: reusedCount,
+  newlyImported, selectedPlatforms, withdrawnAmbiguous, activeWishlistTotal, dedicatedArtwork: dedicatedCount, reusedCollectionArtwork: reusedCount,
   fallback: fallbackCount,
   coverage: activeWishlistTotal ? Number(((dedicatedCount + reusedCount) / activeWishlistTotal * 100).toFixed(1)) : 0,
   coverageByPlatform: perPlatform, unresolvedReasons: reasonCounts,

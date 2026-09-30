@@ -32,7 +32,8 @@ export function sourceArtworkTitle(filePath) {
   let title = path.posix.basename(filePath).replace(/\.[^.]+$/, "");
   title = title.replace(/\s*\(([^)]*)\)/g, (group, contents) =>
     /\b(europe|pal|portugal|united kingdom|uk|france|germany|spain|italy|netherlands|australia|usa|united states|japan|japanese|ntsc|north america|canada)\b/i.test(contents) ||
-    /^(?:En|Fr|De|Es|It|Nl|Pt|Sv|No|Da|Fi|Pl|Hr|Ja|Ko|Zh|Ru)(?:,(?:En|Fr|De|Es|It|Nl|Pt|Sv|No|Da|Fi|Pl|Hr|Ja|Ko|Zh|Ru))*$/.test(contents)
+    /^(?:En|Fr|De|Es|It|Nl|Pt|Sv|No|Da|Fi|Pl|Hr|Ja|Ko|Zh|Ru)(?:,(?:En|Fr|De|Es|It|Nl|Pt|Sv|No|Da|Fi|Pl|Hr|Ja|Ko|Zh|Ru))*$/.test(contents) ||
+    /^(?:Rev\s+[0-9.]+|v[0-9.]+)$/i.test(contents)
       ? " "
       : group,
   );

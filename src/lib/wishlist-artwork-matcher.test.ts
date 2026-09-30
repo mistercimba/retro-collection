@@ -37,6 +37,15 @@ describe("wishlist artwork source matcher", () => {
   it("parses explicit language metadata without treating edition tags as title metadata", () => {
     expect(sourceArtworkTitle("Super Metroid (Europe) (En,Fr,De).png")).toBe("Super Metroid");
     expect(sourceArtworkTitle("Super Metroid (Europe) (Beta).png")).toBe("Super Metroid (Beta)");
+    expect(sourceArtworkTitle("Game (Europe) (En,Fr) (Rev 1).png")).toBe("Game");
+    expect(sourceArtworkTitle("Game (Europe) (v1.00).png")).toBe("Game");
+  });
+
+  it("counts language and revision variants as ambiguity rather than hiding them", () => {
+    const files = ["Game (Europe).png", "Game (Europe) (En,Fr) (Rev 1).png"];
+    expect(findExactSourceMatches({ title: "Game", targetVersion: "PAL" }, files.map((file) => ({
+      title: sourceArtworkTitle(file), region: sourceArtworkRegion(file),
+    })))).toHaveLength(2);
   });
 
   const game = {

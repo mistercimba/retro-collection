@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T14:12:55.015Z",
+  "generatedAt": "2026-09-30T14:23:28.028Z",
   "activeWishlistTotal": 298,
-  "fallback": 221,
+  "fallback": 234,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 4,
-    "ambiguous-source-candidates": 26,
-    "no-exact-title-platform-match": 81,
-    "region-mismatch": 77,
+    "ambiguous-launchbox-covers": 5,
+    "ambiguous-source-candidates": 49,
+    "no-exact-title-platform-match": 75,
+    "region-mismatch": 72,
     "source-unavailable": 32,
     "unsupported-image-type": 1
   },
@@ -40,11 +40,25 @@
       "candidateCount": 0
     },
     {
+      "identityHash": "bb78f225d12133e97edb",
+      "title": "Zelda II: The Adventure of Link",
+      "platform": "NES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
       "identityHash": "7acbfffa668d7a5c8240",
       "title": "Kid Icarus",
       "platform": "NES",
       "reason": "region-mismatch",
       "candidateCount": 1
+    },
+    {
+      "identityHash": "aee063023b11ff801265",
+      "title": "Mega Man 3",
+      "platform": "NES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "5c9a4d8c13c30acc12f9",
@@ -113,43 +127,29 @@
       "identityHash": "b62b01431753af360b20",
       "title": "Pocky & Rocky",
       "platform": "SNES",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "856f55ee9f15cf92c11e",
       "title": "Terranigma",
       "platform": "SNES",
       "reason": "ambiguous-source-candidates",
-      "candidateCount": 4
+      "candidateCount": 5
     },
     {
       "identityHash": "37f985fa9b60e829158b",
       "title": "Donkey Kong Country",
       "platform": "SNES",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "28c1129607d61a3e36fb",
       "title": "Donkey Kong Country 2: Diddy's Kong Quest",
       "platform": "SNES",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "83d95d5c6cb46489c717",
-      "title": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
-      "platform": "SNES",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "c23eb8a00d81222b4f2d",
-      "title": "Super Metroid",
-      "platform": "SNES",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
     },
     {
       "identityHash": "dd649239dab8abf6217e",
@@ -177,28 +177,21 @@
       "title": "Illusion of Time",
       "platform": "SNES",
       "reason": "ambiguous-source-candidates",
-      "candidateCount": 4
+      "candidateCount": 5
     },
     {
       "identityHash": "cfe9f53494f987ae765b",
       "title": "Secret of Mana",
       "platform": "SNES",
       "reason": "ambiguous-source-candidates",
-      "candidateCount": 3
+      "candidateCount": 5
     },
     {
       "identityHash": "f2dc6e1c61c143e3655b",
       "title": "Starwing",
       "platform": "SNES",
       "reason": "ambiguous-source-candidates",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "3d046779019424d5f32d",
-      "title": "The Firemen",
-      "platform": "SNES",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "candidateCount": 3
     },
     {
       "identityHash": "9878b7d24b1a8f34cd53",
@@ -313,6 +306,13 @@
       "candidateCount": 5
     },
     {
+      "identityHash": "452820a542fc4063f6c6",
+      "title": "Syphon Filter 2",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
       "identityHash": "715ee517f54e0b7466ab",
       "title": "The Legend of Dragoon",
       "platform": "Playstation",
@@ -423,6 +423,13 @@
       "platform": "Nintendo 64",
       "reason": "no-exact-title-platform-match",
       "candidateCount": 0
+    },
+    {
+      "identityHash": "60463fef32e6ca8d55f1",
+      "title": "WWF No Mercy",
+      "platform": "Nintendo 64",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "48b3785a65ca69fc7778",
@@ -540,36 +547,8 @@
       "identityHash": "10042d9c67af51f2ba2e",
       "title": "Sly 2: Band of Thieves",
       "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "e31f57894466c9bae61d",
-      "title": "Sly Raccoon",
-      "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "2449f35ea2f50c144673",
-      "title": "Tekken 5",
-      "platform": "Playstation 2",
-      "reason": "region-mismatch",
+      "reason": "ambiguous-source-candidates",
       "candidateCount": 2
-    },
-    {
-      "identityHash": "0f7d5ab2591969b64dc4",
-      "title": "TimeSplitters 2",
-      "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "59392285961e68d1b762",
-      "title": "TimeSplitters: Future Perfect",
-      "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 1
     },
     {
       "identityHash": "3a06b900f2d884e87e01",
@@ -698,11 +677,32 @@
       "candidateCount": 1
     },
     {
+      "identityHash": "ace364dd495003249dc9",
+      "title": "F-Zero GX",
+      "platform": "GameCube",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "647241a4e06d01fd7285",
+      "title": "Luigi's Mansion",
+      "platform": "GameCube",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
       "identityHash": "97208983828c3215bd45",
       "title": "Metroid Prime 2: Echoes",
       "platform": "GameCube",
       "reason": "region-mismatch",
       "candidateCount": 1
+    },
+    {
+      "identityHash": "d2e6fc677f10728404e0",
+      "title": "Paper Mario: The Thousand-Year Door",
+      "platform": "GameCube",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "dd65694064c7c12f3f93",
@@ -725,10 +725,38 @@
       "candidateCount": 1
     },
     {
+      "identityHash": "05e851f61847a8df1711",
+      "title": "Mario Party 5",
+      "platform": "GameCube",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "c86fdd64f197ac34cecb",
+      "title": "Mario Party 6",
+      "platform": "GameCube",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "4193a165df07ad036ead",
+      "title": "SoulCalibur II",
+      "platform": "GameCube",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
       "identityHash": "d7cbb0046bc5f3ad8b4b",
       "title": "Star Fox Adventures",
       "platform": "GameCube",
       "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "81f11a6efa78381d7488",
+      "title": "Viewtiful Joe",
+      "platform": "GameCube",
+      "reason": "ambiguous-source-candidates",
       "candidateCount": 2
     },
     {
@@ -900,10 +928,38 @@
       "candidateCount": 1
     },
     {
+      "identityHash": "947656a2a765ad0e4007",
+      "title": "Fire Emblem: Radiant Dawn",
+      "platform": "Nintendo Wii",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "0aafe11b277a6f06b1e7",
+      "title": "Mario Kart Wii",
+      "platform": "Nintendo Wii",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
       "identityHash": "ec4a584b5f252a1bdb9b",
       "title": "Metroid Prime Trilogy",
       "platform": "Nintendo Wii",
       "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "ebe149a8fc2a8b2207d0",
+      "title": "Super Mario Galaxy",
+      "platform": "Nintendo Wii",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "634c7248b7d206ee787b",
+      "title": "Super Mario Galaxy 2",
+      "platform": "Nintendo Wii",
+      "reason": "ambiguous-source-candidates",
       "candidateCount": 2
     },
     {
@@ -912,6 +968,20 @@
       "platform": "Nintendo Wii",
       "reason": "region-mismatch",
       "candidateCount": 1
+    },
+    {
+      "identityHash": "16c2f7d48ebaf6285ed8",
+      "title": "Kirby's Adventure Wii",
+      "platform": "Nintendo Wii",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "279c260e984a1373f0b8",
+      "title": "Muramasa: The Demon Blade",
+      "platform": "Nintendo Wii",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "cf9f83eff13025fb2d7c",
@@ -1145,6 +1215,13 @@
       "candidateCount": 1
     },
     {
+      "identityHash": "eecc3eda9a77402f98f4",
+      "title": "Fantasy Life",
+      "platform": "Nintendo 3DS",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
       "identityHash": "2b6c1515fc49aaae8290",
       "title": "Fire Emblem Echoes: Shadows of Valentia",
       "platform": "Nintendo 3DS",
@@ -1215,6 +1292,13 @@
       "candidateCount": 1
     },
     {
+      "identityHash": "8b77133115c9ccc83084",
+      "title": "Rhythm Paradise Megamix",
+      "platform": "Nintendo 3DS",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
       "identityHash": "61b32f9ea7e9ce4134de",
       "title": "The Legend of Zelda: Majora's Mask 3D",
       "platform": "Nintendo 3DS",
@@ -1283,6 +1367,13 @@
       "platform": "Nintendo Wii U",
       "reason": "no-exact-title-platform-match",
       "candidateCount": 0
+    },
+    {
+      "identityHash": "78a97f732f3f68b98cfd",
+      "title": "Captain Toad: Treasure Tracker",
+      "platform": "Nintendo Wii U",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
     },
     {
       "identityHash": "4731276f64d4157ef392",
