@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T15:09:15.611Z",
+  "generatedAt": "2026-09-30T15:12:12.254Z",
   "activeWishlistTotal": 298,
-  "fallback": 226,
+  "fallback": 215,
   "reasonCounts": {
     "ambiguous-launchbox-covers": 7,
-    "ambiguous-source-candidates": 52,
-    "no-exact-title-platform-match": 69,
-    "region-mismatch": 65,
+    "ambiguous-source-candidates": 53,
+    "no-exact-title-platform-match": 67,
+    "region-mismatch": 55,
     "source-artwork-region-mismatch": 1,
     "source-unavailable": 32
   },
@@ -292,88 +292,18 @@
       "candidateCount": 2
     },
     {
-      "identityHash": "a3bc817c05c7ab1e1035",
-      "title": "Mario Party 3",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "f960e6b20f0c7d9709fe",
-      "title": "1080° Snowboarding",
-      "platform": "Nintendo 64",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "834f1ba5a83302b02db4",
-      "title": "Mario Party 2",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "40401eb7d1b68b5f1270",
-      "title": "Paper Mario",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "6fee742dc9f614edf666",
-      "title": "Perfect Dark",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "f9fc9732f3e2a5118a4d",
-      "title": "Resident Evil 2",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
       "identityHash": "b3e9a342e3100bba3c68",
       "title": "Star Wars: Rogue Squadron",
       "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "296811d5a91608b964c8",
       "title": "Turok: Dinosaur Hunter",
       "platform": "Nintendo 64",
       "reason": "ambiguous-source-candidates",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "d8c90a9bc4f1bedf8307",
-      "title": "Blast Corps",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "477c7b4cd3859dde3469",
-      "title": "Body Harvest",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "aae2855c59c99e656737",
-      "title": "Mario Party",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "b5ff2a6a26a2ec6e9fae",
-      "title": "Pilotwings 64",
-      "platform": "Nintendo 64",
-      "reason": "region-mismatch",
-      "candidateCount": 2
+      "candidateCount": 6
     },
     {
       "identityHash": "46e9087252a3a0b966a5",
@@ -387,14 +317,7 @@
       "title": "Shadow Man",
       "platform": "Nintendo 64",
       "reason": "ambiguous-source-candidates",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "19edb49c8656ad5faed6",
-      "title": "Space Station Silicon Valley",
-      "platform": "Nintendo 64",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "candidateCount": 3
     },
     {
       "identityHash": "60463fef32e6ca8d55f1",
