@@ -1,6 +1,6 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-09-30
+Last updated: 2026-10-01
 
 This is the living project handoff. Read `AGENTS.md` first.
 
@@ -128,7 +128,8 @@ Branch:
 
 `feature/wishlist-local-artwork`
 
-Current edition-identity correction is being finalized on the existing PR branch.
+The edition-requirement correction is complete on the existing PR branch;
+use the live PR HEAD for its exact commit and check status.
 
 The 21 existing commits were replayed linearly on `main`:
 `7a4d1a9645f94d8c109037c9652e9d0047c3603f`.
@@ -142,13 +143,13 @@ The PR remains open and must not be merged without explicit user approval.
 Wishlist targets:
 
 - total: 298
-- dedicated local artwork: 102
+- dedicated local artwork: 139
 - reused Collection artwork: 0
-- fallback/unresolved: 196
-- coverage: 34.2%
+- fallback/unresolved: 159
+- coverage: 46.6%
 
 Sources for all 144 retained files: 121 libretro-thumbnails and 23 LaunchBox.
-The generated report contains the source counts for the 102 active mappings.
+The generated report contains the source counts for the 139 active mappings.
 
 Assets:
 
@@ -175,41 +176,57 @@ Examples of rejected problems included:
 
 These rejections are intentionally conservative.
 
-### Edition identity correction
+### Edition requirement semantics
 
-The dedicated identity now includes targetId, canonical platform, normalized title,
-region, and the cover-relevant edition variant. Runtime and maintenance scripts
-share the existing Wantlist facet normalization, extended with Nintendo Selects.
-Loose/CIB condition changes retain identity. Standard, Black Label, Platinum,
-Nintendo Selects, Player's Choice, Greatest Hits, Steelbook, Limited, Collector,
-and Special Edition remain distinct. Unknown editions fall back.
+Dedicated identity is targetId + canonical platform + normalized title + region +
+artwork edition requirement. Runtime and maintenance scripts share the existing
+Wantlist facet normalization for known editions, including Nintendo Selects.
+The artwork-specific requirement has three states:
 
-The authorized read-only production browser session recovered the four permitted
-fields for all 298 current targets. The full temporary export is not committed.
-The manifest preserves the exact original targetVersion for the same 144 imported
-records; no private library dump or full Wishlist export was added.
+1. Explicit known edition: Standard/original, Platinum, Nintendo Selects,
+   Player's Choice, Greatest Hits, Black Label, Steelbook, Limited, Collector and
+   Special Edition remain distinct and require matching confirmed cover metadata.
+2. Any: no edition requirement. PAL/CIB, PAL/loose, physical European complete
+   copies and notes such as confirming box/content or an unnamed edition do not
+   request Standard. Existing validated title/platform/region covers can be used.
+3. Unknown: an explicit unrecognized named edition (e.g. Deluxe Edition, GOTY,
+   Anniversary or an unrecognized double edition) remains fallback.
 
-102 existing assets were visually checked for edition and re-keyed without importing
-new covers. 42 existing files remain preserved in manifest.unassignedEntries and
-are excluded from the runtime mapping:
+Loose/CIB changes retain identity. Any -> Platinum or Standard/original changes
+identity and the previous Any mapping stops resolving. Any is the target's
+requirement, not an asset edition. The 37 reactivated covers retain coverVariant
+Other; none was relabelled Standard. Known asset edition metadata remains intact.
+Repeated regeneration cannot turn the targetVersion into source edition evidence.
+Collection reuse applies the same semantics and requires a unique region-compatible
+candidate; explicit requests still require confirmed coverVariant. Reused coverage
+remains zero. Previously rejected assets remain blocked.
 
-- 37 targets do not name an edition (e.g. PAL/CIB or physical European copy);
-- 5 files could not be accessed for a confident edition review: Final Fantasy I & II:
-  Dawn of Souls (GBA), The Legend of Zelda (NES), Space Station Silicon Valley (N64),
-  The Legend of Zelda: Phantom Hourglass (DS), and The Firemen (SNES).
+The authorized production session was read-only and recovered only targetId,
+title, platform and targetVersion. The temporary four-field export was verified
+against the authenticated DOM by checksum and is not committed. The manifest
+preserves exact raw targetVersion for the same 144 previously imported records.
 
-For those five, GitHub Contents returned empty base64 content for files above 1 MB;
-GitHub blob/fetch helpers rejected binary data, and a source retrieval returned HTTP 403.
-They remain fallback rather than being stamped Standard without a visual check.
-All 144 original image SHA-256 values, filenames, bytes and provenance are preserved.
+Final result: 139 dedicated / 298 total (46.6%), 0 Collection reuse, 159 fallback.
+All 37 previously reported target-artwork-edition-unconfirmed assets had no named
+edition requirement and are active again. Five existing files remain unassigned:
 
-Collection reuse also requires a confirmed coverVariant, independently of the physical
-copy edition. Current reused coverage remains zero. Previously rejected sources stay blocked.
-Re-key/report-only processing performs no source queries or image imports.
+- The Legend of Zelda — NES
+- The Firemen — SNES
+- Space Station Silicon Valley — N64
+- Final Fantasy I & II: Dawn of Souls — GBA
+- The Legend of Zelda: Phantom Hourglass — DS
 
-Validation: 123 Vitest tests in 24 files, 6 Python tests, lint with the three existing
-warnings, and production build passed. Final remote CI/Vercel status must be checked
-on the live correction HEAD before considering merge.
+Those five explicitly request original/Standard and remain fallback because source
+edition review was not possible. They were not weakened to increase coverage.
+All 144 original filenames, image SHA-256 values, Git blob objects, bytes and
+provenance are preserved. No artwork downloads, new imports or app data mutations.
+Reports were regenerated using the existing manifest and authoritative remote Git
+asset metadata; the maintenance adapter and full export are temporary only.
+
+Validation: 148 Vitest tests in 24 files (including Any/edition edits, unknown named
+editions and repeated report-only regeneration), 6 Python tests, lint with the
+three existing warnings, and production build passed. Verify final remote CI and
+Vercel against the live PR correction HEAD before considering merge.
 
 ## PR #28 files/data worth reading first
 
@@ -233,18 +250,18 @@ Last generated report:
 | Game Boy | 11 | 6 | 5 | 54.5% |
 | Game Boy Color | 10 | 5 | 5 | 50% |
 | GameBoy Advance | 17 | 11 | 6 | 64.7% |
-| GameCube | 16 | 0 | 16 | 0% |
+| GameCube | 16 | 7 | 9 | 43.8% |
 | NES | 20 | 12 | 8 | 60% |
 | Nintendo 3DS | 28 | 13 | 15 | 46.4% |
 | Nintendo 64 | 25 | 19 | 6 | 76% |
 | Nintendo DS | 23 | 10 | 13 | 43.5% |
-| Nintendo Switch | 20 | 0 | 20 | 0% |
-| Nintendo Wii | 15 | 0 | 15 | 0% |
-| Nintendo Wii U | 15 | 0 | 15 | 0% |
+| Nintendo Switch | 20 | 3 | 17 | 15% |
+| Nintendo Wii | 15 | 6 | 9 | 40% |
+| Nintendo Wii U | 15 | 6 | 9 | 40% |
 | Playstation | 21 | 7 | 14 | 33.3% |
-| Playstation 2 | 27 | 10 | 17 | 37% |
-| Playstation 3 | 18 | 0 | 18 | 0% |
-| Playstation 5 | 12 | 0 | 12 | 0% |
+| Playstation 2 | 27 | 17 | 10 | 63% |
+| Playstation 3 | 18 | 5 | 13 | 27.8% |
+| Playstation 5 | 12 | 3 | 9 | 25% |
 | SNES | 20 | 9 | 11 | 45% |
 
 Accuracy is intentionally prioritized over coverage.

@@ -1,6 +1,6 @@
 import { normalizeWantlistVariant } from "./wantlist-facets.logic";
-import { normalizeWishlistArtworkTitle, normalizeWishlistArtworkPlatform, wishlistArtworkRegion, wishlistArtworkIdentity } from "./wishlist-artwork-identity.mjs";
-export { normalizeWishlistArtworkTitle, normalizeWishlistArtworkPlatform, wishlistArtworkRegion, wishlistArtworkIdentity } from "./wishlist-artwork-identity.mjs";
+import { normalizeWishlistArtworkTitle, normalizeWishlistArtworkPlatform, wishlistArtworkRegion, wishlistArtworkIdentity, wishlistArtworkEditionRequirement } from "./wishlist-artwork-identity.mjs";
+export { normalizeWishlistArtworkTitle, normalizeWishlistArtworkPlatform, wishlistArtworkRegion, wishlistArtworkIdentity, wishlistArtworkEditionRequirement } from "./wishlist-artwork-identity.mjs";
 import { collectionWishlistArtworkRegion } from "./wishlist-artwork-region.mjs";
 
 export { collectionWishlistArtworkRegion } from "./wishlist-artwork-region.mjs";
@@ -26,7 +26,7 @@ export function resolveDedicatedWishlistArtwork(
   target: WishlistArtworkTarget,
   artwork: Record<string, string>,
 ): string | null {
-  if (normalizeWantlistVariant(target.targetVersion ?? "") === "Other") return null;
+  if (wishlistArtworkEditionRequirement(target.targetVersion) === "Unknown") return null;
   return artwork[wishlistArtworkIdentity(target)] ?? null;
 }
 
@@ -51,9 +51,11 @@ export function createCollectionWishlistArtworkIndex(
     const region = collectionWishlistArtworkRegion(game.region);
     const file = artwork[game.collectionId];
     const variant = normalizeWantlistVariant(game.coverVariant ?? "");
-    if (variant === "Other" || !region || !file || !normalizeWishlistArtworkTitle(game.title) || !normalizeWishlistArtworkPlatform(game.platform)) continue;
-    const key = collectionArtworkKey(game.title, game.platform, region, variant);
-    index.set(key, index.has(key) ? null : file);
+    if (!region || !file || !normalizeWishlistArtworkTitle(game.title) || !normalizeWishlistArtworkPlatform(game.platform)) continue;
+    for (const requirement of variant === "Other" ? ["Any"] : ["Any", variant]) {
+      const key = collectionArtworkKey(game.title, game.platform, region, requirement);
+      index.set(key, index.has(key) ? null : file);
+    }
   }
   return index;
 }
@@ -62,8 +64,7 @@ export function resolveCollectionWishlistArtworkFromIndex(
   target: WishlistArtworkTarget,
   index: CollectionWishlistArtworkIndex,
 ): string | null {
-  const variant = normalizeWantlistVariant(target.targetVersion ?? "");
-  if (variant === "Other") return null;
+  const variant = wishlistArtworkEditionRequirement(target.targetVersion);
+  if (variant === "Unknown") return null;
   return index.get(collectionArtworkKey(target.title, target.platform, wishlistArtworkRegion(target.targetVersion), variant)) ?? null;
 }
-

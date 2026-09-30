@@ -223,15 +223,22 @@ npm run wishlist-artwork:import -- --input /tmp/wishlist-targets.json --report-o
 ```
 
 
-Wishlist artwork identity also includes the cover-relevant edition, using the
-Wantlist facet normalization (including Nintendo Selects). Loose/CIB changes keep
-the same artwork identity; edition changes do not. The manifest preserves the full
-original targetVersion. Region-only/unknown editions stay fallback rather than
-being assumed Standard. Collection reuse requires a confirmed coverVariant from
-its artwork manifest, independently of the physical copy edition.
+Wishlist artwork identity includes the edition requirement, using the existing
+Wantlist facet vocabulary for known editions (including Nintendo Selects):
 
-Report-only regeneration re-keys only confirmed edition matches without querying
-sources or importing images. Existing files that cannot be assigned confidently
-remain in unassignedEntries with their provenance and original targetVersion, and
-are excluded from the runtime mapping. Importing an unconfirmed source edition
-also remains fallback. Do not treat those retained files as active coverage.
+- explicit known edition: identity-sensitive; requires matching coverVariant;
+- no edition requirement: Any, including PAL/CIB, PAL/loose and physical European
+  complete copies; a validated title/platform/region cover can be used;
+- explicit unrecognized edition: Unknown, which remains fallback.
+
+Loose/CIB changes keep artwork identity. Any -> Standard/original or Platinum
+changes identity and the old mapping stops resolving. The manifest preserves the
+full original targetVersion. Any describes the target requirement, not the asset:
+unknown source editions remain coverVariant Other and are never stamped Standard.
+Collection reuse follows the same requirements and rejects ambiguous candidates.
+
+Report-only regeneration re-keys compatible existing assets without querying
+sources or importing images. Files that cannot satisfy an explicit requirement
+remain in unassignedEntries with their provenance and original targetVersion,
+excluded from the runtime mapping. Unconfirmed source editions remain fallback
+for explicit edition requests.

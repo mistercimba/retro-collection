@@ -1,4 +1,4 @@
-import { wishlistArtworkIdentity as identityKey, normalizeWishlistArtworkPlatform as canonicalPlatform } from "../src/lib/wishlist-artwork-identity.mjs";
+import { wishlistArtworkIdentity as identityKey, normalizeWishlistArtworkPlatform as canonicalPlatform, wishlistArtworkEditionRequirement } from "../src/lib/wishlist-artwork-identity.mjs";
 import { normalizeWantlistVariant } from "../src/lib/wantlist-variant.mjs";
 import { rekeyWishlistArtwork } from "./wishlist-artwork-rekey.mjs";
 import fs from "node:fs/promises";
@@ -156,6 +156,8 @@ for (const target of uniqueTargets) {
   const key = identityKey(target);
   const legacyHash = sha(JSON.stringify(JSON.parse(key).slice(0, 4)));
   if (!previousReasons.has(sha(key)) && previousReasons.has(legacyHash)) previousReasons.set(sha(key), { ...previousReasons.get(legacyHash), identityHash: sha(key) });
+  const previousOtherHash = sha(JSON.stringify([...JSON.parse(key).slice(0, 4), "Other"]));
+  if (!previousReasons.has(sha(key)) && previousReasons.has(previousOtherHash)) previousReasons.set(sha(key), { ...previousReasons.get(previousOtherHash), identityHash: sha(key) });
 }
 const filesUsed = new Set(Object.values(manifest.entries).map((entry) => entry.file));
 const importedKeys = new Set();
@@ -218,15 +220,15 @@ for (const target of uniqueTargets) {
   }
 
   const platform = canonicalPlatform(target.platform);
+  if (wishlistArtworkEditionRequirement(target.targetVersion) === "Unknown") {
+    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "target-artwork-edition-unconfirmed" });
+    continue;
+  }
   if (reportOnly || !selectedPlatforms.includes(platform) || newlyImported >= limit) {
     unresolved.push(previousReasons.get(sha(key)) ?? {
       identityHash: sha(key), title: target.title, platform: target.platform,
       reason: reportOnly ? "not-imported" : newlyImported >= limit && selectedPlatforms.includes(platform) ? "checkpoint-batch-limit" : "platform-not-processed",
     });
-    continue;
-  }
-  if (normalizeWantlistVariant(target.targetVersion) === "Other") {
-    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "target-artwork-edition-unconfirmed" });
     continue;
   }
   const repository = REPO_BY_PLATFORM[platform];
@@ -280,7 +282,8 @@ for (const target of uniqueTargets) {
     continue;
   }
   const sourceVariant = normalizeWantlistVariant(source.coverVariant ?? source.sourceTitle ?? "");
-  if (sourceVariant === "Other" || sourceVariant !== normalizeWantlistVariant(target.targetVersion)) {
+  const requirement = wishlistArtworkEditionRequirement(target.targetVersion);
+  if (requirement !== "Any" && (sourceVariant === "Other" || sourceVariant !== requirement)) {
     unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "source-artwork-edition-unconfirmed" });
     continue;
   }
@@ -336,8 +339,8 @@ for (const target of uniqueTargets) {
   for (const game of games) {
     if (canonicalPlatform(game.platform) !== platform || normalizeArtworkTitle(game.title) !== title) continue;
     const entry = collectionArtwork.entries?.[game.collectionId];
-    const variant = normalizeWantlistVariant(target.targetVersion);
-    if (variant === "Other" || normalizeWantlistVariant(entry?.coverVariant ?? "") !== variant) continue;
+    const variant = wishlistArtworkEditionRequirement(target.targetVersion);
+    if (variant === "Unknown" || (variant !== "Any" && normalizeWantlistVariant(entry?.coverVariant ?? "") !== variant)) continue;
     if (collectionWishlistArtworkRegion(entry?.regionName) !== requestedArtworkRegion(target.targetVersion)) continue;
     const file = entry?.file;
     if (!file) continue;
@@ -426,4 +429,3 @@ function validImageBytes(bytes) {
   const jpeg = bytes.length > 4 && bytes[0] === 255 && bytes[1] === 216 && bytes.at(-2) === 255 && bytes.at(-1) === 217;
   return (png || jpeg) && bytes.length <= MAX_IMAGE_BYTES;
 }
-

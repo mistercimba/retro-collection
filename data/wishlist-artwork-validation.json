@@ -39,7 +39,7 @@
     "lint": "PASS (0 errors, 3 existing warnings)",
     "tests": {
       "vitestFiles": 24,
-      "vitestPassed": 123,
+      "vitestPassed": 148,
       "pythonPassed": 6
     },
     "build": "PASS"
@@ -57,16 +57,24 @@
       "platform",
       "normalized title",
       "region",
-      "cover-relevant edition variant"
+      "artwork edition requirement (known / Any / Unknown)"
     ],
     "activeAssetsVisuallyEditionReviewed": 102,
-    "retainedUnassignedAssets": 42,
-    "targetEditionUnspecified": 37,
+    "retainedUnassignedAssets": 5,
     "existingAssetsNotAccessibleForEditionReview": 5,
     "imageBlobsChanged": 0,
     "newImports": 0,
     "originalTargetVersionPreserved": 144,
     "wishlistReadMode": "authenticated browser DOM; read-only; four authorized fields only",
-    "privateExportCommitted": false
+    "privateExportCommitted": false,
+    "targetsWithoutEditionRequirement": 37,
+    "reactivatedAnyAssets": 37,
+    "activeAssets": 139,
+    "fallback": 159,
+    "coverage": 46.6,
+    "assetEditionsRelabelledStandard": 0,
+    "artworkDownloads": 0,
+    "remoteGitAssetsUsedForReportRegeneration": true,
+    "authenticatedDOMExportChecksumVerified": true
   }
 }

@@ -44,13 +44,25 @@ export function wishlistArtworkRegion(targetVersion = "") {
   return "Europe";
 }
 
+// A requirement is not the edition of an asset. Reuse the facet vocabulary for
+// known editions; only region/condition/packaging descriptions mean Any.
+// Unrecognized words remain Unknown instead of guessing a named edition away.
+export function wishlistArtworkEditionRequirement(targetVersion = "") {
+  const variant = normalizeWantlistVariant(targetVersion);
+  if (variant !== "Other") return variant;
+  const neutral = normalizeWishlistArtworkTitle(targetVersion)
+    .replace(/\bconfirmar (edicao|variante)\b/g, "")
+    .replace(/\b(pal|ntsc|j|u|europe|european|europeu|europeia|europa|eu|usa|us|jp|japan|japanese|japao|japones|north|american|america|united|states|fisico|fisica|physical|ps5|cib|loose|completo|completa|complete|bom|boa|estado|funcional|good|excellent|fair|mint|sealed|selado|selada|novo|nova|new|caixa|conteudo|manual|box|boxed|cartridge|cartucho|confirmar|com|sem|uk|microfone|opcional)\b/g, "")
+    .trim();
+  return neutral ? "Unknown" : "Any";
+}
+
 export function wishlistArtworkIdentity(target) {
   return JSON.stringify([
     target.targetId,
     normalizeWishlistArtworkPlatform(target.platform),
     normalizeWishlistArtworkTitle(target.title),
     wishlistArtworkRegion(target.targetVersion),
-    normalizeWantlistVariant(target.targetVersion ?? ""),
+    wishlistArtworkEditionRequirement(target.targetVersion),
   ]);
 }
-

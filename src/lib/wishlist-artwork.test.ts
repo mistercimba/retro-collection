@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { resolveWishlistArtworkFromEntries } from "./wishlist-artwork";
 import {
   wishlistArtworkIdentity,
+  wishlistArtworkEditionRequirement,
   createCollectionWishlistArtworkIndex,
   resolveCollectionWishlistArtworkFromIndex,
   resolveDedicatedWishlistArtwork,
@@ -138,8 +139,8 @@ describe("cover edition identity", () => {
     expect(new Set(editions.map((edition) => wishlistArtworkIdentity(target({ targetVersion: `PAL ${edition}` })))).size).toBe(editions.length);
   });
 
-  it("never resolves unknown editions or legacy region-only keys", () => {
-    const unknown = target({ targetVersion: "PAL Europe" });
+  it("never resolves unknown named editions or legacy region-only keys", () => {
+    const unknown = target({ targetVersion: "PAL Deluxe Edition; CIB" });
     expect(resolveDedicatedWishlistArtwork(unknown, { [wishlistArtworkIdentity(unknown)]: "/covers/unknown.png" })).toBeNull();
     expect(resolveDedicatedWishlistArtwork(target(), { '["NOVO","playstation 2","silent hill 2","Europe"]': "/covers/legacy.png" })).toBeNull();
   });
@@ -154,5 +155,46 @@ describe("cover edition identity", () => {
     const artwork = { ...collectionArtwork, platinum: "/covers/platinum.jpg" };
     expect(resolveCollectionWishlistArtwork(target({ targetVersion: "PAL Platinum" }), [...games, platinum], artwork)).toBe("/covers/platinum.jpg");
     expect(resolveCollectionWishlistArtwork(target(), [...games, platinum], artwork)).toBe("/covers/PS2-1.jpg");
+  });
+});
+
+
+describe("artwork edition requirement", () => {
+  it.each(["PAL; CIB", "PAL; CIB bom", "PAL; CIB bom estado", "Físico europeu; completo", "PS5 físico europeu; completo", "PAL; completo; confirmar caixa/conteúdo", "PAL; CIB bom; confirmar edição", "PAL; CIB bom estado; microfone opcional", ""])("treats %s as Any without changing facet vocabulary", (version) => {
+    expect(wishlistArtworkEditionRequirement(version)).toBe("Any");
+  });
+
+  it("keeps Any identity and artwork across CIB/Loose changes", () => {
+    const cib = target({ targetVersion: "PAL; CIB" });
+    const loose = target({ targetVersion: "PAL; loose" });
+    expect(wishlistArtworkIdentity(cib)).toBe(wishlistArtworkIdentity(loose));
+    expect(resolveDedicatedWishlistArtwork(loose, { [wishlistArtworkIdentity(cib)]: "/covers/any.png" })).toBe("/covers/any.png");
+  });
+
+  it.each(["Platinum", "Standard", "original"])("invalidates Any mappings after an explicit %s edit", (edition) => {
+    const any = target({ targetVersion: "PAL; CIB" });
+    const changed = target({ targetVersion: `PAL ${edition}; CIB` });
+    expect(wishlistArtworkIdentity(changed)).not.toBe(wishlistArtworkIdentity(any));
+    expect(resolveDedicatedWishlistArtwork(changed, { [wishlistArtworkIdentity(any)]: "/covers/any.png" })).toBeNull();
+    expect(resolveWishlistArtworkFromEntries(changed, [{ ...games[0], coverVariant: undefined }], collectionArtwork, { [wishlistArtworkIdentity(any)]: "/covers/any.png" })).toBeNull();
+  });
+
+  it.each(["PAL Deluxe Edition; CIB", "PAL GOTY; loose", "PAL Anniversary Edition", "PAL edição Ultimate", "PAL edição desconhecida", "PAL Deluxe"])("keeps unrecognized named edition %s in fallback", (version) => {
+    const unknown = target({ targetVersion: version });
+    expect(wishlistArtworkEditionRequirement(version)).toBe("Unknown");
+    expect(wishlistArtworkIdentity(unknown)).not.toBe(wishlistArtworkIdentity(target({ targetVersion: "PAL; CIB" })));
+    expect(resolveWishlistArtworkFromEntries(unknown, games, collectionArtwork, { [wishlistArtworkIdentity(unknown)]: "/covers/unsafe.png" })).toBeNull();
+  });
+
+  it("allows unique title/platform/region Collection artwork for Any without claiming its edition", () => {
+    const game = { ...games[0], coverVariant: undefined };
+    expect(resolveCollectionWishlistArtwork(target({ targetVersion: "PAL; CIB" }), [game], collectionArtwork)).toBe(collectionArtwork[game.collectionId as keyof typeof collectionArtwork]);
+    expect(resolveCollectionWishlistArtwork(target(), [game], collectionArtwork)).toBeNull();
+    expect(resolveCollectionWishlistArtwork(target({ targetVersion: "NTSC-U; CIB" }), [game], collectionArtwork)).toBeNull();
+  });
+
+  it("keeps Any Collection ambiguity across editions unresolved", () => {
+    const platinum = { ...games[0], collectionId: "platinum", coverVariant: "Platinum" };
+    expect(resolveCollectionWishlistArtwork(target({ targetVersion: "PAL; CIB" }), [games[0], platinum], { ...collectionArtwork, platinum: "/covers/platinum.jpg" })).toBeNull();
   });
 });

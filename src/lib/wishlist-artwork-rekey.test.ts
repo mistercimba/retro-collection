@@ -45,3 +45,33 @@ describe("wishlist artwork manifest re-key", () => {
     expect(rekeyWishlistArtwork([], first.entries).entries).toEqual({});
   });
 });
+
+
+describe("Any requirement re-key", () => {
+  it("reactivates a validated regional cover without labelling it Standard", () => {
+    const any = { ...target, targetVersion: "PAL; CIB bom" };
+    const cover = { ...entry, targetVersion: "PAL Europe", coverVariant: "Other" };
+    const first = rekeyWishlistArtwork([any], { archived: cover });
+    const active = first.entries[wishlistArtworkIdentity(any)];
+    expect(active).toEqual({ ...cover, targetVersion: any.targetVersion });
+    expect(active.coverVariant).toBe("Other");
+    expect(rekeyWishlistArtwork([any], first.entries)).toEqual(first);
+    for (const version of ["PAL Platinum; CIB", "PAL original; CIB"]) {
+      const changed = { ...any, targetVersion: version };
+      const result = rekeyWishlistArtwork([changed], first.entries);
+      expect(result.entries).toEqual({});
+      expect(rekeyWishlistArtwork([changed], result.unassignedEntries)).toEqual(result);
+    }
+  });
+
+  it("does not use an unrecognized named edition as Any", () => {
+    const unknown = { ...target, targetVersion: "PAL Deluxe Edition; CIB" };
+    expect(rekeyWishlistArtwork([unknown], { cover: entry }).entries).toEqual({});
+    expect(rekeyWishlistArtwork([unknown], { cover: entry }).missing[0].reason).toBe("target-artwork-edition-unconfirmed");
+  });
+
+  it("keeps known source edition metadata when the requirement is Any", () => {
+    const any = { ...target, targetVersion: "PAL; loose" };
+    expect(rekeyWishlistArtwork([any], { cover: { ...entry, coverVariant: "Platinum" } }).entries[wishlistArtworkIdentity(any)].coverVariant).toBe("Platinum");
+  });
+});
