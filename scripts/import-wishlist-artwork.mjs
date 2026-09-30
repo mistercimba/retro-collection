@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import {
   findExactSourceMatches,
   findExactLaunchboxMatch,
+  rejectedArtworkSource,
   normalizeArtworkTitle,
   requestedArtworkRegion,
   sourceArtworkRegion,
@@ -155,6 +156,7 @@ if (!selectedPlatforms.length || !Number.isInteger(limit) || limit < 1 || limit 
 const launchboxFile = argument("--launchbox-index");
 const launchbox = launchboxFile ? await readJson(path.resolve(launchboxFile), null) : null;
 const previousMissing = await readJson(MISSING_FILE, { entries: [] });
+const rejections = (await readJson(path.join(ROOT, "data", "wishlist-artwork-rejections.json"), { entries: [] })).entries;
 const previousReasons = new Map(previousMissing.entries.map((entry) => [entry.identityHash, entry]));
 let newlyImported = 0;
 
@@ -196,12 +198,13 @@ for (const [key, entry] of Object.entries(manifest.entries)) {
     sourcePath, title: sourceArtworkTitle(sourcePath), region: sourceArtworkRegion(sourcePath),
   }));
   const matches = findExactSourceMatches(entry, candidates);
-  if (matches.length === 1 && `Named_Boxarts/${matches[0].sourcePath}` === entry.sourcePath) continue;
+  const rejected = rejectedArtworkSource(entry, rejections);
+  if (!rejected && matches.length === 1 && `Named_Boxarts/${matches[0].sourcePath}` === entry.sourcePath) continue;
   delete manifest.entries[key];
   withdrawnAmbiguous.push({ title: entry.title, platform: entry.platform, candidateCount: matches.length });
   previousReasons.set(sha(key), {
     identityHash: sha(key), title: entry.title, platform: entry.platform,
-    reason: matches.length > 1 ? "ambiguous-source-candidates" : "source-match-no-longer-valid",
+    reason: rejected?.reason ?? (matches.length > 1 ? "ambiguous-source-candidates" : "source-match-no-longer-valid"),
     candidateCount: matches.length,
   });
   if (!Object.values(manifest.entries).some((other) => other.file === entry.file)) {
@@ -282,6 +285,11 @@ for (const target of uniqueTargets) {
   }
   if (!source) {
     unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason, candidateCount });
+    continue;
+  }
+  const rejected = rejectedArtworkSource(source, rejections);
+  if (rejected) {
+    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: rejected.reason });
     continue;
   }
 

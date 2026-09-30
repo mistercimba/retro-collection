@@ -39,7 +39,6 @@ export const WISHLIST_ARTWORK: Record<string, string> = {
   "[\"NOVO\",\"nintendo 64\",\"star wars shadows of the empire\",\"Europe\"]": "/covers/wishlist/d00f231acd23beb3e68e.png",
   "[\"NOVO\",\"game boy color\",\"mario golf\",\"Europe\"]": "/covers/wishlist/e1a6e959d3e3e64ec659.png",
   "[\"NOVO\",\"game boy color\",\"mario tennis\",\"Europe\"]": "/covers/wishlist/cebf294dc6b9531181dc.png",
-  "[\"NOVO\",\"playstation 2\",\"persona 3 fes\",\"Europe\"]": "/covers/wishlist/136d1481524893d124fc.png",
   "[\"NOVO\",\"playstation 2\",\"persona 4\",\"Europe\"]": "/covers/wishlist/9f3c368c0b8f0bb76fd8.png",
   "[\"NOVO\",\"playstation 2\",\"gran turismo 4\",\"Europe\"]": "/covers/wishlist/0fc45eea594cfbc92bc6.png",
   "[\"NOVO\",\"playstation 2\",\"ico\",\"Europe\"]": "/covers/wishlist/6683401d33e770185849.png",

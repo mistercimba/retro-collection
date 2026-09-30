@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { findExactLaunchboxMatch, findExactSourceMatches, normalizeArtworkTitle, requestedArtworkRegion, sourceArtworkRegion, sourceArtworkTitle } from "../../scripts/wishlist-artwork-matcher.mjs";
+import { findExactLaunchboxMatch, findExactSourceMatches, normalizeArtworkTitle, rejectedArtworkSource, requestedArtworkRegion, sourceArtworkRegion, sourceArtworkTitle } from "../../scripts/wishlist-artwork-matcher.mjs";
 
 describe("wishlist artwork source matcher", () => {
   it("normalizes accents, punctuation, and ampersands without fuzzy matching", () => {
@@ -68,5 +68,11 @@ describe("wishlist artwork source matcher", () => {
     for (const region of ["North America", "World", ""]) {
       expect(findExactLaunchboxMatch(target, [{ ...game, images: [{ fileName: "wrong.jpg", region }] }], game.platform).reason).toBe("region-mismatch");
     }
+  });
+
+  it("blocks an observed wrong regional cover even when its source label matches", () => {
+    const source = { source: "libretro-thumbnails", sourceRepo: "repo", sourceCommit: "old", sourcePath: "Game (Europe).png" };
+    expect(rejectedArtworkSource(source, [source])).toBe(source);
+    expect(rejectedArtworkSource({ ...source, sourceCommit: "new" }, [source])).toBeUndefined();
   });
 });

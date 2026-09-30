@@ -209,3 +209,5 @@ An optional `--launchbox-index /tmp/index.json` accepts the offline front-cover
 index produced by `scripts/index-wishlist-launchbox.py` from LaunchBox's metadata
 ZIP. Only exact titles/platforms and a single compatible regional front cover
 are accepted; an ambiguous Libretro match is never overridden by another source.
+Visually confirmed source mistakes are recorded in
+`data/wishlist-artwork-rejections.json` and remain unresolved on subsequent runs.

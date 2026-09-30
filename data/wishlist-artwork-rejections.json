@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
+      "sourceCommit": "9be559835a99124720badc6ec3ec4f3f2351deb3",
+      "sourcePath": "Named_Boxarts/Persona 3 FES (Europe).png",
+      "reason": "source-artwork-region-mismatch",
+      "evidence": "Preview detail and local asset show ESRB M (US) although source filename declares Europe. European target must remain unresolved."
+    }
+  ]
+}

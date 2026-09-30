@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-30T14:23:28.028Z",
+  "generatedAt": "2026-09-30T14:41:52.754Z",
   "activeWishlistTotal": 298,
-  "dedicatedArtwork": 64,
+  "dedicatedArtwork": 63,
   "reusedCollectionArtwork": 0,
-  "fallback": 234,
-  "coverage": 21.5,
+  "fallback": 235,
+  "coverage": 21.1,
   "coverageByPlatform": {
     "NES": {
       "total": 20,
@@ -50,10 +50,10 @@
     },
     "Playstation 2": {
       "total": 27,
-      "dedicated": 18,
+      "dedicated": 17,
       "reused": 0,
-      "fallback": 9,
-      "coverage": 66.7
+      "fallback": 10,
+      "coverage": 63
     },
     "GameBoy Advance": {
       "total": 17,
@@ -120,7 +120,7 @@
     }
   },
   "sourceCounts": {
-    "libretro-thumbnails": 62,
+    "libretro-thumbnails": 61,
     "launchbox": 2
   },
   "unresolvedReasons": {
@@ -128,6 +128,7 @@
     "ambiguous-source-candidates": 49,
     "no-exact-title-platform-match": 75,
     "region-mismatch": 72,
+    "source-artwork-region-mismatch": 1,
     "source-unavailable": 32,
     "unsupported-image-type": 1
   },

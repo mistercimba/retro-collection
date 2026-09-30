@@ -1,12 +1,13 @@
 {
-  "generatedAt": "2026-09-30T14:23:28.028Z",
+  "generatedAt": "2026-09-30T14:41:52.753Z",
   "activeWishlistTotal": 298,
-  "fallback": 234,
+  "fallback": 235,
   "reasonCounts": {
     "ambiguous-launchbox-covers": 5,
     "ambiguous-source-candidates": 49,
     "no-exact-title-platform-match": 75,
     "region-mismatch": 72,
+    "source-artwork-region-mismatch": 1,
     "source-unavailable": 32,
     "unsupported-image-type": 1
   },
@@ -486,6 +487,12 @@
       "platform": "Game Boy Color",
       "reason": "region-mismatch",
       "candidateCount": 1
+    },
+    {
+      "identityHash": "ac83fc45468013c79c13",
+      "title": "Persona 3 FES",
+      "platform": "Playstation 2",
+      "reason": "source-artwork-region-mismatch"
     },
     {
       "identityHash": "86c68a7651864656d2ad",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T14:23:28.015Z",
+  "generatedAt": "2026-09-30T14:41:52.740Z",
   "source": "libretro-thumbnails/Named_Boxarts",
   "entries": {
     "[\"NOVO\",\"game boy advance\",\"castlevania harmony of dissonance\",\"Europe\"]": {
@@ -596,21 +596,6 @@
       "sourceCommit": "9be559835a99124720badc6ec3ec4f3f2351deb3",
       "sourcePath": "Named_Boxarts/Onimusha 2 - Samurai's Destiny (Europe) (En,Fr,De,Es,It).png",
       "imageSha256": "03ff73d2a97c4b49b1c1b17a1a2e22e386cf6d3660fa8301afb8a73080cff8eb",
-      "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
-    },
-    "[\"NOVO\",\"playstation 2\",\"persona 3 fes\",\"Europe\"]": {
-      "targetId": "NOVO",
-      "title": "Persona 3 FES",
-      "platform": "Playstation 2",
-      "targetVersion": "PAL Europe",
-      "file": "/covers/wishlist/136d1481524893d124fc.png",
-      "source": "libretro-thumbnails",
-      "sourceTitle": "Persona 3 FES",
-      "sourceUrl": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_2/9be559835a99124720badc6ec3ec4f3f2351deb3/Named_Boxarts/Persona%203%20FES%20(Europe).png",
-      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
-      "sourceCommit": "9be559835a99124720badc6ec3ec4f3f2351deb3",
-      "sourcePath": "Named_Boxarts/Persona 3 FES (Europe).png",
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },

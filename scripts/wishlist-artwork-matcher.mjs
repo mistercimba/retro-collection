@@ -81,3 +81,10 @@ export function launchboxArtworkRegion(region) {
   if (value === "japan") return "Japan";
   return null;
 }
+
+export function rejectedArtworkSource(source, rejections) {
+  return rejections.find((entry) => entry.source === source.source &&
+    entry.sourcePath === source.sourcePath &&
+    entry.sourceRepo === source.sourceRepo &&
+    entry.sourceCommit === source.sourceCommit);
+}
