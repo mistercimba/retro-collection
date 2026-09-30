@@ -1,5 +1,5 @@
 import artworkGames from "../../data/artwork-games.json";
-import { GAME_ARTWORK } from "@/data/game-artwork";
+import { GAME_ARTWORK } from "../data/game-artwork";
 
 type ArtworkGame = {
   collectionId: string;
