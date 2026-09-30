@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-30T15:52:52.071Z",
+  "generatedAt": "2026-09-30T15:57:13.843Z",
   "activeWishlistTotal": 298,
-  "fallback": 160,
+  "fallback": 157,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 39,
+    "ambiguous-launchbox-covers": 56,
     "ambiguous-source-candidates": 64,
     "no-exact-title-platform-match": 8,
     "region-mismatch": 4,
     "source-artwork-edition-unconfirmed": 2,
     "source-artwork-region-mismatch": 9,
     "source-artwork-title-variant-mismatch": 1,
-    "source-unavailable": 32,
+    "source-unavailable": 12,
     "unsupported-image-type": 1
   },
   "entries": [
@@ -901,121 +901,120 @@
       "identityHash": "837e211a12e65adef376",
       "title": "Fire Emblem: Three Houses",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "8cd35860d5e8af436f0e",
       "title": "Kirby and the Forgotten Land",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "1f95620cacf2d9e4aabb",
       "title": "Mario Kart 8 Deluxe",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 5
     },
     {
       "identityHash": "1a183c6c88fdbc1e551e",
       "title": "Metroid Dread",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "9b9733b3fc8c4c1be391",
       "title": "Metroid Prime Remastered",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "5507bb249904718db9e8",
       "title": "Super Mario Bros. Wonder",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "bc626aef728c1c9aae91",
       "title": "Super Mario Odyssey",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "ddf7c68b7151fd54653b",
       "title": "Super Smash Bros. Ultimate",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "d790ac386decbb9d4939",
       "title": "The Legend of Zelda: Tears of the Kingdom",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "fc0a27189c14c3e4cd1c",
       "title": "Xenoblade Chronicles 3",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "e2446f9c2866ca7b16d0",
       "title": "Xenoblade Chronicles: Definitive Edition",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "b44ee9e8014a8443e8ea",
       "title": "Animal Crossing: New Horizons",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "df54afb69f97a186d565",
       "title": "Astral Chain",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
-    },
-    {
-      "identityHash": "32537e5466507b69fcba",
-      "title": "Bayonetta 3",
-      "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "54aed7397971b41fd419",
       "title": "Donkey Kong Country: Tropical Freeze",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 6
     },
     {
       "identityHash": "14d58a737e908930f570",
       "title": "Fire Emblem Engage",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
-    },
-    {
-      "identityHash": "0e07387da8ff55d75449",
-      "title": "Paper Mario: The Thousand-Year Door",
-      "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
-    },
-    {
-      "identityHash": "0739e7d989f4b82bd97c",
-      "title": "Pikmin 4",
-      "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "dcb9431011f870761b4f",
       "title": "Pokémon Legends: Arceus",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "ddc14b905a0183ca1915",
       "title": "Super Mario 3D All-Stars",
       "platform": "Nintendo Switch",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "c26ddb27a65367a4143b",

@@ -137,5 +137,8 @@ export const WISHLIST_ARTWORK: Record<string, string> = {
   "[\"NOVO\",\"nintendo wii u\",\"xenoblade chronicles x\",\"Europe\"]": "/covers/wishlist/9f3520eb196631343b58.png",
   "[\"NOVO\",\"nintendo wii u\",\"nintendo land\",\"Europe\"]": "/covers/wishlist/129075cf884f181c4268.png",
   "[\"NOVO\",\"nintendo wii u\",\"paper mario color splash\",\"Europe\"]": "/covers/wishlist/9cfa3e6aa9f2477c23a7.png",
-  "[\"NOVO\",\"nintendo wii u\",\"yoshis woolly world\",\"Europe\"]": "/covers/wishlist/e96c1488b3db6b5cb60a.png"
+  "[\"NOVO\",\"nintendo wii u\",\"yoshis woolly world\",\"Europe\"]": "/covers/wishlist/e96c1488b3db6b5cb60a.png",
+  "[\"NOVO\",\"nintendo switch\",\"bayonetta 3\",\"Europe\"]": "/covers/wishlist/48ac069dd6a73c610404.jpg",
+  "[\"NOVO\",\"nintendo switch\",\"paper mario the thousand year door\",\"Europe\"]": "/covers/wishlist/b539e4a7be135227f912.jpg",
+  "[\"NOVO\",\"nintendo switch\",\"pikmin 4\",\"Europe\"]": "/covers/wishlist/4d4ad9ac0c4faf32756a.jpg"
 };

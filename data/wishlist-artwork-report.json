@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-30T15:52:52.072Z",
+  "generatedAt": "2026-09-30T15:57:13.844Z",
   "activeWishlistTotal": 298,
-  "dedicatedArtwork": 138,
+  "dedicatedArtwork": 141,
   "reusedCollectionArtwork": 0,
-  "fallback": 160,
-  "coverage": 46.3,
+  "fallback": 157,
+  "coverage": 47.3,
   "coverageByPlatform": {
     "NES": {
       "total": 20,
@@ -106,10 +106,10 @@
     },
     "Nintendo Switch": {
       "total": 20,
-      "dedicated": 0,
+      "dedicated": 3,
       "reused": 0,
-      "fallback": 20,
-      "coverage": 0
+      "fallback": 17,
+      "coverage": 15
     },
     "Playstation 5": {
       "total": 12,
@@ -121,20 +121,26 @@
   },
   "sourceCounts": {
     "libretro-thumbnails": 121,
-    "launchbox": 17
+    "launchbox": 20
   },
   "unresolvedReasons": {
-    "ambiguous-launchbox-covers": 39,
+    "ambiguous-launchbox-covers": 56,
     "ambiguous-source-candidates": 64,
     "no-exact-title-platform-match": 8,
     "region-mismatch": 4,
     "source-artwork-edition-unconfirmed": 2,
     "source-artwork-region-mismatch": 9,
     "source-artwork-title-variant-mismatch": 1,
-    "source-unavailable": 32,
+    "source-unavailable": 12,
     "unsupported-image-type": 1
   },
   "orphanedMappings": 0,
   "orphanedAssets": [],
-  "sourceErrors": []
+  "sourceErrors": [
+    {
+      "platform": "Nintendo Switch",
+      "source": "Nintendo_-_Nintendo_Switch",
+      "error": "Error: GitHub API returned 404: https://api.github.com/repos/libretro-thumbnails/Nintendo_-_Nintendo_Switch/git/trees/master"
+    }
+  ]
 }
