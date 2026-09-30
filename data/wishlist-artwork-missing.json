@@ -1,16 +1,15 @@
 {
-  "generatedAt": "2026-09-30T15:57:13.843Z",
+  "generatedAt": "2026-09-30T16:01:56.989Z",
   "activeWishlistTotal": 298,
-  "fallback": 157,
+  "fallback": 154,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 56,
+    "ambiguous-launchbox-covers": 61,
     "ambiguous-source-candidates": 64,
-    "no-exact-title-platform-match": 8,
-    "region-mismatch": 4,
+    "no-exact-title-platform-match": 10,
+    "region-mismatch": 6,
     "source-artwork-edition-unconfirmed": 2,
     "source-artwork-region-mismatch": 9,
     "source-artwork-title-variant-mismatch": 1,
-    "source-unavailable": 12,
     "unsupported-image-type": 1
   },
   "entries": [
@@ -1020,73 +1019,64 @@
       "identityHash": "c26ddb27a65367a4143b",
       "title": "Astro Bot",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "af1e9fc8eab156882e5d",
       "title": "Demon's Souls",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "4dfbf7cd772e04a31e11",
       "title": "Final Fantasy VII Rebirth",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
     },
     {
       "identityHash": "8d52d838e8d1e897f036",
       "title": "Gran Turismo 7",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
     },
     {
       "identityHash": "9e62d3b6b569249d5b3a",
       "title": "Marvel's Spider-Man 2",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "3c6a59c80f5f8bf68288",
       "title": "Ratchet & Clank: Rift Apart",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
-    },
-    {
-      "identityHash": "d5282f6088afa6dddad4",
-      "title": "Returnal",
-      "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "6898649d04d475d1639d",
       "title": "Elden Ring",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
-    },
-    {
-      "identityHash": "c005986b84847433db60",
-      "title": "Final Fantasy XVI",
-      "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "6b6b728d17b37f799fef",
       "title": "Resident Evil 4",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
-    },
-    {
-      "identityHash": "e30ce575fcdecd09081a",
-      "title": "Silent Hill 2",
-      "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "region-mismatch",
+      "candidateCount": 0
     },
     {
       "identityHash": "bf4ff0b26f7b75d4ab18",
       "title": "Stellar Blade",
       "platform": "Playstation 5",
-      "reason": "source-unavailable"
+      "reason": "region-mismatch",
+      "candidateCount": 0
     }
   ]
 }

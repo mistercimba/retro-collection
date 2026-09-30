@@ -140,5 +140,8 @@ export const WISHLIST_ARTWORK: Record<string, string> = {
   "[\"NOVO\",\"nintendo wii u\",\"yoshis woolly world\",\"Europe\"]": "/covers/wishlist/e96c1488b3db6b5cb60a.png",
   "[\"NOVO\",\"nintendo switch\",\"bayonetta 3\",\"Europe\"]": "/covers/wishlist/48ac069dd6a73c610404.jpg",
   "[\"NOVO\",\"nintendo switch\",\"paper mario the thousand year door\",\"Europe\"]": "/covers/wishlist/b539e4a7be135227f912.jpg",
-  "[\"NOVO\",\"nintendo switch\",\"pikmin 4\",\"Europe\"]": "/covers/wishlist/4d4ad9ac0c4faf32756a.jpg"
+  "[\"NOVO\",\"nintendo switch\",\"pikmin 4\",\"Europe\"]": "/covers/wishlist/4d4ad9ac0c4faf32756a.jpg",
+  "[\"NOVO\",\"playstation 5\",\"returnal\",\"Europe\"]": "/covers/wishlist/76c073f1ad03c2828add.jpg",
+  "[\"NOVO\",\"playstation 5\",\"final fantasy xvi\",\"Europe\"]": "/covers/wishlist/18e6d36fddf866ab8e23.jpg",
+  "[\"NOVO\",\"playstation 5\",\"silent hill 2\",\"Europe\"]": "/covers/wishlist/3dc75309abb61081b7bc.jpg"
 };
