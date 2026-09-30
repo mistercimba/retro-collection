@@ -48,6 +48,14 @@
       "sourcePath": "Named_Boxarts/Kirby - Triple Deluxe (Europe) (En,Fr,De,Es,It).png",
       "reason": "source-artwork-edition-unconfirmed",
       "note": "Source displays Nintendo Selects artwork; requested original physical variant cannot be confirmed conservatively."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourceCommit": "a1e242aca9d194ba7c168e38e14c637ff206189f",
+      "sourcePath": "Named_Boxarts/Dragon Quest VII - Fragments of the Forgotten Past (Europe) (En,Fr,De,Es,It).png",
+      "reason": "source-artwork-region-mismatch",
+      "note": "Europe-labelled source displays a North American ESRB Everyone 10+ front cover."
     }
   ]
 }

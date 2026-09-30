@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T15:29:47.930Z",
+  "generatedAt": "2026-09-30T15:32:10.061Z",
   "activeWishlistTotal": 298,
   "dedicatedArtwork": 119,
   "reusedCollectionArtwork": 0,
@@ -124,12 +124,12 @@
     "launchbox": 9
   },
   "unresolvedReasons": {
-    "ambiguous-launchbox-covers": 19,
-    "ambiguous-source-candidates": 58,
-    "no-exact-title-platform-match": 42,
-    "region-mismatch": 22,
+    "ambiguous-launchbox-covers": 21,
+    "ambiguous-source-candidates": 59,
+    "no-exact-title-platform-match": 40,
+    "region-mismatch": 20,
     "source-artwork-edition-unconfirmed": 1,
-    "source-artwork-region-mismatch": 5,
+    "source-artwork-region-mismatch": 6,
     "source-unavailable": 32
   },
   "orphanedMappings": 0,
