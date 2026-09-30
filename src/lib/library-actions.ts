@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
 import { platformSlug } from "@/lib/data/platforms";
-import type { CollectionGame, PurchaseRecord, WantTarget } from "@/lib/data/types";
+import type { CollectionGame, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
 import { updateLibrary } from "@/lib/library-store";
 
 const text = (form: FormData, key: string) => String(form.get(key) ?? "").trim();
@@ -14,6 +14,32 @@ const money = (form: FormData, key: string) => {
   const value = Number(raw);
   return Number.isFinite(value) && value >= 0 ? value : null;
 };
+
+function addHistory(
+  library: LibraryData,
+  input: {
+    action: LibraryHistoryAction;
+    entityId: string;
+    title: string;
+    platform: string;
+    summary: string;
+    details?: string[];
+  },
+) {
+  library.history ??= [];
+  library.history.unshift({
+    id: `H-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    at: new Date().toISOString(),
+    details: input.details ?? [],
+    ...input,
+  });
+}
+
+function changed(label: string, before: unknown, after: unknown, details: string[]) {
+  const left = before === null || before === undefined ? "" : String(before).trim();
+  const right = after === null || after === undefined ? "" : String(after).trim();
+  if (left !== right) details.push(label);
+}
 
 async function guard() {
   if (!(await isAuthenticated())) throw new Error("Não autenticado.");
@@ -131,7 +157,7 @@ export async function editGame(form: FormData) {
       else library.purchases.push(nextPurchase);
     }
 
-    library.collection[index] = {
+    const nextGame = {
       ...current,
       edition: text(form, "edition"),
       region: text(form, "region"),
@@ -143,12 +169,40 @@ export async function editGame(form: FormData) {
       allocatedCostEur: paid,
       notes: text(form, "notes"),
     };
+    const details: string[] = [];
+    changed("edição", current.edition, nextGame.edition, details);
+    changed("região", current.region, nextGame.region, details);
+    changed("idioma", current.language, nextGame.language, details);
+    changed("completude", current.overallStatus, nextGame.overallStatus, details);
+    changed("condição", current.conditionGrade, nextGame.conditionGrade, details);
+    changed("notas", current.notes, nextGame.notes, details);
+    const previousPurchase = current.purchaseId ? library.purchases.find((purchase) => purchase.purchaseId === current.purchaseId) : undefined;
+    const nextPurchase = purchaseId ? library.purchases.find((purchase) => purchase.purchaseId === purchaseId) : undefined;
+    changed("preço pago", previousPurchase?.totalPaidEur ?? current.allocatedCostEur, nextPurchase?.totalPaidEur ?? paid, details);
+    changed("data de compra", previousPurchase?.date ?? current.acquiredDate, nextPurchase?.date ?? purchaseDate, details);
+    changed("origem da compra", previousPurchase?.source, nextPurchase?.source, details);
+    changed("vendedor", previousPurchase?.seller, nextPurchase?.seller, details);
+    changed("link do anúncio", previousPurchase?.listingUrl, nextPurchase?.listingUrl, details);
+    changed("notas da compra", previousPurchase?.notes, nextPurchase?.notes, details);
+
+    library.collection[index] = nextGame;
+    if (details.length) {
+      addHistory(library, {
+        action: "collection.edit",
+        entityId: current.collectionId,
+        title: current.title,
+        platform: current.platform,
+        summary: `Alterado: ${details.join(", ")}`,
+        details,
+      });
+    }
     return library;
   });
 
   revalidatePath(`/game/${encodeURIComponent(id)}`);
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/history");
 }
 
 export async function addCollectionGame(form: FormData) {
@@ -182,11 +236,20 @@ export async function addCollectionGame(form: FormData) {
       paid,
       notes: text(form, "notes"),
     }));
+    addHistory(library, {
+      action: "collection.add",
+      entityId: collectionId,
+      title,
+      platform,
+      summary: paid === null ? "Adicionado à coleção" : `Adicionado à coleção · ${paid.toFixed(2)} €`,
+      details: [text(form, "overallStatus"), text(form, "conditionGrade")].filter(Boolean),
+    });
     return library;
   });
 
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
   if (created) redirect(`/game/${encodeURIComponent(created)}`);
 }
@@ -204,10 +267,20 @@ export async function removeCollectionGame(form: FormData) {
     if (purchaseId && !library.collection.some((item) => item.purchaseId === purchaseId)) {
       library.purchases = library.purchases.filter((item) => item.purchaseId !== purchaseId);
     }
+    if (game) {
+      addHistory(library, {
+        action: "collection.remove",
+        entityId: game.collectionId,
+        title: game.title,
+        platform: game.platform,
+        summary: "Removido da coleção",
+      });
+    }
     return library;
   });
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/history");
   if (platform) redirect(`/platform/${platformSlug(platform)}`);
   redirect("/collection");
 }
@@ -230,9 +303,20 @@ export async function addWishlistGame(form: FormData) {
   };
   await updateLibrary((library) => {
     library.wishlist.push(target);
+    addHistory(library, {
+      action: "wishlist.add",
+      entityId: target.targetId,
+      title: target.title,
+      platform: target.platform,
+      summary: target.priceCeilingEur === null
+        ? "Adicionado à wishlist"
+        : `Adicionado à wishlist · máximo ${target.priceCeilingEur.toFixed(2)} €`,
+      details: [target.priority, target.targetVersion].filter(Boolean),
+    });
     return library;
   });
   revalidatePath("/want");
+  revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
   redirect(wishlistDetailPath(target.targetId, target.platform, target.title));
 }
@@ -243,21 +327,40 @@ export async function editWishlistGame(form: FormData) {
   const title = text(form, "title");
   const platform = text(form, "platform");
   await updateLibrary((library) => {
-    library.wishlist = library.wishlist.map((target) =>
+    const index = library.wishlist.findIndex((target) =>
       target.targetId === targetId && target.title === title && target.platform === platform
-        ? {
-            ...target,
-            priority: text(form, "priority") || target.priority,
-            targetVersion: text(form, "targetVersion"),
-            priceCeilingEur: money(form, "priceCeilingEur"),
-            reason: text(form, "reason"),
-            notes: text(form, "notes"),
-          }
-        : target,
     );
+    if (index < 0) return library;
+    const current = library.wishlist[index];
+    const next = {
+      ...current,
+      priority: text(form, "priority") || current.priority,
+      targetVersion: text(form, "targetVersion"),
+      priceCeilingEur: money(form, "priceCeilingEur"),
+      reason: text(form, "reason"),
+      notes: text(form, "notes"),
+    };
+    const details: string[] = [];
+    changed("prioridade", current.priority, next.priority, details);
+    changed("versão alvo", current.targetVersion, next.targetVersion, details);
+    changed("máximo que pago", current.priceCeilingEur, next.priceCeilingEur, details);
+    changed("motivo", current.reason, next.reason, details);
+    changed("notas", current.notes, next.notes, details);
+    library.wishlist[index] = next;
+    if (details.length) {
+      addHistory(library, {
+        action: "wishlist.edit",
+        entityId: current.targetId,
+        title: current.title,
+        platform: current.platform,
+        summary: `Alterado: ${details.join(", ")}`,
+        details,
+      });
+    }
     return library;
   });
   revalidatePath("/want");
+  revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
   revalidatePath(`/wish/${encodeURIComponent(targetId)}`);
   redirect(wishlistDetailPath(targetId, platform, title));
@@ -269,12 +372,25 @@ export async function removeWishlistGame(form: FormData) {
   const title = text(form, "title");
   const platform = text(form, "platform");
   await updateLibrary((library) => {
-    library.wishlist = library.wishlist.filter((target) =>
-      !(target.targetId === targetId && target.title === title && target.platform === platform),
+    const target = library.wishlist.find((item) =>
+      item.targetId === targetId && item.title === title && item.platform === platform
     );
+    library.wishlist = library.wishlist.filter((item) =>
+      !(item.targetId === targetId && item.title === title && item.platform === platform),
+    );
+    if (target) {
+      addHistory(library, {
+        action: "wishlist.remove",
+        entityId: target.targetId,
+        title: target.title,
+        platform: target.platform,
+        summary: "Removido da wishlist",
+      });
+    }
     return library;
   });
   revalidatePath("/want");
+  revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
   revalidatePath(`/wish/${encodeURIComponent(targetId)}`);
   redirect(`/platform/${platformSlug(platform)}?tab=wishlist`);
@@ -320,12 +436,24 @@ export async function purchaseWishlistGame(form: FormData) {
     library.wishlist = library.wishlist.filter((item) =>
       !(item.targetId === targetId && item.title === title && item.platform === platform),
     );
+    addHistory(library, {
+      action: "wishlist.purchase",
+      entityId: collectionId,
+      title: target.title,
+      platform: target.platform,
+      summary: paid === null
+        ? "Comprado · movido da wishlist para a coleção"
+        : `Comprado por ${paid.toFixed(2)} € · movido para a coleção`,
+      details: [source, text(form, "overallStatus"), text(form, "conditionGrade")].filter(Boolean),
+    });
     return library;
   });
 
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/history");
   revalidatePath("/want");
+  revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
   if (created) redirect(`/game/${encodeURIComponent(created)}`);
 }

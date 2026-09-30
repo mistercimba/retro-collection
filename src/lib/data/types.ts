@@ -132,6 +132,26 @@ export interface ValuationSnapshot {
   notes: string;
 }
 
+export type LibraryHistoryAction =
+  | "collection.add"
+  | "collection.edit"
+  | "collection.remove"
+  | "wishlist.add"
+  | "wishlist.edit"
+  | "wishlist.remove"
+  | "wishlist.purchase";
+
+export interface LibraryHistoryEntry {
+  id: string;
+  at: string;
+  action: LibraryHistoryAction;
+  entityId: string;
+  title: string;
+  platform: string;
+  summary: string;
+  details: string[];
+}
+
 export interface LibraryData {
   schemaVersion: 1;
   updatedAt: string;
@@ -139,6 +159,7 @@ export interface LibraryData {
   wishlist: WantTarget[];
   purchases: PurchaseRecord[];
   valuations: ValuationSnapshot[];
+  history: LibraryHistoryEntry[];
 }
 
 export type ProviderMode = "snapshot" | "google" | "mock";
