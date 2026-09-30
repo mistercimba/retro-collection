@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T15:32:10.045Z",
+  "generatedAt": "2026-09-30T15:36:08.858Z",
   "source": "libretro-thumbnails/Named_Boxarts",
   "entries": {
     "[\"NOVO\",\"game boy advance\",\"advance wars 2 black hole rising\",\"Europe\"]": {
@@ -511,6 +511,22 @@
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },
+    "[\"NOVO\",\"nes\",\"elite\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "Elite",
+      "platform": "NES",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/ba03049fbee59454e642.png",
+      "source": "libretro-thumbnails",
+      "sourceTitle": "Elite",
+      "sourceUrl": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System/4d21463bf5d553afc34d99183c9ad5833f773b93/Named_Boxarts/Elite%20(Europe)%20(En%2CFr%2CDe).png",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
+      "sourcePath": "Named_Boxarts/Elite (Europe) (En,Fr,De).png",
+      "imageSha256": "f7772bd341c631a655500738401345f68b42c21c0766b5204512703dd1b0ad87",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
     "[\"NOVO\",\"nes\",\"galaga\",\"Europe\"]": {
       "targetId": "NOVO",
       "title": "Galaga",
@@ -526,6 +542,25 @@
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },
+    "[\"NOVO\",\"nes\",\"legend of zelda\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "The Legend of Zelda",
+      "platform": "NES",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/1f45849d60e34ef8aee8.png",
+      "source": "launchbox",
+      "sourceTitle": "The Legend of Zelda",
+      "sourceUrl": "https://images.launchbox-app.com/548893de-2c7f-42f2-b1c4-b7a7878ae281.png",
+      "sourcePath": "548893de-2c7f-42f2-b1c4-b7a7878ae281.png",
+      "launchboxDatabaseId": "113",
+      "sourcePlatform": "Nintendo Entertainment System",
+      "sourceRegion": "Spain",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
+      "metadataSha256": "68b6496f194bf782c3a9f5c2a4d19330d042f980afda32319f49047872c3eab7",
+      "imageSha256": "5079fa2471817f844d87823c40a8cfa858af1f7f9e4fdf9cf34e19a60c812753",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
     "[\"NOVO\",\"nes\",\"mega man 2\",\"Europe\"]": {
       "targetId": "NOVO",
       "title": "Mega Man 2",
@@ -538,21 +573,6 @@
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Mega Man 2 (Europe).png",
-      "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
-    },
-    "[\"NOVO\",\"nes\",\"metroid\",\"Europe\"]": {
-      "targetId": "NOVO",
-      "title": "Metroid",
-      "platform": "NES",
-      "targetVersion": "PAL Europe",
-      "file": "/covers/wishlist/2084b1d9efcbec8186b8.png",
-      "source": "libretro-thumbnails",
-      "sourceTitle": "Metroid",
-      "sourceUrl": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System/4d21463bf5d553afc34d99183c9ad5833f773b93/Named_Boxarts/Metroid%20(Europe).png",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
-      "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
-      "sourcePath": "Named_Boxarts/Metroid (Europe).png",
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },
@@ -598,21 +618,6 @@
       "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Shatterhand (Europe).png",
-      "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
-    },
-    "[\"NOVO\",\"nes\",\"teenage mutant hero turtles ii the arcade game\",\"Europe\"]": {
-      "targetId": "NOVO",
-      "title": "Teenage Mutant Hero Turtles II: The Arcade Game",
-      "platform": "NES",
-      "targetVersion": "PAL Europe",
-      "file": "/covers/wishlist/09b50914f7597c5238ae.png",
-      "source": "libretro-thumbnails",
-      "sourceTitle": "Teenage Mutant Hero Turtles II - The Arcade Game",
-      "sourceUrl": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System/4d21463bf5d553afc34d99183c9ad5833f773b93/Named_Boxarts/Teenage%20Mutant%20Hero%20Turtles%20II%20-%20The%20Arcade%20Game%20(Europe).png",
-      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
-      "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
-      "sourcePath": "Named_Boxarts/Teenage Mutant Hero Turtles II - The Arcade Game (Europe).png",
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },

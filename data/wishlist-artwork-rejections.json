@@ -56,6 +56,22 @@
       "sourcePath": "Named_Boxarts/Dragon Quest VII - Fragments of the Forgotten Past (Europe) (En,Fr,De,Es,It).png",
       "reason": "source-artwork-region-mismatch",
       "note": "Europe-labelled source displays a North American ESRB Everyone 10+ front cover."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
+      "sourcePath": "Named_Boxarts/Teenage Mutant Hero Turtles II - The Arcade Game (Europe).png",
+      "reason": "source-artwork-region-mismatch",
+      "note": "Europe-labelled source displays the North American Ninja Turtles/Ultra front rather than the requested PAL Hero Turtles variant."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_Entertainment_System",
+      "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
+      "sourcePath": "Named_Boxarts/Metroid (Europe).png",
+      "reason": "source-artwork-edition-unconfirmed",
+      "note": "Source displays German Classic-Serie reissue artwork; original artwork variant cannot be confirmed conservatively."
     }
   ]
 }

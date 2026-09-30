@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T15:32:10.061Z",
+  "generatedAt": "2026-09-30T15:36:08.873Z",
   "activeWishlistTotal": 298,
   "dedicatedArtwork": 119,
   "reusedCollectionArtwork": 0,
@@ -120,16 +120,16 @@
     }
   },
   "sourceCounts": {
-    "libretro-thumbnails": 110,
-    "launchbox": 9
+    "libretro-thumbnails": 109,
+    "launchbox": 10
   },
   "unresolvedReasons": {
-    "ambiguous-launchbox-covers": 21,
+    "ambiguous-launchbox-covers": 22,
     "ambiguous-source-candidates": 59,
-    "no-exact-title-platform-match": 40,
-    "region-mismatch": 20,
-    "source-artwork-edition-unconfirmed": 1,
-    "source-artwork-region-mismatch": 6,
+    "no-exact-title-platform-match": 38,
+    "region-mismatch": 19,
+    "source-artwork-edition-unconfirmed": 2,
+    "source-artwork-region-mismatch": 7,
     "source-unavailable": 32
   },
   "orphanedMappings": 0,

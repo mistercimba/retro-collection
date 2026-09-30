@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-30T15:32:10.060Z",
+  "generatedAt": "2026-09-30T15:36:08.872Z",
   "activeWishlistTotal": 298,
   "fallback": 179,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 21,
+    "ambiguous-launchbox-covers": 22,
     "ambiguous-source-candidates": 59,
-    "no-exact-title-platform-match": 40,
-    "region-mismatch": 20,
-    "source-artwork-edition-unconfirmed": 1,
-    "source-artwork-region-mismatch": 6,
+    "no-exact-title-platform-match": 38,
+    "region-mismatch": 19,
+    "source-artwork-edition-unconfirmed": 2,
+    "source-artwork-region-mismatch": 7,
     "source-unavailable": 32
   },
   "entries": [
@@ -20,13 +20,6 @@
       "candidateCount": 3
     },
     {
-      "identityHash": "8898207eda33fb717875",
-      "title": "Elite",
-      "platform": "NES",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
       "identityHash": "60fbd82d6dc324fe8b96",
       "title": "Kirby's Adventure",
       "platform": "NES",
@@ -34,11 +27,16 @@
       "candidateCount": 3
     },
     {
-      "identityHash": "6b320ea95bd25dbc3846",
-      "title": "The Legend of Zelda",
+      "identityHash": "93b6d906013a34150c52",
+      "title": "Metroid",
       "platform": "NES",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "source-artwork-edition-unconfirmed"
+    },
+    {
+      "identityHash": "944bb6ed9936730db337",
+      "title": "Teenage Mutant Hero Turtles II: The Arcade Game",
+      "platform": "NES",
+      "reason": "source-artwork-region-mismatch"
     },
     {
       "identityHash": "bb78f225d12133e97edb",
@@ -51,8 +49,8 @@
       "identityHash": "7acbfffa668d7a5c8240",
       "title": "Kid Icarus",
       "platform": "NES",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "aee063023b11ff801265",
