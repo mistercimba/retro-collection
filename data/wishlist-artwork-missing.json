@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2026-09-30T15:36:08.872Z",
+  "generatedAt": "2026-09-30T15:38:20.393Z",
   "activeWishlistTotal": 298,
-  "fallback": 179,
+  "fallback": 175,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 22,
+    "ambiguous-launchbox-covers": 24,
     "ambiguous-source-candidates": 59,
-    "no-exact-title-platform-match": 38,
-    "region-mismatch": 19,
+    "no-exact-title-platform-match": 33,
+    "region-mismatch": 17,
     "source-artwork-edition-unconfirmed": 2,
     "source-artwork-region-mismatch": 7,
-    "source-unavailable": 32
+    "source-unavailable": 32,
+    "unsupported-image-type": 1
   },
   "entries": [
     {
@@ -63,21 +64,13 @@
       "identityHash": "5c9a4d8c13c30acc12f9",
       "title": "Mega Man V",
       "platform": "Game Boy",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "7f68c077e58371cc5ae6",
-      "title": "Metroid II: Return of Samus",
-      "platform": "Game Boy",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "unsupported-image-type"
     },
     {
       "identityHash": "46e73f31eb1a45374e2c",
       "title": "Mole Mania",
       "platform": "Game Boy",
-      "reason": "no-exact-title-platform-match",
+      "reason": "region-mismatch",
       "candidateCount": 0
     },
     {
@@ -88,38 +81,17 @@
       "candidateCount": 0
     },
     {
-      "identityHash": "e7ea287a4302daea92e5",
-      "title": "Wario Blast: Featuring Bomberman!",
-      "platform": "Game Boy",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "10cf92fc1019b2b0cd40",
-      "title": "Balloon Kid",
-      "platform": "Game Boy",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "f44801a627b442969a75",
-      "title": "Kirby's Pinball Land",
-      "platform": "Game Boy",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
       "identityHash": "20dbbe742014493cd620",
       "title": "Mario's Picross",
       "platform": "Game Boy",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "6206f4d908a1405a2a45",
       "title": "R-Type",
       "platform": "Game Boy",
-      "reason": "region-mismatch",
+      "reason": "ambiguous-launchbox-covers",
       "candidateCount": 2
     },
     {
