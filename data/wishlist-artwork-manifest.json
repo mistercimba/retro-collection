@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T14:41:52.740Z",
+  "generatedAt": "2026-09-30T15:05:46.961Z",
   "source": "libretro-thumbnails/Named_Boxarts",
   "entries": {
     "[\"NOVO\",\"game boy advance\",\"castlevania harmony of dissonance\",\"Europe\"]": {
@@ -772,6 +772,25 @@
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },
+    "[\"NOVO\",\"playstation\",\"adventures of alundra\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "Adventures of Alundra",
+      "platform": "Playstation",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/281e97c38ca6c91b9a04.jpg",
+      "source": "launchbox",
+      "sourceTitle": "Alundra",
+      "sourceUrl": "https://images.launchbox-app.com/429ac52e-e4df-4ec1-ab96-44db8de4227e.jpg",
+      "sourcePath": "429ac52e-e4df-4ec1-ab96-44db8de4227e.jpg",
+      "launchboxDatabaseId": "495",
+      "sourcePlatform": "Sony Playstation",
+      "sourceRegion": "Europe",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
+      "metadataSha256": "68b6496f194bf782c3a9f5c2a4d19330d042f980afda32319f49047872c3eab7",
+      "imageSha256": "7f88acc4d22332da37d6ac2d1e2e1b58525907e48e83f70a902dcb8cf1c3348b",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
     "[\"NOVO\",\"playstation\",\"castlevania symphony of the night\",\"Europe\"]": {
       "targetId": "NOVO",
       "title": "Castlevania: Symphony of the Night",
@@ -814,6 +833,54 @@
       "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
       "sourceCommit": "ccee75c7744d81676b6725307aca27ef6be6231a",
       "sourcePath": "Named_Boxarts/Oddworld - Abe's Exoddus (Europe).png",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
+    "[\"NOVO\",\"playstation\",\"spyro 2 gateway to glimmer\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "Spyro 2: Gateway to Glimmer",
+      "platform": "Playstation",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/c0a4bc1b086ab6270f58.png",
+      "source": "libretro-thumbnails",
+      "sourceTitle": "Spyro 2 - Gateway to Glimmer",
+      "sourceUrl": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/ccee75c7744d81676b6725307aca27ef6be6231a/Named_Boxarts/Spyro%202%20-%20Gateway%20to%20Glimmer%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourceCommit": "ccee75c7744d81676b6725307aca27ef6be6231a",
+      "sourcePath": "Named_Boxarts/Spyro 2 - Gateway to Glimmer (Europe) (En,Fr,De,Es,It).png",
+      "imageSha256": "ff89f553ced6a2d100bd4b38dd0a227287c5435ffd8fbc343ff9ee1867c3dbf7",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
+    "[\"NOVO\",\"playstation\",\"vib ribbon\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "Vib-Ribbon",
+      "platform": "Playstation",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/356c0c195d96b5b007f9.png",
+      "source": "libretro-thumbnails",
+      "sourceTitle": "Vib-Ribbon",
+      "sourceUrl": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/ccee75c7744d81676b6725307aca27ef6be6231a/Named_Boxarts/Vib-Ribbon%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourceCommit": "ccee75c7744d81676b6725307aca27ef6be6231a",
+      "sourcePath": "Named_Boxarts/Vib-Ribbon (Europe) (En,Fr,De,Es,It).png",
+      "imageSha256": "8ad526416c674b31c454eef29982b2bfb059df8111eb2177b050ed30f0dc5de8",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
+    "[\"NOVO\",\"playstation\",\"wipeout 3 special edition\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "Wipeout 3 Special Edition",
+      "platform": "Playstation",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/603563a53ef58e4ee1ad.png",
+      "source": "libretro-thumbnails",
+      "sourceTitle": "WipEout 3 - Special Edition",
+      "sourceUrl": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/ccee75c7744d81676b6725307aca27ef6be6231a/Named_Boxarts/WipEout%203%20-%20Special%20Edition%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png",
+      "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
+      "sourceCommit": "ccee75c7744d81676b6725307aca27ef6be6231a",
+      "sourcePath": "Named_Boxarts/WipEout 3 - Special Edition (Europe) (En,Fr,De,Es,It).png",
+      "imageSha256": "24478a3c39e4bdd989482c0293505543262f12ec6649cce05947c8954be47cf3",
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },

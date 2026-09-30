@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T14:41:52.753Z",
+  "generatedAt": "2026-09-30T15:05:46.974Z",
   "activeWishlistTotal": 298,
-  "fallback": 235,
+  "fallback": 231,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 5,
-    "ambiguous-source-candidates": 49,
-    "no-exact-title-platform-match": 75,
-    "region-mismatch": 72,
+    "ambiguous-launchbox-covers": 7,
+    "ambiguous-source-candidates": 50,
+    "no-exact-title-platform-match": 70,
+    "region-mismatch": 70,
     "source-artwork-region-mismatch": 1,
     "source-unavailable": 32,
     "unsupported-image-type": 1
@@ -212,22 +212,8 @@
       "identityHash": "2bc60543239a06e0a680",
       "title": "Tombi!",
       "platform": "Playstation",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "98723a95c3d8a8fbeaa1",
-      "title": "Vib-Ribbon",
-      "platform": "Playstation",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "ea4964771a57f2eb8473",
-      "title": "Wipeout 3 Special Edition",
-      "platform": "Playstation",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 4
     },
     {
       "identityHash": "4734c89c871180ebeded",
@@ -265,13 +251,6 @@
       "candidateCount": 5
     },
     {
-      "identityHash": "980ce7da4b010ea3e8fd",
-      "title": "Spyro 2: Gateway to Glimmer",
-      "platform": "Playstation",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
       "identityHash": "ddaaa344056ef00049ec",
       "title": "Tony Hawk's Pro Skater 2",
       "platform": "Playstation",
@@ -279,18 +258,11 @@
       "candidateCount": 3
     },
     {
-      "identityHash": "601ae44b8588d21ce1a0",
-      "title": "Adventures of Alundra",
-      "platform": "Playstation",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
       "identityHash": "a5a79be26558b618bfa0",
       "title": "Gran Turismo 2",
       "platform": "Playstation",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "afdcc83e64fcbd8f2283",
@@ -317,8 +289,8 @@
       "identityHash": "715ee517f54e0b7466ab",
       "title": "The Legend of Dragoon",
       "platform": "Playstation",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "a3bc817c05c7ab1e1035",
