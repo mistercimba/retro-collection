@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { resolveSavedListScroll } from "@/lib/list-scroll.logic";
 
 const STORAGE_KEY = "retro-list-scroll";
 
@@ -13,13 +14,7 @@ export function useListScrollRestoration(): void {
     const saved = sessionStorage.getItem(STORAGE_KEY);
     if (!saved) return;
     sessionStorage.removeItem(STORAGE_KEY);
-    try {
-      const position = JSON.parse(saved) as { href?: string; y?: number };
-      if (position.href !== `${window.location.pathname}${window.location.search}` || typeof position.y !== "number") return;
-      const y = position.y;
-      requestAnimationFrame(() => window.scrollTo(0, y));
-    } catch {
-      // Ignore invalid session storage entries.
-    }
+    const y = resolveSavedListScroll(saved, `${window.location.pathname}${window.location.search}`);
+    if (y !== null) requestAnimationFrame(() => window.scrollTo(0, y));
   }, []);
 }
