@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-09-30T13:08:09.090Z",
+  "generatedAt": "2026-09-30T14:12:55.015Z",
   "activeWishlistTotal": 298,
-  "fallback": 233,
+  "fallback": 221,
   "reasonCounts": {
-    "ambiguous-source-candidates": 25,
-    "no-exact-title-platform-match": 91,
-    "region-mismatch": 84,
+    "ambiguous-launchbox-covers": 4,
+    "ambiguous-source-candidates": 26,
+    "no-exact-title-platform-match": 81,
+    "region-mismatch": 77,
     "source-unavailable": 32,
     "unsupported-image-type": 1
   },
@@ -483,106 +484,43 @@
       "identityHash": "86c68a7651864656d2ad",
       "title": "Dragon Quest VIII: Journey of the Cursed King",
       "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "21d8bd0cc5460205292b",
-      "title": "Gran Turismo 4",
-      "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "a6bc1e9effb67ff7f1b7",
-      "title": "ICO",
-      "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "5cd0469d532196f3a99c",
-      "title": "Jak and Daxter: The Precursor Legacy",
-      "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "0c3e5538de02dcc66350",
-      "title": "Jak II: Renegade",
-      "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "37ff51770b22d770174e",
       "title": "Metal Gear Solid 3: Snake Eater",
       "platform": "Playstation 2",
       "reason": "ambiguous-source-candidates",
-      "candidateCount": 3
-    },
-    {
-      "identityHash": "e9e5b3441f8f8517c8b2",
-      "title": "Ōkami",
-      "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "55cdc94e1921284b87b5",
-      "title": "Project Zero",
-      "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "5cea3ab669165514595d",
-      "title": "Project Zero II: Crimson Butterfly",
-      "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "candidateCount": 4
     },
     {
       "identityHash": "fb1263e65c9e30cbc019",
       "title": "Ratchet & Clank",
       "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "d113fe07893afea5b334",
       "title": "Ratchet & Clank 2: Locked and Loaded",
       "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "bd8a8ad673308691944f",
       "title": "Ratchet & Clank 3",
       "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "da2ffaf2bf1017e33a69",
-      "title": "Silent Hill 3",
-      "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "9342d007006aeb61d63a",
       "title": "Burnout 3: Takedown",
       "platform": "Playstation 2",
-      "reason": "region-mismatch",
+      "reason": "ambiguous-source-candidates",
       "candidateCount": 2
-    },
-    {
-      "identityHash": "deebbc7780d343672a83",
-      "title": "Dark Chronicle",
-      "platform": "Playstation 2",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
     },
     {
       "identityHash": "5a45e310c75c1173ee4a",
@@ -597,27 +535,6 @@
       "platform": "Playstation 2",
       "reason": "ambiguous-source-candidates",
       "candidateCount": 5
-    },
-    {
-      "identityHash": "24d26ef9179083f49d12",
-      "title": "Maximo: Ghosts to Glory",
-      "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "8c961f0eff0493ef7db2",
-      "title": "Onimusha 2: Samurai's Destiny",
-      "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "620d51b366b6445d95fb",
-      "title": "Rogue Galaxy",
-      "platform": "Playstation 2",
-      "reason": "region-mismatch",
-      "candidateCount": 2
     },
     {
       "identityHash": "10042d9c67af51f2ba2e",

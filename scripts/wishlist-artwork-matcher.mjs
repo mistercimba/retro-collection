@@ -31,7 +31,8 @@ export function sourceArtworkRegion(filePath) {
 export function sourceArtworkTitle(filePath) {
   let title = path.posix.basename(filePath).replace(/\.[^.]+$/, "");
   title = title.replace(/\s*\(([^)]*)\)/g, (group, contents) =>
-    /\b(europe|pal|portugal|united kingdom|uk|france|germany|spain|italy|netherlands|australia|usa|united states|japan|japanese|ntsc|north america|canada)\b/i.test(contents)
+    /\b(europe|pal|portugal|united kingdom|uk|france|germany|spain|italy|netherlands|australia|usa|united states|japan|japanese|ntsc|north america|canada)\b/i.test(contents) ||
+    /^(?:En|Fr|De|Es|It|Nl|Pt|Sv|No|Da|Fi|Pl|Hr|Ja|Ko|Zh|Ru)(?:,(?:En|Fr|De|Es|It|Nl|Pt|Sv|No|Da|Fi|Pl|Hr|Ja|Ko|Zh|Ru))*$/.test(contents)
       ? " "
       : group,
   );
@@ -45,4 +46,37 @@ export function findExactSourceMatches(target, candidates) {
   return candidates.filter((candidate) =>
     normalizeArtworkTitle(candidate.title) === title && candidate.region === region,
   );
+}
+
+// LaunchBox already links each front image to a game and platform. Both the game
+// and its eligible image must be unique; no regional ranking or fuzzy aliases.
+export function findExactLaunchboxMatch(target, games, sourcePlatform) {
+  const title = normalizeArtworkTitle(target.title);
+  const region = requestedArtworkRegion(target.targetVersion);
+  const matches = games.filter((game) => game.platform === sourcePlatform && (
+    normalizeArtworkTitle(game.title) === title ||
+    game.alternates.some((alternate) => normalizeArtworkTitle(alternate.title) === title &&
+      launchboxArtworkRegion(alternate.region) === region)
+  ));
+  if (matches.length !== 1) return {
+    reason: matches.length > 1 ? "ambiguous-launchbox-games" : "no-exact-title-platform-match",
+    candidateCount: matches.length,
+  };
+  const game = matches[0];
+  const images = [...new Map(game.images
+    .filter((item) => item.fileName && launchboxArtworkRegion(item.region) === region)
+    .map((item) => [item.fileName, item])).values()];
+  if (images.length !== 1) return {
+    reason: images.length > 1 ? "ambiguous-launchbox-covers" : "region-mismatch",
+    candidateCount: images.length,
+  };
+  return { game, image: images[0] };
+}
+
+export function launchboxArtworkRegion(region) {
+  const value = normalizeArtworkTitle(region);
+  if (["europe", "united kingdom", "great britain", "portugal", "france", "germany", "spain", "italy", "ireland", "netherlands", "belgium", "austria", "switzerland", "sweden", "denmark", "norway", "finland"].includes(value)) return "Europe";
+  if (["north america", "united states", "usa"].includes(value)) return "US";
+  if (value === "japan") return "Japan";
+  return null;
 }

@@ -199,5 +199,13 @@ npm run artwork:status
 Wishlist artwork is imported as local files using a temporary target export:
 
 ```bash
-npm run wishlist-artwork:import -- --input /tmp/wishlist-targets.json
+npm run wishlist-artwork:import -- --input /tmp/wishlist-targets.json --platform ps2 --limit 12
 ```
+
+Each maintenance run processes only the named platform (repeat `--platform` if
+needed) and imports at most 15 new covers. Commit and push each validated batch
+before continuing. Existing local assets are reused without downloading again.
+An optional `--launchbox-index /tmp/index.json` accepts the offline front-cover
+index produced by `scripts/index-wishlist-launchbox.py` from LaunchBox's metadata
+ZIP. Only exact titles/platforms and a single compatible regional front cover
+are accepted; an ambiguous Libretro match is never overridden by another source.

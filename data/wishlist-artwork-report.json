@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-30T13:08:09.090Z",
+  "generatedAt": "2026-09-30T14:12:55.016Z",
   "activeWishlistTotal": 298,
-  "dedicatedArtwork": 65,
+  "dedicatedArtwork": 77,
   "reusedCollectionArtwork": 0,
-  "fallback": 233,
-  "coverage": 21.8,
+  "fallback": 221,
+  "coverage": 25.8,
   "coverageByPlatform": {
     "NES": {
       "total": 20,
@@ -50,10 +50,10 @@
     },
     "Playstation 2": {
       "total": 27,
-      "dedicated": 2,
+      "dedicated": 14,
       "reused": 0,
-      "fallback": 25,
-      "coverage": 7.4
+      "fallback": 13,
+      "coverage": 51.9
     },
     "GameBoy Advance": {
       "total": 17,
@@ -120,27 +120,18 @@
     }
   },
   "sourceCounts": {
-    "libretro-thumbnails": 65
+    "libretro-thumbnails": 76,
+    "launchbox": 1
   },
   "unresolvedReasons": {
-    "ambiguous-source-candidates": 25,
-    "no-exact-title-platform-match": 91,
-    "region-mismatch": 84,
+    "ambiguous-launchbox-covers": 4,
+    "ambiguous-source-candidates": 26,
+    "no-exact-title-platform-match": 81,
+    "region-mismatch": 77,
     "source-unavailable": 32,
     "unsupported-image-type": 1
   },
   "orphanedMappings": 0,
   "orphanedAssets": [],
-  "sourceErrors": [
-    {
-      "platform": "Nintendo Switch",
-      "source": "Nintendo_-_Nintendo_Switch",
-      "error": "Error: GitHub API returned 404: https://api.github.com/repos/libretro-thumbnails/Nintendo_-_Nintendo_Switch/git/trees/master"
-    },
-    {
-      "platform": "Playstation 5",
-      "source": "Sony_-_PlayStation_5",
-      "error": "Error: GitHub API returned 404: https://api.github.com/repos/libretro-thumbnails/Sony_-_PlayStation_5/git/trees/master"
-    }
-  ]
+  "sourceErrors": []
 }

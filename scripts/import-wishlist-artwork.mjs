@@ -3,6 +3,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import {
   findExactSourceMatches,
+  findExactLaunchboxMatch,
   normalizeArtworkTitle,
   requestedArtworkRegion,
   sourceArtworkRegion,
@@ -19,6 +20,16 @@ const SOURCE_CACHE_DIR = path.join("/tmp", "retro-collection-wishlist-artwork-ca
 const COLLECTION_GAMES_FILE = path.join(ROOT, "data", "artwork-games.json");
 const COLLECTION_MANIFEST_FILE = path.join(ROOT, "public", "covers", "manifest.json");
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
+
+const LAUNCHBOX_BY_PLATFORM = {
+  nes: "Nintendo Entertainment System", snes: "Super Nintendo Entertainment System",
+  "nintendo 64": "Nintendo 64", "game boy": "Nintendo Game Boy",
+  "game boy color": "Nintendo Game Boy Color", "game boy advance": "Nintendo Game Boy Advance",
+  gamecube: "Nintendo GameCube", "nintendo ds": "Nintendo DS", "nintendo 3ds": "Nintendo 3DS",
+  "nintendo wii": "Nintendo Wii", "nintendo wii u": "Nintendo Wii U", "nintendo switch": "Nintendo Switch",
+  playstation: "Sony Playstation", "playstation 2": "Sony Playstation 2",
+  "playstation 3": "Sony Playstation 3", "playstation 5": "Sony Playstation 5",
+};
 
 const REPO_BY_PLATFORM = {
   nes: "Nintendo_-_Nintendo_Entertainment_System",
@@ -132,6 +143,21 @@ function validTarget(target) {
   return target && ["targetId", "title", "platform", "targetVersion"].every((key) => typeof target[key] === "string") && target.title.trim() && target.platform.trim();
 }
 
+function argument(name, fallback = "") {
+  const index = process.argv.indexOf(name);
+  return index >= 0 ? process.argv[index + 1] : fallback;
+}
+const selectedPlatforms = process.argv.flatMap((value, index) => value === "--platform" ? [canonicalPlatform(process.argv[index + 1])] : []);
+const limit = Number(argument("--limit", "12"));
+if (!selectedPlatforms.length || !Number.isInteger(limit) || limit < 1 || limit > 15) {
+  throw new Error("Specify --platform (repeatable) and --limit between 1 and 15. Each run is a checkpoint batch.");
+}
+const launchboxFile = argument("--launchbox-index");
+const launchbox = launchboxFile ? await readJson(path.resolve(launchboxFile), null) : null;
+const previousMissing = await readJson(MISSING_FILE, { entries: [] });
+const previousReasons = new Map(previousMissing.entries.map((entry) => [entry.identityHash, entry]));
+let newlyImported = 0;
+
 const input = JSON.parse(await fs.readFile(inputPath(), "utf8"));
 const targets = Array.isArray(input) ? input : input.targets;
 if (!Array.isArray(targets) || !targets.every(validTarget)) {
@@ -172,80 +198,96 @@ for (const target of uniqueTargets) {
   }
 
   const platform = canonicalPlatform(target.platform);
-  const repository = REPO_BY_PLATFORM[platform];
-  if (!repository) {
-    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "unsupported-platform" });
+  if (!selectedPlatforms.includes(platform) || newlyImported >= limit) {
+    unresolved.push(previousReasons.get(sha(key)) ?? {
+      identityHash: sha(key), title: target.title, platform: target.platform,
+      reason: newlyImported >= limit && selectedPlatforms.includes(platform) ? "checkpoint-batch-limit" : "platform-not-processed",
+    });
     continue;
   }
-  if (!localCandidates.has(repository)) {
-    try {
-      const tree = await loadTree(repository);
-      localCandidates.set(repository, tree);
-    } catch (error) {
-      sourceErrors.push({ platform: target.platform, source: repository, error: String(error) });
-      localCandidates.set(repository, null);
+  const repository = REPO_BY_PLATFORM[platform];
+  let reason = "unsupported-platform";
+  let candidateCount = 0;
+  let source = null;
+  if (repository) {
+    if (!localCandidates.has(repository)) {
+      try { localCandidates.set(repository, await loadTree(repository)); }
+      catch (error) {
+        sourceErrors.push({ platform: target.platform, source: repository, error: String(error) });
+        localCandidates.set(repository, null);
+      }
+    }
+    const tree = localCandidates.get(repository);
+    reason = "source-unavailable";
+    if (tree) {
+      const candidates = tree.files.map((sourcePath) => ({
+        sourcePath, title: sourceArtworkTitle(sourcePath), region: sourceArtworkRegion(sourcePath),
+      }));
+      const exactTitle = candidates.filter((candidate) => normalizeArtworkTitle(candidate.title) === normalizeArtworkTitle(target.title));
+      const regional = findExactSourceMatches(target, candidates);
+      candidateCount = regional.length || exactTitle.length;
+      reason = regional.length > 1 ? "ambiguous-source-candidates" : exactTitle.length ? "region-mismatch" : "no-exact-title-platform-match";
+      if (regional.length === 1) {
+        const match = regional[0];
+        const sourcePath = `Named_Boxarts/${match.sourcePath}`;
+        source = {
+          source: "libretro-thumbnails", sourceTitle: match.title,
+          sourceUrl: `https://raw.githubusercontent.com/libretro-thumbnails/${repository}/${tree.sourceCommit}/${sourcePath.split("/").map(encodeURIComponent).join("/")}`,
+          sourceRepo: `libretro-thumbnails/${repository}`, sourceCommit: tree.sourceCommit, sourcePath,
+        };
+      }
     }
   }
-  const tree = localCandidates.get(repository);
-  if (!tree) {
-    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "source-unavailable" });
+  // A second source may fill a missing/incompatible source, but never overrides
+  // known ambiguous candidates or selects a preferred variant among them.
+  if (!source && reason !== "ambiguous-source-candidates" && launchbox?.platforms?.includes(LAUNCHBOX_BY_PLATFORM[platform])) {
+    const match = findExactLaunchboxMatch(target, launchbox.games, LAUNCHBOX_BY_PLATFORM[platform]);
+    if (match.game) source = {
+      source: "launchbox", sourceTitle: match.game.title,
+      sourceUrl: `https://images.launchbox-app.com/${encodeURIComponent(match.image.fileName)}`,
+      sourcePath: match.image.fileName, launchboxDatabaseId: match.game.databaseId,
+      sourcePlatform: match.game.platform, sourceRegion: match.image.region,
+      metadataUrl: launchbox.source, metadataSha256: launchbox.metadataSha256,
+    };
+    else { reason = match.reason; candidateCount = match.candidateCount; }
+  }
+  if (!source) {
+    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason, candidateCount });
     continue;
   }
 
-  const candidates = tree.files.map((sourcePath) => ({
-    sourcePath,
-    title: sourceArtworkTitle(sourcePath),
-    region: sourceArtworkRegion(sourcePath),
-  }));
-  const exactTitle = candidates.filter((candidate) => normalizeArtworkTitle(candidate.title) === normalizeArtworkTitle(target.title));
-  const regional = findExactSourceMatches(target, candidates);
-  if (regional.length !== 1) {
-    const reason = regional.length > 1
-      ? "ambiguous-source-candidates"
-      : exactTitle.length > 0
-        ? "region-mismatch"
-        : "no-exact-title-platform-match";
-    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason, candidateCount: regional.length || exactTitle.length });
+  let response;
+  try { response = await fetch(source.sourceUrl, { headers: { "User-Agent": "RetroCollection-WishlistArtwork/1.0" }, signal: AbortSignal.timeout(30000) }); }
+  catch {
+    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "download-failed" });
     continue;
   }
-
-  const match = regional[0];
-  const sourcePath = `Named_Boxarts/${match.sourcePath}`;
-  const url = `https://raw.githubusercontent.com/libretro-thumbnails/${repository}/${tree.sourceCommit}/${sourcePath.split("/").map(encodeURIComponent).join("/")}`;
-  const response = await fetch(url, { headers: { "User-Agent": "RetroCollection-WishlistArtwork/1.0" } });
   if (!response.ok) {
     unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "download-failed" });
     continue;
   }
   const bytes = Buffer.from(await response.arrayBuffer());
-  const isPng = /^image\/png\b/i.test(response.headers.get("content-type") ?? "") && bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
-  if (!isPng || bytes.length > MAX_IMAGE_BYTES) {
+  const isPng = bytes.length > 24 && bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+  const isJpeg = bytes.length > 4 && bytes[0] === 255 && bytes[1] === 216 && bytes[bytes.length - 2] === 255 && bytes[bytes.length - 1] === 217;
+  if ((!isPng && !isJpeg) || bytes.length > MAX_IMAGE_BYTES) {
     unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: bytes.length > MAX_IMAGE_BYTES ? "image-too-large" : "unsupported-image-type" });
     continue;
   }
-
-  const fileName = `${sha(`${key}\0${sourcePath}`)}.png`;
+  const fileName = `${sha(`${key}\0${source.sourcePath}`)}.${isPng ? "png" : "jpg"}`;
   const relativeFile = `/covers/wishlist/${fileName}`;
   const destination = path.join(COVERS_DIR, fileName);
   await fs.mkdir(COVERS_DIR, { recursive: true });
-  if (!filesUsed.has(relativeFile)) await fs.writeFile(destination, bytes, { flag: "wx" }).catch(async (error) => {
+  if (!filesUsed.has(relativeFile)) await fs.writeFile(destination, bytes, { flag: "wx" }).catch((error) => {
     if (error.code !== "EEXIST") throw error;
   });
   manifest.entries[key] = {
-    targetId: target.targetId,
-    title: target.title,
-    platform: target.platform,
-    targetVersion: target.targetVersion,
-    file: relativeFile,
-    source: "libretro-thumbnails",
-    sourceTitle: match.title,
-    sourceUrl: url,
-    sourceRepo: `libretro-thumbnails/${repository}`,
-    sourceCommit: tree.sourceCommit,
-    sourcePath,
+    targetId: target.targetId, title: target.title, platform: target.platform,
+    targetVersion: target.targetVersion, file: relativeFile,
+    ...source, imageSha256: sha(bytes, 64),
     region: requestedArtworkRegion(target.targetVersion),
     matchMethod: "exact-normalized-title-platform-region",
   };
+  newlyImported += 1;
   filesUsed.add(relativeFile);
   importedKeys.add(key);
 }
@@ -270,7 +312,8 @@ for (const target of uniqueTargets) {
 
 const unresolvedByHash = new Map();
 for (const item of unresolved) unresolvedByHash.set(item.identityHash, item);
-const finalUnresolved = [...unresolvedByHash.values()];
+const reusedHashes = new Set([...reused].map((key) => sha(key)));
+const finalUnresolved = [...unresolvedByHash.values()].filter((entry) => !reusedHashes.has(entry.identityHash));
 const orphaned = Object.keys(manifest.entries).filter((key) => !currentKeys.has(key));
 manifest.generatedAt = new Date().toISOString();
 manifest.entries = Object.fromEntries(Object.entries(manifest.entries).sort(([a], [b]) => a.localeCompare(b)));
@@ -310,7 +353,7 @@ await fs.writeFile(REPORT_FILE, JSON.stringify({
   reusedCollectionArtwork: reusedCount, fallback: fallbackCount,
   coverage: activeWishlistTotal ? Number(((dedicatedCount + reusedCount) / activeWishlistTotal * 100).toFixed(1)) : 0,
   coverageByPlatform: perPlatform,
-  sourceCounts: { "libretro-thumbnails": dedicatedCount },
+  sourceCounts: Object.fromEntries([...new Set(Object.values(manifest.entries).map((entry) => entry.source))].map((source) => [source, uniqueTargets.filter((target) => importedKeys.has(identityKey(target)) && manifest.entries[identityKey(target)].source === source).length])),
   unresolvedReasons: reasonCounts,
   orphanedMappings: orphaned.length,
   orphanedAssets: [...filesUsed].filter((file) => !Object.values(manifest.entries).some((entry) => entry.file === file)),
@@ -318,7 +361,7 @@ await fs.writeFile(REPORT_FILE, JSON.stringify({
 }, null, 2) + "\n");
 
 console.log(JSON.stringify({
-  activeWishlistTotal, dedicatedArtwork: dedicatedCount, reusedCollectionArtwork: reusedCount,
+  newlyImported, selectedPlatforms, activeWishlistTotal, dedicatedArtwork: dedicatedCount, reusedCollectionArtwork: reusedCount,
   fallback: fallbackCount,
   coverage: activeWishlistTotal ? Number(((dedicatedCount + reusedCount) / activeWishlistTotal * 100).toFixed(1)) : 0,
   coverageByPlatform: perPlatform, unresolvedReasons: reasonCounts,
