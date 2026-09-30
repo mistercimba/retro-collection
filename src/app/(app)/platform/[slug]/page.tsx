@@ -5,6 +5,7 @@ import {PlatformLibraryBrowser} from "@/components/platform-library-browser";
 import {getCollectionGames,getWantlist} from "@/lib/data/collection-service";
 import {displayPlatform,platformFromSlug,platformReleaseYear} from "@/lib/data/platforms";
 import {findGameMetadataByTitle,getGameMetadata} from "@/lib/game-metadata";
+import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 
 export default async function PlatformPage({params,searchParams}:{params:Promise<{slug:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{slug},query,collectionGames,wantlist]=await Promise.all([params,searchParams,getCollectionGames(),getWantlist()]);
@@ -15,7 +16,14 @@ export default async function PlatformPage({params,searchParams}:{params:Promise
  const rawGames=collectionGames.filter(x=>x.platform===platform);
  const targets=wantlist.filter(x=>x.platform===platform&&x.planState!=="inactive"&&x.matchState!=="acquired");
  const collection=rawGames.map(x=>{const meta=getGameMetadata(x.collectionId)??findGameMetadataByTitle(x.title);return {collectionId:x.collectionId,title:x.title,genre:meta?.matchStatus==="matched"?(meta.genres??[]).join(", "):"",valueEur:x.marketValueEur,condition:x.conditionGrade,completeness:x.overallStatus}});
- const wishlist=targets.map(x=>({targetId:x.targetId,title:x.title,priority:x.priority,targetVersion:x.targetVersion,priceCeilingEur:x.priceCeilingEur}));
+ const wishlist=targets.map(x=>({
+  targetId:x.targetId,
+  title:x.title,
+  priority:x.priority,
+  targetVersion:x.targetVersion,
+  priceCeilingEur:x.priceCeilingEur,
+  artworkSrc:resolveWishlistArtwork(x.title,x.platform),
+ }));
 
  return <div className="space-y-5 pb-8">
   <Link href="/" className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Consolas</Link>

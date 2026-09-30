@@ -11,6 +11,7 @@ import {findGameMetadataByTitle} from "@/lib/game-metadata";
 import {getPricechartingGuide} from "@/lib/pricecharting-catalog";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
+import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 
 export default async function WishDetailPage({params,searchParams}:{params:Promise<{targetId:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{targetId},query,targets]=await Promise.all([params,searchParams,getWantlist()]);
@@ -21,6 +22,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
  if(!target) notFound();
  const guide=await getPricechartingGuide(target.platform,target.title,target.targetVersion);
  const metadata=findGameMetadataByTitle(target.title);
+ const artworkSrc=resolveWishlistArtwork(target.title,target.platform);
  const back=getSafeListReturnPath(query.from)??`/platform/${platformSlug(target.platform)}?tab=wishlist`;
  const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
  const siblings=targets.filter(x=>x.platform===target.platform&&x.planState!=="inactive"&&x.matchState!=="acquired").sort((a,b)=>a.title.localeCompare(b.title,"pt-PT"));
@@ -32,7 +34,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
  return <div className="mx-auto max-w-4xl space-y-5 pb-10">
   <div className="flex items-center justify-between gap-3"><Link href={back} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Wishlist</Link><div className="flex gap-2">{previous&&<Link href={siblingHref(previous)} className="reference-link">← Anterior</Link>}{next&&<Link href={siblingHref(next)} className="reference-link">Seguinte →</Link>}</div></div>
   <section className="collection-panel grid gap-6 p-4 sm:grid-cols-[240px_minmax(0,1fr)] sm:p-6">
-   <WishlistArtwork title={target.title} platform={target.platform} className="mx-auto h-[330px] w-[240px] sm:mx-0"/>
+   <WishlistArtwork title={target.title} platform={target.platform} artworkSrc={artworkSrc} className="mx-auto h-[330px] w-[240px] sm:mx-0" eager/>
    <div className="min-w-0">
     <p className="eyebrow text-rose-700">WISHLIST · {displayPlatform(target.platform)}</p>
     <h1 className="mt-1 text-3xl font-black leading-tight tracking-tight text-slate-950">{target.title}</h1>
