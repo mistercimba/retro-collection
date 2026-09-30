@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T15:38:20.393Z",
+  "generatedAt": "2026-09-30T15:41:54.392Z",
   "activeWishlistTotal": 298,
-  "fallback": 175,
+  "fallback": 169,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 24,
-    "ambiguous-source-candidates": 59,
-    "no-exact-title-platform-match": 33,
-    "region-mismatch": 17,
+    "ambiguous-launchbox-covers": 25,
+    "ambiguous-source-candidates": 61,
+    "no-exact-title-platform-match": 30,
+    "region-mismatch": 11,
     "source-artwork-edition-unconfirmed": 2,
     "source-artwork-region-mismatch": 7,
     "source-unavailable": 32,
@@ -581,13 +581,6 @@
       "candidateCount": 8
     },
     {
-      "identityHash": "021ebf2813e58eaf2293",
-      "title": "Donkey Kong Country Returns",
-      "platform": "Nintendo Wii",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
       "identityHash": "947656a2a765ad0e4007",
       "title": "Fire Emblem: Radiant Dawn",
       "platform": "Nintendo Wii",
@@ -599,13 +592,6 @@
       "title": "Mario Kart Wii",
       "platform": "Nintendo Wii",
       "reason": "ambiguous-source-candidates",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "ec4a584b5f252a1bdb9b",
-      "title": "Metroid Prime Trilogy",
-      "platform": "Nintendo Wii",
-      "reason": "region-mismatch",
       "candidateCount": 2
     },
     {
@@ -626,8 +612,8 @@
       "identityHash": "347c4f1f5c8599a0066e",
       "title": "Super Smash Bros. Brawl",
       "platform": "Nintendo Wii",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "16c2f7d48ebaf6285ed8",
@@ -644,46 +630,18 @@
       "candidateCount": 2
     },
     {
-      "identityHash": "cf9f83eff13025fb2d7c",
-      "title": "No More Heroes",
-      "platform": "Nintendo Wii",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
-      "identityHash": "6c6538bcf8cb9ac18c64",
-      "title": "Pandora's Tower",
-      "platform": "Nintendo Wii",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
       "identityHash": "efdf618b8e46ec6cb997",
       "title": "Punch-Out!!",
       "platform": "Nintendo Wii",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "dedf3c64533597ab8bc2",
-      "title": "Sin and Punishment: Successor of the Skies",
-      "platform": "Nintendo Wii",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "48c3fca65cf2702b2ca6",
-      "title": "Wario Land: The Shake Dimension",
-      "platform": "Nintendo Wii",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "45f4bced13f0398b3a9c",
       "title": "Zack & Wiki: Quest for Barbaros' Treasure",
       "platform": "Nintendo Wii",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 5
     },
     {
       "identityHash": "c77adf857d3539655d9e",
