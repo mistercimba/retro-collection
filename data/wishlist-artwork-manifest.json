@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T16:01:56.974Z",
+  "generatedAt": "2026-09-30T17:19:43.838Z",
   "source": "libretro-thumbnails/Named_Boxarts",
   "entries": {
     "[\"NOVO\",\"game boy advance\",\"advance wars 2 black hole rising\",\"Europe\"]": {
@@ -80,7 +80,8 @@
       "sourceCommit": "23b8665408e767fd3220bfb83fd5ad8dfe1a9aa1",
       "sourcePath": "Named_Boxarts/Castlevania - Harmony of Dissonance (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "d24a5ccee611ae4ea61bd0964ece13bd5a17b1dcd1f359cffa1d975eedadde6d"
     },
     "[\"NOVO\",\"game boy advance\",\"final fantasy i and ii dawn of souls\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -210,7 +211,8 @@
       "sourceCommit": "0931985ba8a3a9f38fb87f006611a13dc094260f",
       "sourcePath": "Named_Boxarts/Mario Golf (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "0b89ab12cbfc10c86f5908585215d941bf43fc432c048a4fc58b07a9a264f93b"
     },
     "[\"NOVO\",\"game boy color\",\"mario tennis\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -225,7 +227,8 @@
       "sourceCommit": "0931985ba8a3a9f38fb87f006611a13dc094260f",
       "sourcePath": "Named_Boxarts/Mario Tennis (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "d005efd3a80aef8a36f2b4748f52da8c30b43a4893f35f202135f6f8168b4f47"
     },
     "[\"NOVO\",\"game boy color\",\"pokemon puzzle challenge\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -313,7 +316,8 @@
       "sourceCommit": "f033af49af2d9761d6821aff479bb0ba5feea5e3",
       "sourcePath": "Named_Boxarts/DuckTales (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "8a5ddbde341d5a19af12ebad85397c664230b44a03d4a05310ed1e9534f5c265"
     },
     "[\"NOVO\",\"game boy\",\"kirbys pinball land\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -347,7 +351,8 @@
       "sourceCommit": "f033af49af2d9761d6821aff479bb0ba5feea5e3",
       "sourcePath": "Named_Boxarts/Mega Man - Dr. Wily's Revenge (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "760d2944687479c367b567e55de5f4cdde5d263476b48bf83fc1fedd6cada913"
     },
     "[\"NOVO\",\"game boy\",\"metroid ii return of samus\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -464,7 +469,8 @@
       "sourceCommit": "c0e778f3242811f31f4815ff2807022c1c5ac7bd",
       "sourcePath": "Named_Boxarts/Resident Evil 4 (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "a6e3ce05c31320d4cf46d0ec02465f5545ad9c8853bdff92c88b78a7e8b9e978"
     },
     "[\"NOVO\",\"gamecube\",\"skies of arcadia legends\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -495,7 +501,8 @@
       "sourceCommit": "c0e778f3242811f31f4815ff2807022c1c5ac7bd",
       "sourcePath": "Named_Boxarts/Tales of Symphonia (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "4f4b86dfabcbe1ec82cdb8b51ee2c083d07b30c6e3859d5af21be873bc615de4"
     },
     "[\"NOVO\",\"nes\",\"battletoads\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -510,7 +517,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Battletoads (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "014c9bbe86c71826b3b5af3637348366aa2706fe4bf6da70540e91e67225db9b"
     },
     "[\"NOVO\",\"nes\",\"bubble bobble\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -525,7 +533,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Bubble Bobble (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "164ceb996336d8d2bb0fd319a7be94b5af17050c6e947b2c64ddf6c00284ced2"
     },
     "[\"NOVO\",\"nes\",\"castlevania ii simons quest\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -540,7 +549,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Castlevania II - Simon's Quest (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "95487c8c0c3ddb65b540e89b572147a1d3c9bcea82bcc120a4fdbd7ea4c22d5a"
     },
     "[\"NOVO\",\"nes\",\"castlevania iii draculas curse\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -555,7 +565,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Castlevania III - Dracula's Curse (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "1253c569a85cae73b3b2ee4c23dba8497bf5ec320ab2d2ca01493a5caab6cdd0"
     },
     "[\"NOVO\",\"nes\",\"castlevania\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -570,7 +581,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Castlevania (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "c12dec82e2399f22c894ccd619a77e7c83ed8f28f7a928e1d5fe368cf43934ee"
     },
     "[\"NOVO\",\"nes\",\"ducktales\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -585,7 +597,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/DuckTales (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "cfe12a56155b9f98cc8568cf708d15a1e52b17dca67cdc35bc5278665adc12ec"
     },
     "[\"NOVO\",\"nes\",\"elite\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -616,7 +629,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Galaga (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "94d7aa1f6c648db4bbb41ef3b3aae27a2070d218921d82457da18deb02e4be34"
     },
     "[\"NOVO\",\"nes\",\"legend of zelda\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -650,7 +664,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Mega Man 2 (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "f9cdc8b9ff4e6e1c29702bcdd16bc7609f633aab95bfeb1707ef0dc5ba2a1518"
     },
     "[\"NOVO\",\"nes\",\"probotector\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -665,7 +680,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Probotector (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "ffda23789dd903605fc92a72f8fa522a825928fe6c6305ff1449413aa8e1fb85"
     },
     "[\"NOVO\",\"nes\",\"punch out\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -680,7 +696,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Punch-Out!! (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "abdcbbc1345c1023eedffca8b445939165db0c38f85d7ff06a6447c22db49773"
     },
     "[\"NOVO\",\"nes\",\"shatterhand\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -695,7 +712,8 @@
       "sourceCommit": "4d21463bf5d553afc34d99183c9ad5833f773b93",
       "sourcePath": "Named_Boxarts/Shatterhand (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "59364fa94d23fecfc0889fdfdb126229c3696ce2f01566346746ff48be4c8f3b"
     },
     "[\"NOVO\",\"nintendo 3ds\",\"animal crossing new leaf\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -806,7 +824,8 @@
       "sourceCommit": "a1e242aca9d194ba7c168e38e14c637ff206189f",
       "sourcePath": "Named_Boxarts/Kirby - Planet Robobot (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "99b66af41014c79ebc49bc721e60b1935e96eddbf8ba988e6ab66096fd209e52"
     },
     "[\"NOVO\",\"nintendo 3ds\",\"metroid samus returns\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -901,7 +920,8 @@
       "sourceCommit": "a1e242aca9d194ba7c168e38e14c637ff206189f",
       "sourcePath": "Named_Boxarts/Stella Glow (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "95557253c5c6df9ab2e2784d43ae5162190ad8f89e3f4c6bfea8226b1d224d7f"
     },
     "[\"NOVO\",\"nintendo 64\",\"1080 snowboarding\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -964,7 +984,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/Bomberman 64 (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "79d80826cb50281c100d4e2b06d69081e4dcc32571eb4c56e4cd2fbe6e344242"
     },
     "[\"NOVO\",\"nintendo 64\",\"conkers bad fur day\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -979,7 +1000,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/Conker's Bad Fur Day (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "48d75da891e6228e32c87769bfb9314cc8c82ed64ffb10b86793ff145fe7751d"
     },
     "[\"NOVO\",\"nintendo 64\",\"f zero x\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -994,7 +1016,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/F-Zero X (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "0a2bcf86c89ecf1532e05d23ed03ffb5a176ec2ff026ad3ff28e5a8ff9f68a7f"
     },
     "[\"NOVO\",\"nintendo 64\",\"killer instinct gold\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1009,7 +1032,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/Killer Instinct Gold (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "c45cb37550f74e4aebff9a98fd955c982c43169a3cc0ce1fbe45c19e5c67305b"
     },
     "[\"NOVO\",\"nintendo 64\",\"kirby 64 the crystal shards\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1024,7 +1048,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/Kirby 64 - The Crystal Shards (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "a61fec0a3fdbdb808e2f739f050d34b9c595ef655dc390961bd42487155ccab5"
     },
     "[\"NOVO\",\"nintendo 64\",\"mario golf\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1039,7 +1064,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/Mario Golf (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "b287f0ff68910051213b7c67572f871105590ec86824c20d8e968ec2cfec312b"
     },
     "[\"NOVO\",\"nintendo 64\",\"mario party 2\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1102,7 +1128,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/Mario Tennis (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "dac3e4ce51234d39272561a0947ae2335e0411566a248871b7c6d4b131196092"
     },
     "[\"NOVO\",\"nintendo 64\",\"mischief makers\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1117,7 +1144,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/Mischief Makers (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "f1ccfcfc300444d163cf75aafff898e2bfb57f1fa219ec745f91b1241f3aa13c"
     },
     "[\"NOVO\",\"nintendo 64\",\"paper mario\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1215,7 +1243,8 @@
       "sourceCommit": "c2f9cd21605e45b4d9dc59375c942c54d3afe7e7",
       "sourcePath": "Named_Boxarts/Star Wars - Shadows of the Empire (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "8a668e23daad9fc0e34592c01d91ee5a73e3012b10ad16e1656c58f3274e10b8"
     },
     "[\"NOVO\",\"nintendo ds\",\"advance wars dark conflict\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1792,7 +1821,8 @@
       "sourceCommit": "9be559835a99124720badc6ec3ec4f3f2351deb3",
       "sourcePath": "Named_Boxarts/Persona 4 (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "5af1b67c3670ebcec9afad414317c014896bd4db8d8dd37cbec4f7d60839b594"
     },
     "[\"NOVO\",\"playstation 2\",\"project zero ii crimson butterfly\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1935,7 +1965,8 @@
       "sourceCommit": "67f82a82deea07e17f1e6a23aad8117af8efe7ac",
       "sourcePath": "Named_Boxarts/Demon's Souls (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "f1d40db748fd73fa47eec183c846a895eb011553c35ee496810d4428b9120ec0"
     },
     "[\"NOVO\",\"playstation 3\",\"god of war iii\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -1969,7 +2000,8 @@
       "sourceCommit": "67f82a82deea07e17f1e6a23aad8117af8efe7ac",
       "sourcePath": "Named_Boxarts/Heavy Rain (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "233f7aab1a98f019d2f07a3cf690f127167e3f91d96fb03ece7f9602f0ab6978"
     },
     "[\"NOVO\",\"playstation 3\",\"last of us\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2098,7 +2130,8 @@
       "sourceCommit": "ccee75c7744d81676b6725307aca27ef6be6231a",
       "sourcePath": "Named_Boxarts/Castlevania - Symphony of the Night (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "68c2d5dd93805233760c839cbabac6772d0d15c9a06998e4e0ebca4810f57366"
     },
     "[\"NOVO\",\"playstation\",\"grandia\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2113,7 +2146,8 @@
       "sourceCommit": "ccee75c7744d81676b6725307aca27ef6be6231a",
       "sourcePath": "Named_Boxarts/Grandia (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "1fca063dd481b33c8a32b678c9fa0ab26b1187cf34764672e31cf7b3a85abecc"
     },
     "[\"NOVO\",\"playstation\",\"oddworld abes exoddus\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2128,7 +2162,8 @@
       "sourceCommit": "ccee75c7744d81676b6725307aca27ef6be6231a",
       "sourcePath": "Named_Boxarts/Oddworld - Abe's Exoddus (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "5a1f5190abeb024440b2a99730308dd96ceced8567ef3b9d89ed9f5f42a31aaa"
     },
     "[\"NOVO\",\"playstation\",\"spyro 2 gateway to glimmer\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2191,7 +2226,8 @@
       "sourceCommit": "cdd8f1d44612976cc9d422b0ace53a8542667688",
       "sourcePath": "Named_Boxarts/Demon's Crest (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "9b2e6bfbb06aa8daad13d2985670d6c067edad2603d1f8b8c085602f40616f53"
     },
     "[\"NOVO\",\"snes\",\"donkey kong country 3 dixie kongs double trouble\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2222,7 +2258,8 @@
       "sourceCommit": "cdd8f1d44612976cc9d422b0ace53a8542667688",
       "sourcePath": "Named_Boxarts/F-Zero (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "1dbeea63d9b1ce8eaf8fec869f9041d82ff9f9206dc66897c407f33443e77f76"
     },
     "[\"NOVO\",\"snes\",\"firemen\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2256,7 +2293,8 @@
       "sourceCommit": "cdd8f1d44612976cc9d422b0ace53a8542667688",
       "sourcePath": "Named_Boxarts/Kirby's Fun Pak (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "0ebcf173168198d1d7ed2d9102fa669bb779e96d8fbc06cf31e3c5226b4bb316"
     },
     "[\"NOVO\",\"snes\",\"mega man x\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2271,7 +2309,8 @@
       "sourceCommit": "cdd8f1d44612976cc9d422b0ace53a8542667688",
       "sourcePath": "Named_Boxarts/Mega Man X (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "89d07bc1850c56f5d6415a14c371f51c94dcaf1dc0f0428c77c4f3291130e8f1"
     },
     "[\"NOVO\",\"snes\",\"super bomberman 2\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2286,7 +2325,8 @@
       "sourceCommit": "cdd8f1d44612976cc9d422b0ace53a8542667688",
       "sourcePath": "Named_Boxarts/Super Bomberman 2 (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "1cbdd6fc40af807fdf0678910ab2c3f97c8f3cf38e095a2d2b2951f797d7b49a"
     },
     "[\"NOVO\",\"snes\",\"super castlevania iv\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2301,7 +2341,8 @@
       "sourceCommit": "cdd8f1d44612976cc9d422b0ace53a8542667688",
       "sourcePath": "Named_Boxarts/Super Castlevania IV (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "d3d32d7c284f534e8802695cb7325226b719e493963016f6e8888491c6a46bd8"
     },
     "[\"NOVO\",\"snes\",\"super metroid\",\"Europe\"]": {
       "targetId": "NOVO",
@@ -2332,7 +2373,8 @@
       "sourceCommit": "cdd8f1d44612976cc9d422b0ace53a8542667688",
       "sourcePath": "Named_Boxarts/Super Probotector - Alien Rebels (Europe).png",
       "region": "Europe",
-      "matchMethod": "exact-normalized-title-platform-region"
+      "matchMethod": "exact-normalized-title-platform-region",
+      "imageSha256": "251255f851924d63df09230440ddc939c08faf3d777dbbca50e1d0c1a3dbcc4d"
     }
   }
 }

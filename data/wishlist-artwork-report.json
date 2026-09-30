@@ -1,45 +1,17 @@
 {
-  "generatedAt": "2026-09-30T16:01:56.989Z",
+  "generatedAt": "2026-09-30T17:19:43.890Z",
   "activeWishlistTotal": 298,
   "dedicatedArtwork": 144,
   "reusedCollectionArtwork": 0,
   "fallback": 154,
   "coverage": 48.3,
   "coverageByPlatform": {
-    "NES": {
-      "total": 20,
-      "dedicated": 13,
-      "reused": 0,
-      "fallback": 7,
-      "coverage": 65
-    },
-    "Game Boy": {
-      "total": 11,
-      "dedicated": 6,
+    "GameBoy Advance": {
+      "total": 17,
+      "dedicated": 12,
       "reused": 0,
       "fallback": 5,
-      "coverage": 54.5
-    },
-    "SNES": {
-      "total": 20,
-      "dedicated": 10,
-      "reused": 0,
-      "fallback": 10,
-      "coverage": 50
-    },
-    "Playstation": {
-      "total": 21,
-      "dedicated": 7,
-      "reused": 0,
-      "fallback": 14,
-      "coverage": 33.3
-    },
-    "Nintendo 64": {
-      "total": 25,
-      "dedicated": 20,
-      "reused": 0,
-      "fallback": 5,
-      "coverage": 80
+      "coverage": 70.6
     },
     "Game Boy Color": {
       "total": 10,
@@ -48,19 +20,12 @@
       "fallback": 5,
       "coverage": 50
     },
-    "Playstation 2": {
-      "total": 27,
-      "dedicated": 17,
-      "reused": 0,
-      "fallback": 10,
-      "coverage": 63
-    },
-    "GameBoy Advance": {
-      "total": 17,
-      "dedicated": 12,
+    "Game Boy": {
+      "total": 11,
+      "dedicated": 6,
       "reused": 0,
       "fallback": 5,
-      "coverage": 70.6
+      "coverage": 54.5
     },
     "GameCube": {
       "total": 16,
@@ -69,26 +34,12 @@
       "fallback": 9,
       "coverage": 43.8
     },
-    "Nintendo DS": {
-      "total": 23,
-      "dedicated": 11,
+    "NES": {
+      "total": 20,
+      "dedicated": 13,
       "reused": 0,
-      "fallback": 12,
-      "coverage": 47.8
-    },
-    "Nintendo Wii": {
-      "total": 15,
-      "dedicated": 6,
-      "reused": 0,
-      "fallback": 9,
-      "coverage": 40
-    },
-    "Playstation 3": {
-      "total": 18,
-      "dedicated": 5,
-      "reused": 0,
-      "fallback": 13,
-      "coverage": 27.8
+      "fallback": 7,
+      "coverage": 65
     },
     "Nintendo 3DS": {
       "total": 28,
@@ -97,12 +48,19 @@
       "fallback": 15,
       "coverage": 46.4
     },
-    "Nintendo Wii U": {
-      "total": 15,
-      "dedicated": 6,
+    "Nintendo 64": {
+      "total": 25,
+      "dedicated": 20,
       "reused": 0,
-      "fallback": 9,
-      "coverage": 40
+      "fallback": 5,
+      "coverage": 80
+    },
+    "Nintendo DS": {
+      "total": 23,
+      "dedicated": 11,
+      "reused": 0,
+      "fallback": 12,
+      "coverage": 47.8
     },
     "Nintendo Switch": {
       "total": 20,
@@ -111,12 +69,54 @@
       "fallback": 17,
       "coverage": 15
     },
+    "Nintendo Wii U": {
+      "total": 15,
+      "dedicated": 6,
+      "reused": 0,
+      "fallback": 9,
+      "coverage": 40
+    },
+    "Nintendo Wii": {
+      "total": 15,
+      "dedicated": 6,
+      "reused": 0,
+      "fallback": 9,
+      "coverage": 40
+    },
+    "Playstation 2": {
+      "total": 27,
+      "dedicated": 17,
+      "reused": 0,
+      "fallback": 10,
+      "coverage": 63
+    },
+    "Playstation 3": {
+      "total": 18,
+      "dedicated": 5,
+      "reused": 0,
+      "fallback": 13,
+      "coverage": 27.8
+    },
     "Playstation 5": {
       "total": 12,
       "dedicated": 3,
       "reused": 0,
       "fallback": 9,
       "coverage": 25
+    },
+    "Playstation": {
+      "total": 21,
+      "dedicated": 7,
+      "reused": 0,
+      "fallback": 14,
+      "coverage": 33.3
+    },
+    "SNES": {
+      "total": 20,
+      "dedicated": 10,
+      "reused": 0,
+      "fallback": 10,
+      "coverage": 50
     }
   },
   "sourceCounts": {
@@ -135,11 +135,14 @@
   },
   "orphanedMappings": 0,
   "orphanedAssets": [],
-  "sourceErrors": [
-    {
-      "platform": "Playstation 5",
-      "source": "Sony_-_PlayStation_5",
-      "error": "Error: GitHub API returned 404: https://api.github.com/repos/libretro-thumbnails/Sony_-_PlayStation_5/git/trees/master"
+  "sourceErrors": [],
+  "assetStats": {
+    "files": 144,
+    "totalBytes": 66715502,
+    "averageBytes": 463302,
+    "largestFile": {
+      "file": "/covers/wishlist/1f45849d60e34ef8aee8.png",
+      "bytes": 2540164
     }
-  ]
+  }
 }

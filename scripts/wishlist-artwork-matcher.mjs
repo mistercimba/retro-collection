@@ -19,7 +19,7 @@ export function sourceArtworkRegion(filePath) {
   const base = path.posix.basename(filePath);
   const groups = [...base.matchAll(/\(([^)]*)\)/g)].map((match) => normalizeArtworkTitle(match[1]));
   const joined = groups.join(" ");
-  const europe = /\b(europe|pal|portugal|united kingdom|great britain|uk|france|germany|spain|italy|netherlands|australia|ireland|belgium|sweden|norway|denmark|finland|austria|switzerland)\b/.test(joined);
+  const europe = /\b(europe|pal|portugal|united kingdom|great britain|uk|france|germany|spain|italy|netherlands|ireland|belgium|sweden|norway|denmark|finland|austria|switzerland)\b/.test(joined);
   const us = /\b(usa|united states|ntsc u|north america|canada)\b/.test(joined);
   const japan = /\b(japan|japanese|ntsc j)\b/.test(joined);
   if (Number(europe) + Number(us) + Number(japan) !== 1) return null;

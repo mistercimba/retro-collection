@@ -211,3 +211,13 @@ ZIP. Only exact titles/platforms and a single compatible regional front cover
 are accepted; an ambiguous Libretro match is never overridden by another source.
 Visually confirmed source mistakes are recorded in
 `data/wishlist-artwork-rejections.json` and remain unresolved on subsequent runs.
+
+Rejected sources stay blocked across catalogue updates until manually reviewed.
+Collection reuse requires a known compatible artwork region from the Collection
+manifest; its index is built once in memory without request-time file reads or
+external artwork calls. Physical copy region is not used to infer cover region.
+Regenerate local reports and asset digests without importing or querying sources:
+
+```bash
+npm run wishlist-artwork:import -- --input /tmp/wishlist-targets.json --report-only
+```

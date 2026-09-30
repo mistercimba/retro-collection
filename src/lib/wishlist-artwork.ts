@@ -1,7 +1,10 @@
+import collectionManifest from "../../public/covers/manifest.json";
 import artworkGames from "../../data/artwork-games.json";
 import { WISHLIST_ARTWORK } from "../data/wishlist-artwork";
 import { GAME_ARTWORK } from "../data/game-artwork";
 import {
+  createCollectionWishlistArtworkIndex,
+  resolveCollectionWishlistArtworkFromIndex,
   resolveCollectionWishlistArtwork,
   resolveDedicatedWishlistArtwork,
   type WishlistArtworkGame,
@@ -9,6 +12,11 @@ import {
 } from "./wishlist-artwork.logic";
 
 export type { WishlistArtworkTarget } from "./wishlist-artwork.logic";
+
+// Build once per module load; page requests only perform in-memory lookups.
+const collectionArtworkIndex = createCollectionWishlistArtworkIndex(
+  artworkGames.map((game) => ({ ...game, region: (collectionManifest.entries as Record<string, { regionName?: string }>)[game.collectionId]?.regionName })), GAME_ARTWORK,
+);
 
 export function resolveWishlistArtworkFromEntries(
   target: WishlistArtworkTarget,
@@ -21,10 +29,6 @@ export function resolveWishlistArtworkFromEntries(
 }
 
 export function resolveWishlistArtwork(target: WishlistArtworkTarget): string | null {
-  return resolveWishlistArtworkFromEntries(
-    target,
-    artworkGames as WishlistArtworkGame[],
-    GAME_ARTWORK,
-    WISHLIST_ARTWORK,
-  );
+  return resolveDedicatedWishlistArtwork(target, WISHLIST_ARTWORK) ??
+    resolveCollectionWishlistArtworkFromIndex(target, collectionArtworkIndex);
 }

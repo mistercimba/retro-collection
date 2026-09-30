@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { collectionWishlistArtworkRegion } from "../src/lib/wishlist-artwork-region.mjs";
 import { createHash } from "node:crypto";
 import {
   findExactSourceMatches,
@@ -114,7 +115,7 @@ async function githubJson(url) {
     "X-GitHub-Api-Version": "2022-11-28",
   };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
-  const response = await fetch(url, { headers });
+  const response = await fetch(url, { headers, signal: AbortSignal.timeout(30000) });
   if (!response.ok) throw new Error(`GitHub API returned ${response.status}: ${url}`);
   return response.json();
 }
@@ -148,9 +149,10 @@ function argument(name, fallback = "") {
   const index = process.argv.indexOf(name);
   return index >= 0 ? process.argv[index + 1] : fallback;
 }
+const reportOnly = process.argv.includes("--report-only");
 const selectedPlatforms = process.argv.flatMap((value, index) => value === "--platform" ? [canonicalPlatform(process.argv[index + 1])] : []);
 const limit = Number(argument("--limit", "12"));
-if (!selectedPlatforms.length || !Number.isInteger(limit) || limit < 1 || limit > 15) {
+if ((!reportOnly && !selectedPlatforms.length) || !Number.isInteger(limit) || limit < 1 || limit > 15) {
   throw new Error("Specify --platform (repeatable) and --limit between 1 and 15. Each run is a checkpoint batch.");
 }
 const launchboxFile = argument("--launchbox-index");
@@ -189,17 +191,20 @@ const withdrawnAmbiguous = [];
 // Revalidate earlier imports under the same parser before trusting an existing
 // manifest entry. Source revision/language metadata must not hide duplicates.
 for (const [key, entry] of Object.entries(manifest.entries)) {
-  if (entry.source !== "libretro-thumbnails") continue;
-  const repository = entry.sourceRepo?.split("/")[1];
-  if (!repository) throw new Error(`Missing provenance for ${entry.title}`);
-  if (!localCandidates.has(repository)) localCandidates.set(repository, await loadTree(repository));
-  const tree = localCandidates.get(repository);
-  const candidates = tree.files.map((sourcePath) => ({
-    sourcePath, title: sourceArtworkTitle(sourcePath), region: sourceArtworkRegion(sourcePath),
-  }));
-  const matches = findExactSourceMatches(entry, candidates);
   const rejected = rejectedArtworkSource(entry, rejections);
-  if (!rejected && matches.length === 1 && `Named_Boxarts/${matches[0].sourcePath}` === entry.sourcePath) continue;
+  if (!rejected && (reportOnly || entry.source !== "libretro-thumbnails")) continue;
+  let matches = [];
+  if (!rejected) {
+    const repository = entry.sourceRepo?.split("/")[1];
+    if (!repository) throw new Error(`Missing provenance for ${entry.title}`);
+    if (!localCandidates.has(repository)) localCandidates.set(repository, await loadTree(repository));
+    const tree = localCandidates.get(repository);
+    const candidates = tree.files.map((sourcePath) => ({
+      sourcePath, title: sourceArtworkTitle(sourcePath), region: sourceArtworkRegion(sourcePath),
+    }));
+    matches = findExactSourceMatches(entry, candidates);
+    if (matches.length === 1 && `Named_Boxarts/${matches[0].sourcePath}` === entry.sourcePath) continue;
+  }
   delete manifest.entries[key];
   withdrawnAmbiguous.push({ title: entry.title, platform: entry.platform, candidateCount: matches.length });
   previousReasons.set(sha(key), {
@@ -220,20 +225,27 @@ for (const target of uniqueTargets) {
   const existing = manifest.entries[key];
   if (existing?.file) {
     try {
-      await fs.access(path.join(ROOT, "public", existing.file.replace(/^\//, "")));
+      const bytes = await fs.readFile(path.join(ROOT, "public", existing.file.replace(/^\//, "")));
+      if (!validImageBytes(bytes) || (existing.imageSha256 && existing.imageSha256 !== sha(bytes, 64))) throw new Error("Invalid local artwork");
+      existing.imageSha256 = sha(bytes, 64);
       importedKeys.add(key);
       existing.targetVersion = target.targetVersion;
       existing.title = target.title;
       existing.platform = target.platform;
       continue;
-    } catch { /* stale manifest entry; retry a fresh exact match */ }
+    } catch {
+      delete manifest.entries[key];
+      filesUsed.delete(existing.file);
+      await fs.unlink(path.join(ROOT, "public", existing.file.replace(/^\//, ""))).catch((error) => { if (error.code !== "ENOENT") throw error; });
+      previousReasons.set(sha(key), { identityHash: sha(key), title: target.title, platform: target.platform, reason: "invalid-local-artwork" });
+    }
   }
 
   const platform = canonicalPlatform(target.platform);
-  if (!selectedPlatforms.includes(platform) || newlyImported >= limit) {
+  if (reportOnly || !selectedPlatforms.includes(platform) || newlyImported >= limit) {
     unresolved.push(previousReasons.get(sha(key)) ?? {
       identityHash: sha(key), title: target.title, platform: target.platform,
-      reason: newlyImported >= limit && selectedPlatforms.includes(platform) ? "checkpoint-batch-limit" : "platform-not-processed",
+      reason: reportOnly ? "not-imported" : newlyImported >= limit && selectedPlatforms.includes(platform) ? "checkpoint-batch-limit" : "platform-not-processed",
     });
     continue;
   }
@@ -305,8 +317,7 @@ for (const target of uniqueTargets) {
   }
   const bytes = Buffer.from(await response.arrayBuffer());
   const isPng = bytes.length > 24 && bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
-  const isJpeg = bytes.length > 4 && bytes[0] === 255 && bytes[1] === 216 && bytes[bytes.length - 2] === 255 && bytes[bytes.length - 1] === 217;
-  if ((!isPng && !isJpeg) || bytes.length > MAX_IMAGE_BYTES) {
+  if (!validImageBytes(bytes)) {
     unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: bytes.length > MAX_IMAGE_BYTES ? "image-too-large" : "unsupported-image-type" });
     continue;
   }
@@ -338,7 +349,9 @@ for (const target of uniqueTargets) {
   const matches = [];
   for (const game of games) {
     if (canonicalPlatform(game.platform) !== platform || normalizeArtworkTitle(game.title) !== title) continue;
-    const file = collectionArtwork.entries?.[game.collectionId]?.file;
+    const entry = collectionArtwork.entries?.[game.collectionId];
+    if (collectionWishlistArtworkRegion(entry?.regionName) !== requestedArtworkRegion(target.targetVersion)) continue;
+    const file = entry?.file;
     if (!file) continue;
     try { await fs.access(path.join(ROOT, "public", file.replace(/^\//, ""))); matches.push(file); }
     catch { /* skip entries whose local image is missing */ }
@@ -370,7 +383,9 @@ const unexportedCount = activeWishlistTotal - uniqueTargets.length;
 const fallbackCount = activeWishlistTotal - dedicatedCount - reusedCount;
 const reasonCounts = Object.fromEntries([...new Set(finalUnresolved.map((entry) => entry.reason))].sort().map((reason) => [reason, finalUnresolved.filter((entry) => entry.reason === reason).length]));
 if (unexportedCount > 0) reasonCounts["targets-not-exported"] = unexportedCount;
-const perPlatform = Object.fromEntries(Object.entries(platformTotals).map(([platform, total]) => [platform, { total: Number(total) || 0, dedicated: 0, reused: 0, fallback: 0 }]));
+const exportedPlatformTotals = {};
+for (const target of uniqueTargets) exportedPlatformTotals[target.platform] = (exportedPlatformTotals[target.platform] ?? 0) + 1;
+const perPlatform = Object.fromEntries(Object.entries({ ...exportedPlatformTotals, ...platformTotals }).map(([platform, total]) => [platform, { total: Number(total) || 0, dedicated: 0, reused: 0, fallback: 0 }]));
 for (const target of uniqueTargets) {
   const platform = target.platform;
   perPlatform[platform] ??= { total: 0, dedicated: 0, reused: 0, fallback: 0 };
@@ -392,6 +407,11 @@ await fs.writeFile(MISSING_FILE, JSON.stringify({
   reasonCounts,
   entries: [...finalUnresolved, ...(unexportedCount > 0 ? [{ reason: "targets-not-exported", count: unexportedCount }] : [])],
 }, null, 2) + "\n");
+const activeAssetFiles = [...new Set(uniqueTargets.filter((target) => importedKeys.has(identityKey(target))).map((target) => manifest.entries[identityKey(target)].file))];
+const assetSizes = await Promise.all(activeAssetFiles.map(async (file) => ({ file, bytes: (await fs.stat(path.join(ROOT, "public", file.replace(/^\//, "")))).size })));
+const totalBytes = assetSizes.reduce((total, asset) => total + asset.bytes, 0);
+const assetStats = { files: assetSizes.length, totalBytes, averageBytes: assetSizes.length ? Math.round(totalBytes / assetSizes.length) : 0,
+  largestFile: assetSizes.reduce((largest, asset) => !largest || asset.bytes > largest.bytes ? asset : largest, null) };
 await fs.writeFile(REPORT_FILE, JSON.stringify({
   generatedAt: new Date().toISOString(), activeWishlistTotal, dedicatedArtwork: dedicatedCount,
   reusedCollectionArtwork: reusedCount, fallback: fallbackCount,
@@ -401,13 +421,19 @@ await fs.writeFile(REPORT_FILE, JSON.stringify({
   unresolvedReasons: reasonCounts,
   orphanedMappings: orphaned.length,
   orphanedAssets: [...filesUsed].filter((file) => !Object.values(manifest.entries).some((entry) => entry.file === file)),
-  sourceErrors,
+  sourceErrors, assetStats,
 }, null, 2) + "\n");
 
 console.log(JSON.stringify({
-  newlyImported, selectedPlatforms, withdrawnAmbiguous, activeWishlistTotal, dedicatedArtwork: dedicatedCount, reusedCollectionArtwork: reusedCount,
+  newlyImported, reportOnly, selectedPlatforms, withdrawnAmbiguous, activeWishlistTotal, dedicatedArtwork: dedicatedCount, reusedCollectionArtwork: reusedCount,
   fallback: fallbackCount,
   coverage: activeWishlistTotal ? Number(((dedicatedCount + reusedCount) / activeWishlistTotal * 100).toFixed(1)) : 0,
   coverageByPlatform: perPlatform, unresolvedReasons: reasonCounts,
   orphanedMappings: orphaned.length, sourceErrors,
 }, null, 2));
+
+function validImageBytes(bytes) {
+  const png = bytes.length > 24 && bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+  const jpeg = bytes.length > 4 && bytes[0] === 255 && bytes[1] === 216 && bytes.at(-2) === 255 && bytes.at(-1) === 217;
+  return (png || jpeg) && bytes.length <= MAX_IMAGE_BYTES;
+}

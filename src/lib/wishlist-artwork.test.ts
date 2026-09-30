@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { resolveWishlistArtworkFromEntries } from "./wishlist-artwork";
 import {
+  createCollectionWishlistArtworkIndex,
+  resolveCollectionWishlistArtworkFromIndex,
   resolveDedicatedWishlistArtwork,
   resolveCollectionWishlistArtwork,
   type WishlistArtworkTarget,
@@ -21,7 +23,7 @@ const games = [
   { collectionId: "N64-1", title: "Pokémon Stadium", platform: "Nintendo 64" },
   { collectionId: "PS2-3", title: "Duplicate", platform: "Playstation 2" },
   { collectionId: "PS2-4", title: "Duplicate", platform: "Playstation 2" },
-];
+].map((game) => ({ ...game, region: "PAL" }));
 
 const collectionArtwork = {
   "PS2-1": "/covers/PS2-1.jpg",
@@ -81,5 +83,31 @@ describe("wishlist artwork resolver", () => {
     const key = JSON.stringify(["NOVO", "playstation 2", "silent hill 2", "Europe"]);
     expect(resolveWishlistArtworkFromEntries(wanted, games, collectionArtwork, { [key]: "/covers/wishlist/dedicated.png" }))
       .toBe("/covers/wishlist/dedicated.png");
+  });
+
+  it("does not reuse PAL Collection artwork for an explicit US wishlist target", () => {
+    expect(resolveCollectionWishlistArtwork(target({ targetVersion: "NTSC-U" }), games, collectionArtwork)).toBeNull();
+  });
+
+  it("leaves Collection artwork with an unknown region unresolved", () => {
+    for (const region of ["Unknown", "NTSC", ""]) {
+      expect(resolveCollectionWishlistArtwork(target(), [{ ...games[0], region }], collectionArtwork)).toBeNull();
+    }
+  });
+
+  it("keeps an indexed ambiguity unresolved even with a third candidate", () => {
+    const duplicate = { ...games[0], collectionId: "third" };
+    const index = createCollectionWishlistArtworkIndex([games[0], duplicate, { ...duplicate, collectionId: "fourth" }], {
+      ...collectionArtwork, third: "/covers/third.jpg", fourth: "/covers/fourth.jpg",
+    });
+    expect(resolveCollectionWishlistArtworkFromIndex(target(), index)).toBeNull();
+  });
+
+  it("indexes separately the same title and platform in two known regions", () => {
+    const index = createCollectionWishlistArtworkIndex([games[0], { ...games[0], collectionId: "us", region: "NTSC-U" }], {
+      ...collectionArtwork, us: "/covers/us.jpg",
+    });
+    expect(resolveCollectionWishlistArtworkFromIndex(target(), index)).toBe("/covers/PS2-1.jpg");
+    expect(resolveCollectionWishlistArtworkFromIndex(target({ targetVersion: "NTSC-U" }), index)).toBe("/covers/us.jpg");
   });
 });

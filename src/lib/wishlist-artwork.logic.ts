@@ -1,3 +1,7 @@
+import { collectionWishlistArtworkRegion } from "./wishlist-artwork-region.mjs";
+
+export { collectionWishlistArtworkRegion } from "./wishlist-artwork-region.mjs";
+
 export type WishlistArtworkTarget = {
   targetId: string;
   title: string;
@@ -9,7 +13,10 @@ export type WishlistArtworkGame = {
   collectionId: string;
   title: string;
   platform: string;
+  region?: string;
 };
+
+export type CollectionWishlistArtworkIndex = Map<string, string | null>;
 
 const PLATFORM_ALIASES: Record<string, string> = {
   nes: "nes", "nintendo entertainment system": "nes",
@@ -76,15 +83,31 @@ export function resolveCollectionWishlistArtwork(
   games: WishlistArtworkGame[],
   artwork: Record<string, string>,
 ): string | null {
-  const title = normalizeWishlistArtworkTitle(target.title);
-  const platform = normalizeWishlistArtworkPlatform(target.platform);
-  if (!title || !platform) return null;
+  return resolveCollectionWishlistArtworkFromIndex(target, createCollectionWishlistArtworkIndex(games, artwork));
+}
 
-  const matches = games.filter((game) =>
-    normalizeWishlistArtworkTitle(game.title) === title &&
-    normalizeWishlistArtworkPlatform(game.platform) === platform &&
-    Boolean(artwork[game.collectionId]),
-  );
+function collectionArtworkKey(title: string, platform: string, region: string): string {
+  return JSON.stringify([normalizeWishlistArtworkPlatform(platform), normalizeWishlistArtworkTitle(title), region]);
+}
 
-  return matches.length === 1 ? artwork[matches[0].collectionId] ?? null : null;
+export function createCollectionWishlistArtworkIndex(
+  games: WishlistArtworkGame[],
+  artwork: Record<string, string>,
+): CollectionWishlistArtworkIndex {
+  const index: CollectionWishlistArtworkIndex = new Map();
+  for (const game of games) {
+    const region = collectionWishlistArtworkRegion(game.region);
+    const file = artwork[game.collectionId];
+    if (!region || !file || !normalizeWishlistArtworkTitle(game.title) || !normalizeWishlistArtworkPlatform(game.platform)) continue;
+    const key = collectionArtworkKey(game.title, game.platform, region);
+    index.set(key, index.has(key) ? null : file);
+  }
+  return index;
+}
+
+export function resolveCollectionWishlistArtworkFromIndex(
+  target: WishlistArtworkTarget,
+  index: CollectionWishlistArtworkIndex,
+): string | null {
+  return index.get(collectionArtworkKey(target.title, target.platform, wishlistArtworkRegion(target.targetVersion))) ?? null;
 }

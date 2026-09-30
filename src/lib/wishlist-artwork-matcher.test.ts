@@ -34,6 +34,11 @@ describe("wishlist artwork source matcher", () => {
     expect(sourceArtworkRegion("Game Name.png")).toBeNull();
   });
 
+  it("does not substitute an Australian-only variant for Europe", () => {
+    expect(sourceArtworkRegion("Game (Australia).png")).toBeNull();
+    expect(sourceArtworkRegion("Game (Europe, Australia).png")).toBe("Europe");
+  });
+
   it("parses explicit language metadata without treating edition tags as title metadata", () => {
     expect(sourceArtworkTitle("Super Metroid (Europe) (En,Fr,De).png")).toBe("Super Metroid");
     expect(sourceArtworkTitle("Super Metroid (Europe) (Beta).png")).toBe("Super Metroid (Beta)");

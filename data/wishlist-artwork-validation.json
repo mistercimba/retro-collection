@@ -1,0 +1,39 @@
+{
+  "artworkReviewCheckpoint": "7b0076799957ef9999c45a21b349789933d61991",
+  "allDedicatedAssetsVisuallyReviewed": 144,
+  "sourceCorrections": {
+    "wrongRegionCoversRejected": 9,
+    "wrongTitleVariantCoversRejected": 1,
+    "uncertainEditionCoversRejected": 2
+  },
+  "phase1": {
+    "previewCommit": "f901c56b6fcbb1df67b43ce534194ce0613b7dea",
+    "vercel": "SUCCESS",
+    "PS2": {
+      "completeListInspected": 27,
+      "loadedLocalCovers": 17,
+      "fallback": 10,
+      "listDetailSameImage": [
+        "Persona 4",
+        "Ōkami",
+        "Project Zero II: Crimson Butterfly",
+        "Dark Chronicle",
+        "Silent Hill 3"
+      ]
+    },
+    "SNES": {
+      "completeListInspected": 20,
+      "loadedLocalCovers": 10,
+      "fallback": 10,
+      "listDetailSameImage": [
+        "Demon's Crest",
+        "Super Metroid",
+        "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+        "Kirby's Fun Pak",
+        "The Firemen"
+      ]
+    },
+    "correctedFallbackVerified": "Persona 3 FES"
+  },
+  "runtimeExternalArtworkRequests": 0
+}
