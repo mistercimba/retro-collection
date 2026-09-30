@@ -195,3 +195,9 @@ Comandos:
 npm run artwork:import
 npm run artwork:status
 ```
+
+Wishlist artwork is imported as local files using a temporary target export:
+
+```bash
+npm run wishlist-artwork:import -- --input /tmp/wishlist-targets.json
+```

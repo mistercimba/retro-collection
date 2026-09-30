@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-09-30T13:08:09.090Z",
+  "activeWishlistTotal": 298,
+  "dedicatedArtwork": 65,
+  "reusedCollectionArtwork": 0,
+  "fallback": 233,
+  "coverage": 21.8,
+  "coverageByPlatform": {
+    "NES": {
+      "total": 20,
+      "dedicated": 15,
+      "reused": 0,
+      "fallback": 5,
+      "coverage": 75
+    },
+    "Game Boy": {
+      "total": 11,
+      "dedicated": 2,
+      "reused": 0,
+      "fallback": 9,
+      "coverage": 18.2
+    },
+    "SNES": {
+      "total": 20,
+      "dedicated": 7,
+      "reused": 0,
+      "fallback": 13,
+      "coverage": 35
+    },
+    "Playstation": {
+      "total": 21,
+      "dedicated": 4,
+      "reused": 0,
+      "fallback": 17,
+      "coverage": 19
+    },
+    "Nintendo 64": {
+      "total": 25,
+      "dedicated": 10,
+      "reused": 0,
+      "fallback": 15,
+      "coverage": 40
+    },
+    "Game Boy Color": {
+      "total": 10,
+      "dedicated": 2,
+      "reused": 0,
+      "fallback": 8,
+      "coverage": 20
+    },
+    "Playstation 2": {
+      "total": 27,
+      "dedicated": 2,
+      "reused": 0,
+      "fallback": 25,
+      "coverage": 7.4
+    },
+    "GameBoy Advance": {
+      "total": 17,
+      "dedicated": 1,
+      "reused": 0,
+      "fallback": 16,
+      "coverage": 5.9
+    },
+    "GameCube": {
+      "total": 16,
+      "dedicated": 9,
+      "reused": 0,
+      "fallback": 7,
+      "coverage": 56.3
+    },
+    "Nintendo DS": {
+      "total": 23,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 23,
+      "coverage": 0
+    },
+    "Nintendo Wii": {
+      "total": 15,
+      "dedicated": 6,
+      "reused": 0,
+      "fallback": 9,
+      "coverage": 40
+    },
+    "Playstation 3": {
+      "total": 18,
+      "dedicated": 2,
+      "reused": 0,
+      "fallback": 16,
+      "coverage": 11.1
+    },
+    "Nintendo 3DS": {
+      "total": 28,
+      "dedicated": 4,
+      "reused": 0,
+      "fallback": 24,
+      "coverage": 14.3
+    },
+    "Nintendo Wii U": {
+      "total": 15,
+      "dedicated": 1,
+      "reused": 0,
+      "fallback": 14,
+      "coverage": 6.7
+    },
+    "Nintendo Switch": {
+      "total": 20,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 20,
+      "coverage": 0
+    },
+    "Playstation 5": {
+      "total": 12,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 12,
+      "coverage": 0
+    }
+  },
+  "sourceCounts": {
+    "libretro-thumbnails": 65
+  },
+  "unresolvedReasons": {
+    "ambiguous-source-candidates": 25,
+    "no-exact-title-platform-match": 91,
+    "region-mismatch": 84,
+    "source-unavailable": 32,
+    "unsupported-image-type": 1
+  },
+  "orphanedMappings": 0,
+  "orphanedAssets": [],
+  "sourceErrors": [
+    {
+      "platform": "Nintendo Switch",
+      "source": "Nintendo_-_Nintendo_Switch",
+      "error": "Error: GitHub API returned 404: https://api.github.com/repos/libretro-thumbnails/Nintendo_-_Nintendo_Switch/git/trees/master"
+    },
+    {
+      "platform": "Playstation 5",
+      "source": "Sony_-_PlayStation_5",
+      "error": "Error: GitHub API returned 404: https://api.github.com/repos/libretro-thumbnails/Sony_-_PlayStation_5/git/trees/master"
+    }
+  ]
+}

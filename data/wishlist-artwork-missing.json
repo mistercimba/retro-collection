@@ -1,0 +1,1612 @@
+{
+  "generatedAt": "2026-09-30T13:08:09.090Z",
+  "activeWishlistTotal": 298,
+  "fallback": 233,
+  "reasonCounts": {
+    "ambiguous-source-candidates": 25,
+    "no-exact-title-platform-match": 91,
+    "region-mismatch": 84,
+    "source-unavailable": 32,
+    "unsupported-image-type": 1
+  },
+  "entries": [
+    {
+      "identityHash": "c5afdc78c3e2180ca25a",
+      "title": "DuckTales 2",
+      "platform": "NES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
+      "identityHash": "8898207eda33fb717875",
+      "title": "Elite",
+      "platform": "NES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "60fbd82d6dc324fe8b96",
+      "title": "Kirby's Adventure",
+      "platform": "NES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
+      "identityHash": "6b320ea95bd25dbc3846",
+      "title": "The Legend of Zelda",
+      "platform": "NES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "7acbfffa668d7a5c8240",
+      "title": "Kid Icarus",
+      "platform": "NES",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "5c9a4d8c13c30acc12f9",
+      "title": "Mega Man V",
+      "platform": "Game Boy",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "7f68c077e58371cc5ae6",
+      "title": "Metroid II: Return of Samus",
+      "platform": "Game Boy",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "46e73f31eb1a45374e2c",
+      "title": "Mole Mania",
+      "platform": "Game Boy",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "a84917c8afe9d5b7782c",
+      "title": "Mystic Quest / Final Fantasy Adventure",
+      "platform": "Game Boy",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "e7ea287a4302daea92e5",
+      "title": "Wario Blast: Featuring Bomberman!",
+      "platform": "Game Boy",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "10cf92fc1019b2b0cd40",
+      "title": "Balloon Kid",
+      "platform": "Game Boy",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "f44801a627b442969a75",
+      "title": "Kirby's Pinball Land",
+      "platform": "Game Boy",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "20dbbe742014493cd620",
+      "title": "Mario's Picross",
+      "platform": "Game Boy",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "6206f4d908a1405a2a45",
+      "title": "R-Type",
+      "platform": "Game Boy",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "b62b01431753af360b20",
+      "title": "Pocky & Rocky",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "856f55ee9f15cf92c11e",
+      "title": "Terranigma",
+      "platform": "SNES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 4
+    },
+    {
+      "identityHash": "37f985fa9b60e829158b",
+      "title": "Donkey Kong Country",
+      "platform": "SNES",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "28c1129607d61a3e36fb",
+      "title": "Donkey Kong Country 2: Diddy's Kong Quest",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "83d95d5c6cb46489c717",
+      "title": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "c23eb8a00d81222b4f2d",
+      "title": "Super Metroid",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "dd649239dab8abf6217e",
+      "title": "Teenage Mutant Hero Turtles: Turtles in Time",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "f9d3c39a174b31779cd0",
+      "title": "Yoshi's Island / Super Mario World 2",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "4edf9a5d1d122560d4be",
+      "title": "ActRaiser",
+      "platform": "SNES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
+      "identityHash": "e665fe1346779b200d4f",
+      "title": "Illusion of Time",
+      "platform": "SNES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 4
+    },
+    {
+      "identityHash": "cfe9f53494f987ae765b",
+      "title": "Secret of Mana",
+      "platform": "SNES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
+      "identityHash": "f2dc6e1c61c143e3655b",
+      "title": "Starwing",
+      "platform": "SNES",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "3d046779019424d5f32d",
+      "title": "The Firemen",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "9878b7d24b1a8f34cd53",
+      "title": "Klonoa: Door to Phantomile",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "51d139f32ffdf89fa8d0",
+      "title": "Suikoden II",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "2bc60543239a06e0a680",
+      "title": "Tombi!",
+      "platform": "Playstation",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "98723a95c3d8a8fbeaa1",
+      "title": "Vib-Ribbon",
+      "platform": "Playstation",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "ea4964771a57f2eb8473",
+      "title": "Wipeout 3 Special Edition",
+      "platform": "Playstation",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "4734c89c871180ebeded",
+      "title": "Crash Bandicoot",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "28a050b3d021ca4a4f52",
+      "title": "Crash Team Racing",
+      "platform": "Playstation",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "df2fc9c6a959a6ede80b",
+      "title": "Dino Crisis",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "3aefc2af2c5640769fb7",
+      "title": "Final Fantasy VIII",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "dbfc03a27d6cea93f2f7",
+      "title": "Resident Evil 3: Nemesis",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "980ce7da4b010ea3e8fd",
+      "title": "Spyro 2: Gateway to Glimmer",
+      "platform": "Playstation",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "ddaaa344056ef00049ec",
+      "title": "Tony Hawk's Pro Skater 2",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
+      "identityHash": "601ae44b8588d21ce1a0",
+      "title": "Adventures of Alundra",
+      "platform": "Playstation",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "a5a79be26558b618bfa0",
+      "title": "Gran Turismo 2",
+      "platform": "Playstation",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "afdcc83e64fcbd8f2283",
+      "title": "Legacy of Kain: Soul Reaver",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "dfc2f7fe69cf6277a81a",
+      "title": "Syphon Filter",
+      "platform": "Playstation",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "715ee517f54e0b7466ab",
+      "title": "The Legend of Dragoon",
+      "platform": "Playstation",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "a3bc817c05c7ab1e1035",
+      "title": "Mario Party 3",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "f960e6b20f0c7d9709fe",
+      "title": "1080° Snowboarding",
+      "platform": "Nintendo 64",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "834f1ba5a83302b02db4",
+      "title": "Mario Party 2",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "40401eb7d1b68b5f1270",
+      "title": "Paper Mario",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "6fee742dc9f614edf666",
+      "title": "Perfect Dark",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "f9fc9732f3e2a5118a4d",
+      "title": "Resident Evil 2",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "b3e9a342e3100bba3c68",
+      "title": "Star Wars: Rogue Squadron",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "296811d5a91608b964c8",
+      "title": "Turok: Dinosaur Hunter",
+      "platform": "Nintendo 64",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "d8c90a9bc4f1bedf8307",
+      "title": "Blast Corps",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "477c7b4cd3859dde3469",
+      "title": "Body Harvest",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "aae2855c59c99e656737",
+      "title": "Mario Party",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "b5ff2a6a26a2ec6e9fae",
+      "title": "Pilotwings 64",
+      "platform": "Nintendo 64",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "46e9087252a3a0b966a5",
+      "title": "Pokémon Puzzle League",
+      "platform": "Nintendo 64",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
+      "identityHash": "fb334c69a764e6059c48",
+      "title": "Shadow Man",
+      "platform": "Nintendo 64",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "19edb49c8656ad5faed6",
+      "title": "Space Station Silicon Valley",
+      "platform": "Nintendo 64",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "48b3785a65ca69fc7778",
+      "title": "Resident Evil Gaiden",
+      "platform": "Game Boy Color",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "403ddc6343483e8dd145",
+      "title": "Dragon Warrior Monsters",
+      "platform": "Game Boy Color",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "69b6839818456a9e3eef",
+      "title": "Metal Gear Solid",
+      "platform": "Game Boy Color",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "e1f4f63453e067da3fc6",
+      "title": "Pokémon Puzzle Challenge",
+      "platform": "Game Boy Color",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "7352b921851b82ef2f72",
+      "title": "Survival Kids",
+      "platform": "Game Boy Color",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "bcf692bee7320ad7ab44",
+      "title": "Toki Tori",
+      "platform": "Game Boy Color",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "efba7f4a2f7b0a1dfade",
+      "title": "Warlocked",
+      "platform": "Game Boy Color",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "05b9efbb3e8ee68c57f9",
+      "title": "Wendy: Every Witch Way",
+      "platform": "Game Boy Color",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "86c68a7651864656d2ad",
+      "title": "Dragon Quest VIII: Journey of the Cursed King",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "21d8bd0cc5460205292b",
+      "title": "Gran Turismo 4",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "a6bc1e9effb67ff7f1b7",
+      "title": "ICO",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "5cd0469d532196f3a99c",
+      "title": "Jak and Daxter: The Precursor Legacy",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "0c3e5538de02dcc66350",
+      "title": "Jak II: Renegade",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "37ff51770b22d770174e",
+      "title": "Metal Gear Solid 3: Snake Eater",
+      "platform": "Playstation 2",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
+    },
+    {
+      "identityHash": "e9e5b3441f8f8517c8b2",
+      "title": "Ōkami",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "55cdc94e1921284b87b5",
+      "title": "Project Zero",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "5cea3ab669165514595d",
+      "title": "Project Zero II: Crimson Butterfly",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "fb1263e65c9e30cbc019",
+      "title": "Ratchet & Clank",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "d113fe07893afea5b334",
+      "title": "Ratchet & Clank 2: Locked and Loaded",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "bd8a8ad673308691944f",
+      "title": "Ratchet & Clank 3",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "da2ffaf2bf1017e33a69",
+      "title": "Silent Hill 3",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "9342d007006aeb61d63a",
+      "title": "Burnout 3: Takedown",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "deebbc7780d343672a83",
+      "title": "Dark Chronicle",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "5a45e310c75c1173ee4a",
+      "title": "Final Fantasy XII",
+      "platform": "Playstation 2",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "fe03644779cc7e71bef0",
+      "title": "Kingdom Hearts II",
+      "platform": "Playstation 2",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "24d26ef9179083f49d12",
+      "title": "Maximo: Ghosts to Glory",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "8c961f0eff0493ef7db2",
+      "title": "Onimusha 2: Samurai's Destiny",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "620d51b366b6445d95fb",
+      "title": "Rogue Galaxy",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "10042d9c67af51f2ba2e",
+      "title": "Sly 2: Band of Thieves",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "e31f57894466c9bae61d",
+      "title": "Sly Raccoon",
+      "platform": "Playstation 2",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "2449f35ea2f50c144673",
+      "title": "Tekken 5",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "0f7d5ab2591969b64dc4",
+      "title": "TimeSplitters 2",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "59392285961e68d1b762",
+      "title": "TimeSplitters: Future Perfect",
+      "platform": "Playstation 2",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "3a06b900f2d884e87e01",
+      "title": "Advance Wars 2: Black Hole Rising",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "01236cb4354ea884ec12",
+      "title": "Castlevania: Aria of Sorrow",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "d1ff1a1f58a67dc34469",
+      "title": "Final Fantasy VI Advance",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "7b6f814e8a93f78b9b5a",
+      "title": "Fire Emblem",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "4c73c6a750af714f0007",
+      "title": "Fire Emblem: The Sacred Stones",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "09bfbe1bc568d6070dbd",
+      "title": "Golden Sun: The Lost Age",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "d1bed2677fe3a1e436d4",
+      "title": "Mario & Luigi: Superstar Saga",
+      "platform": "GameBoy Advance",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "a733ebbbaa576add854b",
+      "title": "Metroid: Zero Mission",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "49bab843ff0a2f63f3f3",
+      "title": "WarioWare, Inc.: Minigame Mania",
+      "platform": "GameBoy Advance",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "f93429574ce07581883f",
+      "title": "Astro Boy: Omega Factor",
+      "platform": "GameBoy Advance",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "3247b042fd01d04813c0",
+      "title": "Boktai: The Sun Is in Your Hand",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "224b81db22d0490ebd82",
+      "title": "Castlevania: Circle of the Moon",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "5a77228f6f254eed5f72",
+      "title": "Final Fantasy I & II: Dawn of Souls",
+      "platform": "GameBoy Advance",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "35b207b981cdadb5853a",
+      "title": "Mario Golf: Advance Tour",
+      "platform": "GameBoy Advance",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 6
+    },
+    {
+      "identityHash": "edf462b3e363b9a371ea",
+      "title": "Mario Power Tennis",
+      "platform": "GameBoy Advance",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "0b0d9762cb215de71095",
+      "title": "Pokémon Mystery Dungeon: Red Rescue Team",
+      "platform": "GameBoy Advance",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "2705cedce19919333aba",
+      "title": "Chibi-Robo!",
+      "platform": "GameCube",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "a3a3b6ed9b9768355897",
+      "title": "Skies of Arcadia Legends",
+      "platform": "GameCube",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "97208983828c3215bd45",
+      "title": "Metroid Prime 2: Echoes",
+      "platform": "GameCube",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "dd65694064c7c12f3f93",
+      "title": "Pikmin 2",
+      "platform": "GameCube",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "1a105d49e454f6bcb13b",
+      "title": "Pokémon XD: Gale of Darkness",
+      "platform": "GameCube",
+      "reason": "unsupported-image-type"
+    },
+    {
+      "identityHash": "021ec37eb748115d2b38",
+      "title": "Billy Hatcher and the Giant Egg",
+      "platform": "GameCube",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "d7cbb0046bc5f3ad8b4b",
+      "title": "Star Fox Adventures",
+      "platform": "GameCube",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "fc8a84568b9d9bd8fd0b",
+      "title": "Castlevania: Dawn of Sorrow",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "8aacf65f99345323c1f8",
+      "title": "Dragon Quest IX: Sentinels of the Starry Skies",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "e36d56724d544e415034",
+      "title": "Kirby Super Star Ultra",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "5a5c51d953bcb551d6fb",
+      "title": "Mario & Luigi: Bowser's Inside Story",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "c479d0d489f118eda450",
+      "title": "Mario Kart DS",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "eb30f9af45e656f99f2f",
+      "title": "Phoenix Wright: Ace Attorney",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "fa53233e9187a0b85fd2",
+      "title": "Pokémon Black 2 ou White 2",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "b9c90afbdad51042d66a",
+      "title": "Professor Layton and Pandora's Box",
+      "platform": "Nintendo DS",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "a390b6b5bc77df80633a",
+      "title": "Rhythm Paradise",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "ad97daea2c3f7fd4a1b0",
+      "title": "The Legend of Zelda: Phantom Hourglass",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "33dff3f3d319ec582f23",
+      "title": "The World Ends With You",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "d359f757742cc39ebf98",
+      "title": "Advance Wars: Dark Conflict",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "2283ead10b325ff9db7d",
+      "title": "Castlevania: Portrait of Ruin",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "9be0dfcd1feb7481aa3f",
+      "title": "Dragon Quest V: Hand of the Heavenly Bride",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "8b3f14ff8c2871b4a097",
+      "title": "Elite Beat Agents",
+      "platform": "Nintendo DS",
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 5
+    },
+    {
+      "identityHash": "4857118d3661ea9a7684",
+      "title": "Hotel Dusk: Room 215",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "6799f33c1e86a8dfc3c0",
+      "title": "Kirby: Mass Attack",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "b111a06c050920a286b5",
+      "title": "Mario & Luigi: Partners in Time",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "321e08409cddbd09ae4e",
+      "title": "Mario Party DS",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "5a973679f431374f267c",
+      "title": "Pokémon Conquest",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "6bb487264e712251275a",
+      "title": "Trauma Center: Under the Knife",
+      "platform": "Nintendo DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "79efef256433d6cca85f",
+      "title": "Chrono Trigger",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "f8e088ce392026ae1c57",
+      "title": "Solatorobo: Red the Hunter",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "021ebf2813e58eaf2293",
+      "title": "Donkey Kong Country Returns",
+      "platform": "Nintendo Wii",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "ec4a584b5f252a1bdb9b",
+      "title": "Metroid Prime Trilogy",
+      "platform": "Nintendo Wii",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "347c4f1f5c8599a0066e",
+      "title": "Super Smash Bros. Brawl",
+      "platform": "Nintendo Wii",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "cf9f83eff13025fb2d7c",
+      "title": "No More Heroes",
+      "platform": "Nintendo Wii",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "6c6538bcf8cb9ac18c64",
+      "title": "Pandora's Tower",
+      "platform": "Nintendo Wii",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "efdf618b8e46ec6cb997",
+      "title": "Punch-Out!!",
+      "platform": "Nintendo Wii",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "dedf3c64533597ab8bc2",
+      "title": "Sin and Punishment: Successor of the Skies",
+      "platform": "Nintendo Wii",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "48c3fca65cf2702b2ca6",
+      "title": "Wario Land: The Shake Dimension",
+      "platform": "Nintendo Wii",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "45f4bced13f0398b3a9c",
+      "title": "Zack & Wiki: Quest for Barbaros' Treasure",
+      "platform": "Nintendo Wii",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "c77adf857d3539655d9e",
+      "title": "God of War III",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "90e9ce880900b0efef5a",
+      "title": "inFamous",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "c6631d708101c55d3571",
+      "title": "LittleBigPlanet",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "25f9fb13dc60b1cf4896",
+      "title": "Metal Gear Solid 4: Guns of the Patriots",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "1a77e7fc4ed6c848d9f1",
+      "title": "Red Dead Redemption",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "e795a2f2a3a0f6aa2d66",
+      "title": "The Last of Us",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "da7bb56042f41dbd5185",
+      "title": "Uncharted 2: Among Thieves",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "707da1d31baa8a89ad8f",
+      "title": "Uncharted 3: Drake's Deception",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "f10cde801fef4f70f2ae",
+      "title": "inFamous 2",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "d79428cff06e779b8ce1",
+      "title": "Killzone 2",
+      "platform": "Playstation 3",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "ac0bb6752d0ee0e0590e",
+      "title": "Ni no Kuni: Wrath of the White Witch",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "0c12eb4fa2e6929aca4f",
+      "title": "Ratchet & Clank: A Crack in Time",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "d0b1aaf03d7c5c6ce8ac",
+      "title": "Ratchet & Clank: Tools of Destruction",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "308a1352a67cddf2ffe8",
+      "title": "Resistance 2",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "aea2518121b6b07174fb",
+      "title": "Resistance: Fall of Man",
+      "platform": "Playstation 3",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "3e31ddd76b1e39db4a96",
+      "title": "Valkyria Chronicles",
+      "platform": "Playstation 3",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "b9605f06c4105f52e03c",
+      "title": "Animal Crossing: New Leaf",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "abcb021713feeaa297cf",
+      "title": "Bravely Default",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "ee24761a5da92d6698af",
+      "title": "Fire Emblem Awakening",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "e7fef804a9b0c8fbef4d",
+      "title": "Luigi's Mansion 2 / Dark Moon",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "1690a9df59bd83e71c86",
+      "title": "Metroid: Samus Returns",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "19c7bf4146f54cf21d2e",
+      "title": "Pokémon Omega Ruby",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "f1dc7acfd7046f57be29",
+      "title": "Pokémon Ultra Sun ou Ultra Moon",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "cb87c72d5da443839101",
+      "title": "Super Mario 3D Land",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "e731fd8c8c823a5f5ba4",
+      "title": "The Legend of Zelda: Ocarina of Time 3D",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "1559d5f871f143f90740",
+      "title": "Donkey Kong Country Returns 3D",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "556f3293b97569119e70",
+      "title": "Dragon Quest VIII: Journey of the Cursed King",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "2b6c1515fc49aaae8290",
+      "title": "Fire Emblem Echoes: Shadows of Valentia",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "dbe591a8d61c396b8338",
+      "title": "Fire Emblem Fates (Birthright ou Conquest)",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "7b961f0a15e50b91f013",
+      "title": "Kirby: Triple Deluxe",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "2b260c2fb747014c651c",
+      "title": "Mario & Luigi: Dream Team Bros.",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "02a8264b9f7d4f8fc916",
+      "title": "Mario & Luigi: Superstar Saga + Bowser's Minions",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "59c6d26a2e47bf260920",
+      "title": "Monster Hunter 4 Ultimate",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "03d037a2e2a58dad5b78",
+      "title": "Monster Hunter Stories",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "8d945d6f4efa567fa2d4",
+      "title": "New Super Mario Bros. 2",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "e1b141e8c544c4d7111a",
+      "title": "Pokémon Super Mystery Dungeon",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "1a6651efdbf802f0e063",
+      "title": "Professor Layton vs Phoenix Wright: Ace Attorney",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "61b32f9ea7e9ce4134de",
+      "title": "The Legend of Zelda: Majora's Mask 3D",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "25b257403e4c4ea104a6",
+      "title": "Dragon Quest VII: Fragments of the Forgotten Past",
+      "platform": "Nintendo 3DS",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "4ea131afc03caa1725a5",
+      "title": "Rhythm Thief & the Emperor's Treasure",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "03815754e3c3c087f20c",
+      "title": "Bayonetta 2",
+      "platform": "Nintendo Wii U",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "db9b1e738fed9e7cbc48",
+      "title": "Mario Kart 8",
+      "platform": "Nintendo Wii U",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "066cbe8749879505e199",
+      "title": "Pikmin 3",
+      "platform": "Nintendo Wii U",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "0c3b2d3f564dad012ad7",
+      "title": "Super Mario 3D World",
+      "platform": "Nintendo Wii U",
+      "reason": "region-mismatch",
+      "candidateCount": 2
+    },
+    {
+      "identityHash": "5156e2ca0dd98d649df1",
+      "title": "The Legend of Zelda: The Wind Waker HD",
+      "platform": "Nintendo Wii U",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "afaf562af4e0a82aaeb2",
+      "title": "The Legend of Zelda: Twilight Princess HD",
+      "platform": "Nintendo Wii U",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "f0ca1d730bc66d4f6594",
+      "title": "Xenoblade Chronicles X",
+      "platform": "Nintendo Wii U",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "4731276f64d4157ef392",
+      "title": "Donkey Kong Country: Tropical Freeze",
+      "platform": "Nintendo Wii U",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "dfa14f325a92892bde24",
+      "title": "Hyrule Warriors",
+      "platform": "Nintendo Wii U",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "d29dea47a558389cf2dc",
+      "title": "New Super Mario Bros. U + New Super Luigi U",
+      "platform": "Nintendo Wii U",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "1550756d4c5c6d45ea0e",
+      "title": "Nintendo Land",
+      "platform": "Nintendo Wii U",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "e7f52e53848bbf481216",
+      "title": "Paper Mario: Color Splash",
+      "platform": "Nintendo Wii U",
+      "reason": "region-mismatch",
+      "candidateCount": 1
+    },
+    {
+      "identityHash": "ac651ac92076a54cbe31",
+      "title": "Splatoon",
+      "platform": "Nintendo Wii U",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "0df00c9e1a8197f001b1",
+      "title": "Yoshi's Woolly World",
+      "platform": "Nintendo Wii U",
+      "reason": "no-exact-title-platform-match",
+      "candidateCount": 0
+    },
+    {
+      "identityHash": "837e211a12e65adef376",
+      "title": "Fire Emblem: Three Houses",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "8cd35860d5e8af436f0e",
+      "title": "Kirby and the Forgotten Land",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "1f95620cacf2d9e4aabb",
+      "title": "Mario Kart 8 Deluxe",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "1a183c6c88fdbc1e551e",
+      "title": "Metroid Dread",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "9b9733b3fc8c4c1be391",
+      "title": "Metroid Prime Remastered",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "5507bb249904718db9e8",
+      "title": "Super Mario Bros. Wonder",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "bc626aef728c1c9aae91",
+      "title": "Super Mario Odyssey",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "ddf7c68b7151fd54653b",
+      "title": "Super Smash Bros. Ultimate",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "d790ac386decbb9d4939",
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "fc0a27189c14c3e4cd1c",
+      "title": "Xenoblade Chronicles 3",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "e2446f9c2866ca7b16d0",
+      "title": "Xenoblade Chronicles: Definitive Edition",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "b44ee9e8014a8443e8ea",
+      "title": "Animal Crossing: New Horizons",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "df54afb69f97a186d565",
+      "title": "Astral Chain",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "32537e5466507b69fcba",
+      "title": "Bayonetta 3",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "54aed7397971b41fd419",
+      "title": "Donkey Kong Country: Tropical Freeze",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "14d58a737e908930f570",
+      "title": "Fire Emblem Engage",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "0e07387da8ff55d75449",
+      "title": "Paper Mario: The Thousand-Year Door",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "0739e7d989f4b82bd97c",
+      "title": "Pikmin 4",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "dcb9431011f870761b4f",
+      "title": "Pokémon Legends: Arceus",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "ddc14b905a0183ca1915",
+      "title": "Super Mario 3D All-Stars",
+      "platform": "Nintendo Switch",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "c26ddb27a65367a4143b",
+      "title": "Astro Bot",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "af1e9fc8eab156882e5d",
+      "title": "Demon's Souls",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "4dfbf7cd772e04a31e11",
+      "title": "Final Fantasy VII Rebirth",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "8d52d838e8d1e897f036",
+      "title": "Gran Turismo 7",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "9e62d3b6b569249d5b3a",
+      "title": "Marvel's Spider-Man 2",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "3c6a59c80f5f8bf68288",
+      "title": "Ratchet & Clank: Rift Apart",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "d5282f6088afa6dddad4",
+      "title": "Returnal",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "6898649d04d475d1639d",
+      "title": "Elden Ring",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "c005986b84847433db60",
+      "title": "Final Fantasy XVI",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "6b6b728d17b37f799fef",
+      "title": "Resident Evil 4",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "e30ce575fcdecd09081a",
+      "title": "Silent Hill 2",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    },
+    {
+      "identityHash": "bf4ff0b26f7b75d4ab18",
+      "title": "Stellar Blade",
+      "platform": "Playstation 5",
+      "reason": "source-unavailable"
+    }
+  ]
+}
