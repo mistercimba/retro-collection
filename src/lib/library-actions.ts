@@ -143,6 +143,9 @@ export async function editGame(form: FormData) {
     if (index < 0) return library;
 
     const current = library.collection[index];
+    const previousPurchase = current.purchaseId
+      ? structuredClone(library.purchases.find((purchase) => purchase.purchaseId === current.purchaseId))
+      : undefined;
     const paid = money(form, "paid");
     const purchaseDate = text(form, "purchaseDate");
     const purchaseInput = Boolean(current.purchaseId) || paid !== null || purchaseDate || text(form, "source") || text(form, "seller") || text(form, "listingUrl") || text(form, "purchaseNotes");
@@ -176,7 +179,6 @@ export async function editGame(form: FormData) {
     changed("completude", current.overallStatus, nextGame.overallStatus, details);
     changed("condição", current.conditionGrade, nextGame.conditionGrade, details);
     changed("notas", current.notes, nextGame.notes, details);
-    const previousPurchase = current.purchaseId ? library.purchases.find((purchase) => purchase.purchaseId === current.purchaseId) : undefined;
     const nextPurchase = purchaseId ? library.purchases.find((purchase) => purchase.purchaseId === purchaseId) : undefined;
     changed("preço pago", previousPurchase?.totalPaidEur ?? current.allocatedCostEur, nextPurchase?.totalPaidEur ?? paid, details);
     changed("data de compra", previousPurchase?.date ?? current.acquiredDate, nextPurchase?.date ?? purchaseDate, details);
@@ -451,7 +453,6 @@ export async function purchaseWishlistGame(form: FormData) {
 
   revalidatePath("/");
   revalidatePath("/collection");
-  revalidatePath("/history");
   revalidatePath("/want");
   revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
