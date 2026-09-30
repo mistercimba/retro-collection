@@ -1,15 +1,14 @@
 {
-  "generatedAt": "2026-09-30T15:05:46.974Z",
+  "generatedAt": "2026-09-30T15:09:15.611Z",
   "activeWishlistTotal": 298,
-  "fallback": 231,
+  "fallback": 226,
   "reasonCounts": {
     "ambiguous-launchbox-covers": 7,
-    "ambiguous-source-candidates": 50,
-    "no-exact-title-platform-match": 70,
-    "region-mismatch": 70,
+    "ambiguous-source-candidates": 52,
+    "no-exact-title-platform-match": 69,
+    "region-mismatch": 65,
     "source-artwork-region-mismatch": 1,
-    "source-unavailable": 32,
-    "unsupported-image-type": 1
+    "source-unavailable": 32
   },
   "entries": [
     {
@@ -642,20 +641,6 @@
       "candidateCount": 1
     },
     {
-      "identityHash": "2705cedce19919333aba",
-      "title": "Chibi-Robo!",
-      "platform": "GameCube",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "a3a3b6ed9b9768355897",
-      "title": "Skies of Arcadia Legends",
-      "platform": "GameCube",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
       "identityHash": "ace364dd495003249dc9",
       "title": "F-Zero GX",
       "platform": "GameCube",
@@ -670,13 +655,6 @@
       "candidateCount": 3
     },
     {
-      "identityHash": "97208983828c3215bd45",
-      "title": "Metroid Prime 2: Echoes",
-      "platform": "GameCube",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
       "identityHash": "d2e6fc677f10728404e0",
       "title": "Paper Mario: The Thousand-Year Door",
       "platform": "GameCube",
@@ -684,24 +662,11 @@
       "candidateCount": 2
     },
     {
-      "identityHash": "dd65694064c7c12f3f93",
-      "title": "Pikmin 2",
-      "platform": "GameCube",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
       "identityHash": "1a105d49e454f6bcb13b",
       "title": "Pokémon XD: Gale of Darkness",
       "platform": "GameCube",
-      "reason": "unsupported-image-type"
-    },
-    {
-      "identityHash": "021ec37eb748115d2b38",
-      "title": "Billy Hatcher and the Giant Egg",
-      "platform": "GameCube",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "05e851f61847a8df1711",
@@ -728,7 +693,7 @@
       "identityHash": "d7cbb0046bc5f3ad8b4b",
       "title": "Star Fox Adventures",
       "platform": "GameCube",
-      "reason": "region-mismatch",
+      "reason": "ambiguous-source-candidates",
       "candidateCount": 2
     },
     {
