@@ -106,6 +106,17 @@ export const WISHLIST_ARTWORK: Record<string, string> = {
   "[\"NOVO\",\"nintendo ds\",\"chrono trigger\",\"Europe\"]": "/covers/wishlist/16772dca092c49f96e4c.png",
   "[\"NOVO\",\"playstation 3\",\"demons souls\",\"Europe\"]": "/covers/wishlist/bd31fbaff0b726b080e6.png",
   "[\"NOVO\",\"playstation 3\",\"heavy rain\",\"Europe\"]": "/covers/wishlist/1ddc1c9266603c3df68c.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"animal crossing new leaf\",\"Europe\"]": "/covers/wishlist/5412b8bf7622060b2054.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"bravely default\",\"Europe\"]": "/covers/wishlist/ea9c959643a46c8c667f.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"fire emblem awakening\",\"Europe\"]": "/covers/wishlist/48c89cdd192bba8b3fdb.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"metroid samus returns\",\"Europe\"]": "/covers/wishlist/9e86e386b4bc1765cc1f.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"pokemon omega ruby\",\"Europe\"]": "/covers/wishlist/6f4ed71c5b98d70666b4.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"donkey kong country returns 3d\",\"Europe\"]": "/covers/wishlist/14941ee218f8e3f0f44a.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"dragon quest viii journey of the cursed king\",\"Europe\"]": "/covers/wishlist/27859b1c0e6c3c30cb47.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"fire emblem echoes shadows of valentia\",\"Europe\"]": "/covers/wishlist/89bb7ddeb921663aae2b.png",
   "[\"NOVO\",\"nintendo 3ds\",\"kirby planet robobot\",\"Europe\"]": "/covers/wishlist/0da3a2474c145b33bada.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"monster hunter 4 ultimate\",\"Europe\"]": "/covers/wishlist/b54c394210a03d4be3af.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"monster hunter stories\",\"Europe\"]": "/covers/wishlist/1663093b6f741f8fa5eb.png",
+  "[\"NOVO\",\"nintendo 3ds\",\"pokemon super mystery dungeon\",\"Europe\"]": "/covers/wishlist/c35dfd643c191296a0ac.png",
   "[\"NOVO\",\"nintendo 3ds\",\"stella glow\",\"Europe\"]": "/covers/wishlist/d9f1306ba1c2ae3f3086.png"
 };

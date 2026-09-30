@@ -32,6 +32,22 @@
       "sourcePath": "Named_Boxarts/Trauma Center - Under the Knife (Europe) (En,Fr,De,Es,It).png",
       "reason": "source-artwork-region-mismatch",
       "note": "Europe-labelled source displays a North American ESRB Teen front cover; rejected during visual validation."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourceCommit": "a1e242aca9d194ba7c168e38e14c637ff206189f",
+      "sourcePath": "Named_Boxarts/New Super Mario Bros. 2 (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).png",
+      "reason": "source-artwork-region-mismatch",
+      "note": "Europe-labelled source displays a North American ESRB Everyone front cover."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_3DS",
+      "sourceCommit": "a1e242aca9d194ba7c168e38e14c637ff206189f",
+      "sourcePath": "Named_Boxarts/Kirby - Triple Deluxe (Europe) (En,Fr,De,Es,It).png",
+      "reason": "source-artwork-edition-unconfirmed",
+      "note": "Source displays Nintendo Selects artwork; requested original physical variant cannot be confirmed conservatively."
     }
   ]
 }

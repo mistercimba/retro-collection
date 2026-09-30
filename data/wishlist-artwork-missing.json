@@ -1,13 +1,14 @@
 {
-  "generatedAt": "2026-09-30T15:23:20.389Z",
+  "generatedAt": "2026-09-30T15:29:47.930Z",
   "activeWishlistTotal": 298,
-  "fallback": 190,
+  "fallback": 179,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 16,
-    "ambiguous-source-candidates": 57,
-    "no-exact-title-platform-match": 48,
-    "region-mismatch": 33,
-    "source-artwork-region-mismatch": 4,
+    "ambiguous-launchbox-covers": 19,
+    "ambiguous-source-candidates": 58,
+    "no-exact-title-platform-match": 42,
+    "region-mismatch": 22,
+    "source-artwork-edition-unconfirmed": 1,
+    "source-artwork-region-mismatch": 5,
     "source-unavailable": 32
   },
   "entries": [
@@ -827,46 +828,11 @@
       "candidateCount": 1
     },
     {
-      "identityHash": "b9605f06c4105f52e03c",
-      "title": "Animal Crossing: New Leaf",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "abcb021713feeaa297cf",
-      "title": "Bravely Default",
-      "platform": "Nintendo 3DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "ee24761a5da92d6698af",
-      "title": "Fire Emblem Awakening",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
       "identityHash": "e7fef804a9b0c8fbef4d",
       "title": "Luigi's Mansion 2 / Dark Moon",
       "platform": "Nintendo 3DS",
       "reason": "no-exact-title-platform-match",
       "candidateCount": 0
-    },
-    {
-      "identityHash": "1690a9df59bd83e71c86",
-      "title": "Metroid: Samus Returns",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "19c7bf4146f54cf21d2e",
-      "title": "Pokémon Omega Ruby",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
     },
     {
       "identityHash": "f1dc7acfd7046f57be29",
@@ -879,29 +845,15 @@
       "identityHash": "cb87c72d5da443839101",
       "title": "Super Mario 3D Land",
       "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 3
     },
     {
       "identityHash": "e731fd8c8c823a5f5ba4",
       "title": "The Legend of Zelda: Ocarina of Time 3D",
       "platform": "Nintendo 3DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "1559d5f871f143f90740",
-      "title": "Donkey Kong Country Returns 3D",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "556f3293b97569119e70",
-      "title": "Dragon Quest VIII: Journey of the Cursed King",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 5
     },
     {
       "identityHash": "eecc3eda9a77402f98f4",
@@ -909,13 +861,6 @@
       "platform": "Nintendo 3DS",
       "reason": "ambiguous-source-candidates",
       "candidateCount": 2
-    },
-    {
-      "identityHash": "2b6c1515fc49aaae8290",
-      "title": "Fire Emblem Echoes: Shadows of Valentia",
-      "platform": "Nintendo 3DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
     },
     {
       "identityHash": "dbe591a8d61c396b8338",
@@ -928,50 +873,27 @@
       "identityHash": "7b961f0a15e50b91f013",
       "title": "Kirby: Triple Deluxe",
       "platform": "Nintendo 3DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "source-artwork-edition-unconfirmed"
     },
     {
       "identityHash": "2b260c2fb747014c651c",
       "title": "Mario & Luigi: Dream Team Bros.",
       "platform": "Nintendo 3DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "02a8264b9f7d4f8fc916",
       "title": "Mario & Luigi: Superstar Saga + Bowser's Minions",
       "platform": "Nintendo 3DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "59c6d26a2e47bf260920",
-      "title": "Monster Hunter 4 Ultimate",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "03d037a2e2a58dad5b78",
-      "title": "Monster Hunter Stories",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 2
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 5
     },
     {
       "identityHash": "8d945d6f4efa567fa2d4",
       "title": "New Super Mario Bros. 2",
       "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "e1b141e8c544c4d7111a",
-      "title": "Pokémon Super Mystery Dungeon",
-      "platform": "Nintendo 3DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "source-artwork-region-mismatch"
     },
     {
       "identityHash": "1a6651efdbf802f0e063",
