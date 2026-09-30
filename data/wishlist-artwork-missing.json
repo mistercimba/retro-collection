@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-30T15:18:38.458Z",
+  "generatedAt": "2026-09-30T15:23:20.389Z",
   "activeWishlistTotal": 298,
-  "fallback": 201,
+  "fallback": 190,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 11,
-    "ambiguous-source-candidates": 54,
-    "no-exact-title-platform-match": 59,
-    "region-mismatch": 42,
-    "source-artwork-region-mismatch": 3,
+    "ambiguous-launchbox-covers": 16,
+    "ambiguous-source-candidates": 57,
+    "no-exact-title-platform-match": 48,
+    "region-mismatch": 33,
+    "source-artwork-region-mismatch": 4,
     "source-unavailable": 32
   },
   "entries": [
@@ -527,46 +527,18 @@
       "candidateCount": 2
     },
     {
-      "identityHash": "fc8a84568b9d9bd8fd0b",
-      "title": "Castlevania: Dawn of Sorrow",
-      "platform": "Nintendo DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "8aacf65f99345323c1f8",
-      "title": "Dragon Quest IX: Sentinels of the Starry Skies",
-      "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "e36d56724d544e415034",
-      "title": "Kirby Super Star Ultra",
-      "platform": "Nintendo DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
       "identityHash": "5a5c51d953bcb551d6fb",
       "title": "Mario & Luigi: Bowser's Inside Story",
       "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "c479d0d489f118eda450",
-      "title": "Mario Kart DS",
-      "platform": "Nintendo DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "eb30f9af45e656f99f2f",
       "title": "Phoenix Wright: Ace Attorney",
       "platform": "Nintendo DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "fa53233e9187a0b85fd2",
@@ -586,43 +558,22 @@
       "identityHash": "a390b6b5bc77df80633a",
       "title": "Rhythm Paradise",
       "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "ad97daea2c3f7fd4a1b0",
-      "title": "The Legend of Zelda: Phantom Hourglass",
-      "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "33dff3f3d319ec582f23",
       "title": "The World Ends With You",
       "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "d359f757742cc39ebf98",
-      "title": "Advance Wars: Dark Conflict",
-      "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "2283ead10b325ff9db7d",
-      "title": "Castlevania: Portrait of Ruin",
-      "platform": "Nintendo DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "9be0dfcd1feb7481aa3f",
       "title": "Dragon Quest V: Hand of the Heavenly Bride",
       "platform": "Nintendo DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 5
     },
     {
       "identityHash": "8b3f14ff8c2871b4a097",
@@ -632,60 +583,31 @@
       "candidateCount": 5
     },
     {
-      "identityHash": "4857118d3661ea9a7684",
-      "title": "Hotel Dusk: Room 215",
-      "platform": "Nintendo DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "6799f33c1e86a8dfc3c0",
-      "title": "Kirby: Mass Attack",
-      "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
       "identityHash": "b111a06c050920a286b5",
       "title": "Mario & Luigi: Partners in Time",
       "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "321e08409cddbd09ae4e",
       "title": "Mario Party DS",
       "platform": "Nintendo DS",
-      "reason": "region-mismatch",
+      "reason": "ambiguous-source-candidates",
       "candidateCount": 2
-    },
-    {
-      "identityHash": "5a973679f431374f267c",
-      "title": "Pokémon Conquest",
-      "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
     },
     {
       "identityHash": "6bb487264e712251275a",
       "title": "Trauma Center: Under the Knife",
       "platform": "Nintendo DS",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "79efef256433d6cca85f",
-      "title": "Chrono Trigger",
-      "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "source-artwork-region-mismatch"
     },
     {
       "identityHash": "f8e088ce392026ae1c57",
       "title": "Solatorobo: Red the Hunter",
       "platform": "Nintendo DS",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 8
     },
     {
       "identityHash": "021ebf2813e58eaf2293",

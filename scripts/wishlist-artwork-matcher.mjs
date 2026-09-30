@@ -85,6 +85,5 @@ export function launchboxArtworkRegion(region) {
 export function rejectedArtworkSource(source, rejections) {
   return rejections.find((entry) => entry.source === source.source &&
     entry.sourcePath === source.sourcePath &&
-    entry.sourceRepo === source.sourceRepo &&
-    entry.sourceCommit === source.sourceCommit);
+    entry.sourceRepo === source.sourceRepo);
 }

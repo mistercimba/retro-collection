@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-30T15:18:38.459Z",
+  "generatedAt": "2026-09-30T15:23:20.389Z",
   "activeWishlistTotal": 298,
-  "dedicatedArtwork": 97,
+  "dedicatedArtwork": 108,
   "reusedCollectionArtwork": 0,
-  "fallback": 201,
-  "coverage": 32.6,
+  "fallback": 190,
+  "coverage": 36.2,
   "coverageByPlatform": {
     "NES": {
       "total": 20,
@@ -71,10 +71,10 @@
     },
     "Nintendo DS": {
       "total": 23,
-      "dedicated": 0,
+      "dedicated": 11,
       "reused": 0,
-      "fallback": 23,
-      "coverage": 0
+      "fallback": 12,
+      "coverage": 47.8
     },
     "Nintendo Wii": {
       "total": 15,
@@ -120,15 +120,15 @@
     }
   },
   "sourceCounts": {
-    "libretro-thumbnails": 90,
-    "launchbox": 7
+    "libretro-thumbnails": 99,
+    "launchbox": 9
   },
   "unresolvedReasons": {
-    "ambiguous-launchbox-covers": 11,
-    "ambiguous-source-candidates": 54,
-    "no-exact-title-platform-match": 59,
-    "region-mismatch": 42,
-    "source-artwork-region-mismatch": 3,
+    "ambiguous-launchbox-covers": 16,
+    "ambiguous-source-candidates": 57,
+    "no-exact-title-platform-match": 48,
+    "region-mismatch": 33,
+    "source-artwork-region-mismatch": 4,
     "source-unavailable": 32
   },
   "orphanedMappings": 0,

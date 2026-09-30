@@ -24,6 +24,14 @@
       "sourcePath": "Named_Boxarts/Resident Evil Gaiden (Europe) (En,Fr,De,Es,It).png",
       "reason": "source-artwork-region-mismatch",
       "note": "Europe-labelled source displays a North American ESRB-rated front cover; rejected during visual validation."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
+      "sourceCommit": "a119dcab8fa04c9974b9c229eda824318d923322",
+      "sourcePath": "Named_Boxarts/Trauma Center - Under the Knife (Europe) (En,Fr,De,Es,It).png",
+      "reason": "source-artwork-region-mismatch",
+      "note": "Europe-labelled source displays a North American ESRB Teen front cover; rejected during visual validation."
     }
   ]
 }

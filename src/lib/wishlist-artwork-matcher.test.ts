@@ -73,6 +73,7 @@ describe("wishlist artwork source matcher", () => {
   it("blocks an observed wrong regional cover even when its source label matches", () => {
     const source = { source: "libretro-thumbnails", sourceRepo: "repo", sourceCommit: "old", sourcePath: "Game (Europe).png" };
     expect(rejectedArtworkSource(source, [source])).toBe(source);
-    expect(rejectedArtworkSource({ ...source, sourceCommit: "new" }, [source])).toBeUndefined();
+    expect(rejectedArtworkSource({ ...source, sourceCommit: "new" }, [source])).toBe(source);
+    expect(rejectedArtworkSource({ ...source, sourcePath: "Other (Europe).png" }, [source])).toBeUndefined();
   });
 });
