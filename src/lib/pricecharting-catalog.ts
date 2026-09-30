@@ -99,3 +99,61 @@ export async function getPricechartingEstimates(games: CollectionGame[], catalog
 export async function getPricechartingEstimate(game: CollectionGame): Promise<PriceEstimate> {
   return (await getPricechartingEstimates([game])).get(game.collectionId) ?? unavailable("Estimativa indisponível");
 }
+
+
+export type PriceGuide = {
+  looseEur: number | null;
+  cibEur: number | null;
+  newEur: number | null;
+  source: string;
+  date: string;
+  productUrl: string;
+};
+
+const emptyGuide = (source: string, productUrl = "", date = ""): PriceGuide => ({
+  looseEur: null, cibEur: null, newEur: null, source, date, productUrl,
+});
+
+function guidePrice(value: unknown, rate: number | null) {
+  if (typeof value !== "number" || !Number.isFinite(value) || value <= 0 || !rate) return null;
+  return Math.round((value / rate) * 100) / 100;
+}
+
+export async function getPricechartingGuides(entries: Array<{ key: string; platform: string; title: string; edition?: string }>): Promise<Map<string, PriceGuide>> {
+  const results = new Map<string, PriceGuide>();
+  if (!entries.length) return results;
+  const [catalog, fx] = await Promise.all([getCatalog(), getEcbRate()]);
+  if (!catalog) {
+    for (const entry of entries) results.set(entry.key, emptyGuide("Snapshot PriceCharting indisponível"));
+    return results;
+  }
+  await measureServerWork("pricecharting.guide_match", async () => {
+    for (const entry of entries) {
+      const match = lookupPalPricechartingMatch(catalog, entry.platform, entry.title, entry.edition ?? "");
+      if (!match) {
+        results.set(entry.key, emptyGuide("Sem correspondência PAL única"));
+        continue;
+      }
+      const product = match.product;
+      const date = String(product.scrapedAt ?? "").slice(0, 10);
+      const productUrl = String(product.pricechartingUrl ?? "");
+      if (!fx) {
+        results.set(entry.key, emptyGuide("Taxa USD/EUR do BCE indisponível", productUrl, date));
+        continue;
+      }
+      results.set(entry.key, {
+        looseEur: guidePrice(product.loose, fx.rate),
+        cibEur: guidePrice(product.cib, fx.rate),
+        newEur: guidePrice(product.new, fx.rate),
+        source: "PriceCharting PAL · BCE",
+        date,
+        productUrl,
+      });
+    }
+  });
+  return results;
+}
+
+export async function getPricechartingGuide(platform: string, title: string, edition = ""): Promise<PriceGuide> {
+  return (await getPricechartingGuides([{ key: "single", platform, title, edition }])).get("single") ?? emptyGuide("Preço indisponível");
+}

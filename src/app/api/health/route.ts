@@ -1,16 +1,20 @@
 import { NextResponse } from "next/server";
-import { dataMode, getStats } from "@/lib/data/collection-service";
+import { dataMode, getStats, getWantlist } from "@/lib/data/collection-service";
+import { getLibrary, getLibraryStorageMode } from "@/lib/library-store";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const stats = await getStats();
+    const [stats, targets, library] = await Promise.all([getStats(), getWantlist(), getLibrary()]);
+    const storage = await getLibraryStorageMode();
     return NextResponse.json(
       {
         ok: true,
         provider: dataMode(),
+        storage,
         collection: {
+          total: library.collection.length,
           kept: stats.kept,
           sell: stats.sell,
           sold: stats.sold,
@@ -18,6 +22,12 @@ export async function GET() {
           auditRecords: stats.auditRecords,
           platforms: stats.platforms.length,
         },
+        wishlist: {
+          total: library.wishlist.length,
+          active: targets.filter((target) => target.planState !== "inactive" && target.matchState !== "acquired").length,
+        },
+        purchases: library.purchases.length,
+        updatedAt: library.updatedAt,
       },
       {
         headers: {

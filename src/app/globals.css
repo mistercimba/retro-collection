@@ -135,3 +135,30 @@ button, input, select { font: inherit; }
 }
 
 ::selection { background: var(--archive-selection); color: var(--archive-ink); }
+
+
+.field-label { display: block; margin-bottom: .35rem; color: #64748b; font-size: .68rem; font-weight: 800; }
+.field-input { width: 100%; min-height: 2.75rem; border: 1px solid #dbe3ea; border-radius: .75rem; background: #fff; padding: .65rem .75rem; color: #0f172a; font-size: .875rem; outline: none; }
+textarea.field-input { resize: vertical; }
+.field-input:focus { border-color: var(--archive-focus); box-shadow: 0 0 0 3px rgba(49,91,71,.12); }
+
+
+/* Simple collection UI */
+.collection-hero { border: 1px solid #ded7c9; border-radius: 1.6rem; background: linear-gradient(135deg,rgba(255,255,255,.88),rgba(235,230,216,.8)); padding: 1.15rem 1.25rem; box-shadow: 0 16px 40px -34px rgba(31,54,44,.6); }
+.wishlist-hero { background: linear-gradient(135deg,rgba(255,255,255,.9),rgba(246,228,229,.75)); }
+.eyebrow { color: #315b47; font-size: .62rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+.collection-panel { border: 1px solid #ded8cb; border-radius: 1.4rem; background: rgba(255,255,255,.88); box-shadow: 0 14px 34px -30px rgba(30,47,38,.5); }
+.summary-card { border: 1px solid #ded8cb; border-radius: 1.2rem; background: rgba(255,255,255,.78); padding: .85rem 1rem; }
+.console-card { display: flex; min-width: 0; align-items: center; gap: 1rem; border: 1px solid #dcd5c7; border-radius: 1.4rem; background: linear-gradient(135deg,rgba(255,255,255,.88),rgba(238,234,223,.82)); padding: .85rem; box-shadow: 0 14px 34px -30px rgba(31,54,44,.55); transition: transform .18s,border-color .18s,box-shadow .18s; }
+.console-card:hover { transform: translateY(-2px); border-color: #9aaa91; box-shadow: 0 20px 38px -30px rgba(31,54,44,.6); }
+.collection-list { overflow: hidden; border: 1px solid #dcd5c7; border-radius: 1.25rem; background: rgba(255,255,255,.82); box-shadow: 0 14px 34px -30px rgba(31,54,44,.5); }
+.collection-row { display: flex; min-width: 0; align-items: center; gap: .9rem; border-bottom: 1px solid #ece7dd; padding: .7rem .8rem; transition: background .15s; }
+.collection-row:last-child { border-bottom: 0; }
+.collection-row:hover { background: #f6f2e8; }
+.reference-link { display: inline-flex; min-height: 2.4rem; align-items: center; gap: .4rem; border: 1px solid #d8d4c8; border-radius: .8rem; background: #f7f4ec; padding: .55rem .75rem; color: #29483c; font-size: .75rem; font-weight: 900; }
+.reference-link:hover { border-color: #9aab9e; background: #ecefe8; }
+.side-nav-link { display: flex; min-height: 2.8rem; align-items: center; gap: .7rem; border-radius: .8rem; padding: .65rem .75rem; color: rgba(255,255,255,.62); font-size: .88rem; font-weight: 800; transition: background .15s,color .15s; }
+.side-nav-link:hover { background: rgba(255,255,255,.08); color: white; }
+.side-nav-link-active { background: #d9f36a; color: #183027; }
+.side-nav-link-active:hover { background: #e4fa87; color: #183027; }
+@media (max-width: 639px) { .collection-row { gap: .7rem; padding: .6rem; } .collection-row > :last-child { max-width: 7rem; } .console-card { gap: .75rem; } }

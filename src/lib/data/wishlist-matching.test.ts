@@ -23,6 +23,8 @@ describe("PLAN state", () => {
   it("recognizes the live active and inactive states used by the workbook", () => {
     expect(classifyPlanState("PESQUISAR PREÇO")).toBe("active");
     expect(classifyPlanState("WATCH")).toBe("active");
+    expect(classifyPlanState("ACTIVE")).toBe("active");
+    expect(classifyPlanState("ATIVO")).toBe("active");
     expect(classifyPlanState("FORA DA BUYLIST PAL")).toBe("inactive");
     expect(classifyPlanState("new future status")).toBe("unknown");
   });

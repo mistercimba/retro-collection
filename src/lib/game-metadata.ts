@@ -43,3 +43,17 @@ const games = (snapshot as unknown as GameMetadataSnapshot).games ?? {};
 export function getGameMetadata(collectionId: string): GameMetadata | null {
   return games[collectionId] ?? null;
 }
+
+
+function normalizeMetadataTitle(value: string) {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+export function findGameMetadataByTitle(title: string): MatchedGameMetadata | null {
+  const wanted = normalizeMetadataTitle(title);
+  if (!wanted) return null;
+  const matches = Object.values(games).filter((entry): entry is MatchedGameMetadata =>
+    entry.matchStatus === "matched" && normalizeMetadataTitle(entry.title) === wanted,
+  );
+  return matches.length === 1 ? matches[0] : null;
+}
