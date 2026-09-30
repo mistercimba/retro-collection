@@ -128,5 +128,11 @@ export const WISHLIST_ARTWORK: Record<string, string> = {
   "[\"NOVO\",\"nintendo 3ds\",\"monster hunter 4 ultimate\",\"Europe\"]": "/covers/wishlist/b54c394210a03d4be3af.png",
   "[\"NOVO\",\"nintendo 3ds\",\"monster hunter stories\",\"Europe\"]": "/covers/wishlist/1663093b6f741f8fa5eb.png",
   "[\"NOVO\",\"nintendo 3ds\",\"pokemon super mystery dungeon\",\"Europe\"]": "/covers/wishlist/c35dfd643c191296a0ac.png",
-  "[\"NOVO\",\"nintendo 3ds\",\"stella glow\",\"Europe\"]": "/covers/wishlist/d9f1306ba1c2ae3f3086.png"
+  "[\"NOVO\",\"nintendo 3ds\",\"stella glow\",\"Europe\"]": "/covers/wishlist/d9f1306ba1c2ae3f3086.png",
+  "[\"NOVO\",\"nintendo wii u\",\"bayonetta 2\",\"Europe\"]": "/covers/wishlist/e9cf9b3581c44c0d3e9b.png",
+  "[\"NOVO\",\"nintendo wii u\",\"pikmin 3\",\"Europe\"]": "/covers/wishlist/b0fdeebb514c736a275e.png",
+  "[\"NOVO\",\"nintendo wii u\",\"xenoblade chronicles x\",\"Europe\"]": "/covers/wishlist/9f3520eb196631343b58.png",
+  "[\"NOVO\",\"nintendo wii u\",\"nintendo land\",\"Europe\"]": "/covers/wishlist/129075cf884f181c4268.png",
+  "[\"NOVO\",\"nintendo wii u\",\"paper mario color splash\",\"Europe\"]": "/covers/wishlist/9cfa3e6aa9f2477c23a7.png",
+  "[\"NOVO\",\"nintendo wii u\",\"yoshis woolly world\",\"Europe\"]": "/covers/wishlist/e96c1488b3db6b5cb60a.png"
 };

@@ -72,6 +72,30 @@
       "sourcePath": "Named_Boxarts/Metroid (Europe).png",
       "reason": "source-artwork-edition-unconfirmed",
       "note": "Source displays German Classic-Serie reissue artwork; original artwork variant cannot be confirmed conservatively."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii_U",
+      "sourceCommit": "61facae4e627dac7990a2a8c7896e8c7a9d3f747",
+      "sourcePath": "Named_Boxarts/Splatoon (Europe) (En,Fr,De,Es,It).png",
+      "reason": "source-artwork-region-mismatch",
+      "note": "Europe-labelled source displays a North American ESRB Everyone 10+ front cover."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii_U",
+      "sourceCommit": "61facae4e627dac7990a2a8c7896e8c7a9d3f747",
+      "sourcePath": "Named_Boxarts/Super Mario 3D World (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru) (Rev 1).png",
+      "reason": "source-artwork-region-mismatch",
+      "note": "Europe-labelled source displays a North American ESRB Everyone front cover."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii_U",
+      "sourceCommit": "61facae4e627dac7990a2a8c7896e8c7a9d3f747",
+      "sourcePath": "Named_Boxarts/New Super Mario Bros. U + New Super Luigi U (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).png",
+      "reason": "source-artwork-title-variant-mismatch",
+      "note": "Combined-title source displays the standalone New Super Mario Bros. U front, without the requested Luigi U bundle variant."
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
-  "generatedAt": "2026-09-30T15:41:54.392Z",
+  "generatedAt": "2026-09-30T15:47:55.788Z",
   "activeWishlistTotal": 298,
-  "fallback": 169,
+  "fallback": 163,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 25,
-    "ambiguous-source-candidates": 61,
-    "no-exact-title-platform-match": 30,
-    "region-mismatch": 11,
+    "ambiguous-launchbox-covers": 27,
+    "ambiguous-source-candidates": 64,
+    "no-exact-title-platform-match": 22,
+    "region-mismatch": 5,
     "source-artwork-edition-unconfirmed": 2,
-    "source-artwork-region-mismatch": 7,
+    "source-artwork-region-mismatch": 9,
+    "source-artwork-title-variant-mismatch": 1,
     "source-unavailable": 32,
     "unsupported-image-type": 1
   },
@@ -858,53 +859,31 @@
       "candidateCount": 2
     },
     {
-      "identityHash": "03815754e3c3c087f20c",
-      "title": "Bayonetta 2",
-      "platform": "Nintendo Wii U",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
       "identityHash": "db9b1e738fed9e7cbc48",
       "title": "Mario Kart 8",
       "platform": "Nintendo Wii U",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "066cbe8749879505e199",
-      "title": "Pikmin 3",
-      "platform": "Nintendo Wii U",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 4
     },
     {
       "identityHash": "0c3b2d3f564dad012ad7",
       "title": "Super Mario 3D World",
       "platform": "Nintendo Wii U",
-      "reason": "region-mismatch",
-      "candidateCount": 2
+      "reason": "source-artwork-region-mismatch"
     },
     {
       "identityHash": "5156e2ca0dd98d649df1",
       "title": "The Legend of Zelda: The Wind Waker HD",
       "platform": "Nintendo Wii U",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "afaf562af4e0a82aaeb2",
       "title": "The Legend of Zelda: Twilight Princess HD",
       "platform": "Nintendo Wii U",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "f0ca1d730bc66d4f6594",
-      "title": "Xenoblade Chronicles X",
-      "platform": "Nintendo Wii U",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "78a97f732f3f68b98cfd",
@@ -917,50 +896,27 @@
       "identityHash": "4731276f64d4157ef392",
       "title": "Donkey Kong Country: Tropical Freeze",
       "platform": "Nintendo Wii U",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "dfa14f325a92892bde24",
       "title": "Hyrule Warriors",
       "platform": "Nintendo Wii U",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "d29dea47a558389cf2dc",
       "title": "New Super Mario Bros. U + New Super Luigi U",
       "platform": "Nintendo Wii U",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "1550756d4c5c6d45ea0e",
-      "title": "Nintendo Land",
-      "platform": "Nintendo Wii U",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "e7f52e53848bbf481216",
-      "title": "Paper Mario: Color Splash",
-      "platform": "Nintendo Wii U",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "source-artwork-title-variant-mismatch"
     },
     {
       "identityHash": "ac651ac92076a54cbe31",
       "title": "Splatoon",
       "platform": "Nintendo Wii U",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "0df00c9e1a8197f001b1",
-      "title": "Yoshi's Woolly World",
-      "platform": "Nintendo Wii U",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "source-artwork-region-mismatch"
     },
     {
       "identityHash": "837e211a12e65adef376",
