@@ -195,3 +195,50 @@ Comandos:
 npm run artwork:import
 npm run artwork:status
 ```
+
+Wishlist artwork is imported as local files using a temporary target export:
+
+```bash
+npm run wishlist-artwork:import -- --input /tmp/wishlist-targets.json --platform ps2 --limit 12
+```
+
+Each maintenance run processes only the named platform (repeat `--platform` if
+needed) and imports at most 15 new covers. Commit and push each validated batch
+before continuing. Existing local assets are reused without downloading again.
+An optional `--launchbox-index /tmp/index.json` accepts the offline front-cover
+index produced by `scripts/index-wishlist-launchbox.py` from LaunchBox's metadata
+ZIP. Only exact titles/platforms and a single compatible regional front cover
+are accepted; an ambiguous Libretro match is never overridden by another source.
+Visually confirmed source mistakes are recorded in
+`data/wishlist-artwork-rejections.json` and remain unresolved on subsequent runs.
+
+Rejected sources stay blocked across catalogue updates until manually reviewed.
+Collection reuse requires a known compatible artwork region from the Collection
+manifest; its index is built once in memory without request-time file reads or
+external artwork calls. Physical copy region is not used to infer cover region.
+Regenerate local reports and asset digests without importing or querying sources:
+
+```bash
+npm run wishlist-artwork:import -- --input /tmp/wishlist-targets.json --report-only
+```
+
+
+Wishlist artwork identity includes the edition requirement, using the existing
+Wantlist facet vocabulary for known editions (including Nintendo Selects):
+
+- explicit known edition: identity-sensitive; requires matching coverVariant;
+- no edition requirement: Any, including PAL/CIB, PAL/loose and physical European
+  complete copies; a validated title/platform/region cover can be used;
+- explicit unrecognized edition: Unknown, which remains fallback.
+
+Loose/CIB changes keep artwork identity. Any -> Standard/original or Platinum
+changes identity and the old mapping stops resolving. The manifest preserves the
+full original targetVersion. Any describes the target requirement, not the asset:
+unknown source editions remain coverVariant Other and are never stamped Standard.
+Collection reuse follows the same requirements and rejects ambiguous candidates.
+
+Report-only regeneration re-keys compatible existing assets without querying
+sources or importing images. Files that cannot satisfy an explicit requirement
+remain in unassignedEntries with their provenance and original targetVersion,
+excluded from the runtime mapping. Unconfirmed source editions remain fallback
+for explicit edition requests.

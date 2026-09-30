@@ -22,7 +22,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
  if(!target) notFound();
  const guide=await getPricechartingGuide(target.platform,target.title,target.targetVersion);
  const metadata=findGameMetadataByTitle(target.title);
- const artworkSrc=resolveWishlistArtwork(target.title,target.platform);
+ const artworkSrc=resolveWishlistArtwork(target);
  const back=getSafeListReturnPath(query.from)??`/platform/${platformSlug(target.platform)}?tab=wishlist`;
  const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
  const siblings=targets.filter(x=>x.platform===target.platform&&x.planState!=="inactive"&&x.matchState!=="acquired").sort((a,b)=>a.title.localeCompare(b.title,"pt-PT"));

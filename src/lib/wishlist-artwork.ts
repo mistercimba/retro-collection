@@ -1,47 +1,35 @@
+import collectionManifest from "../../public/covers/manifest.json";
 import artworkGames from "../../data/artwork-games.json";
+import { WISHLIST_ARTWORK } from "../data/wishlist-artwork";
 import { GAME_ARTWORK } from "../data/game-artwork";
+import {
+  createCollectionWishlistArtworkIndex,
+  resolveCollectionWishlistArtworkFromIndex,
+  resolveCollectionWishlistArtwork,
+  resolveDedicatedWishlistArtwork,
+  type WishlistArtworkGame,
+  type WishlistArtworkTarget,
+} from "./wishlist-artwork.logic";
 
-type ArtworkGame = {
-  collectionId: string;
-  title: string;
-  platform: string;
-};
+export type { WishlistArtworkTarget } from "./wishlist-artwork.logic";
 
-export function normalizeWishlistArtworkKey(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim()
-    .replace(/\s+/g, " ");
-}
+// Build once per module load; page requests only perform in-memory lookups.
+const collectionArtworkIndex = createCollectionWishlistArtworkIndex(
+  artworkGames.map((game) => ({ ...game, region: (collectionManifest.entries as Record<string, { regionName?: string; coverVariant?: string }>)[game.collectionId]?.regionName, coverVariant: (collectionManifest.entries as Record<string, { coverVariant?: string }>)[game.collectionId]?.coverVariant })), GAME_ARTWORK,
+);
 
 export function resolveWishlistArtworkFromEntries(
-  title: string,
-  platform: string,
-  games: ArtworkGame[],
-  artwork: Record<string, string>,
+  target: WishlistArtworkTarget,
+  games: WishlistArtworkGame[],
+  collectionArtwork: Record<string, string>,
+  wishlistArtwork: Record<string, string>,
 ): string | null {
-  const wantedTitle = normalizeWishlistArtworkKey(title);
-  const wantedPlatform = normalizeWishlistArtworkKey(platform);
-  if (!wantedTitle || !wantedPlatform) return null;
-
-  const matches = games.filter((game) =>
-    normalizeWishlistArtworkKey(game.title) === wantedTitle &&
-    normalizeWishlistArtworkKey(game.platform) === wantedPlatform &&
-    Boolean(artwork[game.collectionId]),
-  );
-
-  if (matches.length !== 1) return null;
-  return artwork[matches[0].collectionId] ?? null;
+  return resolveDedicatedWishlistArtwork(target, wishlistArtwork) ??
+    resolveCollectionWishlistArtwork(target, games, collectionArtwork);
 }
 
-export function resolveWishlistArtwork(title: string, platform: string): string | null {
-  return resolveWishlistArtworkFromEntries(
-    title,
-    platform,
-    artworkGames as ArtworkGame[],
-    GAME_ARTWORK,
-  );
+export function resolveWishlistArtwork(target: WishlistArtworkTarget): string | null {
+  return resolveDedicatedWishlistArtwork(target, WISHLIST_ARTWORK) ??
+    resolveCollectionWishlistArtworkFromIndex(target, collectionArtworkIndex);
 }
+

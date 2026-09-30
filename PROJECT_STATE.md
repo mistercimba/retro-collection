@@ -1,6 +1,6 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-09-30
+Last updated: 2026-10-01
 
 This is the living project handoff. Read `AGENTS.md` first.
 
@@ -128,33 +128,28 @@ Branch:
 
 `feature/wishlist-local-artwork`
 
-Current PR head at last verification:
+The edition-requirement correction is complete on the existing PR branch;
+use the live PR HEAD for its exact commit and check status.
 
-`81a7dc4eb923e552035daeb4ac5c46948e30c872`
-
-State at last verification:
-
-- open
-- not draft
-- mergeable
-- GitHub Actions: SUCCESS
-- Vercel: SUCCESS
-- **NOT MERGED**
+The 21 existing commits were replayed linearly on `main`:
+`7a4d1a9645f94d8c109037c9652e9d0047c3603f`.
+No merge commit or cherry-picked handoff commit was introduced. The replay preserved
+all application files and all 144 image blob objects; only the inherited handoff docs differ.
+Use the live PR head and checks as the current SHA/deployment source of truth.
+The PR remains open and must not be merged without explicit user approval.
 
 ### PR #28 result so far
 
 Wishlist targets:
 
 - total: 298
-- dedicated local artwork: 144
+- dedicated local artwork: 139
 - reused Collection artwork: 0
-- fallback/unresolved: 154
-- coverage: 48.3%
+- fallback/unresolved: 159
+- coverage: 46.6%
 
-Sources:
-
-- libretro-thumbnails: 121
-- LaunchBox: 23
+Sources for all 144 retained files: 121 libretro-thumbnails and 23 LaunchBox.
+The generated report contains the source counts for the 139 active mappings.
 
 Assets:
 
@@ -181,59 +176,57 @@ Examples of rejected problems included:
 
 These rejections are intentionally conservative.
 
-### Current review concern on PR #28
+### Edition requirement semantics
 
-**Do not merge PR #28 blindly.**
+Dedicated identity is targetId + canonical platform + normalized title + region +
+artwork edition requirement. Runtime and maintenance scripts share the existing
+Wantlist facet normalization for known editions, including Nintendo Selects.
+The artwork-specific requirement has three states:
 
-The last human/agent review identified a design concern in dedicated artwork identity.
+1. Explicit known edition: Standard/original, Platinum, Nintendo Selects,
+   Player's Choice, Greatest Hits, Black Label, Steelbook, Limited, Collector and
+   Special Edition remain distinct and require matching confirmed cover metadata.
+2. Any: no edition requirement. PAL/CIB, PAL/loose, physical European complete
+   copies and notes such as confirming box/content or an unnamed edition do not
+   request Standard. Existing validated title/platform/region covers can be used.
+3. Unknown: an explicit unrecognized named edition (e.g. Deluxe Edition, GOTY,
+   Anniversary or an unrecognized double edition) remains fallback.
 
-Current dedicated identity effectively distinguishes:
+Loose/CIB changes retain identity. Any -> Platinum or Standard/original changes
+identity and the previous Any mapping stops resolving. Any is the target's
+requirement, not an asset edition. The 37 reactivated covers retain coverVariant
+Other; none was relabelled Standard. Known asset edition metadata remains intact.
+Repeated regeneration cannot turn the targetVersion into source edition evidence.
+Collection reuse applies the same semantics and requires a unique region-compatible
+candidate; explicit requests still require confirmed coverVariant. Reused coverage
+remains zero. Previously rejected assets remain blocked.
 
-- targetId
-- platform
-- title
-- region
+The authorized production session was read-only and recovered only targetId,
+title, platform and targetVersion. The temporary four-field export was verified
+against the authenticated DOM by checksum and is not committed. The manifest
+preserves exact raw targetVersion for the same 144 previously imported records.
 
-All 144 legacy imported targets currently use `targetId = "NOVO"`.
+Final result: 139 dedicated / 298 total (46.6%), 0 Collection reuse, 159 fallback.
+All 37 previously reported target-artwork-edition-unconfirmed assets had no named
+edition requirement and are active again. Five existing files remain unassigned:
 
-The current manifest's imported targetVersion values are effectively only regional values such as:
+- The Legend of Zelda — NES
+- The Firemen — SNES
+- Space Station Silicon Valley — N64
+- Final Fantasy I & II: Dawn of Souls — GBA
+- The Legend of Zelda: Phantom Hourglass — DS
 
-- `Europe`
-- `PAL Europe`
+Those five explicitly request original/Standard and remain fallback because source
+edition review was not possible. They were not weakened to increase coverage.
+All 144 original filenames, image SHA-256 values, Git blob objects, bytes and
+provenance are preserved. No artwork downloads, new imports or app data mutations.
+Reports were regenerated using the existing manifest and authoritative remote Git
+asset metadata; the maintenance adapter and full export are temporary only.
 
-This can lose cover-relevant edition intent.
-
-Example risk:
-
-- Standard/original
-- Platinum
-- Nintendo Selects
-- Player's Choice
-- Greatest Hits
-- Black Label
-- Steelbook
-- Limited/Special edition
-
-can share title/platform/region but require different packaging artwork.
-
-The app already has variant normalization concepts in:
-
-`src/lib/wantlist-facets.logic.ts`
-
-Before merging PR #28, decide one of these explicitly:
-
-1. **fix the identity/manifest to include cover-relevant edition variant**, preserving the original full targetVersion; or
-2. consciously accept the current limitation and merge as-is.
-
-Preferred technical direction from the last review:
-
-- keep region separate;
-- normalize cover-relevant edition variant;
-- do **not** treat Loose vs CIB as different cover artwork when edition is otherwise the same;
-- if edition changes and no matching artwork exists, fallback rather than showing old edition artwork;
-- re-key existing 144 assets without redownloading when safely possible.
-
-The previous worker became unreliable during this final follow-up. A fresh chat/worker should pick up from this state rather than trusting uncommitted work from that session.
+Validation: 148 Vitest tests in 24 files (including Any/edition edits, unknown named
+editions and repeated report-only regeneration), 6 Python tests, lint with the
+three existing warnings, and production build passed. Verify final remote CI and
+Vercel against the live PR correction HEAD before considering merge.
 
 ## PR #28 files/data worth reading first
 
@@ -254,22 +247,22 @@ Last generated report:
 
 | Platform | Total | Dedicated | Fallback | Coverage |
 |---|---:|---:|---:|---:|
-| GameBoy Advance | 17 | 12 | 5 | 70.6% |
-| Game Boy Color | 10 | 5 | 5 | 50.0% |
 | Game Boy | 11 | 6 | 5 | 54.5% |
+| Game Boy Color | 10 | 5 | 5 | 50% |
+| GameBoy Advance | 17 | 11 | 6 | 64.7% |
 | GameCube | 16 | 7 | 9 | 43.8% |
-| NES | 20 | 13 | 7 | 65.0% |
+| NES | 20 | 12 | 8 | 60% |
 | Nintendo 3DS | 28 | 13 | 15 | 46.4% |
-| Nintendo 64 | 25 | 20 | 5 | 80.0% |
-| Nintendo DS | 23 | 11 | 12 | 47.8% |
-| Nintendo Switch | 20 | 3 | 17 | 15.0% |
-| Nintendo Wii U | 15 | 6 | 9 | 40.0% |
-| Nintendo Wii | 15 | 6 | 9 | 40.0% |
-| Playstation 2 | 27 | 17 | 10 | 63.0% |
-| Playstation 3 | 18 | 5 | 13 | 27.8% |
-| Playstation 5 | 12 | 3 | 9 | 25.0% |
+| Nintendo 64 | 25 | 19 | 6 | 76% |
+| Nintendo DS | 23 | 10 | 13 | 43.5% |
+| Nintendo Switch | 20 | 3 | 17 | 15% |
+| Nintendo Wii | 15 | 6 | 9 | 40% |
+| Nintendo Wii U | 15 | 6 | 9 | 40% |
 | Playstation | 21 | 7 | 14 | 33.3% |
-| SNES | 20 | 10 | 10 | 50.0% |
+| Playstation 2 | 27 | 17 | 10 | 63% |
+| Playstation 3 | 18 | 5 | 13 | 27.8% |
+| Playstation 5 | 12 | 3 | 9 | 25% |
+| SNES | 20 | 9 | 11 | 45% |
 
 Accuracy is intentionally prioritized over coverage.
 
@@ -338,7 +331,7 @@ For a fresh worker/chat:
 2. read this file;
 3. inspect PR #28 and its current head;
 4. verify the PR has not changed since this handoff;
-5. resolve or consciously accept the cover-edition identity concern;
+5. review the edition-identity correction and conservative fallback report;
 6. run lint/test/build;
 7. verify GitHub Actions + Vercel;
 8. review the final diff;
@@ -366,3 +359,4 @@ A minimal new-chat prompt can be:
 > Do not merge anything unless I explicitly approve the merge.
 
 That should be enough to start without replaying old chat history.
+

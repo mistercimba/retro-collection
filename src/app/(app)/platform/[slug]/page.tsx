@@ -23,7 +23,7 @@ export default async function PlatformPage({params,searchParams}:{params:Promise
   priority:x.priority,
   targetVersion:x.targetVersion,
   priceCeilingEur:x.priceCeilingEur,
-  artworkSrc:resolveWishlistArtwork(x.title,x.platform),
+  artworkSrc:resolveWishlistArtwork(x),
  }));
 
  return <div className="space-y-5 pb-8">

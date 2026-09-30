@@ -12,6 +12,8 @@ describe("concise wantlist facets", () => {
   });
 
   it("uses short edition labels and avoids long values as filter options", () => {
+    expect(normalizeWantlistVariant("PAL Nintendo Selects; CIB")).toBe("Nintendo Selects");
+    expect(normalizeWantlistVariant("Player’s Choice; loose")).toBe("Player's Choice");
     expect(normalizeWantlistVariant("PAL Black Label; CIB Good")).toBe("Black Label");
     expect(normalizeWantlistVariant("PAL Original; loose funcional")).toBe("Standard");
     expect(normalizeWantlistVariant("Player's Choice; CIB" )).toBe("Player's Choice");
@@ -20,3 +22,4 @@ describe("concise wantlist facets", () => {
     expect(collectWantlistVariants(["PAL original; loose", "PAL Black Label; CIB Good", "PAL original; loose"])).toEqual(["Standard", "Black Label"]);
   });
 });
+
