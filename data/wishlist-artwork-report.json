@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-30T15:14:39.199Z",
+  "generatedAt": "2026-09-30T15:18:38.459Z",
   "activeWishlistTotal": 298,
-  "dedicatedArtwork": 94,
+  "dedicatedArtwork": 97,
   "reusedCollectionArtwork": 0,
-  "fallback": 204,
-  "coverage": 31.5,
+  "fallback": 201,
+  "coverage": 32.6,
   "coverageByPlatform": {
     "NES": {
       "total": 20,
@@ -43,10 +43,10 @@
     },
     "Game Boy Color": {
       "total": 10,
-      "dedicated": 2,
+      "dedicated": 5,
       "reused": 0,
-      "fallback": 8,
-      "coverage": 20
+      "fallback": 5,
+      "coverage": 50
     },
     "Playstation 2": {
       "total": 27,
@@ -120,15 +120,15 @@
     }
   },
   "sourceCounts": {
-    "libretro-thumbnails": 89,
-    "launchbox": 5
+    "libretro-thumbnails": 90,
+    "launchbox": 7
   },
   "unresolvedReasons": {
-    "ambiguous-launchbox-covers": 10,
+    "ambiguous-launchbox-covers": 11,
     "ambiguous-source-candidates": 54,
-    "no-exact-title-platform-match": 62,
-    "region-mismatch": 45,
-    "source-artwork-region-mismatch": 1,
+    "no-exact-title-platform-match": 59,
+    "region-mismatch": 42,
+    "source-artwork-region-mismatch": 3,
     "source-unavailable": 32
   },
   "orphanedMappings": 0,

@@ -8,6 +8,22 @@
       "sourcePath": "Named_Boxarts/Persona 3 FES (Europe).png",
       "reason": "source-artwork-region-mismatch",
       "evidence": "Preview detail and local asset show ESRB M (US) although source filename declares Europe. European target must remain unresolved."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourceCommit": "0931985ba8a3a9f38fb87f006611a13dc094260f",
+      "sourcePath": "Named_Boxarts/Metal Gear Solid (Europe) (En,Fr,De,Es,It).png",
+      "reason": "source-artwork-region-mismatch",
+      "note": "Europe-labelled source displays a North American ESRB-rated front cover; rejected during visual validation."
+    },
+    {
+      "source": "libretro-thumbnails",
+      "sourceRepo": "libretro-thumbnails/Nintendo_-_Game_Boy_Color",
+      "sourceCommit": "0931985ba8a3a9f38fb87f006611a13dc094260f",
+      "sourcePath": "Named_Boxarts/Resident Evil Gaiden (Europe) (En,Fr,De,Es,It).png",
+      "reason": "source-artwork-region-mismatch",
+      "note": "Europe-labelled source displays a North American ESRB-rated front cover; rejected during visual validation."
     }
   ]
 }

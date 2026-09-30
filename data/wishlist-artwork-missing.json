@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-30T15:14:39.199Z",
+  "generatedAt": "2026-09-30T15:18:38.458Z",
   "activeWishlistTotal": 298,
-  "fallback": 204,
+  "fallback": 201,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 10,
+    "ambiguous-launchbox-covers": 11,
     "ambiguous-source-candidates": 54,
-    "no-exact-title-platform-match": 62,
-    "region-mismatch": 45,
-    "source-artwork-region-mismatch": 1,
+    "no-exact-title-platform-match": 59,
+    "region-mismatch": 42,
+    "source-artwork-region-mismatch": 3,
     "source-unavailable": 32
   },
   "entries": [
@@ -330,57 +330,34 @@
       "identityHash": "48b3785a65ca69fc7778",
       "title": "Resident Evil Gaiden",
       "platform": "Game Boy Color",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "source-artwork-region-mismatch"
     },
     {
       "identityHash": "403ddc6343483e8dd145",
       "title": "Dragon Warrior Monsters",
       "platform": "Game Boy Color",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "69b6839818456a9e3eef",
       "title": "Metal Gear Solid",
       "platform": "Game Boy Color",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "e1f4f63453e067da3fc6",
-      "title": "Pokémon Puzzle Challenge",
-      "platform": "Game Boy Color",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "7352b921851b82ef2f72",
-      "title": "Survival Kids",
-      "platform": "Game Boy Color",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "bcf692bee7320ad7ab44",
-      "title": "Toki Tori",
-      "platform": "Game Boy Color",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "source-artwork-region-mismatch"
     },
     {
       "identityHash": "efba7f4a2f7b0a1dfade",
       "title": "Warlocked",
       "platform": "Game Boy Color",
       "reason": "region-mismatch",
-      "candidateCount": 1
+      "candidateCount": 0
     },
     {
       "identityHash": "05b9efbb3e8ee68c57f9",
       "title": "Wendy: Every Witch Way",
       "platform": "Game Boy Color",
       "reason": "region-mismatch",
-      "candidateCount": 1
+      "candidateCount": 0
     },
     {
       "identityHash": "ac83fc45468013c79c13",
