@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T15:12:12.254Z",
+  "generatedAt": "2026-09-30T15:14:39.199Z",
   "activeWishlistTotal": 298,
-  "fallback": 215,
+  "fallback": 204,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 7,
-    "ambiguous-source-candidates": 53,
-    "no-exact-title-platform-match": 67,
-    "region-mismatch": 55,
+    "ambiguous-launchbox-covers": 10,
+    "ambiguous-source-candidates": 54,
+    "no-exact-title-platform-match": 62,
+    "region-mismatch": 45,
     "source-artwork-region-mismatch": 1,
     "source-unavailable": 32
   },
@@ -452,95 +452,32 @@
       "candidateCount": 2
     },
     {
-      "identityHash": "3a06b900f2d884e87e01",
-      "title": "Advance Wars 2: Black Hole Rising",
-      "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "01236cb4354ea884ec12",
-      "title": "Castlevania: Aria of Sorrow",
-      "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "d1ff1a1f58a67dc34469",
-      "title": "Final Fantasy VI Advance",
-      "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 2
-    },
-    {
       "identityHash": "7b6f814e8a93f78b9b5a",
       "title": "Fire Emblem",
       "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "4c73c6a750af714f0007",
-      "title": "Fire Emblem: The Sacred Stones",
-      "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-source-candidates",
+      "candidateCount": 2
     },
     {
       "identityHash": "09bfbe1bc568d6070dbd",
       "title": "Golden Sun: The Lost Age",
       "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "d1bed2677fe3a1e436d4",
       "title": "Mario & Luigi: Superstar Saga",
       "platform": "GameBoy Advance",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "a733ebbbaa576add854b",
-      "title": "Metroid: Zero Mission",
-      "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
+      "reason": "ambiguous-launchbox-covers",
       "candidateCount": 2
-    },
-    {
-      "identityHash": "49bab843ff0a2f63f3f3",
-      "title": "WarioWare, Inc.: Minigame Mania",
-      "platform": "GameBoy Advance",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "f93429574ce07581883f",
-      "title": "Astro Boy: Omega Factor",
-      "platform": "GameBoy Advance",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "3247b042fd01d04813c0",
-      "title": "Boktai: The Sun Is in Your Hand",
-      "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 1
     },
     {
       "identityHash": "224b81db22d0490ebd82",
       "title": "Castlevania: Circle of the Moon",
       "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 1
-    },
-    {
-      "identityHash": "5a77228f6f254eed5f72",
-      "title": "Final Fantasy I & II: Dawn of Souls",
-      "platform": "GameBoy Advance",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "35b207b981cdadb5853a",
@@ -548,20 +485,6 @@
       "platform": "GameBoy Advance",
       "reason": "ambiguous-source-candidates",
       "candidateCount": 6
-    },
-    {
-      "identityHash": "edf462b3e363b9a371ea",
-      "title": "Mario Power Tennis",
-      "platform": "GameBoy Advance",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "0b0d9762cb215de71095",
-      "title": "Pokémon Mystery Dungeon: Red Rescue Team",
-      "platform": "GameBoy Advance",
-      "reason": "region-mismatch",
-      "candidateCount": 1
     },
     {
       "identityHash": "ace364dd495003249dc9",
