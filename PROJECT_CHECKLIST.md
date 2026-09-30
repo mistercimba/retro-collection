@@ -1,42 +1,44 @@
-# Retro Collection — Roadmap
+# Retro Collection — Estado e trabalho pendente
 
-## MVP — arquitetura e browsing
+A arquitetura e o handoff atuais estão em [AGENTS.md](AGENTS.md) e
+[PROJECT_STATE.md](PROJECT_STATE.md). Esta checklist distingue trabalho concluído
+nos PRs merged de validação ainda pendente; não mantém as fases antigas de
+Google/read-only como roadmap futuro.
 
-- [x] Next.js App Router + TypeScript + Tailwind.
-- [x] Provider abstrato (`google` / `mock`).
-- [x] Parser defensivo de `COLLECTION` e `AUDIT LOG`.
-- [x] Join por `Collection ID`.
-- [x] Dashboard mobile-first.
-- [x] Pesquisa rápida para uso em lojas/feiras.
-- [x] Coleção com filtros e ordenação.
-- [x] Páginas de plataforma.
-- [x] Página de detalhe do jogo.
-- [x] Vista de itens para venda.
-- [x] PWA básica.
-- [x] Gate opcional com `APP_PASSWORD`.
-- [x] Testes de parsing, EUR, join e slugs.
-- [x] README com configuração Google/Vercel.
+## Concluído
 
-## Estado de validação
+- [x] Next.js App Router, TypeScript, Tailwind e Node.js 22.
+- [x] Dashboard, pesquisa rápida, filtros, ordenação e browsing por plataforma.
+- [x] Collection/Wishlist com criação, edição e remoção de jogos.
+- [x] Compra na Wishlist cria cópia na Collection e registo de compra.
+- [x] Dados de compras e valuations persistidos na biblioteca; consulta na ficha e edição dos dados de compra.
+- [x] Para vender/Vendidos e histórico das mutações da app (sem fabricar histórico passado).
+- [x] Biblioteca da app em **private Vercel Blob** (`retro-collection/library.json`), sem seed/fallback automático para snapshots antigos.
+- [x] Migração do runtime Google/read-only para biblioteca gerida pela app — [PR #26](https://github.com/mistercimba/retro-collection/pull/26) merged.
+- [x] Contexto de lista/scroll ao regressar, navegação Collection/Wishlist, preço pela condição e estados de loading/indisponibilidade — [PR #27](https://github.com/mistercimba/retro-collection/pull/27) merged.
+- [x] Metadata local/static: baseline aceite 454/495 (91,7%); 41 unresolved aceites.
+- [x] Artwork Collection/plataformas servido localmente, com fallback quando não há match seguro.
+- [x] Wishlist artwork local com identidade por requisito de edição — [PR #28](https://github.com/mistercimba/retro-collection/pull/28) merged.
+- [x] Wishlist final: **139/298 (46,6%)**, 159 fallback; 144 ficheiros preservados, dos quais 5 sem associação segura à edição explícita.
+- [x] Requisito de artwork distingue edição conhecida / Any / Unknown; Loose/CIB preserva identidade e alterações de edição invalidam o mapping anterior.
+- [x] PriceCharting via snapshot GitHub privado, ECB FX e matching local por plataforma/título/edição/condição; falhas degradam para preço indisponível.
+- [x] Gate por `APP_PASSWORD` e cookie HttpOnly; configuração explícita necessária para manter o deploy privado.
+- [x] PWA com shell offline e snapshot reduzido da Collection sincronizado após autenticação online.
+- [x] CI com lint, Vitest, testes Python e build; previews/deploys Vercel.
+- [x] README e exemplo de ambiente reconciliados com os usos confirmados no código.
 
-- [x] CI GitHub Actions passou (lint, testes TypeScript, testes da política PAL e build) no merge commit `2dbe4b5`.
-- [x] O check Vercel passou no commit final `2b30317`.
-- [x] Artwork local completo: **516/516** jogos com capa, 0 em falta.
-- [x] Capa regional do *The Hunt for Red October* substituída: manifesto marca PAL/NOE; o workflow importou o ficheiro atualizado no commit `2b30317`.
-- [x] A auditoria das 493 capas de consolas não encontrou variantes não europeias nem registos sem evidência PAL/Europe. As capas PC podem usar arte `World`, porque não têm divisão PAL/NTSC.
-- [ ] Confirmar em produção que os headers e totais correspondem à Google Sheet e que `provider: google` está ativo; as notas anteriores sobre o provider são contraditórias.
+## Validação ainda pendente
 
-## Próximo — qualidade de dados e UX
+- [ ] Terminar uma auditoria real em mobile/laptop: navegação, pesquisa, filtros, formulários e estados de loading/erro.
+- [ ] Incluir nessa auditoria a consulta offline existente e a atualização do snapshot ao recuperar ligação. Não considerar este fluxo totalmente auditado.
 
-- [ ] Confirmar em produção que os headers e totais correspondem à Google Sheet e que `provider: google` está ativo.
-- [ ] Melhorar cache/offline para consulta em feiras com rede fraca.
-- [ ] Criar favoritos / shortlist temporária sem escrever na sheet.
-- [ ] Mostrar PLAN / buylist de forma read-only.
+## Manutenção opcional, separada
 
-## Futuro
+- [ ] Avaliar redução do tamanho das imagens da Wishlist, preservando identidade, qualidade e proveniência, apenas se essa tarefa for autorizada.
 
-- [ ] Barcode scanning.
-- [ ] Fotos das cópias físicas.
-- [ ] Edição móvel e writes controlados para a source of truth.
-- [ ] Histórico de preços e compras/vendas.
-- [ ] Só considerar base de dados própria (ex. Postgres/Supabase) quando a sheet deixar de ser suficiente.
+Não reabrir enrichment de metadata/artwork por omissão. Cobertura parcial e
+fallbacks aceites não são automaticamente trabalho futuro. Google Sheets/PLAN
+são contexto legado, não uma integração de produção por validar. CRUD, compras,
+valuations e history já existem; não são fases futuras de uma app read-only.
+Não acrescentar base de dados ou serviços apenas para substituir uma arquitetura
+que já funciona. Novas funcionalidades exigem uma decisão própria de produto.

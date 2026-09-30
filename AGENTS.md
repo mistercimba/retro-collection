@@ -65,7 +65,8 @@ Important rules:
 
 Google Sheets is **legacy/historical migration input**, not the current runtime source of truth.
 
-The README contains substantial historical Google-provider documentation. Treat it as stale unless code/current state proves otherwise.
+The README documents the current Blob setup. Retained Google providers and refresh
+scripts are legacy maintenance/recovery tools, not the normal app data path.
 
 Do not:
 
@@ -333,7 +334,8 @@ Update it when a change materially affects:
 
 Do not rewrite it for trivial CSS/text changes.
 
-The README is useful historical/project documentation but is **not authoritative for current architecture** until it is reconciled.
+The README is the current onboarding/setup guide. `PROJECT_STATE.md` remains the
+living handoff; verify the code and live repository state when documentation disagrees.
 
 ## Communication / final report
 

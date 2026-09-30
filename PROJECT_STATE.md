@@ -8,7 +8,7 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Repository: `mistercimba/retro-collection`
 
-Current production `main`:
+Current production application baseline:
 
 `a4ed66a5fcaf5e29bc2f7ec5483d536d707bc48c`
 
@@ -245,19 +245,24 @@ Final branch validation before merge:
 | Playstation 5 | 12 | 3 | 9 | 25% |
 | SNES | 20 | 9 | 11 | 45% |
 
-## Known documentation debt
+## Documentation reconciliation
 
-The current README and PROJECT_CHECKLIST contain old statements such as:
+README and PROJECT_CHECKLIST now describe the app-owned private Blob library,
+existing CRUD/purchases/valuations/history, static metadata/artwork, and the
+GitHub PriceCharting snapshot with ECB FX. Completed PRs #26–#28 are no longer
+future phases. Metadata and artwork enrichment are not an active roadmap.
 
-- Google Sheet is the source of truth;
-- app is read-only;
-- old provider/deploy architecture.
+`.env.example` contains the runtime setup only: Blob SDK credential,
+APP_PASSWORD and optional PriceCharting settings. Google/IGDB/RAWG and
+DATA_PROVIDER are limited to legacy/maintenance documentation. Runtime usages
+were checked against the code and installed @vercel/blob 2.6.1 credential handling.
+APP_PASSWORD is required operationally for a private deploy, but auth.ts currently
+disables the gate if it is absent; documentation must not claim fail-closed behavior.
 
-Those statements are historical and no longer authoritative.
-
-Do not "fix" application architecture to match those documents.
-
-A documentation-only cleanup should reconcile them.
+The documentation-only branch is `docs/reconcile-current-architecture`. Its live
+PR/checks are the review source of truth; do not merge without explicit approval.
+The application baseline above is unchanged by this cleanup or the later
+handoff-only commit on main (`316654a1ca4033cb76408fd077c0dd95ac458051`).
 
 ## Known semantic debt
 
@@ -273,7 +278,6 @@ Do not silently remove/reclassify the 298 records based on that historical wordi
 
 - Blob updates are simple read-modify-write without optimistic concurrency/ETag. Acceptable for current single-user usage unless real races appear.
 - Wishlist artwork coverage is incomplete by design; fallback is acceptable.
-- README is stale.
 - Mobile UI audit remains pending.
 
 ## Completed migration milestones
@@ -311,10 +315,9 @@ Production commit:
 
 Good next candidates:
 
-1. reconcile stale README and PROJECT_CHECKLIST with the real Blob/current architecture;
-2. finish a real mobile/laptop UI audit;
-3. optionally optimize Wishlist image sizes as a separate maintenance task;
-4. only then move on to new product features.
+1. finish a real mobile/laptop UI audit, including the existing offline flow;
+2. optionally optimize Wishlist image sizes as a separate maintenance task;
+3. only then move on to new product features.
 
 Do not restart metadata enrichment or Wishlist artwork coverage work by default.
 
