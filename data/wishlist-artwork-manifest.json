@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T15:47:55.774Z",
+  "generatedAt": "2026-09-30T15:52:52.054Z",
   "source": "libretro-thumbnails/Named_Boxarts",
   "entries": {
     "[\"NOVO\",\"game boy advance\",\"advance wars 2 black hole rising\",\"Europe\"]": {
@@ -1880,6 +1880,25 @@
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },
+    "[\"NOVO\",\"playstation 3\",\"god of war iii\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "God of War III",
+      "platform": "Playstation 3",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/658c2679c67b160df599.jpg",
+      "source": "launchbox",
+      "sourceTitle": "God of War III",
+      "sourceUrl": "https://images.launchbox-app.com/6e2b4591-a0b8-4758-b8ea-0bf8d5b97d39.jpg",
+      "sourcePath": "6e2b4591-a0b8-4758-b8ea-0bf8d5b97d39.jpg",
+      "launchboxDatabaseId": "843",
+      "sourcePlatform": "Sony Playstation 3",
+      "sourceRegion": "Europe",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
+      "metadataSha256": "68b6496f194bf782c3a9f5c2a4d19330d042f980afda32319f49047872c3eab7",
+      "imageSha256": "11324ebf1ad7e14300d38bef6138d94437ce2722e80799e85ff4828a7bf8252f",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
     "[\"NOVO\",\"playstation 3\",\"heavy rain\",\"Europe\"]": {
       "targetId": "NOVO",
       "title": "Heavy Rain",
@@ -1892,6 +1911,44 @@
       "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_3",
       "sourceCommit": "67f82a82deea07e17f1e6a23aad8117af8efe7ac",
       "sourcePath": "Named_Boxarts/Heavy Rain (Europe).png",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
+    "[\"NOVO\",\"playstation 3\",\"last of us\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "The Last of Us",
+      "platform": "Playstation 3",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/c2350c13c6cb9c923eee.jpg",
+      "source": "launchbox",
+      "sourceTitle": "The Last of Us",
+      "sourceUrl": "https://images.launchbox-app.com/987ab042-af91-4134-8173-ba6f7706da9e.jpg",
+      "sourcePath": "987ab042-af91-4134-8173-ba6f7706da9e.jpg",
+      "launchboxDatabaseId": "10392",
+      "sourcePlatform": "Sony Playstation 3",
+      "sourceRegion": "Europe",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
+      "metadataSha256": "68b6496f194bf782c3a9f5c2a4d19330d042f980afda32319f49047872c3eab7",
+      "imageSha256": "1818424c2de783df9f95e733269836be367df3f7a362cedc20d418dbe5141bcd",
+      "region": "Europe",
+      "matchMethod": "exact-normalized-title-platform-region"
+    },
+    "[\"NOVO\",\"playstation 3\",\"littlebigplanet\",\"Europe\"]": {
+      "targetId": "NOVO",
+      "title": "LittleBigPlanet",
+      "platform": "Playstation 3",
+      "targetVersion": "PAL Europe",
+      "file": "/covers/wishlist/13e613fdb1eac0e5ab60.jpg",
+      "source": "launchbox",
+      "sourceTitle": "LittleBigPlanet",
+      "sourceUrl": "https://images.launchbox-app.com/011d0e82-2bb4-424e-9b20-0e91e6c6917b.jpg",
+      "sourcePath": "011d0e82-2bb4-424e-9b20-0e91e6c6917b.jpg",
+      "launchboxDatabaseId": "809",
+      "sourcePlatform": "Sony Playstation 3",
+      "sourceRegion": "United Kingdom",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
+      "metadataSha256": "68b6496f194bf782c3a9f5c2a4d19330d042f980afda32319f49047872c3eab7",
+      "imageSha256": "1764894dbf880c2255d75bf83018d66418e750bf4cee1c5bf7ffa26cfc8c2c9b",
       "region": "Europe",
       "matchMethod": "exact-normalized-title-platform-region"
     },

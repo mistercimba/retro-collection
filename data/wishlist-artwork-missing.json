@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T15:47:55.788Z",
+  "generatedAt": "2026-09-30T15:52:52.071Z",
   "activeWishlistTotal": 298,
-  "fallback": 163,
+  "fallback": 160,
   "reasonCounts": {
-    "ambiguous-launchbox-covers": 27,
+    "ambiguous-launchbox-covers": 39,
     "ambiguous-source-candidates": 64,
-    "no-exact-title-platform-match": 22,
-    "region-mismatch": 5,
+    "no-exact-title-platform-match": 8,
+    "region-mismatch": 4,
     "source-artwork-edition-unconfirmed": 2,
     "source-artwork-region-mismatch": 9,
     "source-artwork-title-variant-mismatch": 1,
@@ -645,116 +645,95 @@
       "candidateCount": 5
     },
     {
-      "identityHash": "c77adf857d3539655d9e",
-      "title": "God of War III",
-      "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
       "identityHash": "90e9ce880900b0efef5a",
       "title": "inFamous",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "c6631d708101c55d3571",
-      "title": "LittleBigPlanet",
-      "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "25f9fb13dc60b1cf4896",
       "title": "Metal Gear Solid 4: Guns of the Patriots",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "1a77e7fc4ed6c848d9f1",
       "title": "Red Dead Redemption",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
-    },
-    {
-      "identityHash": "e795a2f2a3a0f6aa2d66",
-      "title": "The Last of Us",
-      "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "da7bb56042f41dbd5185",
       "title": "Uncharted 2: Among Thieves",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "707da1d31baa8a89ad8f",
       "title": "Uncharted 3: Drake's Deception",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "f10cde801fef4f70f2ae",
       "title": "inFamous 2",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "d79428cff06e779b8ce1",
       "title": "Killzone 2",
       "platform": "Playstation 3",
-      "reason": "region-mismatch",
-      "candidateCount": 1
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 5
     },
     {
       "identityHash": "ac0bb6752d0ee0e0590e",
       "title": "Ni no Kuni: Wrath of the White Witch",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "0c12eb4fa2e6929aca4f",
       "title": "Ratchet & Clank: A Crack in Time",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 2
     },
     {
       "identityHash": "d0b1aaf03d7c5c6ce8ac",
       "title": "Ratchet & Clank: Tools of Destruction",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 4
     },
     {
       "identityHash": "308a1352a67cddf2ffe8",
       "title": "Resistance 2",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "aea2518121b6b07174fb",
       "title": "Resistance: Fall of Man",
       "platform": "Playstation 3",
-      "reason": "no-exact-title-platform-match",
-      "candidateCount": 0
+      "reason": "ambiguous-launchbox-covers",
+      "candidateCount": 3
     },
     {
       "identityHash": "3e31ddd76b1e39db4a96",
       "title": "Valkyria Chronicles",
       "platform": "Playstation 3",
       "reason": "region-mismatch",
-      "candidateCount": 1
+      "candidateCount": 0
     },
     {
       "identityHash": "e7fef804a9b0c8fbef4d",
