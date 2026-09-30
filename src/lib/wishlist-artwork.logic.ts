@@ -1,3 +1,6 @@
+import { normalizeWantlistVariant } from "./wantlist-facets.logic";
+import { normalizeWishlistArtworkTitle, normalizeWishlistArtworkPlatform, wishlistArtworkRegion, wishlistArtworkIdentity } from "./wishlist-artwork-identity.mjs";
+export { normalizeWishlistArtworkTitle, normalizeWishlistArtworkPlatform, wishlistArtworkRegion, wishlistArtworkIdentity } from "./wishlist-artwork-identity.mjs";
 import { collectionWishlistArtworkRegion } from "./wishlist-artwork-region.mjs";
 
 export { collectionWishlistArtworkRegion } from "./wishlist-artwork-region.mjs";
@@ -14,67 +17,16 @@ export type WishlistArtworkGame = {
   title: string;
   platform: string;
   region?: string;
+  coverVariant?: string;
 };
 
 export type CollectionWishlistArtworkIndex = Map<string, string | null>;
-
-const PLATFORM_ALIASES: Record<string, string> = {
-  nes: "nes", "nintendo entertainment system": "nes",
-  snes: "snes", "super nintendo": "snes", "super nintendo entertainment system": "snes",
-  n64: "nintendo 64", "nintendo 64": "nintendo 64",
-  gameboy: "game boy", "game boy": "game boy", "nintendo game boy": "game boy",
-  "game boy color": "game boy color", "gameboy color": "game boy color", "nintendo game boy color": "game boy color",
-  gba: "game boy advance", "gameboy advance": "game boy advance", "game boy advance": "game boy advance", "nintendo game boy advance": "game boy advance",
-  gamecube: "gamecube", "nintendo gamecube": "gamecube",
-  ds: "nintendo ds", "nintendo ds": "nintendo ds",
-  "3ds": "nintendo 3ds", "nintendo 3ds": "nintendo 3ds",
-  wii: "nintendo wii", "nintendo wii": "nintendo wii",
-  "wii u": "nintendo wii u", "nintendo wii u": "nintendo wii u",
-  switch: "nintendo switch", "nintendo switch": "nintendo switch",
-  ps1: "playstation", playstation: "playstation", "sony playstation": "playstation",
-  ps2: "playstation 2", "playstation 2": "playstation 2", "sony playstation 2": "playstation 2",
-  ps3: "playstation 3", "playstation 3": "playstation 3", "sony playstation 3": "playstation 3",
-  ps5: "playstation 5", "playstation 5": "playstation 5", "sony playstation 5": "playstation 5",
-};
-
-export function normalizeWishlistArtworkTitle(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/&/g, " and ")
-    .replace(/[’']/g, "")
-    .replace(/[^a-z0-9]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/^(the|a|an)\s+/, "");
-}
-
-export function normalizeWishlistArtworkPlatform(value: string): string {
-  const normalized = normalizeWishlistArtworkTitle(value);
-  return PLATFORM_ALIASES[normalized] ?? normalized;
-}
-
-export function wishlistArtworkRegion(targetVersion = ""): "Europe" | "US" | "Japan" {
-  const normalized = normalizeWishlistArtworkTitle(targetVersion);
-  if (/\b(ntsc j|japan|japanese|japao|japones|jp)\b/.test(normalized)) return "Japan";
-  if (/\b(ntsc u|usa|united states|north american|north america|norte americano|us)\b/.test(normalized)) return "US";
-  return "Europe";
-}
-
-export function wishlistArtworkIdentity(target: WishlistArtworkTarget): string {
-  return JSON.stringify([
-    target.targetId,
-    normalizeWishlistArtworkPlatform(target.platform),
-    normalizeWishlistArtworkTitle(target.title),
-    wishlistArtworkRegion(target.targetVersion),
-  ]);
-}
 
 export function resolveDedicatedWishlistArtwork(
   target: WishlistArtworkTarget,
   artwork: Record<string, string>,
 ): string | null {
+  if (normalizeWantlistVariant(target.targetVersion ?? "") === "Other") return null;
   return artwork[wishlistArtworkIdentity(target)] ?? null;
 }
 
@@ -86,8 +38,8 @@ export function resolveCollectionWishlistArtwork(
   return resolveCollectionWishlistArtworkFromIndex(target, createCollectionWishlistArtworkIndex(games, artwork));
 }
 
-function collectionArtworkKey(title: string, platform: string, region: string): string {
-  return JSON.stringify([normalizeWishlistArtworkPlatform(platform), normalizeWishlistArtworkTitle(title), region]);
+function collectionArtworkKey(title: string, platform: string, region: string, variant: string): string {
+  return JSON.stringify([normalizeWishlistArtworkPlatform(platform), normalizeWishlistArtworkTitle(title), region, variant]);
 }
 
 export function createCollectionWishlistArtworkIndex(
@@ -98,8 +50,9 @@ export function createCollectionWishlistArtworkIndex(
   for (const game of games) {
     const region = collectionWishlistArtworkRegion(game.region);
     const file = artwork[game.collectionId];
-    if (!region || !file || !normalizeWishlistArtworkTitle(game.title) || !normalizeWishlistArtworkPlatform(game.platform)) continue;
-    const key = collectionArtworkKey(game.title, game.platform, region);
+    const variant = normalizeWantlistVariant(game.coverVariant ?? "");
+    if (variant === "Other" || !region || !file || !normalizeWishlistArtworkTitle(game.title) || !normalizeWishlistArtworkPlatform(game.platform)) continue;
+    const key = collectionArtworkKey(game.title, game.platform, region, variant);
     index.set(key, index.has(key) ? null : file);
   }
   return index;
@@ -109,5 +62,8 @@ export function resolveCollectionWishlistArtworkFromIndex(
   target: WishlistArtworkTarget,
   index: CollectionWishlistArtworkIndex,
 ): string | null {
-  return index.get(collectionArtworkKey(target.title, target.platform, wishlistArtworkRegion(target.targetVersion))) ?? null;
+  const variant = normalizeWantlistVariant(target.targetVersion ?? "");
+  if (variant === "Other") return null;
+  return index.get(collectionArtworkKey(target.title, target.platform, wishlistArtworkRegion(target.targetVersion), variant)) ?? null;
 }
+

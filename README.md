@@ -221,3 +221,17 @@ Regenerate local reports and asset digests without importing or querying sources
 ```bash
 npm run wishlist-artwork:import -- --input /tmp/wishlist-targets.json --report-only
 ```
+
+
+Wishlist artwork identity also includes the cover-relevant edition, using the
+Wantlist facet normalization (including Nintendo Selects). Loose/CIB changes keep
+the same artwork identity; edition changes do not. The manifest preserves the full
+original targetVersion. Region-only/unknown editions stay fallback rather than
+being assumed Standard. Collection reuse requires a confirmed coverVariant from
+its artwork manifest, independently of the physical copy edition.
+
+Report-only regeneration re-keys only confirmed edition matches without querying
+sources or importing images. Existing files that cannot be assigned confidently
+remain in unassignedEntries with their provenance and original targetVersion, and
+are excluded from the runtime mapping. Importing an unconfirmed source edition
+also remains fallback. Do not treat those retained files as active coverage.

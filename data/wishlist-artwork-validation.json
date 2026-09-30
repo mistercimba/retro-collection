@@ -1,6 +1,5 @@
 {
   "artworkReviewCheckpoint": "7b0076799957ef9999c45a21b349789933d61991",
-  "allDedicatedAssetsVisuallyReviewed": 144,
   "sourceCorrections": {
     "wrongRegionCoversRejected": 9,
     "wrongTitleVariantCoversRejected": 1,
@@ -39,8 +38,8 @@
   "localChecks": {
     "lint": "PASS (0 errors, 3 existing warnings)",
     "tests": {
-      "vitestFiles": 22,
-      "vitestPassed": 102,
+      "vitestFiles": 24,
+      "vitestPassed": 123,
       "pythonPassed": 6
     },
     "build": "PASS"
@@ -49,5 +48,25 @@
     "baselineCommit": "4456312a2f8ff3522d4c74feb118895404fd453c",
     "changedFiles": 165,
     "netTrackedBytesAdded": 66958797
+  },
+  "originalRetainedAssetsPreviouslyVisuallyReviewed": 144,
+  "editionIdentityReview": {
+    "schemaVersion": 2,
+    "fields": [
+      "targetId",
+      "platform",
+      "normalized title",
+      "region",
+      "cover-relevant edition variant"
+    ],
+    "activeAssetsVisuallyEditionReviewed": 102,
+    "retainedUnassignedAssets": 42,
+    "targetEditionUnspecified": 37,
+    "existingAssetsNotAccessibleForEditionReview": 5,
+    "imageBlobsChanged": 0,
+    "newImports": 0,
+    "originalTargetVersionPreserved": 144,
+    "wishlistReadMode": "authenticated browser DOM; read-only; four authorized fields only",
+    "privateExportCommitted": false
   }
 }

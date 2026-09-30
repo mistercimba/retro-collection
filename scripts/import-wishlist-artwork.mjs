@@ -1,3 +1,6 @@
+import { wishlistArtworkIdentity as identityKey, normalizeWishlistArtworkPlatform as canonicalPlatform } from "../src/lib/wishlist-artwork-identity.mjs";
+import { normalizeWantlistVariant } from "../src/lib/wantlist-variant.mjs";
+import { rekeyWishlistArtwork } from "./wishlist-artwork-rekey.mjs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { collectionWishlistArtworkRegion } from "../src/lib/wishlist-artwork-region.mjs";
@@ -51,46 +54,6 @@ const REPO_BY_PLATFORM = {
   "playstation 3": "Sony_-_PlayStation_3",
   "playstation 5": "Sony_-_PlayStation_5",
 };
-
-const PLATFORM_ALIASES = {
-  "nintendo entertainment system": "nes", nes: "nes",
-  "super nintendo entertainment system": "snes", "super nintendo": "snes", snes: "snes",
-  "nintendo 64": "nintendo 64", n64: "nintendo 64",
-  "nintendo game boy": "game boy", "game boy": "game boy", gameboy: "game boy",
-  "nintendo game boy color": "game boy color", "game boy color": "game boy color", "gameboy color": "game boy color",
-  "nintendo game boy advance": "game boy advance", "game boy advance": "game boy advance", "gameboy advance": "game boy advance", gba: "game boy advance",
-  "nintendo gamecube": "gamecube", gamecube: "gamecube",
-  "nintendo ds": "nintendo ds", ds: "nintendo ds",
-  "nintendo 3ds": "nintendo 3ds", "3ds": "nintendo 3ds",
-  "nintendo wii": "nintendo wii", wii: "nintendo wii",
-  "nintendo wii u": "nintendo wii u", "wii u": "nintendo wii u",
-  "nintendo switch": "nintendo switch", switch: "nintendo switch",
-  "sony playstation": "playstation", playstation: "playstation", ps1: "playstation",
-  "sony playstation 2": "playstation 2", "playstation 2": "playstation 2", ps2: "playstation 2",
-  "sony playstation 3": "playstation 3", "playstation 3": "playstation 3", ps3: "playstation 3",
-  "sony playstation 5": "playstation 5", "playstation 5": "playstation 5", ps5: "playstation 5",
-};
-
-function normalize(value) {
-  return String(value ?? "")
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase().replace(/&/g, " and ").replace(/[’']/g, "")
-    .replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
-}
-
-function canonicalPlatform(value) {
-  const normalized = normalize(value);
-  return PLATFORM_ALIASES[normalized] ?? normalized;
-}
-
-function identityKey(target) {
-  return JSON.stringify([
-    target.targetId,
-    canonicalPlatform(target.platform),
-    normalizeArtworkTitle(target.title),
-    requestedArtworkRegion(target.targetVersion),
-  ]);
-}
 
 function sha(value, length = 20) {
   return createHash("sha256").update(value).digest("hex").slice(0, length);
@@ -181,6 +144,19 @@ const [manifest, games, collectionArtwork] = await Promise.all([
   readJson(COLLECTION_MANIFEST_FILE, { entries: {} }),
 ]);
 manifest.entries ??= {};
+const rekeyed = rekeyWishlistArtwork(uniqueTargets, { ...manifest.unassignedEntries, ...manifest.entries });
+manifest.schemaVersion = 2;
+manifest.entries = rekeyed.entries;
+manifest.unassignedEntries = rekeyed.unassignedEntries;
+for (const item of rekeyed.missing) previousReasons.set(sha(identityKey(item.target)), {
+  identityHash: sha(identityKey(item.target)), title: item.target.title, platform: item.target.platform, reason: item.reason,
+});
+// Carry forward earlier unresolved reasons under the edition-aware key.
+for (const target of uniqueTargets) {
+  const key = identityKey(target);
+  const legacyHash = sha(JSON.stringify(JSON.parse(key).slice(0, 4)));
+  if (!previousReasons.has(sha(key)) && previousReasons.has(legacyHash)) previousReasons.set(sha(key), { ...previousReasons.get(legacyHash), identityHash: sha(key) });
+}
 const filesUsed = new Set(Object.values(manifest.entries).map((entry) => entry.file));
 const importedKeys = new Set();
 const localCandidates = new Map();
@@ -249,6 +225,10 @@ for (const target of uniqueTargets) {
     });
     continue;
   }
+  if (normalizeWantlistVariant(target.targetVersion) === "Other") {
+    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "target-artwork-edition-unconfirmed" });
+    continue;
+  }
   const repository = REPO_BY_PLATFORM[platform];
   let reason = "unsupported-platform";
   let candidateCount = 0;
@@ -299,6 +279,11 @@ for (const target of uniqueTargets) {
     unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason, candidateCount });
     continue;
   }
+  const sourceVariant = normalizeWantlistVariant(source.coverVariant ?? source.sourceTitle ?? "");
+  if (sourceVariant === "Other" || sourceVariant !== normalizeWantlistVariant(target.targetVersion)) {
+    unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: "source-artwork-edition-unconfirmed" });
+    continue;
+  }
   const rejected = rejectedArtworkSource(source, rejections);
   if (rejected) {
     unresolved.push({ identityHash: sha(key), title: target.title, platform: target.platform, reason: rejected.reason });
@@ -332,8 +317,9 @@ for (const target of uniqueTargets) {
     targetId: target.targetId, title: target.title, platform: target.platform,
     targetVersion: target.targetVersion, file: relativeFile,
     ...source, imageSha256: sha(bytes, 64),
+    coverVariant: sourceVariant,
     region: requestedArtworkRegion(target.targetVersion),
-    matchMethod: "exact-normalized-title-platform-region",
+    matchMethod: "exact-normalized-title-platform-region-edition",
   };
   newlyImported += 1;
   filesUsed.add(relativeFile);
@@ -350,6 +336,8 @@ for (const target of uniqueTargets) {
   for (const game of games) {
     if (canonicalPlatform(game.platform) !== platform || normalizeArtworkTitle(game.title) !== title) continue;
     const entry = collectionArtwork.entries?.[game.collectionId];
+    const variant = normalizeWantlistVariant(target.targetVersion);
+    if (variant === "Other" || normalizeWantlistVariant(entry?.coverVariant ?? "") !== variant) continue;
     if (collectionWishlistArtworkRegion(entry?.regionName) !== requestedArtworkRegion(target.targetVersion)) continue;
     const file = entry?.file;
     if (!file) continue;
@@ -365,7 +353,7 @@ for (const item of unresolved) unresolvedByHash.set(item.identityHash, item);
 const reusedHashes = new Set([...reused].map((key) => sha(key)));
 const finalUnresolved = [...unresolvedByHash.values()].filter((entry) => !reusedHashes.has(entry.identityHash));
 const orphaned = Object.keys(manifest.entries).filter((key) => !currentKeys.has(key));
-const manifestFiles = new Set(Object.values(manifest.entries).map((entry) => entry.file));
+const manifestFiles = new Set([...Object.values(manifest.entries), ...Object.values(manifest.unassignedEntries)].map((entry) => entry.file));
 for (const fileName of await fs.readdir(COVERS_DIR)) {
   if (/^[a-f0-9]{20}\.(png|jpg)$/.test(fileName) && !manifestFiles.has(`/covers/wishlist/${fileName}`)) {
     await fs.unlink(path.join(COVERS_DIR, fileName));
@@ -420,8 +408,9 @@ await fs.writeFile(REPORT_FILE, JSON.stringify({
   sourceCounts: Object.fromEntries([...new Set(Object.values(manifest.entries).map((entry) => entry.source))].map((source) => [source, uniqueTargets.filter((target) => importedKeys.has(identityKey(target)) && manifest.entries[identityKey(target)].source === source).length])),
   unresolvedReasons: reasonCounts,
   orphanedMappings: orphaned.length,
-  orphanedAssets: [...filesUsed].filter((file) => !Object.values(manifest.entries).some((entry) => entry.file === file)),
+  orphanedAssets: [...filesUsed].filter((file) => !manifestFiles.has(file)),
   sourceErrors, assetStats,
+  retainedUnassignedAssets: { files: Object.keys(manifest.unassignedEntries).length, totalBytes: Object.values(manifest.unassignedEntries).reduce((sum, entry) => sum + (entry.imageBytes ?? 0), 0) },
 }, null, 2) + "\n");
 
 console.log(JSON.stringify({
@@ -437,3 +426,4 @@ function validImageBytes(bytes) {
   const jpeg = bytes.length > 4 && bytes[0] === 255 && bytes[1] === 216 && bytes.at(-2) === 255 && bytes.at(-1) === 217;
   return (png || jpeg) && bytes.length <= MAX_IMAGE_BYTES;
 }
+

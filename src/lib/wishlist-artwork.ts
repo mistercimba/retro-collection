@@ -15,7 +15,7 @@ export type { WishlistArtworkTarget } from "./wishlist-artwork.logic";
 
 // Build once per module load; page requests only perform in-memory lookups.
 const collectionArtworkIndex = createCollectionWishlistArtworkIndex(
-  artworkGames.map((game) => ({ ...game, region: (collectionManifest.entries as Record<string, { regionName?: string }>)[game.collectionId]?.regionName })), GAME_ARTWORK,
+  artworkGames.map((game) => ({ ...game, region: (collectionManifest.entries as Record<string, { regionName?: string; coverVariant?: string }>)[game.collectionId]?.regionName, coverVariant: (collectionManifest.entries as Record<string, { coverVariant?: string }>)[game.collectionId]?.coverVariant })), GAME_ARTWORK,
 );
 
 export function resolveWishlistArtworkFromEntries(
@@ -32,3 +32,4 @@ export function resolveWishlistArtwork(target: WishlistArtworkTarget): string | 
   return resolveDedicatedWishlistArtwork(target, WISHLIST_ARTWORK) ??
     resolveCollectionWishlistArtworkFromIndex(target, collectionArtworkIndex);
 }
+

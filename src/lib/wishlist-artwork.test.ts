@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { resolveWishlistArtworkFromEntries } from "./wishlist-artwork";
 import {
+  wishlistArtworkIdentity,
   createCollectionWishlistArtworkIndex,
   resolveCollectionWishlistArtworkFromIndex,
   resolveDedicatedWishlistArtwork,
@@ -23,7 +24,7 @@ const games = [
   { collectionId: "N64-1", title: "Pokémon Stadium", platform: "Nintendo 64" },
   { collectionId: "PS2-3", title: "Duplicate", platform: "Playstation 2" },
   { collectionId: "PS2-4", title: "Duplicate", platform: "Playstation 2" },
-].map((game) => ({ ...game, region: "PAL" }));
+].map((game) => ({ ...game, region: "PAL", coverVariant: "Standard" }));
 
 const collectionArtwork = {
   "PS2-1": "/covers/PS2-1.jpg",
@@ -37,7 +38,7 @@ const collectionArtwork = {
 describe("wishlist artwork resolver", () => {
   it("uses one dedicated title and platform artwork match", () => {
     const wanted = target();
-    const key = JSON.stringify(["NOVO", "playstation 2", "silent hill 2", "Europe"]);
+    const key = JSON.stringify(["NOVO", "playstation 2", "silent hill 2", "Europe", "Standard"]);
     expect(resolveDedicatedWishlistArtwork(wanted, { [key]: "/covers/wishlist/unique.png" }))
       .toBe("/covers/wishlist/unique.png");
   });
@@ -74,19 +75,19 @@ describe("wishlist artwork resolver", () => {
 
   it("keeps explicitly different regions separate", () => {
     const europe = target();
-    const usKey = JSON.stringify(["NOVO", "playstation 2", "silent hill 2", "US"]);
+    const usKey = JSON.stringify(["NOVO", "playstation 2", "silent hill 2", "US", "Standard"]);
     expect(resolveDedicatedWishlistArtwork(europe, { [usKey]: "/covers/wishlist/us.png" })).toBeNull();
   });
 
   it("uses dedicated artwork before Collection reuse", () => {
     const wanted = target();
-    const key = JSON.stringify(["NOVO", "playstation 2", "silent hill 2", "Europe"]);
+    const key = JSON.stringify(["NOVO", "playstation 2", "silent hill 2", "Europe", "Standard"]);
     expect(resolveWishlistArtworkFromEntries(wanted, games, collectionArtwork, { [key]: "/covers/wishlist/dedicated.png" }))
       .toBe("/covers/wishlist/dedicated.png");
   });
 
   it("does not reuse PAL Collection artwork for an explicit US wishlist target", () => {
-    expect(resolveCollectionWishlistArtwork(target({ targetVersion: "NTSC-U" }), games, collectionArtwork)).toBeNull();
+    expect(resolveCollectionWishlistArtwork(target({ targetVersion: "NTSC-U original" }), games, collectionArtwork)).toBeNull();
   });
 
   it("leaves Collection artwork with an unknown region unresolved", () => {
@@ -108,6 +109,50 @@ describe("wishlist artwork resolver", () => {
       ...collectionArtwork, us: "/covers/us.jpg",
     });
     expect(resolveCollectionWishlistArtworkFromIndex(target(), index)).toBe("/covers/PS2-1.jpg");
-    expect(resolveCollectionWishlistArtworkFromIndex(target({ targetVersion: "NTSC-U" }), index)).toBe("/covers/us.jpg");
+    expect(resolveCollectionWishlistArtworkFromIndex(target({ targetVersion: "NTSC-U original" }), index)).toBe("/covers/us.jpg");
+  });
+});
+
+
+describe("cover edition identity", () => {
+  it("keeps Standard artwork across Loose/CIB condition changes", () => {
+    const loose = target({ targetVersion: "PAL original; loose funcional" });
+    const cib = target({ targetVersion: "PAL original; CIB" });
+    expect(wishlistArtworkIdentity(loose)).toBe(wishlistArtworkIdentity(cib));
+    expect(wishlistArtworkIdentity(loose)).toBe(wishlistArtworkIdentity(target({ targetVersion: "PAL Standard" })));
+    const artwork = { [wishlistArtworkIdentity(loose)]: "/covers/wishlist/standard.png" };
+    expect(resolveDedicatedWishlistArtwork(cib, artwork)).toBe("/covers/wishlist/standard.png");
+  });
+
+  it.each(["Platinum", "Nintendo Selects", "Player's Choice", "Greatest Hits", "Black Label", "Steelbook", "Limited", "Collector", "Special Edition"])("invalidates Standard artwork when edition changes to %s", (edition) => {
+    const original = target();
+    const changed = target({ targetVersion: `PAL ${edition}; CIB` });
+    expect(wishlistArtworkIdentity(changed)).not.toBe(wishlistArtworkIdentity(original));
+    const artwork = { [wishlistArtworkIdentity(original)]: "/covers/wishlist/standard.png" };
+    expect(resolveDedicatedWishlistArtwork(changed, artwork)).toBeNull();
+    expect(resolveWishlistArtworkFromEntries(changed, games, collectionArtwork, artwork)).toBeNull();
+  });
+
+  it("keeps every recognized edition distinct", () => {
+    const editions = ["Standard", "Platinum", "Nintendo Selects", "Player's Choice", "Greatest Hits", "Black Label", "Steelbook", "Limited", "Collector", "Special Edition"];
+    expect(new Set(editions.map((edition) => wishlistArtworkIdentity(target({ targetVersion: `PAL ${edition}` })))).size).toBe(editions.length);
+  });
+
+  it("never resolves unknown editions or legacy region-only keys", () => {
+    const unknown = target({ targetVersion: "PAL Europe" });
+    expect(resolveDedicatedWishlistArtwork(unknown, { [wishlistArtworkIdentity(unknown)]: "/covers/unknown.png" })).toBeNull();
+    expect(resolveDedicatedWishlistArtwork(target(), { '["NOVO","playstation 2","silent hill 2","Europe"]': "/covers/legacy.png" })).toBeNull();
+  });
+
+  it("does not infer Collection cover edition from copy edition", () => {
+    const unknownCover = [{ ...games[0], coverVariant: undefined, edition: "Standard" }];
+    expect(resolveCollectionWishlistArtwork(target(), unknownCover, collectionArtwork)).toBeNull();
+  });
+
+  it("matches explicitly verified Collection cover editions separately", () => {
+    const platinum = { ...games[0], collectionId: "platinum", coverVariant: "Platinum" };
+    const artwork = { ...collectionArtwork, platinum: "/covers/platinum.jpg" };
+    expect(resolveCollectionWishlistArtwork(target({ targetVersion: "PAL Platinum" }), [...games, platinum], artwork)).toBe("/covers/platinum.jpg");
+    expect(resolveCollectionWishlistArtwork(target(), [...games, platinum], artwork)).toBe("/covers/PS2-1.jpg");
   });
 });

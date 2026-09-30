@@ -1,24 +1,17 @@
 {
-  "generatedAt": "2026-09-30T17:19:43.890Z",
+  "generatedAt": "2026-09-30T23:02:06.695Z",
   "activeWishlistTotal": 298,
-  "dedicatedArtwork": 144,
+  "dedicatedArtwork": 102,
   "reusedCollectionArtwork": 0,
-  "fallback": 154,
-  "coverage": 48.3,
+  "fallback": 196,
+  "coverage": 34.2,
   "coverageByPlatform": {
-    "GameBoy Advance": {
-      "total": 17,
+    "NES": {
+      "total": 20,
       "dedicated": 12,
       "reused": 0,
-      "fallback": 5,
-      "coverage": 70.6
-    },
-    "Game Boy Color": {
-      "total": 10,
-      "dedicated": 5,
-      "reused": 0,
-      "fallback": 5,
-      "coverage": 50
+      "fallback": 8,
+      "coverage": 60
     },
     "Game Boy": {
       "total": 11,
@@ -27,82 +20,12 @@
       "fallback": 5,
       "coverage": 54.5
     },
-    "GameCube": {
-      "total": 16,
-      "dedicated": 7,
-      "reused": 0,
-      "fallback": 9,
-      "coverage": 43.8
-    },
-    "NES": {
+    "SNES": {
       "total": 20,
-      "dedicated": 13,
+      "dedicated": 9,
       "reused": 0,
-      "fallback": 7,
-      "coverage": 65
-    },
-    "Nintendo 3DS": {
-      "total": 28,
-      "dedicated": 13,
-      "reused": 0,
-      "fallback": 15,
-      "coverage": 46.4
-    },
-    "Nintendo 64": {
-      "total": 25,
-      "dedicated": 20,
-      "reused": 0,
-      "fallback": 5,
-      "coverage": 80
-    },
-    "Nintendo DS": {
-      "total": 23,
-      "dedicated": 11,
-      "reused": 0,
-      "fallback": 12,
-      "coverage": 47.8
-    },
-    "Nintendo Switch": {
-      "total": 20,
-      "dedicated": 3,
-      "reused": 0,
-      "fallback": 17,
-      "coverage": 15
-    },
-    "Nintendo Wii U": {
-      "total": 15,
-      "dedicated": 6,
-      "reused": 0,
-      "fallback": 9,
-      "coverage": 40
-    },
-    "Nintendo Wii": {
-      "total": 15,
-      "dedicated": 6,
-      "reused": 0,
-      "fallback": 9,
-      "coverage": 40
-    },
-    "Playstation 2": {
-      "total": 27,
-      "dedicated": 17,
-      "reused": 0,
-      "fallback": 10,
-      "coverage": 63
-    },
-    "Playstation 3": {
-      "total": 18,
-      "dedicated": 5,
-      "reused": 0,
-      "fallback": 13,
-      "coverage": 27.8
-    },
-    "Playstation 5": {
-      "total": 12,
-      "dedicated": 3,
-      "reused": 0,
-      "fallback": 9,
-      "coverage": 25
+      "fallback": 11,
+      "coverage": 45
     },
     "Playstation": {
       "total": 21,
@@ -111,38 +34,120 @@
       "fallback": 14,
       "coverage": 33.3
     },
-    "SNES": {
-      "total": 20,
+    "Playstation 2": {
+      "total": 27,
       "dedicated": 10,
       "reused": 0,
-      "fallback": 10,
+      "fallback": 17,
+      "coverage": 37
+    },
+    "Nintendo 64": {
+      "total": 25,
+      "dedicated": 19,
+      "reused": 0,
+      "fallback": 6,
+      "coverage": 76
+    },
+    "Game Boy Color": {
+      "total": 10,
+      "dedicated": 5,
+      "reused": 0,
+      "fallback": 5,
       "coverage": 50
+    },
+    "GameBoy Advance": {
+      "total": 17,
+      "dedicated": 11,
+      "reused": 0,
+      "fallback": 6,
+      "coverage": 64.7
+    },
+    "GameCube": {
+      "total": 16,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 16,
+      "coverage": 0
+    },
+    "Nintendo DS": {
+      "total": 23,
+      "dedicated": 10,
+      "reused": 0,
+      "fallback": 13,
+      "coverage": 43.5
+    },
+    "Nintendo Wii": {
+      "total": 15,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 15,
+      "coverage": 0
+    },
+    "Playstation 3": {
+      "total": 18,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 18,
+      "coverage": 0
+    },
+    "Nintendo 3DS": {
+      "total": 28,
+      "dedicated": 13,
+      "reused": 0,
+      "fallback": 15,
+      "coverage": 46.4
+    },
+    "Nintendo Wii U": {
+      "total": 15,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 15,
+      "coverage": 0
+    },
+    "Nintendo Switch": {
+      "total": 20,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 20,
+      "coverage": 0
+    },
+    "Playstation 5": {
+      "total": 12,
+      "dedicated": 0,
+      "reused": 0,
+      "fallback": 12,
+      "coverage": 0
     }
   },
   "sourceCounts": {
-    "libretro-thumbnails": 121,
-    "launchbox": 23
+    "libretro-thumbnails": 93,
+    "launchbox": 9
   },
   "unresolvedReasons": {
     "ambiguous-launchbox-covers": 61,
     "ambiguous-source-candidates": 64,
     "no-exact-title-platform-match": 10,
     "region-mismatch": 6,
-    "source-artwork-edition-unconfirmed": 2,
+    "source-artwork-edition-unconfirmed": 7,
     "source-artwork-region-mismatch": 9,
     "source-artwork-title-variant-mismatch": 1,
+    "target-artwork-edition-unconfirmed": 37,
     "unsupported-image-type": 1
   },
   "orphanedMappings": 0,
   "orphanedAssets": [],
   "sourceErrors": [],
   "assetStats": {
-    "files": 144,
-    "totalBytes": 66715502,
-    "averageBytes": 463302,
+    "files": 102,
+    "totalBytes": 37340952,
+    "averageBytes": 366088,
     "largestFile": {
-      "file": "/covers/wishlist/1f45849d60e34ef8aee8.png",
-      "bytes": 2540164
+      "file": "/covers/wishlist/bbcad1bb2b21e69eaeb0.jpg",
+      "bytes": 817751
     }
+  },
+  "retainedUnassignedAssets": {
+    "files": 42,
+    "totalBytes": 29374550
   }
 }
