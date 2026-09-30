@@ -355,6 +355,14 @@ After PR #28 is resolved, good next candidates are:
 
 A minimal new-chat prompt can be:
 
-> Work on `mistercimba/retro-collection`. Before doing anything, read `AGENTS.md` and `PROJECT_STATE.md` from `main`. Treat them as the project handoff/current source of truth. Then inspect the relevant current code/PR before making changes. Do not merge anything unless I explicitly approve it.
+> Work on this GitHub repository: https://github.com/mistercimba/retro-collection
+>
+> You have direct access to the repository through the GitHub integration/extension available in this ChatGPT conversation. **Use that GitHub integration directly for repository inspection, branches, files, commits, PRs, checks and repository changes. Do not invent alternative access methods, ask me to paste repository files, tell me to run git commands for you, or switch to web scraping/browser GitHub unless the GitHub integration genuinely cannot perform a required operation.**
+>
+> Before doing anything, use the GitHub integration to read `AGENTS.md` and `PROJECT_STATE.md` from `main`. Treat them as the project handoff and current source of truth.
+>
+> Then inspect the actual current repository state and any relevant open PR/branch before proposing or making changes. If the docs and current GitHub state disagree, trust the current repository state and report the discrepancy.
+>
+> Do not merge anything unless I explicitly approve the merge.
 
 That should be enough to start without replaying old chat history.
