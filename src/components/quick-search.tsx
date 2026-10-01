@@ -3,14 +3,18 @@
 import Link from "next/link";
 import { Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import type { CollectionGame } from "@/lib/data/types";
 import { displayPlatform } from "@/lib/data/platforms";
 import { GameArtwork } from "@/components/artwork";
 import { findQuickSearchMatches } from "@/lib/quick-search.logic";
+import { buildCurrentPagePath, supportsListScrollRestoration } from "@/lib/list-url-state.logic";
+import { saveListScrollPosition } from "@/hooks/use-list-scroll-restoration";
 
 export function QuickSearch({ games, initialSearch = "" }: { games: CollectionGame[]; initialSearch?: string }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const returnTo = buildCurrentPagePath(pathname, searchParams.toString());
   const initialQuery = useMemo(() => new URLSearchParams(initialSearch).get("q") ?? "", [initialSearch]);
   const [query, setQuery] = useState(initialQuery);
   const [open, setOpen] = useState(false);
@@ -35,7 +39,10 @@ export function QuickSearch({ games, initialSearch = "" }: { games: CollectionGa
       {query && <button type="button" onClick={() => { setQuery(""); setOpen(false); }} className="rounded-md p-1 text-white/50 hover:bg-white/10 hover:text-white" aria-label="Limpar pesquisa"><X className="h-4 w-4" /></button>}
     </div>
     {showResults && <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-[60] max-h-[min(60vh,28rem)] overflow-y-auto rounded-xl border border-slate-200 bg-white text-left shadow-2xl">
-      {results.length ? results.map((game) => <Link key={game.collectionId} href={`/game/${encodeURIComponent(game.collectionId)}?from=${encodeURIComponent(pathname)}`} className="grid grid-cols-[44px_1fr] items-center gap-3 border-b border-slate-100 px-3 py-2.5 last:border-0 hover:bg-slate-50" onClick={() => setOpen(false)}>
+      {results.length ? results.map((game) => <Link key={game.collectionId} href={`/game/${encodeURIComponent(game.collectionId)}?from=${encodeURIComponent(returnTo)}`} className="grid grid-cols-[44px_1fr] items-center gap-3 border-b border-slate-100 px-3 py-2.5 last:border-0 hover:bg-slate-50" onClick={(event) => {
+        if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && event.button === 0 && supportsListScrollRestoration(returnTo)) saveListScrollPosition(returnTo);
+        setOpen(false);
+      }}>
         <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="h-14 w-11 rounded-lg" />
         <div className="min-w-0"><p className="truncate font-bold text-slate-950">{game.title}</p><p className="truncate text-xs text-slate-500">{displayPlatform(game.platform)} · {game.collectionId}</p></div>
       </Link>) : <p className="px-4 py-4 text-sm text-slate-500">Nada encontrado.</p>}

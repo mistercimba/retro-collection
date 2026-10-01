@@ -2,6 +2,7 @@ import { getLibrary } from "@/lib/library-store";
 import { platformSlug } from "./platforms";
 import { matchWantTarget } from "./wishlist-matching";
 import { isAuditCompleted, selectLatestValuation } from "./collection-integrity";
+import { sumKnownMarketValues } from "./collection-stats.logic";
 import type { CollectionGame, CollectionStats, WantListEntry } from "./types";
 
 export async function getAllGames(): Promise<CollectionGame[]> {
@@ -44,7 +45,7 @@ export async function getStats(): Promise<CollectionStats> {
         count: items.length,
         audited: items.filter((game) => isAuditCompleted(game.audit?.auditStatus)).length,
         review: items.filter((game) => game.needsReview).length,
-        marketValueEur: items.reduce((sum, game) => sum + (game.marketValueEur ?? 0), 0),
+        marketValueEur: sumKnownMarketValues(items),
       };
     });
 
@@ -54,7 +55,7 @@ export async function getStats(): Promise<CollectionStats> {
     sold: games.filter((g) => g.keepStatus === "Sold").length,
     review: kept.filter((g) => g.needsReview).length,
     auditRecords: games.filter((game) => isAuditCompleted(game.audit?.auditStatus)).length,
-    marketValueEur: kept.reduce((sum, game) => sum + (game.marketValueEur ?? 0), 0),
+    marketValueEur: sumKnownMarketValues(kept),
     platforms,
   };
 }

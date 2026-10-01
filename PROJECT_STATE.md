@@ -8,13 +8,12 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Repository: `mistercimba/retro-collection`
 
-Current production application baseline:
+Current main baseline before the UI audit follow-up:
 
-`a4ed66a5fcaf5e29bc2f7ec5483d536d707bc48c`
+`48a5159c908173740d56f2641ea315217acfbf94`
 
-Commit:
-
-`feat: add local wishlist artwork with edition requirements`
+PR #29 documentation reconciliation is merged. Application behavior at this
+baseline includes the PR #28 squash `a4ed66a5fcaf5e29bc2f7ec5483d536d707bc48c`.
 
 Verified after merge:
 
@@ -104,7 +103,7 @@ Recent UI audit fixes in production:
 
 ## Last visual audit
 
-Audit date: 2026-09-30
+Audit date: 2026-10-01 (partial, browser-first)
 
 Observed production at that time:
 
@@ -112,13 +111,40 @@ Observed production at that time:
 - 520 collection games
 - 298 wishlist targets
 
-Desktop browser viewport available to the worker was 1363x936.
+Laptop viewport audited: 1363x936. Dashboard, Collection, Wishlist, platform
+lists, both detail types, search/filter/sort, read-only form inspection, loading,
+empty/unpriced states, active sidebar and list return/scroll were observed.
 
 The audit found no blocker/data-loss issue.
 
-Mobile and laptop layouts were **not fully audited** because the worker could not change viewport.
+Mobile narrow/wide and mobile navigation remain **unverified** because the
+browser could not change viewport. The offline shell and authenticated snapshot
+were observed, including a refreshed capture timestamp after online navigation.
+A real network cut/reconnection and installed cache inspection remain pending;
+code inspection confirms the SW only caches the offline shell. Do not mark
+mobile or offline reconnect as PASS.
 
-Do not claim mobile UX is fully verified.
+## UI audit follow-up — focused implementation
+
+Branch: `fix/ui-audit-followup`, based on main `48a5159…`.
+
+Implemented in this branch (production status follows the live PR/merge):
+
+- UX-01: distinct accessible names for local search, filter and sort, adapted to
+  Collection/Wishlist;
+- UX-02: quick search preserves pathname and query string and uses existing
+  scroll saving only on lists supporting restoration;
+- UX-03: Wishlist Previous/Next shares query/filter/sort selection with the
+  origin platform Wishlist list; validated fallback remains platform title order;
+- UX-04: platform and overall aggregates are null when no values are known;
+  mixed values sum known amounts, and a real zero remains zero;
+- singular/plural game counts in the related dashboard/Collection/Wishlist/platform views.
+
+No redesign, artwork/metadata/price enrichment or offline/reconnect changes.
+Regression tests cover context/safe origins, Wishlist filtering and all supported
+sort modes, and null/mixed/zero aggregate semantics. Browser verification and
+quality/remote check results must be read from the final PR status, not inferred
+from this implementation note.
 
 ## Completed — PR #28 Wishlist local artwork
 
@@ -259,10 +285,9 @@ were checked against the code and installed @vercel/blob 2.6.1 credential handli
 APP_PASSWORD is required operationally for a private deploy, but auth.ts currently
 disables the gate if it is absent; documentation must not claim fail-closed behavior.
 
-The documentation-only branch is `docs/reconcile-current-architecture`. Its live
-PR/checks are the review source of truth; do not merge without explicit approval.
-The application baseline above is unchanged by this cleanup or the later
-handoff-only commit on main (`316654a1ca4033cb76408fd077c0dd95ac458051`).
+PR #29 (`docs/reconcile-current-architecture`) was merged with squash into main
+as `48a5159c908173740d56f2641ea315217acfbf94`. It only changed documentation and
+`.env.example`; no runtime logic changed.
 
 ## Known semantic debt
 
@@ -315,7 +340,7 @@ Production commit:
 
 Good next candidates:
 
-1. finish a real mobile/laptop UI audit, including the existing offline flow;
+1. finish real mobile verification and network cut/reconnect testing of the existing offline flow;
 2. optionally optimize Wishlist image sizes as a separate maintenance task;
 3. only then move on to new product features.
 

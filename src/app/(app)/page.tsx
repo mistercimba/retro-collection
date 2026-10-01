@@ -3,7 +3,7 @@ import { PlatformArtwork } from "@/components/artwork";
 import { QuickSearch } from "@/components/quick-search";
 import { getAllGames, getStats } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/lib/data/platforms";
-import { formatEuro } from "@/lib/format";
+import { formatEuro, gameCountLabel } from "@/lib/format";
 
 export default async function HomePage() {
   const [stats, games] = await Promise.all([getStats(), getAllGames()]);
@@ -18,7 +18,7 @@ export default async function HomePage() {
 
     <section className="grid grid-cols-3 gap-2">
       <Summary value={String(stats.platforms.length)} label="consolas" />
-      <Summary value={String(stats.kept)} label="jogos" />
+      <Summary value={String(stats.kept)} label={stats.kept === 1 ? "jogo" : "jogos"} />
       <Summary value={formatEuro(stats.marketValueEur)} label="valor total" />
     </section>
 
@@ -31,7 +31,7 @@ export default async function HomePage() {
           <span className="grid h-24 w-28 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white/65"><PlatformArtwork platform={platform.platform} className="h-full w-full" /></span>
           <span className="min-w-0 flex-1">
             <span className="flex items-baseline justify-between gap-2"><strong className="truncate text-base font-black text-slate-950">{displayPlatform(platform.platform)}</strong><span className="text-xs font-black text-slate-400">{platformReleaseYear(platform.platform) < 9990 ? platformReleaseYear(platform.platform) : "—"}</span></span>
-            <span className="mt-2 flex gap-3 text-xs font-semibold text-slate-500"><span>{platform.count} jogos</span><span>{formatEuro(platform.marketValueEur)}</span></span>
+            <span className="mt-2 flex gap-3 text-xs font-semibold text-slate-500"><span>{gameCountLabel(platform.count)}</span><span>{formatEuro(platform.marketValueEur)}</span></span>
           </span>
         </Link>)}
       </div>

@@ -8,6 +8,8 @@ import {findGameMetadataByTitle,getGameMetadata} from "@/lib/game-metadata";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 import { searchParamsToString } from "@/lib/list-url-state.logic";
 
+import { gameCountLabel } from "@/lib/format";
+
 export default async function PlatformPage({params,searchParams}:{params:Promise<{slug:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{slug},query,collectionGames,wantlist]=await Promise.all([params,searchParams,getCollectionGames(),getWantlist()]);
  const known=[...new Set([...collectionGames.map(x=>x.platform),...wantlist.map(x=>x.platform)])];
@@ -31,7 +33,7 @@ export default async function PlatformPage({params,searchParams}:{params:Promise
   <header className="collection-hero">
    <p className="eyebrow">PLATAFORMA · {platformReleaseYear(platform)<9990?platformReleaseYear(platform):"—"}</p>
    <h1 className="mt-1 text-3xl font-black tracking-tight text-slate-950">{displayPlatform(platform)}</h1>
-   <p className="mt-1 text-sm font-semibold text-slate-500">{collection.length} jogos na coleção · {wishlist.length} na wishlist</p>
+   <p className="mt-1 text-sm font-semibold text-slate-500">{gameCountLabel(collection.length)} na coleção · {wishlist.length} na wishlist</p>
   </header>
   <PlatformLibraryBrowser slug={slug} platform={platform} initialTab={query.tab==="wishlist"?"wishlist":"collection"} initialSearch={searchParamsToString(query)} collection={collection} wishlist={wishlist}/>
  </div>;

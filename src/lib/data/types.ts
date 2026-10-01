@@ -65,7 +65,7 @@ export interface PlatformStats {
   count: number;
   audited: number;
   review: number;
-  marketValueEur: number;
+  marketValueEur: number | null;
 }
 
 export interface CollectionStats {
@@ -74,7 +74,7 @@ export interface CollectionStats {
   sold: number;
   review: number;
   auditRecords: number;
-  marketValueEur: number;
+  marketValueEur: number | null;
   platforms: PlatformStats[];
 }
 

@@ -5,6 +5,8 @@ import { getStats, getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, platformSlug, sortPlatformsByRelease } from "@/lib/data/platforms";
 import { ActionSubmitButton } from "@/components/action-submit-button";
 
+import { gameCountLabel } from "@/lib/format";
+
 export const metadata = { title: "Wishlist" };
 
 export default async function WantPage() {
@@ -17,11 +19,11 @@ export default async function WantPage() {
   })).filter((item) => item.count > 0));
 
   return <div className="space-y-6 pb-8">
-    <header className="collection-hero wishlist-hero"><p className="eyebrow text-rose-700">WISHLIST</p><h1 className="mt-1 text-3xl font-black text-slate-950">{active.length} jogos em falta</h1><p className="mt-1 text-sm font-semibold text-slate-500">Escolhe uma consola.</p></header>
+    <header className="collection-hero wishlist-hero"><p className="eyebrow text-rose-700">WISHLIST</p><h1 className="mt-1 text-3xl font-black text-slate-950">{gameCountLabel(active.length)} em falta</h1><p className="mt-1 text-sm font-semibold text-slate-500">Escolhe uma consola.</p></header>
     <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
       {groups.map((group) => <Link key={group.platform} href={"/platform/" + platformSlug(group.platform) + "?tab=wishlist"} className="console-card group">
         <span className="h-24 w-28 shrink-0 overflow-hidden rounded-2xl bg-white/65"><PlatformArtwork platform={group.platform} className="h-full w-full" /></span>
-        <span className="min-w-0 flex-1"><span className="flex items-baseline justify-between gap-2"><strong className="truncate text-base font-black text-slate-950">{displayPlatform(group.platform)}</strong><span className="text-xs font-black text-slate-400">{platformReleaseYear(group.platform) < 9990 ? platformReleaseYear(group.platform) : "—"}</span></span><p className="mt-2 text-xs font-semibold text-slate-500">{group.count} jogos em falta</p></span>
+        <span className="min-w-0 flex-1"><span className="flex items-baseline justify-between gap-2"><strong className="truncate text-base font-black text-slate-950">{displayPlatform(group.platform)}</strong><span className="text-xs font-black text-slate-400">{platformReleaseYear(group.platform) < 9990 ? platformReleaseYear(group.platform) : "—"}</span></span><p className="mt-2 text-xs font-semibold text-slate-500">{gameCountLabel(group.count)} em falta</p></span>
       </Link>)}
     </section>
 
