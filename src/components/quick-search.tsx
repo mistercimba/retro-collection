@@ -14,7 +14,8 @@ import { saveListScrollPosition } from "@/hooks/use-list-scroll-restoration";
 export function QuickSearch({ games, initialSearch = "" }: { games: CollectionGame[]; initialSearch?: string }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const returnTo = buildCurrentPagePath(pathname, searchParams.toString());
+  const [searchOrigin, setSearchOrigin] = useState<string | null>(null);
+  const returnTo = searchOrigin ?? buildCurrentPagePath(pathname, searchParams.toString());
   const initialQuery = useMemo(() => new URLSearchParams(initialSearch).get("q") ?? "", [initialSearch]);
   const [query, setQuery] = useState(initialQuery);
   const [open, setOpen] = useState(false);
@@ -31,11 +32,16 @@ export function QuickSearch({ games, initialSearch = "" }: { games: CollectionGa
   }, []);
 
   const showResults = open && query.trim().length >= 2;
+  const openSearch = () => {
+    // List controls replace browser history without necessarily refreshing the layout's router state.
+    setSearchOrigin(buildCurrentPagePath(window.location.pathname, window.location.search));
+    setOpen(true);
+  };
 
   return <div ref={rootRef} className="relative z-50">
     <div className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-3 py-2.5 text-white shadow-sm focus-within:border-lime-200/60 focus-within:bg-white/15">
       <Search className="h-4 w-4 shrink-0 text-lime-200" />
-      <input type="search" aria-label="Pesquisa rápida na coleção" value={query} onFocus={() => setOpen(true)} onChange={(event) => { setQuery(event.target.value); setOpen(true); }} placeholder="Procurar jogo…" autoComplete="off" spellCheck={false} className="min-w-0 flex-1 bg-transparent text-sm font-semibold text-white outline-none placeholder:text-white/45 [&::-webkit-search-cancel-button]:hidden" />
+      <input type="search" aria-label="Pesquisa rápida na coleção" value={query} onFocus={openSearch} onChange={(event) => { setQuery(event.target.value); openSearch(); }} placeholder="Procurar jogo…" autoComplete="off" spellCheck={false} className="min-w-0 flex-1 bg-transparent text-sm font-semibold text-white outline-none placeholder:text-white/45 [&::-webkit-search-cancel-button]:hidden" />
       {query && <button type="button" onClick={() => { setQuery(""); setOpen(false); }} className="rounded-md p-1 text-white/50 hover:bg-white/10 hover:text-white" aria-label="Limpar pesquisa"><X className="h-4 w-4" /></button>}
     </div>
     {showResults && <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-[60] max-h-[min(60vh,28rem)] overflow-y-auto rounded-xl border border-slate-200 bg-white text-left shadow-2xl">
