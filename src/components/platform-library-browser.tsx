@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { GameArtwork } from "@/components/artwork";
 import { WishlistArtwork } from "@/components/wishlist-artwork";
 import { formatEuro } from "@/lib/format";
@@ -16,6 +16,7 @@ type PriceLoad = { status: "idle" | "loading" | "loaded" | "error"; platform: st
 const PRIORITY_RANK: Record<string, number> = { grail: 0, alta: 1, "média": 2, media: 2, baixa: 3 };
 const rank = (v: string) => PRIORITY_RANK[v.toLocaleLowerCase("pt-PT")] ?? 9;
 const wishKey = wishlistPriceKey;
+const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 export function PlatformLibraryBrowser({slug,platform,initialTab,initialSearch="",collection,wishlist}:{slug:string;platform:string;initialTab:"collection"|"wishlist";initialSearch?:string;collection:C[];wishlist:W[]}){
  const router = useRouter();
