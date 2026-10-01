@@ -50,12 +50,12 @@ export function PlatformLibraryBrowser({slug,platform,initialTab,initialSearch="
   const href=buildPlatformListUrl(slug,next);
   window.history.replaceState(window.history.state,"",href);
  },[slug]);
- useEffect(()=>{
+ useIsoLayoutEffect(()=>{
   const sync=()=>{const next=parsePlatformListState(window.location.search,initialTab);stateRef.current=next;setState(next);};
   window.addEventListener("popstate",sync);
   return()=>window.removeEventListener("popstate",sync);
  },[initialTab]);
- useEffect(()=>{
+ useIsoLayoutEffect(()=>{
   const next=parsePlatformListState(initialSearch,initialTab);
   if(JSON.stringify(next)!==JSON.stringify(stateRef.current)){stateRef.current=next;setState(next);}
  },[initialSearch,initialTab]);
