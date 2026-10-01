@@ -1,3 +1,5 @@
+import { getSafeListReturnPath } from "./list-url-state.logic";
+
 export type WishlistPriceCondition = "loose" | "cib" | "new";
 export type WishlistPriceGuide = { looseEur: number | null; cibEur: number | null; newEur: number | null };
 export type WishlistPriceLine = { label: string; value: number | null; reference: boolean };
@@ -61,4 +63,34 @@ export function serializePlatformListState(state: PlatformListState): string {
 export function buildPlatformListUrl(slug: string, state: PlatformListState): string {
   const query = serializePlatformListState(state);
   return `/platform/${encodeURIComponent(slug)}${query ? `?${query}` : ""}`;
+}
+
+export type WishlistListItem = { targetId: string; title: string; priority: string; targetVersion: string; priceCeilingEur: number | null };
+const priorityRank: Record<string, number> = { grail: 0, alta: 1, "média": 2, media: 2, baixa: 3 };
+const rank = (value: string) => priorityRank[value.toLocaleLowerCase("pt-PT")] ?? 9;
+export const wishlistPriceKey = (item: Pick<WishlistListItem, "targetId" | "title">) => `${item.targetId}:${item.title}`;
+
+export function filterWishlistItems<T extends WishlistListItem>(items: readonly T[], state: Pick<PlatformListState, "q" | "filter">): T[] {
+  return items.filter(item => (!state.q || item.title.toLocaleLowerCase("pt-PT").includes(state.q.toLocaleLowerCase("pt-PT"))) && (state.filter === "all" || item.priority === state.filter));
+}
+
+export function selectWishlistItems<T extends WishlistListItem>(items: readonly T[], state: PlatformListState, prices: Record<string, WishlistPriceGuide> = {}): T[] {
+  const filtered = filterWishlistItems(items, state);
+  if (state.sort === "max-desc") return sortWishlistByCeiling(filtered);
+  return filtered.sort((a, b) => state.sort === "title" ? a.title.localeCompare(b.title, "pt-PT") : state.sort === "market-desc"
+    ? (getWishlistPriceLines(b.targetVersion, prices[wishlistPriceKey(b)] ?? null)[0]?.value ?? -1) - (getWishlistPriceLines(a.targetVersion, prices[wishlistPriceKey(a)] ?? null)[0]?.value ?? -1)
+    : rank(a.priority) - rank(b.priority) || a.title.localeCompare(b.title, "pt-PT"));
+}
+
+export function getWishlistOriginState(from: string | string[] | undefined, slug: string): PlatformListState | null {
+  const safe = getSafeListReturnPath(from);
+  if (!safe) return null;
+  const url = new URL(safe, "https://retro-collection.invalid");
+  if (url.pathname !== `/platform/${slug}` || url.searchParams.getAll("tab").length !== 1 || url.searchParams.get("tab") !== "wishlist") return null;
+  return parsePlatformListState(url.search);
+}
+
+export function getWishlistNeighbors<T extends WishlistListItem>(items: readonly T[], current: Pick<T, "targetId" | "title">): { previous: T | null; next: T | null } {
+  const index = items.findIndex(item => item.targetId === current.targetId && item.title === current.title);
+  return { previous: index > 0 ? items[index - 1] : null, next: index >= 0 && index < items.length - 1 ? items[index + 1] : null };
 }

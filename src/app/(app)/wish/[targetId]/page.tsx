@@ -8,10 +8,11 @@ import {editWishlistGame,purchaseWishlistGame,removeWishlistGame} from "@/lib/li
 import {getWantlist} from "@/lib/data/collection-service";
 import {displayPlatform,platformSlug} from "@/lib/data/platforms";
 import {findGameMetadataByTitle} from "@/lib/game-metadata";
-import {getPricechartingGuide} from "@/lib/pricecharting-catalog";
+import {getPricechartingGuide,getPricechartingGuides} from "@/lib/pricecharting-catalog";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
+import { filterWishlistItems, getWishlistNeighbors, getWishlistOriginState, selectWishlistItems, wishlistPriceKey } from "@/lib/wishlist-price.logic";
 
 export default async function WishDetailPage({params,searchParams}:{params:Promise<{targetId:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{targetId},query,targets]=await Promise.all([params,searchParams,getWantlist()]);
@@ -20,16 +21,19 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
  const wantedTitle=typeof query.title==="string"?query.title:"";
  const target=targets.find(x=>x.targetId===decodedId&&(!wantedPlatform||x.platform===wantedPlatform)&&(!wantedTitle||x.title===wantedTitle))??targets.find(x=>x.targetId===decodedId);
  if(!target) notFound();
- const guide=await getPricechartingGuide(target.platform,target.title,target.targetVersion);
+ const guidePromise=getPricechartingGuide(target.platform,target.title,target.targetVersion);
  const metadata=findGameMetadataByTitle(target.title);
  const artworkSrc=resolveWishlistArtwork(target);
  const back=getSafeListReturnPath(query.from)??`/platform/${platformSlug(target.platform)}?tab=wishlist`;
  const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
- const siblings=targets.filter(x=>x.platform===target.platform&&x.planState!=="inactive"&&x.matchState!=="acquired").sort((a,b)=>a.title.localeCompare(b.title,"pt-PT"));
- const index=siblings.findIndex(x=>x.targetId===target.targetId&&x.title===target.title);
+ const origin=getWishlistOriginState(query.from,platformSlug(target.platform));
+ const state=origin??{tab:"wishlist" as const,q:"",filter:"all",sort:"title"};
+ const candidates=filterWishlistItems(targets.filter(x=>x.platform===target.platform&&x.planState!=="inactive"&&x.matchState!=="acquired"),state);
+ const prices=origin?.sort==="market-desc"?Object.fromEntries(await getPricechartingGuides(candidates.map(x=>({key:wishlistPriceKey(x),platform:x.platform,title:x.title,edition:x.targetVersion})))):{};
+ const siblings=selectWishlistItems(candidates,state,prices);
+ const {previous,next}=getWishlistNeighbors(siblings,target);
+ const guide=await guidePromise;
  const siblingHref=(item:typeof target)=>`/wish/${encodeURIComponent(item.targetId)}?platform=${encodeURIComponent(item.platform)}&title=${encodeURIComponent(item.title)}&from=${encodeURIComponent(back)}`;
- const previous=index>0?siblings[index-1]:null;
- const next=index>=0&&index<siblings.length-1?siblings[index+1]:null;
 
  return <div className="mx-auto max-w-4xl space-y-5 pb-10">
   <div className="flex items-center justify-between gap-3"><Link href={back} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Wishlist</Link><div className="flex gap-2">{previous&&<Link href={siblingHref(previous)} className="reference-link">← Anterior</Link>}{next&&<Link href={siblingHref(next)} className="reference-link">Seguinte →</Link>}</div></div>

@@ -1,8 +1,27 @@
 import { describe, expect, it } from "vitest";
-import { getSafeListReturnPath, listReturnLabel, parseListState, serializeListState } from "./list-url-state.logic";
+import { buildCurrentPagePath, supportsListScrollRestoration, getSafeListReturnPath, listReturnLabel, parseListState, serializeListState } from "./list-url-state.logic";
 
 describe("URL-backed list state", () => {
   const defaults = { q: "", platform: "", genre: "", review: false, sort: "title-asc" };
+
+  it("preserves the complete quick-search origin, including encoded text and repeated params", () => {
+    const path = buildCurrentPagePath("/platform/ps2", "tab=wishlist&q=Persona+%26+Zelda&filter=Grail&sort=title&tag=a&tag=b");
+    const detail = new URL("/game/test", "https://retro-collection.invalid");
+    detail.searchParams.set("from", path);
+    expect(detail.searchParams.get("from")).toBe(path);
+    const origin = new URL(detail.searchParams.get("from")!, detail.origin);
+    expect(origin.searchParams.get("q")).toBe("Persona & Zelda");
+    expect(origin.searchParams.getAll("tag")).toEqual(["a", "b"]);
+    expect(origin.searchParams.get("tab")).toBe("wishlist");
+    expect(origin.searchParams.get("filter")).toBe("Grail");
+    expect(origin.searchParams.get("sort")).toBe("title");
+    expect(buildCurrentPagePath("/", "")).toBe("/");
+  });
+
+  it("saves scroll only for routes that use existing restoration", () => {
+    for (const path of ["/platform/ps2?tab=wishlist&q=persona", "/collection/games?q=zelda", "/sell?status=sold"]) expect(supportsListScrollRestoration(path)).toBe(true);
+    for (const path of ["/", "/history", "/search?q=zelda", "/want", "/collection", "//example.com/platform/ps2"]) expect(supportsListScrollRestoration(path)).toBe(false);
+  });
 
   it("parses and serializes meaningful filters while omitting defaults", () => {
     const state = parseListState("?q=Silent%20Hill&genre=Adventure&review=1&sort=value-desc", defaults);

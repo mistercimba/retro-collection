@@ -3,6 +3,18 @@ import { displayPlatform, platformSlug } from "./data/platforms";
 export type ListStateValue = string | boolean;
 export type ListState = Record<string, ListStateValue>;
 
+export function buildCurrentPagePath(pathname: string, search: string): string {
+  const query = new URLSearchParams(search).toString();
+  return `${pathname}${query ? `?${query}` : ""}`;
+}
+
+export function supportsListScrollRestoration(path: string): boolean {
+  const safe = getSafeListReturnPath(path);
+  if (!safe) return false;
+  const pathname = new URL(safe, "https://retro-collection.invalid").pathname;
+  return pathname === "/collection/games" || pathname === "/sell" || /^\/platform\/[a-z0-9-]+$/.test(pathname);
+}
+
 export function searchParamsToString(params: Record<string, string | string[] | undefined>): string {
   const search = new URLSearchParams();
   for (const [key, value] of Object.entries(params)) {

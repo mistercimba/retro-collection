@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildPlatformListUrl, getWishlistPriceCondition, getWishlistPriceLines, parsePlatformListState, sortWishlistByCeiling } from "./wishlist-price.logic";
+import { buildPlatformListUrl, getWishlistPriceCondition, getWishlistPriceLines, parsePlatformListState, sortWishlistByCeiling, selectWishlistItems, getWishlistOriginState, getWishlistNeighbors, wishlistPriceKey } from "./wishlist-price.logic";
 
 describe("wishlist condition pricing", () => {
   const guide = { looseEur: 35, cibEur: 120, newEur: 250 };
@@ -19,6 +19,39 @@ describe("wishlist condition pricing", () => {
       { label: "CIB · referência", value: 120, reference: true },
     ]);
     expect(getWishlistPriceLines("selado", null)).toEqual([{ label: "PC New", value: null, reference: false }]);
+  });
+});
+
+describe("wishlist navigation follows its origin list", () => {
+  const items = [
+    { targetId: "NOVO", title: "Project Zero", priority: "Alta", targetVersion: "CIB", priceCeilingEur: null },
+    { targetId: "NOVO", title: "Persona 4", priority: "Grail", targetVersion: "CIB", priceCeilingEur: 20 },
+    { targetId: "NOVO", title: "Persona 3 FES", priority: "Grail", targetVersion: "loose", priceCeilingEur: 50 },
+  ];
+  it("filters by query and priority and stops at the last matching title", () => {
+    const from = "/platform/ps2?tab=wishlist&q=PERSONA&filter=Grail&sort=title";
+    const state = getWishlistOriginState(from, "ps2")!;
+    const list = selectWishlistItems(items, state);
+    expect(list.map(x => x.title)).toEqual(["Persona 3 FES", "Persona 4"]);
+    expect(getWishlistNeighbors(list, items[1])).toEqual({ previous: items[2], next: null });
+    expect(getWishlistNeighbors(list, items[0])).toEqual({ previous: null, next: null });
+    expect(buildPlatformListUrl("ps2", state)).toBe("/platform/ps2?tab=wishlist&q=PERSONA&filter=Grail&sort=title");
+  });
+  it("shares priority and maximum order without mutating the input", () => {
+    const state = { tab: "wishlist" as const, q: "", filter: "all", sort: "priority" };
+    expect(selectWishlistItems(items, state).map(x => x.title)).toEqual(["Persona 3 FES", "Persona 4", "Project Zero"]);
+    expect(selectWishlistItems(items, { ...state, sort: "max-desc" }).map(x => x.priceCeilingEur)).toEqual([50, 20, null]);
+    expect(items[0].title).toBe("Project Zero");
+  });
+  it("sorts by the requested market condition, keeps nulls last and ties stable", () => {
+    const prices = Object.fromEntries(items.map((item, i) => [wishlistPriceKey(item), { looseEur: [5, 1, 30][i], cibEur: [null, 20, 100][i], newEur: null }]));
+    const state = { tab: "wishlist" as const, q: "", filter: "all", sort: "market-desc" };
+    expect(selectWishlistItems(items, state, prices).map(x => x.title)).toEqual(["Persona 3 FES", "Persona 4", "Project Zero"]);
+    expect(selectWishlistItems(items, state).map(x => x.title)).toEqual(items.map(x => x.title));
+  });
+  it("rejects external, wrong-platform, non-wishlist and ambiguous origins", () => {
+    for (const from of ["https://evil.test/platform/ps2?tab=wishlist", "//evil.test/platform/ps2?tab=wishlist", "/platform/ps5?tab=wishlist", "/platform/ps2", "/platform/ps2?tab=collection", "/platform/ps2?tab=wishlist&tab=collection", "/want?tab=wishlist", "/login?tab=wishlist"]) expect(getWishlistOriginState(from, "ps2")).toBeNull();
+    expect(getWishlistOriginState(["/platform/ps2?tab=wishlist"], "ps2")).toBeNull();
   });
 });
 
