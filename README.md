@@ -8,7 +8,7 @@ wishlist. Next.js App Router, TypeScript, Tailwind, Node.js 22 e Vercel.
 - Dashboard, pesquisa, filtros e ordenação por coleção/plataforma.
 - Collection e Wishlist com criação, edição e remoção de jogos.
 - Compra de um target da Wishlist: cria a cópia e o registo de compra na Collection.
-- Detalhes da cópia, edição dos dados de compra e consulta das valuations associadas.
+- Detalhes da cópia, edição dos dados de compra, fotos privadas da cópia e consulta das valuations associadas.
 - Para vender/Vendidos e histórico das alterações feitas na app.
 - Metadata, capas e imagens das plataformas locais; referências de preço e links de pesquisa.
 - PWA com consulta offline limitada da coleção previamente sincronizada.
@@ -18,8 +18,8 @@ Rotas principais: `/`, `/collection`, `/collection/games`, `/platform/[slug]`,
 
 ## Arquitetura e dados
 
-A app é a source of truth dos dados pessoais mutáveis. A persistência é um único
-**private Vercel Blob**, no caminho fixo `retro-collection/library.json`:
+A app é a source of truth dos dados pessoais mutáveis. Os dados estruturados vivem
+num **private Vercel Blob**, no caminho fixo `retro-collection/library.json`:
 
 ```ts
 {
@@ -39,6 +39,13 @@ runtime: se faltar ou for inválido, a leitura falha. Não há seed automático,
 fallback para Google ou reposição automática a partir do snapshot encriptado.
 Blobs antigos sem `history` são lidos com histórico vazio; não se inventa histórico
 anterior à introdução desse registo.
+
+Fotos da cópia física usam o mesmo store privado, em objetos separados sob
+`retro-collection/copy-photos/<collectionId>/...`. O `library.json` guarda apenas
+metadata e o pathname de cada foto. Upload, leitura e remoção passam por rotas
+autenticadas da própria app; os bytes não são públicos nem são embebidos no JSON.
+Imagens grandes são reduzidas no browser antes do upload e o servidor aceita
+JPEG, PNG, WebP ou AVIF até 4 MB após essa preparação.
 
 Google Sheets é apenas contexto de migração/manutenção legado. Os antigos PLAN
 significavam prioridade pessoal; a migração originou os targets atuais, que agora
@@ -105,7 +112,7 @@ configurados.
 
 | Variável | Uso atual |
 |---|---|
-| `BLOB_READ_WRITE_TOKEN` | Credencial server-side do store Blob privado. `@vercel/blob` 2.6.1 lê-a implicitamente; o código não passa um token nos métodos `get`/`put`. |
+| `BLOB_READ_WRITE_TOKEN` | Credencial server-side do store Blob privado. `@vercel/blob` 2.6.1 lê-a implicitamente; é usada pela `library.json` e pelas fotos privadas das cópias. |
 | `APP_PASSWORD` | Password do gate privado, validada no servidor; cookie HttpOnly, SameSite=Lax e Secure em produção. Configura-a para proteger o deploy. Sem esta variável, o gate fica desativado; o runtime atual não impõe um erro de configuração por omissão. |
 | `PRICECHARTING_CATALOG_GITHUB_TOKEN` | Opcional para browsing; necessário para preços. Token de leitura de Contents limitado ao repositório privado `mistercimba/vinted-retro-search`. |
 | `PRICECHARTING_CATALOG_REF` | Opcional; branch/tag do snapshot de preços, por defeito `main`. |

@@ -1,4 +1,4 @@
-import { History, Pencil, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { Camera, History, Pencil, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { getLibrary } from "@/lib/library-store";
 import { displayPlatform } from "@/lib/data/platforms";
 import type { LibraryHistoryAction } from "@/lib/data/types";
@@ -9,6 +9,8 @@ const actionMeta: Record<LibraryHistoryAction, { label: string; icon: typeof His
   "collection.add": { label: "Coleção", icon: Plus },
   "collection.edit": { label: "Coleção", icon: Pencil },
   "collection.remove": { label: "Coleção", icon: Trash2 },
+  "collection.photo.add": { label: "Foto", icon: Camera },
+  "collection.photo.remove": { label: "Foto", icon: Trash2 },
   "wishlist.add": { label: "Wishlist", icon: Plus },
   "wishlist.edit": { label: "Wishlist", icon: Pencil },
   "wishlist.remove": { label: "Wishlist", icon: Trash2 },

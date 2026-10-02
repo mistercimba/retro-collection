@@ -5,23 +5,24 @@ Last updated: 2026-10-02
 This is the living project handoff. Read `AGENTS.md` first.
 
 
-## Active product work — PR #36 Wishlist buying-reference filters
+## Active product work — owned-copy photos
 
-Branch: `feat/wishlist-reference-filters`
+Branch: `feat/owned-copy-photos`
 
-PR #35 is merged in `main` and the Wishlist PriceCharting + CeX buy-reference engine is now the baseline.
+PR #36 is merged in `main` and the Wishlist filters/reference-matching work is now the production baseline.
 
-The current open PR advances the next UX roadmap item:
-- Wishlist filters by priority, target condition (**Loose / CIB / por definir**) and calculated buy-reference availability;
-- Wishlist sort by calculated buy reference, with the legacy manual amount explicitly labelled as manual;
-- old `sort=market-desc` URLs migrate to the new calculated-reference sort;
-- filter/search/sort state remains URL-backed;
-- detail Previous/Next navigation reproduces the same filtered/sorted working set, including reference-dependent filters;
-- no schema or collection/wishlist mutation changes.
+The current branch advances the next item in the original product priority:
+- private photos attached to a specific physical `collectionId`;
+- categories for front, back, disc/cartridge, manual/inserts and extras;
+- client-side reduction for large images before upload;
+- authenticated private Blob upload/read/delete without exposing Blob URLs;
+- photo add/remove entries in the existing forward-only history;
+- best-effort Blob cleanup when a photo or whole collection item is removed;
+- no database, new storage provider or schema-version migration.
 
-PR #36 is **not merged** pending checks and explicit user approval.
+Do not mutation-test this against production/preview if that environment shares the production Blob. Pure tests/build are the default validation until the feature is intentionally used.
 
-A 298-title static Wishlist identity audit is recorded in `docs/WISHLIST_REFERENCE_MATCH_AUDIT_2026-10-02.md`. The matcher now has shared conservative normalization plus a platform-scoped verified regional alias table. A separate upstream coverage defect was found: CeX Portugal exposes GBA under `GBA Jogos`, which the hunter discarded despite existing GBA support. Hunter PR #409 fixes that category alias; Retro Collection must consume the refreshed catalog after #409 is merged. PS3/PS5 PriceCharting remain source-snapshot coverage debt rather than matcher failures.
+The Wishlist reference audit from PR #36 remains in `docs/WISHLIST_REFERENCE_MATCH_AUDIT_2026-10-02.md`. GBA CeX coverage still depends on the upstream hunter category/catalog refresh, while PS3/PS5 PriceCharting coverage remains separate source-snapshot debt.
 
 ## Current production baseline
 
@@ -29,27 +30,31 @@ Repository: `mistercimba/retro-collection`
 
 Current `main` baseline:
 
-`52351ebcad8b84b41e100df26e65c72705e34436`
+`8e7b248e8a8ced54572ff13cb4d1ceed533161f2`
 
-This is the squash merge of PR #35, which made the Wishlist PriceCharting + CeX
-buy-reference engine the production baseline. PRs #30–#34 and the earlier Blob,
-UI and Wishlist-artwork work are also included in this history.
+This is the squash merge of PR #36. Production now includes the Wishlist
+buy-reference engine from PR #35 plus the PR #36 filters, URL-backed state,
+detail working-set navigation and conservative shared title matching.
 
 Verified for the current main commit:
 
 - GitHub Actions: SUCCESS
 - Vercel production: SUCCESS
-- PR #35: merged/closed
+- PR #36: merged/closed
 
 ## Current architecture
 
 ### Personal data
 
-Source of truth: private Vercel Blob
+Source of truth: private Vercel Blob.
 
-Path:
+Structured library path:
 
 `retro-collection/library.json`
+
+Owned-copy photo bytes, when present:
+
+`retro-collection/copy-photos/<collectionId>/...`
 
 The app owns its mutable data:
 
@@ -58,6 +63,7 @@ The app owns its mutable data:
 - purchases
 - valuations
 - history
+- owned-copy photo metadata; photo bytes are separate private Blob objects
 
 Google Sheets is legacy/migration context only.
 

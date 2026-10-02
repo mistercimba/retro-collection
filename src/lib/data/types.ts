@@ -1,5 +1,16 @@
 export type KeepStatus = "Collection" | "Sell" | "Sold" | string;
 
+export type OwnedCopyPhotoKind = "front" | "back" | "media" | "manual" | "extras";
+
+export interface OwnedCopyPhoto {
+  id: string;
+  kind: OwnedCopyPhotoKind;
+  pathname: string;
+  contentType: string;
+  originalName: string;
+  uploadedAt: string;
+}
+
 export interface CollectionItem {
   collectionId: string;
   catalogId: string;
@@ -27,6 +38,7 @@ export interface CollectionItem {
   migrationConfidence: string;
   notes: string;
   legacyName: string;
+  photos?: OwnedCopyPhoto[];
 }
 
 export interface AuditRecord {
@@ -136,6 +148,8 @@ export type LibraryHistoryAction =
   | "collection.add"
   | "collection.edit"
   | "collection.remove"
+  | "collection.photo.add"
+  | "collection.photo.remove"
   | "wishlist.add"
   | "wishlist.edit"
   | "wishlist.remove"
