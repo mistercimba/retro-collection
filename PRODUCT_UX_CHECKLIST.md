@@ -81,12 +81,12 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - One-of targets remain deliberately unresolved rather than choosing a game silently.
   - PS3/PS5 PriceCharting coverage is separate source-snapshot debt, not a title-match bug.
 
-- [~] **Better filters for real collector workflows**
-  - Global Collection already supports platform, completeness, condition, region, edition, genre and attention filters.
-  - PR #36 adds priority + **Loose/CIB/por definir** + **com/sem referência de compra** to the Wishlist.
-  - Wishlist sorting moves from raw PriceCharting/"maximum" semantics to the calculated buy reference and the clearly-labelled legacy manual reference.
+- [x] **Better filters for real collector workflows**
+  - Global Collection supports platform, completeness, condition, region, edition, genre and attention filters.
+  - PR #36 added priority + **Loose/CIB/por definir** + **com/sem referência de compra** to the Wishlist.
+  - Wishlist sorting now uses the calculated buy reference and the clearly-labelled legacy manual reference.
   - Filter/sort/search state remains URL-backed and detail navigation preserves the exact working set.
-  - Keep this item partial until PR #36 is merged and production-verified.
+  - PR #36 is merged and production-verified.
 
 - [x] **Show physical-copy summary in the list**
   - Show completeness + condition under the game metadata.
@@ -128,12 +128,13 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - Component audit data is displayed when present.
   - Editing the structured component audit directly in the app is still pending.
 
-- [ ] **Personal-copy photos**
-  - Front.
-  - Back.
-  - Disc/cartridge.
-  - Manual/inserts/extras where useful.
+- [~] **Personal-copy photos**
+  - Current branch adds private per-copy photos for front, back, disc/cartridge, manual/inserts and extras.
+  - Photos are stored in the existing private Vercel Blob store; `library.json` keeps only per-copy photo metadata/pathnames.
+  - Large images are reduced client-side before upload; server validation accepts JPEG/PNG/WebP/AVIF up to 4 MB and caps each copy at 12 photos.
+  - Upload/removal is authenticated and recorded in forward-only history; deleting a collection item also attempts to clean up its photo blobs.
   - Treat these as photos of the owned copy, not generic cover artwork.
+  - Keep partial until the photo PR is merged and production-verified.
 
 - [ ] **Click cover / photo for larger view**
   - Useful for cover inspection and, later, owned-copy photos.
@@ -260,8 +261,8 @@ This preserves the order proposed in the first product review. Status reflects t
 4. [x] Recently added
 5. [x] Paid price vs current value
 6. [x] Wishlist buying reference / priority
-7. [~] Better filters
-8. [ ] Own-copy photos
+7. [x] Better filters
+8. [~] Own-copy photos
 9. [~] Multiple copies
 10. [ ] Lists / goals
 11. [ ] Price history

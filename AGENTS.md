@@ -34,9 +34,14 @@ Tech:
 
 The app is the source of truth for personal mutable data.
 
-Persistence is one **private Vercel Blob**:
+Structured library data lives in one **private Vercel Blob**:
 
 `retro-collection/library.json`
+
+Owned-copy photo bytes, when present, use the **same private Vercel Blob store**
+under `retro-collection/copy-photos/<collectionId>/...`. The library JSON keeps
+only the photo metadata/path; do not embed photo bytes in `library.json` and do
+not introduce a second storage service for this feature.
 
 Logical schema:
 
@@ -89,6 +94,8 @@ Main storage code is in:
 
 - `src/lib/library-store.ts`
 - `src/lib/library-actions.ts`
+- `src/lib/owned-copy-photos.ts` for private physical-copy photo blobs
+- `src/app/api/copy-photos/` for authenticated upload/read/delete routes
 
 Expected behavior:
 
@@ -122,6 +129,7 @@ The app supports:
 - wishlist purchase -> collection;
 - purchase/valuation records;
 - visible forward-only mutation history;
+- private photos attached to individual physical copies;
 - local cover artwork;
 - PriceCharting reference values;
 - external reference links.
@@ -241,6 +249,7 @@ Unless a task explicitly requests a mutation test:
 - do not submit destructive forms in production;
 - do not delete collection/wishlist records;
 - do not mark wishlist items purchased;
+- do not upload or delete owned-copy photos just for testing;
 - do not alter prices/notes just for testing.
 
 Use previews, pure tests, or read-only browser checks where possible.
