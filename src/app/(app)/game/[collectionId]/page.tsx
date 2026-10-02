@@ -11,6 +11,7 @@ import {formatEuro} from "@/lib/format";
 import {getGameResearch} from "@/lib/game-research";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
+import { OwnedCopyPhotos } from "@/components/owned-copy-photos";
 
 export default async function GamePage({params,searchParams}:{params:Promise<{collectionId:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{collectionId},query]=await Promise.all([params,searchParams]);
@@ -82,6 +83,8 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
 
    {game.notes&&<p className="mt-3 whitespace-pre-wrap rounded-xl bg-[#f4f1e8] p-3 text-xs leading-5 text-slate-600">{game.notes}</p>}
   </section>
+
+  <OwnedCopyPhotos collectionId={game.collectionId} title={game.title} photos={game.photos??[]}/>
 
   <details className="collection-panel p-4">
    <summary className="cursor-pointer text-sm font-black text-slate-900">Editar a minha cópia</summary>

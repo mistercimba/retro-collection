@@ -6,6 +6,7 @@ import { isAuthenticated } from "@/lib/auth";
 import { platformSlug } from "@/lib/data/platforms";
 import type { CollectionGame, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
 import { updateLibrary } from "@/lib/library-store";
+import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
 
 const text = (form: FormData, key: string) => String(form.get(key) ?? "").trim();
 const money = (form: FormData, key: string) => {
@@ -112,6 +113,7 @@ function blankGame(input: {
     migrationConfidence: "App",
     notes: input.notes,
     legacyName: input.title,
+    photos: [],
     audit: null,
   };
 }
@@ -260,10 +262,12 @@ export async function removeCollectionGame(form: FormData) {
   await guard();
   const id = text(form, "collectionId");
   let platform = "";
+  let photoPaths: string[] = [];
   await updateLibrary((library) => {
     const game = library.collection.find((item) => item.collectionId === id);
     platform = game?.platform ?? "";
     const purchaseId = game?.purchaseId ?? "";
+    photoPaths = game?.photos?.map((photo) => photo.pathname) ?? [];
     library.collection = library.collection.filter((item) => item.collectionId !== id);
     library.valuations = library.valuations.filter((item) => item.collectionId !== id);
     if (purchaseId && !library.collection.some((item) => item.purchaseId === purchaseId)) {
@@ -280,6 +284,13 @@ export async function removeCollectionGame(form: FormData) {
     }
     return library;
   });
+  for (const pathname of photoPaths) {
+    try {
+      await deleteOwnedCopyPhoto(pathname);
+    } catch (error) {
+      console.warn("Could not remove owned-copy photo blob after deleting collection item.", error);
+    }
+  }
   revalidatePath("/");
   revalidatePath("/collection");
   revalidatePath("/history");
