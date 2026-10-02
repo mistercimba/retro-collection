@@ -1,3 +1,5 @@
+import { GAME_TITLE_ALIAS_GROUPS } from "@/data/game-title-aliases";
+
 const STOPWORDS = new Set([
   "a", "an", "and", "the", "of", "de", "da", "do", "dos", "das", "para", "e", "o", "os", "as", "um", "uma",
 ]);
@@ -43,8 +45,18 @@ export function normalizeGameTitle(value: unknown): string {
     .trim();
 }
 
+function verifiedRegionalAlias(value: string, platform: string): string {
+  const normalized = normalizeGameTitle(value);
+  for (const group of GAME_TITLE_ALIAS_GROUPS) {
+    if (group.platform !== platform) continue;
+    const labels = [group.canonical, ...group.aliases].map(normalizeGameTitle);
+    if (labels.includes(normalized)) return normalizeGameTitle(group.canonical);
+  }
+  return normalized;
+}
+
 function sourceAlias(value: string, platform: string): string {
-  let text = normalizeGameTitle(value)
+  let text = verifiedRegionalAlias(value, platform)
     .replace(/^the legend of zelda\b/, "zelda")
     .replace(/^legend of zelda\b/, "zelda")
     .replace(/^shin megami tensei persona\b/, "persona");
@@ -203,22 +215,30 @@ export function titleMatchRank(query: string, candidate: string, platform: strin
       // large distinctive core survives unchanged, accept it as a lower-ranked
       // candidate and still rely on the caller's unique-best rule.
       const shared = sharedWordStats(queryVariant, candidateVariant, platform);
+      const sharedPrefixLength = queryMeaningful.findIndex((token, index) => candidateMeaningful[index] !== token);
+      const identicalPrefixLength = sharedPrefixLength === -1
+        ? Math.min(queryMeaningful.length, candidateMeaningful.length)
+        : sharedPrefixLength;
       if (
         queryNumbers === candidateNumbers
-        && shared.common >= 3
+        && shared.common >= 4
         && shared.overlap >= 0.67
+        && identicalPrefixLength >= 4
       ) {
         best = best === null ? 4 : Math.min(best, 4) as TitleMatchRank;
       }
 
-      // Numbered sequels can also have the whole subtitle translated (Sly 2,
-      // Dragon Quest VIII, etc.). Require the same explicit sequel number and
-      // the same leading franchise token. This is deliberately the weakest
-      // rank so exact/subset/high-overlap candidates always win first.
+      // Numbered sequels can have the entire subtitle translated. Require the
+      // same explicit number and the same first two meaningful identity tokens;
+      // "Mario Party 6" must never match "Mario Golf 6" merely because both
+      // start with Mario and share a number.
       if (
         queryNumbers
         && queryNumbers === candidateNumbers
+        && queryMeaningful.length >= 2
+        && candidateMeaningful.length >= 2
         && queryMeaningful[0] === candidateMeaningful[0]
+        && queryMeaningful[1] === candidateMeaningful[1]
       ) {
         best = best === null ? 5 : Math.min(best, 5) as TitleMatchRank;
       }
