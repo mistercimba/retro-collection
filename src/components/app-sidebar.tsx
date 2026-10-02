@@ -24,7 +24,7 @@ export function AppSidebar({
     </Link>
     <div className="mt-6"><QuickSearch games={games} wishlist={wishlist} /></div>
     <div className="mt-5"><DesktopNav /></div>
-    <div className="mt-1"><QuickAddDialog platforms={platforms} trigger="sidebar" /></div>
+    <div className="mt-3 border-t border-white/10 pt-3"><QuickAddDialog platforms={platforms} trigger="sidebar" /></div>
     <div className="mt-auto border-t border-white/10 pt-4 text-xs text-white/45">
       <p>A tua coleção. Sem tralha.</p>
       {authEnabled() && <div className="mt-3"><LogoutButton /></div>}
