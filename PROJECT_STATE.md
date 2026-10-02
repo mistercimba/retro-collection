@@ -15,7 +15,9 @@ The current open PR introduces the first-pass Wishlist buying-reference engine:
 - PriceCharting PAL is combined with the existing private CeX Portugal catalog from `mistercimba/vinted-retro-search`;
 - CeX contribution uses the midpoint of cash-buy and sell prices;
 - when both sources exist, the displayed reference is the arithmetic mean of PriceCharting and the CeX midpoint;
-- CeX matching is conservative and fails closed on ambiguous variants, unclear packaging, edition mismatch, or missing buy/sell prices;
+- CeX matching is conservative and fails closed on ambiguous variants, edition mismatch, or missing buy/sell prices;
+- generic CeX product rows can be used transparently when packaging is not explicit, while ambiguous condition-specific rows still fail closed;
+- CeX reference coverage depends on upstream PR #407 in `mistercimba/vinted-retro-search`, which broadens the shared catalog to web-visible out-of-stock products while keeping marketplace/scout valuation online-only;
 - Wishlist detail shows the full source breakdown; platform Wishlist rows show the calculated reference;
 - `PRODUCT_UX_CHECKLIST.md` records this product decision and remains the living UX roadmap.
 
