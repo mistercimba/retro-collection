@@ -25,7 +25,7 @@ const EDITION_PATTERNS: Record<string, RegExp> = {
   bundle: /\b(?:bundle|combo pack|multi tap|pirate pak)\b/,
 };
 
-export type TitleMatchRank = 0 | 1 | 2 | 3;
+export type TitleMatchRank = 0 | 1 | 2 | 3 | 4 | 5;
 
 export function normalizeGameTitle(value: unknown): string {
   return String(value ?? "")
@@ -88,6 +88,18 @@ function compactSignature(value: string, platform: string): string {
   return meaningfulTokens(value, platform).join("");
 }
 
+function corporateCompactSignature(value: string, platform: string): string {
+  return meaningfulTokens(value, platform).filter((token) => token !== "inc").join("");
+}
+
+function sharedWordStats(left: string, right: string, platform: string): { common: number; overlap: number } {
+  const leftWords = wordSignature(left, platform);
+  const rightWords = wordSignature(right, platform);
+  const rightSet = new Set(rightWords);
+  const common = leftWords.filter((token) => rightSet.has(token)).length;
+  return { common, overlap: common / Math.max(leftWords.length, rightWords.length, 1) };
+}
+
 function numberSignature(value: string, platform: string): string {
   return meaningfulTokens(value, platform).filter((token) => /^\d+$/.test(token)).sort().join("|");
 }
@@ -138,6 +150,22 @@ export function titleMatchRank(query: string, candidate: string, platform: strin
         best = best === null ? 1 : Math.min(best, 1) as TitleMatchRank;
       }
 
+      // Some catalogues omit punctuation-bound corporate suffixes while also
+      // splitting a stylised compound word (for example WarioWare, Inc. vs
+      // Wario Ware). Only ignore "inc" when at least three other meaningful
+      // tokens remain on both sides, avoiding broad one-word matches.
+      const queryCorporateCompact = corporateCompactSignature(queryVariant, platform);
+      const candidateCorporateCompact = corporateCompactSignature(candidateVariant, platform);
+      const queryCorporateTokens = meaningfulTokens(queryVariant, platform).filter((token) => token !== "inc");
+      const candidateCorporateTokens = meaningfulTokens(candidateVariant, platform).filter((token) => token !== "inc");
+      if (
+        Math.min(queryCorporateTokens.length, candidateCorporateTokens.length) >= 3
+        && queryCorporateCompact.length >= 8
+        && queryCorporateCompact === candidateCorporateCompact
+      ) {
+        best = best === null ? 1 : Math.min(best, 1) as TitleMatchRank;
+      }
+
       const queryWords = wordSignature(queryVariant, platform);
       const candidateWords = wordSignature(candidateVariant, platform);
       if (queryWords.length >= 3 && queryWords.join("|") === candidateWords.join("|")) {
@@ -169,6 +197,30 @@ export function titleMatchRank(query: string, candidate: string, platform: strin
         && queryWords.join("|") === candidateWords.join("|")
       ) {
         best = best === null ? 3 : Math.min(best, 3) as TitleMatchRank;
+      }
+
+      // Regional catalogue titles sometimes translate only the subtitle. If a
+      // large distinctive core survives unchanged, accept it as a lower-ranked
+      // candidate and still rely on the caller's unique-best rule.
+      const shared = sharedWordStats(queryVariant, candidateVariant, platform);
+      if (
+        queryNumbers === candidateNumbers
+        && shared.common >= 3
+        && shared.overlap >= 0.67
+      ) {
+        best = best === null ? 4 : Math.min(best, 4) as TitleMatchRank;
+      }
+
+      // Numbered sequels can also have the whole subtitle translated (Sly 2,
+      // Dragon Quest VIII, etc.). Require the same explicit sequel number and
+      // the same leading franchise token. This is deliberately the weakest
+      // rank so exact/subset/high-overlap candidates always win first.
+      if (
+        queryNumbers
+        && queryNumbers === candidateNumbers
+        && queryMeaningful[0] === candidateMeaningful[0]
+      ) {
+        best = best === null ? 5 : Math.min(best, 5) as TitleMatchRank;
       }
     }
   }
