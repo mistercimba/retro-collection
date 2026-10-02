@@ -20,6 +20,11 @@ describe("CeX reference title matching", () => {
     expect(stripCexReferenceAnnotations("DuckTales (Disney's), + Manual, Caixa")).toBe("DuckTales");
   });
 
+  it("strips packaging-only parentheses without changing the game identity", () => {
+    expect(stripCexReferenceAnnotations("Mario Kart Wii (Cardboard Sleeve)")).toBe("Mario Kart Wii");
+    expect(stripCexReferenceAnnotations("Mario Kart Wii (Solo Jogo, Normal DVD Case)")).toBe("Mario Kart Wii");
+  });
+
   it("recognizes the CeX rarity Perfeito grade so it is never treated as generic Loose pricing", () => {
     expect(isCexPerfectGrade("Persona 4 (Com CD), Perfeito")).toBe(true);
     expect(isCexPerfectGrade("Persona 4")).toBe(false);
