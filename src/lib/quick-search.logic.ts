@@ -9,6 +9,15 @@ export type QuickSearchableGame = {
   overallStatus: string;
 };
 
+export type QuickSearchableWishlistItem = {
+  title: string;
+  platform: string;
+  targetId: string;
+  targetVersion: string;
+  priority: string;
+  artworkSrc?: string | null;
+};
+
 function normalizeSearch(value: string) {
   return value
     .normalize("NFD")
@@ -18,14 +27,24 @@ function normalizeSearch(value: string) {
     .trim();
 }
 
-export function findQuickSearchMatches<T extends QuickSearchableGame>(games: T[], query: string): T[] {
+function matchesTokens(value: string, query: string) {
   const normalizedQuery = normalizeSearch(query);
-  if (normalizedQuery.length < 2) return [];
+  if (normalizedQuery.length < 2) return false;
   const tokens = normalizedQuery.split(/\s+/).filter(Boolean);
-  return games.filter((game) => {
-    const haystack = normalizeSearch(
-      [game.title, game.platform, displayPlatform(game.platform), game.collectionId, game.edition, game.region, game.overallStatus].join(" "),
-    );
-    return tokens.every((token) => haystack.includes(token));
-  });
+  const haystack = normalizeSearch(value);
+  return tokens.every((token) => haystack.includes(token));
+}
+
+export function findQuickSearchMatches<T extends QuickSearchableGame>(games: T[], query: string): T[] {
+  return games.filter((game) => matchesTokens(
+    [game.title, game.platform, displayPlatform(game.platform), game.collectionId, game.edition, game.region, game.overallStatus].join(" "),
+    query,
+  ));
+}
+
+export function findQuickSearchWishlistMatches<T extends QuickSearchableWishlistItem>(targets: T[], query: string): T[] {
+  return targets.filter((target) => matchesTokens(
+    [target.title, target.platform, displayPlatform(target.platform), target.targetId, target.targetVersion, target.priority, "wishlist"].join(" "),
+    query,
+  ));
 }
