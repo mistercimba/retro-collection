@@ -74,6 +74,13 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
 
 ## Platform / collection lists
 
+- [~] **Wishlist reference-match coverage**
+  - Comprehensive static identity audit recorded in [docs/WISHLIST_REFERENCE_MATCH_AUDIT_2026-10-02.md](docs/WISHLIST_REFERENCE_MATCH_AUDIT_2026-10-02.md).
+  - Shared matcher now covers CeX condition suffixes, Roman/Arabic numerals, joined words, safe source prefixes, shortened titles and verified regional aliases.
+  - GBA CeX coverage is blocked only by upstream hunter PR #409 (`GBA Jogos` category alias) until it is merged and the shared catalog refreshes.
+  - One-of targets remain deliberately unresolved rather than choosing a game silently.
+  - PS3/PS5 PriceCharting coverage is separate source-snapshot debt, not a title-match bug.
+
 - [~] **Better filters for real collector workflows**
   - Global Collection already supports platform, completeness, condition, region, edition, genre and attention filters.
   - Current Wishlist filter work adds priority + **Loose/CIB/por definir** + **com/sem referência de compra**.
