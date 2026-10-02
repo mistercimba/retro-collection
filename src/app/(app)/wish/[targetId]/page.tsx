@@ -9,7 +9,7 @@ import {getWantlist} from "@/lib/data/collection-service";
 import {displayPlatform,platformSlug} from "@/lib/data/platforms";
 import {findGameMetadataByTitle} from "@/lib/game-metadata";
 import {getPricechartingGuide,getPricechartingGuides} from "@/lib/pricecharting-catalog";
-import {getCexWishlistGuide} from "@/lib/cex-catalog";
+import {getCexWishlistGuide,getCexWishlistGuides} from "@/lib/cex-catalog";
 import {buildWishlistBuyReferenceGuide} from "@/lib/wishlist-buy-reference.logic";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
@@ -30,10 +30,19 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
  const back=getSafeListReturnPath(query.from)??`/platform/${platformSlug(target.platform)}?tab=wishlist`;
  const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
  const origin=getWishlistOriginState(query.from,platformSlug(target.platform));
- const state=origin??{tab:"wishlist" as const,q:"",filter:"all",sort:"title"};
+ const state=origin??{tab:"wishlist" as const,q:"",filter:"all",condition:"all",reference:"all",sort:"title"};
  const candidates=filterWishlistItems(targets.filter(x=>x.platform===target.platform&&x.planState!=="inactive"&&x.matchState!=="acquired"),state);
- const prices=origin?.sort==="market-desc"?Object.fromEntries(await getPricechartingGuides(candidates.map(x=>({key:wishlistPriceKey(x),platform:x.platform,title:x.title,edition:x.targetVersion})))):{};
- const siblings=selectWishlistItems(candidates,state,prices);
+ const needsBuyReferences=Boolean(origin&&(origin.reference!=="all"||origin.sort==="buy-desc"));
+ const siblingEntries=candidates.map(x=>({key:wishlistPriceKey(x),platform:x.platform,title:x.title,edition:x.targetVersion}));
+ const [siblingPriceGuides,siblingCexGuides]=needsBuyReferences
+  ?await Promise.all([getPricechartingGuides(siblingEntries),getCexWishlistGuides(siblingEntries)])
+  :[new Map(),new Map()];
+ const siblingBuyReferences=needsBuyReferences?Object.fromEntries(siblingEntries.map(entry=>{
+  const price=siblingPriceGuides.get(entry.key)??{looseEur:null,cibEur:null,newEur:null,source:"Preço indisponível",date:"",productUrl:""};
+  const cex=siblingCexGuides.get(entry.key)??{source:"CeX Portugal indisponível",date:"",loose:{status:"unavailable" as const,reference:null},cib:{status:"unavailable" as const,reference:null},generic:{status:"unavailable" as const,reference:null}};
+  return [entry.key,buildWishlistBuyReferenceGuide(price,cex)];
+ })):{};
+ const siblings=selectWishlistItems(candidates,state,{},siblingBuyReferences);
  const {previous,next}=getWishlistNeighbors(siblings,target);
  const [guide,cexGuide]=await Promise.all([guidePromise,cexGuidePromise]);
  const buyReference=buildWishlistBuyReferenceGuide(guide,cexGuide);

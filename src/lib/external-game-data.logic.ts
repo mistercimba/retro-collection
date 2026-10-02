@@ -1,3 +1,5 @@
+import { editionsCompatible, titleMatchRank, type TitleMatchRank } from "./game-title-match.logic";
+
 export function normalizeMatchTitle(value: string): string {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
@@ -53,25 +55,9 @@ const PRICECHARTING_PLATFORMS: Record<string, { id: string; slug: string }> = {
   "GameBoy Advance": { id: "GBA", slug: "pal-gameboy-advance" },
   "Nintendo DS": { id: "DS", slug: "pal-nintendo-ds" },
   "Nintendo 3DS": { id: "3DS", slug: "pal-nintendo-3ds" },
+  "Playstation 3": { id: "PS3", slug: "pal-playstation-3" },
+  "Playstation 5": { id: "PS5", slug: "pal-playstation-5" },
 };
-
-const VARIANT_FLAGS: Record<string, RegExp> = {
-  collector: /\bcollector/, limited: /\blimited\b/, steel: /\bsteel(?:book| box)?\b/,
-  platinum: /\bplatinum\b/, playersChoice: /\bplayers choice\b/, classics: /\bclassics?\b/,
-  essentials: /\bessentials\b/, selects: /\bselects\b/, greatestHits: /\bgreatest hits\b/,
-  dayOne: /\bday one\b/,
-};
-
-function variantFlags(value: string): string[] {
-  const normalized = normalizeMatchTitle(value).replace(/\bplayer s choice\b/g, "players choice");
-  return Object.entries(VARIANT_FLAGS).filter(([, pattern]) => pattern.test(normalized)).map(([name]) => name);
-}
-
-function variantsCompatible(expected: string, actual: string): boolean {
-  const wanted = variantFlags(expected);
-  const found = variantFlags(actual);
-  return wanted.every((flag) => found.includes(flag)) && (wanted.length > 0 || found.length === 0);
-}
 
 export type PricechartingCatalog = {
   source?: string;
@@ -84,19 +70,31 @@ export type PricechartingCatalog = {
 export function lookupPalPricechartingMatch(catalog: PricechartingCatalog, platform: string, title: string, edition: string): { product: NonNullable<PricechartingCatalog["games"]>[number]; pricechartingPlatform: string } | null {
   const targetPlatform = PRICECHARTING_PLATFORMS[platform];
   if (catalog.source !== "pricecharting-pal-local-snapshot" || catalog.region !== "PAL" || catalog.currency !== "USD" || !catalog.generatedAt || !Number.isFinite(Date.parse(catalog.generatedAt)) || !targetPlatform || !Array.isArray(catalog.games)) return null;
-  const wanted = normalizeMatchTitle(title);
-  if (!wanted) return null;
+
+  const ranked: Array<{ product: NonNullable<PricechartingCatalog["games"]>[number]; rank: TitleMatchRank }> = [];
   const expectedEdition = `${title} ${edition}`.trim();
-  const candidates = catalog.games.filter((entry) => {
-    if (entry.platform !== targetPlatform.id || entry.region !== "PAL" || !entry.title || !entry.pricechartingUrl || !entry.scrapedAt || !Number.isFinite(Date.parse(entry.scrapedAt))) return false;
-    const labels = [entry.title, ...(Array.isArray(entry.aliases) ? entry.aliases : [])].map((label) => normalizeMatchTitle(label));
-    if (!labels.includes(wanted) || !variantsCompatible(expectedEdition, entry.title)) return false;
+
+  for (const entry of catalog.games) {
+    if (entry.platform !== targetPlatform.id || entry.region !== "PAL" || !entry.title || !entry.pricechartingUrl || !entry.scrapedAt || !Number.isFinite(Date.parse(entry.scrapedAt))) continue;
+    if (!editionsCompatible(expectedEdition, entry.title)) continue;
+
     try {
       const url = new URL(entry.pricechartingUrl);
-      return url.protocol === "https:" && url.hostname === "www.pricecharting.com" && url.pathname.startsWith(`/game/${targetPlatform.slug}/`);
-    } catch { return false; }
-  });
-  const unique = [...new Map(candidates.map((candidate) => [candidate.pricechartingUrl, candidate])).values()];
+      if (url.protocol !== "https:" || url.hostname !== "www.pricecharting.com" || !url.pathname.startsWith(`/game/${targetPlatform.slug}/`)) continue;
+    } catch {
+      continue;
+    }
+
+    const labels = [entry.title, ...(Array.isArray(entry.aliases) ? entry.aliases : [])];
+    const ranks = labels.map((label) => titleMatchRank(title, label, targetPlatform.id)).filter((rank): rank is TitleMatchRank => rank !== null);
+    if (!ranks.length) continue;
+    ranked.push({ product: entry, rank: Math.min(...ranks) as TitleMatchRank });
+  }
+
+  if (!ranked.length) return null;
+  const bestRank = Math.min(...ranked.map((candidate) => candidate.rank)) as TitleMatchRank;
+  const best = ranked.filter((candidate) => candidate.rank === bestRank);
+  const unique = [...new Map(best.map((candidate) => [candidate.product.pricechartingUrl, candidate.product])).values()];
   return unique.length === 1 ? { product: unique[0], pricechartingPlatform: targetPlatform.id } : null;
 }
 

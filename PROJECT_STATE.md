@@ -1,45 +1,45 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-01
+Last updated: 2026-10-02
 
 This is the living project handoff. Read `AGENTS.md` first.
 
 
-## Active product work — PR #35 Wishlist buy reference
+## Active product work — PR #36 Wishlist buying-reference filters
 
-Branch: `feat/wishlist-buy-reference`
+Branch: `feat/wishlist-reference-filters`
 
-The current open PR introduces the first-pass Wishlist buying-reference engine:
-- the legacy `priceCeilingEur` field is treated as a **manual reference**, not a hard maximum;
-- automatic buying references are limited to **Loose** and **CIB**;
-- PriceCharting PAL is combined with the existing private CeX Portugal catalog from `mistercimba/vinted-retro-search`;
-- CeX contribution uses the midpoint of cash-buy and sell prices;
-- when both sources exist, the displayed reference is the arithmetic mean of PriceCharting and the CeX midpoint;
-- CeX matching is conservative and fails closed on ambiguous variants, edition mismatch, or missing buy/sell prices;
-- generic CeX product rows can be used transparently when packaging is not explicit, while ambiguous condition-specific rows still fail closed;
-- upstream PR #407 in `mistercimba/vinted-retro-search` is merged and validated; the refreshed shared CeX catalog now contains 14,307 web-visible reference products, of which 4,759 are currently online, while marketplace/scout valuation remains online-only;
-- follow-up PR #408 is also merged and production-validated; a post-merge CeX Value Scout run completed with 14,307 reference products, 4,759 online products, and **0 synthetic catalog events**, repairing the availability-event baseline cleanly;
-- Wishlist detail shows the full source breakdown; platform Wishlist rows show the calculated reference;
-- `PRODUCT_UX_CHECKLIST.md` records this product decision and remains the living UX roadmap.
+PR #35 is merged in `main` and the Wishlist PriceCharting + CeX buy-reference engine is now the baseline.
 
-PR #35 has passing GitHub Actions and Vercel preview. After PR #407 merged, CeX Value Scout was re-run against latest main and published a fresh 14,307-product reference catalog. PR #35 is **not merged** pending explicit user approval.
+The current open PR advances the next UX roadmap item:
+- Wishlist filters by priority, target condition (**Loose / CIB / por definir**) and calculated buy-reference availability;
+- Wishlist sort by calculated buy reference, with the legacy manual amount explicitly labelled as manual;
+- old `sort=market-desc` URLs migrate to the new calculated-reference sort;
+- filter/search/sort state remains URL-backed;
+- detail Previous/Next navigation reproduces the same filtered/sorted working set, including reference-dependent filters;
+- no schema or collection/wishlist mutation changes.
+
+PR #36 is **not merged** pending checks and explicit user approval.
+
+A 298-title static Wishlist identity audit is recorded in `docs/WISHLIST_REFERENCE_MATCH_AUDIT_2026-10-02.md`. The matcher now has shared conservative normalization plus a platform-scoped verified regional alias table. A separate upstream coverage defect was found: CeX Portugal exposes GBA under `GBA Jogos`, which the hunter discarded despite existing GBA support. Hunter PR #409 fixes that category alias; Retro Collection must consume the refreshed catalog after #409 is merged. PS3/PS5 PriceCharting remain source-snapshot coverage debt rather than matcher failures.
 
 ## Current production baseline
 
 Repository: `mistercimba/retro-collection`
 
-Current main baseline before the UI audit follow-up:
+Current `main` baseline:
 
-`48a5159c908173740d56f2641ea315217acfbf94`
+`52351ebcad8b84b41e100df26e65c72705e34436`
 
-PR #29 documentation reconciliation is merged. Application behavior at this
-baseline includes the PR #28 squash `a4ed66a5fcaf5e29bc2f7ec5483d536d707bc48c`.
+This is the squash merge of PR #35, which made the Wishlist PriceCharting + CeX
+buy-reference engine the production baseline. PRs #30–#34 and the earlier Blob,
+UI and Wishlist-artwork work are also included in this history.
 
-Verified after merge:
+Verified for the current main commit:
 
 - GitHub Actions: SUCCESS
 - Vercel production: SUCCESS
-- PR #28: merged/closed
+- PR #35: merged/closed
 
 ## Current architecture
 

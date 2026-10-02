@@ -1,6 +1,8 @@
 import "server-only";
 import type { CexConditionResult, CexPriceReference, CexWishlistGuide, WishlistBuyCondition } from "@/lib/wishlist-buy-reference.logic";
 import { measureServerFetch, measureServerWork } from "@/lib/server-perf";
+import { isCexPerfectGrade, stripCexReferenceAnnotations } from "@/lib/cex-title-match.logic";
+import { editionsCompatible, normalizeGameTitle, titleMatchRank, type TitleMatchRank } from "@/lib/game-title-match.logic";
 
 const CATALOG_REPOSITORY = "mistercimba/vinted-retro-search";
 const CATALOG_PATH = "data/reference/cex-pt-catalog.json";
@@ -50,95 +52,13 @@ const PLATFORM_MAP: Record<string, string> = {
   PSP: "PSP",
 };
 
-const EDITION_PATTERNS: Record<string, RegExp> = {
-  platinum: /\bplatinum\b/,
-  playersChoice: /\bplayers choice\b/,
-  nintendoSelects: /\bnintendo selects\b/,
-  essentials: /\bessentials\b/,
-  greatestHits: /\bgreatest hits\b/,
-  nesClassics: /\bnes classics\b/,
-  dayOne: /\bday one\b/,
-  limited: /\blimited\b/,
-  collector: /\bcollectors?\b/,
-  steel: /\bsteel(?:book| box)?\b/,
-};
+type CexReferenceBucket = WishlistBuyCondition | "cib-perfect" | "generic";
 
-function normalize(value: unknown) {
-  return String(value ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[’‘`]/g, "'")
-    .toLocaleLowerCase("pt-PT")
-    .replace(/player'?s\s+choice/g, "players choice")
-    .replace(/steel\s*book/g, "steelbook")
-    .replace(/[^a-z0-9]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function editionFlags(value: string) {
-  const text = normalize(value);
-  return Object.fromEntries(Object.entries(EDITION_PATTERNS).map(([key, pattern]) => [key, pattern.test(text)]));
-}
-
-function candidateEditionFlags(game: CexCatalogGame) {
-  const stored = game.variantSignals?.edition?.flags;
-  if (stored) return Object.fromEntries(Object.keys(EDITION_PATTERNS).map((key) => [key, Boolean(stored[key])]));
-  return editionFlags(String(game.boxName ?? ""));
-}
-
-function editionCompatible(targetVersion: string, game: CexCatalogGame) {
-  const wanted = editionFlags(targetVersion);
-  const candidate = candidateEditionFlags(game);
-  return Object.keys(EDITION_PATTERNS).every((key) => wanted[key] === candidate[key]);
-}
-
-function stripKnownNoise(value: string) {
-  let text = normalize(value);
-  const phrases = [
-    "sem manual caixa", "sem caixa", "solo juego", "disc only", "disk only", "so disco", "apenas disco",
-    "cartridge only", "cartucho only", "so cartucho", "apenas cartucho", "players choice", "nintendo selects",
-    "greatest hits", "nes classics", "day one", "steelbook", "steel box", "limited edition",
-    "collector edition", "collectors edition", "platinum", "essentials",
-  ];
-  for (const phrase of phrases) text = text.replace(new RegExp(`\\b${phrase.replace(/ /g, "\\s+")}\\b`, "g"), " ");
-  return text
-    .replace(/\b(?:caixa|box|edition|edicao|pal|game|jogo)\b/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function titleIdentity(value: string, platform: string) {
-  let text = stripKnownNoise(value.replace(/\[[^\]]*(?:19|20)\d{2}[^\]]*\]/g, " "));
-  const noise: Record<string, string[]> = {
-    PS1: ["playstation", "ps1", "sony"],
-    PS2: ["playstation 2", "playstation", "ps2", "sony"],
-    PS3: ["playstation 3", "playstation", "ps3", "sony"],
-    PS5: ["playstation 5", "playstation", "ps5", "sony"],
-    NES: ["nintendo entertainment system", "nes", "nintendo"],
-    SNES: ["super nintendo entertainment system", "super nintendo", "snes", "nintendo"],
-    N64: ["nintendo 64", "n64", "nintendo"],
-    GameCube: ["nintendo gamecube", "gamecube", "nintendo"],
-    Wii: ["nintendo wii", "wii", "nintendo"],
-    "Wii U": ["nintendo wii u", "wii u", "nintendo"],
-    Switch: ["nintendo switch", "switch", "nintendo"],
-    "Game Boy": ["nintendo game boy", "game boy", "gameboy", "nintendo"],
-    GBC: ["nintendo game boy color", "game boy color", "gameboy color", "gbc", "nintendo"],
-    GBA: ["nintendo game boy advance", "game boy advance", "gameboy advance", "gba", "nintendo"],
-    DS: ["nintendo ds", "ds", "nintendo"],
-    "3DS": ["nintendo 3ds", "3ds", "nintendo"],
-    PSP: ["playstation portable", "psp", "sony"],
-  };
-  for (const phrase of (noise[platform] ?? []).sort((a, b) => b.length - a.length)) {
-    text = text.replace(new RegExp(`\\b${normalize(phrase).replace(/ /g, "\\s+")}\\b`, "g"), " ");
-  }
-  return text.replace(/\bthe\b/g, " ").replace(/\s+/g, " ").trim();
-}
-
-function packagingCondition(game: CexCatalogGame): WishlistBuyCondition | "generic" | null {
+function packagingCondition(game: CexCatalogGame): CexReferenceBucket | null {
   const packaging = String(game.variantSignals?.packaging ?? "");
   if (packaging === "loose") return "loose";
   if (packaging === "boxed") return "cib";
+  if (packaging === "standard" && isCexPerfectGrade(String(game.boxName ?? ""))) return "cib-perfect";
   if (packaging === "standard") return "generic";
   return null;
 }
@@ -208,24 +128,57 @@ export async function getCexWishlistGuides(
         results.set(entry.key, { source: "CeX Portugal", date: catalog.generatedAt!.slice(0, 10), loose: unavailable(), cib: unavailable(), generic: unavailable() });
         continue;
       }
-      const targetIdentity = titleIdentity(entry.title, cexPlatform);
-      const byCondition: Record<WishlistBuyCondition | "generic", CexPriceReference[]> = { loose: [], cib: [], generic: [] };
-
+      const ranked: Array<{ game: CexCatalogGame; baseTitle: string; rank: TitleMatchRank }> = [];
       for (const game of catalog.games ?? []) {
         if (game.platform !== cexPlatform || game.productKind !== "game") continue;
         const condition = packagingCondition(game);
         if (!condition) continue;
-        if (!editionCompatible(entry.edition ?? "", game)) continue;
-        if (titleIdentity(String(game.boxName ?? ""), cexPlatform) !== targetIdentity) continue;
-        const reference = toReference(game);
-        if (reference) byCondition[condition].push(reference);
+        if (!editionsCompatible(`${entry.title} ${entry.edition ?? ""}`.trim(), String(game.boxName ?? ""))) continue;
+        const baseTitle = stripCexReferenceAnnotations(String(game.boxName ?? ""));
+        const matchRank = titleMatchRank(entry.title, baseTitle, cexPlatform);
+        if (matchRank === null) continue;
+        ranked.push({ game, baseTitle, rank: matchRank });
       }
 
+      if (!ranked.length) {
+        results.set(entry.key, {
+          source: "CeX Portugal",
+          date: catalog.generatedAt!.slice(0, 10),
+          loose: unavailable(),
+          cib: unavailable(),
+          generic: unavailable(),
+        });
+        continue;
+      }
+
+      const bestRank = Math.min(...ranked.map((candidate) => candidate.rank)) as TitleMatchRank;
+      const best = ranked.filter((candidate) => candidate.rank === bestRank);
+      const identities = new Set(best.map((candidate) => normalizeGameTitle(candidate.baseTitle)));
+      if (identities.size !== 1) {
+        const ambiguous: CexConditionResult = { status: "ambiguous", reference: null };
+        results.set(entry.key, {
+          source: "CeX Portugal",
+          date: catalog.generatedAt!.slice(0, 10),
+          loose: ambiguous,
+          cib: ambiguous,
+          generic: ambiguous,
+        });
+        continue;
+      }
+
+      const byCondition: Record<CexReferenceBucket, CexPriceReference[]> = { loose: [], cib: [], "cib-perfect": [], generic: [] };
+      for (const { game } of best) {
+        const condition = packagingCondition(game);
+        const reference = condition ? toReference(game) : null;
+        if (condition && reference) byCondition[condition].push(reference);
+      }
+
+      const exactCib = resultFor(byCondition.cib);
       results.set(entry.key, {
         source: "CeX Portugal",
         date: catalog.generatedAt!.slice(0, 10),
         loose: resultFor(byCondition.loose),
-        cib: resultFor(byCondition.cib),
+        cib: exactCib.status === "unavailable" ? resultFor(byCondition["cib-perfect"]) : exactCib,
         generic: resultFor(byCondition.generic),
       });
     }
