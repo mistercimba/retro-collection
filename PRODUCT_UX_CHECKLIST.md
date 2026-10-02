@@ -53,9 +53,20 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - Filters are URL-backed and removable in the Collection browser.
   - Implemented in PR #33.
 
-- [ ] **Wishlist opportunities below target**
-  - Surface wishlist items where the current market reference is at or below the user's maximum price.
-  - Keep condition/edition semantics correct; never compare a CIB target to a Loose price as if they were equivalent.
+- [~] **Wishlist automatic buy reference — PriceCharting + CeX**
+  - The old `priceCeilingEur` value is a legacy/manual reference, not a hard maximum and must not drive automatic "buy now" logic.
+  - Buying conditions are intentionally limited to **Loose** and **CIB**; New/Sealed is not part of the buying-reference model.
+  - For each condition, use the matching PriceCharting PAL value and, when there is one safe explicit CeX variant, the midpoint between CeX cash-buy and CeX sell price.
+  - When both sources exist, the current first-pass reference is the arithmetic mean of PriceCharting and the CeX midpoint.
+  - If only one trustworthy source exists, show it transparently as a lower-confidence reference rather than inventing a second source.
+  - CeX variant matching must fail closed on ambiguity or wrong edition.
+  - Web-visible CeX products remain usable as price references even when out of stock; stock availability is not required for this valuation use case.
+  - A generic CeX product with no explicit Loose/CIB packaging may be used as a clearly labelled lower-specificity fallback; an ambiguous explicit condition match still fails closed.
+  - Initial engine implemented in the current Wishlist buy-reference work; formula will be tuned after reviewing real examples.
+
+- [ ] **Good-deal / buying-opportunity queue**
+  - Later, use the calculated buy reference — not the legacy manual value — to surface attractive listings or asking prices.
+  - Define the "good deal" threshold only after checking real examples against the first-pass formula.
 
 - [>] **30-day collection value movement**
   - Only useful once there is trustworthy historical valuation data.
@@ -142,8 +153,10 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
 - [~] **Priority**
   - Already supported: Alta / Média / Baixa / Grail.
 
-- [~] **Maximum target price**
-  - Already supported and shown against PriceCharting reference data.
+- [~] **Legacy manual price reference**
+  - Existing `priceCeilingEur` data is preserved for compatibility/history.
+  - UI should call it **Referência manual**, not "maximum".
+  - It does not enter the automatic PriceCharting + CeX calculation.
 
 - [~] **Target version / condition**
   - Current `targetVersion` captures requirements such as PAL / CIB / edition in one field.
@@ -180,6 +193,17 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
 - [ ] **Custom collection lists**
   - Examples: PAL Nintendo-published, Resident Evil, Zelda, Final Fantasy, Nintendo Selects.
   - Prefer user-defined lists over hard-coded franchise logic.
+
+## Future unified collector hub
+
+- [>] **Unify Collection + Retro Hunter + fairs/field hunting into one product**
+  - Long-term direction only; do not merge architectures prematurely while the current Collection and Hunter workflows are still evolving.
+  - Preserve three distinct jobs even if they eventually share one app:
+    - **Collection** — what is owned, copy condition, purchase history, value and wishlist.
+    - **Hunter** — what is currently appearing online and whether it is worth buying.
+    - **Field / fairs** — physical hunting, recurring fairs/shops/routes, finds and on-the-spot buying reference.
+  - Prefer one shared identity/pricing layer for games, variants, PriceCharting and CeX rather than duplicating matching logic across projects.
+  - When this is revisited, design the information architecture first; repository consolidation is not automatically the same thing as a good unified product.
 
 ## Advanced views / statistics
 
@@ -221,7 +245,7 @@ This preserves the order proposed in the first product review. Status reflects t
 3. [x] Better physical-copy information
 4. [x] Recently added
 5. [x] Paid price vs current value
-6. [~] Wishlist target price / priority
+6. [~] Wishlist buying reference / priority
 7. [~] Better filters
 8. [ ] Own-copy photos
 9. [~] Multiple copies

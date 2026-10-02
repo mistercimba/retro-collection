@@ -7,12 +7,13 @@ import { GameArtwork } from "@/components/artwork";
 import { WishlistArtwork } from "@/components/wishlist-artwork";
 import { formatEuro } from "@/lib/format";
 import { buildPlatformListUrl, parsePlatformListState, type PlatformListState, filterWishlistItems, selectWishlistItems, wishlistPriceKey } from "@/lib/wishlist-price.logic";
-import { getWishlistPriceLines, type WishlistPriceGuide } from "@/lib/wishlist-price.logic";
+import { type WishlistPriceGuide } from "@/lib/wishlist-price.logic";
+import { targetBuyCondition, type WishlistBuyReferenceGuide } from "@/lib/wishlist-buy-reference.logic";
 import { saveListScrollPosition, useListScrollRestoration } from "@/hooks/use-list-scroll-restoration";
 
 type C = { collectionId: string; title: string; genre: string; valueEur: number | null; condition: string; completeness: string };
 type W = { targetId: string; title: string; priority: string; targetVersion: string; priceCeilingEur: number | null; artworkSrc: string | null };
-type PriceLoad = { status: "idle" | "loading" | "loaded" | "error"; platform: string; prices: Record<string, WishlistPriceGuide> };
+type PriceLoad = { status: "idle" | "loading" | "loaded" | "error"; platform: string; prices: Record<string, WishlistPriceGuide>; buyReferences: Record<string, WishlistBuyReferenceGuide> };
 const PRIORITY_RANK: Record<string, number> = { grail: 0, alta: 1, "média": 2, media: 2, baixa: 3 };
 const rank = (v: string) => PRIORITY_RANK[v.toLocaleLowerCase("pt-PT")] ?? 9;
 const wishKey = wishlistPriceKey;
@@ -22,7 +23,7 @@ export function PlatformLibraryBrowser({slug,platform,initialTab,initialSearch="
  const router = useRouter();
  const [state,setState] = useState<PlatformListState>(()=>parsePlatformListState(initialSearch,initialTab));
  const stateRef = useRef(state);
- const [priceLoad,setPriceLoad] = useState<PriceLoad>({status:"idle",platform,prices:{}});
+ const [priceLoad,setPriceLoad] = useState<PriceLoad>({status:"idle",platform,prices:{},buyReferences:{}});
  const {tab,q,sort,filter} = state;
  useListScrollRestoration();
 
@@ -31,7 +32,7 @@ export function PlatformLibraryBrowser({slug,platform,initialTab,initialSearch="
   if(tab!=="wishlist"||wishlist.length===0)return;
   fetch(`/api/wishlist-prices?platform=${encodeURIComponent(platform)}`,{signal:controller.signal,cache:"no-store"})
    .then(async response=>response.ok?response.json():Promise.reject(new Error("Price request failed")))
-   .then(data=>setPriceLoad({status:"loaded",platform,prices:data?.prices??{}}))
+   .then(data=>setPriceLoad({status:"loaded",platform,prices:data?.prices??{},buyReferences:data?.buyReferences??{}}))
    .catch(()=>{if(!controller.signal.aborted)setPriceLoad(current=>({...current,status:"error",platform}));});
   return()=>controller.abort();
  },[tab,platform,wishlist.length]);
@@ -61,7 +62,7 @@ export function PlatformLibraryBrowser({slug,platform,initialTab,initialSearch="
  },[initialSearch,initialTab]);
  const switchTab=(next:PlatformListState["tab"])=>{
   const nextState:PlatformListState={tab:next,q:"",filter:"all",sort:next==="wishlist"?"priority":"title"};
-  if(next==="wishlist"&&priceLoad.platform!==platform)setPriceLoad({status:"idle",platform,prices:{}});
+  if(next==="wishlist"&&priceLoad.platform!==platform)setPriceLoad({status:"idle",platform,prices:{},buyReferences:{}});
   stateRef.current=nextState;setState(nextState);
   router.replace(buildPlatformListUrl(slug,nextState),{scroll:false});
  };
@@ -82,7 +83,7 @@ export function PlatformLibraryBrowser({slug,platform,initialTab,initialSearch="
    <select aria-label={tab==="collection"?"Ordenar coleção":"Ordenar wishlist"} value={sort} onChange={e=>updateState("sort",e.target.value)} className="field-input">{tab==="collection"?<><option value="title">Nome A–Z</option><option value="title-desc">Nome Z–A</option><option value="value-desc">Valor ↓</option><option value="value-asc">Valor ↑</option></>:<><option value="priority">Prioridade</option><option value="title">Nome A–Z</option><option value="market-desc">Mercado ↓</option><option value="max-desc" disabled={!hasCeilings}>{hasCeilings?"Máximo ↓":"Máximo ↓ — sem valores"}</option></>}</select>
   </div>
   <div className="collection-list">
-   {tab==="collection"?(cs.length?cs.map(x=><Link key={x.collectionId} prefetch={false} href={`/game/${encodeURIComponent(x.collectionId)}?from=${encodeURIComponent(returnTo)}`} onClick={saveScroll} className="collection-row"><GameArtwork collectionId={x.collectionId} title={x.title} platform={platform} className="h-24 w-20 shrink-0 rounded-xl"/><span className="min-w-0 flex-1"><strong className="block truncate text-base font-black">{x.title}</strong><span className="block truncate text-xs font-semibold text-slate-500">{x.genre?x.genre.split(",").slice(0,2).join(" · "):"Género n/d"}</span>{(x.completeness||x.condition)&&<span className="mt-1 block truncate text-[11px] font-bold text-[#466558]">{[x.completeness,x.condition].filter(Boolean).join(" · ")}</span>}</span><strong className="text-sm font-black">{x.valueEur===null?"—":formatEuro(x.valueEur)}</strong></Link>):<p className="p-5 text-sm text-slate-500">Nenhum jogo encontrado.</p>):(ws.length?ws.map(x=>{const key=wishKey(x);const lines=loading?[]:getWishlistPriceLines(x.targetVersion,priceLoad.prices[key]??null);return <Link key={x.targetId+x.title} prefetch={false} href={`/wish/${encodeURIComponent(x.targetId)}?platform=${encodeURIComponent(platform)}&title=${encodeURIComponent(x.title)}&from=${encodeURIComponent(returnTo)}`} onClick={saveScroll} className="collection-row"><WishlistArtwork title={x.title} platform={platform} artworkSrc={x.artworkSrc} className="h-24 w-20 shrink-0"/><span className="min-w-0 flex-1"><strong className="block truncate text-base font-black">{x.title}</strong><span className="text-xs font-semibold text-slate-500">{x.priority}{x.targetVersion?" · "+x.targetVersion:""}</span></span><span className="text-right text-xs" title={priceLoad.status==="error"?"Não foi possível carregar preços agora":undefined}>{loading?<><span className="block text-slate-400">PriceCharting</span><strong aria-label="A carregar preços">…</strong></>:lines.map(line=><span key={line.label} className="mb-1 block" title={line.reference?"Referência de outra condição; não corresponde ao alvo":""}><span className={"block "+(line.reference?"text-amber-700":"text-slate-400")}>{line.label}</span><strong className={line.reference?"text-amber-900":""}>{line.value===null?"—":formatEuro(line.value)}</strong></span>)}<span className="mt-1 block text-rose-500">Máx.</span><strong className="text-rose-800">{x.priceCeilingEur===null?"—":formatEuro(x.priceCeilingEur)}</strong></span></Link>}):<p className="p-5 text-sm text-slate-500">Nenhum jogo encontrado.</p>)}
+   {tab==="collection"?(cs.length?cs.map(x=><Link key={x.collectionId} prefetch={false} href={`/game/${encodeURIComponent(x.collectionId)}?from=${encodeURIComponent(returnTo)}`} onClick={saveScroll} className="collection-row"><GameArtwork collectionId={x.collectionId} title={x.title} platform={platform} className="h-24 w-20 shrink-0 rounded-xl"/><span className="min-w-0 flex-1"><strong className="block truncate text-base font-black">{x.title}</strong><span className="block truncate text-xs font-semibold text-slate-500">{x.genre?x.genre.split(",").slice(0,2).join(" · "):"Género n/d"}</span>{(x.completeness||x.condition)&&<span className="mt-1 block truncate text-[11px] font-bold text-[#466558]">{[x.completeness,x.condition].filter(Boolean).join(" · ")}</span>}</span><strong className="text-sm font-black">{x.valueEur===null?"—":formatEuro(x.valueEur)}</strong></Link>):<p className="p-5 text-sm text-slate-500">Nenhum jogo encontrado.</p>):(ws.length?ws.map(x=>{const key=wishKey(x);const targetCondition=targetBuyCondition(x.targetVersion);const buy=priceLoad.buyReferences[key];const targetReference=targetCondition?buy?.[targetCondition]??null:null;return <Link key={x.targetId+x.title} prefetch={false} href={`/wish/${encodeURIComponent(x.targetId)}?platform=${encodeURIComponent(platform)}&title=${encodeURIComponent(x.title)}&from=${encodeURIComponent(returnTo)}`} onClick={saveScroll} className="collection-row"><WishlistArtwork title={x.title} platform={platform} artworkSrc={x.artworkSrc} className="h-24 w-20 shrink-0"/><span className="min-w-0 flex-1"><strong className="block truncate text-base font-black">{x.title}</strong><span className="text-xs font-semibold text-slate-500">{x.priority}{x.targetVersion?" · "+x.targetVersion:""}</span></span><span className="min-w-[5rem] text-right text-xs" title={priceLoad.status==="error"?"Não foi possível carregar preços agora":undefined}>{loading?<><span className="block text-slate-400">Referência</span><strong aria-label="A carregar preços">…</strong></>:targetCondition?<><span className="block text-[#466558]">Ref. {targetCondition==="cib"?"CIB":"Loose"}</span><strong className="text-slate-950">{targetReference?.valueEur==null?"—":formatEuro(targetReference.valueEur)}</strong></>:<><span className="block text-slate-400">Loose</span><strong>{buy?.loose.valueEur==null?"—":formatEuro(buy.loose.valueEur)}</strong><span className="mt-1 block text-slate-400">CIB</span><strong>{buy?.cib.valueEur==null?"—":formatEuro(buy.cib.valueEur)}</strong></>}{x.priceCeilingEur!==null&&<><span className="mt-1 block text-slate-400">Manual</span><strong className="text-slate-600">{formatEuro(x.priceCeilingEur)}</strong></>}</span></Link>}):<p className="p-5 text-sm text-slate-500">Nenhum jogo encontrado.</p>)}
   </div>
  </div>
 }

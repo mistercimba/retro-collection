@@ -4,6 +4,26 @@ Last updated: 2026-10-01
 
 This is the living project handoff. Read `AGENTS.md` first.
 
+
+## Active product work — PR #35 Wishlist buy reference
+
+Branch: `feat/wishlist-buy-reference`
+
+The current open PR introduces the first-pass Wishlist buying-reference engine:
+- the legacy `priceCeilingEur` field is treated as a **manual reference**, not a hard maximum;
+- automatic buying references are limited to **Loose** and **CIB**;
+- PriceCharting PAL is combined with the existing private CeX Portugal catalog from `mistercimba/vinted-retro-search`;
+- CeX contribution uses the midpoint of cash-buy and sell prices;
+- when both sources exist, the displayed reference is the arithmetic mean of PriceCharting and the CeX midpoint;
+- CeX matching is conservative and fails closed on ambiguous variants, edition mismatch, or missing buy/sell prices;
+- generic CeX product rows can be used transparently when packaging is not explicit, while ambiguous condition-specific rows still fail closed;
+- upstream PR #407 in `mistercimba/vinted-retro-search` is merged and validated; the refreshed shared CeX catalog now contains 14,307 web-visible reference products, of which 4,759 are currently online, while marketplace/scout valuation remains online-only;
+- follow-up PR #408 is also merged and production-validated; a post-merge CeX Value Scout run completed with 14,307 reference products, 4,759 online products, and **0 synthetic catalog events**, repairing the availability-event baseline cleanly;
+- Wishlist detail shows the full source breakdown; platform Wishlist rows show the calculated reference;
+- `PRODUCT_UX_CHECKLIST.md` records this product decision and remains the living UX roadmap.
+
+PR #35 has passing GitHub Actions and Vercel preview. After PR #407 merged, CeX Value Scout was re-run against latest main and published a fresh 14,307-product reference catalog. PR #35 is **not merged** pending explicit user approval.
+
 ## Current production baseline
 
 Repository: `mistercimba/retro-collection`
