@@ -1,4 +1,5 @@
 import { getSafeListReturnPath } from "./list-url-state.logic";
+import { targetBuyCondition, type WishlistBuyReferenceGuide } from "./wishlist-buy-reference.logic";
 
 export type WishlistPriceCondition = "loose" | "cib" | "new";
 export type WishlistPriceGuide = { looseEur: number | null; cibEur: number | null; newEur: number | null };
@@ -44,11 +45,28 @@ export function sortWishlistByCeiling<T extends { priceCeilingEur: number | null
   });
 }
 
-export type PlatformListState = { tab: "collection" | "wishlist"; q: string; filter: string; sort: string };
+export type PlatformListState = {
+  tab: "collection" | "wishlist";
+  q: string;
+  filter: string;
+  condition: string;
+  reference: string;
+  sort: string;
+};
+
 export function parsePlatformListState(search: string, initialTab: PlatformListState["tab"] = "collection"): PlatformListState {
   const params = new URLSearchParams(search.startsWith("?") ? search.slice(1) : search);
   const tab = params.get("tab") === "wishlist" ? "wishlist" : params.get("tab") === "collection" ? "collection" : initialTab;
-  return { tab, q: params.get("q") ?? "", filter: params.get("filter") ?? "all", sort: params.get("sort") ?? (tab === "wishlist" ? "priority" : "title") };
+  const requestedSort = params.get("sort") ?? (tab === "wishlist" ? "priority" : "title");
+  const sort = requestedSort === "market-desc" ? "buy-desc" : requestedSort;
+  return {
+    tab,
+    q: params.get("q") ?? "",
+    filter: params.get("filter") ?? "all",
+    condition: params.get("condition") ?? "all",
+    reference: params.get("reference") ?? "all",
+    sort,
+  };
 }
 
 export function serializePlatformListState(state: PlatformListState): string {
@@ -56,6 +74,8 @@ export function serializePlatformListState(state: PlatformListState): string {
   if (state.tab === "wishlist") params.set("tab", state.tab);
   if (state.q) params.set("q", state.q);
   if (state.filter !== "all") params.set("filter", state.filter);
+  if (state.condition !== "all") params.set("condition", state.condition);
+  if (state.reference !== "all") params.set("reference", state.reference);
   if (state.sort !== (state.tab === "wishlist" ? "priority" : "title")) params.set("sort", state.sort);
   return params.toString();
 }
@@ -70,16 +90,65 @@ const priorityRank: Record<string, number> = { grail: 0, alta: 1, "média": 2, m
 const rank = (value: string) => priorityRank[value.toLocaleLowerCase("pt-PT")] ?? 9;
 export const wishlistPriceKey = (item: Pick<WishlistListItem, "targetId" | "title">) => `${item.targetId}:${item.title}`;
 
-export function filterWishlistItems<T extends WishlistListItem>(items: readonly T[], state: Pick<PlatformListState, "q" | "filter">): T[] {
-  return items.filter(item => (!state.q || item.title.toLocaleLowerCase("pt-PT").includes(state.q.toLocaleLowerCase("pt-PT"))) && (state.filter === "all" || item.priority === state.filter));
+export function filterWishlistItems<T extends WishlistListItem>(
+  items: readonly T[],
+  state: Pick<PlatformListState, "q" | "filter" | "condition">,
+): T[] {
+  return items.filter((item) => {
+    const condition = targetBuyCondition(item.targetVersion);
+    const matchesCondition = state.condition === "all"
+      || (state.condition === "undefined" ? condition === null : condition === state.condition);
+    return (!state.q || item.title.toLocaleLowerCase("pt-PT").includes(state.q.toLocaleLowerCase("pt-PT")))
+      && (state.filter === "all" || item.priority === state.filter)
+      && matchesCondition;
+  });
 }
 
-export function selectWishlistItems<T extends WishlistListItem>(items: readonly T[], state: PlatformListState, prices: Record<string, WishlistPriceGuide> = {}): T[] {
-  const filtered = filterWishlistItems(items, state);
+export function wishlistBuyReferenceValue(
+  item: WishlistListItem,
+  guide: WishlistBuyReferenceGuide | null | undefined,
+): number | null {
+  const condition = targetBuyCondition(item.targetVersion);
+  if (!condition || !guide) return null;
+  return guide[condition].valueEur;
+}
+
+export function filterWishlistByReference<T extends WishlistListItem>(
+  items: readonly T[],
+  reference: string,
+  guides: Record<string, WishlistBuyReferenceGuide> = {},
+): T[] {
+  if (reference === "all") return [...items];
+  return items.filter((item) => {
+    const condition = targetBuyCondition(item.targetVersion);
+    const guide = guides[wishlistPriceKey(item)];
+    const available = condition
+      ? guide?.[condition].valueEur !== null && guide?.[condition].valueEur !== undefined
+      : Boolean(guide && (guide.loose.valueEur !== null || guide.cib.valueEur !== null));
+    return reference === "available" ? available : reference === "missing" ? !available : true;
+  });
+}
+
+export function selectWishlistItems<T extends WishlistListItem>(
+  items: readonly T[],
+  state: PlatformListState,
+  prices: Record<string, WishlistPriceGuide> = {},
+  buyReferences: Record<string, WishlistBuyReferenceGuide> = {},
+): T[] {
+  const filtered = filterWishlistByReference(filterWishlistItems(items, state), state.reference, buyReferences);
   if (state.sort === "max-desc") return sortWishlistByCeiling(filtered);
-  return filtered.sort((a, b) => state.sort === "title" ? a.title.localeCompare(b.title, "pt-PT") : state.sort === "market-desc"
-    ? (getWishlistPriceLines(b.targetVersion, prices[wishlistPriceKey(b)] ?? null)[0]?.value ?? -1) - (getWishlistPriceLines(a.targetVersion, prices[wishlistPriceKey(a)] ?? null)[0]?.value ?? -1)
-    : rank(a.priority) - rank(b.priority) || a.title.localeCompare(b.title, "pt-PT"));
+  return filtered.sort((a, b) => {
+    if (state.sort === "title") return a.title.localeCompare(b.title, "pt-PT");
+    if (state.sort === "buy-desc") {
+      return (wishlistBuyReferenceValue(b, buyReferences[wishlistPriceKey(b)]) ?? -1)
+        - (wishlistBuyReferenceValue(a, buyReferences[wishlistPriceKey(a)]) ?? -1);
+    }
+    if (state.sort === "market-desc") {
+      return (getWishlistPriceLines(b.targetVersion, prices[wishlistPriceKey(b)] ?? null)[0]?.value ?? -1)
+        - (getWishlistPriceLines(a.targetVersion, prices[wishlistPriceKey(a)] ?? null)[0]?.value ?? -1);
+    }
+    return rank(a.priority) - rank(b.priority) || a.title.localeCompare(b.title, "pt-PT");
+  });
 }
 
 export function getWishlistOriginState(from: string | string[] | undefined, slug: string): PlatformListState | null {
