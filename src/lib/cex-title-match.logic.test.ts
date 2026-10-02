@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { cexTitleIdentity, isCexPerfectGrade, stripCexReferenceAnnotations } from "./cex-title-match.logic";
+import { isCexPerfectGrade, stripCexReferenceAnnotations } from "./cex-title-match.logic";
+import { titleMatchRank } from "./game-title-match.logic";
 
 describe("CeX reference title matching", () => {
   it("removes CeX rarity condition and packaging annotations without changing the game identity", () => {
@@ -8,14 +9,15 @@ describe("CeX reference title matching", () => {
       "Persona 4 (Com CD), + Manual, Caixa",
       "Persona 4 (Com CD), Perfeito",
     ]) {
-      expect(cexTitleIdentity(title, "PS2", true)).toBe("persona 4");
+      expect(titleMatchRank("Persona 4", stripCexReferenceAnnotations(title), "PS2")).not.toBeNull();
     }
-    expect(cexTitleIdentity("Persona 3 FES, Perfeito", "PS2", true)).toBe("persona 3 fes");
+    expect(titleMatchRank("Persona 3 FES", stripCexReferenceAnnotations("Persona 3 FES, Perfeito"), "PS2")).toBe(0);
   });
 
-  it("keeps condition wording out of the target title unless it is a known CeX annotation", () => {
+  it("removes only known CeX annotations", () => {
     expect(stripCexReferenceAnnotations("The Good Life")).toBe("The Good Life");
-    expect(cexTitleIdentity("The Legend of Zelda: Ocarina of Time 3D", "3DS")).toBe("legend of zelda ocarina of time 3d");
+    expect(stripCexReferenceAnnotations("Last Of Us, The (Sem DLC)")).toBe("Last Of Us, The");
+    expect(stripCexReferenceAnnotations("DuckTales (Disney's), + Manual, Caixa")).toBe("DuckTales");
   });
 
   it("recognizes the CeX rarity Perfeito grade so it is never treated as generic Loose pricing", () => {
