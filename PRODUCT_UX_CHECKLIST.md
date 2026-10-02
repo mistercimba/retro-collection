@@ -59,7 +59,9 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - For each condition, use the matching PriceCharting PAL value and, when there is one safe explicit CeX variant, the midpoint between CeX cash-buy and CeX sell price.
   - When both sources exist, the current first-pass reference is the arithmetic mean of PriceCharting and the CeX midpoint.
   - If only one trustworthy source exists, show it transparently as a lower-confidence reference rather than inventing a second source.
-  - CeX variant matching must fail closed on ambiguity, wrong edition or unclear packaging.
+  - CeX variant matching must fail closed on ambiguity or wrong edition.
+  - Web-visible CeX products remain usable as price references even when out of stock; stock availability is not required for this valuation use case.
+  - A generic CeX product with no explicit Loose/CIB packaging may be used as a clearly labelled lower-specificity fallback; an ambiguous explicit condition match still fails closed.
   - Initial engine implemented in the current Wishlist buy-reference work; formula will be tuned after reviewing real examples.
 
 - [ ] **Good-deal / buying-opportunity queue**
