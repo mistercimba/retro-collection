@@ -20,6 +20,20 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
  const research=await getGameResearch(game);
  const metadata=research.metadata;
  const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
+ const paid=game.purchase?.totalPaidEur??game.allocatedCostEur;
+ const estimatedValue=game.latestValuation?.valueEur??game.marketValueEur;
+ const valueDifference=paid!==null&&paid!==undefined&&estimatedValue!==null&&estimatedValue!==undefined?estimatedValue-paid:null;
+ const audit=game.audit;
+ const auditFields=[
+  ["Funcional",audit?.functionalStatus],
+  ["Disco / cartucho",audit?.mediaCondition],
+  ["Label",audit?.labelCondition],
+  ["Caixa",audit?.boxCondition],
+  ["Manual",audit?.manualCondition],
+  ["Completude auditada",audit?.completeness],
+  ["Código",audit?.productCode],
+  ["Idiomas observados",audit?.observedLanguages],
+ ].filter((entry):entry is [string,string]=>Boolean(entry[1]));
 
  return <div className="mx-auto max-w-4xl space-y-5 pb-10">
   <Link href={returnTo} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Voltar</Link>
@@ -42,15 +56,30 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   <PriceGuidePanel guide={research.priceGuide} cexCashEur={game.cexCashEur}/>
 
   <section className="collection-panel p-4">
-   <h2 className="text-sm font-black text-slate-950">A minha cópia</h2>
+   <div className="flex flex-wrap items-baseline justify-between gap-2">
+    <h2 className="text-sm font-black text-slate-950">A minha cópia</h2>
+    {audit?.auditDate&&<span className="text-[11px] font-semibold text-slate-400">Auditoria · {audit.auditDate}</span>}
+   </div>
    <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
     <Info label="Collection ID" value={game.collectionId}/>
     <Info label="Região / edição" value={[game.region,game.edition].filter(Boolean).join(" · ")}/>
     <Info label="Completude" value={game.overallStatus}/>
-    <Info label="Condição" value={game.conditionGrade}/>
-    <Info label="Preço pago" value={game.purchase?.totalPaidEur!==null&&game.purchase?.totalPaidEur!==undefined?formatEuro(game.purchase.totalPaidEur):formatEuro(game.allocatedCostEur)}/>
+    <Info label="Condição geral" value={game.conditionGrade}/>
+    <Info label="Preço pago" value={paid!==null&&paid!==undefined?formatEuro(paid):"—"}/>
+    <Info label="Valor estimado" value={estimatedValue!==null&&estimatedValue!==undefined?formatEuro(estimatedValue):"—"}/>
+    <Info label="Diferença vs. pago" value={formatDifference(valueDifference)}/>
     <Info label="Compra" value={[game.purchase?.date,game.purchase?.source].filter(Boolean).join(" · ")}/>
    </dl>
+
+   {auditFields.length>0&&<div className="mt-4 rounded-2xl border border-[#e2ddd2] bg-[#faf8f2] p-3">
+    <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#466558]">Auditoria física</p>
+    <dl className="mt-2 grid gap-2 sm:grid-cols-2">
+     {auditFields.map(([label,value])=><Info key={label} label={label} value={value}/>)}
+    </dl>
+    {audit?.missingComponents&&<p className="mt-2 text-xs font-semibold text-amber-800">Em falta: {audit.missingComponents}</p>}
+    {audit?.auditNotes&&<p className="mt-2 whitespace-pre-wrap text-xs leading-5 text-slate-600">{audit.auditNotes}</p>}
+   </div>}
+
    {game.notes&&<p className="mt-3 whitespace-pre-wrap rounded-xl bg-[#f4f1e8] p-3 text-xs leading-5 text-slate-600">{game.notes}</p>}
   </section>
 
@@ -72,5 +101,6 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   </details>
  </div>;
 }
+function formatDifference(value:number|null){if(value===null)return "—";if(value===0)return formatEuro(0);return `${value>0?"+":"−"}${formatEuro(Math.abs(value))}`;}
 function Info({label,value}:{label:string;value:string}){return <div className="rounded-xl bg-[#f4f1e8] px-3 py-2"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{label}</p><p className="mt-0.5 text-sm font-semibold text-slate-800">{value||"—"}</p></div>}
 function Field({name,label,value,type="text",step}:{name:string;label:string;value:string|number;type?:string;step?:string}){return <label><span className="field-label">{label}</span><input name={name} type={type} step={step} defaultValue={value} className="field-input"/></label>}
