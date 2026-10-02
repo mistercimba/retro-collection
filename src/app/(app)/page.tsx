@@ -4,11 +4,12 @@ import { QuickSearch } from "@/components/quick-search";
 import { getAllGames, getStats, getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/lib/data/platforms";
 import { formatEuro, gameCountLabel } from "@/lib/format";
+import { getCollectionListGames } from "@/lib/game-list-data";
 import { getLibrary } from "@/lib/library-store";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 
 export default async function HomePage() {
-  const [stats, games, wantlist, library] = await Promise.all([getStats(), getAllGames(), getWantlist(), getLibrary()]);
+  const [stats, games, wantlist, library, collectionListGames] = await Promise.all([getStats(), getAllGames(), getWantlist(), getLibrary(), getCollectionListGames()]);
   const platforms = sortPlatformsByRelease(stats.platforms);
   const activeWishlist = wantlist
     .filter((target) => target.planState !== "inactive" && target.matchState !== "acquired")
@@ -21,23 +22,15 @@ export default async function HomePage() {
       artworkSrc: resolveWishlistArtwork(target),
     }));
 
-  const keptGames = games.filter((game) => game.keepStatus === "Collection");
-  const keptIds = new Set(keptGames.map((game) => game.collectionId));
-  const purchases = new Map(library.purchases.map((purchase) => [purchase.purchaseId, purchase]));
+  const keptIds = new Set(collectionListGames.map((game) => game.collectionId));
   const recentAdditions = [...library.history]
     .sort((a, b) => b.at.localeCompare(a.at))
     .filter((entry) => (entry.action === "collection.add" || entry.action === "wishlist.purchase") && keptIds.has(entry.entityId))
     .slice(0, 4);
   const attention = [
-    { label: "Sem valor de mercado", value: keptGames.filter((game) => game.marketValueEur === null).length },
-    { label: "Por rever", value: keptGames.filter((game) => game.needsReview).length },
-    {
-      label: "Sem preço de compra",
-      value: keptGames.filter((game) => {
-        const purchase = game.purchaseId ? purchases.get(game.purchaseId) : undefined;
-        return game.allocatedCostEur === null && (purchase?.totalPaidEur === null || purchase?.totalPaidEur === undefined);
-      }).length,
-    },
+    { label: "Sem valor de mercado", value: collectionListGames.filter((game) => game.currentValueEur === null).length, href: "/collection/games?missingValue=1" },
+    { label: "Por rever", value: collectionListGames.filter((game) => game.needsReview).length, href: "/collection/games?review=1" },
+    { label: "Sem preço de compra", value: collectionListGames.filter((game) => game.purchasePaidEur === null).length, href: "/collection/games?missingPurchase=1" },
   ];
 
   return <div className="space-y-7 pb-8">
@@ -73,10 +66,10 @@ export default async function HomePage() {
         <h2 className="text-sm font-black text-slate-950">Para completar</h2>
         <p className="mt-0.5 text-xs font-semibold text-slate-500">Dados da coleção que ainda merecem atenção.</p>
         <div className="mt-3 grid grid-cols-3 gap-2 lg:grid-cols-1">
-          {attention.map((item) => <div key={item.label} className="rounded-xl bg-[#f4f1e8] px-3 py-2.5 lg:flex lg:items-baseline lg:justify-between lg:gap-3">
-            <strong className="block text-lg font-black text-slate-950">{item.value}</strong>
-            <span className="mt-0.5 block text-[10px] font-bold uppercase tracking-wide text-slate-500 lg:text-right">{item.label}</span>
-          </div>)}
+          {attention.map((item) => <Link key={item.label} href={item.href} className="group rounded-xl bg-[#f4f1e8] px-3 py-2.5 transition hover:bg-[#e8ecdf] lg:flex lg:items-center lg:justify-between lg:gap-3">
+            <span><strong className="block text-lg font-black text-slate-950">{item.value}</strong><span className="mt-0.5 block text-[10px] font-bold uppercase tracking-wide text-slate-500">{item.label}</span></span>
+            <span className="mt-1 block text-[10px] font-black text-[#315b47] lg:mt-0">VER →</span>
+          </Link>)}
         </div>
       </div>
     </section>
