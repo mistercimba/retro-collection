@@ -10,7 +10,7 @@ const SAFE_CEX_SUFFIXES = [
 ];
 
 const SAFE_CEX_PARENTHETICALS = [
-  /\s*\(\s*(?:com\s+cd|com\s+disco|with\s+disc|with\s+disk|sem\s+dlc|no\s+dlc|without\s+dlc|disney['’]s)\s*\)\s*/ig,
+  /\s*\(\s*(?:com\s+cd|com\s+disco|with\s+disc|with\s+disk|sem\s+dlc|no\s+dlc|without\s+dlc|disney['’]s|cardboard\s+sleeve|solo\s+jogo(?:\s*,\s*normal\s+dvd\s+case)?)\s*\)\s*/ig,
   /\s*\(\s*\d+\s+discos?\s*\)\s*/ig,
   /\s*\(\s*(?:no\s+manual|no\s+box|no\s+case|sem\s+manual|sem\s+caixa|solo\s+juego|juego\s+solo)\s*\)\s*/ig,
 ];
