@@ -18,6 +18,7 @@ export type CexWishlistGuide = {
   date: string;
   loose: CexConditionResult;
   cib: CexConditionResult;
+  generic: CexConditionResult;
 };
 
 export type WishlistBuyConditionReference = {
@@ -25,6 +26,7 @@ export type WishlistBuyConditionReference = {
   pricechartingEur: number | null;
   cex: CexPriceReference | null;
   cexMidpointEur: number | null;
+  cexBasis: "condition-match" | "generic" | null;
   valueEur: number | null;
   sourceCount: 0 | 1 | 2;
   confidence: "unavailable" | "single-source" | "two-sources";
@@ -47,8 +49,10 @@ function buildConditionReference(
   condition: WishlistBuyCondition,
   pricechartingEur: number | null,
   cexResult: CexConditionResult,
+  genericResult: CexConditionResult,
 ): WishlistBuyConditionReference {
-  const cex = cexResult.status === "matched" ? cexResult.reference : null;
+  const useGeneric = cexResult.status === "unavailable" && genericResult.status === "matched";
+  const cex = cexResult.status === "matched" ? cexResult.reference : useGeneric ? genericResult.reference : null;
   const midpoint = cexMidpoint(cex);
   const sources = [pricechartingEur, midpoint].filter((value): value is number => value !== null && Number.isFinite(value));
   const sourceCount = sources.length as 0 | 1 | 2;
@@ -57,6 +61,7 @@ function buildConditionReference(
     pricechartingEur,
     cex,
     cexMidpointEur: midpoint,
+    cexBasis: cexResult.status === "matched" ? "condition-match" : useGeneric ? "generic" : null,
     valueEur: sourceCount ? roundMoney(sources.reduce((sum, value) => sum + value, 0) / sourceCount) : null,
     sourceCount,
     confidence: sourceCount === 2 ? "two-sources" : sourceCount === 1 ? "single-source" : "unavailable",
@@ -68,8 +73,8 @@ export function buildWishlistBuyReferenceGuide(
   cex: CexWishlistGuide,
 ): WishlistBuyReferenceGuide {
   return {
-    loose: buildConditionReference("loose", pricecharting.looseEur, cex.loose),
-    cib: buildConditionReference("cib", pricecharting.cibEur, cex.cib),
+    loose: buildConditionReference("loose", pricecharting.looseEur, cex.loose, cex.generic),
+    cib: buildConditionReference("cib", pricecharting.cibEur, cex.cib, cex.generic),
   };
 }
 
