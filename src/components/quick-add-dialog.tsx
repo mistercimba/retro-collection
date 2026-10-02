@@ -36,7 +36,7 @@ export function QuickAddDialog({
   }, [open]);
 
   const triggerButton = trigger === "sidebar"
-    ? <button type="button" onClick={() => setOpen(true)} className="side-nav-link w-full text-left">
+    ? <button type="button" onClick={() => setOpen(true)} className="side-nav-link side-nav-action w-full text-left">
         <Plus className="h-5 w-5" /><span>Adicionar jogo</span>
       </button>
     : <button type="button" onClick={() => setOpen(true)} className="mobile-nav-link text-[#17382e]" aria-label="Adicionar jogo à coleção">
