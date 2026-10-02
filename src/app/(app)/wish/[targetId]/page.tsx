@@ -2,13 +2,15 @@ import Link from "next/link";
 import {ArrowLeft} from "lucide-react";
 import {notFound} from "next/navigation";
 import {WishlistArtwork} from "@/components/wishlist-artwork";
-import {PriceGuidePanel} from "@/components/price-guide";
+import {WishlistBuyReferencePanel} from "@/components/wishlist-buy-reference-panel";
 import {ReferenceLinks} from "@/components/reference-links";
 import {editWishlistGame,purchaseWishlistGame,removeWishlistGame} from "@/lib/library-actions";
 import {getWantlist} from "@/lib/data/collection-service";
 import {displayPlatform,platformSlug} from "@/lib/data/platforms";
 import {findGameMetadataByTitle} from "@/lib/game-metadata";
 import {getPricechartingGuide,getPricechartingGuides} from "@/lib/pricecharting-catalog";
+import {getCexWishlistGuide} from "@/lib/cex-catalog";
+import {buildWishlistBuyReferenceGuide} from "@/lib/wishlist-buy-reference.logic";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
@@ -22,6 +24,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
  const target=targets.find(x=>x.targetId===decodedId&&(!wantedPlatform||x.platform===wantedPlatform)&&(!wantedTitle||x.title===wantedTitle))??targets.find(x=>x.targetId===decodedId);
  if(!target) notFound();
  const guidePromise=getPricechartingGuide(target.platform,target.title,target.targetVersion);
+ const cexGuidePromise=getCexWishlistGuide(target.platform,target.title,target.targetVersion);
  const metadata=findGameMetadataByTitle(target.title);
  const artworkSrc=resolveWishlistArtwork(target);
  const back=getSafeListReturnPath(query.from)??`/platform/${platformSlug(target.platform)}?tab=wishlist`;
@@ -32,7 +35,8 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
  const prices=origin?.sort==="market-desc"?Object.fromEntries(await getPricechartingGuides(candidates.map(x=>({key:wishlistPriceKey(x),platform:x.platform,title:x.title,edition:x.targetVersion})))):{};
  const siblings=selectWishlistItems(candidates,state,prices);
  const {previous,next}=getWishlistNeighbors(siblings,target);
- const guide=await guidePromise;
+ const [guide,cexGuide]=await Promise.all([guidePromise,cexGuidePromise]);
+ const buyReference=buildWishlistBuyReferenceGuide(guide,cexGuide);
  const siblingHref=(item:typeof target)=>`/wish/${encodeURIComponent(item.targetId)}?platform=${encodeURIComponent(item.platform)}&title=${encodeURIComponent(item.title)}&from=${encodeURIComponent(back)}`;
 
  return <div className="mx-auto max-w-4xl space-y-5 pb-10">
@@ -51,7 +55,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
     <div className="mt-5"><ReferenceLinks title={target.title} metacriticUrl={metadata?.reviewScoreUrl??""}/></div>
    </div>
   </section>
-  <PriceGuidePanel guide={guide} maxPayEur={target.priceCeilingEur}/>
+  <WishlistBuyReferencePanel guide={buyReference} cexGuide={cexGuide} targetVersion={target.targetVersion} manualReferenceEur={target.priceCeilingEur}/>
   <section className="collection-panel p-4">
    <h2 className="text-sm font-black">O que procuro</h2>
    <div className="mt-3 grid gap-2 sm:grid-cols-2"><Info label="Prioridade" value={target.priority}/><Info label="Versão / condição alvo" value={target.targetVersion}/><Info label="Motivo" value={target.reason}/><Info label="Notas" value={target.notes}/></div>
@@ -62,7 +66,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
    <form action={editWishlistGame} className="mt-4 grid gap-3 sm:grid-cols-2">
     <Hidden target={target}/>
     <label><span className="field-label">Prioridade</span><select name="priority" defaultValue={target.priority||"Média"} className="field-input"><option>Alta</option><option>Média</option><option>Baixa</option><option>Grail</option></select></label>
-    <Field name="priceCeilingEur" label="Máximo que pago (€)" value={target.priceCeilingEur??""} type="number" step="0.01"/><Field name="targetVersion" label="Versão alvo" value={target.targetVersion}/><Field name="reason" label="Porque quero" value={target.reason}/>
+    <Field name="priceCeilingEur" label="Referência manual (€)" value={target.priceCeilingEur??""} type="number" step="0.01"/><Field name="targetVersion" label="Versão alvo" value={target.targetVersion}/><Field name="reason" label="Porque quero" value={target.reason}/>
     <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" defaultValue={target.notes} className="field-input min-h-20"/></label>
     <ActionSubmitButton pendingLabel="A guardar…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">Guardar wishlist</ActionSubmitButton>
    </form>
