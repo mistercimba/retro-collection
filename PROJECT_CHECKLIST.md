@@ -5,6 +5,11 @@ A arquitetura e o handoff atuais estão em [AGENTS.md](AGENTS.md) e
 nos PRs merged de validação ainda pendente; não mantém as fases antigas de
 Google/read-only como roadmap futuro.
 
+O roadmap funcional/UX que nasceu da primeira revisão visual e de produto está
+em [PRODUCT_UX_CHECKLIST.md](PRODUCT_UX_CHECKLIST.md). Esse ficheiro deve ser
+atualizado à medida que as melhorias de produto são implementadas, adiadas ou
+reavaliadas.
+
 ## Concluído
 
 - [x] Next.js App Router, TypeScript, Tailwind e Node.js 22.
