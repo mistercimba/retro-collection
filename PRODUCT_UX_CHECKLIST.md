@@ -1,0 +1,241 @@
+# Retro Collection — Product / UX checklist
+
+Last updated: 2026-10-02
+
+This file tracks the product and UX ideas that came out of the first screenshot/product review of the current app.
+
+It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architecture, migration and technical validation work.
+
+## Legend
+
+- [x] Done in production
+- [~] Partially done / foundation exists
+- [ ] Pending
+- [>] Later / deliberately not a current priority
+
+## Core collector workflow
+
+- [x] **Global search across Collection + Wishlist**
+  - Search both sources from the persistent app shell.
+  - Make the source unmistakable for every result.
+  - Show **Collection first, Wishlist second**, with alphabetical ordering inside each group.
+  - Keep the typed query persistent while navigating.
+  - Full "Ver todos" results use the same grouping.
+  - Implemented in PR #32.
+
+- [x] **Quick Add available everywhere**
+  - Desktop action after the main navigation.
+  - Visually distinct from Collection / Wishlist / Histórico, while staying inside the same design language.
+  - Mobile action in the bottom navigation.
+  - Fast form first: game, console, completeness, condition and paid price.
+  - Optional purchase/copy details hidden under "Mais detalhes".
+  - Uses the existing app-owned Blob mutation flow.
+  - Implemented in PR #32.
+
+- [ ] **Quick Add title lookup / smarter game selection**
+  - Current Quick Add accepts free text.
+  - Later improvement: suggest known game metadata while typing, without making the add flow slower or fragile.
+  - Do not add fuzzy matching that can silently attach the wrong edition/platform.
+
+## Home / dashboard
+
+- [x] **Recently added**
+  - Show recent app-recorded collection additions/purchases.
+  - Link each row to the game.
+  - Do not fabricate pre-history.
+  - Implemented in PR #32.
+
+- [x] **"Para completar" / attention queues**
+  - Show games without a usable market value.
+  - Show games marked for review.
+  - Show games without a recorded purchase price.
+  - Each count links directly to the affected games.
+  - Filters are URL-backed and removable in the Collection browser.
+  - Implemented in PR #33.
+
+- [ ] **Wishlist opportunities below target**
+  - Surface wishlist items where the current market reference is at or below the user's maximum price.
+  - Keep condition/edition semantics correct; never compare a CIB target to a Loose price as if they were equivalent.
+
+- [>] **30-day collection value movement**
+  - Only useful once there is trustworthy historical valuation data.
+  - Do not fake a trend from a single current snapshot.
+
+## Platform / collection lists
+
+- [x] **Show physical-copy summary in the list**
+  - Show completeness + condition under the game metadata.
+  - Example: `CIB · Excellent`.
+  - Implemented in PR #32.
+
+- [ ] **Reduce overly tall platform rows**
+  - Original review suggested roughly 15–20% less vertical height while preserving readability and artwork usefulness.
+  - Re-check visually before changing; do not compact blindly.
+
+- [ ] **Improve secondary-label legibility where needed**
+  - Re-check small grey labels for contrast/size on real laptop/mobile viewports.
+  - Only change the labels that are actually hard to read.
+
+- [ ] **Selectable right-side field on platform lists**
+  - Potential options: current value, paid price, condition, region, purchase date.
+  - Keep the default simple; this should not turn the list into a spreadsheet.
+
+- [ ] **Show Wishlist count on console cards**
+  - Example: `42 jogos · 22 wishlist`.
+  - Keep current market value visible without overcrowding the card.
+
+## Game detail / personal copy
+
+- [x] **Paid price vs estimated value**
+  - Show paid price.
+  - Show estimated/current value when available.
+  - Show the difference vs paid.
+  - Do **not** label the difference as profit unless the item is actually sold.
+  - Implemented in PR #32.
+
+- [x] **Structured physical-audit information**
+  - Surface existing structured data instead of burying everything in free-text notes.
+  - Current fields include functional state, disc/cartridge, label, box, manual, completeness, product code, observed languages, missing components and audit notes.
+  - Implemented in PR #32.
+
+- [~] **Overall condition + component-level condition**
+  - Overall condition already exists and is displayed.
+  - Component audit data is displayed when present.
+  - Editing the structured component audit directly in the app is still pending.
+
+- [ ] **Personal-copy photos**
+  - Front.
+  - Back.
+  - Disc/cartridge.
+  - Manual/inserts/extras where useful.
+  - Treat these as photos of the owned copy, not generic cover artwork.
+
+- [ ] **Click cover / photo for larger view**
+  - Useful for cover inspection and, later, owned-copy photos.
+
+- [ ] **Use wide desktop space better**
+  - Consider an optional second column for collection information / market comparison / copy state.
+  - Collapse cleanly on narrower screens.
+  - Do not redesign the whole page just to fill empty space.
+
+- [ ] **Contextual back navigation**
+  - Prefer labels such as `← Nintendo DS`, `← Resultados da pesquisa`, etc. instead of generic `Voltar` where context is known.
+  - Preserve the existing list state and scroll-restoration behavior.
+
+- [ ] **Make market-reference precision explicit**
+  - PriceCharting PAL/CIB/etc. is a market reference, not a guaranteed exact value for the specific owned copy.
+  - Keep edition/condition/source/date visible enough that the user can understand what is being compared.
+
+## Multiple copies
+
+- [~] **Support more than one owned copy of the same game**
+  - The data model already supports distinct copies through separate `collectionId` records.
+  - Duplicate copies are already marked in the global Collection browser.
+  - A purpose-built multi-copy detail/management UX is still pending.
+
+- [ ] **Copy-level purchase, condition, value and photos**
+  - Every copy should remain independently editable.
+  - Do not collapse multiple physical copies into one aggregate record.
+
+## Wishlist buying intelligence
+
+- [~] **Priority**
+  - Already supported: Alta / Média / Baixa / Grail.
+
+- [~] **Maximum target price**
+  - Already supported and shown against PriceCharting reference data.
+
+- [~] **Target version / condition**
+  - Current `targetVersion` captures requirements such as PAL / CIB / edition in one field.
+  - More structured fields can be considered later if real usage shows the free-form target is insufficient.
+
+- [ ] **Explicit region field for wishlist targets**
+  - Only split this from targetVersion if it materially improves filtering/matching.
+
+- [ ] **Minimum acceptable completeness / condition as structured data**
+  - Example: CIB, Good+.
+  - Must integrate with pricing-condition logic rather than becoming decorative metadata.
+
+- [ ] **Below-target-price filter / queue**
+  - High-value buying workflow: quickly see which wanted games are currently at or below the user's ceiling.
+
+## History
+
+- [x] **Meaningful chronological history**
+  - Collection add/edit/remove.
+  - Wishlist add/edit/remove.
+  - Wishlist purchase.
+  - Forward-only by design; old history is not fabricated.
+
+- [ ] **Price-change history**
+  - Separate future feature.
+  - Requires trustworthy stored historical valuations before charts/trends are worthwhile.
+
+## Collection goals / lists
+
+- [ ] **Series / set completion goals**
+  - Examples originally discussed: Professor Layton, Pokémon, Castlevania DS, Zelda.
+  - Show owned / target totals without turning the app into achievement gamification.
+
+- [ ] **Custom collection lists**
+  - Examples: PAL Nintendo-published, Resident Evil, Zelda, Final Fantasy, Nintendo Selects.
+  - Prefer user-defined lists over hard-coded franchise logic.
+
+## Advanced views / statistics
+
+- [>] **Advanced stats**
+  - Interesting later, but lower priority than buying, auditing and collection-maintenance workflows.
+  - Avoid adding charts just because data exists.
+
+- [>] **Price-history charts**
+  - Same rule: only after historical pricing is genuinely trustworthy and useful.
+
+## Product principles from the original review
+
+- [x] **Polish the existing visual identity instead of redesigning it**
+  - Dark green + cream + lime identity stays.
+  - Avoid pixel-font / neon retro clichés.
+
+- [x] **Do not overfill the UI**
+  - Avoid unnecessary gradients, badges, animations, charts and extra colours.
+  - Utility should justify UI density.
+
+- [x] **No gamification**
+  - No collector levels, achievements, streaks or artificial engagement loops.
+  - Collection goals are useful tracking, not rewards.
+
+- [x] **Real collector utility first**
+  - Search while shopping.
+  - Add a purchase quickly.
+  - Understand the exact copy owned.
+  - Compare paid price with a market reference.
+  - Know what data still needs attention.
+  - Use the Wishlist to support real buying decisions.
+
+## Original implementation priority
+
+This preserves the order proposed in the first product review. Status reflects the current app.
+
+1. [x] Great global search
+2. [x] Quick Add
+3. [x] Better physical-copy information
+4. [x] Recently added
+5. [x] Paid price vs current value
+6. [~] Wishlist target price / priority
+7. [~] Better filters
+8. [ ] Own-copy photos
+9. [~] Multiple copies
+10. [ ] Lists / goals
+11. [ ] Price history
+12. [>] Advanced stats
+
+## Maintenance rule
+
+Update this file whenever one of these product items materially changes.
+
+When work lands:
+- change the checkbox/status;
+- add the PR number where useful;
+- note meaningful product decisions or intentional deferrals;
+- do not mark an item complete merely because infrastructure exists;
+- keep technically possible ideas marked pending until the actual user-facing workflow is usable.
