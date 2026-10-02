@@ -4,6 +4,23 @@ Last updated: 2026-10-01
 
 This is the living project handoff. Read `AGENTS.md` first.
 
+
+## Active product work — PR #35 Wishlist buy reference
+
+Branch: `feat/wishlist-buy-reference`
+
+The current open PR introduces the first-pass Wishlist buying-reference engine:
+- the legacy `priceCeilingEur` field is treated as a **manual reference**, not a hard maximum;
+- automatic buying references are limited to **Loose** and **CIB**;
+- PriceCharting PAL is combined with the existing private CeX Portugal catalog from `mistercimba/vinted-retro-search`;
+- CeX contribution uses the midpoint of cash-buy and sell prices;
+- when both sources exist, the displayed reference is the arithmetic mean of PriceCharting and the CeX midpoint;
+- CeX matching is conservative and fails closed on ambiguous variants, unclear packaging, edition mismatch, or missing buy/sell prices;
+- Wishlist detail shows the full source breakdown; platform Wishlist rows show the calculated reference;
+- `PRODUCT_UX_CHECKLIST.md` records this product decision and remains the living UX roadmap.
+
+PR #35 has passing GitHub Actions and Vercel preview. It is **not merged** pending explicit user approval.
+
 ## Current production baseline
 
 Repository: `mistercimba/retro-collection`
