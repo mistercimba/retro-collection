@@ -194,6 +194,17 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - Examples: PAL Nintendo-published, Resident Evil, Zelda, Final Fantasy, Nintendo Selects.
   - Prefer user-defined lists over hard-coded franchise logic.
 
+## Future unified collector hub
+
+- [>] **Unify Collection + Retro Hunter + fairs/field hunting into one product**
+  - Long-term direction only; do not merge architectures prematurely while the current Collection and Hunter workflows are still evolving.
+  - Preserve three distinct jobs even if they eventually share one app:
+    - **Collection** — what is owned, copy condition, purchase history, value and wishlist.
+    - **Hunter** — what is currently appearing online and whether it is worth buying.
+    - **Field / fairs** — physical hunting, recurring fairs/shops/routes, finds and on-the-spot buying reference.
+  - Prefer one shared identity/pricing layer for games, variants, PriceCharting and CeX rather than duplicating matching logic across projects.
+  - When this is revisited, design the information architecture first; repository consolidation is not automatically the same thing as a good unified product.
+
 ## Advanced views / statistics
 
 - [>] **Advanced stats**
