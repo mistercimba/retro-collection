@@ -83,9 +83,10 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
 
 - [~] **Better filters for real collector workflows**
   - Global Collection already supports platform, completeness, condition, region, edition, genre and attention filters.
-  - Current Wishlist filter work adds priority + **Loose/CIB/por definir** + **com/sem referência de compra**.
+  - PR #36 adds priority + **Loose/CIB/por definir** + **com/sem referência de compra** to the Wishlist.
   - Wishlist sorting moves from raw PriceCharting/"maximum" semantics to the calculated buy reference and the clearly-labelled legacy manual reference.
-  - Filter/sort/search state remains URL-backed and detail navigation must preserve the exact working set.
+  - Filter/sort/search state remains URL-backed and detail navigation preserves the exact working set.
+  - Keep this item partial until PR #36 is merged and production-verified.
 
 - [x] **Show physical-copy summary in the list**
   - Show completeness + condition under the game metadata.

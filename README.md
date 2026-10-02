@@ -57,8 +57,14 @@ não selecionam a fonte usada pelas páginas atuais da biblioteca.
   O match exige produto único e respeita edição e condição Loose/CIB/New.
   Falhas ou ausência de configuração deixam o preço indisponível. Esta app não
   faz scraping nem usa a API paga do PriceCharting.
-- CeX Portugal, Vinted, OLX, eBay, HowLongToBeat e Metacritic são links de pesquisa,
-  não novas integrações de cotações.
+- **CeX Portugal:** leitura server-side do catálogo de referência partilhado em
+  `mistercimba/vinted-retro-search`. A Wishlist usa matching conservador e,
+  quando existe uma variante segura, o midpoint entre cash-buy e sell como uma
+  das componentes da referência de compra. Produtos web-visíveis podem servir
+  de referência mesmo sem stock; ambiguidades e edições incompatíveis falham
+  fechadas. Esta app não faz scraping CeX no runtime.
+- Vinted, OLX, eBay, HowLongToBeat e Metacritic continuam a ser links/fontes de
+  pesquisa ou metadata, não integrações adicionais de cotações da Wishlist.
 
 ### Artwork local
 

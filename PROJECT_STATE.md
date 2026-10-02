@@ -1,6 +1,6 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-01
+Last updated: 2026-10-02
 
 This is the living project handoff. Read `AGENTS.md` first.
 
@@ -27,18 +27,19 @@ A 298-title static Wishlist identity audit is recorded in `docs/WISHLIST_REFEREN
 
 Repository: `mistercimba/retro-collection`
 
-Current main baseline before the UI audit follow-up:
+Current `main` baseline:
 
-`48a5159c908173740d56f2641ea315217acfbf94`
+`52351ebcad8b84b41e100df26e65c72705e34436`
 
-PR #29 documentation reconciliation is merged. Application behavior at this
-baseline includes the PR #28 squash `a4ed66a5fcaf5e29bc2f7ec5483d536d707bc48c`.
+This is the squash merge of PR #35, which made the Wishlist PriceCharting + CeX
+buy-reference engine the production baseline. PRs #30–#34 and the earlier Blob,
+UI and Wishlist-artwork work are also included in this history.
 
-Verified after merge:
+Verified for the current main commit:
 
 - GitHub Actions: SUCCESS
 - Vercel production: SUCCESS
-- PR #28: merged/closed
+- PR #35: merged/closed
 
 ## Current architecture
 

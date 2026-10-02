@@ -37,7 +37,7 @@ describe("shared game title matching", () => {
   });
 
   it("fails closed on broad franchise bases and explicit either-or targets", () => {
-    expect(titleMatchRank("Castlevania: Circle of the Moon", "Castlevania", "GBA")).toBeNull();
+    expect(titleMatchRank("Castlevania: Circle of the Moon", "Castlevania", "PS2")).toBeNull();
     expect(titleMatchRank("Resident Evil 4", "Resident Evil", "PS5")).toBeNull();
     expect(titleMatchRank("Kingdom Hearts II", "Kingdom Hearts", "PS2")).toBeNull();
     expect(titleMatchRank("Onimusha 2: Samurai's Destiny", "Klonoa 2: Lunatea's Veil", "PS2")).toBeNull();

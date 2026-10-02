@@ -27,6 +27,7 @@ reavaliadas.
 - [x] Wishlist final: **139/298 (46,6%)**, 159 fallback; 144 ficheiros preservados, dos quais 5 sem associação segura à edição explícita.
 - [x] Requisito de artwork distingue edição conhecida / Any / Unknown; Loose/CIB preserva identidade e alterações de edição invalidam o mapping anterior.
 - [x] PriceCharting via snapshot GitHub privado, ECB FX e matching local por plataforma/título/edição/condição; falhas degradam para preço indisponível.
+- [x] CeX Portugal via catálogo de referência partilhado do Retro Hunter, com matching conservador e midpoint cash-buy/sell usado na referência de compra da Wishlist; sem scraping CeX no runtime desta app.
 - [x] Gate por `APP_PASSWORD` e cookie HttpOnly; configuração explícita necessária para manter o deploy privado.
 - [x] PWA com shell offline e snapshot reduzido da Collection sincronizado após autenticação online.
 - [x] CI com lint, Vitest, testes Python e build; previews/deploys Vercel.
