@@ -73,6 +73,16 @@ function variantsCompatible(expected: string, actual: string): boolean {
   return wanted.every((flag) => found.includes(flag)) && (wanted.length > 0 || found.length === 0);
 }
 
+export function pricechartingTitleIdentity(value: string): string {
+  let text = normalizeMatchTitle(String(value ?? "").replace(/&/g, " and "));
+  text = text
+    .replace(/\bthe\b/g, " ")
+    .replace(/^shin megami tensei\s+persona\b/, "persona")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text;
+}
+
 export type PricechartingCatalog = {
   source?: string;
   region?: string;
@@ -84,12 +94,12 @@ export type PricechartingCatalog = {
 export function lookupPalPricechartingMatch(catalog: PricechartingCatalog, platform: string, title: string, edition: string): { product: NonNullable<PricechartingCatalog["games"]>[number]; pricechartingPlatform: string } | null {
   const targetPlatform = PRICECHARTING_PLATFORMS[platform];
   if (catalog.source !== "pricecharting-pal-local-snapshot" || catalog.region !== "PAL" || catalog.currency !== "USD" || !catalog.generatedAt || !Number.isFinite(Date.parse(catalog.generatedAt)) || !targetPlatform || !Array.isArray(catalog.games)) return null;
-  const wanted = normalizeMatchTitle(title);
+  const wanted = pricechartingTitleIdentity(title);
   if (!wanted) return null;
   const expectedEdition = `${title} ${edition}`.trim();
   const candidates = catalog.games.filter((entry) => {
     if (entry.platform !== targetPlatform.id || entry.region !== "PAL" || !entry.title || !entry.pricechartingUrl || !entry.scrapedAt || !Number.isFinite(Date.parse(entry.scrapedAt))) return false;
-    const labels = [entry.title, ...(Array.isArray(entry.aliases) ? entry.aliases : [])].map((label) => normalizeMatchTitle(label));
+    const labels = [entry.title, ...(Array.isArray(entry.aliases) ? entry.aliases : [])].map((label) => pricechartingTitleIdentity(label));
     if (!labels.includes(wanted) || !variantsCompatible(expectedEdition, entry.title)) return false;
     try {
       const url = new URL(entry.pricechartingUrl);
