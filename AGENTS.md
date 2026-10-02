@@ -155,6 +155,18 @@ Desktop/mobile navigation should treat:
 - game detail -> Collection;
 - wishlist detail -> Wishlist.
 
+## Multiple physical copies
+
+Multiple copies are separate physical records, never one aggregate game record.
+
+Rules:
+
+- `collectionId` remains the copy identity;
+- copy grouping uses only exact normalized **title + platform** identity, not fuzzy title matching;
+- Collection and `Sell` records count as current physical copies; historical `Sold` records do not join an active copy group;
+- purchase, condition, valuation and owned-copy photos remain independent per copy;
+- do not propagate edits from one copy to another implicitly.
+
 ## Metadata
 
 Game metadata is static/local at runtime.

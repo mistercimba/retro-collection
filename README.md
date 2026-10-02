@@ -8,7 +8,7 @@ wishlist. Next.js App Router, TypeScript, Tailwind, Node.js 22 e Vercel.
 - Dashboard, pesquisa, filtros e ordenação por coleção/plataforma.
 - Collection e Wishlist com criação, edição e remoção de jogos.
 - Compra de um target da Wishlist: cria a cópia e o registo de compra na Collection.
-- Detalhes da cópia, edição dos dados de compra, fotos privadas da cópia e consulta das valuations associadas.
+- Detalhes da cópia, edição dos dados de compra, fotos privadas e gestão/navegação entre múltiplas cópias físicas do mesmo jogo.
 - Para vender/Vendidos e histórico das alterações feitas na app.
 - Metadata, capas e imagens das plataformas locais; referências de preço e links de pesquisa.
 - PWA com consulta offline limitada da coleção previamente sincronizada.
@@ -46,6 +46,12 @@ metadata e o pathname de cada foto. Upload, leitura e remoção passam por rotas
 autenticadas da própria app; os bytes não são públicos nem são embebidos no JSON.
 Imagens grandes são reduzidas no browser antes do upload e o servidor aceita
 JPEG, PNG, WebP ou AVIF até 4 MB após essa preparação.
+
+Múltiplas cópias continuam a ser registos independentes por `collectionId`. A
+ficha agrupa apenas o mesmo título/plataforma por identidade normalizada exata,
+permite navegar entre cópias e adicionar outra cópia sem copiar silenciosamente
+condição, edição ou dados de compra. Registos `Sold` são históricos e não contam
+como cópias físicas atuais.
 
 Google Sheets é apenas contexto de migração/manutenção legado. Os antigos PLAN
 significavam prioridade pessoal; a migração originou os targets atuais, que agora
