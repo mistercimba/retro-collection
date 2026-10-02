@@ -9,6 +9,9 @@ describe("shared game title matching", () => {
     expect(titleMatchRank("SoulCalibur II", "Soul Calibur 2", "GameCube")).not.toBeNull();
     expect(titleMatchRank("WarioWare, Inc.: Minigame Mania", "Wario Ware Minigame Mania", "GBA")).not.toBeNull();
     expect(titleMatchRank("Shadow Man", "Shadowman", "N64")).not.toBeNull();
+    expect(titleMatchRank("Dragon Quest VIII: Journey of the Cursed King", "Dragon Quest VIII: El Periplo Del Rey Maldito", "3DS")).toBe(5);
+    expect(titleMatchRank("Sly 2: Band of Thieves", "Sly 2 Bando de Espertalhoes", "PS2")).toBe(5);
+    expect(titleMatchRank("Mario & Luigi: Superstar Saga + Bowser's Minions", "Mario & Luigi: Superstar Saga + Secuaces De Bowser", "3DS")).toBe(4);
   });
 
   it("accepts a unique shortened source title only when enough identity remains", () => {
@@ -29,6 +32,8 @@ describe("shared game title matching", () => {
     expect(titleMatchRank("Castlevania: Circle of the Moon", "Castlevania", "GBA")).toBeNull();
     expect(titleMatchRank("Resident Evil 4", "Resident Evil", "PS5")).toBeNull();
     expect(titleMatchRank("Kingdom Hearts II", "Kingdom Hearts", "PS2")).toBeNull();
+    expect(titleMatchRank("Onimusha 2: Samurai's Destiny", "Klonoa 2: Lunatea's Veil", "PS2")).toBeNull();
+    expect(titleMatchRank("Metroid Prime Trilogy", "Metroid Prime 3: Corruption", "Wii")).toBeNull();
     expect(isCompoundChoiceTitle("Pokémon Black 2 ou White 2")).toBe(true);
     expect(titleMatchRank("Pokémon Black 2 ou White 2", "Pokemon Black 2", "DS")).toBeNull();
     expect(titleMatchRank("Fire Emblem Fates (Birthright ou Conquest)", "Fire Emblem Fates Birthright", "3DS")).toBeNull();
