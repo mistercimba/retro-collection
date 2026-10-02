@@ -1,13 +1,24 @@
 import Link from "next/link";
 import { PlatformArtwork } from "@/components/artwork";
 import { QuickSearch } from "@/components/quick-search";
-import { getAllGames, getStats } from "@/lib/data/collection-service";
+import { getAllGames, getStats, getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/lib/data/platforms";
 import { formatEuro, gameCountLabel } from "@/lib/format";
+import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 
 export default async function HomePage() {
-  const [stats, games] = await Promise.all([getStats(), getAllGames()]);
+  const [stats, games, wantlist] = await Promise.all([getStats(), getAllGames(), getWantlist()]);
   const platforms = sortPlatformsByRelease(stats.platforms);
+  const activeWishlist = wantlist
+    .filter((target) => target.planState !== "inactive" && target.matchState !== "acquired")
+    .map((target) => ({
+      title: target.title,
+      platform: target.platform,
+      targetId: target.targetId,
+      targetVersion: target.targetVersion,
+      priority: target.priority,
+      artworkSrc: resolveWishlistArtwork(target),
+    }));
 
   return <div className="space-y-7 pb-8">
     <header className="collection-hero">
@@ -22,7 +33,7 @@ export default async function HomePage() {
       <Summary value={formatEuro(stats.marketValueEur)} label="valor total" />
     </section>
 
-    <div className="rounded-2xl bg-[#17382e] p-3 md:hidden"><QuickSearch games={games} /></div>
+    <div className="rounded-2xl bg-[#17382e] p-3 md:hidden"><QuickSearch games={games} wishlist={activeWishlist} /></div>
 
     <section>
       <div className="mb-4"><h2 className="text-xl font-black text-slate-950">Consolas</h2><p className="text-xs font-semibold text-slate-500">Por ano de lançamento</p></div>
