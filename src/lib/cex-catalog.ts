@@ -135,10 +135,11 @@ function titleIdentity(value: string, platform: string) {
   return text.replace(/\bthe\b/g, " ").replace(/\s+/g, " ").trim();
 }
 
-function packagingCondition(game: CexCatalogGame): WishlistBuyCondition | null {
+function packagingCondition(game: CexCatalogGame): WishlistBuyCondition | "generic" | null {
   const packaging = String(game.variantSignals?.packaging ?? "");
   if (packaging === "loose") return "loose";
   if (packaging === "boxed") return "cib";
+  if (packaging === "standard") return "generic";
   return null;
 }
 
@@ -196,7 +197,7 @@ export async function getCexWishlistGuides(
   if (!entries.length) return results;
   const catalog = await getCatalog();
   if (!catalog) {
-    for (const entry of entries) results.set(entry.key, { source: "CeX Portugal indisponível", date: "", loose: unavailable(), cib: unavailable() });
+    for (const entry of entries) results.set(entry.key, { source: "CeX Portugal indisponível", date: "", loose: unavailable(), cib: unavailable(), generic: unavailable() });
     return results;
   }
 
@@ -204,11 +205,11 @@ export async function getCexWishlistGuides(
     for (const entry of entries) {
       const cexPlatform = PLATFORM_MAP[entry.platform];
       if (!cexPlatform) {
-        results.set(entry.key, { source: "CeX Portugal", date: catalog.generatedAt!.slice(0, 10), loose: unavailable(), cib: unavailable() });
+        results.set(entry.key, { source: "CeX Portugal", date: catalog.generatedAt!.slice(0, 10), loose: unavailable(), cib: unavailable(), generic: unavailable() });
         continue;
       }
       const targetIdentity = titleIdentity(entry.title, cexPlatform);
-      const byCondition: Record<WishlistBuyCondition, CexPriceReference[]> = { loose: [], cib: [] };
+      const byCondition: Record<WishlistBuyCondition | "generic", CexPriceReference[]> = { loose: [], cib: [], generic: [] };
 
       for (const game of catalog.games ?? []) {
         if (game.platform !== cexPlatform || game.productKind !== "game") continue;
@@ -225,6 +226,7 @@ export async function getCexWishlistGuides(
         date: catalog.generatedAt!.slice(0, 10),
         loose: resultFor(byCondition.loose),
         cib: resultFor(byCondition.cib),
+        generic: resultFor(byCondition.generic),
       });
     }
   });
@@ -234,5 +236,5 @@ export async function getCexWishlistGuides(
 
 export async function getCexWishlistGuide(platform: string, title: string, edition = ""): Promise<CexWishlistGuide> {
   return (await getCexWishlistGuides([{ key: "single", platform, title, edition }])).get("single")
-    ?? { source: "CeX Portugal indisponível", date: "", loose: unavailable(), cib: unavailable() };
+    ?? { source: "CeX Portugal indisponível", date: "", loose: unavailable(), cib: unavailable(), generic: unavailable() };
 }
