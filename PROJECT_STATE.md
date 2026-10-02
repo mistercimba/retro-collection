@@ -5,24 +5,19 @@ Last updated: 2026-10-02
 This is the living project handoff. Read `AGENTS.md` first.
 
 
-## Active product work — owned-copy photos
+## Active product work — multiple-copy management
 
-Branch: `feat/owned-copy-photos`
+Branch: `feat/multiple-copy-management`
 
-PR #36 is merged in `main` and the Wishlist filters/reference-matching work is now the production baseline.
+PR #37 is merged and deployed. Private owned-copy photos are now part of the production baseline.
 
-The current branch advances the next item in the original product priority:
-- private photos attached to a specific physical `collectionId`;
-- categories for front, back, disc/cartridge, manual/inserts and extras;
-- client-side reduction for large images before upload;
-- authenticated private Blob upload/read/delete without exposing Blob URLs;
-- photo add/remove entries in the existing forward-only history;
-- best-effort Blob cleanup when a photo or whole collection item is removed;
-- no database, new storage provider or schema-version migration.
-
-Do not mutation-test this against production/preview if that environment shares the production Blob. Pure tests/build are the default validation until the feature is intentionally used.
-
-The Wishlist reference audit from PR #36 remains in `docs/WISHLIST_REFERENCE_MATCH_AUDIT_2026-10-02.md`. GBA CeX coverage still depends on the upstream hunter category/catalog refresh, while PS3/PS5 PriceCharting coverage remains separate source-snapshot debt.
+The current branch advances item 9 of the original product priority:
+- exact normalized title + platform grouping for physical copies;
+- Collection and Para vender records count as current physical copies; Sold remains historical;
+- detail-page navigation between copies with the active `collectionId` clearly identified;
+- per-copy paid price, estimated value, condition/state and photo count remain visible and independent;
+- a compact "Adicionar outra cópia" flow reuses the existing Collection mutation path with title/platform fixed and all copy-specific fields separate;
+- no fuzzy grouping and no aggregate edit that could overwrite several copies at once.
 
 ## Current production baseline
 
@@ -30,17 +25,16 @@ Repository: `mistercimba/retro-collection`
 
 Current `main` baseline:
 
-`8e7b248e8a8ced54572ff13cb4d1ceed533161f2`
+`c29447412346354efb2d895cd573f40625026cc3`
 
-This is the squash merge of PR #36. Production now includes the Wishlist
-buy-reference engine from PR #35 plus the PR #36 filters, URL-backed state,
-detail working-set navigation and conservative shared title matching.
+This is the squash merge of PR #37. Production includes private owned-copy photo
+storage/read/delete on top of the Wishlist reference/filter work from PRs #35–#36.
 
 Verified for the current main commit:
 
 - GitHub Actions: SUCCESS
 - Vercel production: SUCCESS
-- PR #36: merged/closed
+- PR #37: merged/closed
 
 ## Current architecture
 

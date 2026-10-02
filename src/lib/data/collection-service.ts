@@ -3,7 +3,8 @@ import { platformSlug } from "./platforms";
 import { matchWantTarget } from "./wishlist-matching";
 import { isAuditCompleted, selectLatestValuation } from "./collection-integrity";
 import { sumKnownMarketValues } from "./collection-stats.logic";
-import type { CollectionGame, CollectionStats, WantListEntry } from "./types";
+import { selectPhysicalCopies } from "@/lib/copy-groups.logic";
+import type { CollectionGame, CollectionStats, LibraryData, WantListEntry } from "./types";
 
 export async function getAllGames(): Promise<CollectionGame[]> {
   return (await getLibrary()).collection;
@@ -21,15 +22,25 @@ export async function getSellAndSoldGames(): Promise<{ forSale: CollectionGame[]
   };
 }
 
-export async function getGame(collectionId: string): Promise<CollectionGame | null> {
-  const library = await getLibrary();
-  const game = library.collection.find((item) => item.collectionId === collectionId);
-  if (!game) return null;
+function hydrateGame(library: LibraryData, game: CollectionGame): CollectionGame {
   return {
     ...game,
     latestValuation: selectLatestValuation(game.collectionId, game.catalogId, library.valuations),
     purchase: library.purchases.find((purchase) => purchase.purchaseId === game.purchaseId) ?? null,
   };
+}
+
+export async function getGame(collectionId: string): Promise<CollectionGame | null> {
+  const library = await getLibrary();
+  const game = library.collection.find((item) => item.collectionId === collectionId);
+  return game ? hydrateGame(library, game) : null;
+}
+
+export async function getGameCopies(collectionId: string): Promise<CollectionGame[]> {
+  const library = await getLibrary();
+  const current = library.collection.find((item) => item.collectionId === collectionId);
+  if (!current) return [];
+  return selectPhysicalCopies(library.collection, current).map((game) => hydrateGame(library, game));
 }
 
 export async function getStats(): Promise<CollectionStats> {

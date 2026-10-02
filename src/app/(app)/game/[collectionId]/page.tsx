@@ -5,20 +5,21 @@ import {GameArtwork} from "@/components/artwork";
 import {PriceGuidePanel} from "@/components/price-guide";
 import {ReferenceLinks} from "@/components/reference-links";
 import {editGame,removeCollectionGame} from "@/lib/library-actions";
-import {getGame} from "@/lib/data/collection-service";
+import {getGame,getGameCopies} from "@/lib/data/collection-service";
 import {displayPlatform,platformSlug} from "@/lib/data/platforms";
 import {formatEuro} from "@/lib/format";
 import {getGameResearch} from "@/lib/game-research";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
 import { OwnedCopyPhotos } from "@/components/owned-copy-photos";
+import { OwnedCopyGroup } from "@/components/owned-copy-group";
 
 export default async function GamePage({params,searchParams}:{params:Promise<{collectionId:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{collectionId},query]=await Promise.all([params,searchParams]);
  const game=await getGame(decodeURIComponent(collectionId));
  if(!game) notFound();
  const returnTo=getSafeListReturnPath(query.from)??`/platform/${platformSlug(game.platform)}`;
- const research=await getGameResearch(game);
+ const[research,copies]=await Promise.all([getGameResearch(game),getGameCopies(game.collectionId)]);
  const metadata=research.metadata;
  const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
  const paid=game.purchase?.totalPaidEur??game.allocatedCostEur;
@@ -55,6 +56,8 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   </section>
 
   <PriceGuidePanel guide={research.priceGuide} cexCashEur={game.cexCashEur}/>
+
+  <OwnedCopyGroup current={game} copies={copies} returnTo={returnTo}/>
 
   <section className="collection-panel p-4">
    <div className="flex flex-wrap items-baseline justify-between gap-2">
