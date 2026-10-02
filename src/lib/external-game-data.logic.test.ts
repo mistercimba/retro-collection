@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { estimateCondition, exactUniqueMatch, formatPlaytime, lookupPalPricechartingMatch, normalizeMatchTitle, parseEcbUsdEur, selectPriceChartingPrice, selectSnapshotPrice } from "./external-game-data.logic";
+import { estimateCondition, exactUniqueMatch, formatPlaytime, lookupPalPricechartingMatch, normalizeMatchTitle, parseEcbUsdEur, pricechartingTitleIdentity, selectPriceChartingPrice, selectSnapshotPrice } from "./external-game-data.logic";
 
 describe("external game data matching and display", () => {
   it("normalizes accents but requires a unique exact title", () => {
@@ -34,6 +34,26 @@ describe("external game data matching and display", () => {
     expect(lookupPalPricechartingMatch({ ...catalog, games: [product, { ...product, pricechartingUrl: "https://www.pricecharting.com/game/pal-playstation-2/sly-3-alt" }] }, "Playstation 2", "Sly 3", "Standard")).toBeNull();
     expect(lookupPalPricechartingMatch({ ...catalog, region: "NTSC" }, "Playstation 2", "Sly 3", "Standard")).toBeNull();
     expect(selectSnapshotPrice(product, "CIB")).toBe(24);
+  });
+
+  it("matches conservative PriceCharting title aliases used by the collection", () => {
+    expect(pricechartingTitleIdentity("The Legend of Zelda: Ocarina of Time 3D"))
+      .toBe(pricechartingTitleIdentity("Legend of Zelda: Ocarina of Time 3D"));
+    expect(pricechartingTitleIdentity("Persona 3 FES"))
+      .toBe(pricechartingTitleIdentity("Shin Megami Tensei: Persona 3 FES"));
+    expect(pricechartingTitleIdentity("Persona 4"))
+      .toBe(pricechartingTitleIdentity("Shin Megami Tensei: Persona 4"));
+
+    const persona = {
+      platform: "PS2", region: "PAL", title: "Shin Megami Tensei: Persona 4",
+      pricechartingUrl: "https://www.pricecharting.com/game/pal-playstation-2/shin-megami-tensei-persona-4",
+      loose: 26.72, cib: 55.05, new: 101.91, scrapedAt: "2026-09-01T00:00:00Z",
+    };
+    const catalog = {
+      source: "pricecharting-pal-local-snapshot", region: "PAL", currency: "USD",
+      generatedAt: "2026-09-01T00:00:00Z", games: [persona],
+    };
+    expect(lookupPalPricechartingMatch(catalog, "Playstation 2", "Persona 4", "Standard")?.product).toBe(persona);
   });
 
   it("uses only explicit copy data to select New, CIB or Loose", () => {
