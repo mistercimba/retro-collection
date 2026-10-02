@@ -21,6 +21,8 @@ The current open PR advances the next UX roadmap item:
 
 PR #36 is **not merged** pending checks and explicit user approval.
 
+A 298-title static Wishlist identity audit is recorded in `docs/WISHLIST_REFERENCE_MATCH_AUDIT_2026-10-02.md`. The matcher now has shared conservative normalization plus a platform-scoped verified regional alias table. A separate upstream coverage defect was found: CeX Portugal exposes GBA under `GBA Jogos`, which the hunter discarded despite existing GBA support. Hunter PR #409 fixes that category alias; Retro Collection must consume the refreshed catalog after #409 is merged. PS3/PS5 PriceCharting remain source-snapshot coverage debt rather than matcher failures.
+
 ## Current production baseline
 
 Repository: `mistercimba/retro-collection`
