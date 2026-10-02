@@ -33,7 +33,7 @@ export default async function WantPage() {
         <Input name="title" label="Jogo" required />
         <Input name="platform" label="Consola" required placeholder="Nintendo DS" />
         <label><span className="field-label">Prioridade</span><select name="priority" defaultValue="Média" className="field-input"><option>Alta</option><option>Média</option><option>Baixa</option><option>Grail</option></select></label>
-        <Input name="priceCeilingEur" label="Máximo que pago (€)" type="number" step="0.01" />
+        <Input name="priceCeilingEur" label="Referência manual (€)" type="number" step="0.01" />
         <Input name="targetVersion" label="Versão alvo" placeholder="PAL · CIB" />
         <Input name="reason" label="Porque quero" />
         <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" className="field-input min-h-20" /></label>
