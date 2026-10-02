@@ -1,7 +1,8 @@
 import "server-only";
 import type { CexConditionResult, CexPriceReference, CexWishlistGuide, WishlistBuyCondition } from "@/lib/wishlist-buy-reference.logic";
 import { measureServerFetch, measureServerWork } from "@/lib/server-perf";
-import { cexTitleIdentity, isCexPerfectGrade, normalizeCexTitle } from "@/lib/cex-title-match.logic";
+import { isCexPerfectGrade, stripCexReferenceAnnotations } from "@/lib/cex-title-match.logic";
+import { editionsCompatible, normalizeGameTitle, titleMatchRank, type TitleMatchRank } from "@/lib/game-title-match.logic";
 
 const CATALOG_REPOSITORY = "mistercimba/vinted-retro-search";
 const CATALOG_PATH = "data/reference/cex-pt-catalog.json";
@@ -50,36 +51,6 @@ const PLATFORM_MAP: Record<string, string> = {
   "Playstation 5": "PS5",
   PSP: "PSP",
 };
-
-const EDITION_PATTERNS: Record<string, RegExp> = {
-  platinum: /\bplatinum\b/,
-  playersChoice: /\bplayers choice\b/,
-  nintendoSelects: /\bnintendo selects\b/,
-  essentials: /\bessentials\b/,
-  greatestHits: /\bgreatest hits\b/,
-  nesClassics: /\bnes classics\b/,
-  dayOne: /\bday one\b/,
-  limited: /\blimited\b/,
-  collector: /\bcollectors?\b/,
-  steel: /\bsteel(?:book| box)?\b/,
-};
-
-function editionFlags(value: string) {
-  const text = normalizeCexTitle(value);
-  return Object.fromEntries(Object.entries(EDITION_PATTERNS).map(([key, pattern]) => [key, pattern.test(text)]));
-}
-
-function candidateEditionFlags(game: CexCatalogGame) {
-  const stored = game.variantSignals?.edition?.flags;
-  if (stored) return Object.fromEntries(Object.keys(EDITION_PATTERNS).map((key) => [key, Boolean(stored[key])]));
-  return editionFlags(String(game.boxName ?? ""));
-}
-
-function editionCompatible(targetVersion: string, game: CexCatalogGame) {
-  const wanted = editionFlags(targetVersion);
-  const candidate = candidateEditionFlags(game);
-  return Object.keys(EDITION_PATTERNS).every((key) => wanted[key] === candidate[key]);
-}
 
 type CexReferenceBucket = WishlistBuyCondition | "cib-perfect" | "generic";
 
@@ -157,17 +128,49 @@ export async function getCexWishlistGuides(
         results.set(entry.key, { source: "CeX Portugal", date: catalog.generatedAt!.slice(0, 10), loose: unavailable(), cib: unavailable(), generic: unavailable() });
         continue;
       }
-      const targetIdentity = cexTitleIdentity(entry.title, cexPlatform);
-      const byCondition: Record<CexReferenceBucket, CexPriceReference[]> = { loose: [], cib: [], "cib-perfect": [], generic: [] };
-
+      const ranked: Array<{ game: CexCatalogGame; baseTitle: string; rank: TitleMatchRank }> = [];
       for (const game of catalog.games ?? []) {
         if (game.platform !== cexPlatform || game.productKind !== "game") continue;
         const condition = packagingCondition(game);
         if (!condition) continue;
-        if (!editionCompatible(entry.edition ?? "", game)) continue;
-        if (cexTitleIdentity(String(game.boxName ?? ""), cexPlatform, true) !== targetIdentity) continue;
-        const reference = toReference(game);
-        if (reference) byCondition[condition].push(reference);
+        if (!editionsCompatible(`${entry.title} ${entry.edition ?? ""}`.trim(), String(game.boxName ?? ""))) continue;
+        const baseTitle = stripCexReferenceAnnotations(String(game.boxName ?? ""));
+        const matchRank = titleMatchRank(entry.title, baseTitle, cexPlatform);
+        if (matchRank === null) continue;
+        ranked.push({ game, baseTitle, rank: matchRank });
+      }
+
+      if (!ranked.length) {
+        results.set(entry.key, {
+          source: "CeX Portugal",
+          date: catalog.generatedAt!.slice(0, 10),
+          loose: unavailable(),
+          cib: unavailable(),
+          generic: unavailable(),
+        });
+        continue;
+      }
+
+      const bestRank = Math.min(...ranked.map((candidate) => candidate.rank)) as TitleMatchRank;
+      const best = ranked.filter((candidate) => candidate.rank === bestRank);
+      const identities = new Set(best.map((candidate) => normalizeGameTitle(candidate.baseTitle)));
+      if (identities.size !== 1) {
+        const ambiguous: CexConditionResult = { status: "ambiguous", reference: null };
+        results.set(entry.key, {
+          source: "CeX Portugal",
+          date: catalog.generatedAt!.slice(0, 10),
+          loose: ambiguous,
+          cib: ambiguous,
+          generic: ambiguous,
+        });
+        continue;
+      }
+
+      const byCondition: Record<CexReferenceBucket, CexPriceReference[]> = { loose: [], cib: [], "cib-perfect": [], generic: [] };
+      for (const { game } of best) {
+        const condition = packagingCondition(game);
+        const reference = condition ? toReference(game) : null;
+        if (condition && reference) byCondition[condition].push(reference);
       }
 
       const exactCib = resultFor(byCondition.cib);
