@@ -17,7 +17,7 @@ export async function GET(request:NextRequest){
  const prices=Object.fromEntries(guides);
  const buyReferences=Object.fromEntries(entries.map(entry=>{
   const price=guides.get(entry.key)??{looseEur:null,cibEur:null,newEur:null,source:"Preço indisponível",date:"",productUrl:""};
-  const cex=cexGuides.get(entry.key)??{source:"CeX Portugal indisponível",date:"",loose:{status:"unavailable" as const,reference:null},cib:{status:"unavailable" as const,reference:null}};
+  const cex=cexGuides.get(entry.key)??{source:"CeX Portugal indisponível",date:"",loose:{status:"unavailable" as const,reference:null},cib:{status:"unavailable" as const,reference:null},generic:{status:"unavailable" as const,reference:null}};
   return [entry.key,buildWishlistBuyReferenceGuide(price,cex)];
  }));
  return NextResponse.json({prices,buyReferences},{headers:{"Cache-Control":"private, max-age=60"}});
