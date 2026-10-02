@@ -312,7 +312,7 @@ export async function addWishlistGame(form: FormData) {
       platform: target.platform,
       summary: target.priceCeilingEur === null
         ? "Adicionado à wishlist"
-        : `Adicionado à wishlist · máximo ${target.priceCeilingEur.toFixed(2)} €`,
+        : `Adicionado à wishlist · referência manual ${target.priceCeilingEur.toFixed(2)} €`,
       details: [target.priority, target.targetVersion].filter(Boolean),
     });
     return library;
@@ -345,7 +345,7 @@ export async function editWishlistGame(form: FormData) {
     const details: string[] = [];
     changed("prioridade", current.priority, next.priority, details);
     changed("versão alvo", current.targetVersion, next.targetVersion, details);
-    changed("máximo que pago", current.priceCeilingEur, next.priceCeilingEur, details);
+    changed("referência manual", current.priceCeilingEur, next.priceCeilingEur, details);
     changed("motivo", current.reason, next.reason, details);
     changed("notas", current.notes, next.notes, details);
     library.wishlist[index] = next;
