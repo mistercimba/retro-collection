@@ -56,11 +56,14 @@ export function WishlistBuyReferencePanel({
                 <span className="font-bold text-slate-500">CeX Portugal</span>
                 {matchedCex && <a href={matchedCex.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-black text-[#315b47]">abrir <ExternalLink className="h-3 w-3" /></a>}
               </div>
-              {matchedCex ? <div className="mt-1 grid grid-cols-3 gap-1 text-[11px]">
-                <span><span className="block text-slate-400">cash</span><strong>{formatEuro(matchedCex.cashEur)}</strong></span>
-                <span><span className="block text-slate-400">vende</span><strong>{formatEuro(matchedCex.sellEur)}</strong></span>
-                <span><span className="block text-slate-400">meio</span><strong>{item.cexMidpointEur === null ? "—" : formatEuro(item.cexMidpointEur)}</strong></span>
-              </div> : <p className="mt-1 text-[11px] font-semibold text-slate-400">{entry.cexStatus === "ambiguous" ? "Mais de uma variante segura; não escolhemos por ti." : "Sem correspondência explícita segura para esta condição."}</p>}
+              {matchedCex ? <>
+                {item.cexBasis === "generic" && <p className="mt-1 text-[10px] font-bold text-amber-700">Produto CeX genérico · condição não explícita</p>}
+                <div className="mt-1 grid grid-cols-3 gap-1 text-[11px]">
+                  <span><span className="block text-slate-400">cash</span><strong>{formatEuro(matchedCex.cashEur)}</strong></span>
+                  <span><span className="block text-slate-400">vende</span><strong>{formatEuro(matchedCex.sellEur)}</strong></span>
+                  <span><span className="block text-slate-400">meio</span><strong>{item.cexMidpointEur === null ? "—" : formatEuro(item.cexMidpointEur)}</strong></span>
+                </div>
+              </> : <p className="mt-1 text-[11px] font-semibold text-slate-400">{entry.cexStatus === "ambiguous" ? "Mais de uma variante segura; não escolhemos por ti." : "Sem correspondência explícita segura para esta condição."}</p>}
             </div>
           </div>
         </article>;
