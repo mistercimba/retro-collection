@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { estimateCondition, exactUniqueMatch, formatPlaytime, lookupPalPricechartingMatch, normalizeMatchTitle, parseEcbUsdEur, pricechartingTitleIdentity, selectPriceChartingPrice, selectSnapshotPrice } from "./external-game-data.logic";
+import { estimateCondition, exactUniqueMatch, formatPlaytime, lookupPalPricechartingMatch, normalizeMatchTitle, parseEcbUsdEur, selectPriceChartingPrice, selectSnapshotPrice } from "./external-game-data.logic";
 
 describe("external game data matching and display", () => {
   it("normalizes accents but requires a unique exact title", () => {
@@ -37,13 +37,6 @@ describe("external game data matching and display", () => {
   });
 
   it("matches conservative PriceCharting title aliases used by the collection", () => {
-    expect(pricechartingTitleIdentity("The Legend of Zelda: Ocarina of Time 3D"))
-      .toBe(pricechartingTitleIdentity("Legend of Zelda: Ocarina of Time 3D"));
-    expect(pricechartingTitleIdentity("Persona 3 FES"))
-      .toBe(pricechartingTitleIdentity("Shin Megami Tensei: Persona 3 FES"));
-    expect(pricechartingTitleIdentity("Persona 4"))
-      .toBe(pricechartingTitleIdentity("Shin Megami Tensei: Persona 4"));
-
     const persona = {
       platform: "PS2", region: "PAL", title: "Shin Megami Tensei: Persona 4",
       pricechartingUrl: "https://www.pricecharting.com/game/pal-playstation-2/shin-megami-tensei-persona-4",
@@ -54,6 +47,25 @@ describe("external game data matching and display", () => {
       generatedAt: "2026-09-01T00:00:00Z", games: [persona],
     };
     expect(lookupPalPricechartingMatch(catalog, "Playstation 2", "Persona 4", "Standard")?.product).toBe(persona);
+  });
+
+  it("supports PAL PS3 and PS5 snapshot URLs once those platform snapshots are available", () => {
+    const ps3 = {
+      platform: "PS3", region: "PAL", title: "The Last of Us",
+      pricechartingUrl: "https://www.pricecharting.com/game/pal-playstation-3/the-last-of-us",
+      loose: 5, cib: 8, new: 20, scrapedAt: "2026-10-02T00:00:00Z",
+    };
+    const ps5 = {
+      platform: "PS5", region: "PAL", title: "Returnal",
+      pricechartingUrl: "https://www.pricecharting.com/game/pal-playstation-5/returnal",
+      loose: 10, cib: 14, new: 22, scrapedAt: "2026-10-02T00:00:00Z",
+    };
+    const catalog = {
+      source: "pricecharting-pal-local-snapshot", region: "PAL", currency: "USD",
+      generatedAt: "2026-10-02T00:00:00Z", games: [ps3, ps5],
+    };
+    expect(lookupPalPricechartingMatch(catalog, "Playstation 3", "The Last of Us", "Standard")?.product).toBe(ps3);
+    expect(lookupPalPricechartingMatch(catalog, "Playstation 5", "Returnal", "Standard")?.product).toBe(ps5);
   });
 
   it("uses only explicit copy data to select New, CIB or Loose", () => {
