@@ -161,4 +161,6 @@ textarea.field-input { resize: vertical; }
 .side-nav-link:hover { background: rgba(255,255,255,.08); color: white; }
 .side-nav-link-active { background: #d9f36a; color: #183027; }
 .side-nav-link-active:hover { background: #e4fa87; color: #183027; }
+.side-nav-action { border: 1px solid rgba(217,243,106,.38); background: rgba(217,243,106,.08); color: #d9f36a; }
+.side-nav-action:hover { border-color: #d9f36a; background: #d9f36a; color: #183027; }
 @media (max-width: 639px) { .collection-row { gap: .7rem; padding: .6rem; } .collection-row > :last-child { max-width: 7rem; } .console-card { gap: .75rem; } }
