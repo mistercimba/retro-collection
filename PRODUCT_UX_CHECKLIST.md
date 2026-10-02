@@ -53,7 +53,7 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - Filters are URL-backed and removable in the Collection browser.
   - Implemented in PR #33.
 
-- [~] **Wishlist automatic buy reference — PriceCharting + CeX**
+- [x] **Wishlist automatic buy reference — PriceCharting + CeX**
   - The old `priceCeilingEur` value is a legacy/manual reference, not a hard maximum and must not drive automatic "buy now" logic.
   - Buying conditions are intentionally limited to **Loose** and **CIB**; New/Sealed is not part of the buying-reference model.
   - For each condition, use the matching PriceCharting PAL value and, when there is one safe explicit CeX variant, the midpoint between CeX cash-buy and CeX sell price.
@@ -62,7 +62,7 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - CeX variant matching must fail closed on ambiguity or wrong edition.
   - Web-visible CeX products remain usable as price references even when out of stock; stock availability is not required for this valuation use case.
   - A generic CeX product with no explicit Loose/CIB packaging may be used as a clearly labelled lower-specificity fallback; an ambiguous explicit condition match still fails closed.
-  - Initial engine implemented in the current Wishlist buy-reference work; formula will be tuned after reviewing real examples.
+  - Initial engine implemented in PR #35; formula remains intentionally transparent and can be tuned after reviewing more real examples.
 
 - [ ] **Good-deal / buying-opportunity queue**
   - Later, use the calculated buy reference — not the legacy manual value — to surface attractive listings or asking prices.
@@ -73,6 +73,12 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - Do not fake a trend from a single current snapshot.
 
 ## Platform / collection lists
+
+- [~] **Better filters for real collector workflows**
+  - Global Collection already supports platform, completeness, condition, region, edition, genre and attention filters.
+  - Current Wishlist filter work adds priority + **Loose/CIB/por definir** + **com/sem referência de compra**.
+  - Wishlist sorting moves from raw PriceCharting/"maximum" semantics to the calculated buy reference and the clearly-labelled legacy manual reference.
+  - Filter/sort/search state remains URL-backed and detail navigation must preserve the exact working set.
 
 - [x] **Show physical-copy summary in the list**
   - Show completeness + condition under the game metadata.
@@ -245,7 +251,7 @@ This preserves the order proposed in the first product review. Status reflects t
 3. [x] Better physical-copy information
 4. [x] Recently added
 5. [x] Paid price vs current value
-6. [~] Wishlist buying reference / priority
+6. [x] Wishlist buying reference / priority
 7. [~] Better filters
 8. [ ] Own-copy photos
 9. [~] Multiple copies
