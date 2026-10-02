@@ -1,4 +1,4 @@
-import { GAME_TITLE_ALIAS_GROUPS } from "@/data/game-title-aliases";
+import { GAME_TITLE_ALIAS_GROUPS } from "../data/game-title-aliases";
 
 const STOPWORDS = new Set([
   "a", "an", "and", "the", "of", "de", "da", "do", "dos", "das", "para", "e", "o", "os", "as", "um", "uma",
