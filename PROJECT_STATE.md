@@ -1,23 +1,25 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-02
+Last updated: 2026-10-05
 
 This is the living project handoff. Read `AGENTS.md` first.
 
 
-## Active product work — multiple-copy management
+## Active product work — collection lists / goals
 
-Branch: `feat/multiple-copy-management`
+Branch: `feat/collection-lists-goals`
 
-PR #37 is merged and deployed. Private owned-copy photos are now part of the production baseline.
+PR #38 is merged and production-verified. Multiple-copy management is now part of the production baseline.
 
-The current branch advances item 9 of the original product priority:
-- exact normalized title + platform grouping for physical copies;
-- Collection and Para vender records count as current physical copies; Sold remains historical;
-- detail-page navigation between copies with the active `collectionId` clearly identified;
-- per-copy paid price, estimated value, condition/state and photo count remain visible and independent;
-- a compact "Adicionar outra cópia" flow reuses the existing Collection mutation path with title/platform fixed and all copy-specific fields separate;
-- no fuzzy grouping and no aggregate edit that could overwrite several copies at once.
+The current branch advances item 10 of the original product priority:
+- user-defined lists rather than hard-coded franchise rules;
+- explicit title + platform targets;
+- automatic owned/target progress against `keepStatus === "Collection"`;
+- exact normalized title + platform identity only, with no fuzzy matching;
+- create/edit/delete list and add/remove target flows;
+- deleting list data never mutates Collection or Wishlist records;
+- backward-compatible optional `collectionLists` storage inside the existing schemaVersion 1 Blob;
+- forward-only history entries for list and target changes.
 
 ## Current production baseline
 
@@ -25,16 +27,16 @@ Repository: `mistercimba/retro-collection`
 
 Current `main` baseline:
 
-`c29447412346354efb2d895cd573f40625026cc3`
+`74736fd23843b4ae117ee99d11df817a12d8e408`
 
-This is the squash merge of PR #37. Production includes private owned-copy photo
-storage/read/delete on top of the Wishlist reference/filter work from PRs #35–#36.
+This is the squash merge of PR #38. Production includes private owned-copy photos,
+multiple-copy navigation/creation and the Wishlist reference/filter work from PRs #35–#37.
 
 Verified for the current main commit:
 
 - GitHub Actions: SUCCESS
 - Vercel production: SUCCESS
-- PR #37: merged/closed
+- PR #38: merged/closed
 
 ## Current architecture
 
@@ -56,6 +58,7 @@ The app owns its mutable data:
 - wishlist
 - purchases
 - valuations
+- collection lists/goals
 - history
 - owned-copy photo metadata; photo bytes are separate private Blob objects
 
@@ -65,7 +68,8 @@ Blob runtime behavior is intentionally strict:
 
 - no silent snapshot reseed;
 - missing Blob is an error;
-- existing old Blob without history is backward-compatible as `history: []`.
+- existing old Blob without history is backward-compatible as `history: []`;
+- existing old Blob without collection lists is backward-compatible as `collectionLists: []`.
 
 ### Metadata
 

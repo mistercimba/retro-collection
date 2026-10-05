@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { Heart, History, Home, LibraryBig } from "lucide-react";
+import { Heart, History, Home, LibraryBig, ListChecks } from "lucide-react";
 import { getActiveAppNavigation } from "@/lib/app-navigation.logic";
 
 const links = [
   { href: "/", label: "Início", icon: Home },
   { href: "/collection", label: "Coleção", icon: LibraryBig },
   { href: "/want", label: "Wishlist", icon: Heart },
+  { href: "/lists", label: "Listas", icon: ListChecks },
   { href: "/history", label: "Histórico", icon: History },
 ];
 

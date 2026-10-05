@@ -5,7 +5,10 @@ import type { LibraryData } from "@/lib/data/types";
 
 const LIBRARY_PATH = "retro-collection/library.json";
 
-function validLibrary(value: unknown): value is Omit<LibraryData, "history"> & { history?: LibraryData["history"] } {
+function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "collectionLists"> & {
+  history?: LibraryData["history"];
+  collectionLists?: LibraryData["collectionLists"];
+} {
   if (!value || typeof value !== "object") return false;
   const candidate = value as Partial<LibraryData>;
   return candidate.schemaVersion === 1 &&
@@ -14,6 +17,7 @@ function validLibrary(value: unknown): value is Omit<LibraryData, "history"> & {
     Array.isArray(candidate.wishlist) &&
     Array.isArray(candidate.purchases) &&
     Array.isArray(candidate.valuations) &&
+    (candidate.collectionLists === undefined || Array.isArray(candidate.collectionLists)) &&
     (candidate.history === undefined || Array.isArray(candidate.history));
 }
 
@@ -22,7 +26,7 @@ async function readBlobLibrary(): Promise<LibraryData | null> {
   if (!result) return null;
   const payload = JSON.parse(await new Response(result.stream).text()) as unknown;
   if (!validLibrary(payload)) throw new Error("A library.json no Blob é inválida.");
-  return { ...payload, history: payload.history ?? [] };
+  return { ...payload, collectionLists: payload.collectionLists ?? [], history: payload.history ?? [] };
 }
 
 async function readRequiredLibrary(): Promise<LibraryData> {
@@ -34,7 +38,13 @@ async function readRequiredLibrary(): Promise<LibraryData> {
 export const getLibrary = cache(readRequiredLibrary);
 
 export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
-  const next: LibraryData = { ...data, schemaVersion: 1, updatedAt: new Date().toISOString(), history: data.history ?? [] };
+  const next: LibraryData = {
+    ...data,
+    schemaVersion: 1,
+    updatedAt: new Date().toISOString(),
+    collectionLists: data.collectionLists ?? [],
+    history: data.history ?? [],
+  };
   await put(LIBRARY_PATH, JSON.stringify(next), {
     access: "private",
     allowOverwrite: true,
