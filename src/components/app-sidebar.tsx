@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Gamepad2 } from "lucide-react";
-import type { CollectionGame } from "@/lib/data/types";
-import type { QuickSearchableWishlistItem } from "@/lib/quick-search.logic";
+import type { QuickSearchableGame, QuickSearchableWishlistItem } from "@/lib/quick-search.logic";
 import { QuickSearch } from "@/components/quick-search";
 import { QuickAddDialog } from "@/components/quick-add-dialog";
 import { DesktopNav } from "@/components/desktop-nav";
@@ -13,7 +12,7 @@ export function AppSidebar({
   wishlist,
   platforms,
 }: {
-  games: CollectionGame[];
+  games: QuickSearchableGame[];
   wishlist: QuickSearchableWishlistItem[];
   platforms: string[];
 }) {
