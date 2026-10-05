@@ -1,8 +1,9 @@
 import "server-only";
+import { unstable_cache } from "next/cache";
 import { getCollectionGames } from "@/lib/data/collection-service";
 import type { CollectionGame, PurchaseRecord } from "@/lib/data/types";
 import { getGameMetadata } from "@/lib/game-metadata";
-import { getLibrary } from "@/lib/library-store";
+import { getLibrary, LIBRARY_CACHE_TAG } from "@/lib/library-store";
 import { getPricechartingCatalogSnapshot, getPricechartingEstimates, type PriceEstimate } from "@/lib/pricecharting-catalog";
 
 export type CollectionListGame = CollectionGame & {
@@ -41,10 +42,20 @@ export async function enrichGameList(games: CollectionGame[]): Promise<Collectio
   return withEstimates(games, await getPricechartingEstimates(games));
 }
 
-export async function getCollectionListGames(): Promise<CollectionListGame[]> {
+async function buildCollectionListGames(): Promise<CollectionListGame[]> {
   const [games, catalog, library] = await Promise.all([getCollectionGames(), getPricechartingCatalogSnapshot(), getLibrary()]);
   const estimates = await getPricechartingEstimates(games, Promise.resolve(catalog));
   return withEstimates(games, estimates, purchaseMap(library.purchases));
+}
+
+const getCachedCollectionListGames = unstable_cache(
+  buildCollectionListGames,
+  ["collection-list-games-v1"],
+  { tags: [LIBRARY_CACHE_TAG], revalidate: 3600 },
+);
+
+export async function getCollectionListGames(): Promise<CollectionListGame[]> {
+  return getCachedCollectionListGames();
 }
 
 export function collectionValue(games: Pick<CollectionListGame, "currentValueEur">[]) {

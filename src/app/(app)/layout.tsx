@@ -5,6 +5,7 @@ import { OfflineSnapshotSync } from "@/components/offline-snapshot-sync";
 import { requireAuth } from "@/lib/auth";
 import { getAllGames, getWantlist } from "@/lib/data/collection-service";
 import { sortPlatformsByRelease } from "@/lib/data/platforms";
+import { toQuickSearchableGame } from "@/lib/quick-search.logic";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 import { performance } from "node:perf_hooks";
 
@@ -20,6 +21,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     throw error;
   }
   const [games, wantlist] = await Promise.all([getAllGames(), getWantlist()]);
+  const searchGames = games.map(toQuickSearchableGame);
   const activeWishlist = wantlist
     .filter((target) => target.planState !== "inactive" && target.matchState !== "acquired")
     .map((target) => ({
@@ -38,7 +40,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return <div className="min-h-screen bg-[#f3efe6] md:flex">
     <meta name="server-auth-timing" content={`require_auth;dur=${authDuration}`} />
-    <AppSidebar games={games} wishlist={activeWishlist} platforms={platforms} />
+    <AppSidebar games={searchGames} wishlist={activeWishlist} platforms={platforms} />
     <div className="min-w-0 flex-1">
       <Header />
       <OfflineSnapshotSync />

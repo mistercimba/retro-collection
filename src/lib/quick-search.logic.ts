@@ -7,6 +7,7 @@ export type QuickSearchableGame = {
   edition: string;
   region: string;
   overallStatus: string;
+  keepStatus: string;
 };
 
 export type QuickSearchableWishlistItem = {
@@ -17,6 +18,18 @@ export type QuickSearchableWishlistItem = {
   priority: string;
   artworkSrc?: string | null;
 };
+
+export function toQuickSearchableGame(game: QuickSearchableGame): QuickSearchableGame {
+  return {
+    title: game.title,
+    platform: game.platform,
+    collectionId: game.collectionId,
+    edition: game.edition,
+    region: game.region,
+    overallStatus: game.overallStatus,
+    keepStatus: game.keepStatus,
+  };
+}
 
 function normalizeSearch(value: string) {
   return value

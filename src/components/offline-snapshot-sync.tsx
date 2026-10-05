@@ -20,9 +20,12 @@ export function OfflineSnapshotSync() {
       }
     };
 
-    void syncSnapshot();
+    const timeoutId = window.setTimeout(() => { void syncSnapshot(); }, 1500);
     window.addEventListener("online", syncSnapshot);
-    return () => window.removeEventListener("online", syncSnapshot);
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.removeEventListener("online", syncSnapshot);
+    };
   }, []);
 
   return null;

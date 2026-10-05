@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { findQuickSearchMatches, findQuickSearchWishlistMatches } from "./quick-search.logic";
+import { findQuickSearchMatches, findQuickSearchWishlistMatches, toQuickSearchableGame } from "./quick-search.logic";
 
 const games = [
-  { title: "Pokémon Stadium", platform: "N64", collectionId: "N64-1", edition: "PAL", region: "Europe", overallStatus: "Complete" },
-  { title: "Silent Hill 2", platform: "Playstation 2", collectionId: "PS2-1", edition: "Black Label", region: "PAL", overallStatus: "Complete" },
-  { title: "Zelda: Ocarina of Time", platform: "Nintendo 64", collectionId: "N64-2", edition: "PAL", region: "Europe", overallStatus: "Complete" },
+  { title: "Pokémon Stadium", platform: "N64", collectionId: "N64-1", edition: "PAL", region: "Europe", overallStatus: "Complete", keepStatus: "Collection" },
+  { title: "Silent Hill 2", platform: "Playstation 2", collectionId: "PS2-1", edition: "Black Label", region: "PAL", overallStatus: "Complete", keepStatus: "Collection" },
+  { title: "Zelda: Ocarina of Time", platform: "Nintendo 64", collectionId: "N64-2", edition: "PAL", region: "Europe", overallStatus: "Complete", keepStatus: "Collection" },
 ];
 
 const wishlist = [
@@ -16,6 +16,10 @@ describe("Quick Search matches", () => {
   it("matches accents and unordered words across title and platform", () => {
     expect(findQuickSearchMatches(games, "pokemon n64").map((game) => game.collectionId)).toEqual(["N64-1"]);
     expect(findQuickSearchMatches(games, "hill silent").map((game) => game.collectionId)).toEqual(["PS2-1"]);
+  });
+
+  it("keeps only the fields required by the client quick search", () => {
+    expect(toQuickSearchableGame({ ...games[0], notes: "do not serialize" } as typeof games[0] & { notes: string })).toEqual(games[0]);
   });
 
   it("searches wishlist title, platform, target version and priority", () => {

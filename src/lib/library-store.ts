@@ -1,9 +1,11 @@
 import "server-only";
 import { cache } from "react";
+import { revalidateTag, unstable_cache } from "next/cache";
 import { get, put } from "@vercel/blob";
 import type { LibraryData } from "@/lib/data/types";
 
 const LIBRARY_PATH = "retro-collection/library.json";
+export const LIBRARY_CACHE_TAG = "retro-library";
 
 function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "collectionLists"> & {
   history?: LibraryData["history"];
@@ -35,7 +37,13 @@ async function readRequiredLibrary(): Promise<LibraryData> {
   return library;
 }
 
-export const getLibrary = cache(readRequiredLibrary);
+const readCachedLibrary = unstable_cache(
+  readRequiredLibrary,
+  ["retro-library-v1"],
+  { tags: [LIBRARY_CACHE_TAG], revalidate: false },
+);
+
+export const getLibrary = cache(readCachedLibrary);
 
 export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
   const next: LibraryData = {
@@ -51,10 +59,13 @@ export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
     contentType: "application/json",
     cacheControlMaxAge: 60,
   });
+  revalidateTag(LIBRARY_CACHE_TAG, { expire: 0 });
   return next;
 }
 
 export async function updateLibrary(mutator: (current: LibraryData) => LibraryData): Promise<LibraryData> {
+  // Mutations always read the Blob directly so read-modify-write starts from the
+  // latest persisted state. The successful save invalidates the shared read cache.
   const current = await readRequiredLibrary();
   return saveLibrary(mutator(structuredClone(current)));
 }
