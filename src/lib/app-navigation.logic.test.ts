@@ -10,5 +10,6 @@ describe("active app navigation", () => {
   it("keeps detail pages in their parent section", () => {
     expect(getActiveAppNavigation("/wish/target-1", null)).toBe("/want");
     expect(getActiveAppNavigation("/game/PS2-001", null)).toBe("/collection");
+    expect(getActiveAppNavigation("/lists/LIST-1", null)).toBe("/lists");
   });
 });

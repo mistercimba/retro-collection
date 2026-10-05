@@ -1,6 +1,6 @@
 # Retro Collection — Product / UX checklist
 
-Last updated: 2026-10-02
+Last updated: 2026-10-05
 
 This file tracks the product and UX ideas that came out of the first screenshot/product review of the current app.
 
@@ -154,17 +154,16 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
 
 ## Multiple copies
 
-- [~] **Support more than one owned copy of the same game**
-  - The data model supports distinct copies through separate `collectionId` records and the global Collection already marks duplicates.
-  - Current branch adds a purpose-built detail panel that groups exact title+platform copies, navigates between them and adds another copy without cloning copy-specific data.
+- [x] **Support more than one owned copy of the same game**
+  - PR #38 added a purpose-built detail panel that groups exact title+platform copies, navigates between them and adds another copy without cloning copy-specific data.
   - Collection and Para vender records count as current physical copies; Sold stays historical.
-  - Keep partial until the multi-copy PR is merged and production-verified.
+  - PR #38 is merged and production-verified.
 
-- [~] **Copy-level purchase, condition, value and photos**
+- [x] **Copy-level purchase, condition, value and photos**
   - The multi-copy panel surfaces independent paid price, estimated value, physical state and photo count for each copy.
   - Opening a copy keeps all editing and photo operations scoped to that `collectionId`.
   - No aggregate edit propagates from one physical copy to another.
-  - Keep partial until the multi-copy PR is merged and production-verified.
+  - PR #38 is merged and production-verified.
 
 ## Wishlist buying intelligence
 
@@ -204,13 +203,17 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
 
 ## Collection goals / lists
 
-- [ ] **Series / set completion goals**
-  - Examples originally discussed: Professor Layton, Pokémon, Castlevania DS, Zelda.
-  - Show owned / target totals without turning the app into achievement gamification.
+- [~] **Series / set completion goals**
+  - Current branch adds user-defined target lists with automatic owned/target progress.
+  - Ownership uses exact normalized title + platform against `Collection` records only; Sell/Sold do not inflate completion.
+  - Examples such as Professor Layton, Pokémon, Castlevania DS or Zelda are data entered by the user, not hard-coded rules.
+  - Keep partial until the Lists / Goals PR is merged and production-verified.
 
-- [ ] **Custom collection lists**
-  - Examples: PAL Nintendo-published, Resident Evil, Zelda, Final Fantasy, Nintendo Selects.
-  - Prefer user-defined lists over hard-coded franchise logic.
+- [~] **Custom collection lists**
+  - Current branch adds create/edit/delete list flows and add/remove explicit game targets.
+  - The same primitive supports thematic lists such as PAL Nintendo-published, Resident Evil, Final Fantasy or Nintendo Selects.
+  - List deletion never mutates Collection/Wishlist data; duplicate title+platform targets are ignored.
+  - Keep partial until the Lists / Goals PR is merged and production-verified.
 
 ## Future unified collector hub
 
@@ -266,8 +269,8 @@ This preserves the order proposed in the first product review. Status reflects t
 6. [x] Wishlist buying reference / priority
 7. [x] Better filters
 8. [x] Own-copy photos
-9. [~] Multiple copies
-10. [ ] Lists / goals
+9. [x] Multiple copies
+10. [~] Lists / goals
 11. [ ] Price history
 12. [>] Advanced stats
 

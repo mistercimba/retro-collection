@@ -1,4 +1,4 @@
-import { Camera, History, Pencil, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { Camera, History, ListChecks, Pencil, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { getLibrary } from "@/lib/library-store";
 import { displayPlatform } from "@/lib/data/platforms";
 import type { LibraryHistoryAction } from "@/lib/data/types";
@@ -15,6 +15,11 @@ const actionMeta: Record<LibraryHistoryAction, { label: string; icon: typeof His
   "wishlist.edit": { label: "Wishlist", icon: Pencil },
   "wishlist.remove": { label: "Wishlist", icon: Trash2 },
   "wishlist.purchase": { label: "Compra", icon: ShoppingBag },
+  "list.create": { label: "Lista", icon: ListChecks },
+  "list.edit": { label: "Lista", icon: Pencil },
+  "list.remove": { label: "Lista", icon: Trash2 },
+  "list.target.add": { label: "Lista", icon: Plus },
+  "list.target.remove": { label: "Lista", icon: Trash2 },
 };
 
 function formatDate(value: string) {
@@ -48,7 +53,7 @@ export default async function HistoryPage() {
             <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
               <div className="min-w-0">
                 <p className="truncate font-black text-slate-950">{entry.title}</p>
-                <p className="text-xs font-semibold text-slate-500">{displayPlatform(entry.platform)} · {meta.label}</p>
+                <p className="text-xs font-semibold text-slate-500">{entry.platform ? `${displayPlatform(entry.platform)} · ` : ""}{meta.label}</p>
               </div>
               <time className="shrink-0 text-[11px] font-semibold text-slate-400" dateTime={entry.at}>{formatDate(entry.at)}</time>
             </div>

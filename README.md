@@ -9,12 +9,13 @@ wishlist. Next.js App Router, TypeScript, Tailwind, Node.js 22 e Vercel.
 - Collection e Wishlist com criação, edição e remoção de jogos.
 - Compra de um target da Wishlist: cria a cópia e o registo de compra na Collection.
 - Detalhes da cópia, edição dos dados de compra, fotos privadas e gestão/navegação entre múltiplas cópias físicas do mesmo jogo.
+- Listas/objetivos personalizados com progresso automático contra a Collection.
 - Para vender/Vendidos e histórico das alterações feitas na app.
 - Metadata, capas e imagens das plataformas locais; referências de preço e links de pesquisa.
 - PWA com consulta offline limitada da coleção previamente sincronizada.
 
 Rotas principais: `/`, `/collection`, `/collection/games`, `/platform/[slug]`,
-`/game/[collectionId]`, `/want`, `/wish/[targetId]`, `/sell`, `/search` e `/history`.
+`/game/[collectionId]`, `/want`, `/wish/[targetId]`, `/lists`, `/lists/[listId]`, `/sell`, `/search` e `/history`.
 
 ## Arquitetura e dados
 
@@ -29,6 +30,7 @@ num **private Vercel Blob**, no caminho fixo `retro-collection/library.json`:
   wishlist: [],
   purchases: [],
   valuations: [],
+  collectionLists: [],
   history: []
 }
 ```
@@ -38,7 +40,8 @@ num **private Vercel Blob**, no caminho fixo `retro-collection/library.json`:
 runtime: se faltar ou for inválido, a leitura falha. Não há seed automático,
 fallback para Google ou reposição automática a partir do snapshot encriptado.
 Blobs antigos sem `history` são lidos com histórico vazio; não se inventa histórico
-anterior à introdução desse registo.
+anterior à introdução desse registo. Blobs anteriores às listas são lidos com
+`collectionLists: []`, mantendo `schemaVersion: 1`.
 
 Fotos da cópia física usam o mesmo store privado, em objetos separados sob
 `retro-collection/copy-photos/<collectionId>/...`. O `library.json` guarda apenas
@@ -46,6 +49,11 @@ metadata e o pathname de cada foto. Upload, leitura e remoção passam por rotas
 autenticadas da própria app; os bytes não são públicos nem são embebidos no JSON.
 Imagens grandes são reduzidas no browser antes do upload e o servidor aceita
 JPEG, PNG, WebP ou AVIF até 4 MB após essa preparação.
+
+Listas/objetivos são definidos pelo utilizador através de alvos explícitos de
+título + plataforma. O progresso é calculado contra jogos com estado `Collection`
+usando identidade normalizada exata, sem fuzzy matching nem franchises hardcoded.
+Remover uma lista ou alvo nunca remove o respetivo jogo da Collection/Wishlist.
 
 Múltiplas cópias continuam a ser registos independentes por `collectionId`. A
 ficha agrupa apenas o mesmo título/plataforma por identidade normalizada exata,

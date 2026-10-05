@@ -133,6 +133,20 @@ export interface PurchaseRecord {
   notes: string;
 }
 
+export interface CollectionListTarget {
+  id: string;
+  title: string;
+  platform: string;
+}
+
+export interface CollectionList {
+  id: string;
+  name: string;
+  description: string;
+  createdAt: string;
+  targets: CollectionListTarget[];
+}
+
 export interface ValuationSnapshot {
   collectionId: string;
   catalogId: string;
@@ -153,7 +167,12 @@ export type LibraryHistoryAction =
   | "wishlist.add"
   | "wishlist.edit"
   | "wishlist.remove"
-  | "wishlist.purchase";
+  | "wishlist.purchase"
+  | "list.create"
+  | "list.edit"
+  | "list.remove"
+  | "list.target.add"
+  | "list.target.remove";
 
 export interface LibraryHistoryEntry {
   id: string;
@@ -173,6 +192,7 @@ export interface LibraryData {
   wishlist: WantTarget[];
   purchases: PurchaseRecord[];
   valuations: ValuationSnapshot[];
+  collectionLists: CollectionList[];
   history: LibraryHistoryEntry[];
 }
 

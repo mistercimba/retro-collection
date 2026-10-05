@@ -53,6 +53,7 @@ Logical schema:
   wishlist: [],
   purchases: [],
   valuations: [],
+  collectionLists: [],
   history: []
 }
 ```
@@ -63,6 +64,7 @@ Important rules:
 - Do **not** silently seed/rebuild a missing Blob from an old snapshot.
 - Missing Blob should fail clearly rather than overwrite newer app-owned data.
 - Old blobs without `history` are read as `history: []`.
+- Old blobs without `collectionLists` are read as `collectionLists: []`; this remains schemaVersion 1 and backward-compatible.
 - Mutations are read-modify-write and intentionally simple for a single personal user.
 - Do not add a database, queue, ETag system, state manager, etc. without an actual demonstrated need.
 
@@ -117,6 +119,8 @@ Important routes/components include:
 - `/platform/[slug]`
 - `/game/[collectionId]`
 - `/wish/[targetId]`
+- `/lists`
+- `/lists/[listId]`
 - `/history`
 
 The app supports:
@@ -130,6 +134,7 @@ The app supports:
 - purchase/valuation records;
 - visible forward-only mutation history;
 - private photos attached to individual physical copies;
+- user-defined collection lists/goals with exact title+platform owned progress;
 - local cover artwork;
 - PriceCharting reference values;
 - external reference links.
@@ -166,6 +171,19 @@ Rules:
 - Collection and `Sell` records count as current physical copies; historical `Sold` records do not join an active copy group;
 - purchase, condition, valuation and owned-copy photos remain independent per copy;
 - do not propagate edits from one copy to another implicitly.
+
+## Collection lists / goals
+
+Lists are user-defined data, not hard-coded franchise logic.
+
+Rules:
+
+- a list contains explicit title + platform targets;
+- progress counts only records with `keepStatus === "Collection"`;
+- target ownership uses exact normalized title + platform identity, reusing the conservative copy identity normalization;
+- no fuzzy matching or edition guessing;
+- deleting a list/target never alters Collection or Wishlist records;
+- duplicate title+platform targets inside the same list are ignored.
 
 ## Metadata
 
