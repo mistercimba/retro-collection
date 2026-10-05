@@ -5,21 +5,19 @@ Last updated: 2026-10-05
 This is the living project handoff. Read `AGENTS.md` first.
 
 
-## Active product work — collection lists / goals
+## Active product work — initial-load performance
 
-Branch: `feat/collection-lists-goals`
+Branch: `perf/persistent-library-cache`
 
-PR #38 is merged and production-verified. Multiple-copy management is now part of the production baseline.
+PR #39 is merged. Collection lists/goals are now part of the production baseline.
 
-The current branch advances item 10 of the original product priority:
-- user-defined lists rather than hard-coded franchise rules;
-- explicit title + platform targets;
-- automatic owned/target progress against `keepStatus === "Collection"`;
-- exact normalized title + platform identity only, with no fuzzy matching;
-- create/edit/delete list and add/remove target flows;
-- deleting list data never mutates Collection or Wishlist records;
-- backward-compatible optional `collectionLists` storage inside the existing schemaVersion 1 Blob;
-- forward-only history entries for list and target changes.
+The current performance branch removes repeated request-time work from the critical path:
+- cache the private Blob library in Next's persistent data cache across requests/deploys;
+- invalidate that cache immediately after every successful library write while mutations still read the Blob directly;
+- cache the PriceCharting-enriched Collection list for one hour and invalidate it with library mutations;
+- stream the Home "Para completar" pricing-dependent block behind Suspense instead of blocking the whole Home page;
+- defer the offline snapshot refresh until browser idle;
+- serialize only the fields needed by Quick Search into client components.
 
 ## Current production baseline
 
@@ -27,7 +25,7 @@ Repository: `mistercimba/retro-collection`
 
 Current `main` baseline:
 
-`74736fd23843b4ae117ee99d11df817a12d8e408`
+`1e1069b8856068e84a0ed65bce41b158672e1723`
 
 This is the squash merge of PR #38. Production includes private owned-copy photos,
 multiple-copy navigation/creation and the Wishlist reference/filter work from PRs #35–#37.
@@ -36,7 +34,7 @@ Verified for the current main commit:
 
 - GitHub Actions: SUCCESS
 - Vercel production: SUCCESS
-- PR #38: merged/closed
+- PR #39: merged/closed
 
 ## Current architecture
 
@@ -69,7 +67,7 @@ Blob runtime behavior is intentionally strict:
 - no silent snapshot reseed;
 - missing Blob is an error;
 - existing old Blob without history is backward-compatible as `history: []`;
-- existing old Blob without collection lists is backward-compatible as `collectionLists: []`.
+- existing old Blob without collection lists is backward-compatible as `collectionLists: []`;\n- normal reads use Next's persistent data cache across requests/deploys; successful writes expire that cache immediately;\n- mutation read-modify-write still starts from an uncached Blob read.
 
 ### Metadata
 
