@@ -190,6 +190,6 @@ estes checks e os testes Python. Não existe um check dedicado de documentação
 PRs [#26](https://github.com/mistercimba/retro-collection/pull/26) (biblioteca Blob),
 [#27](https://github.com/mistercimba/retro-collection/pull/27) (UX) e
 [#28](https://github.com/mistercimba/retro-collection/pull/28) (Wishlist artwork)
-estão merged. Para o estado vivo e trabalho pendente, consultar
-[PROJECT_STATE.md](PROJECT_STATE.md) e [PROJECT_CHECKLIST.md](PROJECT_CHECKLIST.md).
-Agentes devem começar por [AGENTS.md](AGENTS.md).
+estão merged. Para o estado vivo, consultar [PROJECT_STATE.md](PROJECT_STATE.md). Todo o trabalho
+futuro e prioridades vivem em [ROADMAP.md](ROADMAP.md). Agentes devem começar por
+[AGENTS.md](AGENTS.md).
