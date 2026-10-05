@@ -1,5 +1,5 @@
-import { collectionCopyIdentity } from "@/lib/copy-groups.logic";
-import type { CollectionGame, CollectionList, CollectionListTarget } from "@/lib/data/types";
+import { collectionCopyIdentity } from "./copy-groups.logic";
+import type { CollectionGame, CollectionList, CollectionListTarget } from "./data/types";
 
 export interface ResolvedCollectionListTarget extends CollectionListTarget {
   ownedGame: CollectionGame | null;
