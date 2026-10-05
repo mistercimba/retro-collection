@@ -2,7 +2,7 @@
 
 This file is the stable operating guide for any new agent/worker touching this repository.
 
-Read this file **and `PROJECT_STATE.md` before making changes**. Then inspect the relevant code. Do not rely on old chat context or assume the README is current.
+Read this file **and `PROJECT_STATE.md` before making changes**. Read `ROADMAP.md` when choosing or planning future work. Then inspect the relevant code. Do not rely on old chat context or assume the README is current.
 
 ## Project
 
@@ -360,6 +360,8 @@ Avoid:
 If a task is an audit, audit first and do not implement unless asked.
 
 ## Documentation
+
+`ROADMAP.md` is the single source of truth for pending/planned/deferred work. Do not create parallel roadmap/checklist files; update it instead.
 
 `PROJECT_STATE.md` is the living handoff.
 
