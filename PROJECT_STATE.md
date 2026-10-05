@@ -360,15 +360,13 @@ Production commit:
 
 `a4ed66a5fcaf5e29bc2f7ec5483d536d707bc48c`
 
-## Next recommended work
+## Planning / next work
 
-Good next candidates:
+All pending, planned, blocked and deliberately deferred work is maintained in
+[ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-1. finish real mobile verification and network cut/reconnect testing of the existing offline flow;
-2. optionally optimize Wishlist image sizes as a separate maintenance task;
-3. only then move on to new product features.
-
-Do not restart metadata enrichment or Wishlist artwork coverage work by default.
+The current active performance work is PR #40. After it lands, update this file
+with the new production baseline and validate perceived production load.
 
 ## Handoff prompt for a brand-new chat
 
@@ -378,7 +376,7 @@ A minimal new-chat prompt can be:
 >
 > You have direct access to the repository through the GitHub integration/extension available in this ChatGPT conversation. **Use that GitHub integration directly for repository inspection, branches, files, commits, PRs, checks and repository changes. Do not invent alternative access methods, ask me to paste repository files, tell me to run git commands for you, or switch to web scraping/browser GitHub unless the GitHub integration genuinely cannot perform a required operation.**
 >
-> Before doing anything, use the GitHub integration to read `AGENTS.md` and `PROJECT_STATE.md` from `main`. Treat them as the project handoff and current source of truth.
+> Before doing anything, use the GitHub integration to read `AGENTS.md` and `PROJECT_STATE.md` from `main`. Read `ROADMAP.md` when the task involves choosing or planning future work. Treat them as the project handoff and current sources of truth.
 >
 > Then inspect the actual current repository state and any relevant open PR/branch before proposing or making changes. If the docs and current GitHub state disagree, trust the current repository state and report the discrepancy.
 >
