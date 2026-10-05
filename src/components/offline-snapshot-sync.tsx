@@ -20,9 +20,21 @@ export function OfflineSnapshotSync() {
       }
     };
 
-    void syncSnapshot();
+    const scheduleInitialSync = () => {
+      if ("requestIdleCallback" in window) {
+        const idleId = window.requestIdleCallback(() => { void syncSnapshot(); }, { timeout: 5000 });
+        return () => window.cancelIdleCallback(idleId);
+      }
+      const timeoutId = window.setTimeout(() => { void syncSnapshot(); }, 1500);
+      return () => window.clearTimeout(timeoutId);
+    };
+
+    const cancelInitialSync = scheduleInitialSync();
     window.addEventListener("online", syncSnapshot);
-    return () => window.removeEventListener("online", syncSnapshot);
+    return () => {
+      cancelInitialSync();
+      window.removeEventListener("online", syncSnapshot);
+    };
   }, []);
 
   return null;
