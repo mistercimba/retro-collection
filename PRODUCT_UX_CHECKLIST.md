@@ -128,13 +128,13 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
   - Component audit data is displayed when present.
   - Editing the structured component audit directly in the app is still pending.
 
-- [~] **Personal-copy photos**
-  - Current branch adds private per-copy photos for front, back, disc/cartridge, manual/inserts and extras.
-  - Photos are stored in the existing private Vercel Blob store; `library.json` keeps only per-copy photo metadata/pathnames.
+- [x] **Personal-copy photos**
+  - PR #37 added private per-copy photos for front, back, disc/cartridge, manual/inserts and extras.
+  - Photos use the existing private Vercel Blob store; `library.json` keeps only per-copy photo metadata/pathnames.
   - Large images are reduced client-side before upload; server validation accepts JPEG/PNG/WebP/AVIF up to 4 MB and caps each copy at 12 photos.
   - Upload/removal is authenticated and recorded in forward-only history; deleting a collection item also attempts to clean up its photo blobs.
   - Treat these as photos of the owned copy, not generic cover artwork.
-  - Keep partial until the photo PR is merged and production-verified.
+  - PR #37 is merged and production-deployed; automated validation deliberately did not mutate the real Blob.
 
 - [ ] **Click cover / photo for larger view**
   - Useful for cover inspection and, later, owned-copy photos.
@@ -155,13 +155,16 @@ It is intentionally separate from `PROJECT_CHECKLIST.md`, which tracks architect
 ## Multiple copies
 
 - [~] **Support more than one owned copy of the same game**
-  - The data model already supports distinct copies through separate `collectionId` records.
-  - Duplicate copies are already marked in the global Collection browser.
-  - A purpose-built multi-copy detail/management UX is still pending.
+  - The data model supports distinct copies through separate `collectionId` records and the global Collection already marks duplicates.
+  - Current branch adds a purpose-built detail panel that groups exact title+platform copies, navigates between them and adds another copy without cloning copy-specific data.
+  - Collection and Para vender records count as current physical copies; Sold stays historical.
+  - Keep partial until the multi-copy PR is merged and production-verified.
 
-- [ ] **Copy-level purchase, condition, value and photos**
-  - Every copy should remain independently editable.
-  - Do not collapse multiple physical copies into one aggregate record.
+- [~] **Copy-level purchase, condition, value and photos**
+  - The multi-copy panel surfaces independent paid price, estimated value, physical state and photo count for each copy.
+  - Opening a copy keeps all editing and photo operations scoped to that `collectionId`.
+  - No aggregate edit propagates from one physical copy to another.
+  - Keep partial until the multi-copy PR is merged and production-verified.
 
 ## Wishlist buying intelligence
 
@@ -262,7 +265,7 @@ This preserves the order proposed in the first product review. Status reflects t
 5. [x] Paid price vs current value
 6. [x] Wishlist buying reference / priority
 7. [x] Better filters
-8. [~] Own-copy photos
+8. [x] Own-copy photos
 9. [~] Multiple copies
 10. [ ] Lists / goals
 11. [ ] Price history

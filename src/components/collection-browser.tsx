@@ -12,6 +12,7 @@ import { GameCard } from "./game-card";
 import { GameListToolbar, Select } from "./game-list-toolbar";
 import { ActiveFilterChips, ListEmptyState, ListResultCount } from "./list-ux";
 import { useListScrollRestoration } from "@/hooks/use-list-scroll-restoration";
+import { collectionCopyIdentity } from "@/lib/copy-groups.logic";
 
 const unique = (values: string[]) => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-PT"));
 const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-PT");
@@ -50,10 +51,10 @@ export function CollectionBrowser({ games, global = false, initialSearch = "" }:
   const activeFilterCount = Number(Boolean(platform)) + Number(Boolean(status)) + Number(Boolean(condition)) + Number(Boolean(region)) + Number(Boolean(edition)) + Number(Boolean(genre)) + Number(reviewOnly) + Number(missingValue) + Number(missingPurchase);
   const duplicateCounts = new Map<string, number>();
   for (const game of games) {
-    const key = `${normalize(game.title)}|${normalize(game.platform)}`;
+    const key = collectionCopyIdentity(game);
     duplicateCounts.set(key, (duplicateCounts.get(key) ?? 0) + 1);
   }
-  const copyMarkers = new Map(games.filter((game) => duplicateCounts.get(`${normalize(game.title)}|${normalize(game.platform)}`)! > 1)
+  const copyMarkers = new Map(games.filter((game) => (duplicateCounts.get(collectionCopyIdentity(game)) ?? 0) > 1)
     .map((game) => [game.collectionId, `Cópia · ID ${game.collectionId}`] as const));
   const activeFilters = [
     ...(platform ? [{ key: "platform", label: `Plataforma: ${displayPlatform(platform)}`, onRemove: () => setPlatform("") }] : []),
