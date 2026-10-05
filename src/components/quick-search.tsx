@@ -4,19 +4,19 @@ import Link from "next/link";
 import { Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import type { CollectionGame } from "@/lib/data/types";
 import { displayPlatform } from "@/lib/data/platforms";
 import { GameArtwork } from "@/components/artwork";
 import { WishlistArtwork } from "@/components/wishlist-artwork";
 import {
   findQuickSearchMatches,
   findQuickSearchWishlistMatches,
+  type QuickSearchableGame,
   type QuickSearchableWishlistItem,
 } from "@/lib/quick-search.logic";
 import { buildCurrentPagePath, supportsListScrollRestoration } from "@/lib/list-url-state.logic";
 import { saveListScrollPosition } from "@/hooks/use-list-scroll-restoration";
 
-function collectionLabel(game: CollectionGame) {
+function collectionLabel(game: QuickSearchableGame) {
   if (game.keepStatus === "Collection") return "Coleção";
   if (game.keepStatus === "Sell") return "Para vender";
   if (game.keepStatus === "Sold") return "Vendido";
@@ -28,7 +28,7 @@ export function QuickSearch({
   wishlist = [],
   initialSearch = "",
 }: {
-  games: CollectionGame[];
+  games: QuickSearchableGame[];
   wishlist?: QuickSearchableWishlistItem[];
   initialSearch?: string;
 }) {
