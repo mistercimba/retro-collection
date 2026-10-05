@@ -27,7 +27,7 @@ Current `main` baseline:
 
 `1e1069b8856068e84a0ed65bce41b158672e1723`
 
-This is the squash merge of PR #38. Production includes private owned-copy photos,
+This is the squash merge of PR #39. Production includes collection lists/goals, private owned-copy photos,
 multiple-copy navigation/creation and the Wishlist reference/filter work from PRs #35–#37.
 
 Verified for the current main commit:
@@ -67,7 +67,9 @@ Blob runtime behavior is intentionally strict:
 - no silent snapshot reseed;
 - missing Blob is an error;
 - existing old Blob without history is backward-compatible as `history: []`;
-- existing old Blob without collection lists is backward-compatible as `collectionLists: []`;\n- normal reads use Next's persistent data cache across requests/deploys; successful writes expire that cache immediately;\n- mutation read-modify-write still starts from an uncached Blob read.
+- existing old Blob without collection lists is backward-compatible as `collectionLists: []`;
+- normal reads use Next's persistent data cache across requests/deploys; successful writes expire that cache immediately;
+- mutation read-modify-write still starts from an uncached Blob read.
 
 ### Metadata
 
