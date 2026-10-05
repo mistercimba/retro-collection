@@ -20,19 +20,10 @@ export function OfflineSnapshotSync() {
       }
     };
 
-    const scheduleInitialSync = () => {
-      if ("requestIdleCallback" in window) {
-        const idleId = window.requestIdleCallback(() => { void syncSnapshot(); }, { timeout: 5000 });
-        return () => window.cancelIdleCallback(idleId);
-      }
-      const timeoutId = window.setTimeout(() => { void syncSnapshot(); }, 1500);
-      return () => window.clearTimeout(timeoutId);
-    };
-
-    const cancelInitialSync = scheduleInitialSync();
+    const timeoutId = window.setTimeout(() => { void syncSnapshot(); }, 1500);
     window.addEventListener("online", syncSnapshot);
     return () => {
-      cancelInitialSync();
+      window.clearTimeout(timeoutId);
       window.removeEventListener("online", syncSnapshot);
     };
   }, []);
