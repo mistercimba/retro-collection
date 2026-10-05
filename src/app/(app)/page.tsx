@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { PlatformArtwork } from "@/components/artwork";
 import { QuickSearch } from "@/components/quick-search";
 import { getAllGames, getStats, getWantlist } from "@/lib/data/collection-service";
@@ -6,11 +7,13 @@ import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/
 import { formatEuro, gameCountLabel } from "@/lib/format";
 import { getCollectionListGames } from "@/lib/game-list-data";
 import { getLibrary } from "@/lib/library-store";
+import { toQuickSearchableGame } from "@/lib/quick-search.logic";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 
 export default async function HomePage() {
-  const [stats, games, wantlist, library, collectionListGames] = await Promise.all([getStats(), getAllGames(), getWantlist(), getLibrary(), getCollectionListGames()]);
+  const [stats, games, wantlist, library] = await Promise.all([getStats(), getAllGames(), getWantlist(), getLibrary()]);
   const platforms = sortPlatformsByRelease(stats.platforms);
+  const searchGames = games.map(toQuickSearchableGame);
   const activeWishlist = wantlist
     .filter((target) => target.planState !== "inactive" && target.matchState !== "acquired")
     .map((target) => ({
@@ -22,16 +25,11 @@ export default async function HomePage() {
       artworkSrc: resolveWishlistArtwork(target),
     }));
 
-  const keptIds = new Set(collectionListGames.map((game) => game.collectionId));
+  const keptIds = new Set(games.filter((game) => game.keepStatus === "Collection").map((game) => game.collectionId));
   const recentAdditions = [...library.history]
     .sort((a, b) => b.at.localeCompare(a.at))
     .filter((entry) => (entry.action === "collection.add" || entry.action === "wishlist.purchase") && keptIds.has(entry.entityId))
     .slice(0, 4);
-  const attention = [
-    { label: "Sem valor de mercado", value: collectionListGames.filter((game) => game.currentValueEur === null).length, href: "/collection/games?missingValue=1" },
-    { label: "Por rever", value: collectionListGames.filter((game) => game.needsReview).length, href: "/collection/games?review=1" },
-    { label: "Sem preço de compra", value: collectionListGames.filter((game) => game.purchasePaidEur === null).length, href: "/collection/games?missingPurchase=1" },
-  ];
 
   return <div className="space-y-7 pb-8">
     <header className="collection-hero">
@@ -46,7 +44,7 @@ export default async function HomePage() {
       <Summary value={formatEuro(stats.marketValueEur)} label="valor total" />
     </section>
 
-    <div className="rounded-2xl bg-[#17382e] p-3 md:hidden"><QuickSearch games={games} wishlist={activeWishlist} /></div>
+    <div className="rounded-2xl bg-[#17382e] p-3 md:hidden"><QuickSearch games={searchGames} wishlist={activeWishlist} /></div>
 
     <section className="grid gap-3 lg:grid-cols-[1.25fr_.75fr]">
       <div className="collection-panel p-4">
@@ -65,12 +63,9 @@ export default async function HomePage() {
       <div className="collection-panel p-4">
         <h2 className="text-sm font-black text-slate-950">Para completar</h2>
         <p className="mt-0.5 text-xs font-semibold text-slate-500">Dados da coleção que ainda merecem atenção.</p>
-        <div className="mt-3 grid grid-cols-3 gap-2 lg:grid-cols-1">
-          {attention.map((item) => <Link key={item.label} href={item.href} className="group rounded-xl bg-[#f4f1e8] px-3 py-2.5 transition hover:bg-[#e8ecdf] lg:flex lg:items-center lg:justify-between lg:gap-3">
-            <span><strong className="block text-lg font-black text-slate-950">{item.value}</strong><span className="mt-0.5 block text-[10px] font-bold uppercase tracking-wide text-slate-500">{item.label}</span></span>
-            <span className="mt-1 block text-[10px] font-black text-[#315b47] lg:mt-0">VER →</span>
-          </Link>)}
-        </div>
+        <Suspense fallback={<AttentionFallback />}>
+          <HomeAttention />
+        </Suspense>
       </div>
     </section>
 
@@ -86,6 +81,28 @@ export default async function HomePage() {
         </Link>)}
       </div>
     </section>
+  </div>;
+}
+
+async function HomeAttention() {
+  const games = await getCollectionListGames();
+  const attention = [
+    { label: "Sem valor de mercado", value: games.filter((game) => game.currentValueEur === null).length, href: "/collection/games?missingValue=1" },
+    { label: "Por rever", value: games.filter((game) => game.needsReview).length, href: "/collection/games?review=1" },
+    { label: "Sem preço de compra", value: games.filter((game) => game.purchasePaidEur === null).length, href: "/collection/games?missingPurchase=1" },
+  ];
+
+  return <div className="mt-3 grid grid-cols-3 gap-2 lg:grid-cols-1">
+    {attention.map((item) => <Link key={item.label} href={item.href} className="group rounded-xl bg-[#f4f1e8] px-3 py-2.5 transition hover:bg-[#e8ecdf] lg:flex lg:items-center lg:justify-between lg:gap-3">
+      <span><strong className="block text-lg font-black text-slate-950">{item.value}</strong><span className="mt-0.5 block text-[10px] font-bold uppercase tracking-wide text-slate-500">{item.label}</span></span>
+      <span className="mt-1 block text-[10px] font-black text-[#315b47] lg:mt-0">VER →</span>
+    </Link>)}
+  </div>;
+}
+
+function AttentionFallback() {
+  return <div aria-label="A carregar dados da coleção" className="mt-3 grid animate-pulse grid-cols-3 gap-2 lg:grid-cols-1">
+    {Array.from({ length: 3 }, (_, index) => <div key={index} className="h-16 rounded-xl bg-[#f4f1e8]" />)}
   </div>;
 }
 
