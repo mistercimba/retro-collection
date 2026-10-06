@@ -18,7 +18,7 @@ export default async function PlatformPage({params,searchParams}:{params:Promise
 
  const rawGames=collectionGames.filter(x=>x.platform===platform);
  const targets=wantlist.filter(x=>x.platform===platform&&x.planState!=="inactive"&&x.matchState!=="acquired");
- const collection=rawGames.map(x=>{const meta=resolveGameMetadata(x);return {collectionId:x.collectionId,title:x.title,genre:meta?.matchStatus==="matched"?(meta.genres??[]).join(", "):"",valueEur:x.marketValueEur,condition:x.conditionGrade,completeness:x.overallStatus}});
+ const collection=rawGames.map(x=>{const meta=resolveGameMetadata(x);return {collectionId:x.collectionId,title:x.title,genre:meta?.matchStatus==="matched"?(meta.genres??[]).join(", "):"",valueEur:x.marketValueEur,condition:x.conditionGrade,completeness:x.overallStatus,catalogArtwork:Boolean(x.catalog?.artwork?.pathname)}});
  const wishlist=targets.map(x=>({
   targetId:x.targetId,
   title:x.title,
