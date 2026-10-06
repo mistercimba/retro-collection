@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Search, X } from "lucide-react";
+import { PackageOpen, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { displayPlatform } from "@/lib/data/platforms";
@@ -100,7 +100,10 @@ export function QuickSearch({
           {visibleCollection.map((game) => <Link key={`collection:${game.collectionId}`} href={`/game/${encodeURIComponent(game.collectionId)}?from=${encodeURIComponent(returnTo)}`} className="grid grid-cols-[44px_1fr] items-center gap-3 border-b border-slate-100 px-3 py-2.5 hover:bg-slate-50" onClick={onResultClick}>
             <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={game.catalogArtwork} className="h-14 w-11 rounded-lg" />
             <div className="min-w-0">
-              <p className="truncate font-bold text-slate-950">{game.title}</p>
+              <p className="flex min-w-0 items-center gap-1.5 font-bold text-slate-950">
+                <span className="truncate">{game.title}</span>
+                {game.needsCompletion && <span title="Tem peças em falta" aria-label="Tem peças em falta" className="shrink-0 text-amber-600"><PackageOpen className="h-3.5 w-3.5" /></span>}
+              </p>
               <div className="mt-1 flex min-w-0 items-center gap-1.5 text-xs text-slate-500">
                 <span className="shrink-0 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[10px] font-black text-emerald-900">{collectionLabel(game)}</span>
                 <span className="truncate">{displayPlatform(game.platform)} · {game.collectionId}</span>

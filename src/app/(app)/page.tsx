@@ -18,7 +18,8 @@ export default async function HomePage() {
     getComponentCompletionQueue(),
   ]);
   const platforms = sortPlatformsByRelease(stats.platforms);
-  const searchGames = games.map(toQuickSearchableGame);
+  const incompleteIds = new Set(completion.active.map((need) => need.collectionId));
+  const searchGames = games.map((game) => toQuickSearchableGame(game, incompleteIds.has(game.collectionId)));
   const orderedWishlist = wantlist.filter(isOrderedWishlistTarget);
   const activeWishlist = wantlist
     .filter((target) => !isOrderedWishlistTarget(target) && target.planState !== "inactive" && target.matchState !== "acquired")

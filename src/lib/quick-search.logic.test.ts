@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { findQuickSearchMatches, findQuickSearchWishlistMatches, toQuickSearchableGame } from "./quick-search.logic";
 
 const games = [
-  { title: "Pokémon Stadium", platform: "N64", collectionId: "N64-1", edition: "PAL", region: "Europe", overallStatus: "Complete", keepStatus: "Collection", catalogArtwork: false },
-  { title: "Silent Hill 2", platform: "Playstation 2", collectionId: "PS2-1", edition: "Black Label", region: "PAL", overallStatus: "Complete", keepStatus: "Collection", catalogArtwork: false },
-  { title: "Zelda: Ocarina of Time", platform: "Nintendo 64", collectionId: "N64-2", edition: "PAL", region: "Europe", overallStatus: "Complete", keepStatus: "Collection", catalogArtwork: false },
+  { title: "Pokémon Stadium", platform: "N64", collectionId: "N64-1", edition: "PAL", region: "Europe", overallStatus: "Complete", keepStatus: "Collection", catalogArtwork: false, needsCompletion: false },
+  { title: "Silent Hill 2", platform: "Playstation 2", collectionId: "PS2-1", edition: "Black Label", region: "PAL", overallStatus: "Complete", keepStatus: "Collection", catalogArtwork: false, needsCompletion: false },
+  { title: "Zelda: Ocarina of Time", platform: "Nintendo 64", collectionId: "N64-2", edition: "PAL", region: "Europe", overallStatus: "Complete", keepStatus: "Collection", catalogArtwork: false, needsCompletion: false },
 ];
 
 const wishlist = [
@@ -20,6 +20,11 @@ describe("Quick Search matches", () => {
 
   it("keeps only the fields required by the client quick search", () => {
     expect(toQuickSearchableGame({ ...games[0], notes: "do not serialize" } as typeof games[0] & { notes: string })).toEqual(games[0]);
+  });
+
+  it("can mark a projected collection result as needing completion", () => {
+    const result = toQuickSearchableGame(games[1], true);
+    expect(result.needsCompletion).toBe(true);
   });
 
   it("exposes a catalog-artwork flag without serializing the private path", () => {
