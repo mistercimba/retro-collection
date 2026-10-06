@@ -339,6 +339,8 @@ For long binary/import jobs, checkpoint to the remote branch every ~10-20 valida
 
 Keep commits coherent. Avoid dozens of tiny commits unless checkpointing a fragile import.
 
+Remote pushes are an operational cost because they may trigger both GitHub Actions and Vercel. Before the first push for a normal code/UX change, batch the implementation, tests and durable documentation into one coherent candidate whenever practical. After a PR exists, prefer one new remote candidate per real feedback/fix round rather than pushing file-by-file.
+
 ## Quality checks
 
 Before declaring code work complete:
@@ -362,12 +364,18 @@ The owner wants low GitHub Actions / worker-credit usage.
 - Do not repeatedly trigger CI without need.
 - Do not create new automated workflows for maintenance tasks that can be manual.
 - Avoid unnecessary deploy loops.
-- Prefer local validation before pushing.
-- Use remote checkpoints for expensive/fragile binary work.
+- Prefer local/worker validation before pushing when the available environment supports it.
+- For normal work, aim for **one pushed QA candidate per feedback round**.
+- Do not push a new commit only to record that the previous commit passed CI; record transient validation state in the PR/Issue instead. Fold durable docs into the candidate before pushing.
+- GitHub CI intentionally runs on `pull_request` for feature branches and on `push` only for `main`; do not restore all-branch `push` CI without a demonstrated need.
+- CI uses concurrency cancellation so a superseded run for the same PR/ref should be cancelled rather than consuming a full second run.
+- Use remote checkpoints for expensive/fragile binary work where losing local progress is a larger risk than the extra run.
 
 ## Vercel
 
 Vercel preview/production status can usually be verified from GitHub commit status.
+
+Each feature-branch push can create a Vercel Preview. Preserve previews for meaningful QA, but control usage primarily by batching pushes. Do not disable Git deployments or add branch-ignore/deployment rules merely to save a build unless the owner explicitly agrees to that workflow change and there is a clear way to produce the final QA preview.
 
 If direct Vercel tooling is unavailable/unauthorized, do not waste repeated attempts. Use GitHub status as the deployment signal and browser validation when available.
 

@@ -8,53 +8,33 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`4438202425438707c39d5e00c9ed4e5210f0479f`
+`d6f88068c0c1ec7cb2bd33d7c0c40504767dc3e1`
 
 Most recent merged work:
 
-- PR #43 — repository-first project workflow with Issue Forms and PR handoff conventions;
-- PR #45 — bounded retry/recovery for transient private Blob reads on initial entry.
+- PR #45 — bounded retry/recovery for transient private Blob reads on initial entry;
+- PR #53 — canonical IGDB-backed Add flow, platform-aware completeness, standardized copy fields, conservative cover persistence, Wishlist auto-removal and "Já tens / Na wishlist" catalog indicators.
 
-Verified before starting the current feature:
+Verified for the #53 production baseline:
 
-- PR #45 GitHub Actions: SUCCESS;
-- PR #45 Vercel preview: SUCCESS;
-- production deploy was started from the merged #45 commit.
+- GitHub Actions: SUCCESS;
+- Vercel production: SUCCESS.
 
-## Active product work — canonical game Add flow
+## Active maintenance — reduce CI / preview churn
 
-Issue #47. Branch: `feat/canonical-game-add`. PR #53 is open and ready for user review.
+Issue #54.
 
-The user explicitly moved this ahead of the previous mobile/laptop QA priority.
+The #53 feedback cycle exposed avoidable remote churn: the CI workflow ran on both every branch `push` and `pull_request`, and every pushed candidate also generated a Vercel Preview.
 
-Technical direction:
+The active maintenance change is intentionally small and has no product-runtime changes:
 
-- IGDB is the canonical search/identity source for guided Add;
-- production/preview already contain server-side `IGDB_CLIENT_ID` and `IGDB_CLIENT_SECRET`;
-- browser search goes through an authenticated local API route;
-- search supports title and exact IGDB ID;
-- selection is always explicit; no fuzzy result is silently accepted;
-- submit resolves the chosen IGDB ID + platform again on the server;
-- compact selected metadata is persisted on the collection record so normal browsing does not depend on IGDB;
-- matching cover artwork is copied into the existing private Vercel Blob store when the selected edition still matches;
-- physical completeness uses conservative platform-aware component questions with Tenho / Falta / Verificar depois;
-- physical region is user-confirmed; arbitrary EAN/UPC/product-code lookup is not claimed because IGDB is not a reliable universal source for those identifiers;
-- explicit manual Add remains available only as a fallback.
+- feature branches are validated by `pull_request`, not a duplicate all-branch `push` run;
+- `push` CI remains on `main` for post-merge validation;
+- CI concurrency cancels superseded runs for the same PR/ref;
+- agent guidance now requires batched remote QA candidates rather than file-by-file pushes;
+- Vercel previews remain enabled; push batching is the first-line usage control.
 
-See `docs/GAME_CATALOG_SOURCE.md` for the source/limitations contract.
-
-Preview feedback for PR #53:
-- user confirmed catalog search works well;
-- Region, language and condition are now standardized dropdowns across equivalent collection forms;
-- new-copy defaults are PAL + English; condition remains an explicit choice;
-- existing legacy values remain selectable when editing an older record;
-- a direct Collection add now removes an exact same-title/same-platform active Wishlist target automatically and records that removal in history;
-- catalog search results now show "Já tens" (including copy count) and/or "Na wishlist" before selection, and keep the indicator visible on the confirmation step;
-- the badge contract already includes "Encomendado", but it is intentionally not emitted until Issue #46 introduces a real Purchased/In transit data state.
-
-Previous acceptance-feedback candidate was fully green (lint, 207/207 Vitest, 6/6 Python, build, Actions and Vercel). The final library-state indicator change is the last requested adjustment before merge and requires one final CI/preview validation.
-
-No real Collection/Wishlist mutation is performed during automated or preview QA.
+After #54, the next planned product feature is Issue #46, Purchased / In transit.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
@@ -387,9 +367,10 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active product work is Issue #47 on `feat/canonical-game-add`.
-After it lands, continue with the acquisition/completeness sequence captured in Issues
-#46, #49, #51, #48, #50 and #52, with real mobile/laptop QA still retained in the roadmap.
+The current active maintenance work is Issue #54, reducing duplicate CI and preview churn.
+After it lands, continue with Issue #46 (Purchased / In transit), followed by the
+acquisition/completeness sequence #49, #51, #48, #50 and #52. Real mobile/laptop QA
+remains retained in the roadmap.
 
 ## Handoff prompt for a brand-new chat
 

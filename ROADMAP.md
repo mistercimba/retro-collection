@@ -22,11 +22,11 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Canonical guided Add flow (#47)
+### NOW — Purchased / In transit acquisition state (#46)
 
-Replace free-form normal game creation with explicit catalog selection, canonical identity/metadata, conservative platform-aware physical completeness questions and an explicit manual fallback.
+Add a real intermediate state between Wishlist and Collection for games already bought but not yet received/verified. Purchased games must stop behaving like active shopping targets without counting as an owned physical copy until receipt is confirmed.
 
-Chosen source: IGDB, using existing server-side credentials. Search/selection is isolated to Add; normal browsing uses the persisted identity/metadata and a private stored cover when safely available.
+The canonical guided Add flow from #47 is complete and merged in PR #53.
 
 ## Product roadmap
 
