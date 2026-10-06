@@ -311,6 +311,15 @@ Loading and unavailable price states should remain distinguishable.
 
 ## Artwork
 
+### Artwork fallback and catalog covers
+
+- Never deliberately request a known-missing cover path just to trigger an image error; render the shared placeholder directly.
+- Static, already-validated artwork takes precedence over canonical catalog artwork.
+- Wishlist canonical artwork is imported only during an explicit mutation (add/purchase/etc.), never fetched externally during ordinary browsing.
+- A canonical Standard cover must not be used for an explicitly different/unknown special edition.
+- Ambiguous static candidates remain unresolved; coverage is not a reason to weaken identity rules.
+- Real current coverage is reported via `/api/health`.
+
 ### Collection artwork
 
 Collection artwork is local/static at runtime.

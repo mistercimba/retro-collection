@@ -8,36 +8,42 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`fab649c9ba702b1fa882417a76b61f4e958097d3`
+`2425f50ff8120d021673d03e628ca093b390875c`
 
 Most recent merged work:
 
 - PR #53 — canonical IGDB-backed Add flow, standardized copy fields, conservative cover persistence, Wishlist auto-removal and catalog state indicators;
 - PR #55 — CI now runs once per PR candidate plus post-merge on `main`, with concurrency cancellation and documented push batching;
 - PR #56 — universal acquisition flow with **Já tenho / A caminho / Wishlist**, including receipt verification and reused Wishlist purchase dialog;
-- PR #57 — copy-specific **Para completar** queue, loose-friendly cartridge policy, console filters and incompleteness indicators.
+- PR #57 — copy-specific **Para completar** queue, loose-friendly cartridge policy, console filters and incompleteness indicators;
+- PR #58 — manual **Próximo objetivo** plus transparent suggestions from lists/series/Wishlist priority.
 
 Verified before starting the current feature:
 
-- PR #57 GitHub Actions: SUCCESS;
-- PR #57 Vercel production deployment: SUCCESS.
+- PR #58 GitHub Actions: SUCCESS;
+- PR #58 Vercel production deployment: SUCCESS.
 
-## Active product work — Next objective
+## Active product work — artwork gaps and deliberate fallback
 
-Issue #51. Candidate branch: `feat/next-objective`.
+Issue #48. Candidate branch: `feat/artwork-gaps-placeholder`.
+
+Baseline audit:
+
+- Collection static snapshot: 516/516 mapped, 0 missing;
+- Wishlist static snapshot: 139/298 safe dedicated mappings, 159 deliberate fallbacks;
+- Final Fantasy VIII is one of the intentionally unresolved PS1 cases because the source pipeline found more than one plausible candidate. Do not pick one blindly.
 
 Implementation model:
 
-- manual-first: at most one objective, and zero is valid;
-- `library.nextObjective` stores only a Wishlist-target reference (targetId + exact title/platform + set timestamp);
-- old Blobs default to `nextObjective: null` without migration;
-- Home resolves the current Wishlist target at read time and shows artwork, platform/version, reason and priority;
-- target detail allows explicit define/replace/remove;
-- objective clears automatically when that target is bought, removed, received defensively, or satisfied by a direct Collection add;
-- cancellation does not re-select an old objective;
-- the first preview feedback added a transparent automatic suggestion from the existing Wishlist, still requiring explicit confirmation;
-- suggestion order is: close/advance a user-defined Collection List → continue a title series already represented in Collection → explicit Wishlist priority;
-- the engine deliberately does not maintain a hardcoded editorial "must-have" list; broader discovery/refill remains #52.
+- one deliberate game-cover placeholder shared by Collection and Wishlist; no known-missing image URL/404 is used as the normal fallback;
+- existing validated static artwork remains first priority;
+- safe Collection reuse remains second;
+- canonical IGDB artwork can be a final Wishlist fallback only when the requested edition is compatible;
+- special/unknown editions never borrow incompatible Standard catalog artwork;
+- new catalog-backed Wishlist targets import/persist canonical artwork during the add/purchase mutation when compatible;
+- authenticated Wishlist catalog-artwork route serves the private Blob; normal browsing performs no external artwork fetch;
+- `/api/health` reports real artwork coverage for current mutable Collection/Wishlist so coverage is observable beyond old snapshots;
+- no ambiguous static mappings are re-enabled merely to increase coverage.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 
@@ -374,8 +380,8 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active product work is Issue #51 on `feat/next-objective`.
-After it lands, continue with #48 (artwork gaps), #50 (Home refocus) and #52 (Wishlist suggestions).
+The current active product work is Issue #48 on `feat/artwork-gaps-placeholder`.
+After it lands, continue with #50 (Home refocus) and #52 (Wishlist suggestions).
 Real mobile/laptop QA remains retained in the roadmap.
 
 ## Handoff prompt for a brand-new chat

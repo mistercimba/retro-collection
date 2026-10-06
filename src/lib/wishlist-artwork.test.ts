@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resolveWishlistArtworkFromEntries } from "./wishlist-artwork";
+import { resolveWishlistArtwork, resolveWishlistArtworkFromEntries } from "./wishlist-artwork";
 import {
   wishlistArtworkIdentity,
   wishlistArtworkEditionRequirement,
@@ -37,6 +37,52 @@ const collectionArtwork = {
 };
 
 describe("wishlist artwork resolver", () => {
+  it("uses authenticated catalog artwork as a conservative final fallback", () => {
+    const result = resolveWishlistArtwork({
+      ...target({ targetId: "APP-1", targetVersion: "PAL Standard; CIB" }),
+      catalog: {
+        source: "IGDB",
+        sourceGameId: 123,
+        sourcePlatformId: 8,
+        title: "Silent Hill 2",
+        platform: "Playstation 2",
+        edition: "Standard",
+        summary: "",
+        firstReleaseDate: "",
+        genres: [],
+        developers: [],
+        publishers: [],
+        coverImageId: "abc",
+        artwork: { source: "IGDB", pathname: "retro-collection/catalog-artwork/igdb/123-abc.jpg", contentType: "image/jpeg" },
+        selectedAt: "",
+      },
+    });
+    expect(result).toContain("/api/catalog-artwork/wishlist/APP-1?");
+    expect(result).toContain("platform=Playstation+2");
+  });
+
+  it("does not use Standard catalog artwork for a Platinum wishlist target", () => {
+    expect(resolveWishlistArtwork({
+      ...target({ targetId: "APP-2", targetVersion: "PAL Platinum; CIB" }),
+      catalog: {
+        source: "IGDB",
+        sourceGameId: 123,
+        sourcePlatformId: 8,
+        title: "Silent Hill 2",
+        platform: "Playstation 2",
+        edition: "Standard",
+        summary: "",
+        firstReleaseDate: "",
+        genres: [],
+        developers: [],
+        publishers: [],
+        coverImageId: "abc",
+        artwork: { source: "IGDB", pathname: "retro-collection/catalog-artwork/igdb/123-abc.jpg", contentType: "image/jpeg" },
+        selectedAt: "",
+      },
+    })).toBeNull();
+  });
+
   it("uses one dedicated title and platform artwork match", () => {
     const wanted = target();
     const key = JSON.stringify(["NOVO", "playstation 2", "silent hill 2", "Europe", "Standard"]);

@@ -22,13 +22,13 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Single Next objective (#51)
+### NOW — Artwork gaps and deliberate fallback (#48)
 
-Add one manually confirmed **Próximo objetivo** to answer “qual é a próxima aquisição importante?” without turning the app into gamification.
+Make missing artwork look intentional and keep new catalog-backed additions from regressing into blank/unknown covers.
 
-Implementation direction: reference an existing active Wishlist target, show it prominently but compactly on Home, allow explicit set/replace/remove from the Wishlist target, and clear it automatically when the target is bought/removed/acquired. Zero objectives is valid. The Home may also propose one transparent candidate from the existing Wishlist — prioritizing user-defined list completion, then series continuity, then Wishlist priority — but it never changes the objective without confirmation. Broader Wishlist discovery/refill remains #52.
+Implementation direction: preserve the conservative static mappings, use one shared placeholder whenever no safe cover exists, persist canonical artwork for compatible catalog-backed Wishlist mutations, and expose real current coverage in the health endpoint. Accuracy remains more important than forcing 100% coverage; ambiguous region/edition candidates stay unresolved.
 
-Copy-specific missing components (#49) are complete and merged in PR #57.
+The single Next objective (#51) is complete and merged in PR #58.
 
 ## Product roadmap
 
