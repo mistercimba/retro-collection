@@ -5,6 +5,8 @@ import { getStats } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/lib/data/platforms";
 import { formatEuro, gameCountLabel } from "@/lib/format";
 import { ActionSubmitButton } from "@/components/action-submit-button";
+import { CollectionSelectField } from "@/components/collection-select-field";
+import { CONDITION_OPTIONS, LANGUAGE_OPTIONS, REGION_OPTIONS } from "@/lib/collection-field-options";
 
 export const metadata = { title: "Coleção" };
 
@@ -27,10 +29,10 @@ export default async function CollectionPage() {
         <Input name="title" label="Jogo" required />
         <Input name="platform" label="Consola" required placeholder="Nintendo DS" />
         <Input name="edition" label="Edição" placeholder="Standard" />
-        <Input name="region" label="Região" placeholder="PAL" />
-        <Input name="language" label="Idioma" />
+        <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL" />
+        <CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English" />
         <Input name="overallStatus" label="Completude" placeholder="CIB / Loose" />
-        <Input name="conditionGrade" label="Condição" />
+        <CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS} />
         <Input name="paid" label="Preço pago (€)" type="number" step="0.01" />
         <Input name="source" label="Onde comprei" placeholder="Feira, Vinted, CeX…" />
         <Input name="purchaseDate" label="Data de compra" type="date" />
