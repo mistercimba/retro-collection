@@ -37,6 +37,7 @@ Implementation model:
 - edition-specific extras are manual only; the app never invents maps/posters/inserts/disc 2;
 - aggregate route `/complete` lists active needs, supports platform/console filtering, while the game detail owns checklist/custom-component editing;
 - global/quick search results show a small amber package icon beside owned games that currently have an active **Para completar** need, using the same queue logic (so loose-friendly cartridge games are not falsely flagged);
+- game detail shows an explicit amber **Para completar** summary directly under the title (for example **Falta · Manual / folhetos principais**) so incompleteness is visible without scrolling to the workflow panel;
 - completed/closed needs stay in history and disappear from the active queue.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.

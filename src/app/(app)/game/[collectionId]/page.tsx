@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {ArrowLeft} from "lucide-react";
+import {ArrowLeft,PackageOpen} from "lucide-react";
 import {notFound} from "next/navigation";
 import {GameArtwork} from "@/components/artwork";
 import {PriceGuidePanel} from "@/components/price-guide";
@@ -48,6 +48,18 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
    <div className="min-w-0">
     <p className="eyebrow">{displayPlatform(game.platform)}</p>
     <h1 className="mt-1 text-3xl font-black leading-tight tracking-tight text-slate-950">{game.title}</h1>
+    {componentNeeds.active.length>0&&<div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50/90 p-3">
+     <div className="flex items-center gap-2 text-amber-900">
+      <PackageOpen className="h-4 w-4 shrink-0"/>
+      <span className="text-[10px] font-black uppercase tracking-[0.14em]">Para completar</span>
+     </div>
+     <div className="mt-2 flex flex-wrap gap-1.5">
+      {componentNeeds.active.slice(0,3).map((need)=><span key={need.id} className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-amber-950">
+       {need.status==="found"?"Encontrado":need.status==="purchased"?"Comprado":"Falta"} · {need.label}
+      </span>)}
+      {componentNeeds.active.length>3&&<span className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-amber-800">+{componentNeeds.active.length-3}</span>}
+     </div>
+    </div>}
     <dl className="mt-5 grid grid-cols-[100px_1fr] gap-x-3 gap-y-2.5 text-sm">
      <dt className="text-slate-500">Ano</dt><dd className="font-bold text-slate-900">{year}</dd>
      <dt className="text-slate-500">Developer</dt><dd className="font-bold text-slate-900">{metadata?.developers.join(", ")||"—"}</dd>
