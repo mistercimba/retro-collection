@@ -1,0 +1,38 @@
+name: UX
+description: Problema de usabilidade, fluxo ou apresentação
+title: "[UX] "
+labels:
+  - inbox
+  - ux
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Ecrã / fluxo
+      description: Onde acontece e o que estavas a tentar fazer?
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema de UX
+      description: O que está confuso, lento, difícil de encontrar ou visualmente errado?
+    validations:
+      required: true
+  - type: textarea
+    id: desired
+    attributes:
+      label: Experiência desejada
+      description: Como gostarias que se comportasse?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidência
+      description: Screenshot, vídeo, viewport, exemplo concreto ou comparação útil.
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Restrições
+      description: Elementos/identidade/comportamentos que devem continuar iguais.

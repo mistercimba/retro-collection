@@ -1,0 +1,45 @@
+name: Bug
+description: Algo que está a funcionar de forma errada
+title: "[Bug] "
+labels:
+  - inbox
+  - bug
+body:
+  - type: textarea
+    id: happened
+    attributes:
+      label: O que aconteceu?
+      description: Descreve o comportamento errado.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: O que devia acontecer?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Como reproduzir
+      description: Passos, página/jogo/plataforma e condições relevantes.
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impacto
+      options:
+        - Bloqueia o uso / risco de dados
+        - Funcionalidade importante avariada
+        - Incómodo / comportamento incorreto
+        - Visual / cosmético
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Ambiente
+      description: Dispositivo, browser, viewport ou contexto relevante.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots / links / erros
