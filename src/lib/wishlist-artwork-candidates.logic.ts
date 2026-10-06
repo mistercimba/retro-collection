@@ -8,7 +8,7 @@ import {
 } from "./wishlist-artwork.logic";
 import { normalizeWantlistVariant } from "./wantlist-facets.logic";
 
-type CandidateTarget = Pick<WantTarget, "title" | "platform" | "targetVersion">;
+type CandidateTarget = Pick<WantTarget, "title" | "platform"> & { targetVersion?: string };
 
 export function resolveWishlistArtworkCandidates(target: CandidateTarget): WishlistArtworkCandidate[] {
   const requirement = wishlistArtworkEditionRequirement(target.targetVersion);
