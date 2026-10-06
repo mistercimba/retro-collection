@@ -446,7 +446,6 @@ export async function addCollectionGame(form: FormData) {
   for (const pathname of wishlistOverridePathsToDelete) {
     await deleteWishlistArtworkOverride(pathname).catch(() => undefined);
   }
-  if (artworkPath) await deleteWishlistArtworkOverride(artworkPath).catch(() => undefined);
   revalidatePath("/");
   revalidatePath("/collection");
   revalidatePath("/complete");
@@ -1132,6 +1131,7 @@ export async function receiveWishlistPurchase(form: FormData) {
     return library;
   });
 
+  if (artworkPath) await deleteWishlistArtworkOverride(artworkPath).catch(() => undefined);
   revalidatePath("/");
   revalidatePath("/collection");
   revalidatePath("/complete");
