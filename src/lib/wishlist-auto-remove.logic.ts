@@ -10,6 +10,11 @@ function normalizeTitle(value: string) {
     .trim();
 }
 
+function isInactiveTarget(status: string) {
+  const normalized = normalizeTitle(status).toUpperCase();
+  return /^(FORA DA BUYLIST|INATIVO|PAUSADO|CANCELADO|REMOVIDO|ADQUIRIDO|COMPRADO)( |$)/.test(normalized);
+}
+
 export function wishlistTargetsSatisfiedByAddedGame(
   wishlist: WantTarget[],
   title: string,
@@ -20,6 +25,7 @@ export function wishlistTargetsSatisfiedByAddedGame(
   if (!wantedTitle || !wantedPlatform) return [];
 
   return wishlist.filter((target) =>
+    !isInactiveTarget(target.status) &&
     normalizeTitle(target.title) === wantedTitle &&
     platformSlug(target.platform) === wantedPlatform
   );
