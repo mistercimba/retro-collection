@@ -1,5 +1,5 @@
-import type { WantTarget } from "@/lib/data/types";
-import { platformSlug } from "@/lib/data/platforms";
+import type { WantTarget } from "./data/types";
+import { platformSlug } from "./data/platforms";
 
 function normalizeTitle(value: string) {
   return value
