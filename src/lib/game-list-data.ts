@@ -2,7 +2,7 @@ import "server-only";
 import { unstable_cache } from "next/cache";
 import { getCollectionGames } from "@/lib/data/collection-service";
 import type { CollectionGame, PurchaseRecord } from "@/lib/data/types";
-import { getGameMetadata } from "@/lib/game-metadata";
+import { resolveGameMetadata } from "@/lib/game-metadata";
 import { getLibrary, LIBRARY_CACHE_TAG } from "@/lib/library-store";
 import { getPricechartingCatalogSnapshot, getPricechartingEstimates, type PriceEstimate } from "@/lib/pricecharting-catalog";
 
@@ -24,7 +24,7 @@ function withEstimates(
   purchases: Map<string, PurchaseRecord> = new Map(),
 ): CollectionListGame[] {
   return games.map((game) => {
-    const metadata = getGameMetadata(game.collectionId);
+    const metadata = resolveGameMetadata(game);
     const priceEstimate = estimates.get(game.collectionId) ?? { value: null, source: "Estimativa indisponível", date: "", basis: "", productUrl: "" };
     const purchase = game.purchaseId ? purchases.get(game.purchaseId) : undefined;
     return {

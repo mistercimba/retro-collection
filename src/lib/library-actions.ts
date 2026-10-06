@@ -4,9 +4,19 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
 import { platformSlug } from "@/lib/data/platforms";
-import type { CollectionGame, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
+import type { CanonicalGameIdentity, CollectionGame, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
 import { updateLibrary } from "@/lib/library-store";
 import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
+import { resolveCanonicalGame } from "@/lib/igdb-catalog";
+import { ensureCanonicalArtwork } from "@/lib/catalog-artwork";
+import {
+  componentStateToLibraryValue,
+  derivePhysicalCopyStatus,
+  physicalCopyNeedsReview,
+  physicalCopyProfile,
+  type PhysicalComponentKey,
+  type PhysicalComponentState,
+} from "@/lib/physical-copy-profile.logic";
 
 const text = (form: FormData, key: string) => String(form.get(key) ?? "").trim();
 const money = (form: FormData, key: string) => {
@@ -70,6 +80,15 @@ function nextId(platform: string, games: CollectionGame[]) {
   return `${prefix}-${String(max + 1).padStart(4, "0")}`;
 }
 
+type PhysicalAddState = {
+  media: string;
+  box: string;
+  manual: string;
+  sealed: string;
+  completeness: string;
+  needsReview: boolean;
+};
+
 function blankGame(input: {
   collectionId: string;
   title: string;
@@ -83,25 +102,27 @@ function blankGame(input: {
   purchaseId: string;
   paid: number | null;
   notes: string;
+  canonical?: CanonicalGameIdentity;
+  physical?: PhysicalAddState;
 }): CollectionGame {
   const complete = /cib|complete|completo/i.test(input.completeness);
   const loose = /loose|solto/i.test(input.completeness);
   return {
     collectionId: input.collectionId,
-    catalogId: "",
+    catalogId: input.canonical ? `IGDB:${input.canonical.sourceGameId}` : "",
     itemType: "Game",
     title: input.title,
     platform: input.platform,
     edition: input.edition || "Standard",
     region: input.region,
     language: input.language,
-    media: "Yes",
-    box: complete ? "Yes" : loose ? "No" : "",
-    manual: complete ? "Yes" : loose ? "No" : "",
+    media: input.physical?.media ?? "Yes",
+    box: input.physical?.box ?? (complete ? "Yes" : loose ? "No" : ""),
+    manual: input.physical?.manual ?? (complete ? "Yes" : loose ? "No" : ""),
     extras: "",
     label: "",
-    sealed: /sealed|selado/i.test(input.completeness) ? "Yes" : "No",
-    overallStatus: input.completeness,
+    sealed: input.physical?.sealed ?? (/sealed|selado/i.test(input.completeness) ? "Yes" : "No"),
+    overallStatus: input.physical?.completeness ?? input.completeness,
     conditionGrade: input.condition,
     keepStatus: "Collection",
     acquiredDate: input.acquiredDate,
@@ -109,13 +130,36 @@ function blankGame(input: {
     allocatedCostEur: input.paid,
     marketValueEur: null,
     cexCashEur: null,
-    needsReview: false,
-    migrationConfidence: "App",
+    needsReview: input.physical?.needsReview ?? false,
+    migrationConfidence: input.canonical ? "App · canonical IGDB" : "App · manual",
     notes: input.notes,
     legacyName: input.title,
+    catalog: input.canonical,
     photos: [],
     audit: null,
   };
+}
+
+function physicalState(form: FormData, platform: string): PhysicalAddState {
+  const profile = physicalCopyProfile(platform);
+  const sealed = text(form, "sealed") === "yes";
+  const states: Partial<Record<PhysicalComponentKey, PhysicalComponentState>> = {};
+  for (const component of profile.components) {
+    const raw = text(form, `component_${component.key}`);
+    states[component.key] = raw === "yes" || raw === "no" ? raw : "unknown";
+  }
+  return {
+    media: componentStateToLibraryValue(states.media),
+    box: componentStateToLibraryValue(states.box),
+    manual: componentStateToLibraryValue(states.manual),
+    sealed: sealed ? "Yes" : "No",
+    completeness: derivePhysicalCopyStatus(profile, states, sealed),
+    needsReview: sealed ? false : physicalCopyNeedsReview(profile, states),
+  };
+}
+
+function normalizedEdition(value: string) {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
 function purchaseFromForm(form: FormData, purchaseId: string, previous?: PurchaseRecord): PurchaseRecord {
@@ -211,9 +255,37 @@ export async function editGame(form: FormData) {
 
 export async function addCollectionGame(form: FormData) {
   await guard();
-  const title = text(form, "title");
-  const platform = text(form, "platform");
+
+  const manual = text(form, "manualMode") === "1";
+  const requestedGameId = Number(text(form, "catalogGameId"));
+  const requestedPlatformId = Number(text(form, "catalogPlatformId"));
+  let canonical: CanonicalGameIdentity | undefined;
+
+  if (!manual && Number.isSafeInteger(requestedGameId) && Number.isSafeInteger(requestedPlatformId)) {
+    canonical = (await resolveCanonicalGame(requestedGameId, requestedPlatformId)) ?? undefined;
+    if (!canonical) throw new Error("Não foi possível confirmar a identidade selecionada no catálogo.");
+  }
+
+  const title = canonical?.title ?? text(form, "title");
+  const platform = canonical?.platform ?? text(form, "platform");
   if (!title || !platform) return;
+
+  const edition = text(form, "edition") || canonical?.edition || "Standard";
+  if (canonical) {
+    const catalogEditionStillMatches = normalizedEdition(edition) === normalizedEdition(canonical.edition);
+    if (catalogEditionStillMatches && canonical.coverImageId) {
+      try {
+        canonical = { ...canonical, artwork: await ensureCanonicalArtwork(canonical) };
+      } catch (error) {
+        console.warn("catalog_artwork_import_failed", {
+          gameId: canonical.sourceGameId,
+          errorName: error instanceof Error ? error.name : "UnknownError",
+        });
+      }
+    }
+  }
+
+  const physical = canonical ? physicalState(form, platform) : undefined;
   let created = "";
 
   await updateLibrary((library) => {
@@ -226,19 +298,22 @@ export async function addCollectionGame(form: FormData) {
 
     if (hasPurchase) library.purchases.push(purchaseFromForm(form, purchaseId));
 
+    const completeness = physical?.completeness ?? text(form, "overallStatus");
     library.collection.push(blankGame({
       collectionId,
       title,
       platform,
-      edition: text(form, "edition"),
+      edition,
       region: text(form, "region"),
       language: text(form, "language"),
       condition: text(form, "conditionGrade"),
-      completeness: text(form, "overallStatus"),
+      completeness,
       acquiredDate: date,
       purchaseId,
       paid,
       notes: text(form, "notes"),
+      canonical,
+      physical,
     }));
     addHistory(library, {
       action: "collection.add",
@@ -246,7 +321,11 @@ export async function addCollectionGame(form: FormData) {
       title,
       platform,
       summary: paid === null ? "Adicionado à coleção" : `Adicionado à coleção · ${paid.toFixed(2)} €`,
-      details: [text(form, "overallStatus"), text(form, "conditionGrade")].filter(Boolean),
+      details: [
+        completeness,
+        text(form, "conditionGrade"),
+        canonical ? `IGDB #${canonical.sourceGameId}` : "Identidade manual",
+      ].filter(Boolean),
     });
     return library;
   });
