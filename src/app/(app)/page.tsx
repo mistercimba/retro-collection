@@ -1,18 +1,22 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import { PlatformArtwork } from "@/components/artwork";
 import { QuickSearch } from "@/components/quick-search";
-import { getAllGames, getStats, getWantlist } from "@/lib/data/collection-service";
+import { getAllGames, getComponentCompletionQueue, getStats, getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/lib/data/platforms";
 import { formatEuro, gameCountLabel } from "@/lib/format";
-import { getCollectionListGames } from "@/lib/game-list-data";
 import { getLibrary } from "@/lib/library-store";
 import { toQuickSearchableGame } from "@/lib/quick-search.logic";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 
 export default async function HomePage() {
-  const [stats, games, wantlist, library] = await Promise.all([getStats(), getAllGames(), getWantlist(), getLibrary()]);
+  const [stats, games, wantlist, library, completion] = await Promise.all([
+    getStats(),
+    getAllGames(),
+    getWantlist(),
+    getLibrary(),
+    getComponentCompletionQueue(),
+  ]);
   const platforms = sortPlatformsByRelease(stats.platforms);
   const searchGames = games.map(toQuickSearchableGame);
   const orderedWishlist = wantlist.filter(isOrderedWishlistTarget);
@@ -85,11 +89,29 @@ export default async function HomePage() {
       </div>
 
       <div className="collection-panel p-4">
-        <h2 className="text-sm font-black text-slate-950">Para completar</h2>
-        <p className="mt-0.5 text-xs font-semibold text-slate-500">Dados da coleção que ainda merecem atenção.</p>
-        <Suspense fallback={<AttentionFallback />}>
-          <HomeAttention />
-        </Suspense>
+        <div className="flex items-baseline justify-between gap-3">
+          <div>
+            <h2 className="text-sm font-black text-slate-950">Para completar</h2>
+            <p className="mt-0.5 text-xs font-semibold text-slate-500">Peças físicas em falta nas tuas cópias.</p>
+          </div>
+          <Link href="/complete" className="shrink-0 text-xs font-black text-[#315b47] hover:text-[#17382e]">Ver tudo</Link>
+        </div>
+        {completion.active.length > 0 ? <div className="mt-3 space-y-2">
+          {completion.active.slice(0, 3).map((need) => <Link
+            key={need.id}
+            href={"/game/" + encodeURIComponent(need.collectionId)}
+            className="flex items-center justify-between gap-3 rounded-xl bg-[#f4f1e8] px-3 py-2.5 transition hover:bg-[#e8ecdf]"
+          >
+            <span className="min-w-0">
+              <strong className="block truncate text-sm font-black text-slate-950">{need.title}</strong>
+              <span className="block truncate text-[11px] font-semibold text-slate-500">{need.label} · {displayPlatform(need.platform)}</span>
+            </span>
+            <span className="shrink-0 text-[10px] font-black uppercase tracking-wide text-amber-700">
+              {need.status === "found" ? "Encontrado" : need.status === "purchased" ? "Comprado" : "Em falta"}
+            </span>
+          </Link>)}
+          {completion.active.length > 3 && <p className="px-1 text-[11px] font-bold text-slate-400">+{completion.active.length - 3} outras peças</p>}
+        </div> : <p className="mt-3 rounded-xl bg-[#f4f1e8] p-3 text-xs font-semibold text-slate-500">Nenhuma peça confirmada em falta.</p>}
       </div>
     </section>
 
@@ -105,28 +127,6 @@ export default async function HomePage() {
         </Link>)}
       </div>
     </section>
-  </div>;
-}
-
-async function HomeAttention() {
-  const games = await getCollectionListGames();
-  const attention = [
-    { label: "Sem valor de mercado", value: games.filter((game) => game.currentValueEur === null).length, href: "/collection/games?missingValue=1" },
-    { label: "Por rever", value: games.filter((game) => game.needsReview).length, href: "/collection/games?review=1" },
-    { label: "Sem preço de compra", value: games.filter((game) => game.purchasePaidEur === null).length, href: "/collection/games?missingPurchase=1" },
-  ];
-
-  return <div className="mt-3 grid grid-cols-3 gap-2 lg:grid-cols-1">
-    {attention.map((item) => <Link key={item.label} href={item.href} className="group rounded-xl bg-[#f4f1e8] px-3 py-2.5 transition hover:bg-[#e8ecdf] lg:flex lg:items-center lg:justify-between lg:gap-3">
-      <span><strong className="block text-lg font-black text-slate-950">{item.value}</strong><span className="mt-0.5 block text-[10px] font-bold uppercase tracking-wide text-slate-500">{item.label}</span></span>
-      <span className="mt-1 block text-[10px] font-black text-[#315b47] lg:mt-0">VER →</span>
-    </Link>)}
-  </div>;
-}
-
-function AttentionFallback() {
-  return <div aria-label="A carregar dados da coleção" className="mt-3 grid animate-pulse grid-cols-3 gap-2 lg:grid-cols-1">
-    {Array.from({ length: 3 }, (_, index) => <div key={index} className="h-16 rounded-xl bg-[#f4f1e8]" />)}
   </div>;
 }
 
