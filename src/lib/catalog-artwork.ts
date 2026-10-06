@@ -25,7 +25,7 @@ export async function ensureCanonicalArtwork(identity: CanonicalGameIdentity): P
   if (!response.ok) return null;
   const contentType = response.headers.get("content-type") || "image/jpeg";
   if (!contentType.startsWith("image/")) return null;
-  const bytes = Buffer.from(await response.arrayBuffer());
+  const bytes = await response.arrayBuffer();
   await put(pathname, bytes, {
     access: "private",
     addRandomSuffix: false,
