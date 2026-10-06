@@ -2,7 +2,7 @@
 
 import { AlertTriangle, ChevronLeft, Database, Plus, Search, X } from "lucide-react";
 import { createPortal } from "react-dom";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import { ActionSubmitButton } from "@/components/action-submit-button";
 import { addCollectionGame } from "@/lib/library-actions";
 import {
@@ -332,7 +332,7 @@ function ManualAddForm({
   platformListId: string;
   completenessListId: string;
   conditionListId: string;
-  titleRef: React.RefObject<HTMLInputElement | null>;
+  titleRef: RefObject<HTMLInputElement | null>;
   onBack: () => void;
 }) {
   return <form action={addCollectionGame} className="grid gap-4 p-5 sm:grid-cols-2 sm:p-6">
