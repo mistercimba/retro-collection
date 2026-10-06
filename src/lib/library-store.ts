@@ -3,9 +3,17 @@ import { cache } from "react";
 import { revalidateTag, unstable_cache } from "next/cache";
 import { get, put } from "@vercel/blob";
 import type { LibraryData } from "@/lib/data/types";
+import { retryLibraryRead } from "@/lib/library-read-retry.logic";
 
 const LIBRARY_PATH = "retro-collection/library.json";
 export const LIBRARY_CACHE_TAG = "retro-library";
+
+class InvalidLibraryError extends Error {
+  constructor() {
+    super("A library.json no Blob é inválida.");
+    this.name = "InvalidLibraryError";
+  }
+}
 
 function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "collectionLists"> & {
   history?: LibraryData["history"];
@@ -23,17 +31,44 @@ function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "c
     (candidate.history === undefined || Array.isArray(candidate.history));
 }
 
-async function readBlobLibrary(): Promise<LibraryData | null> {
+function errorName(error: unknown) {
+  return error instanceof Error ? error.name : "UnknownError";
+}
+
+async function readBlobLibraryOnce(): Promise<LibraryData | null> {
   const result = await get(LIBRARY_PATH, { access: "private", useCache: false });
   if (!result) return null;
   const payload = JSON.parse(await new Response(result.stream).text()) as unknown;
-  if (!validLibrary(payload)) throw new Error("A library.json no Blob é inválida.");
+  if (!validLibrary(payload)) throw new InvalidLibraryError();
   return { ...payload, collectionLists: payload.collectionLists ?? [], history: payload.history ?? [] };
+}
+
+async function readBlobLibrary(): Promise<LibraryData | null> {
+  try {
+    return await retryLibraryRead(readBlobLibraryOnce, {
+      attempts: 3,
+      delayMs: 125,
+      shouldRetryError: (error) => !(error instanceof InvalidLibraryError),
+      onRetry: ({ attempt, reason, error }) => {
+        console.warn("library_blob_read_retry", {
+          attempt,
+          reason,
+          errorName: error ? errorName(error) : undefined,
+        });
+      },
+    });
+  } catch (error) {
+    console.error("library_blob_read_failed", { errorName: errorName(error) });
+    throw error;
+  }
 }
 
 async function readRequiredLibrary(): Promise<LibraryData> {
   const library = await readBlobLibrary();
-  if (!library) throw new Error("A library.json não existe no Blob privado.");
+  if (!library) {
+    console.error("library_blob_missing_after_retries");
+    throw new Error("A library.json não existe no Blob privado.");
+  }
   return library;
 }
 
