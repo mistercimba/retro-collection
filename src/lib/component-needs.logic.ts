@@ -16,6 +16,21 @@ export type ComponentNeedEntry = ComponentNeed & {
 
 const activeStatuses = new Set<ComponentNeedStatus>(["missing", "found", "purchased"]);
 
+const looseFriendlyCartridgePlatforms = new Set([
+  "NES",
+  "SNES",
+  "Nintendo 64",
+  "Game Boy",
+  "Game Boy Color",
+  "GameBoy Advance",
+  "GameBoy + Color",
+]);
+
+export function shouldTrackBaseComponentInQueue(platform: string, componentKey: ComponentNeedKey): boolean {
+  if (componentKey === "media" || componentKey === "custom") return true;
+  return !looseFriendlyCartridgePlatforms.has(platform);
+}
+
 export function isActiveComponentNeedStatus(status: ComponentNeedStatus): boolean {
   return activeStatuses.has(status);
 }
@@ -51,7 +66,10 @@ export function buildComponentNeedEntries(
     if (game.keepStatus !== "Collection") continue;
 
     const gameNeeds = storedNeeds.filter((need) => need.collectionId === game.collectionId);
-    const activeStored = gameNeeds.filter((need) => isActiveComponentNeedStatus(need.status));
+    const activeStored = gameNeeds.filter((need) =>
+      isActiveComponentNeedStatus(need.status) &&
+      shouldTrackBaseComponentInQueue(game.platform, need.componentKey)
+    );
 
     for (const need of activeStored) {
       entries.push({
@@ -73,6 +91,7 @@ export function buildComponentNeedEntries(
     if (sealed) continue;
 
     for (const component of physicalCopyProfile(game.platform).components) {
+      if (!shouldTrackBaseComponentInQueue(game.platform, component.key)) continue;
       if (activeBaseKeys.has(component.key)) continue;
       if (libraryComponentState(componentLibraryValue(game, component.key)) !== "no") continue;
 

@@ -4,6 +4,7 @@ import {
   buildComponentNeedEntries,
   buildComponentNeedHistory,
   recomputeCopyCompletion,
+  shouldTrackBaseComponentInQueue,
 } from "./component-needs.logic";
 
 function game(overrides: Partial<CollectionGame> = {}): CollectionGame {
@@ -61,6 +62,65 @@ describe("component completion queue", () => {
       ["box", true],
       ["manual", true],
     ]);
+  });
+
+  it("does not nag for box/manual upgrades on loose-friendly legacy cartridge platforms", () => {
+    const looseGameBoy = game({
+      collectionId: "GBC-0042",
+      title: "Alleyway",
+      platform: "Game Boy",
+      media: "Yes",
+      box: "No",
+      manual: "No",
+      overallStatus: "Loose",
+    });
+    expect(buildComponentNeedEntries([looseGameBoy], [])).toEqual([]);
+    expect(shouldTrackBaseComponentInQueue("Game Boy", "box")).toBe(false);
+    expect(shouldTrackBaseComponentInQueue("Nintendo 64", "manual")).toBe(false);
+    expect(shouldTrackBaseComponentInQueue("Playstation 2", "manual")).toBe(true);
+  });
+
+  it("still shows an explicitly added custom upgrade for a loose-friendly cartridge game", () => {
+    const looseGameBoy = game({
+      collectionId: "GBC-0042",
+      title: "Alleyway",
+      platform: "Game Boy",
+      media: "Yes",
+      box: "No",
+      manual: "No",
+      overallStatus: "Loose",
+    });
+    const custom = need({
+      id: "CN-GB-CUSTOM",
+      collectionId: "GBC-0042",
+      componentKey: "custom",
+      label: "Caixa original",
+      status: "missing",
+    });
+    const entries = buildComponentNeedEntries([looseGameBoy], [custom]);
+    expect(entries).toHaveLength(1);
+    expect(entries[0].label).toBe("Caixa original");
+    expect(entries[0].inferred).toBe(false);
+  });
+
+  it("suppresses old persisted base needs on loose-friendly cartridge platforms", () => {
+    const looseGameBoy = game({
+      collectionId: "GBC-0042",
+      title: "Alleyway",
+      platform: "Game Boy",
+      media: "Yes",
+      box: "No",
+      manual: "No",
+      overallStatus: "Loose",
+    });
+    const accidental = need({
+      id: "CN-GB-MANUAL",
+      collectionId: "GBC-0042",
+      componentKey: "manual",
+      label: "Manual",
+      status: "found",
+    });
+    expect(buildComponentNeedEntries([looseGameBoy], [accidental])).toEqual([]);
   });
 
   it("uses the persisted workflow item instead of duplicating an inferred need", () => {

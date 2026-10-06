@@ -225,12 +225,13 @@ Rules:
 - every need is tied to one concrete `collectionId`; never merge needs across duplicate copies;
 - known base components come from the platform-aware physical profile (`media`, `box`, `manual` where applicable);
 - a base field explicitly marked `No` can be shown immediately as an inferred need without mutating the Blob;
+- default exception: NES, SNES, Nintendo 64, Game Boy, Game Boy Color and Game Boy Advance are loose-friendly for Mário; missing box/manual on those platforms must not auto-enter the active queue. A specific upgrade can still be tracked via an explicit custom need;
 - persisted component workflow lives in `library.componentNeeds`, with active states `missing`, `found`, `purchased` and terminal states `received` / `closed`;
 - marking a base component received updates that exact copy's physical field and recalculates its completeness;
 - custom edition-specific needs (map, poster, disc 2, sleeve, insert, etc.) are added only from explicit user input; never infer special-edition contents;
 - completed/closed component records remain for history; the active queue must not keep them visible;
 - deleting a copy closes its active persisted component needs instead of silently leaving actionable orphan records;
-- `/complete` is the aggregate queue; the game detail is the authoritative place to edit that copy's physical checklist and custom needs.
+- `/complete` is the aggregate queue and should support filtering by console/platform; the game detail is the authoritative place to edit that copy's physical checklist and custom needs.
 
 ## Multiple physical copies
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { CollectionGame } from "@/lib/data/types";
 import type { ComponentNeedEntry } from "@/lib/component-needs.logic";
-import { componentLibraryValue, libraryComponentState } from "@/lib/component-needs.logic";
+import { componentLibraryValue, libraryComponentState, shouldTrackBaseComponentInQueue } from "@/lib/component-needs.logic";
 import { physicalCopyProfile } from "@/lib/physical-copy-profile.logic";
 import { addMissingComponent, saveCopyComponents } from "@/lib/library-actions";
 import { ActionSubmitButton } from "@/components/action-submit-button";
@@ -17,6 +17,10 @@ export function CopyCompletionPanel({
   history: ComponentNeedEntry[];
 }) {
   const profile = physicalCopyProfile(game.platform);
+  const ignoresLoosePackaging = profile.components.some((component) =>
+    (component.key === "box" || component.key === "manual") &&
+    !shouldTrackBaseComponentInQueue(game.platform, component.key)
+  );
 
   return <section className="collection-panel p-4">
     <div className="flex flex-wrap items-baseline justify-between gap-2">

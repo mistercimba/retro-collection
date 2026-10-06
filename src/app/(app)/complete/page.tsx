@@ -2,12 +2,27 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ComponentNeedActions, ComponentNeedStatusBadge } from "@/components/component-need-actions";
 import { getComponentCompletionQueue } from "@/lib/data/collection-service";
-import { displayPlatform } from "@/lib/data/platforms";
+import { displayPlatform, platformSlug, sortPlatformsByRelease } from "@/lib/data/platforms";
 
 export const metadata = { title: "Para completar" };
 
-export default async function CompletePage() {
-  const { active, history } = await getComponentCompletionQueue();
+export default async function CompletePage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const [query, queue] = await Promise.all([searchParams, getComponentCompletionQueue()]);
+  const selectedPlatformSlug = typeof query.platform === "string" ? query.platform : "";
+  const platforms = sortPlatformsByRelease(
+    [...new Set(queue.active.map((need) => need.platform))].map((platform) => ({ platform })),
+  );
+  const active = selectedPlatformSlug
+    ? queue.active.filter((need) => platformSlug(need.platform) === selectedPlatformSlug)
+    : queue.active;
+  const history = selectedPlatformSlug
+    ? queue.history.filter((need) => platformSlug(need.platform) === selectedPlatformSlug)
+    : queue.history;
+
   const groups = new Map<string, typeof active>();
   for (const need of active) {
     const current = groups.get(need.collectionId) ?? [];
@@ -30,9 +45,37 @@ export default async function CompletePage() {
       </p>
     </header>
 
+    {platforms.length > 1 && <section className="collection-panel p-3">
+      <div className="flex flex-wrap gap-2">
+        <Link
+          href="/complete"
+          className={!selectedPlatformSlug
+            ? "rounded-full bg-[#17382e] px-3 py-1.5 text-xs font-black text-white"
+            : "rounded-full border border-[#d8d2c5] bg-white px-3 py-1.5 text-xs font-black text-slate-600"}
+        >
+          Todas
+        </Link>
+        {platforms.map(({ platform }) => {
+          const slug = platformSlug(platform);
+          const selected = slug === selectedPlatformSlug;
+          return <Link
+            key={platform}
+            href={"/complete?platform=" + encodeURIComponent(slug)}
+            className={selected
+              ? "rounded-full bg-[#17382e] px-3 py-1.5 text-xs font-black text-white"
+              : "rounded-full border border-[#d8d2c5] bg-white px-3 py-1.5 text-xs font-black text-slate-600"}
+          >
+            {displayPlatform(platform)}
+          </Link>;
+        })}
+      </div>
+    </section>}
+
     {active.length === 0
       ? <section className="collection-panel p-5 text-sm font-semibold text-slate-500">
-          Quando uma cópia tiver caixa, manual, media ou outro extra confirmado em falta, aparece aqui.
+          {selectedPlatformSlug
+            ? "Não há peças em falta nesta consola com o filtro atual."
+            : "Quando uma cópia tiver uma peça que realmente queres procurar, aparece aqui."}
         </section>
       : <section className="grid gap-3">
           {[...groups.entries()].map(([collectionId, needs]) => {
