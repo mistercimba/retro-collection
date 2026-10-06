@@ -13,6 +13,12 @@ import { physicalCopyProfile, type PhysicalComponentKey } from "@/lib/physical-c
 
 type SearchState = "idle" | "loading" | "loaded" | "error";
 
+function isSearchableQuery(value: string) {
+  const trimmed = value.trim();
+  const idLike = /^(?:igdb\s*[:#-]?\s*)?#?\d{1,9}$/i.test(trimmed);
+  return trimmed.length <= 120 && (idLike || trimmed.length >= 2);
+}
+
 export function QuickAddDialog({
   platforms,
   trigger,
@@ -58,13 +64,7 @@ export function QuickAddDialog({
   useEffect(() => {
     if (!open || manualMode || selected) return;
     const trimmed = query.trim();
-    const idLike = /^(?:igdb\s*[:#-]?\s*)?#?\d{1,9}$/i.test(trimmed);
-    if ((!idLike && trimmed.length < 2) || trimmed.length > 120) {
-      setResults([]);
-      setSearchState("idle");
-      setSearchError("");
-      return;
-    }
+    if (!isSearchableQuery(trimmed)) return;
 
     const controller = new AbortController();
     const timer = window.setTimeout(() => {
@@ -165,7 +165,15 @@ export function QuickAddDialog({
                           ref={searchRef}
                           type="search"
                           value={query}
-                          onChange={(event) => setQuery(event.target.value)}
+                          onChange={(event) => {
+                            const value = event.target.value;
+                            setQuery(value);
+                            if (!isSearchableQuery(value)) {
+                              setResults([]);
+                              setSearchState("idle");
+                              setSearchError("");
+                            }
+                          }}
                           autoComplete="off"
                           spellCheck={false}
                           className="min-w-0 flex-1 bg-transparent text-sm font-semibold outline-none"
