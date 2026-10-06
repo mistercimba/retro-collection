@@ -98,7 +98,7 @@ export function QuickSearch({
             <span className="text-[10px] font-bold text-slate-400">{collectionResults.length}</span>
           </div>
           {visibleCollection.map((game) => <Link key={`collection:${game.collectionId}`} href={`/game/${encodeURIComponent(game.collectionId)}?from=${encodeURIComponent(returnTo)}`} className="grid grid-cols-[44px_1fr] items-center gap-3 border-b border-slate-100 px-3 py-2.5 hover:bg-slate-50" onClick={onResultClick}>
-            <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="h-14 w-11 rounded-lg" />
+            <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={game.catalogArtwork} className="h-14 w-11 rounded-lg" />
             <div className="min-w-0">
               <p className="truncate font-bold text-slate-950">{game.title}</p>
               <div className="mt-1 flex min-w-0 items-center gap-1.5 text-xs text-slate-500">
