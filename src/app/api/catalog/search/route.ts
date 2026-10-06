@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { isAuthenticated } from "@/lib/auth";
 import { searchCanonicalGames } from "@/lib/igdb-catalog";
+import { getLibrary } from "@/lib/library-store";
+import { getCatalogLibraryState } from "@/lib/catalog-library-state.logic";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -16,8 +18,20 @@ export async function GET(request: Request) {
   }
 
   try {
-    const results = await searchCanonicalGames(query, platform);
-    return NextResponse.json({ source: "IGDB", results: results.slice(0, 24) }, {
+    const [results, library] = await Promise.all([
+      searchCanonicalGames(query, platform),
+      getLibrary(),
+    ]);
+    const annotated = results.slice(0, 24).map((candidate) => ({
+      ...candidate,
+      libraryState: getCatalogLibraryState(
+        library.collection,
+        library.wishlist,
+        candidate.title,
+        candidate.platform,
+      ),
+    }));
+    return NextResponse.json({ source: "IGDB", results: annotated }, {
       headers: { "Cache-Control": "private, max-age=60" },
     });
   } catch (error) {

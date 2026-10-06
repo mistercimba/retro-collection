@@ -11,9 +11,11 @@ import {
   CATALOG_PLATFORMS,
   type CanonicalGameCandidate,
 } from "@/lib/igdb-catalog.logic";
+import type { CatalogLibraryBadge, CatalogLibraryState } from "@/lib/catalog-library-state.logic";
 import { physicalCopyProfile, type PhysicalComponentKey } from "@/lib/physical-copy-profile.logic";
 
 type SearchState = "idle" | "loading" | "loaded" | "error";
+type CatalogSearchCandidate = CanonicalGameCandidate & { libraryState?: CatalogLibraryState };
 
 function isSearchableQuery(value: string) {
   const trimmed = value.trim();
@@ -32,8 +34,8 @@ export function QuickAddDialog({
   const [manualMode, setManualMode] = useState(false);
   const [query, setQuery] = useState("");
   const [platformFilter, setPlatformFilter] = useState("");
-  const [results, setResults] = useState<CanonicalGameCandidate[]>([]);
-  const [selected, setSelected] = useState<CanonicalGameCandidate | null>(null);
+  const [results, setResults] = useState<CatalogSearchCandidate[]>([]);
+  const [selected, setSelected] = useState<CatalogSearchCandidate | null>(null);
   const [searchState, setSearchState] = useState<SearchState>("idle");
   const [searchError, setSearchError] = useState("");
   const [sealed, setSealed] = useState("no");
@@ -207,6 +209,7 @@ export function QuickAddDialog({
                           {candidate.platform} · {candidate.edition}{candidate.firstReleaseDate ? ` · ${candidate.firstReleaseDate.slice(0, 4)}` : ""}
                         </span>
                         {candidate.genres.length > 0 && <span className="mt-1 block truncate text-[11px] text-slate-400">{candidate.genres.slice(0, 3).join(" · ")}</span>}
+                        <CatalogLibraryBadges candidate={candidate} className="mt-1.5" />
                       </span>
                       <span className="text-[10px] font-black uppercase tracking-wide text-[#315b47]">Escolher</span>
                     </button>)}
@@ -228,6 +231,23 @@ export function QuickAddDialog({
   return <>{triggerButton}{modal}</>;
 }
 
+function CatalogLibraryBadges({ candidate, className = "" }: { candidate: CatalogSearchCandidate; className?: string }) {
+  const state = candidate.libraryState;
+  if (!state?.badges.length) return null;
+  return <span className={`flex flex-wrap gap-1 ${className}`}>
+    {state.badges.map((badge) => <CatalogLibraryBadgePill key={badge} badge={badge} ownedCount={state.ownedCount} />)}
+  </span>;
+}
+
+function CatalogLibraryBadgePill({ badge, ownedCount }: { badge: CatalogLibraryBadge; ownedCount: number }) {
+  const config = badge === "owned"
+    ? { label: ownedCount > 1 ? `Já tens · ${ownedCount} cópias` : "Já tens", className: "bg-emerald-100 text-emerald-800" }
+    : badge === "wishlist"
+      ? { label: "Na wishlist", className: "bg-rose-100 text-rose-800" }
+      : { label: "Encomendado", className: "bg-amber-100 text-amber-900" };
+  return <span className={`rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-wide ${config.className}`}>{config.label}</span>;
+}
+
 function CatalogCover({ candidate }: { candidate: CanonicalGameCandidate }) {
   return candidate.coverUrl
     ? <img src={candidate.coverUrl} alt="" className="h-[68px] w-[50px] rounded-lg bg-slate-100 object-contain" />
@@ -240,7 +260,7 @@ function CanonicalAddForm({
   setSealed,
   onBack,
 }: {
-  candidate: CanonicalGameCandidate;
+  candidate: CatalogSearchCandidate;
   sealed: string;
   setSealed: (value: string) => void;
   onBack: () => void;
@@ -258,6 +278,7 @@ function CanonicalAddForm({
         <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#466558]">IDENTIDADE SELECIONADA · IGDB #{candidate.gameId}</p>
         <h3 className="mt-1 text-lg font-black text-slate-950">{candidate.title}</h3>
         <p className="text-xs font-semibold text-slate-500">{candidate.platform}{candidate.firstReleaseDate ? ` · ${candidate.firstReleaseDate.slice(0, 4)}` : ""}</p>
+        <CatalogLibraryBadges candidate={candidate} className="mt-2" />
       </div>
       <button type="button" onClick={onBack} className="inline-flex min-h-10 shrink-0 items-center gap-1 rounded-xl border border-[#ded8cb] px-3 text-xs font-black text-slate-600"><ChevronLeft className="h-3.5 w-3.5" />Trocar</button>
     </div>

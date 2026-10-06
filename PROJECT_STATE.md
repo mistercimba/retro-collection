@@ -48,17 +48,13 @@ Preview feedback for PR #53:
 - Region, language and condition are now standardized dropdowns across equivalent collection forms;
 - new-copy defaults are PAL + English; condition remains an explicit choice;
 - existing legacy values remain selectable when editing an older record;
-- a direct Collection add now removes an exact same-title/same-platform active Wishlist target automatically and records that removal in history.
+- a direct Collection add now removes an exact same-title/same-platform active Wishlist target automatically and records that removal in history;
+- catalog search results now show "Já tens" (including copy count) and/or "Na wishlist" before selection, and keep the indicator visible on the confirmation step;
+- the badge contract already includes "Encomendado", but it is intentionally not emitted until Issue #46 introduces a real Purchased/In transit data state.
 
-Final validation for the acceptance-feedback changes:
-- lint: PASS (warnings only);
-- Vitest: 207/207 PASS across 35 files;
-- Python tests: 6/6 PASS;
-- Next production build: PASS;
-- GitHub Actions: SUCCESS;
-- Vercel preview deployment: SUCCESS.
+Previous acceptance-feedback candidate was fully green (lint, 207/207 Vitest, 6/6 Python, build, Actions and Vercel). The final library-state indicator change is the last requested adjustment before merge and requires one final CI/preview validation.
 
-No real Collection/Wishlist mutation was performed during automated or preview QA.
+No real Collection/Wishlist mutation is performed during automated or preview QA.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
