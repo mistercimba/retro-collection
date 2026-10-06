@@ -94,7 +94,7 @@ export function GameArtwork({
 }) {
   return (
     <ArtworkFrame
-      src={GAME_ARTWORK[collectionId] ?? "/covers/__missing__.png"}
+      src={GAME_ARTWORK[collectionId] ?? `/api/catalog-artwork/${encodeURIComponent(collectionId)}`}
       alt={`${title} PAL cover`}
       platform={platform}
       title={title}
