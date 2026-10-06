@@ -12,7 +12,6 @@ type CandidateTarget = Pick<WantTarget, "title" | "platform"> & { targetVersion?
 
 export function resolveWishlistArtworkCandidates(target: CandidateTarget): WishlistArtworkCandidate[] {
   const requirement = wishlistArtworkEditionRequirement(target.targetVersion);
-  if (requirement === "Unknown") return [];
 
   const title = normalizeWishlistArtworkTitle(target.title);
   const platform = normalizeWishlistArtworkPlatform(target.platform);
@@ -22,7 +21,7 @@ export function resolveWishlistArtworkCandidates(target: CandidateTarget): Wishl
     if (normalizeWishlistArtworkTitle(candidate.title) !== title) return false;
     if (normalizeWishlistArtworkPlatform(candidate.platform) !== platform) return false;
     if (candidate.artworkRegion !== region) return false;
-    if (requirement === "Any") return true;
+    if (requirement === "Any" || requirement === "Unknown") return true;
     return normalizeWantlistVariant(candidate.coverVariant) === requirement;
   });
 }

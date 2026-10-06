@@ -26,6 +26,10 @@ describe("wishlist artwork candidates", () => {
     expect(candidates.map((item) => item.displayRegion)).toEqual(["Europe / Australia", "Spain"]);
   });
 
+  it("still offers candidates when the target version text is unrecognized so the user can resolve visually", () => {
+    expect(resolveWishlistArtworkCandidates(target({ targetVersion: "PAL edição a confirmar; CIB" }))).toHaveLength(2);
+  });
+
   it("does not offer Standard candidates for an explicit Platinum target", () => {
     expect(resolveWishlistArtworkCandidates(target({ targetVersion: "PAL Platinum; CIB" }))).toEqual([]);
   });
