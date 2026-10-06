@@ -324,8 +324,8 @@ export async function addCollectionGame(form: FormData) {
 
     const fulfilledWishlistTargets = wishlistTargetsSatisfiedByAddedGame(library.wishlist, title, platform);
     if (fulfilledWishlistTargets.length) {
-      const fulfilledIds = new Set(fulfilledWishlistTargets.map((target) => target.targetId));
-      library.wishlist = library.wishlist.filter((target) => !fulfilledIds.has(target.targetId));
+      const fulfilledTargets = new Set(fulfilledWishlistTargets);
+      library.wishlist = library.wishlist.filter((target) => !fulfilledTargets.has(target));
       for (const target of fulfilledWishlistTargets) {
         addHistory(library, {
           action: "wishlist.remove",
