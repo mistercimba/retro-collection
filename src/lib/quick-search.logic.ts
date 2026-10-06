@@ -55,7 +55,7 @@ function matchesTokens(value: string, query: string) {
   return tokens.every((token) => haystack.includes(token));
 }
 
-export function findQuickSearchMatches<T extends QuickSearchableGame>(games: T[], query: string): T[] {
+export function findQuickSearchMatches<T extends QuickSearchGameInput>(games: T[], query: string): T[] {
   return games.filter((game) => matchesTokens(
     [game.title, game.platform, displayPlatform(game.platform), game.collectionId, game.edition, game.region, game.overallStatus].join(" "),
     query,
