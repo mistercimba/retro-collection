@@ -208,7 +208,9 @@ Rules:
 - receipt uses the platform-aware physical checklist, creates the Collection copy, marks the purchase `received`, removes the target from Wishlist and records forward-only history;
 - cancelling a purchase marks its PurchaseRecord `cancelled` and clears the target acquisition state so the target returns to its previous wishlist/PLAN semantics;
 - direct Collection adds must not silently remove an in-transit target, because that could represent a separate physical copy;
-- no carrier/shipping-tracking integration is implied.
+- no carrier/shipping-tracking integration is implied;
+- the global **Adicionar jogo** flow is the canonical entry point for choosing whether a catalog game is already owned, purchased/in transit, or only wanted;
+- Wishlist purchase actions should reuse that same global acquisition dialog prefilled with the Wishlist target instead of maintaining a second purchase form.
 
 ## Multiple physical copies
 

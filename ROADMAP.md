@@ -26,7 +26,7 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 Add a real intermediate state between Wishlist and Collection for games already bought but not yet received/verified. Purchased games stop behaving like active shopping targets without counting as an owned physical copy until receipt is confirmed.
 
-Implementation direction: keep the target in Wishlist with a linked acquisition/PurchaseRecord state, surface it as **A caminho**, verify the physical copy on receipt, then create the Collection record. Cancellation returns the target to active wishlist behavior while preserving a cancelled purchase record and history.
+Implementation direction: keep the target in Wishlist with a linked acquisition/PurchaseRecord state, surface it as **A caminho**, verify the physical copy on receipt, then create the Collection record. Cancellation returns the target to active wishlist behavior while preserving a cancelled purchase record and history. The global **Adicionar jogo** dialog is the single acquisition entry point: after choosing a catalog identity it asks whether the game is already owned, purchased/in transit, or only wanted; Wishlist shortcuts reuse the same dialog prefilled rather than duplicating forms.
 
 The canonical guided Add flow from #47 is complete and merged in PR #53.
 

@@ -140,6 +140,7 @@ export interface WantTarget {
   status: string;
   notes: string;
   acquisition?: WishlistAcquisition | null;
+  catalog?: CanonicalGameIdentity;
 }
 
 export interface WantListEntry extends WantTarget {

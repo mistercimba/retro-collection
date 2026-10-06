@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { WishlistArtwork } from "@/components/wishlist-artwork";
 import { WishlistBuyReferencePanel } from "@/components/wishlist-buy-reference-panel";
 import { ReferenceLinks } from "@/components/reference-links";
-import { cancelWishlistPurchase, editWishlistGame, purchaseWishlistGame, receiveWishlistPurchase, removeWishlistGame } from "@/lib/library-actions";
+import { cancelWishlistPurchase, editWishlistGame, receiveWishlistPurchase, removeWishlistGame } from "@/lib/library-actions";
+import { QuickAddDialog } from "@/components/quick-add-dialog";
 import { getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformSlug } from "@/lib/data/platforms";
 import { findGameMetadataByTitle } from "@/lib/game-metadata";
@@ -179,20 +180,23 @@ export default async function WishDetailPage({
         </form>
       </details>
     </> : <>
-      <details className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
-        <summary className="cursor-pointer text-sm font-black text-emerald-900">Comprei este jogo</summary>
-        <form action={purchaseWishlistGame} className="mt-4 grid gap-3 sm:grid-cols-2">
-          <Hidden target={target} />
-          <Field name="paid" label="Preço pago (€)" value="" type="number" step="0.01" />
-          <Field name="source" label="Onde comprei" value="" placeholder="Feira, Vinted, CeX…" />
-          <Field name="purchaseDate" label="Data de compra" value={today} type="date" />
-          <Field name="seller" label="Vendedor" value="" />
-          <Field name="listingUrl" label="Link do anúncio" value="" type="url" />
-          <label className="sm:col-span-2"><span className="field-label">Notas da compra</span><textarea name="purchaseNotes" className="field-input min-h-20" /></label>
-          <p className="sm:col-span-2 text-xs font-semibold leading-5 text-emerald-800">Isto marca o jogo como comprado / a caminho. Só entra na coleção quando confirmares que chegou e verificares a cópia física.</p>
-          <ActionSubmitButton pendingLabel="A marcar como comprado…" className="min-h-11 rounded-xl bg-emerald-900 px-4 text-sm font-black text-white sm:col-span-2">Marcar como comprado / a caminho</ActionSubmitButton>
-        </form>
-      </details>
+      <section className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
+        <h2 className="text-sm font-black text-emerald-900">Compraste este jogo?</h2>
+        <p className="mt-1 text-xs font-semibold leading-5 text-emerald-800">Usa o mesmo fluxo global de Adicionar jogo. A identidade já vem preenchida a partir desta Wishlist.</p>
+        <div className="mt-3">
+          <QuickAddDialog
+            platforms={[target.platform]}
+            trigger="wishlist"
+            prefillWishlist={{
+              targetId: target.targetId,
+              title: target.title,
+              platform: target.platform,
+              targetVersion: target.targetVersion,
+              priority: target.priority,
+            }}
+          />
+        </div>
+      </section>
 
       <details className="rounded-2xl border border-rose-200 bg-rose-50/70 p-4">
         <summary className="cursor-pointer text-xs font-black text-rose-800">Zona perigosa</summary>

@@ -33,9 +33,14 @@ Implementation model:
 - receipt explicitly verifies the physical copy using the platform-aware checklist, then creates the Collection record and marks the purchase `received`;
 - cancellation marks the purchase `cancelled` and restores the target to its previous wishlist behavior without deleting purchase history;
 - Home and Wishlist surface pending arrivals; the catalog Add search uses the already-designed `Encomendado` badge;
+- the global **Adicionar jogo** flow is now universal after catalog selection: **Já tenho comigo / Já comprei, ainda não chegou / Quero comprar**;
+- the Wishlist no longer keeps a separate "Comprei este jogo" purchase form: it opens the same global Add dialog with title/platform/target already prefilled;
+- the Wishlist's own "Adicionar" entry also reuses the global catalog flow instead of a second free-text add form;
 - no shipping/carrier tracking is introduced.
 
-The candidate preserves the #55 cost discipline: code, tests and durable docs are batched into one remote QA candidate.
+The first preview exposed one UX gap: global Add still assumed "already owned". The acceptance-feedback candidate fixes that by making Add choose the acquisition state explicitly and by reusing the same dialog from Wishlist. The feedback round is batched into one additional remote candidate.
+
+The candidate preserves the #55 cost discipline: code, tests and durable docs are batched per feedback round rather than file-by-file pushes.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
