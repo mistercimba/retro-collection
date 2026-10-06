@@ -11,7 +11,7 @@ import {
   resolveWishlistArtworkCandidates,
   resolveWishlistArtworkOverrideCandidate,
 } from "@/lib/wishlist-artwork-candidates.logic";
-import { wishlistArtworkEditionRequirement } from "@/lib/wishlist-artwork.logic";
+
 
 export default async function WishlistArtworkChoicePage({
   params,
@@ -34,7 +34,6 @@ export default async function WishlistArtworkChoicePage({
   const candidates = resolveWishlistArtworkCandidates(target);
   if (candidates.length < 2) notFound();
   const selected = resolveWishlistArtworkOverrideCandidate(target);
-  const editionRequirement = wishlistArtworkEditionRequirement(target.targetVersion);
   const from = getSafeListReturnPath(query.from) ?? "/want";
   const detailParams = new URLSearchParams({ platform: target.platform, title: target.title, from });
   const detailHref = "/wish/" + encodeURIComponent(target.targetId) + "?" + detailParams.toString();
@@ -59,9 +58,9 @@ export default async function WishlistArtworkChoicePage({
           Estas imagens só são carregadas nesta página de escolha. Depois de escolheres uma, a app guarda uma cópia privada e passa a servi-la localmente. A escolha manual tem prioridade sobre o automático.
         </p>
       </div>
-      {editionRequirement === "Unknown" && <p className="mt-3 rounded-xl bg-white/70 p-3 text-xs font-semibold leading-5 text-amber-900">
-        A descrição da versão alvo não identifica uma edição padrão conhecida. Confirma visualmente a capa antes de escolheres; a app continua sem selecionar nada automaticamente.
-      </p>}
+      <p className="mt-3 rounded-xl bg-white/70 p-3 text-xs font-semibold leading-5 text-amber-900">
+        Versão alvo: <strong>{target.targetVersion || "não especificada"}</strong>. As opções abaixo são candidatos manuais; confirma visualmente região/edição antes de escolheres. A app nunca seleciona uma automaticamente.
+      </p>
     </section>
 
     <section className="grid gap-4 sm:grid-cols-2">

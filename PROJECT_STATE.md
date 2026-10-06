@@ -31,14 +31,14 @@ Issue #60. Candidate branch: `feat/manual-artwork-choice`.
 Implementation model:
 
 - ambiguity stays safe by default: no candidate is auto-selected;
-- a target can expose a static registry of plausible candidates based on title/platform/region/edition compatibility, independent of targetId;
+- a target exposes known ambiguous candidates by normalized title + platform, independent of targetId; region/edition are shown as context rather than used to hide the manual chooser;
 - the first materialized case is Final Fantasy VIII on PlayStation, where the existing importer found two exact PAL candidates: Europe/Australia and Spain;
 - the Wishlist detail shows **Artwork ambíguo** and links to an explicit chooser only when at least two compatible candidates exist;
 - candidate thumbnails are fetched from their recorded source only on the explicit chooser page, not during ordinary browsing;
 - choosing a candidate downloads it server-side into private Vercel Blob and persists a copy-specific Wishlist override with full provenance;
 - the persisted manual override has priority over static/reused/catalog artwork;
 - removing the choice returns to automatic resolution/placeholder;
-- changing target edition invalidates an incompatible override and deletes its private Blob;
+- a manual choice is intentionally authoritative for that exact title/platform target, even if its free-text targetVersion is imperfect;
 - removing/receiving/satisfying the Wishlist target also cleans up the private override Blob;
 - History records manual artwork set/clear actions.
 

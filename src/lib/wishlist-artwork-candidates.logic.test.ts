@@ -30,8 +30,8 @@ describe("wishlist artwork candidates", () => {
     expect(resolveWishlistArtworkCandidates(target({ targetVersion: "PAL edição a confirmar; CIB" }))).toHaveLength(2);
   });
 
-  it("does not offer Standard candidates for an explicit Platinum target", () => {
-    expect(resolveWishlistArtworkCandidates(target({ targetVersion: "PAL Platinum; CIB" }))).toEqual([]);
+  it("keeps manual candidates visible even when target metadata says a different edition", () => {
+    expect(resolveWishlistArtworkCandidates(target({ targetVersion: "PAL Platinum; CIB" }))).toHaveLength(2);
   });
 
   it("keeps a manual override valid only while its candidate remains compatible", () => {

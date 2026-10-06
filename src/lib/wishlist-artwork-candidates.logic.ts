@@ -3,27 +3,23 @@ import { WISHLIST_ARTWORK_CANDIDATES, type WishlistArtworkCandidate } from "../d
 import {
   normalizeWishlistArtworkPlatform,
   normalizeWishlistArtworkTitle,
-  wishlistArtworkRegion,
-  wishlistArtworkEditionRequirement,
 } from "./wishlist-artwork.logic";
-import { normalizeWantlistVariant } from "./wantlist-facets.logic";
 
 type CandidateTarget = Pick<WantTarget, "title" | "platform"> & { targetVersion?: string };
 
 export function resolveWishlistArtworkCandidates(target: CandidateTarget): WishlistArtworkCandidate[] {
-  const requirement = wishlistArtworkEditionRequirement(target.targetVersion);
-
   const title = normalizeWishlistArtworkTitle(target.title);
   const platform = normalizeWishlistArtworkPlatform(target.platform);
-  const region = wishlistArtworkRegion(target.targetVersion);
 
-  return WISHLIST_ARTWORK_CANDIDATES.filter((candidate) => {
-    if (normalizeWishlistArtworkTitle(candidate.title) !== title) return false;
-    if (normalizeWishlistArtworkPlatform(candidate.platform) !== platform) return false;
-    if (candidate.artworkRegion !== region) return false;
-    if (requirement === "Any" || requirement === "Unknown") return true;
-    return normalizeWantlistVariant(candidate.coverVariant) === requirement;
-  });
+  // This is a manual resolver, not an automatic matcher. Once the pipeline has
+  // recorded multiple plausible covers for the same game/platform, expose all
+  // of them and let the user make the final call from the visual/provenance
+  // context. Region/edition heuristics remain useful labels, but they must not
+  // hide the chooser itself.
+  return WISHLIST_ARTWORK_CANDIDATES.filter((candidate) =>
+    normalizeWishlistArtworkTitle(candidate.title) === title &&
+    normalizeWishlistArtworkPlatform(candidate.platform) === platform
+  );
 }
 
 export function wishlistArtworkCandidateById(
