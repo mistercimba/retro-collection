@@ -90,6 +90,7 @@ Logical schema:
   purchases: [],
   valuations: [],
   componentNeeds: [],
+  nextObjective: null,
   collectionLists: [],
   history: []
 }
@@ -103,6 +104,7 @@ Important rules:
 - Old blobs without `history` are read as `history: []`.
 - Old blobs without `collectionLists` are read as `collectionLists: []`; this remains schemaVersion 1 and backward-compatible.
 - Old blobs without `componentNeeds` are read as `componentNeeds: []`; standard missing base parts can still be inferred from copy fields marked `No` without rewriting the Blob.
+- Old blobs without `nextObjective` are read as `nextObjective: null`; this remains schemaVersion 1 and backward-compatible.
 - Mutations are read-modify-write and intentionally simple for a single personal user.
 - Do not add a database, queue, ETag system, state manager, etc. without an actual demonstrated need.
 
@@ -215,6 +217,21 @@ Rules:
 - no carrier/shipping-tracking integration is implied;
 - the global **Adicionar jogo** flow is the canonical entry point for choosing whether a catalog game is already owned, purchased/in transit, or only wanted;
 - Wishlist purchase actions should reuse that same global acquisition dialog prefilled with the Wishlist target instead of maintaining a second purchase form.
+
+## Next objective
+
+The Home can show at most one manually confirmed **Próximo objetivo**.
+
+Rules:
+
+- persist only a reference to a real Wishlist target: targetId + exact title/platform + set timestamp;
+- zero objectives is valid;
+- only an active, not-yet-acquired and not-ordered Wishlist target can be selected;
+- do not auto-pick or silently replace an objective;
+- setting a different target explicitly replaces the previous one;
+- purchasing the objective, removing its Wishlist target, or satisfying it through a direct Collection add clears it automatically;
+- cancelling a purchase does not automatically restore the old objective;
+- system suggestions may propose candidates later, but user confirmation remains required.
 
 ## Missing physical components / "Para completar"
 

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Target } from "lucide-react";
 import { notFound } from "next/navigation";
 import { WishlistArtwork } from "@/components/wishlist-artwork";
 import { WishlistBuyReferencePanel } from "@/components/wishlist-buy-reference-panel";
 import { ReferenceLinks } from "@/components/reference-links";
-import { cancelWishlistPurchase, editWishlistGame, receiveWishlistPurchase, removeWishlistGame } from "@/lib/library-actions";
+import { cancelWishlistPurchase, clearNextObjective, editWishlistGame, receiveWishlistPurchase, removeWishlistGame, setNextObjective } from "@/lib/library-actions";
 import { QuickAddDialog } from "@/components/quick-add-dialog";
 import { getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformSlug } from "@/lib/data/platforms";
@@ -21,6 +21,8 @@ import { filterWishlistItems, getWishlistNeighbors, getWishlistOriginState, sele
 import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 import { physicalCopyProfile, type PhysicalComponentKey } from "@/lib/physical-copy-profile.logic";
 import { formatEuro } from "@/lib/format";
+import { getLibrary } from "@/lib/library-store";
+import { objectiveMatchesTarget } from "@/lib/next-objective.logic";
 
 export default async function WishDetailPage({
   params,
@@ -29,7 +31,7 @@ export default async function WishDetailPage({
   params: Promise<{ targetId: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const [{ targetId }, query, targets] = await Promise.all([params, searchParams, getWantlist()]);
+  const [{ targetId }, query, targets, library] = await Promise.all([params, searchParams, getWantlist(), getLibrary()]);
   const decodedId = decodeURIComponent(targetId);
   const wantedPlatform = typeof query.platform === "string" ? query.platform : "";
   const wantedTitle = typeof query.title === "string" ? query.title : "";
@@ -41,6 +43,8 @@ export default async function WishDetailPage({
   if (!target) notFound();
 
   const ordered = isOrderedWishlistTarget(target);
+  const isNextObjective = objectiveMatchesTarget(library.nextObjective, target);
+  const canBeNextObjective = !ordered && target.planState === "active" && target.matchState !== "acquired";
   const [guide, cexGuide] = await Promise.all([
     getPricechartingGuide(target.platform, target.title, target.targetVersion),
     getCexWishlistGuide(target.platform, target.title, target.targetVersion),
@@ -116,6 +120,31 @@ export default async function WishDetailPage({
         <div className="mt-5"><ReferenceLinks title={target.title} metacriticUrl={metadata?.reviewScoreUrl ?? ""} /></div>
       </div>
     </section>
+
+    {canBeNextObjective && <section className={isNextObjective ? "rounded-2xl border border-lime-300 bg-lime-50/80 p-4" : "collection-panel p-4"}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex min-w-0 items-start gap-3">
+          <span className={isNextObjective ? "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-200 text-[#17382e]" : "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#e5eadf] text-[#315b47]"}><Target className="h-5 w-5" /></span>
+          <div className="min-w-0">
+            <p className="text-sm font-black text-slate-950">{isNextObjective ? "Este é o teu Próximo objetivo" : "Próximo objetivo"}</p>
+            <p className="mt-1 text-xs font-semibold leading-5 text-slate-500">
+              {isNextObjective
+                ? "Fica destacado na Home até o comprares ou removeres."
+                : library.nextObjective
+                  ? "Definir este jogo substitui " + library.nextObjective.title + "."
+                  : "Marca este jogo como a próxima aquisição importante da coleção."}
+            </p>
+          </div>
+        </div>
+        {isNextObjective ? <form action={clearNextObjective}>
+          <Hidden target={target} />
+          <ActionSubmitButton pendingLabel="A remover…" className="min-h-10 rounded-xl border border-lime-300 bg-white px-4 text-xs font-black text-[#315b47]">Remover objetivo</ActionSubmitButton>
+        </form> : <form action={setNextObjective}>
+          <Hidden target={target} />
+          <ActionSubmitButton pendingLabel="A definir…" className="min-h-10 rounded-xl bg-[#17382e] px-4 text-xs font-black text-white">Definir como Próximo objetivo</ActionSubmitButton>
+        </form>}
+      </div>
+    </section>}
 
     {ordered
       ? <OrderedPurchasePanel target={target} />

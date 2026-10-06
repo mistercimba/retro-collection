@@ -22,13 +22,13 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Copy-specific missing components (#49)
+### NOW — Single Next objective (#51)
 
-Create a dedicated **Para completar** queue for missing physical components in games already owned.
+Add one manually confirmed **Próximo objetivo** to answer “qual é a próxima aquisição importante?” without turning the app into gamification.
 
-Implementation direction: each need belongs to one concrete `collectionId`; base media/box/manual needs reuse the platform-aware checklist and can be inferred from explicit `No` values, while special-edition extras are only user-entered. Track **Em falta → Encontrado → Comprado → Recebido**, update the exact copy when a base part arrives, and preserve completed/closed records for history.
+Implementation direction: reference an existing active Wishlist target, show it prominently but compactly on Home, allow explicit set/replace/remove from the Wishlist target, and clear it automatically when the target is bought/removed/acquired. Zero objectives is valid. No opaque auto-selection; future #52 suggestions may propose candidates but still require confirmation.
 
-Purchased / In transit (#46) is complete and merged in PR #56. The global Add dialog is now the single acquisition entry point.
+Copy-specific missing components (#49) are complete and merged in PR #57.
 
 ## Product roadmap
 
