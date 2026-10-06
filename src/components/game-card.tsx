@@ -15,7 +15,7 @@ export function GameCard({ game, sale = false, returnTo, copyMarker }: { game: C
       <Link href={detailPath} className="group flex min-w-0 gap-3 p-3.5" onClick={(event) => {
         if (returnTo && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && event.button === 0) saveListScrollPosition(returnTo);
       }}>
-        <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="h-[5.75rem] w-[4.3rem] shrink-0 rounded-lg bg-slate-50" />
+        <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="h-[5.75rem] w-[4.3rem] shrink-0 rounded-lg bg-slate-50" />
         <span className="flex min-w-0 flex-1 flex-col">
           <span className="flex items-start justify-between gap-2">
             <span className="min-w-0">

@@ -22,17 +22,21 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Real mobile/laptop QA
+### NOW — Canonical guided Add flow (#47)
+
+Replace free-form normal game creation with explicit catalog selection, canonical identity/metadata, conservative platform-aware physical completeness questions and an explicit manual fallback.
+
+Chosen source: IGDB, using existing server-side credentials. Search/selection is isolated to Add; normal browsing uses the persisted identity/metadata and a private stored cover when safely available.
+
+## Product roadmap
+
+### NEXT — Real mobile/laptop QA
 
 Validate Home, Collection, platform/game detail, Wishlist, Lists, Sell/Sold, search, history, login/error/404, dialogs, forms and filters.
 
 Check 360/390/430 px where practical, laptop layout, overflow, clipped actions, bottom navigation/safe area, long titles, secondary metadata, keyboard/focus and loading/error states.
 
 Also validate the existing offline flow: authenticated snapshot, offline lookup, freshness indicator, network cut/reconnect and snapshot refresh after reconnect.
-
-PR #40's initial-load performance work is merged and part of `main`. Validate perceived production load during QA and reopen performance work only if real regressions remain.
-
-## Product roadmap
 
 ### NEXT — Small UI/UX polish
 
@@ -60,10 +64,6 @@ Only change after visual verification:
 - Explicit region field only if splitting it from `targetVersion` materially improves matching/filtering.
 - Structured minimum completeness/condition only if it integrates with pricing/buying.
 - Below-reference-price queue/filter once there is a trustworthy listing input.
-
-### NEXT — Quick Add smarter title selection
-
-Suggest known local metadata while typing, platform-aware and conservative. Never silently attach a fuzzy/wrong edition and do not make Quick Add dependent on a fragile external API.
 
 ### LATER — Price history and trends
 

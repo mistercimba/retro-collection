@@ -85,16 +85,18 @@ export function GameArtwork({
   platform,
   className = "aspect-[3/4]",
   eager = false,
+  catalogArtwork = false,
 }: {
   collectionId: string;
   title: string;
   platform: string;
   className?: string;
   eager?: boolean;
+  catalogArtwork?: boolean;
 }) {
   return (
     <ArtworkFrame
-      src={GAME_ARTWORK[collectionId] ?? "/covers/__missing__.png"}
+      src={GAME_ARTWORK[collectionId] ?? (catalogArtwork ? `/api/catalog-artwork/${encodeURIComponent(collectionId)}` : "/covers/__missing__.png")}
       alt={`${title} PAL cover`}
       platform={platform}
       title={title}

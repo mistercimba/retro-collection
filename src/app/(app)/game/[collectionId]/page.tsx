@@ -11,6 +11,8 @@ import {formatEuro} from "@/lib/format";
 import {getGameResearch} from "@/lib/game-research";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
+import { CollectionSelectField } from "@/components/collection-select-field";
+import { CONDITION_OPTIONS, LANGUAGE_OPTIONS, REGION_OPTIONS } from "@/lib/collection-field-options";
 import { OwnedCopyPhotos } from "@/components/owned-copy-photos";
 import { OwnedCopyGroup } from "@/components/owned-copy-group";
 
@@ -41,7 +43,7 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   <Link href={returnTo} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Voltar</Link>
 
   <section className="collection-panel grid gap-6 p-4 sm:grid-cols-[240px_minmax(0,1fr)] sm:p-6">
-   <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="mx-auto h-[330px] w-[240px] rounded-2xl bg-slate-50 object-contain sm:mx-0" eager/>
+   <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="mx-auto h-[330px] w-[240px] rounded-2xl bg-slate-50 object-contain sm:mx-0" eager/>
    <div className="min-w-0">
     <p className="eyebrow">{displayPlatform(game.platform)}</p>
     <h1 className="mt-1 text-3xl font-black leading-tight tracking-tight text-slate-950">{game.title}</h1>
@@ -93,7 +95,7 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
    <summary className="cursor-pointer text-sm font-black text-slate-900">Editar a minha cópia</summary>
    <form action={editGame} className="mt-4 grid gap-3 sm:grid-cols-2">
     <input type="hidden" name="collectionId" value={game.collectionId}/>
-    <Field name="region" label="Região" value={game.region}/><Field name="edition" label="Edição" value={game.edition}/><Field name="language" label="Idioma" value={game.language}/><Field name="overallStatus" label="Completude" value={game.overallStatus}/><Field name="conditionGrade" label="Condição" value={game.conditionGrade}/>
+    <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue={game.region}/><Field name="edition" label="Edição" value={game.edition}/><CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue={game.language}/><Field name="overallStatus" label="Completude" value={game.overallStatus}/><CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS} defaultValue={game.conditionGrade}/>
     <Field name="paid" label="Preço pago (€)" value={game.purchase?.totalPaidEur??game.allocatedCostEur??""} type="number" step="0.01"/><Field name="source" label="Onde comprei" value={game.purchase?.source??""}/><Field name="purchaseDate" label="Data de compra" value={game.purchase?.date||game.acquiredDate||""} type="date"/><Field name="seller" label="Vendedor" value={game.purchase?.seller??""}/><Field name="listingUrl" label="Link do anúncio" value={game.purchase?.listingUrl??""} type="url"/><Field name="purchaseNotes" label="Notas da compra" value={game.purchase?.notes??""}/>
     <label className="sm:col-span-2"><span className="field-label">Notas da cópia</span><textarea name="notes" defaultValue={game.notes} className="field-input min-h-24"/></label>
     <ActionSubmitButton pendingLabel="A guardar…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">Guardar alterações</ActionSubmitButton>

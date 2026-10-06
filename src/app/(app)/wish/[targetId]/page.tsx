@@ -13,6 +13,8 @@ import {getCexWishlistGuide,getCexWishlistGuides} from "@/lib/cex-catalog";
 import {buildWishlistBuyReferenceGuide} from "@/lib/wishlist-buy-reference.logic";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
+import { CollectionSelectField } from "@/components/collection-select-field";
+import { CONDITION_OPTIONS, LANGUAGE_OPTIONS, REGION_OPTIONS } from "@/lib/collection-field-options";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
 import { filterWishlistItems, getWishlistNeighbors, getWishlistOriginState, selectWishlistItems, wishlistPriceKey } from "@/lib/wishlist-price.logic";
 
@@ -85,7 +87,7 @@ export default async function WishDetailPage({params,searchParams}:{params:Promi
    <summary className="cursor-pointer text-sm font-black text-emerald-900">Comprei este jogo</summary>
    <form action={purchaseWishlistGame} className="mt-4 grid gap-3 sm:grid-cols-2">
     <Hidden target={target}/>
-    <Field name="paid" label="Preço pago (€)" value="" type="number" step="0.01" required/><Field name="source" label="Onde comprei" value="" placeholder="Feira, Vinted, CeX…"/><Field name="purchaseDate" label="Data" value="" type="date"/><Field name="conditionGrade" label="Condição" value=""/><Field name="overallStatus" label="Completude" value="" placeholder="CIB / Loose / Incompleto"/><Field name="region" label="Região" value="" placeholder="PAL"/><Field name="edition" label="Edição" value="" placeholder="Standard"/><Field name="language" label="Idioma" value=""/><Field name="seller" label="Vendedor" value=""/><Field name="listingUrl" label="Link do anúncio" value="" type="url"/>
+    <Field name="paid" label="Preço pago (€)" value="" type="number" step="0.01" required/><Field name="source" label="Onde comprei" value="" placeholder="Feira, Vinted, CeX…"/><Field name="purchaseDate" label="Data" value="" type="date"/><CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS}/><Field name="overallStatus" label="Completude" value="" placeholder="CIB / Loose / Incompleto"/><CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL"/><Field name="edition" label="Edição" value="" placeholder="Standard"/><CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English"/><Field name="seller" label="Vendedor" value=""/><Field name="listingUrl" label="Link do anúncio" value="" type="url"/>
     <label className="sm:col-span-2"><span className="field-label">Notas</span><textarea name="notes" className="field-input min-h-20"/></label>
     <ActionSubmitButton pendingLabel="A adicionar à coleção…" className="min-h-11 rounded-xl bg-emerald-900 px-4 text-sm font-black text-white sm:col-span-2">Adicionar à coleção</ActionSubmitButton>
    </form>

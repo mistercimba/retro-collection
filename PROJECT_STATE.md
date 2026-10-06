@@ -8,28 +8,53 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`43aef3689c2e402721197802fc79ba3eea9a4f88`
+`4438202425438707c39d5e00c9ed4e5210f0479f`
 
 Most recent merged work:
 
-- PR #40 — initial-load performance: persistent Blob/read caching, cached PriceCharting-enriched Collection data, streamed Home pricing work, deferred offline sync and compact Quick Search payload;
-- PR #41 — documentation consolidation: `ROADMAP.md` is now the single source of truth for pending/planned/deferred work;
-- PR #43 — repository-first project workflow with Issue Forms and PR handoff conventions.
+- PR #43 — repository-first project workflow with Issue Forms and PR handoff conventions;
+- PR #45 — bounded retry/recovery for transient private Blob reads on initial entry.
 
-Verified for this main baseline:
+Verified before starting the current feature:
 
-- GitHub Actions: SUCCESS;
-- Vercel production: SUCCESS.
+- PR #45 GitHub Actions: SUCCESS;
+- PR #45 Vercel preview: SUCCESS;
+- production deploy was started from the merged #45 commit.
 
-## Active reliability work — intermittent entry failure
+## Active product work — canonical game Add flow
 
-Issue #44. Branch: `fix/intermittent-entry-load`.
+Issue #47. Branch: `feat/canonical-game-add`. PR #53 is open and ready for user review.
 
-The user reported an intermittent `src/app/(app)/error.tsx` screen when first entering the app. The report occurred within minutes of a fresh production deployment. Current code has one critical unhandled initial dependency: the private Blob library read. External PriceCharting/BCE reads already degrade to unavailable data instead of throwing.
+The user explicitly moved this ahead of the previous mobile/laptop QA priority.
 
-The active fix adds bounded retry/backoff around transient private Blob read failures and missing responses, while still failing after the bounded attempts and still failing immediately on a structurally invalid library. Retry/final-failure logging uses stable event names without logging credentials or Blob contents. Regression tests cover transient error, transient missing, final missing and non-retryable error behavior.
+Technical direction:
 
-Direct Vercel runtime error/log access is currently blocked by connector authorization for the `mistercimbas-projects` scope, so the exact provider-side failure has not been claimed as proven. After this fix lands, validate repeated production entry and use the new stable log events if the problem recurs.
+- IGDB is the canonical search/identity source for guided Add;
+- production/preview already contain server-side `IGDB_CLIENT_ID` and `IGDB_CLIENT_SECRET`;
+- browser search goes through an authenticated local API route;
+- search supports title and exact IGDB ID;
+- selection is always explicit; no fuzzy result is silently accepted;
+- submit resolves the chosen IGDB ID + platform again on the server;
+- compact selected metadata is persisted on the collection record so normal browsing does not depend on IGDB;
+- matching cover artwork is copied into the existing private Vercel Blob store when the selected edition still matches;
+- physical completeness uses conservative platform-aware component questions with Tenho / Falta / Verificar depois;
+- physical region is user-confirmed; arbitrary EAN/UPC/product-code lookup is not claimed because IGDB is not a reliable universal source for those identifiers;
+- explicit manual Add remains available only as a fallback.
+
+See `docs/GAME_CATALOG_SOURCE.md` for the source/limitations contract.
+
+Preview feedback for PR #53:
+- user confirmed catalog search works well;
+- Region, language and condition are now standardized dropdowns across equivalent collection forms;
+- new-copy defaults are PAL + English; condition remains an explicit choice;
+- existing legacy values remain selectable when editing an older record;
+- a direct Collection add now removes an exact same-title/same-platform active Wishlist target automatically and records that removal in history;
+- catalog search results now show "Já tens" (including copy count) and/or "Na wishlist" before selection, and keep the indicator visible on the confirmation step;
+- the badge contract already includes "Encomendado", but it is intentionally not emitted until Issue #46 introduces a real Purchased/In transit data state.
+
+Previous acceptance-feedback candidate was fully green (lint, 207/207 Vitest, 6/6 Python, build, Actions and Vercel). The final library-state indicator change is the last requested adjustment before merge and requires one final CI/preview validation.
+
+No real Collection/Wishlist mutation is performed during automated or preview QA.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
@@ -362,9 +387,9 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active reliability work is Issue #44 on `fix/intermittent-entry-load`.
-After it lands, validate repeated production entry. Then continue with the NOW
-mobile/laptop QA work in `ROADMAP.md`.
+The current active product work is Issue #47 on `feat/canonical-game-add`.
+After it lands, continue with the acquisition/completeness sequence captured in Issues
+#46, #49, #51, #48, #50 and #52, with real mobile/laptop QA still retained in the roadmap.
 
 ## Handoff prompt for a brand-new chat
 

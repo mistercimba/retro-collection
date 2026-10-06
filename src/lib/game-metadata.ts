@@ -1,3 +1,4 @@
+import type { CollectionGame } from "@/lib/data/types";
 import snapshot from "@/data/game-metadata.json";
 
 export type PlaytimeSnapshot = { main: string; extras: string; completionist: string };
@@ -56,4 +57,38 @@ export function findGameMetadataByTitle(title: string): MatchedGameMetadata | nu
     entry.matchStatus === "matched" && normalizeMetadataTitle(entry.title) === wanted,
   );
   return matches.length === 1 ? matches[0] : null;
+}
+
+
+function catalogMetadata(game: CollectionGame): MatchedGameMetadata | null {
+  const catalog = game.catalog;
+  if (!catalog || catalog.source !== "IGDB") return null;
+  return {
+    matchStatus: "matched",
+    source: "IGDB · identidade selecionada na app",
+    sourceGameId: catalog.sourceGameId,
+    title: catalog.title,
+    summary: catalog.summary,
+    firstReleaseDate: catalog.firstReleaseDate,
+    genres: catalog.genres,
+    gameModes: [],
+    themes: [],
+    perspectives: [],
+    developers: catalog.developers,
+    publishers: catalog.publishers,
+    aggregatedRating: null,
+    aggregatedRatingCount: 0,
+    userRating: null,
+    userRatingCount: 0,
+    playtime: { main: "", extras: "", completionist: "" },
+    reviewScore: null,
+    reviewScoreSource: "indisponível",
+    reviewScoreUrl: "",
+    externalIds: { igdb: catalog.sourceGameId },
+    refreshedAt: catalog.selectedAt,
+  };
+}
+
+export function resolveGameMetadata(game: CollectionGame): GameMetadata | null {
+  return getGameMetadata(game.collectionId) ?? catalogMetadata(game) ?? findGameMetadataByTitle(game.title);
 }

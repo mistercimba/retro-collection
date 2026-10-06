@@ -2,6 +2,29 @@ export type KeepStatus = "Collection" | "Sell" | "Sold" | string;
 
 export type OwnedCopyPhotoKind = "front" | "back" | "media" | "manual" | "extras";
 
+export interface CanonicalGameArtwork {
+  source: "IGDB";
+  pathname: string;
+  contentType: string;
+}
+
+export interface CanonicalGameIdentity {
+  source: "IGDB";
+  sourceGameId: number;
+  sourcePlatformId: number;
+  title: string;
+  platform: string;
+  edition: string;
+  summary: string;
+  firstReleaseDate: string;
+  genres: string[];
+  developers: string[];
+  publishers: string[];
+  coverImageId: string;
+  artwork?: CanonicalGameArtwork | null;
+  selectedAt: string;
+}
+
 export interface OwnedCopyPhoto {
   id: string;
   kind: OwnedCopyPhotoKind;
@@ -38,6 +61,7 @@ export interface CollectionItem {
   migrationConfidence: string;
   notes: string;
   legacyName: string;
+  catalog?: CanonicalGameIdentity;
   photos?: OwnedCopyPhoto[];
 }
 

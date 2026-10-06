@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { CopyPlus, Images } from "lucide-react";
 import { ActionSubmitButton } from "@/components/action-submit-button";
+import { CollectionSelectField } from "@/components/collection-select-field";
+import { CONDITION_OPTIONS, LANGUAGE_OPTIONS, REGION_OPTIONS } from "@/lib/collection-field-options";
 import { addCollectionGame } from "@/lib/library-actions";
 import type { CollectionGame } from "@/lib/data/types";
 import { formatEuro } from "@/lib/format";
@@ -90,15 +92,15 @@ export function OwnedCopyGroup({
         <input type="hidden" name="title" value={current.title}/>
         <input type="hidden" name="platform" value={current.platform}/>
         <Field name="overallStatus" label="Completude" placeholder="CIB / Loose / Sealed"/>
-        <Field name="conditionGrade" label="Condição" placeholder="Excellent / Good…"/>
-        <Field name="region" label="Região" placeholder="PAL"/>
+        <CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS}/>
+        <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL"/>
         <Field name="edition" label="Edição" placeholder="Standard"/>
         <Field name="paid" label="Preço pago (€)" type="number" step="0.01" min="0" inputMode="decimal"/>
         <Field name="source" label="Onde comprei" placeholder="Feira, Vinted, CeX…"/>
         <details className="rounded-xl border border-[#e2ddd2] bg-[#faf8f2] p-3 sm:col-span-2">
           <summary className="cursor-pointer text-xs font-black text-slate-700">Mais detalhes</summary>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            <Field name="language" label="Idioma"/>
+            <CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English"/>
             <Field name="purchaseDate" label="Data de compra" type="date"/>
             <Field name="seller" label="Vendedor"/>
             <Field name="listingUrl" label="Link do anúncio" type="url"/>
