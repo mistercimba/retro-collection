@@ -100,12 +100,9 @@ async function searchUncached(query: string, platform = ""): Promise<CanonicalGa
   const trimmed = query.trim();
   if (!trimmed) return [];
   const id = parseIgdbIdentifier(trimmed);
-  const platformId = platform ? igdbPlatformId(platform) : null;
-  const wherePlatform = platformId ? ` & platforms = (${platformId})` : "";
-
   const body = id
-    ? `fields ${fields}; where id = ${id}${wherePlatform}; limit 10;`
-    : `fields ${fields}; search "${escapeIgdbSearch(trimmed)}";${platformId ? ` where platforms = (${platformId});` : ""} limit 30;`;
+    ? `fields ${fields}; where id = ${id}; limit 10;`
+    : `fields ${fields}; search "${escapeIgdbSearch(trimmed)}"; limit 30;`;
 
   return mapIgdbCandidates(await requestGames(body), platform);
 }
@@ -120,7 +117,7 @@ export async function searchCanonicalGames(query: string, platform = "") {
   return cachedSearch(query.trim(), platform.trim());
 }
 
-async function resolveUncached(gameId: number, platformId: number): Promise<CanonicalGameIdentity | null> {
+async function resolveUncached(gameId: number, platformId: number): Promise<Omit<CanonicalGameIdentity, "selectedAt"> | null> {
   const games = await requestGames(`fields ${fields}; where id = ${gameId}; limit 1;`);
   const candidate = mapIgdbCandidates(games).find((item) =>
     item.gameId === gameId && item.platformId === platformId
@@ -139,7 +136,6 @@ async function resolveUncached(gameId: number, platformId: number): Promise<Cano
     developers: candidate.developers,
     publishers: candidate.publishers,
     coverImageId: candidate.coverImageId,
-    selectedAt: new Date().toISOString(),
   };
 }
 
@@ -149,7 +145,8 @@ const cachedResolve = unstable_cache(
   { revalidate: 60 * 60 * 24 * 7 },
 );
 
-export async function resolveCanonicalGame(gameId: number, platformId: number) {
+export async function resolveCanonicalGame(gameId: number, platformId: number): Promise<CanonicalGameIdentity | null> {
   if (!Number.isSafeInteger(gameId) || gameId <= 0 || !Number.isSafeInteger(platformId) || platformId <= 0) return null;
-  return cachedResolve(gameId, platformId);
+  const resolved = await cachedResolve(gameId, platformId);
+  return resolved ? { ...resolved, selectedAt: new Date().toISOString() } : null;
 }
