@@ -15,10 +15,21 @@ class InvalidLibraryError extends Error {
   }
 }
 
-function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "collectionLists" | "componentNeeds"> & {
+function validNextObjective(value: unknown) {
+  if (value === undefined || value === null) return true;
+  if (!value || typeof value !== "object") return false;
+  const objective = value as Record<string, unknown>;
+  return typeof objective.targetId === "string" &&
+    typeof objective.title === "string" &&
+    typeof objective.platform === "string" &&
+    typeof objective.setAt === "string";
+}
+
+function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "collectionLists" | "componentNeeds" | "nextObjective"> & {
   history?: LibraryData["history"];
   collectionLists?: LibraryData["collectionLists"];
   componentNeeds?: LibraryData["componentNeeds"];
+  nextObjective?: LibraryData["nextObjective"];
 } {
   if (!value || typeof value !== "object") return false;
   const candidate = value as Partial<LibraryData>;
@@ -29,6 +40,7 @@ function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "c
     Array.isArray(candidate.purchases) &&
     Array.isArray(candidate.valuations) &&
     (candidate.componentNeeds === undefined || Array.isArray(candidate.componentNeeds)) &&
+    validNextObjective(candidate.nextObjective) &&
     (candidate.collectionLists === undefined || Array.isArray(candidate.collectionLists)) &&
     (candidate.history === undefined || Array.isArray(candidate.history));
 }
@@ -45,6 +57,7 @@ async function readBlobLibraryOnce(): Promise<LibraryData | null> {
   return {
     ...payload,
     componentNeeds: payload.componentNeeds ?? [],
+    nextObjective: payload.nextObjective ?? null,
     collectionLists: payload.collectionLists ?? [],
     history: payload.history ?? [],
   };
@@ -93,6 +106,7 @@ export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
     schemaVersion: 1,
     updatedAt: new Date().toISOString(),
     componentNeeds: data.componentNeeds ?? [],
+    nextObjective: data.nextObjective ?? null,
     collectionLists: data.collectionLists ?? [],
     history: data.history ?? [],
   };

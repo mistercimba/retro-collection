@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PlatformArtwork } from "@/components/artwork";
+import { WishlistArtwork } from "@/components/wishlist-artwork";
 import { QuickSearch } from "@/components/quick-search";
 import { getAllGames, getComponentCompletionQueue, getStats, getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/lib/data/platforms";
@@ -7,6 +8,10 @@ import { formatEuro, gameCountLabel } from "@/lib/format";
 import { getLibrary } from "@/lib/library-store";
 import { toQuickSearchableGame } from "@/lib/quick-search.logic";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
+import { resolveNextObjective } from "@/lib/next-objective.logic";
+import { suggestNextObjective } from "@/lib/next-objective-suggestion.logic";
+import { clearNextObjective, setNextObjective } from "@/lib/library-actions";
+import { ActionSubmitButton } from "@/components/action-submit-button";
 import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 
 export default async function HomePage() {
@@ -20,6 +25,13 @@ export default async function HomePage() {
   const platforms = sortPlatformsByRelease(stats.platforms);
   const incompleteIds = new Set(completion.active.map((need) => need.collectionId));
   const searchGames = games.map((game) => toQuickSearchableGame(game, incompleteIds.has(game.collectionId)));
+  const nextObjective = resolveNextObjective(library.nextObjective ?? null, wantlist);
+  const objectiveSuggestion = suggestNextObjective(
+    wantlist,
+    games,
+    library.collectionLists,
+    nextObjective?.targetId ?? "",
+  );
   const orderedWishlist = wantlist.filter(isOrderedWishlistTarget);
   const activeWishlist = wantlist
     .filter((target) => !isOrderedWishlistTarget(target) && target.planState !== "inactive" && target.matchState !== "acquired")
@@ -52,6 +64,64 @@ export default async function HomePage() {
     </section>
 
     <div className="rounded-2xl bg-[#17382e] p-3 md:hidden"><QuickSearch games={searchGames} wishlist={activeWishlist} /></div>
+
+    {nextObjective ? <section className="collection-panel overflow-hidden border-[#cdd9c7] bg-[#f7faef]">
+      <div className="grid gap-4 p-4 sm:grid-cols-[76px_minmax(0,1fr)_auto] sm:items-center">
+        <WishlistArtwork title={nextObjective.title} platform={nextObjective.platform} artworkSrc={resolveWishlistArtwork(nextObjective)} className="h-24 w-[76px] rounded-xl" />
+        <div className="min-w-0">
+          <p className="eyebrow text-[#315b47]">PRÓXIMO OBJETIVO</p>
+          <h2 className="mt-1 truncate text-lg font-black text-slate-950">{nextObjective.title}</h2>
+          <p className="mt-0.5 text-xs font-semibold text-slate-500">{displayPlatform(nextObjective.platform)}{nextObjective.targetVersion ? " · " + nextObjective.targetVersion : ""}</p>
+          <p className="mt-2 line-clamp-2 text-xs font-semibold leading-5 text-slate-600">{nextObjective.reason || nextObjective.notes || "Objetivo escolhido manualmente na Wishlist."}</p>
+          <p className="mt-1 text-[10px] font-black uppercase tracking-wide text-[#6d8a78]">Prioridade · {nextObjective.priority || "Média"}</p>
+        </div>
+        <div className="flex gap-2 sm:flex-col sm:items-stretch">
+          <Link
+            href={"/wish/" + encodeURIComponent(nextObjective.targetId) + "?" + new URLSearchParams({ platform: nextObjective.platform, title: nextObjective.title, from: "/" }).toString()}
+            className="min-h-10 flex-1 rounded-xl bg-[#17382e] px-4 py-2.5 text-center text-xs font-black text-white sm:flex-none"
+          >
+            Abrir objetivo
+          </Link>
+          <form action={clearNextObjective}>
+            <input type="hidden" name="targetId" value={nextObjective.targetId} />
+            <ActionSubmitButton pendingLabel="A remover…" className="min-h-10 w-full rounded-xl border border-[#ccd5c7] bg-white px-4 text-xs font-black text-slate-600">
+              Remover
+            </ActionSubmitButton>
+          </form>
+        </div>
+      </div>
+    </section> : activeWishlist.length > 0 && <section className="collection-panel flex flex-wrap items-center justify-between gap-3 p-4">
+      <div>
+        <p className="eyebrow text-slate-500">PRÓXIMO OBJETIVO</p>
+        <p className="mt-1 text-sm font-black text-slate-900">Nenhum objetivo principal definido.</p>
+      </div>
+      <Link href="/want" className="min-h-10 rounded-xl border border-[#d8d2c5] bg-white px-4 py-2.5 text-xs font-black text-[#315b47]">Escolher na Wishlist</Link>
+    </section>}
+
+    {objectiveSuggestion && <section className="collection-panel border-sky-200 bg-sky-50/60 p-4">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="flex min-w-0 gap-3">
+          <WishlistArtwork title={objectiveSuggestion.target.title} platform={objectiveSuggestion.target.platform} artworkSrc={resolveWishlistArtwork(objectiveSuggestion.target)} className="h-20 w-16 shrink-0 rounded-xl" />
+          <div className="min-w-0">
+            <p className="eyebrow text-sky-700">SUGESTÃO AUTOMÁTICA</p>
+            <h2 className="mt-1 truncate text-sm font-black text-slate-950">{objectiveSuggestion.target.title}</h2>
+            <p className="mt-0.5 text-xs font-semibold text-slate-500">{displayPlatform(objectiveSuggestion.target.platform)}</p>
+            <p className="mt-2 text-xs font-semibold leading-5 text-sky-900">{objectiveSuggestion.reason}</p>
+          </div>
+        </div>
+        <form action={setNextObjective}>
+          <input type="hidden" name="targetId" value={objectiveSuggestion.target.targetId} />
+          <input type="hidden" name="title" value={objectiveSuggestion.target.title} />
+          <input type="hidden" name="platform" value={objectiveSuggestion.target.platform} />
+          <ActionSubmitButton pendingLabel="A definir…" className="min-h-10 rounded-xl bg-sky-900 px-4 text-xs font-black text-white">
+            {nextObjective ? "Trocar para este" : "Usar como objetivo"}
+          </ActionSubmitButton>
+        </form>
+      </div>
+      <p className="mt-3 text-[10px] font-semibold leading-4 text-slate-400">
+        Sugestão transparente baseada na tua própria coleção: primeiro tenta fechar listas/objetivos, depois continuar séries que já tens e, por fim, usa a prioridade da Wishlist. Nunca altera o objetivo sem confirmação.
+      </p>
+    </section>}
 
     {orderedWishlist.length > 0 && <section className="collection-panel border-amber-200 bg-amber-50/75 p-4">
       <div className="flex flex-wrap items-baseline justify-between gap-2">

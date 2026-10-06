@@ -6,6 +6,7 @@ import { sumKnownMarketValues } from "./collection-stats.logic";
 import { selectPhysicalCopies } from "@/lib/copy-groups.logic";
 import type { CollectionGame, CollectionStats, LibraryData, WantListEntry } from "./types";
 import { buildComponentNeedEntries, buildComponentNeedHistory } from "@/lib/component-needs.logic";
+import { resolveNextObjective } from "@/lib/next-objective.logic";
 
 export async function getAllGames(): Promise<CollectionGame[]> {
   return (await getLibrary()).collection;
@@ -88,6 +89,11 @@ export async function getWantlist(): Promise<WantListEntry[]> {
     a.platform.localeCompare(b.platform, "pt-PT") ||
     a.title.localeCompare(b.title, "pt-PT"),
   );
+}
+
+export async function getNextObjective() {
+  const [library, targets] = await Promise.all([getLibrary(), getWantlist()]);
+  return resolveNextObjective(library.nextObjective ?? null, targets);
 }
 
 export async function getComponentCompletionQueue() {

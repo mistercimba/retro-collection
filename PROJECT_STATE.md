@@ -8,37 +8,36 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`f21682e742ece89090930964e4555bd3c4f9cb35`
+`fab649c9ba702b1fa882417a76b61f4e958097d3`
 
 Most recent merged work:
 
 - PR #53 — canonical IGDB-backed Add flow, standardized copy fields, conservative cover persistence, Wishlist auto-removal and catalog state indicators;
 - PR #55 — CI now runs once per PR candidate plus post-merge on `main`, with concurrency cancellation and documented push batching;
-- PR #56 — universal acquisition flow with **Já tenho / A caminho / Wishlist**, including receipt verification and reused Wishlist purchase dialog.
+- PR #56 — universal acquisition flow with **Já tenho / A caminho / Wishlist**, including receipt verification and reused Wishlist purchase dialog;
+- PR #57 — copy-specific **Para completar** queue, loose-friendly cartridge policy, console filters and incompleteness indicators.
 
 Verified before starting the current feature:
 
-- PR #56 GitHub Actions: SUCCESS;
-- PR #56 Vercel production deployment: SUCCESS.
+- PR #57 GitHub Actions: SUCCESS;
+- PR #57 Vercel production deployment: SUCCESS.
 
-## Active product work — copy-specific missing components
+## Active product work — Next objective
 
-Issue #49. Candidate branch: `feat/component-completion-queue`.
+Issue #51. Candidate branch: `feat/next-objective`.
 
 Implementation model:
 
-- `library.componentNeeds` stores persisted workflow state without changing `schemaVersion: 1`;
-- old Blobs default to `componentNeeds: []`;
-- standard base needs are immediately inferred from copy fields explicitly marked `No`, so existing incomplete copies do not require a migration write;
-- exception: legacy loose-friendly cartridge platforms (NES, SNES, Nintendo 64, Game Boy, Game Boy Color, GBA) do **not** auto-queue missing box/manual; Mário is happy to keep those loose unless he explicitly adds a specific upgrade;
-- each need is tied to one `collectionId`; duplicate copies remain independent;
-- workflow states are **Em falta → Encontrado → Comprado → Recebido**;
-- receiving a base component updates that copy's media/box/manual field and recalculates completeness;
-- edition-specific extras are manual only; the app never invents maps/posters/inserts/disc 2;
-- aggregate route `/complete` lists active needs, supports platform/console filtering, while the game detail owns checklist/custom-component editing;
-- global/quick search results show a small amber package icon beside owned games that currently have an active **Para completar** need, using the same queue logic (so loose-friendly cartridge games are not falsely flagged);
-- game detail shows an explicit amber **Para completar** summary directly under the title (for example **Falta · Manual / folhetos principais**) so incompleteness is visible without scrolling to the workflow panel;
-- completed/closed needs stay in history and disappear from the active queue.
+- manual-first: at most one objective, and zero is valid;
+- `library.nextObjective` stores only a Wishlist-target reference (targetId + exact title/platform + set timestamp);
+- old Blobs default to `nextObjective: null` without migration;
+- Home resolves the current Wishlist target at read time and shows artwork, platform/version, reason and priority;
+- target detail allows explicit define/replace/remove;
+- objective clears automatically when that target is bought, removed, received defensively, or satisfied by a direct Collection add;
+- cancellation does not re-select an old objective;
+- the first preview feedback added a transparent automatic suggestion from the existing Wishlist, still requiring explicit confirmation;
+- suggestion order is: close/advance a user-defined Collection List → continue a title series already represented in Collection → explicit Wishlist priority;
+- the engine deliberately does not maintain a hardcoded editorial "must-have" list; broader discovery/refill remains #52.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 
@@ -77,6 +76,7 @@ Blob runtime behavior is intentionally strict:
 - existing old Blob without history is backward-compatible as `history: []`;
 - existing old Blob without collection lists is backward-compatible as `collectionLists: []`;
 - existing old Blob without component-needs workflow is backward-compatible as `componentNeeds: []`;
+- existing old Blob without Next objective is backward-compatible as `nextObjective: null`;
 - normal reads use Next's persistent data cache across requests/deploys; successful writes expire that cache immediately;
 - mutation read-modify-write still starts from an uncached Blob read.
 
@@ -374,8 +374,8 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active product work is Issue #49 on `feat/component-completion-queue`.
-After it lands, continue with #51 (Next objective), then #48, #50 and #52.
+The current active product work is Issue #51 on `feat/next-objective`.
+After it lands, continue with #48 (artwork gaps), #50 (Home refocus) and #52 (Wishlist suggestions).
 Real mobile/laptop QA remains retained in the roadmap.
 
 ## Handoff prompt for a brand-new chat

@@ -10,6 +10,7 @@ wishlist. Next.js App Router, TypeScript, Tailwind, Node.js 22 e Vercel.
 - Fluxo único de aquisição: jogo já possuído, comprado/a caminho ou apenas desejado; a cópia só entra na Collection quando está recebida/verificada.
 - Detalhes da cópia, edição dos dados de compra, fotos privadas e gestão/navegação entre múltiplas cópias físicas do mesmo jogo.
 - Lista **Para completar** para caixas, manuais, media e extras em falta, sempre ligada à cópia física concreta.
+- **Próximo objetivo** manual-first: um único target da Wishlist pode ser destacado na Home como próxima aquisição importante.
 - Listas/objetivos personalizados com progresso automático contra a Collection.
 - Para vender/Vendidos e histórico das alterações feitas na app.
 - Metadata, capas e imagens das plataformas locais; referências de preço e links de pesquisa.
@@ -32,6 +33,7 @@ num **private Vercel Blob**, no caminho fixo `retro-collection/library.json`:
   purchases: [],
   valuations: [],
   componentNeeds: [],
+  nextObjective: null,
   collectionLists: [],
   history: []
 }
@@ -44,7 +46,8 @@ fallback para Google ou reposição automática a partir do snapshot encriptado.
 Blobs antigos sem `history` são lidos com histórico vazio; não se inventa histórico
 anterior à introdução desse registo. Blobs anteriores às listas são lidos com
 `collectionLists: []`, e Blobs anteriores ao workflow de peças em falta são lidos
-com `componentNeeds: []`, mantendo `schemaVersion: 1`.
+com `componentNeeds: []`. Blobs anteriores ao Próximo objetivo são lidos com
+`nextObjective: null`, mantendo `schemaVersion: 1`.
 
 Fotos da cópia física usam o mesmo store privado, em objetos separados sob
 `retro-collection/copy-photos/<collectionId>/...`. O `library.json` guarda apenas

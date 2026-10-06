@@ -10,6 +10,9 @@ import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
 import { resolveCanonicalGame } from "@/lib/igdb-catalog";
 import { ensureCanonicalArtwork } from "@/lib/catalog-artwork";
 import { wishlistTargetsSatisfiedByAddedGame } from "@/lib/wishlist-auto-remove.logic";
+import { objectiveMatchesTarget } from "@/lib/next-objective.logic";
+import { matchWantTarget } from "@/lib/data/wishlist-matching";
+import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 import {
   componentStateToLibraryValue,
   derivePhysicalCopyStatus,
@@ -57,6 +60,22 @@ function changed(label: string, before: unknown, after: unknown, details: string
   const left = before === null || before === undefined ? "" : String(before).trim();
   const right = after === null || after === undefined ? "" : String(after).trim();
   if (left !== right) details.push(label);
+}
+
+function clearObjectiveForTarget(
+  library: LibraryData,
+  target: Pick<WantTarget, "targetId" | "title" | "platform">,
+  summary: string,
+) {
+  if (!objectiveMatchesTarget(library.nextObjective, target)) return;
+  library.nextObjective = null;
+  addHistory(library, {
+    action: "objective.clear",
+    entityId: target.targetId,
+    title: target.title,
+    platform: target.platform,
+    summary,
+  });
 }
 
 async function guard() {
@@ -374,6 +393,7 @@ export async function addCollectionGame(form: FormData) {
       const fulfilledTargets = new Set(fulfilledWishlistTargets);
       library.wishlist = library.wishlist.filter((target) => !fulfilledTargets.has(target));
       for (const target of fulfilledWishlistTargets) {
+        clearObjectiveForTarget(library, target, "Próximo objetivo concluído ao adicionar o jogo à coleção");
         addHistory(library, {
           action: "wishlist.remove",
           entityId: target.targetId,
@@ -673,6 +693,74 @@ export async function addWishlistGame(form: FormData) {
   redirect(wishlistDetailPath(target.targetId, target.platform, target.title));
 }
 
+export async function setNextObjective(form: FormData) {
+  await guard();
+  const targetId = text(form, "targetId");
+  const title = text(form, "title");
+  const platform = text(form, "platform");
+  if (!targetId || !title || !platform) return;
+
+  await updateLibrary((library) => {
+    const target = library.wishlist.find((item) =>
+      item.targetId === targetId && item.title === title && item.platform === platform
+    );
+    if (!target) return library;
+
+    const kept = library.collection.filter((game) => game.keepStatus === "Collection");
+    const match = matchWantTarget(target, kept);
+    if (isOrderedWishlistTarget(target) || match.planState !== "active" || match.matchState === "acquired") return library;
+    if (objectiveMatchesTarget(library.nextObjective, target)) return library;
+
+    const previous = library.nextObjective;
+    library.nextObjective = {
+      targetId: target.targetId,
+      title: target.title,
+      platform: target.platform,
+      setAt: new Date().toISOString(),
+    };
+    addHistory(library, {
+      action: "objective.set",
+      entityId: target.targetId,
+      title: target.title,
+      platform: target.platform,
+      summary: previous ? "Próximo objetivo trocado" : "Definido como Próximo objetivo",
+      details: previous ? [previous.title, previous.platform] : [],
+    });
+    return library;
+  });
+
+  revalidatePath("/");
+  revalidatePath("/want");
+  revalidatePath("/history");
+  revalidatePath("/wish/" + encodeURIComponent(targetId));
+}
+
+export async function clearNextObjective(form: FormData) {
+  await guard();
+  const requestedTargetId = text(form, "targetId");
+
+  await updateLibrary((library) => {
+    const current = library.nextObjective;
+    if (!current) return library;
+    if (requestedTargetId && current.targetId !== requestedTargetId) return library;
+
+    library.nextObjective = null;
+    addHistory(library, {
+      action: "objective.clear",
+      entityId: current.targetId,
+      title: current.title,
+      platform: current.platform,
+      summary: "Próximo objetivo removido",
+    });
+    return library;
+  });
+
+  revalidatePath("/");
+  revalidatePath("/want");
+  revalidatePath("/history");
+  if (requestedTargetId) revalidatePath("/wish/" + encodeURIComponent(requestedTargetId));
+}
+
 export async function editWishlistGame(form: FormData) {
   await guard();
   const targetId = text(form, "targetId");
@@ -727,6 +815,7 @@ export async function removeWishlistGame(form: FormData) {
     const target = library.wishlist.find((item) =>
       item.targetId === targetId && item.title === title && item.platform === platform
     );
+    if (target) clearObjectiveForTarget(library, target, "Próximo objetivo removido com o target da wishlist");
     if (target?.acquisition?.state === "ordered") {
       const purchaseIndex = library.purchases.findIndex((purchase) => purchase.purchaseId === target.acquisition?.purchaseId);
       if (purchaseIndex >= 0) {
@@ -804,6 +893,7 @@ export async function purchaseWishlistGame(form: FormData) {
     const target = library.wishlist[index];
     targetId = target.targetId;
     if (target.acquisition?.state === "ordered") return library;
+    clearObjectiveForTarget(library, target, "Próximo objetivo concluído ao registar a compra");
 
     const purchaseId = "APP-" + Date.now();
     library.purchases.push({
@@ -860,6 +950,7 @@ export async function receiveWishlistPurchase(form: FormData) {
 
     const target = library.wishlist[index];
     if (target.acquisition?.state !== "ordered" || !target.acquisition.purchaseId) return library;
+    clearObjectiveForTarget(library, target, "Próximo objetivo concluído ao receber o jogo");
 
     const purchaseIndex = library.purchases.findIndex((purchase) => purchase.purchaseId === target.acquisition?.purchaseId);
     if (purchaseIndex < 0) throw new Error("A compra associada a este jogo não foi encontrada.");

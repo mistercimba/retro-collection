@@ -170,6 +170,13 @@ export interface PurchaseRecord {
   statusUpdatedAt?: string;
 }
 
+export interface NextCollectionObjective {
+  targetId: string;
+  title: string;
+  platform: string;
+  setAt: string;
+}
+
 export interface CollectionListTarget {
   id: string;
   title: string;
@@ -225,6 +232,8 @@ export type LibraryHistoryAction =
   | "component.need.add"
   | "component.need.status"
   | "component.need.close"
+  | "objective.set"
+  | "objective.clear"
   | "list.create"
   | "list.edit"
   | "list.remove"
@@ -250,6 +259,7 @@ export interface LibraryData {
   purchases: PurchaseRecord[];
   valuations: ValuationSnapshot[];
   componentNeeds: ComponentNeed[];
+  nextObjective?: NextCollectionObjective | null;
   collectionLists: CollectionList[];
   history: LibraryHistoryEntry[];
 }
