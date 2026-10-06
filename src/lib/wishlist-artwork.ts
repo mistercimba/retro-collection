@@ -3,7 +3,7 @@ import artworkGames from "../../data/artwork-games.json";
 import { WISHLIST_ARTWORK } from "../data/wishlist-artwork";
 import { GAME_ARTWORK } from "../data/game-artwork";
 import type { CanonicalGameIdentity, WishlistArtworkOverride } from "./data/types";
-import { resolveWishlistArtworkOverrideCandidate } from "./wishlist-artwork-candidates.logic";
+import { resolvePreferredWishlistArtworkCandidate, resolveWishlistArtworkOverrideCandidate } from "./wishlist-artwork-candidates.logic";
 import { wishlistCatalogArtworkCompatible } from "./wishlist-catalog-artwork.logic";
 import {
   createCollectionWishlistArtworkIndex,
@@ -51,9 +51,12 @@ export function resolveWishlistArtworkFromEntries(
 }
 
 export function resolveWishlistArtwork(target: WishlistArtworkWithCatalog): string | null {
+  const preferredAmbiguous = resolvePreferredWishlistArtworkCandidate(target);
   return manualArtworkUrl(target) ??
     resolveDedicatedWishlistArtwork(target, WISHLIST_ARTWORK) ??
     resolveCollectionWishlistArtworkFromIndex(target, collectionArtworkIndex) ??
-    catalogArtworkUrl(target);
+    catalogArtworkUrl(target) ??
+    preferredAmbiguous?.sourceUrl ??
+    null;
 }
 

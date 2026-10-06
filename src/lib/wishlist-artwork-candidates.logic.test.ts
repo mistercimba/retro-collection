@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { WantTarget } from "./data/types";
 import {
+  resolvePreferredWishlistArtworkCandidate,
   resolveWishlistArtworkCandidates,
   resolveWishlistArtworkOverrideCandidate,
 } from "./wishlist-artwork-candidates.logic";
@@ -26,6 +27,10 @@ describe("wishlist artwork candidates", () => {
     expect(candidates.map((item) => item.displayRegion)).toEqual(["Europe / Australia", "Spain"]);
   });
 
+  it("prefers Europe / Australia as the default when it is one of several options", () => {
+    expect(resolvePreferredWishlistArtworkCandidate(target())?.displayRegion).toBe("Europe / Australia");
+  });
+
   it("still offers candidates when the target version text is unrecognized so the user can resolve visually", () => {
     expect(resolveWishlistArtworkCandidates(target({ targetVersion: "PAL edição a confirmar; CIB" }))).toHaveLength(2);
   });
@@ -34,7 +39,7 @@ describe("wishlist artwork candidates", () => {
     expect(resolveWishlistArtworkCandidates(target({ targetVersion: "PAL Platinum; CIB" }))).toHaveLength(2);
   });
 
-  it("keeps a manual override valid only while its candidate remains compatible", () => {
+  it("keeps a manual override authoritative for the exact title/platform target", () => {
     const override = {
       candidateId: "libretro-ff8-spain",
       pathname: "retro-collection/wishlist-artwork-overrides/APP-123/libretro-ff8-spain.png",
@@ -46,6 +51,6 @@ describe("wishlist artwork candidates", () => {
       selectedAt: "2026-10-06T22:00:00.000Z",
     };
     expect(resolveWishlistArtworkOverrideCandidate(target({ artworkOverride: override }))?.id).toBe("libretro-ff8-spain");
-    expect(resolveWishlistArtworkOverrideCandidate(target({ targetVersion: "PAL Platinum", artworkOverride: override }))).toBeNull();
+    expect(resolveWishlistArtworkOverrideCandidate(target({ targetVersion: "PAL Platinum", artworkOverride: override }))?.id).toBe("libretro-ff8-spain");
   });
 });

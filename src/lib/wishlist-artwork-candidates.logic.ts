@@ -22,6 +22,24 @@ export function resolveWishlistArtworkCandidates(target: CandidateTarget): Wishl
   );
 }
 
+function defaultCandidateScore(candidate: WishlistArtworkCandidate): number {
+  const label = candidate.displayRegion.toLocaleLowerCase("en-US");
+  if (label.includes("europe") && label.includes("australia")) return 300;
+  if (candidate.artworkRegion === "Europe") return 200;
+  if (candidate.artworkRegion === "US") return 100;
+  return 0;
+}
+
+export function resolvePreferredWishlistArtworkCandidate(target: CandidateTarget): WishlistArtworkCandidate | null {
+  const candidates = resolveWishlistArtworkCandidates(target);
+  if (!candidates.length) return null;
+  return [...candidates].sort((a, b) =>
+    defaultCandidateScore(b) - defaultCandidateScore(a) ||
+    a.displayRegion.localeCompare(b.displayRegion, "en-US") ||
+    a.id.localeCompare(b.id)
+  )[0] ?? null;
+}
+
 export function wishlistArtworkCandidateById(
   target: CandidateTarget,
   candidateId: string,

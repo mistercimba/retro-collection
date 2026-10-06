@@ -8,6 +8,7 @@ import { displayPlatform } from "@/lib/data/platforms";
 import { getSafeListReturnPath } from "@/lib/list-url-state.logic";
 import { clearWishlistArtworkOverride, setWishlistArtworkOverride } from "@/lib/library-actions";
 import {
+  resolvePreferredWishlistArtworkCandidate,
   resolveWishlistArtworkCandidates,
   resolveWishlistArtworkOverrideCandidate,
 } from "@/lib/wishlist-artwork-candidates.logic";
@@ -34,6 +35,8 @@ export default async function WishlistArtworkChoicePage({
   const candidates = resolveWishlistArtworkCandidates(target);
   if (candidates.length < 2) notFound();
   const selected = resolveWishlistArtworkOverrideCandidate(target);
+  const preferred = resolvePreferredWishlistArtworkCandidate(target);
+  const effective = selected ?? preferred;
   const from = getSafeListReturnPath(query.from) ?? "/want";
   const detailParams = new URLSearchParams({ platform: target.platform, title: target.title, from });
   const detailHref = "/wish/" + encodeURIComponent(target.targetId) + "?" + detailParams.toString();
@@ -65,7 +68,8 @@ export default async function WishlistArtworkChoicePage({
 
     <section className="grid gap-4 sm:grid-cols-2">
       {candidates.map((candidate) => {
-        const isSelected = selected?.id === candidate.id;
+        const isSelected = effective?.id === candidate.id;
+        const isManual = selected?.id === candidate.id;
         return <article key={candidate.id} className={isSelected ? "overflow-hidden rounded-2xl border-2 border-emerald-400 bg-emerald-50" : "collection-panel overflow-hidden"}>
           <div className="p-4">
             <WishlistArtwork title={target.title} platform={target.platform} artworkSrc={candidate.sourceUrl} className="mx-auto h-[330px] w-[240px]" eager />
@@ -75,18 +79,18 @@ export default async function WishlistArtworkChoicePage({
                   <p className="text-sm font-black text-slate-950">{candidate.displayRegion}</p>
                   <p className="mt-0.5 text-xs font-semibold text-slate-500">{candidate.coverVariant} · {candidate.source}</p>
                 </div>
-                {isSelected && <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-emerald-800"><Check className="h-3 w-3" />Escolhida</span>}
+                {isSelected && <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-emerald-800"><Check className="h-3 w-3" />{isManual ? "Escolhida" : "Predefinida"}</span>}
               </div>
               <p className="mt-2 break-all text-[10px] font-semibold leading-4 text-slate-400">{candidate.sourcePath}</p>
             </div>
           </div>
-          {!isSelected && <form action={setWishlistArtworkOverride} className="border-t border-[#ece7dd] p-3">
+          {!isManual && <form action={setWishlistArtworkOverride} className="border-t border-[#ece7dd] p-3">
             <input type="hidden" name="targetId" value={target.targetId} />
             <input type="hidden" name="title" value={target.title} />
             <input type="hidden" name="platform" value={target.platform} />
             <input type="hidden" name="candidateId" value={candidate.id} />
             <ActionSubmitButton pendingLabel="A guardar…" className="min-h-11 w-full rounded-xl bg-[#17382e] px-4 text-sm font-black text-white">
-              Usar esta capa
+              {isSelected ? "Guardar como escolha manual" : "Usar esta capa"}
             </ActionSubmitButton>
           </form>}
         </article>;
@@ -96,8 +100,8 @@ export default async function WishlistArtworkChoicePage({
     {selected && <section className="collection-panel p-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-sm font-black text-slate-950">Voltar ao automático</p>
-          <p className="mt-1 text-xs font-semibold text-slate-500">Remove a escolha manual. Se continuar ambíguo, volta ao placeholder seguro.</p>
+          <p className="text-sm font-black text-slate-950">Voltar à capa predefinida</p>
+          <p className="mt-1 text-xs font-semibold text-slate-500">Remove a escolha manual e volta à opção automática preferida, normalmente Europe / Australia quando existir.</p>
         </div>
         <form action={clearWishlistArtworkOverride}>
           <input type="hidden" name="targetId" value={target.targetId} />

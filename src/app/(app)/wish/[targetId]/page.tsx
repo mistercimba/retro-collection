@@ -23,7 +23,7 @@ import { physicalCopyProfile, type PhysicalComponentKey } from "@/lib/physical-c
 import { formatEuro } from "@/lib/format";
 import { getLibrary } from "@/lib/library-store";
 import { objectiveMatchesTarget } from "@/lib/next-objective.logic";
-import { resolveWishlistArtworkCandidates, resolveWishlistArtworkOverrideCandidate } from "@/lib/wishlist-artwork-candidates.logic";
+import { resolvePreferredWishlistArtworkCandidate, resolveWishlistArtworkCandidates, resolveWishlistArtworkOverrideCandidate } from "@/lib/wishlist-artwork-candidates.logic";
 
 export default async function WishDetailPage({
   params,
@@ -54,6 +54,8 @@ export default async function WishDetailPage({
   const artworkSrc = resolveWishlistArtwork(target);
   const artworkCandidates = resolveWishlistArtworkCandidates(target);
   const artworkOverrideCandidate = resolveWishlistArtworkOverrideCandidate(target);
+  const preferredArtworkCandidate = resolvePreferredWishlistArtworkCandidate(target);
+  const effectiveArtworkCandidate = artworkOverrideCandidate ?? preferredArtworkCandidate;
   const back = getSafeListReturnPath(query.from) ?? (ordered ? "/want" : "/platform/" + platformSlug(target.platform) + "?tab=wishlist");
   const year = metadata?.firstReleaseDate ? metadata.firstReleaseDate.slice(0, 4) : "—";
   const origin = ordered ? null : getWishlistOriginState(query.from, platformSlug(target.platform));
@@ -124,16 +126,16 @@ export default async function WishDetailPage({
       </div>
     </section>
 
-    {artworkCandidates.length > 1 && <section className={artworkOverrideCandidate ? "rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4" : "rounded-2xl border border-amber-200 bg-amber-50/70 p-4"}>
+    {artworkCandidates.length > 1 && <section className={artworkOverrideCandidate ? "rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4" : "rounded-2xl border border-sky-200 bg-sky-50/70 p-4"}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex min-w-0 items-start gap-3">
-          <span className={artworkOverrideCandidate ? "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-100 text-emerald-800" : "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-amber-100 text-amber-800"}><Images className="h-5 w-5" /></span>
+          <span className={artworkOverrideCandidate ? "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-100 text-emerald-800" : "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-sky-100 text-sky-800"}><Images className="h-5 w-5" /></span>
           <div className="min-w-0">
-            <p className="text-sm font-black text-slate-950">{artworkOverrideCandidate ? "Capa escolhida manualmente" : "Artwork ambíguo"}</p>
+            <p className="text-sm font-black text-slate-950">{artworkOverrideCandidate ? "Capa escolhida manualmente" : "Capa predefinida"}</p>
             <p className="mt-1 text-xs font-semibold leading-5 text-slate-500">
-              {artworkOverrideCandidate
-                ? artworkOverrideCandidate.displayRegion + " · a tua escolha tem prioridade sobre o automático."
-                : String(artworkCandidates.length) + " capas plausíveis. A app não escolhe por ti."}
+              {effectiveArtworkCandidate
+                ? effectiveArtworkCandidate.displayRegion + (artworkOverrideCandidate ? " · escolha manual." : " · escolhida automaticamente entre " + String(artworkCandidates.length) + " opções.")
+                : String(artworkCandidates.length) + " opções de capa disponíveis."}
             </p>
           </div>
         </div>
@@ -141,7 +143,7 @@ export default async function WishDetailPage({
           href={"/wish/" + encodeURIComponent(target.targetId) + "/artwork?" + new URLSearchParams({ platform: target.platform, title: target.title, from: back }).toString()}
           className="min-h-10 rounded-xl bg-[#17382e] px-4 py-2.5 text-xs font-black text-white"
         >
-          {artworkOverrideCandidate ? "Trocar capa" : "Escolher capa"}
+          Trocar capa
         </Link>
       </div>
     </section>}

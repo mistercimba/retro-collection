@@ -313,13 +313,13 @@ Loading and unavailable price states should remain distinguishable.
 
 ### Manual artwork choices
 
-- Ambiguous candidates are suggestions only; never auto-select one.
+- Ambiguous candidates may have a deterministic visual default. Prefer Europe / Australia when present, then another European candidate, then remaining candidates.
 - Candidate discovery may ignore targetId, but the persisted override must belong to the exact Wishlist target.
 - Candidate metadata must retain provenance (source repo/commit/path and region/variant context).
-- External candidate thumbnails may load only after the user explicitly opens the chooser; ordinary browsing stays local/private.
-- On selection, store a private copy in Blob and serve that on subsequent normal browsing.
+- The preferred unresolved candidate may be displayed directly until the user makes a manual choice; the chooser shows all alternatives.
+- On manual selection, store a private copy in Blob and serve that on subsequent normal browsing.
 - A manual override beats static/reused/catalog artwork only while it remains compatible with the target's current region/edition.
-- Removing/changing/acquiring the target must not leave an active stale override reference.
+- Removing a manual choice returns to the deterministic default; removing/changing/acquiring the target must not leave an active stale override reference.
 
 ### Artwork fallback and catalog covers
 
