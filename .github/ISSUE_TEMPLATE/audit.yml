@@ -1,0 +1,48 @@
+name: Audit
+description: Revisão estruturada antes de decidir alterações
+title: "[Audit] "
+labels:
+  - inbox
+  - audit
+body:
+  - type: textarea
+    id: area
+    attributes:
+      label: Área a auditar
+      description: Funcionalidade, fluxo, página, arquitetura ou dados.
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: Perguntas a responder
+      description: O que queres descobrir ou validar?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / limites
+      description: O que deve e não deve entrar na auditoria?
+  - type: dropdown
+    id: output
+    attributes:
+      label: Output pretendido
+      options:
+        - Findings + prioridades + recomendações, sem implementar
+        - Findings + proposta de plano, sem implementar
+        - Outro (explicar abaixo)
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidência / contexto
+      description: Screenshots, URLs, exemplos ou sintomas relevantes.
+  - type: checkboxes
+    id: implementation
+    attributes:
+      label: Regra de execução
+      options:
+        - label: Percebo que Audit significa analisar primeiro; não implementar alterações sem pedido explícito.
+          required: true

@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-05
+Last updated: 2026-10-06
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -22,35 +22,17 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Initial-load performance
-
-Structural fix is in PR #40.
-
-Target architecture:
-- persistent cached reads of the private Blob library across requests/deploys;
-- immediate cache invalidation after successful library writes;
-- mutations still start from the latest uncached Blob state;
-- PriceCharting-enriched Collection data cached separately;
-- Home pricing-dependent attention data streamed instead of blocking the first useful render;
-- offline snapshot refresh deferred until after initial render work;
-- Quick Search receives a compact client payload rather than full Collection records.
-
-Success criteria:
-- opening/navigating the app should not pay a private Blob round-trip on every request;
-- PriceCharting must not block the useful Home shell;
-- no stale-data regression after mutations;
-- CI/build/Vercel green;
-- validate perceived production load after merge.
-
-## Product roadmap
-
-### NEXT — Real mobile/laptop QA
+### NOW — Real mobile/laptop QA
 
 Validate Home, Collection, platform/game detail, Wishlist, Lists, Sell/Sold, search, history, login/error/404, dialogs, forms and filters.
 
 Check 360/390/430 px where practical, laptop layout, overflow, clipped actions, bottom navigation/safe area, long titles, secondary metadata, keyboard/focus and loading/error states.
 
 Also validate the existing offline flow: authenticated snapshot, offline lookup, freshness indicator, network cut/reconnect and snapshot refresh after reconnect.
+
+PR #40's initial-load performance work is merged and part of `main`. Validate perceived production load during QA and reopen performance work only if real regressions remain.
+
+## Product roadmap
 
 ### NEXT — Small UI/UX polish
 
@@ -134,6 +116,7 @@ Do not reintroduce these as future phases:
 - forward-only mutation history;
 - custom Collection lists/goals;
 - offline read-only Collection snapshot;
+- persistent cross-request library/pricing caching and streamed/deferred initial-load work;
 - contextual market actions;
 - page-shaped loading skeletons;
 - error/404 recovery.

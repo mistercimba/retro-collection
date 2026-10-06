@@ -28,6 +28,42 @@ Tech:
 - private Vercel Blob
 - Vitest
 
+## Operating model — repository-first workflow
+
+The repository is the canonical project memory. Chat history, Work sessions, local agent memory and external notes are disposable working context and must never be the source of truth.
+
+Roles:
+
+- **Mário = client / Product Owner.** He describes what he wants, reports problems, sets priorities and gives the explicit merge approval.
+- **PM / intake agent.** Turns a request into a clear GitHub Issue, checks current state/roadmap, identifies real product ambiguities and keeps scope coherent.
+- **Developer agent.** Implements one focused Issue on a branch, keeps changes scoped and opens a PR.
+- **Tester / reviewer agent.** Validates the Issue acceptance criteria, regression risk, CI and preview behavior; it does not invent new scope.
+- **Repository docs.** `AGENTS.md`, `PROJECT_STATE.md` and `ROADMAP.md` carry durable context between all of the above.
+
+For substantial new work:
+
+1. read `AGENTS.md` and `PROJECT_STATE.md`; read `ROADMAP.md` when prioritization/planning is involved;
+2. inspect current `main`, relevant open Issues/PRs and the actual code before deciding what to do;
+3. create or update a GitHub Issue **before implementation** so the request survives the current chat;
+4. make the Issue self-contained: problem/goal, scope, acceptance criteria, constraints and useful evidence;
+5. use a focused branch and PR tied to that Issue;
+6. validate against the Issue, not against remembered chat wording;
+7. wait for Mário's explicit approval before merging;
+8. after merge, close/update the Issue and reconcile `PROJECT_STATE.md` / `ROADMAP.md` when the landed work changes them.
+
+Preferred Issue lifecycle:
+
+- `inbox` — captured, but not yet ready to build;
+- `ready` — scope and acceptance criteria are clear;
+- `in-progress` — implementation is active;
+- `qa` — implementation is complete and being validated;
+- `blocked` — cannot progress without a concrete dependency/decision;
+- closed Issue — done, cancelled or superseded (state the reason).
+
+Issue types are **Feature**, **Bug**, **UX** and **Audit**. Use the repository Issue Forms. An Audit is findings/recommendations by default; do not implement audit findings unless the user asks.
+
+Tiny typo-only or mechanical maintenance may skip an Issue when no durable handoff is useful. Product behavior, bugs, UX changes, audits and any work likely to span agents/chats should not skip it.
+
 ## Source of truth
 
 ### Personal mutable data

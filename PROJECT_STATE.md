@@ -1,40 +1,28 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-05
+Last updated: 2026-10-06
 
 This is the living project handoff. Read `AGENTS.md` first.
 
-
-## Active product work — initial-load performance
-
-Branch: `perf/persistent-library-cache`
-
-PR #39 is merged. Collection lists/goals are now part of the production baseline.
-
-The current performance branch removes repeated request-time work from the critical path:
-- cache the private Blob library in Next's persistent data cache across requests/deploys;
-- invalidate that cache immediately after every successful library write while mutations still read the Blob directly;
-- cache the PriceCharting-enriched Collection list for one hour and invalidate it with library mutations;
-- stream the Home "Para completar" pricing-dependent block behind Suspense instead of blocking the whole Home page;
-- defer the offline snapshot refresh until browser idle;
-- serialize only the fields needed by Quick Search into client components.
-
-## Current production baseline
-
-Repository: `mistercimba/retro-collection`
+## Current status
 
 Current `main` baseline:
 
-`1e1069b8856068e84a0ed65bce41b158672e1723`
+`38240104041fb59eb369ee576473eac5b25c353c`
 
-This is the squash merge of PR #39. Production includes collection lists/goals, private owned-copy photos,
-multiple-copy navigation/creation and the Wishlist reference/filter work from PRs #35–#37.
+Most recent merged work:
 
-Verified for the current main commit:
+- PR #40 — initial-load performance: persistent Blob/read caching, cached PriceCharting-enriched Collection data, streamed Home pricing work, deferred offline sync and compact Quick Search payload;
+- PR #41 — documentation consolidation: `ROADMAP.md` is now the single source of truth for pending/planned/deferred work.
 
-- GitHub Actions: SUCCESS
-- Vercel production: SUCCESS
-- PR #39: merged/closed
+Verified for this main baseline:
+
+- GitHub Actions: SUCCESS on the post-merge run;
+- Vercel production: SUCCESS.
+
+There is no active product implementation recorded on `main`. The next recommended product work is **real mobile/laptop QA**, as defined in `ROADMAP.md`.
+
+The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
 ## Current architecture
 

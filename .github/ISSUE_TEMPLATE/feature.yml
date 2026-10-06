@@ -1,0 +1,41 @@
+name: Feature
+description: Pedido de nova funcionalidade ou melhoria de produto
+title: "[Feature] "
+labels:
+  - inbox
+  - feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Descreve o resultado que queres. O PM/developer transforma isto em scope e critérios verificáveis.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Objetivo
+      description: O que queres conseguir ou que problema queres resolver?
+      placeholder: "Quero conseguir..."
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Como funciona hoje
+      description: O que acontece atualmente, se for relevante?
+  - type: textarea
+    id: desired
+    attributes:
+      label: Resultado esperado
+      description: Como deve ficar para considerares isto resolvido?
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Restrições / coisas a não mexer
+      description: Dados, comportamento, UX ou arquitetura que devem ser preservados.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Contexto / screenshots / links
+      description: Opcional. Junta exemplos que ajudem a perceber o pedido.
