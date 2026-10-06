@@ -46,7 +46,7 @@ export default async function SearchResultsPage({ searchParams }: { searchParams
         <ul className="divide-y divide-slate-100">
           {collectionResults.map((game) => <li key={`collection:${game.collectionId}`}>
             <Link href={`/game/${encodeURIComponent(game.collectionId)}?from=${encodeURIComponent(returnTo)}`} className="grid grid-cols-[44px_minmax(0,1fr)_auto] items-center gap-3 px-3 py-2.5 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-emerald-800">
-              <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="h-14 w-11 rounded-lg" />
+              <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="h-14 w-11 rounded-lg" />
               <span className="min-w-0"><span className="block truncate font-semibold text-slate-950">{game.title}</span><span className="block truncate text-xs text-slate-500">{displayPlatform(game.platform)} · {game.collectionId}{game.edition ? ` · ${game.edition}` : ""}{game.region ? ` · ${game.region}` : ""}</span></span>
               <span className="rounded-full bg-emerald-100 px-2 py-1 text-xs font-bold text-emerald-900">{collectionLabel(game)}</span>
             </Link>
