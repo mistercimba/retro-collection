@@ -15,6 +15,8 @@ const actionMeta: Record<LibraryHistoryAction, { label: string; icon: typeof His
   "wishlist.edit": { label: "Wishlist", icon: Pencil },
   "wishlist.remove": { label: "Wishlist", icon: Trash2 },
   "wishlist.purchase": { label: "Compra", icon: ShoppingBag },
+  "wishlist.receive": { label: "Receção", icon: ShoppingBag },
+  "wishlist.purchase.cancel": { label: "Compra", icon: Trash2 },
   "list.create": { label: "Lista", icon: ListChecks },
   "list.edit": { label: "Lista", icon: Pencil },
   "list.remove": { label: "Lista", icon: Trash2 },

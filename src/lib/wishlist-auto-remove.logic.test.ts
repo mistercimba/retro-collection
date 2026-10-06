@@ -25,6 +25,14 @@ describe("wishlistTargetsSatisfiedByAddedGame", () => {
     expect(wishlistTargetsSatisfiedByAddedGame(wishlist, "Pokemon Stadium", "Nintendo 64").map((x) => x.targetId)).toEqual(["1"]);
   });
 
+  it("does not remove a purchased/in-transit target when another copy is added directly", () => {
+    const ordered = {
+      ...target("Silent Hill 2", "Playstation 2", "ordered"),
+      acquisition: { state: "ordered" as const, purchaseId: "APP-1", orderedAt: "2026-10-06T20:00:00.000Z" },
+    };
+    expect(wishlistTargetsSatisfiedByAddedGame([ordered], "Silent Hill 2", "Playstation 2")).toEqual([]);
+  });
+
   it("does not remove inactive historical targets", () => {
     const inactive = { ...target("Silent Hill 2", "Playstation 2", "old"), status: "COMPRADO" };
     expect(wishlistTargetsSatisfiedByAddedGame([inactive], "Silent Hill 2", "Playstation 2")).toEqual([]);

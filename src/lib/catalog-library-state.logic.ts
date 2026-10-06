@@ -1,6 +1,7 @@
 import type { CollectionGame, WantTarget } from "./data/types";
 import { platformSlug } from "./data/platforms";
 import { wishlistTargetsSatisfiedByAddedGame } from "./wishlist-auto-remove.logic";
+import { isOrderedWishlistTarget } from "./wishlist-acquisition.logic";
 
 export type CatalogLibraryBadge = "owned" | "wishlist" | "ordered";
 
@@ -8,6 +9,7 @@ export type CatalogLibraryState = {
   badges: CatalogLibraryBadge[];
   ownedCount: number;
   wishlistCount: number;
+  orderedCount: number;
 };
 
 function normalizeTitle(value: string) {
@@ -35,11 +37,16 @@ export function getCatalogLibraryState(
   ).length;
 
   const wishlistCount = wishlistTargetsSatisfiedByAddedGame(wishlist, title, platform).length;
+  const orderedCount = wishlist.filter((target) =>
+    isOrderedWishlistTarget(target) &&
+    normalizeTitle(target.title) === wantedTitle &&
+    platformSlug(target.platform) === wantedPlatform
+  ).length;
+
   const badges: CatalogLibraryBadge[] = [];
   if (ownedCount > 0) badges.push("owned");
+  if (orderedCount > 0) badges.push("ordered");
   if (wishlistCount > 0) badges.push("wishlist");
 
-  // "ordered" is intentionally not emitted yet. Issue #46 will add a real
-  // Purchased/In transit state; this UI contract is already ready for that badge.
-  return { badges, ownedCount, wishlistCount };
+  return { badges, ownedCount, wishlistCount, orderedCount };
 }

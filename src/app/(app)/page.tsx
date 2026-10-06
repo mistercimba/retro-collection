@@ -9,13 +9,15 @@ import { getCollectionListGames } from "@/lib/game-list-data";
 import { getLibrary } from "@/lib/library-store";
 import { toQuickSearchableGame } from "@/lib/quick-search.logic";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
+import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 
 export default async function HomePage() {
   const [stats, games, wantlist, library] = await Promise.all([getStats(), getAllGames(), getWantlist(), getLibrary()]);
   const platforms = sortPlatformsByRelease(stats.platforms);
   const searchGames = games.map(toQuickSearchableGame);
+  const orderedWishlist = wantlist.filter(isOrderedWishlistTarget);
   const activeWishlist = wantlist
-    .filter((target) => target.planState !== "inactive" && target.matchState !== "acquired")
+    .filter((target) => !isOrderedWishlistTarget(target) && target.planState !== "inactive" && target.matchState !== "acquired")
     .map((target) => ({
       title: target.title,
       platform: target.platform,
@@ -28,7 +30,7 @@ export default async function HomePage() {
   const keptIds = new Set(games.filter((game) => game.keepStatus === "Collection").map((game) => game.collectionId));
   const recentAdditions = [...library.history]
     .sort((a, b) => b.at.localeCompare(a.at))
-    .filter((entry) => (entry.action === "collection.add" || entry.action === "wishlist.purchase") && keptIds.has(entry.entityId))
+    .filter((entry) => (entry.action === "collection.add" || entry.action === "wishlist.receive") && keptIds.has(entry.entityId))
     .slice(0, 4);
 
   return <div className="space-y-7 pb-8">
@@ -46,6 +48,28 @@ export default async function HomePage() {
 
     <div className="rounded-2xl bg-[#17382e] p-3 md:hidden"><QuickSearch games={searchGames} wishlist={activeWishlist} /></div>
 
+    {orderedWishlist.length > 0 && <section className="collection-panel border-amber-200 bg-amber-50/75 p-4">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <div>
+          <p className="eyebrow text-amber-700">A CAMINHO</p>
+          <h2 className="mt-1 text-sm font-black text-slate-950">{orderedWishlist.length === 1 ? "1 jogo comprado por receber" : String(orderedWishlist.length) + " jogos comprados por receber"}</h2>
+        </div>
+        <Link href="/want" className="text-xs font-black text-amber-800">Ver encomendas →</Link>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {orderedWishlist.slice(0, 4).map((target) => {
+          const params = new URLSearchParams({ platform: target.platform, title: target.title, from: "/want" });
+          return <Link
+            key={target.targetId + target.title}
+            href={"/wish/" + encodeURIComponent(target.targetId) + "?" + params.toString()}
+            className="rounded-xl bg-white/80 px-3 py-2 text-xs font-bold text-amber-950"
+          >
+            {target.title} · {displayPlatform(target.platform)}
+          </Link>;
+        })}
+      </div>
+    </section>}
+
     <section className="grid gap-3 lg:grid-cols-[1.25fr_.75fr]">
       <div className="collection-panel p-4">
         <div className="flex items-baseline justify-between gap-3">
@@ -54,7 +78,7 @@ export default async function HomePage() {
         </div>
         {recentAdditions.length ? <div className="mt-3 divide-y divide-[#ece7dd]">
           {recentAdditions.map((entry) => <Link key={entry.id} href={`/game/${encodeURIComponent(entry.entityId)}`} className="flex min-w-0 items-center justify-between gap-3 py-2.5 first:pt-0 last:pb-0">
-            <span className="min-w-0"><strong className="block truncate text-sm font-black text-slate-900">{entry.title}</strong><span className="block truncate text-xs font-semibold text-slate-500">{displayPlatform(entry.platform)} · {entry.action === "wishlist.purchase" ? "Comprado" : "Adicionado"}</span></span>
+            <span className="min-w-0"><strong className="block truncate text-sm font-black text-slate-900">{entry.title}</strong><span className="block truncate text-xs font-semibold text-slate-500">{displayPlatform(entry.platform)} · {entry.action === "wishlist.receive" ? "Recebido" : "Adicionado"}</span></span>
             <time dateTime={entry.at} className="shrink-0 text-[11px] font-bold text-slate-400">{formatHistoryDate(entry.at)}</time>
           </Link>)}
         </div> : <p className="mt-3 rounded-xl bg-[#f4f1e8] p-3 text-xs font-semibold text-slate-500">O histórico começou recentemente. Os próximos jogos adicionados aparecem aqui.</p>}

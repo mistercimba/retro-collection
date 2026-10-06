@@ -166,7 +166,7 @@ The app supports:
 - live search/filter/sort;
 - collection add/edit/remove;
 - wishlist add/edit/remove;
-- wishlist purchase -> collection;
+- wishlist purchase -> Purchased/In transit -> receipt verification -> collection;
 - purchase/valuation records;
 - visible forward-only mutation history;
 - private photos attached to individual physical copies;
@@ -195,6 +195,22 @@ Desktop/mobile navigation should treat:
 - platform Wishlist -> Wishlist active;
 - game detail -> Collection;
 - wishlist detail -> Wishlist.
+
+## Wishlist acquisition state
+
+A wishlist target can be **Purchased / In transit** without being an owned Collection copy.
+
+Rules:
+
+- the target remains in `library.wishlist` while in transit, carrying optional `acquisition.state === "ordered"` linked to an existing `PurchaseRecord`;
+- an ordered target is not an active shopping target and must not be shown as something to buy again;
+- it does **not** count as owned and must not create a `CollectionGame` until receipt is explicitly confirmed;
+- receipt uses the platform-aware physical checklist, creates the Collection copy, marks the purchase `received`, removes the target from Wishlist and records forward-only history;
+- cancelling a purchase marks its PurchaseRecord `cancelled` and clears the target acquisition state so the target returns to its previous wishlist/PLAN semantics;
+- direct Collection adds must not silently remove an in-transit target, because that could represent a separate physical copy;
+- no carrier/shipping-tracking integration is implied;
+- the global **Adicionar jogo** flow is the canonical entry point for choosing whether a catalog game is already owned, purchased/in transit, or only wanted;
+- Wishlist purchase actions should reuse that same global acquisition dialog prefilled with the Wishlist target instead of maintaining a second purchase form.
 
 ## Multiple physical copies
 
