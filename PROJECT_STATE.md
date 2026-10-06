@@ -50,7 +50,15 @@ Preview feedback for PR #53:
 - existing legacy values remain selectable when editing an older record;
 - a direct Collection add now removes an exact same-title/same-platform active Wishlist target automatically and records that removal in history.
 
-Validation is being rerun on the final acceptance-feedback changes. No real Collection/Wishlist mutation is performed during automated or preview QA.
+Final validation for the acceptance-feedback changes:
+- lint: PASS (warnings only);
+- Vitest: 207/207 PASS across 35 files;
+- Python tests: 6/6 PASS;
+- Next production build: PASS;
+- GitHub Actions: SUCCESS;
+- Vercel preview deployment: SUCCESS.
+
+No real Collection/Wishlist mutation was performed during automated or preview QA.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
