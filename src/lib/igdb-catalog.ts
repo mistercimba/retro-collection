@@ -3,7 +3,6 @@ import { unstable_cache } from "next/cache";
 import type { CanonicalGameIdentity } from "@/lib/data/types";
 import {
   escapeIgdbSearch,
-  igdbPlatformId,
   mapIgdbCandidates,
   parseIgdbIdentifier,
   type CanonicalGameCandidate,
