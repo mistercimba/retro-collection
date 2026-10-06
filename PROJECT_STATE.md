@@ -8,39 +8,36 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`cb45fcf2e1dc1ad4ccb57fe0afdc11bbbded76ff`
+`f21682e742ece89090930964e4555bd3c4f9cb35`
 
 Most recent merged work:
 
 - PR #53 — canonical IGDB-backed Add flow, standardized copy fields, conservative cover persistence, Wishlist auto-removal and catalog state indicators;
-- PR #55 — CI now runs once per PR candidate plus post-merge on `main`, with concurrency cancellation and documented push batching.
+- PR #55 — CI now runs once per PR candidate plus post-merge on `main`, with concurrency cancellation and documented push batching;
+- PR #56 — universal acquisition flow with **Já tenho / A caminho / Wishlist**, including receipt verification and reused Wishlist purchase dialog.
 
 Verified before starting the current feature:
 
-- PR #55 GitHub Actions: SUCCESS;
-- PR #55 Vercel preview: SUCCESS;
-- post-merge CI/production deploy were started from the merge commit.
+- PR #56 GitHub Actions: SUCCESS;
+- PR #56 Vercel production deployment: SUCCESS.
 
-## Active product work — Purchased / In transit
+## Active product work — copy-specific missing components
 
-Issue #46. Candidate branch: `feat/purchased-in-transit`.
+Issue #49. Candidate branch: `feat/component-completion-queue`.
 
 Implementation model:
 
-- a bought game remains a Wishlist target with optional `acquisition.state = "ordered"`, linked to the existing PurchaseRecord;
-- ordered targets are excluded from active buying queues and show as **A caminho / Encomendado**;
-- no CollectionGame is created at purchase time;
-- receipt explicitly verifies the physical copy using the platform-aware checklist, then creates the Collection record and marks the purchase `received`;
-- cancellation marks the purchase `cancelled` and restores the target to its previous wishlist behavior without deleting purchase history;
-- Home and Wishlist surface pending arrivals; the catalog Add search uses the already-designed `Encomendado` badge;
-- the global **Adicionar jogo** flow is now universal after catalog selection: **Já tenho comigo / Já comprei, ainda não chegou / Quero comprar**;
-- the Wishlist no longer keeps a separate "Comprei este jogo" purchase form: it opens the same global Add dialog with title/platform/target already prefilled;
-- the Wishlist's own "Adicionar" entry also reuses the global catalog flow instead of a second free-text add form;
-- no shipping/carrier tracking is introduced.
+- `library.componentNeeds` stores persisted workflow state without changing `schemaVersion: 1`;
+- old Blobs default to `componentNeeds: []`;
+- standard base needs are immediately inferred from copy fields explicitly marked `No`, so existing incomplete copies do not require a migration write;
+- each need is tied to one `collectionId`; duplicate copies remain independent;
+- workflow states are **Em falta → Encontrado → Comprado → Recebido**;
+- receiving a base component updates that copy's media/box/manual field and recalculates completeness;
+- edition-specific extras are manual only; the app never invents maps/posters/inserts/disc 2;
+- aggregate route `/complete` lists active needs, while the game detail owns checklist/custom-component editing;
+- completed/closed needs stay in history and disappear from the active queue.
 
-The first preview exposed one UX gap: global Add still assumed "already owned". The acceptance-feedback candidate fixes that by making Add choose the acquisition state explicitly and by reusing the same dialog from Wishlist. The feedback round is batched into one additional remote candidate.
-
-The candidate preserves the #55 cost discipline: code, tests and durable docs are batched per feedback round rather than file-by-file pushes.
+The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
@@ -76,6 +73,7 @@ Blob runtime behavior is intentionally strict:
 - missing Blob is an error;
 - existing old Blob without history is backward-compatible as `history: []`;
 - existing old Blob without collection lists is backward-compatible as `collectionLists: []`;
+- existing old Blob without component-needs workflow is backward-compatible as `componentNeeds: []`;
 - normal reads use Next's persistent data cache across requests/deploys; successful writes expire that cache immediately;
 - mutation read-modify-write still starts from an uncached Blob read.
 
@@ -373,8 +371,8 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active product work is Issue #46 on `feat/purchased-in-transit`.
-After it lands, continue with #49 (missing components), then #51, #48, #50 and #52.
+The current active product work is Issue #49 on `feat/component-completion-queue`.
+After it lands, continue with #51 (Next objective), then #48, #50 and #52.
 Real mobile/laptop QA remains retained in the roadmap.
 
 ## Handoff prompt for a brand-new chat

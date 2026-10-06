@@ -15,9 +15,10 @@ class InvalidLibraryError extends Error {
   }
 }
 
-function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "collectionLists"> & {
+function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "collectionLists" | "componentNeeds"> & {
   history?: LibraryData["history"];
   collectionLists?: LibraryData["collectionLists"];
+  componentNeeds?: LibraryData["componentNeeds"];
 } {
   if (!value || typeof value !== "object") return false;
   const candidate = value as Partial<LibraryData>;
@@ -27,6 +28,7 @@ function validLibrary(value: unknown): value is Omit<LibraryData, "history" | "c
     Array.isArray(candidate.wishlist) &&
     Array.isArray(candidate.purchases) &&
     Array.isArray(candidate.valuations) &&
+    (candidate.componentNeeds === undefined || Array.isArray(candidate.componentNeeds)) &&
     (candidate.collectionLists === undefined || Array.isArray(candidate.collectionLists)) &&
     (candidate.history === undefined || Array.isArray(candidate.history));
 }
@@ -40,7 +42,12 @@ async function readBlobLibraryOnce(): Promise<LibraryData | null> {
   if (!result) return null;
   const payload = JSON.parse(await new Response(result.stream).text()) as unknown;
   if (!validLibrary(payload)) throw new InvalidLibraryError();
-  return { ...payload, collectionLists: payload.collectionLists ?? [], history: payload.history ?? [] };
+  return {
+    ...payload,
+    componentNeeds: payload.componentNeeds ?? [],
+    collectionLists: payload.collectionLists ?? [],
+    history: payload.history ?? [],
+  };
 }
 
 async function readBlobLibrary(): Promise<LibraryData | null> {
@@ -85,6 +92,7 @@ export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
     ...data,
     schemaVersion: 1,
     updatedAt: new Date().toISOString(),
+    componentNeeds: data.componentNeeds ?? [],
     collectionLists: data.collectionLists ?? [],
     history: data.history ?? [],
   };

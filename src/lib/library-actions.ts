@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
 import { platformSlug } from "@/lib/data/platforms";
-import type { CanonicalGameIdentity, CollectionGame, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
+import type { CanonicalGameIdentity, CollectionGame, ComponentNeed, ComponentNeedKey, ComponentNeedStatus, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
 import { updateLibrary } from "@/lib/library-store";
 import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
 import { resolveCanonicalGame } from "@/lib/igdb-catalog";
@@ -18,6 +18,12 @@ import {
   type PhysicalComponentKey,
   type PhysicalComponentState,
 } from "@/lib/physical-copy-profile.logic";
+import {
+  isActiveComponentNeedStatus,
+  isBaseComponentKey,
+  normalizeComponentNeedLabel,
+  recomputeCopyCompletion,
+} from "@/lib/component-needs.logic";
 
 const text = (form: FormData, key: string) => String(form.get(key) ?? "").trim();
 const money = (form: FormData, key: string) => {
@@ -159,6 +165,43 @@ function physicalState(form: FormData, platform: string): PhysicalAddState {
   };
 }
 
+function setGameComponentState(game: CollectionGame, key: PhysicalComponentKey, state: PhysicalComponentState) {
+  const value = componentStateToLibraryValue(state);
+  if (key === "media") game.media = value;
+  else if (key === "box") game.box = value;
+  else game.manual = value;
+}
+
+function parseComponentState(form: FormData, key: PhysicalComponentKey): PhysicalComponentState {
+  const raw = text(form, "component_" + key);
+  return raw === "yes" || raw === "no" ? raw : "unknown";
+}
+
+function createComponentNeed(
+  collectionId: string,
+  componentKey: ComponentNeedKey,
+  label: string,
+  now: string,
+): ComponentNeed {
+  return {
+    id: "CN-" + Date.now() + "-" + Math.random().toString(36).slice(2, 7),
+    collectionId,
+    componentKey,
+    label,
+    status: "missing",
+    notes: "",
+    createdAt: now,
+    updatedAt: now,
+    completedAt: "",
+  };
+}
+
+function recomputeGameCompletion(library: LibraryData, game: CollectionGame) {
+  const completion = recomputeCopyCompletion(game, library.componentNeeds ?? []);
+  game.overallStatus = completion.overallStatus;
+  game.needsReview = completion.needsReview;
+}
+
 function normalizedEdition(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
@@ -265,6 +308,7 @@ export async function editGame(form: FormData) {
   revalidatePath(`/game/${encodeURIComponent(id)}`);
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/complete");
   revalidatePath("/history");
 }
 
@@ -358,10 +402,183 @@ export async function addCollectionGame(form: FormData) {
 
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/complete");
   revalidatePath("/want");
   revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
   if (created) redirect(`/game/${encodeURIComponent(created)}`);
+}
+
+export async function saveCopyComponents(form: FormData) {
+  await guard();
+  const collectionId = text(form, "collectionId");
+  if (!collectionId) return;
+
+  await updateLibrary((library) => {
+    library.componentNeeds ??= [];
+    const game = library.collection.find((item) => item.collectionId === collectionId);
+    if (!game) return library;
+
+    const profile = physicalCopyProfile(game.platform);
+    const now = new Date().toISOString();
+    const changedComponents: string[] = [];
+
+    for (const component of profile.components) {
+      const state = parseComponentState(form, component.key);
+      const before = component.key === "media" ? game.media : component.key === "box" ? game.box : game.manual;
+      setGameComponentState(game, component.key, state);
+      const after = component.key === "media" ? game.media : component.key === "box" ? game.box : game.manual;
+      if (before !== after) changedComponents.push(component.label);
+
+      const active = library.componentNeeds.filter((need) =>
+        need.collectionId === collectionId &&
+        need.componentKey === component.key &&
+        isActiveComponentNeedStatus(need.status)
+      );
+
+      if (state === "no") {
+        if (!active.length) library.componentNeeds.push(createComponentNeed(collectionId, component.key, component.label, now));
+      } else {
+        for (const need of active) {
+          need.status = state === "yes" ? "received" : "closed";
+          need.updatedAt = now;
+          need.completedAt = now;
+        }
+      }
+    }
+
+    recomputeGameCompletion(library, game);
+    addHistory(library, {
+      action: "collection.edit",
+      entityId: game.collectionId,
+      title: game.title,
+      platform: game.platform,
+      summary: "Checklist física atualizada",
+      details: changedComponents.length ? changedComponents : [game.overallStatus],
+    });
+    return library;
+  });
+
+  revalidatePath("/game/" + encodeURIComponent(collectionId));
+  revalidatePath("/complete");
+  revalidatePath("/");
+  revalidatePath("/collection");
+  revalidatePath("/history");
+}
+
+export async function addMissingComponent(form: FormData) {
+  await guard();
+  const collectionId = text(form, "collectionId");
+  const label = text(form, "label");
+  const notes = text(form, "notes");
+  if (!collectionId || !label) return;
+
+  await updateLibrary((library) => {
+    library.componentNeeds ??= [];
+    const game = library.collection.find((item) => item.collectionId === collectionId);
+    if (!game) return library;
+
+    const normalized = normalizeComponentNeedLabel(label);
+    const duplicate = library.componentNeeds.some((need) =>
+      need.collectionId === collectionId &&
+      need.componentKey === "custom" &&
+      isActiveComponentNeedStatus(need.status) &&
+      normalizeComponentNeedLabel(need.label) === normalized
+    );
+    if (duplicate) return library;
+
+    const now = new Date().toISOString();
+    const need = createComponentNeed(collectionId, "custom", label, now);
+    need.notes = notes;
+    library.componentNeeds.push(need);
+    recomputeGameCompletion(library, game);
+
+    addHistory(library, {
+      action: "component.need.add",
+      entityId: game.collectionId,
+      title: game.title,
+      platform: game.platform,
+      summary: "Peça em falta adicionada: " + label,
+      details: [game.edition, notes].filter(Boolean),
+    });
+    return library;
+  });
+
+  revalidatePath("/game/" + encodeURIComponent(collectionId));
+  revalidatePath("/complete");
+  revalidatePath("/");
+  revalidatePath("/history");
+}
+
+export async function updateComponentNeedStatus(form: FormData) {
+  await guard();
+  const collectionId = text(form, "collectionId");
+  const needId = text(form, "needId");
+  const componentKeyRaw = text(form, "componentKey");
+  const label = text(form, "label");
+  const statusRaw = text(form, "status");
+  const validKeys: ComponentNeedKey[] = ["media", "box", "manual", "custom"];
+  const validStatuses: ComponentNeedStatus[] = ["missing", "found", "purchased", "received", "closed"];
+  if (!collectionId || !validKeys.includes(componentKeyRaw as ComponentNeedKey) || !validStatuses.includes(statusRaw as ComponentNeedStatus)) return;
+
+  const componentKey = componentKeyRaw as ComponentNeedKey;
+  const status = statusRaw as ComponentNeedStatus;
+
+  await updateLibrary((library) => {
+    library.componentNeeds ??= [];
+    const game = library.collection.find((item) => item.collectionId === collectionId);
+    if (!game) return library;
+
+    let need = library.componentNeeds.find((item) => item.id === needId && item.collectionId === collectionId);
+    const now = new Date().toISOString();
+    if (!need) {
+      need = createComponentNeed(collectionId, componentKey, label || componentKey, now);
+      library.componentNeeds.push(need);
+    }
+
+    need.status = status;
+    need.updatedAt = now;
+    need.completedAt = status === "received" || status === "closed" ? now : "";
+
+    if (status === "received" && isBaseComponentKey(componentKey)) {
+      setGameComponentState(game, componentKey, "yes");
+      for (const duplicate of library.componentNeeds) {
+        if (
+          duplicate.id !== need.id &&
+          duplicate.collectionId === collectionId &&
+          duplicate.componentKey === componentKey &&
+          isActiveComponentNeedStatus(duplicate.status)
+        ) {
+          duplicate.status = "closed";
+          duplicate.updatedAt = now;
+          duplicate.completedAt = now;
+        }
+      }
+    }
+
+    recomputeGameCompletion(library, game);
+
+    const statusLabel =
+      status === "found" ? "Encontrado" :
+      status === "purchased" ? "Comprado" :
+      status === "received" ? "Recebido" :
+      status === "closed" ? "Fechado" : "Em falta";
+    addHistory(library, {
+      action: status === "closed" ? "component.need.close" : "component.need.status",
+      entityId: game.collectionId,
+      title: game.title,
+      platform: game.platform,
+      summary: need.label + " · " + statusLabel,
+      details: [game.collectionId, game.edition].filter(Boolean),
+    });
+    return library;
+  });
+
+  revalidatePath("/game/" + encodeURIComponent(collectionId));
+  revalidatePath("/complete");
+  revalidatePath("/");
+  revalidatePath("/collection");
+  revalidatePath("/history");
 }
 
 export async function removeCollectionGame(form: FormData) {
@@ -374,6 +591,15 @@ export async function removeCollectionGame(form: FormData) {
     platform = game?.platform ?? "";
     const purchaseId = game?.purchaseId ?? "";
     photoPaths = game?.photos?.map((photo) => photo.pathname) ?? [];
+    library.componentNeeds ??= [];
+    const now = new Date().toISOString();
+    for (const need of library.componentNeeds) {
+      if (need.collectionId === id && isActiveComponentNeedStatus(need.status)) {
+        need.status = "closed";
+        need.updatedAt = now;
+        need.completedAt = now;
+      }
+    }
     library.collection = library.collection.filter((item) => item.collectionId !== id);
     library.valuations = library.valuations.filter((item) => item.collectionId !== id);
     if (purchaseId && !library.collection.some((item) => item.purchaseId === purchaseId)) {
@@ -399,6 +625,7 @@ export async function removeCollectionGame(form: FormData) {
   }
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/complete");
   revalidatePath("/history");
   if (platform) redirect(`/platform/${platformSlug(platform)}`);
   redirect("/collection");
@@ -679,6 +906,7 @@ export async function receiveWishlistPurchase(form: FormData) {
 
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/complete");
   revalidatePath("/want");
   revalidatePath("/history");
   revalidatePath("/platform/" + platformSlug(platform));

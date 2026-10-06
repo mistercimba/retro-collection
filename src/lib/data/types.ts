@@ -184,6 +184,21 @@ export interface CollectionList {
   targets: CollectionListTarget[];
 }
 
+export type ComponentNeedKey = "media" | "box" | "manual" | "custom";
+export type ComponentNeedStatus = "missing" | "found" | "purchased" | "received" | "closed";
+
+export interface ComponentNeed {
+  id: string;
+  collectionId: string;
+  componentKey: ComponentNeedKey;
+  label: string;
+  status: ComponentNeedStatus;
+  notes: string;
+  createdAt: string;
+  updatedAt: string;
+  completedAt: string;
+}
+
 export interface ValuationSnapshot {
   collectionId: string;
   catalogId: string;
@@ -207,6 +222,9 @@ export type LibraryHistoryAction =
   | "wishlist.purchase"
   | "wishlist.receive"
   | "wishlist.purchase.cancel"
+  | "component.need.add"
+  | "component.need.status"
+  | "component.need.close"
   | "list.create"
   | "list.edit"
   | "list.remove"
@@ -231,6 +249,7 @@ export interface LibraryData {
   wishlist: WantTarget[];
   purchases: PurchaseRecord[];
   valuations: ValuationSnapshot[];
+  componentNeeds: ComponentNeed[];
   collectionLists: CollectionList[];
   history: LibraryHistoryEntry[];
 }

@@ -6,6 +6,6 @@ export function getActiveAppNavigation(pathname: string, tab: string | null): Ap
   if (pathname.startsWith("/lists")) return "/lists";
   if (pathname.startsWith("/want") || pathname.startsWith("/wish/")) return "/want";
   if (pathname.startsWith("/platform/")) return tab === "wishlist" ? "/want" : "/collection";
-  if (pathname.startsWith("/collection") || pathname.startsWith("/game/")) return "/collection";
+  if (pathname.startsWith("/collection") || pathname.startsWith("/game/") || pathname.startsWith("/complete")) return "/collection";
   return null;
 }

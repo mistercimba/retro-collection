@@ -22,13 +22,13 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Purchased / In transit acquisition state (#46)
+### NOW — Copy-specific missing components (#49)
 
-Add a real intermediate state between Wishlist and Collection for games already bought but not yet received/verified. Purchased games stop behaving like active shopping targets without counting as an owned physical copy until receipt is confirmed.
+Create a dedicated **Para completar** queue for missing physical components in games already owned.
 
-Implementation direction: keep the target in Wishlist with a linked acquisition/PurchaseRecord state, surface it as **A caminho**, verify the physical copy on receipt, then create the Collection record. Cancellation returns the target to active wishlist behavior while preserving a cancelled purchase record and history. The global **Adicionar jogo** dialog is the single acquisition entry point: after choosing a catalog identity it asks whether the game is already owned, purchased/in transit, or only wanted; Wishlist shortcuts reuse the same dialog prefilled rather than duplicating forms.
+Implementation direction: each need belongs to one concrete `collectionId`; base media/box/manual needs reuse the platform-aware checklist and can be inferred from explicit `No` values, while special-edition extras are only user-entered. Track **Em falta → Encontrado → Comprado → Recebido**, update the exact copy when a base part arrives, and preserve completed/closed records for history.
 
-The canonical guided Add flow from #47 is complete and merged in PR #53.
+Purchased / In transit (#46) is complete and merged in PR #56. The global Add dialog is now the single acquisition entry point.
 
 ## Product roadmap
 
@@ -110,6 +110,7 @@ Do not reintroduce these as future phases:
 - recently added and Home attention queues;
 - paid price vs estimated value;
 - structured physical-copy information;
+- universal acquisition state (owned / purchased-in-transit / wanted);
 - URL-backed filtering and preserved list/scroll context;
 - local Collection/Wishlist artwork;
 - PriceCharting and CeX-backed references;
