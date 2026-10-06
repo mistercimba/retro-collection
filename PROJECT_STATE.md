@@ -43,14 +43,14 @@ Technical direction:
 
 See `docs/GAME_CATALOG_SOURCE.md` for the source/limitations contract.
 
-Current PR #53 validation:
-- lint: PASS (warnings only);
-- Vitest: 204/204 PASS across 34 files;
-- Python tests: 6/6 PASS;
-- Next production build: PASS;
-- GitHub Actions: SUCCESS;
-- Vercel preview deployment: SUCCESS;
-- authenticated rendered Add flow has not been mutation-tested because validation must not create real Collection data.
+Preview feedback for PR #53:
+- user confirmed catalog search works well;
+- Region, language and condition are now standardized dropdowns across equivalent collection forms;
+- new-copy defaults are PAL + English; condition remains an explicit choice;
+- existing legacy values remain selectable when editing an older record;
+- a direct Collection add now removes an exact same-title/same-platform active Wishlist target automatically and records that removal in history.
+
+Validation is being rerun on the final acceptance-feedback changes. No real Collection/Wishlist mutation is performed during automated or preview QA.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
