@@ -256,7 +256,6 @@ export async function editGame(form: FormData) {
   revalidatePath(`/game/${encodeURIComponent(id)}`);
   revalidatePath("/");
   revalidatePath("/collection");
-  revalidatePath("/want");
   revalidatePath("/history");
 }
 
@@ -356,6 +355,7 @@ export async function addCollectionGame(form: FormData) {
 
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/want");
   revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
   if (created) redirect(`/game/${encodeURIComponent(created)}`);
