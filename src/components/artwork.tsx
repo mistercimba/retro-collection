@@ -4,16 +4,7 @@ import { useState } from "react";
 import { displayPlatform } from "@/lib/data/platforms";
 import { PLATFORM_ARTWORK } from "@/data/platform-artwork";
 import { GAME_ARTWORK } from "@/data/game-artwork";
-
-function initials(value: string) {
-  return value
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 3)
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
-}
+import { GameArtworkPlaceholder } from "@/components/game-artwork-placeholder";
 
 function ArtworkFrame({
   src,
@@ -24,7 +15,7 @@ function ArtworkFrame({
   imageClassName,
   eager = false,
 }: {
-  src: string;
+  src: string | null;
   alt: string;
   platform: string;
   title: string;
@@ -33,20 +24,11 @@ function ArtworkFrame({
   eager?: boolean;
 }) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
-  const failed = failedSrc === src;
+  const failed = Boolean(src) && failedSrc === src;
+  if (!src || failed) return <GameArtworkPlaceholder title={title} platform={platform} className={className} />;
 
   return (
     <div className={`relative ${className}`}>
-      {failed ? (
-        <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950 p-4 text-white">
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">
-            {displayPlatform(platform)}
-          </span>
-          <span className="text-3xl font-black tracking-tight text-white/90">
-            {initials(title) || "GAME"}
-          </span>
-        </div>
-      ) : (
         <img
           src={src}
           alt={alt}
@@ -55,7 +37,6 @@ function ArtworkFrame({
           onError={() => setFailedSrc(src)}
           className={imageClassName}
         />
-      )}
     </div>
   );
 }
@@ -96,7 +77,7 @@ export function GameArtwork({
 }) {
   return (
     <ArtworkFrame
-      src={GAME_ARTWORK[collectionId] ?? (catalogArtwork ? `/api/catalog-artwork/${encodeURIComponent(collectionId)}` : "/covers/__missing__.png")}
+      src={GAME_ARTWORK[collectionId] ?? (catalogArtwork ? `/api/catalog-artwork/${encodeURIComponent(collectionId)}` : null)}
       alt={`${title} PAL cover`}
       platform={platform}
       title={title}

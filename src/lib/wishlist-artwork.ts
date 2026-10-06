@@ -2,6 +2,8 @@ import collectionManifest from "../../public/covers/manifest.json";
 import artworkGames from "../../data/artwork-games.json";
 import { WISHLIST_ARTWORK } from "../data/wishlist-artwork";
 import { GAME_ARTWORK } from "../data/game-artwork";
+import type { CanonicalGameIdentity } from "./data/types";
+import { wishlistCatalogArtworkCompatible } from "./wishlist-catalog-artwork.logic";
 import {
   createCollectionWishlistArtworkIndex,
   resolveCollectionWishlistArtworkFromIndex,
@@ -12,6 +14,17 @@ import {
 } from "./wishlist-artwork.logic";
 
 export type { WishlistArtworkTarget } from "./wishlist-artwork.logic";
+
+type WishlistArtworkWithCatalog = WishlistArtworkTarget & {
+  catalog?: CanonicalGameIdentity;
+};
+
+function catalogArtworkUrl(target: WishlistArtworkWithCatalog): string | null {
+  if (!target.catalog?.artwork?.pathname) return null;
+  if (!wishlistCatalogArtworkCompatible(target.targetVersion, target.catalog.edition)) return null;
+  const params = new URLSearchParams({ platform: target.platform, title: target.title });
+  return `/api/catalog-artwork/wishlist/${encodeURIComponent(target.targetId)}?${params.toString()}`;
+}
 
 // Build once per module load; page requests only perform in-memory lookups.
 const collectionArtworkIndex = createCollectionWishlistArtworkIndex(
@@ -28,8 +41,9 @@ export function resolveWishlistArtworkFromEntries(
     resolveCollectionWishlistArtwork(target, games, collectionArtwork);
 }
 
-export function resolveWishlistArtwork(target: WishlistArtworkTarget): string | null {
+export function resolveWishlistArtwork(target: WishlistArtworkWithCatalog): string | null {
   return resolveDedicatedWishlistArtwork(target, WISHLIST_ARTWORK) ??
-    resolveCollectionWishlistArtworkFromIndex(target, collectionArtworkIndex);
+    resolveCollectionWishlistArtworkFromIndex(target, collectionArtworkIndex) ??
+    catalogArtworkUrl(target);
 }
 

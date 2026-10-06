@@ -13,6 +13,7 @@ import { wishlistTargetsSatisfiedByAddedGame } from "@/lib/wishlist-auto-remove.
 import { objectiveMatchesTarget } from "@/lib/next-objective.logic";
 import { matchWantTarget } from "@/lib/data/wishlist-matching";
 import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
+import { wishlistCatalogArtworkCompatible } from "@/lib/wishlist-catalog-artwork.logic";
 import {
   componentStateToLibraryValue,
   derivePhysicalCopyStatus,
@@ -230,6 +231,24 @@ async function canonicalSelectionFromForm(form: FormData): Promise<CanonicalGame
   const requestedPlatformId = Number(text(form, "catalogPlatformId"));
   if (!Number.isSafeInteger(requestedGameId) || requestedGameId <= 0 || !Number.isSafeInteger(requestedPlatformId) || requestedPlatformId <= 0) return undefined;
   return (await resolveCanonicalGame(requestedGameId, requestedPlatformId)) ?? undefined;
+}
+
+async function canonicalWishlistSelectionWithArtwork(
+  canonical: CanonicalGameIdentity | undefined,
+  targetVersion: string,
+): Promise<CanonicalGameIdentity | undefined> {
+  if (!canonical || !wishlistCatalogArtworkCompatible(targetVersion, canonical.edition)) return canonical;
+  if (canonical.artwork?.pathname) return canonical;
+  try {
+    const artwork = await ensureCanonicalArtwork(canonical);
+    return artwork ? { ...canonical, artwork } : canonical;
+  } catch (error) {
+    console.warn("wishlist_catalog_artwork_import_failed", {
+      gameId: canonical.sourceGameId,
+      errorName: error instanceof Error ? error.name : "UnknownError",
+    });
+    return canonical;
+  }
 }
 
 function purchaseFromForm(form: FormData, purchaseId: string, previous?: PurchaseRecord): PurchaseRecord {
@@ -653,10 +672,12 @@ export async function removeCollectionGame(form: FormData) {
 
 export async function addWishlistGame(form: FormData) {
   await guard();
-  const canonical = await canonicalSelectionFromForm(form);
+  let canonical = await canonicalSelectionFromForm(form);
   const title = canonical?.title ?? text(form, "title");
   const platform = canonical?.platform ?? text(form, "platform");
   if (!title || !platform) return;
+  const targetVersion = text(form, "targetVersion") || [text(form, "region"), canonical?.edition].filter(Boolean).join(" · ");
+  canonical = await canonicalWishlistSelectionWithArtwork(canonical, targetVersion);
 
   const target: WantTarget = {
     platform,
@@ -664,7 +685,7 @@ export async function addWishlistGame(form: FormData) {
     targetId: "APP-" + Date.now(),
     title,
     reason: text(form, "reason"),
-    targetVersion: text(form, "targetVersion") || [text(form, "region"), canonical?.edition].filter(Boolean).join(" · "),
+    targetVersion,
     priceCeilingEur: money(form, "priceCeilingEur"),
     status: "ACTIVE",
     notes: text(form, "notes"),
@@ -849,11 +870,13 @@ export async function removeWishlistGame(form: FormData) {
 
 export async function purchaseWishlistGame(form: FormData) {
   await guard();
-  const canonical = await canonicalSelectionFromForm(form);
+  let canonical = await canonicalSelectionFromForm(form);
   const requestedTargetId = text(form, "targetId");
   const title = canonical?.title ?? text(form, "title");
   const platform = canonical?.platform ?? text(form, "platform");
   if (!title || !platform) return;
+  const requestedTargetVersion = text(form, "targetVersion") || [text(form, "region"), canonical?.edition].filter(Boolean).join(" · ");
+  canonical = await canonicalWishlistSelectionWithArtwork(canonical, requestedTargetVersion);
 
   const paid = money(form, "paid");
   const source = text(form, "source");
@@ -881,7 +904,7 @@ export async function purchaseWishlistGame(form: FormData) {
         targetId,
         title,
         reason: text(form, "reason"),
-        targetVersion: text(form, "targetVersion") || [text(form, "region"), canonical?.edition].filter(Boolean).join(" · "),
+        targetVersion: requestedTargetVersion,
         priceCeilingEur: null,
         status: "ACTIVE",
         notes: text(form, "wishlistNotes"),

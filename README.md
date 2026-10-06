@@ -106,11 +106,15 @@ Collection: `public/covers/`, `public/covers/manifest.json` e
 local seguro usam fallback; a existência de uma capa não é garantida para todos
 os jogos que venham a ser adicionados.
 
-Wishlist: **139/298 (46,6%)** no relatório final do PR #28, 0 capas reutilizadas da
-Collection e 159 fallback. Os 144 ficheiros importados foram preservados: 139
+Wishlist static snapshot: **139/298 (46,6%)** no relatório final do PR #28, 0 capas reutilizadas da
+Collection e 159 fallbacks deliberados. Os 144 ficheiros importados foram preservados: 139
 ativos e 5 sem associação segura à edição explícita pedida. Manifest/mapping e
 relatórios: `data/wishlist-artwork-*.json` e `src/data/wishlist-artwork.ts`.
-Não há pedidos de artwork externo no browsing normal.
+
+Desde #48, novos targets identificados pelo catálogo podem persistir uma capa IGDB privada no momento da mutação,
+sem fetch externo durante browsing normal. O resolver mantém a ordem: artwork estático validado → reuse local seguro →
+artwork canónico compatível → placeholder deliberado. Edições especiais incompatíveis continuam em placeholder.
+`/api/health` mede a cobertura real atual de Collection e Wishlist, incluindo artwork canónico.
 
 A identidade da capa inclui targetId, plataforma, título normalizado, região e
 requisito de edição: edição conhecida, **Any** (sem requisito) ou **Unknown**
