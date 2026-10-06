@@ -9,6 +9,7 @@ import { updateLibrary } from "@/lib/library-store";
 import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
 import { resolveCanonicalGame } from "@/lib/igdb-catalog";
 import { ensureCanonicalArtwork } from "@/lib/catalog-artwork";
+import { wishlistTargetsSatisfiedByAddedGame } from "@/lib/wishlist-auto-remove.logic";
 import {
   componentStateToLibraryValue,
   derivePhysicalCopyStatus,
@@ -255,6 +256,7 @@ export async function editGame(form: FormData) {
   revalidatePath(`/game/${encodeURIComponent(id)}`);
   revalidatePath("/");
   revalidatePath("/collection");
+  revalidatePath("/want");
   revalidatePath("/history");
 }
 
@@ -320,6 +322,23 @@ export async function addCollectionGame(form: FormData) {
       canonical,
       physical,
     }));
+
+    const fulfilledWishlistTargets = wishlistTargetsSatisfiedByAddedGame(library.wishlist, title, platform);
+    if (fulfilledWishlistTargets.length) {
+      const fulfilledIds = new Set(fulfilledWishlistTargets.map((target) => target.targetId));
+      library.wishlist = library.wishlist.filter((target) => !fulfilledIds.has(target.targetId));
+      for (const target of fulfilledWishlistTargets) {
+        addHistory(library, {
+          action: "wishlist.remove",
+          entityId: target.targetId,
+          title: target.title,
+          platform: target.platform,
+          summary: "Removido automaticamente da wishlist ao adicionar à coleção",
+          details: [collectionId],
+        });
+      }
+    }
+
     addHistory(library, {
       action: "collection.add",
       entityId: collectionId,
