@@ -1,4 +1,4 @@
-import { Camera, History, ListChecks, PackageCheck, Pencil, Plus, ShoppingBag, Target, Trash2 } from "lucide-react";
+import { Camera, History, Images, ListChecks, PackageCheck, Pencil, Plus, ShoppingBag, Target, Trash2 } from "lucide-react";
 import { getLibrary } from "@/lib/library-store";
 import { displayPlatform } from "@/lib/data/platforms";
 import type { LibraryHistoryAction } from "@/lib/data/types";
@@ -17,6 +17,8 @@ const actionMeta: Record<LibraryHistoryAction, { label: string; icon: typeof His
   "wishlist.purchase": { label: "Compra", icon: ShoppingBag },
   "wishlist.receive": { label: "Receção", icon: ShoppingBag },
   "wishlist.purchase.cancel": { label: "Compra", icon: Trash2 },
+  "wishlist.artwork.set": { label: "Artwork", icon: Images },
+  "wishlist.artwork.clear": { label: "Artwork", icon: Images },
   "component.need.add": { label: "Para completar", icon: Plus },
   "component.need.status": { label: "Para completar", icon: PackageCheck },
   "component.need.close": { label: "Para completar", icon: Trash2 },

@@ -8,7 +8,7 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`2425f50ff8120d021673d03e628ca093b390875c`
+`ef940362b380bbabdc42c8625ca0bd4b3b342b6e`
 
 Most recent merged work:
 
@@ -16,34 +16,31 @@ Most recent merged work:
 - PR #55 — CI now runs once per PR candidate plus post-merge on `main`, with concurrency cancellation and documented push batching;
 - PR #56 — universal acquisition flow with **Já tenho / A caminho / Wishlist**, including receipt verification and reused Wishlist purchase dialog;
 - PR #57 — copy-specific **Para completar** queue, loose-friendly cartridge policy, console filters and incompleteness indicators;
-- PR #58 — manual **Próximo objetivo** plus transparent suggestions from lists/series/Wishlist priority.
+- PR #58 — manual **Próximo objetivo** plus transparent suggestions from lists/series/Wishlist priority;
+- PR #59 — deliberate shared artwork placeholder, compatible catalog-artwork fallback for new Wishlist targets and real artwork coverage reporting.
 
 Verified before starting the current feature:
 
-- PR #58 GitHub Actions: SUCCESS;
-- PR #58 Vercel production deployment: SUCCESS.
+- PR #59 GitHub Actions: SUCCESS before merge;
+- PR #59 merged as `ef940362b380bbabdc42c8625ca0bd4b3b342b6e`.
 
-## Active product work — artwork gaps and deliberate fallback
+## Active product work — manual resolution of ambiguous artwork
 
-Issue #48. Candidate branch: `feat/artwork-gaps-placeholder`.
-
-Baseline audit:
-
-- Collection static snapshot: 516/516 mapped, 0 missing;
-- Wishlist static snapshot: 139/298 safe dedicated mappings, 159 deliberate fallbacks;
-- Final Fantasy VIII is one of the intentionally unresolved PS1 cases because the source pipeline found more than one plausible candidate. Do not pick one blindly.
+Issue #60. Candidate branch: `feat/manual-artwork-choice`.
 
 Implementation model:
 
-- one deliberate game-cover placeholder shared by Collection and Wishlist; no known-missing image URL/404 is used as the normal fallback;
-- existing validated static artwork remains first priority;
-- safe Collection reuse remains second;
-- canonical IGDB artwork can be a final Wishlist fallback only when the requested edition is compatible;
-- special/unknown editions never borrow incompatible Standard catalog artwork;
-- new catalog-backed Wishlist targets import/persist canonical artwork during the add/purchase mutation when compatible;
-- authenticated Wishlist catalog-artwork route serves the private Blob; normal browsing performs no external artwork fetch;
-- `/api/health` reports real artwork coverage for current mutable Collection/Wishlist so coverage is observable beyond old snapshots;
-- no ambiguous static mappings are re-enabled merely to increase coverage.
+- ambiguity stays safe by default: no candidate is auto-selected;
+- a target can expose a static registry of plausible candidates based on title/platform/region/edition compatibility, independent of targetId;
+- the first materialized case is Final Fantasy VIII on PlayStation, where the existing importer found two exact PAL candidates: Europe/Australia and Spain;
+- the Wishlist detail shows **Artwork ambíguo** and links to an explicit chooser only when at least two compatible candidates exist;
+- candidate thumbnails are fetched from their recorded source only on the explicit chooser page, not during ordinary browsing;
+- choosing a candidate downloads it server-side into private Vercel Blob and persists a copy-specific Wishlist override with full provenance;
+- the persisted manual override has priority over static/reused/catalog artwork;
+- removing the choice returns to automatic resolution/placeholder;
+- changing target edition invalidates an incompatible override and deletes its private Blob;
+- removing/receiving/satisfying the Wishlist target also cleans up the private override Blob;
+- History records manual artwork set/clear actions.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 
@@ -380,8 +377,8 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active product work is Issue #48 on `feat/artwork-gaps-placeholder`.
-After it lands, continue with #50 (Home refocus) and #52 (Wishlist suggestions).
+The current active product work is Issue #60 on `feat/manual-artwork-choice`.
+After it lands, return to #50 (Home refocus) and #52 (Wishlist suggestions).
 Real mobile/laptop QA remains retained in the roadmap.
 
 ## Handoff prompt for a brand-new chat

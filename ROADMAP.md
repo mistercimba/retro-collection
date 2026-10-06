@@ -22,13 +22,13 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Artwork gaps and deliberate fallback (#48)
+### NOW — Manual resolution of ambiguous artwork (#60)
 
-Make missing artwork look intentional and keep new catalog-backed additions from regressing into blank/unknown covers.
+When the artwork pipeline has multiple plausible covers, keep the safe placeholder by default but let Mário choose the correct one explicitly.
 
-Implementation direction: preserve the conservative static mappings, use one shared placeholder whenever no safe cover exists, persist canonical artwork for compatible catalog-backed Wishlist mutations, and expose real current coverage in the health endpoint. Accuracy remains more important than forcing 100% coverage; ambiguous region/edition candidates stay unresolved.
+Implementation direction: show an **Artwork ambíguo** state only for known candidate sets, open a dedicated chooser with provenance, store the chosen image in private Blob, persist the override on the exact Wishlist target, and allow returning to automatic resolution. No candidate is chosen automatically. The first concrete case is Final Fantasy VIII (PlayStation): Europe/Australia vs Spain.
 
-The single Next objective (#51) is complete and merged in PR #58.
+Artwork gaps/deliberate fallback (#48) are complete and merged in PR #59.
 
 ## Product roadmap
 

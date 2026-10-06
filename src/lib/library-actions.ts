@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
 import { platformSlug } from "@/lib/data/platforms";
 import type { CanonicalGameIdentity, CollectionGame, ComponentNeed, ComponentNeedKey, ComponentNeedStatus, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
-import { updateLibrary } from "@/lib/library-store";
+import { getLibrary, updateLibrary } from "@/lib/library-store";
 import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
 import { resolveCanonicalGame } from "@/lib/igdb-catalog";
 import { ensureCanonicalArtwork } from "@/lib/catalog-artwork";
@@ -14,6 +14,8 @@ import { objectiveMatchesTarget } from "@/lib/next-objective.logic";
 import { matchWantTarget } from "@/lib/data/wishlist-matching";
 import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 import { wishlistCatalogArtworkCompatible } from "@/lib/wishlist-catalog-artwork.logic";
+import { wishlistArtworkCandidateById, resolveWishlistArtworkOverrideCandidate } from "@/lib/wishlist-artwork-candidates.logic";
+import { deleteWishlistArtworkOverride, storeWishlistArtworkOverride } from "@/lib/wishlist-artwork-override";
 import {
   componentStateToLibraryValue,
   derivePhysicalCopyStatus,
@@ -344,6 +346,10 @@ export async function editGame(form: FormData) {
   });
 
   revalidatePath(`/game/${encodeURIComponent(id)}`);
+  for (const pathname of wishlistOverridePathsToDelete) {
+    await deleteWishlistArtworkOverride(pathname).catch(() => undefined);
+  }
+
   revalidatePath("/");
   revalidatePath("/collection");
   revalidatePath("/complete");
@@ -378,6 +384,7 @@ export async function addCollectionGame(form: FormData) {
 
   const physical = canonical ? physicalState(form, platform) : undefined;
   let created = "";
+  const wishlistOverridePathsToDelete: string[] = [];
 
   await updateLibrary((library) => {
     const collectionId = nextId(platform, library.collection);
@@ -412,6 +419,7 @@ export async function addCollectionGame(form: FormData) {
       const fulfilledTargets = new Set(fulfilledWishlistTargets);
       library.wishlist = library.wishlist.filter((target) => !fulfilledTargets.has(target));
       for (const target of fulfilledWishlistTargets) {
+        if (target.artworkOverride?.pathname) wishlistOverridePathsToDelete.push(target.artworkOverride.pathname);
         clearObjectiveForTarget(library, target, "Próximo objetivo concluído ao adicionar o jogo à coleção");
         addHistory(library, {
           action: "wishlist.remove",
@@ -439,6 +447,7 @@ export async function addCollectionGame(form: FormData) {
     return library;
   });
 
+  if (artworkPath) await deleteWishlistArtworkOverride(artworkPath).catch(() => undefined);
   revalidatePath("/");
   revalidatePath("/collection");
   revalidatePath("/complete");
@@ -714,6 +723,99 @@ export async function addWishlistGame(form: FormData) {
   redirect(wishlistDetailPath(target.targetId, target.platform, target.title));
 }
 
+export async function setWishlistArtworkOverride(form: FormData) {
+  await guard();
+  const targetId = text(form, "targetId");
+  const title = text(form, "title");
+  const platform = text(form, "platform");
+  const candidateId = text(form, "candidateId");
+  if (!targetId || !title || !platform || !candidateId) return;
+
+  const snapshot = await getLibrary();
+  const target = snapshot.wishlist.find((item) =>
+    item.targetId === targetId && item.title === title && item.platform === platform
+  );
+  if (!target) return;
+  const candidate = wishlistArtworkCandidateById(target, candidateId);
+  if (!candidate) return;
+
+  const nextOverride = await storeWishlistArtworkOverride(targetId, candidate);
+  let previousPath = "";
+  let applied = false;
+
+  await updateLibrary((library) => {
+    const current = library.wishlist.find((item) =>
+      item.targetId === targetId && item.title === title && item.platform === platform
+    );
+    if (!current) return library;
+    const currentCandidate = wishlistArtworkCandidateById(current, candidateId);
+    if (!currentCandidate || currentCandidate.sourcePath !== candidate.sourcePath) return library;
+
+    previousPath = current.artworkOverride?.pathname ?? "";
+    current.artworkOverride = nextOverride;
+    applied = true;
+    addHistory(library, {
+      action: "wishlist.artwork.set",
+      entityId: current.targetId,
+      title: current.title,
+      platform: current.platform,
+      summary: "Capa escolhida manualmente · " + currentCandidate.displayRegion,
+      details: [currentCandidate.sourceRepo, currentCandidate.sourcePath],
+    });
+    return library;
+  });
+
+  if (!applied) {
+    await deleteWishlistArtworkOverride(nextOverride.pathname).catch(() => undefined);
+    return;
+  }
+  if (previousPath && previousPath !== nextOverride.pathname) {
+    await deleteWishlistArtworkOverride(previousPath).catch(() => undefined);
+  }
+
+  revalidatePath("/");
+  revalidatePath("/want");
+  revalidatePath("/history");
+  revalidatePath("/search");
+  revalidatePath("/platform/" + platformSlug(platform));
+  revalidatePath("/wish/" + encodeURIComponent(targetId));
+  redirect(wishlistDetailPath(targetId, platform, title));
+}
+
+export async function clearWishlistArtworkOverride(form: FormData) {
+  await guard();
+  const targetId = text(form, "targetId");
+  const title = text(form, "title");
+  const platform = text(form, "platform");
+  let pathname = "";
+
+  await updateLibrary((library) => {
+    const current = library.wishlist.find((item) =>
+      item.targetId === targetId && item.title === title && item.platform === platform
+    );
+    if (!current?.artworkOverride) return library;
+    pathname = current.artworkOverride.pathname;
+    delete current.artworkOverride;
+    addHistory(library, {
+      action: "wishlist.artwork.clear",
+      entityId: current.targetId,
+      title: current.title,
+      platform: current.platform,
+      summary: "Escolha manual de capa removida",
+    });
+    return library;
+  });
+
+  if (pathname) await deleteWishlistArtworkOverride(pathname).catch(() => undefined);
+  revalidatePath("/");
+  revalidatePath("/want");
+  revalidatePath("/history");
+  revalidatePath("/search");
+  revalidatePath("/platform/" + platformSlug(platform));
+  revalidatePath("/wish/" + encodeURIComponent(targetId));
+  redirect(wishlistDetailPath(targetId, platform, title));
+}
+
 export async function setNextObjective(form: FormData) {
   await guard();
   const targetId = text(form, "targetId");
@@ -787,6 +889,7 @@ export async function editWishlistGame(form: FormData) {
   const targetId = text(form, "targetId");
   const title = text(form, "title");
   const platform = text(form, "platform");
+  let staleArtworkPath = "";
   await updateLibrary((library) => {
     const index = library.wishlist.findIndex((target) =>
       target.targetId === targetId && target.title === title && target.platform === platform
@@ -801,6 +904,10 @@ export async function editWishlistGame(form: FormData) {
       reason: text(form, "reason"),
       notes: text(form, "notes"),
     };
+    if (next.artworkOverride && !resolveWishlistArtworkOverrideCandidate(next)) {
+      staleArtworkPath = next.artworkOverride.pathname;
+      delete next.artworkOverride;
+    }
     const details: string[] = [];
     changed("prioridade", current.priority, next.priority, details);
     changed("versão alvo", current.targetVersion, next.targetVersion, details);
@@ -820,6 +927,8 @@ export async function editWishlistGame(form: FormData) {
     }
     return library;
   });
+  if (staleArtworkPath) await deleteWishlistArtworkOverride(staleArtworkPath).catch(() => undefined);
+  revalidatePath("/");
   revalidatePath("/want");
   revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
@@ -832,10 +941,12 @@ export async function removeWishlistGame(form: FormData) {
   const targetId = text(form, "targetId");
   const title = text(form, "title");
   const platform = text(form, "platform");
+  let artworkPath = "";
   await updateLibrary((library) => {
     const target = library.wishlist.find((item) =>
       item.targetId === targetId && item.title === title && item.platform === platform
     );
+    if (target?.artworkOverride?.pathname) artworkPath = target.artworkOverride.pathname;
     if (target) clearObjectiveForTarget(library, target, "Próximo objetivo removido com o target da wishlist");
     if (target?.acquisition?.state === "ordered") {
       const purchaseIndex = library.purchases.findIndex((purchase) => purchase.purchaseId === target.acquisition?.purchaseId);
@@ -861,6 +972,8 @@ export async function removeWishlistGame(form: FormData) {
     }
     return library;
   });
+  if (artworkPath) await deleteWishlistArtworkOverride(artworkPath).catch(() => undefined);
+  revalidatePath("/");
   revalidatePath("/want");
   revalidatePath("/history");
   revalidatePath(`/platform/${platformSlug(platform)}`);
@@ -964,6 +1077,7 @@ export async function receiveWishlistPurchase(form: FormData) {
   const platform = text(form, "platform");
   const receivedDate = text(form, "receivedDate") || new Date().toISOString().slice(0, 10);
   let created = "";
+  let artworkPath = "";
 
   await updateLibrary((library) => {
     const index = library.wishlist.findIndex((item) =>
@@ -973,6 +1087,7 @@ export async function receiveWishlistPurchase(form: FormData) {
 
     const target = library.wishlist[index];
     if (target.acquisition?.state !== "ordered" || !target.acquisition.purchaseId) return library;
+    artworkPath = target.artworkOverride?.pathname ?? "";
     clearObjectiveForTarget(library, target, "Próximo objetivo concluído ao receber o jogo");
 
     const purchaseIndex = library.purchases.findIndex((purchase) => purchase.purchaseId === target.acquisition?.purchaseId);

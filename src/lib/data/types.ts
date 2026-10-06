@@ -123,6 +123,17 @@ export interface RawSheetData {
   valuations?: ValuationSnapshot[];
 }
 
+export interface WishlistArtworkOverride {
+  candidateId: string;
+  pathname: string;
+  contentType: string;
+  source: "libretro-thumbnails";
+  sourceRepo: string;
+  sourceCommit: string;
+  sourcePath: string;
+  selectedAt: string;
+}
+
 export interface WishlistAcquisition {
   state: "ordered";
   purchaseId: string;
@@ -141,6 +152,7 @@ export interface WantTarget {
   notes: string;
   acquisition?: WishlistAcquisition | null;
   catalog?: CanonicalGameIdentity;
+  artworkOverride?: WishlistArtworkOverride | null;
 }
 
 export interface WantListEntry extends WantTarget {
@@ -229,6 +241,8 @@ export type LibraryHistoryAction =
   | "wishlist.purchase"
   | "wishlist.receive"
   | "wishlist.purchase.cancel"
+  | "wishlist.artwork.set"
+  | "wishlist.artwork.clear"
   | "component.need.add"
   | "component.need.status"
   | "component.need.close"

@@ -37,6 +37,26 @@ const collectionArtwork = {
 };
 
 describe("wishlist artwork resolver", () => {
+  it("gives a valid manual artwork choice priority over automatic sources", () => {
+    const result = resolveWishlistArtwork({
+      targetId: "APP-123",
+      title: "Final Fantasy VIII",
+      platform: "Playstation",
+      targetVersion: "PAL; CIB",
+      artworkOverride: {
+        candidateId: "libretro-ff8-spain",
+        pathname: "retro-collection/wishlist-artwork-overrides/APP-123/libretro-ff8-spain.png",
+        contentType: "image/png",
+        source: "libretro-thumbnails",
+        sourceRepo: "libretro-thumbnails/Sony_-_PlayStation",
+        sourceCommit: "ccee75c7744d81676b6725307aca27ef6be6231a",
+        sourcePath: "Named_Boxarts/Final Fantasy VIII (Spain).png",
+        selectedAt: "2026-10-06T22:00:00.000Z",
+      },
+    });
+    expect(result).toContain("/api/wishlist-artwork-override/APP-123?");
+  });
+
   it("uses authenticated catalog artwork as a conservative final fallback", () => {
     const result = resolveWishlistArtwork({
       ...target({ targetId: "APP-1", targetVersion: "PAL Standard; CIB" }),
