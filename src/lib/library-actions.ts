@@ -206,9 +206,14 @@ export async function editGame(form: FormData) {
       else library.purchases.push(nextPurchase);
     }
 
+    const nextEdition = text(form, "edition");
+    const catalog = current.catalog && normalizedEdition(nextEdition) !== normalizedEdition(current.catalog.edition)
+      ? { ...current.catalog, artwork: null }
+      : current.catalog;
     const nextGame = {
       ...current,
-      edition: text(form, "edition"),
+      edition: nextEdition,
+      catalog,
       region: text(form, "region"),
       language: text(form, "language"),
       overallStatus: text(form, "overallStatus"),
