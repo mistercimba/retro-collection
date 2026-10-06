@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowLeft, Search } from "lucide-react";
+import { ArrowLeft, PackageOpen, Search } from "lucide-react";
 import { GameArtwork } from "@/components/artwork";
 import { WishlistArtwork } from "@/components/wishlist-artwork";
-import { getAllGames, getWantlist } from "@/lib/data/collection-service";
+import { getAllGames, getComponentCompletionQueue, getWantlist } from "@/lib/data/collection-service";
 import { displayPlatform } from "@/lib/data/platforms";
 import { findQuickSearchMatches, findQuickSearchWishlistMatches } from "@/lib/quick-search.logic";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
@@ -18,7 +18,8 @@ function collectionLabel(game: CollectionGame) {
 }
 
 export default async function SearchResultsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
-  const [games, wantlist, params] = await Promise.all([getAllGames(), getWantlist(), searchParams]);
+  const [games, wantlist, completion, params] = await Promise.all([getAllGames(), getWantlist(), getComponentCompletionQueue(), searchParams]);
+  const incompleteIds = new Set(completion.active.map((need) => need.collectionId));
   const query = typeof params.q === "string" ? params.q.trim() : "";
   const activeWishlist = wantlist
     .filter((target) => target.planState !== "inactive" && target.matchState !== "acquired")
@@ -47,7 +48,7 @@ export default async function SearchResultsPage({ searchParams }: { searchParams
           {collectionResults.map((game) => <li key={`collection:${game.collectionId}`}>
             <Link href={`/game/${encodeURIComponent(game.collectionId)}?from=${encodeURIComponent(returnTo)}`} className="grid grid-cols-[44px_minmax(0,1fr)_auto] items-center gap-3 px-3 py-2.5 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-emerald-800">
               <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="h-14 w-11 rounded-lg" />
-              <span className="min-w-0"><span className="block truncate font-semibold text-slate-950">{game.title}</span><span className="block truncate text-xs text-slate-500">{displayPlatform(game.platform)} · {game.collectionId}{game.edition ? ` · ${game.edition}` : ""}{game.region ? ` · ${game.region}` : ""}</span></span>
+              <span className="min-w-0"><span className="flex min-w-0 items-center gap-1.5 font-semibold text-slate-950"><span className="truncate">{game.title}</span>{incompleteIds.has(game.collectionId) && <span title="Tem peças em falta" aria-label="Tem peças em falta" className="shrink-0 text-amber-600"><PackageOpen className="h-3.5 w-3.5" /></span>}</span><span className="block truncate text-xs text-slate-500">{displayPlatform(game.platform)} · {game.collectionId}{game.edition ? ` · ${game.edition}` : ""}{game.region ? ` · ${game.region}` : ""}</span></span>
               <span className="rounded-full bg-emerald-100 px-2 py-1 text-xs font-bold text-emerald-900">{collectionLabel(game)}</span>
             </Link>
           </li>)}

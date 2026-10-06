@@ -3,7 +3,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { AppSidebar } from "@/components/app-sidebar";
 import { OfflineSnapshotSync } from "@/components/offline-snapshot-sync";
 import { requireAuth } from "@/lib/auth";
-import { getAllGames, getWantlist } from "@/lib/data/collection-service";
+import { getAllGames, getComponentCompletionQueue, getWantlist } from "@/lib/data/collection-service";
 import { sortPlatformsByRelease } from "@/lib/data/platforms";
 import { toQuickSearchableGame } from "@/lib/quick-search.logic";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
@@ -20,8 +20,9 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     if (!digest.startsWith("NEXT_REDIRECT;")) console.error("app_layout_auth_failed", { errorName: error instanceof Error ? error.name : "UnknownError" });
     throw error;
   }
-  const [games, wantlist] = await Promise.all([getAllGames(), getWantlist()]);
-  const searchGames = games.map(toQuickSearchableGame);
+  const [games, wantlist, completion] = await Promise.all([getAllGames(), getWantlist(), getComponentCompletionQueue()]);
+  const incompleteIds = new Set(completion.active.map((need) => need.collectionId));
+  const searchGames = games.map((game) => toQuickSearchableGame(game, incompleteIds.has(game.collectionId)));
   const activeWishlist = wantlist
     .filter((target) => target.planState !== "inactive" && target.matchState !== "acquired")
     .map((target) => ({

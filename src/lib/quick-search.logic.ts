@@ -9,6 +9,7 @@ export type QuickSearchableGame = {
   overallStatus: string;
   keepStatus: string;
   catalogArtwork: boolean;
+  needsCompletion: boolean;
 };
 
 export type QuickSearchableWishlistItem = {
@@ -20,12 +21,13 @@ export type QuickSearchableWishlistItem = {
   artworkSrc?: string | null;
 };
 
-type QuickSearchGameInput = Omit<QuickSearchableGame, "catalogArtwork"> & {
+type QuickSearchGameInput = Omit<QuickSearchableGame, "catalogArtwork" | "needsCompletion"> & {
   catalogArtwork?: boolean;
+  needsCompletion?: boolean;
   catalog?: { artwork?: { pathname?: string } | null };
 };
 
-export function toQuickSearchableGame(game: QuickSearchGameInput): QuickSearchableGame {
+export function toQuickSearchableGame(game: QuickSearchGameInput, needsCompletion = game.needsCompletion ?? false): QuickSearchableGame {
   return {
     title: game.title,
     platform: game.platform,
@@ -35,6 +37,7 @@ export function toQuickSearchableGame(game: QuickSearchGameInput): QuickSearchab
     overallStatus: game.overallStatus,
     keepStatus: game.keepStatus,
     catalogArtwork: Boolean(game.catalogArtwork || game.catalog?.artwork?.pathname),
+    needsCompletion,
   };
 }
 

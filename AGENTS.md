@@ -89,6 +89,7 @@ Logical schema:
   wishlist: [],
   purchases: [],
   valuations: [],
+  componentNeeds: [],
   collectionLists: [],
   history: []
 }
@@ -101,6 +102,7 @@ Important rules:
 - Missing Blob should fail clearly rather than overwrite newer app-owned data.
 - Old blobs without `history` are read as `history: []`.
 - Old blobs without `collectionLists` are read as `collectionLists: []`; this remains schemaVersion 1 and backward-compatible.
+- Old blobs without `componentNeeds` are read as `componentNeeds: []`; standard missing base parts can still be inferred from copy fields marked `No` without rewriting the Blob.
 - Mutations are read-modify-write and intentionally simple for a single personal user.
 - Do not add a database, queue, ETag system, state manager, etc. without an actual demonstrated need.
 
@@ -158,6 +160,7 @@ Important routes/components include:
 - `/lists`
 - `/lists/[listId]`
 - `/history`
+- `/complete` — copy-specific missing-component queue
 
 The app supports:
 
@@ -173,7 +176,8 @@ The app supports:
 - user-defined collection lists/goals with exact title+platform owned progress;
 - local cover artwork;
 - PriceCharting reference values;
-- external reference links.
+- external reference links;
+- a copy-specific **Para completar** queue for missing physical components.
 
 History intentionally starts from the version that introduced it. Do not fabricate historical events unless explicitly asked.
 
@@ -211,6 +215,23 @@ Rules:
 - no carrier/shipping-tracking integration is implied;
 - the global **Adicionar jogo** flow is the canonical entry point for choosing whether a catalog game is already owned, purchased/in transit, or only wanted;
 - Wishlist purchase actions should reuse that same global acquisition dialog prefilled with the Wishlist target instead of maintaining a second purchase form.
+
+## Missing physical components / "Para completar"
+
+Missing parts are not game Wishlist targets.
+
+Rules:
+
+- every need is tied to one concrete `collectionId`; never merge needs across duplicate copies;
+- known base components come from the platform-aware physical profile (`media`, `box`, `manual` where applicable);
+- a base field explicitly marked `No` can be shown immediately as an inferred need without mutating the Blob;
+- default exception: NES, SNES, Nintendo 64, Game Boy, Game Boy Color and Game Boy Advance are loose-friendly for Mário; missing box/manual on those platforms must not auto-enter the active queue. A specific upgrade can still be tracked via an explicit custom need;
+- persisted component workflow lives in `library.componentNeeds`, with active states `missing`, `found`, `purchased` and terminal states `received` / `closed`;
+- marking a base component received updates that exact copy's physical field and recalculates its completeness;
+- custom edition-specific needs (map, poster, disc 2, sleeve, insert, etc.) are added only from explicit user input; never infer special-edition contents;
+- completed/closed component records remain for history; the active queue must not keep them visible;
+- deleting a copy closes its active persisted component needs instead of silently leaving actionable orphan records;
+- `/complete` is the aggregate queue and should support filtering by console/platform; the game detail is the authoritative place to edit that copy's physical checklist and custom needs.
 
 ## Multiple physical copies
 

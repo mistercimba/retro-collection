@@ -7,15 +7,16 @@ wishlist. Next.js App Router, TypeScript, Tailwind, Node.js 22 e Vercel.
 
 - Dashboard, pesquisa, filtros e ordenação por coleção/plataforma.
 - Collection e Wishlist com criação, edição e remoção de jogos.
-- Compra de um target da Wishlist: cria a cópia e o registo de compra na Collection.
+- Fluxo único de aquisição: jogo já possuído, comprado/a caminho ou apenas desejado; a cópia só entra na Collection quando está recebida/verificada.
 - Detalhes da cópia, edição dos dados de compra, fotos privadas e gestão/navegação entre múltiplas cópias físicas do mesmo jogo.
+- Lista **Para completar** para caixas, manuais, media e extras em falta, sempre ligada à cópia física concreta.
 - Listas/objetivos personalizados com progresso automático contra a Collection.
 - Para vender/Vendidos e histórico das alterações feitas na app.
 - Metadata, capas e imagens das plataformas locais; referências de preço e links de pesquisa.
 - PWA com consulta offline limitada da coleção previamente sincronizada.
 
 Rotas principais: `/`, `/collection`, `/collection/games`, `/platform/[slug]`,
-`/game/[collectionId]`, `/want`, `/wish/[targetId]`, `/lists`, `/lists/[listId]`, `/sell`, `/search` e `/history`.
+`/game/[collectionId]`, `/complete`, `/want`, `/wish/[targetId]`, `/lists`, `/lists/[listId]`, `/sell`, `/search` e `/history`.
 
 ## Arquitetura e dados
 
@@ -30,6 +31,7 @@ num **private Vercel Blob**, no caminho fixo `retro-collection/library.json`:
   wishlist: [],
   purchases: [],
   valuations: [],
+  componentNeeds: [],
   collectionLists: [],
   history: []
 }
@@ -41,7 +43,8 @@ runtime: se faltar ou for inválido, a leitura falha. Não há seed automático,
 fallback para Google ou reposição automática a partir do snapshot encriptado.
 Blobs antigos sem `history` são lidos com histórico vazio; não se inventa histórico
 anterior à introdução desse registo. Blobs anteriores às listas são lidos com
-`collectionLists: []`, mantendo `schemaVersion: 1`.
+`collectionLists: []`, e Blobs anteriores ao workflow de peças em falta são lidos
+com `componentNeeds: []`, mantendo `schemaVersion: 1`.
 
 Fotos da cópia física usam o mesmo store privado, em objetos separados sob
 `retro-collection/copy-photos/<collectionId>/...`. O `library.json` guarda apenas
@@ -54,6 +57,12 @@ Listas/objetivos são definidos pelo utilizador através de alvos explícitos de
 título + plataforma. O progresso é calculado contra jogos com estado `Collection`
 usando identidade normalizada exata, sem fuzzy matching nem franchises hardcoded.
 Remover uma lista ou alvo nunca remove o respetivo jogo da Collection/Wishlist.
+
+As necessidades de componentes também são independentes por `collectionId`.
+Campos base explicitamente marcados `No` (media/caixa/manual quando aplicável) podem
+aparecer em `/complete` sem migração; estados de procura/compra/receção e extras
+específicos ficam persistidos em `componentNeeds`. Extras de edição nunca são
+inferidos automaticamente.
 
 Múltiplas cópias continuam a ser registos independentes por `collectionId`. A
 ficha agrupa apenas o mesmo título/plataforma por identidade normalizada exata,

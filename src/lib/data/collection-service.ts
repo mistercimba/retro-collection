@@ -5,6 +5,7 @@ import { isAuditCompleted, selectLatestValuation } from "./collection-integrity"
 import { sumKnownMarketValues } from "./collection-stats.logic";
 import { selectPhysicalCopies } from "@/lib/copy-groups.logic";
 import type { CollectionGame, CollectionStats, LibraryData, WantListEntry } from "./types";
+import { buildComponentNeedEntries, buildComponentNeedHistory } from "@/lib/component-needs.logic";
 
 export async function getAllGames(): Promise<CollectionGame[]> {
   return (await getLibrary()).collection;
@@ -87,6 +88,24 @@ export async function getWantlist(): Promise<WantListEntry[]> {
     a.platform.localeCompare(b.platform, "pt-PT") ||
     a.title.localeCompare(b.title, "pt-PT"),
   );
+}
+
+export async function getComponentCompletionQueue() {
+  const library = await getLibrary();
+  return {
+    active: buildComponentNeedEntries(library.collection, library.componentNeeds ?? []),
+    history: buildComponentNeedHistory(library.collection, library.componentNeeds ?? []),
+  };
+}
+
+export async function getComponentNeedsForGame(collectionId: string) {
+  const library = await getLibrary();
+  return {
+    active: buildComponentNeedEntries(library.collection, library.componentNeeds ?? [])
+      .filter((need) => need.collectionId === collectionId),
+    history: buildComponentNeedHistory(library.collection, library.componentNeeds ?? [])
+      .filter((need) => need.collectionId === collectionId),
+  };
 }
 
 export const dataMode = () => "library" as const;
