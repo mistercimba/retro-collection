@@ -11,11 +11,15 @@ export function ComponentNeedActions({ need }: { need: ComponentNeedEntry }) {
       ]
     : need.status === "found"
       ? [
+          { status: "missing", label: "Voltar a Em falta" },
           { status: "purchased", label: "Comprei" },
           { status: "received", label: "Recebi" },
         ]
       : need.status === "purchased"
-        ? [{ status: "received", label: "Recebi" }]
+        ? [
+            { status: "missing", label: "Voltar a Em falta" },
+            { status: "received", label: "Recebi" },
+          ]
         : [];
 
   return <div className="flex flex-wrap gap-2">
@@ -26,7 +30,9 @@ export function ComponentNeedActions({ need }: { need: ComponentNeedEntry }) {
         pendingLabel="A atualizar…"
         className={action.status === "received"
           ? "min-h-9 rounded-lg bg-emerald-900 px-3 text-xs font-black text-white"
-          : "min-h-9 rounded-lg border border-[#d8d2c5] bg-white px-3 text-xs font-black text-slate-700"}
+          : action.status === "missing"
+            ? "min-h-9 rounded-lg border border-rose-200 bg-rose-50 px-3 text-xs font-black text-rose-800"
+            : "min-h-9 rounded-lg border border-[#d8d2c5] bg-white px-3 text-xs font-black text-slate-700"}
       >
         {action.label}
       </ActionSubmitButton>
