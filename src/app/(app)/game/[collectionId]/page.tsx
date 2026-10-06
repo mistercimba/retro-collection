@@ -41,7 +41,7 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   <Link href={returnTo} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Voltar</Link>
 
   <section className="collection-panel grid gap-6 p-4 sm:grid-cols-[240px_minmax(0,1fr)] sm:p-6">
-   <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} className="mx-auto h-[330px] w-[240px] rounded-2xl bg-slate-50 object-contain sm:mx-0" eager/>
+   <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="mx-auto h-[330px] w-[240px] rounded-2xl bg-slate-50 object-contain sm:mx-0" eager/>
    <div className="min-w-0">
     <p className="eyebrow">{displayPlatform(game.platform)}</p>
     <h1 className="mt-1 text-3xl font-black leading-tight tracking-tight text-slate-950">{game.title}</h1>
