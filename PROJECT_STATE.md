@@ -23,7 +23,7 @@ Verified before starting the current feature:
 
 ## Active product work — canonical game Add flow
 
-Issue #47. Branch: `feat/canonical-game-add`.
+Issue #47. Branch: `feat/canonical-game-add`. PR #53 is open and ready for user review.
 
 The user explicitly moved this ahead of the previous mobile/laptop QA priority.
 
@@ -42,6 +42,15 @@ Technical direction:
 - explicit manual Add remains available only as a fallback.
 
 See `docs/GAME_CATALOG_SOURCE.md` for the source/limitations contract.
+
+Current PR #53 validation:
+- lint: PASS (warnings only);
+- Vitest: 204/204 PASS across 34 files;
+- Python tests: 6/6 PASS;
+- Next production build: PASS;
+- GitHub Actions: SUCCESS;
+- Vercel preview deployment: SUCCESS;
+- authenticated rendered Add flow has not been mutation-tested because validation must not create real Collection data.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
