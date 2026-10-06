@@ -75,7 +75,13 @@ export async function getWantlist(): Promise<WantListEntry[]> {
   const library = await getLibrary();
   const kept = library.collection.filter((game) => game.keepStatus === "Collection");
   const priorityOrder: Record<string, number> = { grail: 0, alta: 0, média: 1, media: 1, baixa: 2 };
-  return library.wishlist.map((target) => ({ ...target, ...matchWantTarget(target, kept) })).sort((a, b) =>
+  return library.wishlist.map((target) => ({
+    ...target,
+    ...matchWantTarget(target, kept),
+    purchase: target.acquisition?.purchaseId
+      ? library.purchases.find((purchase) => purchase.purchaseId === target.acquisition?.purchaseId) ?? null
+      : null,
+  })).sort((a, b) =>
     (priorityOrder[a.priority.trim().toLocaleLowerCase("pt-PT")] ?? 3) - (priorityOrder[b.priority.trim().toLocaleLowerCase("pt-PT")] ?? 3) ||
     Number(b.priceCeilingEur !== null) - Number(a.priceCeilingEur !== null) ||
     a.platform.localeCompare(b.platform, "pt-PT") ||

@@ -123,6 +123,12 @@ export interface RawSheetData {
   valuations?: ValuationSnapshot[];
 }
 
+export interface WishlistAcquisition {
+  state: "ordered";
+  purchaseId: string;
+  orderedAt: string;
+}
+
 export interface WantTarget {
   platform: string;
   priority: string;
@@ -133,6 +139,7 @@ export interface WantTarget {
   priceCeilingEur: number | null;
   status: string;
   notes: string;
+  acquisition?: WishlistAcquisition | null;
 }
 
 export interface WantListEntry extends WantTarget {
@@ -141,7 +148,10 @@ export interface WantListEntry extends WantTarget {
   planState: "active" | "inactive" | "unknown";
   matchState: "acquired" | "missing" | "ambiguous";
   matchReason: string;
+  purchase?: PurchaseRecord | null;
 }
+
+export type PurchaseStatus = "ordered" | "received" | "cancelled";
 
 export interface PurchaseRecord {
   purchaseId: string;
@@ -155,6 +165,8 @@ export interface PurchaseRecord {
   totalPaidEur: number | null;
   bundleId: string;
   notes: string;
+  status?: PurchaseStatus;
+  statusUpdatedAt?: string;
 }
 
 export interface CollectionListTarget {
@@ -192,6 +204,8 @@ export type LibraryHistoryAction =
   | "wishlist.edit"
   | "wishlist.remove"
   | "wishlist.purchase"
+  | "wishlist.receive"
+  | "wishlist.purchase.cancel"
   | "list.create"
   | "list.edit"
   | "list.remove"

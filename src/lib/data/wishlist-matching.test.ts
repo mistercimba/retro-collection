@@ -59,6 +59,17 @@ describe("variant-safe ownership matching", () => {
     expect(byCollection.matchState).toBe("acquired");
   });
 
+  it("treats a purchased/in-transit target as inactive even if its legacy PLAN status is active", () => {
+    const ordered = matchWantTarget(target({
+      status: "ACTIVE",
+      acquisition: { state: "ordered", purchaseId: "APP-1", orderedAt: "2026-10-06T20:00:00.000Z" },
+    }), [game()]);
+    expect(ordered.planState).toBe("inactive");
+    expect(ordered.matchState).toBe("missing");
+    expect(ordered.matchReason).toBe("purchased-in-transit");
+    expect(ordered.ownedGame).toBeNull();
+  });
+
   it("does not mark a matching copy acquired for an inactive or unknown PLAN state", () => {
     const inactive = matchWantTarget(target({ status: "FORA DA BUYLIST PAL" }), [game()]);
     const unknown = matchWantTarget(target({ status: "new future status" }), [game()]);

@@ -1,5 +1,6 @@
 import type { WantTarget } from "./data/types";
 import { platformSlug } from "./data/platforms";
+import { isOrderedWishlistTarget } from "./wishlist-acquisition.logic";
 
 function normalizeTitle(value: string) {
   return value
@@ -25,6 +26,7 @@ export function wishlistTargetsSatisfiedByAddedGame(
   if (!wantedTitle || !wantedPlatform) return [];
 
   return wishlist.filter((target) =>
+    !isOrderedWishlistTarget(target) &&
     !isInactiveTarget(target.status) &&
     normalizeTitle(target.title) === wantedTitle &&
     platformSlug(target.platform) === wantedPlatform

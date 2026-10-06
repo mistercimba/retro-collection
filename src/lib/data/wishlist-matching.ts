@@ -1,5 +1,6 @@
 import { platformSlug } from "./platforms";
 import type { CollectionGame, WantTarget } from "./types";
+import { isOrderedWishlistTarget } from "../wishlist-acquisition.logic";
 
 export type PlanState = "active" | "inactive" | "unknown";
 export type MatchState = "acquired" | "missing" | "ambiguous";
@@ -164,6 +165,16 @@ function similarity(left: string, right: string): number {
 }
 
 export function matchWantTarget(target: WantTarget, games: CollectionGame[]) {
+  if (isOrderedWishlistTarget(target)) {
+    return {
+      planState: "inactive" as const,
+      matchState: "missing" as const,
+      ownedGame: null,
+      possibleMatch: null,
+      matchReason: "purchased-in-transit",
+    };
+  }
+
   const planState = classifyPlanState(target.status);
   const candidates = games.filter((game) => game.keepStatus === "Collection" && platformSlug(game.platform) === platformSlug(target.platform));
   const exact = candidates.filter((game) => titleMatches(target, game) || hasTargetId(target, game));

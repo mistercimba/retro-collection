@@ -8,33 +8,34 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`d6f88068c0c1ec7cb2bd33d7c0c40504767dc3e1`
+`cb45fcf2e1dc1ad4ccb57fe0afdc11bbbded76ff`
 
 Most recent merged work:
 
-- PR #45 — bounded retry/recovery for transient private Blob reads on initial entry;
-- PR #53 — canonical IGDB-backed Add flow, platform-aware completeness, standardized copy fields, conservative cover persistence, Wishlist auto-removal and "Já tens / Na wishlist" catalog indicators.
+- PR #53 — canonical IGDB-backed Add flow, standardized copy fields, conservative cover persistence, Wishlist auto-removal and catalog state indicators;
+- PR #55 — CI now runs once per PR candidate plus post-merge on `main`, with concurrency cancellation and documented push batching.
 
-Verified for the #53 production baseline:
+Verified before starting the current feature:
 
-- GitHub Actions: SUCCESS;
-- Vercel production: SUCCESS.
+- PR #55 GitHub Actions: SUCCESS;
+- PR #55 Vercel preview: SUCCESS;
+- post-merge CI/production deploy were started from the merge commit.
 
-## Active maintenance — reduce CI / preview churn
+## Active product work — Purchased / In transit
 
-Issue #54.
+Issue #46. Candidate branch: `feat/purchased-in-transit`.
 
-The #53 feedback cycle exposed avoidable remote churn: the CI workflow ran on both every branch `push` and `pull_request`, and every pushed candidate also generated a Vercel Preview.
+Implementation model:
 
-The active maintenance change is intentionally small and has no product-runtime changes:
+- a bought game remains a Wishlist target with optional `acquisition.state = "ordered"`, linked to the existing PurchaseRecord;
+- ordered targets are excluded from active buying queues and show as **A caminho / Encomendado**;
+- no CollectionGame is created at purchase time;
+- receipt explicitly verifies the physical copy using the platform-aware checklist, then creates the Collection record and marks the purchase `received`;
+- cancellation marks the purchase `cancelled` and restores the target to its previous wishlist behavior without deleting purchase history;
+- Home and Wishlist surface pending arrivals; the catalog Add search uses the already-designed `Encomendado` badge;
+- no shipping/carrier tracking is introduced.
 
-- feature branches are validated by `pull_request`, not a duplicate all-branch `push` run;
-- `push` CI remains on `main` for post-merge validation;
-- CI concurrency cancels superseded runs for the same PR/ref;
-- agent guidance now requires batched remote QA candidates rather than file-by-file pushes;
-- Vercel previews remain enabled; push batching is the first-line usage control.
-
-After #54, the next planned product feature is Issue #46, Purchased / In transit.
+The candidate preserves the #55 cost discipline: code, tests and durable docs are batched into one remote QA candidate.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
@@ -109,7 +110,7 @@ Implemented and in production:
 - live search/filter/sort;
 - collection CRUD;
 - wishlist CRUD;
-- wishlist -> purchased -> collection flow;
+- wishlist -> purchased/in-transit -> received/verified -> collection flow;
 - purchase/valuation handling;
 - visible mutation history;
 - submit/pending feedback;
@@ -367,10 +368,9 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active maintenance work is Issue #54, reducing duplicate CI and preview churn.
-After it lands, continue with Issue #46 (Purchased / In transit), followed by the
-acquisition/completeness sequence #49, #51, #48, #50 and #52. Real mobile/laptop QA
-remains retained in the roadmap.
+The current active product work is Issue #46 on `feat/purchased-in-transit`.
+After it lands, continue with #49 (missing components), then #51, #48, #50 and #52.
+Real mobile/laptop QA remains retained in the roadmap.
 
 ## Handoff prompt for a brand-new chat
 

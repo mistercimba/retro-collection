@@ -42,6 +42,17 @@ describe("catalog library state", () => {
     expect(state.badges).toEqual(["wishlist"]);
   });
 
+  it("marks an ordered copy separately from an active wishlist target", () => {
+    const ordered = {
+      ...target("Silent Hill 2", "Playstation 2"),
+      acquisition: { state: "ordered" as const, purchaseId: "APP-1", orderedAt: "2026-10-06T20:00:00.000Z" },
+    };
+    const state = getCatalogLibraryState([], [ordered], "Silent Hill 2", "Playstation 2");
+    expect(state.orderedCount).toBe(1);
+    expect(state.wishlistCount).toBe(0);
+    expect(state.badges).toEqual(["ordered"]);
+  });
+
   it("can expose owned and wishlist at the same time without blocking another copy", () => {
     const state = getCatalogLibraryState(
       [game("Trauma Center: Under the Knife", "Nintendo DS", "Collection")],

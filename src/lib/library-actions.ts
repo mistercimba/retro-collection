@@ -176,7 +176,9 @@ function purchaseFromForm(form: FormData, purchaseId: string, previous?: Purchas
     feesEur: previous?.feesEur ?? null,
     totalPaidEur: paid,
     bundleId: previous?.bundleId ?? "",
-    notes: text(form, "purchaseNotes"),
+    notes: text(form, "purchaseNotes") || text(form, "notes"),
+    status: previous?.status,
+    statusUpdatedAt: previous?.statusUpdatedAt,
   };
 }
 
@@ -491,6 +493,16 @@ export async function removeWishlistGame(form: FormData) {
     const target = library.wishlist.find((item) =>
       item.targetId === targetId && item.title === title && item.platform === platform
     );
+    if (target?.acquisition?.state === "ordered") {
+      const purchaseIndex = library.purchases.findIndex((purchase) => purchase.purchaseId === target.acquisition?.purchaseId);
+      if (purchaseIndex >= 0) {
+        library.purchases[purchaseIndex] = {
+          ...library.purchases[purchaseIndex],
+          status: "cancelled",
+          statusUpdatedAt: new Date().toISOString(),
+        };
+      }
+    }
     library.wishlist = library.wishlist.filter((item) =>
       !(item.targetId === targetId && item.title === title && item.platform === platform),
     );
@@ -520,47 +532,110 @@ export async function purchaseWishlistGame(form: FormData) {
   const paid = money(form, "paid");
   const source = text(form, "source");
   const date = text(form, "purchaseDate") || new Date().toISOString().slice(0, 10);
+  const now = new Date().toISOString();
+
+  await updateLibrary((library) => {
+    const index = library.wishlist.findIndex((item) =>
+      item.targetId === targetId && item.title === title && item.platform === platform
+    );
+    if (index < 0) return library;
+
+    const target = library.wishlist[index];
+    if (target.acquisition?.state === "ordered") return library;
+
+    const purchaseId = "APP-" + Date.now();
+    library.purchases.push({
+      ...purchaseFromForm(form, purchaseId),
+      date,
+      source,
+      status: "ordered",
+      statusUpdatedAt: now,
+    });
+    library.wishlist[index] = {
+      ...target,
+      acquisition: {
+        state: "ordered",
+        purchaseId,
+        orderedAt: now,
+      },
+    };
+
+    addHistory(library, {
+      action: "wishlist.purchase",
+      entityId: target.targetId,
+      title: target.title,
+      platform: target.platform,
+      summary: paid === null
+        ? "Comprado · a caminho"
+        : "Comprado por " + paid.toFixed(2) + " € · a caminho",
+      details: [source, date].filter(Boolean),
+    });
+    return library;
+  });
+
+  revalidatePath("/");
+  revalidatePath("/want");
+  revalidatePath("/history");
+  revalidatePath("/platform/" + platformSlug(platform));
+  revalidatePath("/wish/" + encodeURIComponent(targetId));
+  redirect(wishlistDetailPath(targetId, platform, title));
+}
+
+export async function receiveWishlistPurchase(form: FormData) {
+  await guard();
+  const targetId = text(form, "targetId");
+  const title = text(form, "title");
+  const platform = text(form, "platform");
+  const receivedDate = text(form, "receivedDate") || new Date().toISOString().slice(0, 10);
   let created = "";
 
   await updateLibrary((library) => {
-    const target = library.wishlist.find((item) => item.targetId === targetId && item.title === title && item.platform === platform);
-    if (!target) return library;
+    const index = library.wishlist.findIndex((item) =>
+      item.targetId === targetId && item.title === title && item.platform === platform
+    );
+    if (index < 0) return library;
 
-    const collectionId = nextId(platform, library.collection);
-    const purchaseId = `APP-${Date.now()}`;
+    const target = library.wishlist[index];
+    if (target.acquisition?.state !== "ordered" || !target.acquisition.purchaseId) return library;
+
+    const purchaseIndex = library.purchases.findIndex((purchase) => purchase.purchaseId === target.acquisition?.purchaseId);
+    if (purchaseIndex < 0) throw new Error("A compra associada a este jogo não foi encontrada.");
+
+    const purchase = library.purchases[purchaseIndex];
+    const collectionId = nextId(target.platform, library.collection);
+    const physical = physicalState(form, target.platform);
+    const paid = purchase.totalPaidEur ?? purchase.itemPriceEur;
     created = collectionId;
 
     library.collection.push(blankGame({
       collectionId,
       title: target.title,
       platform: target.platform,
-      edition: text(form, "edition"),
+      edition: text(form, "edition") || "Standard",
       region: text(form, "region"),
       language: text(form, "language"),
       condition: text(form, "conditionGrade"),
-      completeness: text(form, "overallStatus"),
-      acquiredDate: date,
-      purchaseId,
+      completeness: physical.completeness,
+      acquiredDate: receivedDate,
+      purchaseId: purchase.purchaseId,
       paid,
       notes: text(form, "notes"),
+      physical,
     }));
-    library.purchases.push({
-      ...purchaseFromForm(form, purchaseId),
-      date,
-      source,
-    });
-    library.wishlist = library.wishlist.filter((item) =>
-      !(item.targetId === targetId && item.title === title && item.platform === platform),
-    );
+    library.purchases[purchaseIndex] = {
+      ...purchase,
+      status: "received",
+      statusUpdatedAt: new Date().toISOString(),
+    };
+    library.wishlist.splice(index, 1);
+
     addHistory(library, {
-      action: "wishlist.purchase",
+      action: "wishlist.receive",
       entityId: collectionId,
       title: target.title,
       platform: target.platform,
-      summary: paid === null
-        ? "Comprado · movido da wishlist para a coleção"
-        : `Comprado por ${paid.toFixed(2)} € · movido para a coleção`,
-      details: [source, text(form, "overallStatus"), text(form, "conditionGrade")].filter(Boolean),
+      summary: "Recebido · verificado e movido para a coleção",
+      details: [physical.completeness, text(form, "conditionGrade"), purchase.source, purchase.date].filter(Boolean),
     });
     return library;
   });
@@ -569,6 +644,50 @@ export async function purchaseWishlistGame(form: FormData) {
   revalidatePath("/collection");
   revalidatePath("/want");
   revalidatePath("/history");
-  revalidatePath(`/platform/${platformSlug(platform)}`);
-  if (created) redirect(`/game/${encodeURIComponent(created)}`);
+  revalidatePath("/platform/" + platformSlug(platform));
+  revalidatePath("/wish/" + encodeURIComponent(targetId));
+  if (created) redirect("/game/" + encodeURIComponent(created));
+}
+
+export async function cancelWishlistPurchase(form: FormData) {
+  await guard();
+  const targetId = text(form, "targetId");
+  const title = text(form, "title");
+  const platform = text(form, "platform");
+
+  await updateLibrary((library) => {
+    const index = library.wishlist.findIndex((item) =>
+      item.targetId === targetId && item.title === title && item.platform === platform
+    );
+    if (index < 0) return library;
+
+    const target = library.wishlist[index];
+    if (target.acquisition?.state !== "ordered") return library;
+
+    const purchaseIndex = library.purchases.findIndex((purchase) => purchase.purchaseId === target.acquisition?.purchaseId);
+    if (purchaseIndex >= 0) {
+      library.purchases[purchaseIndex] = {
+        ...library.purchases[purchaseIndex],
+        status: "cancelled",
+        statusUpdatedAt: new Date().toISOString(),
+      };
+    }
+
+    delete library.wishlist[index].acquisition;
+    addHistory(library, {
+      action: "wishlist.purchase.cancel",
+      entityId: target.targetId,
+      title: target.title,
+      platform: target.platform,
+      summary: "Compra cancelada · voltou à wishlist",
+    });
+    return library;
+  });
+
+  revalidatePath("/");
+  revalidatePath("/want");
+  revalidatePath("/history");
+  revalidatePath("/platform/" + platformSlug(platform));
+  revalidatePath("/wish/" + encodeURIComponent(targetId));
+  redirect(wishlistDetailPath(targetId, platform, title));
 }

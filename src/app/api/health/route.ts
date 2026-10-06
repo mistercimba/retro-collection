@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { dataMode, getStats, getWantlist } from "@/lib/data/collection-service";
 import { getLibrary, getLibraryStorageMode } from "@/lib/library-store";
+import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 
 export const dynamic = "force-dynamic";
 
@@ -24,7 +25,8 @@ export async function GET() {
         },
         wishlist: {
           total: library.wishlist.length,
-          active: targets.filter((target) => target.planState !== "inactive" && target.matchState !== "acquired").length,
+          active: targets.filter((target) => !isOrderedWishlistTarget(target) && target.planState !== "inactive" && target.matchState !== "acquired").length,
+          ordered: targets.filter(isOrderedWishlistTarget).length,
         },
         purchases: library.purchases.length,
         updatedAt: library.updatedAt,
