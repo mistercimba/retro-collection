@@ -231,7 +231,9 @@ Rules:
 - setting a different target explicitly replaces the previous one;
 - purchasing the objective, removing its Wishlist target, or satisfying it through a direct Collection add clears it automatically;
 - cancelling a purchase does not automatically restore the old objective;
-- system suggestions may propose candidates later, but user confirmation remains required.
+- a suggestion may be computed from existing user data, but user confirmation remains required;
+- suggestion preference is transparent and data-driven: Collection List completion/progress first, then continuation of a series already represented in Collection, then explicit Wishlist priority;
+- do not hardcode a universal editorial "must-have" catalog into this feature; broader recommendation/discovery belongs to the Wishlist suggestions work.
 
 ## Missing physical components / "Para completar"
 

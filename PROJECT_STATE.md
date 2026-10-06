@@ -35,7 +35,9 @@ Implementation model:
 - target detail allows explicit define/replace/remove;
 - objective clears automatically when that target is bought, removed, received defensively, or satisfied by a direct Collection add;
 - cancellation does not re-select an old objective;
-- no automatic recommendation logic is introduced here; #52 may suggest candidates later but still requires confirmation.
+- the first preview feedback added a transparent automatic suggestion from the existing Wishlist, still requiring explicit confirmation;
+- suggestion order is: close/advance a user-defined Collection List → continue a title series already represented in Collection → explicit Wishlist priority;
+- the engine deliberately does not maintain a hardcoded editorial "must-have" list; broader discovery/refill remains #52.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 

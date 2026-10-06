@@ -26,7 +26,7 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 Add one manually confirmed **Próximo objetivo** to answer “qual é a próxima aquisição importante?” without turning the app into gamification.
 
-Implementation direction: reference an existing active Wishlist target, show it prominently but compactly on Home, allow explicit set/replace/remove from the Wishlist target, and clear it automatically when the target is bought/removed/acquired. Zero objectives is valid. No opaque auto-selection; future #52 suggestions may propose candidates but still require confirmation.
+Implementation direction: reference an existing active Wishlist target, show it prominently but compactly on Home, allow explicit set/replace/remove from the Wishlist target, and clear it automatically when the target is bought/removed/acquired. Zero objectives is valid. The Home may also propose one transparent candidate from the existing Wishlist — prioritizing user-defined list completion, then series continuity, then Wishlist priority — but it never changes the objective without confirmation. Broader Wishlist discovery/refill remains #52.
 
 Copy-specific missing components (#49) are complete and merged in PR #57.
 
