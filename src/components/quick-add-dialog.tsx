@@ -4,6 +4,8 @@ import { AlertTriangle, ChevronLeft, Database, Plus, Search, X } from "lucide-re
 import { createPortal } from "react-dom";
 import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import { ActionSubmitButton } from "@/components/action-submit-button";
+import { CollectionSelectField } from "@/components/collection-select-field";
+import { CONDITION_OPTIONS, LANGUAGE_OPTIONS, REGION_OPTIONS } from "@/lib/collection-field-options";
 import { addCollectionGame } from "@/lib/library-actions";
 import {
   CATALOG_PLATFORMS,
@@ -39,7 +41,6 @@ export function QuickAddDialog({
   const manualTitleRef = useRef<HTMLInputElement>(null);
   const platformListId = useMemo(() => `quick-add-platform-${trigger}`, [trigger]);
   const completenessListId = useMemo(() => `quick-add-completeness-${trigger}`, [trigger]);
-  const conditionListId = useMemo(() => `quick-add-condition-${trigger}`, [trigger]);
   const allPlatforms = useMemo(
     () => [...new Set([...CATALOG_PLATFORMS, ...platforms])].sort((a, b) => a.localeCompare(b, "pt-PT")),
     [platforms],
@@ -143,14 +144,12 @@ export function QuickAddDialog({
                 platforms={allPlatforms}
                 platformListId={platformListId}
                 completenessListId={completenessListId}
-                conditionListId={conditionListId}
                 titleRef={manualTitleRef}
                 onBack={() => setManualMode(false)}
               />
             : selected
               ? <CanonicalAddForm
                   candidate={selected}
-                  conditionListId={conditionListId}
                   sealed={sealed}
                   setSealed={setSealed}
                   onBack={() => { setSelected(null); setSealed("no"); }}
@@ -237,13 +236,11 @@ function CatalogCover({ candidate }: { candidate: CanonicalGameCandidate }) {
 
 function CanonicalAddForm({
   candidate,
-  conditionListId,
   sealed,
   setSealed,
   onBack,
 }: {
   candidate: CanonicalGameCandidate;
-  conditionListId: string;
   sealed: string;
   setSealed: (value: string) => void;
   onBack: () => void;
@@ -270,13 +267,9 @@ function CanonicalAddForm({
       <input name="edition" defaultValue={candidate.edition} className="field-input" />
       <span className="mt-1 block text-[10px] leading-4 text-slate-400">Se alterares a edição, a capa do catálogo fica por confirmar.</span>
     </label>
-    <Field name="region" label="Região" placeholder="PAL / Europe — confirmar" />
-    <Field name="language" label="Idioma" placeholder="Ex.: Inglês" />
-    <label>
-      <span className="field-label">Condição geral</span>
-      <input name="conditionGrade" list={conditionListId} autoComplete="off" className="field-input" placeholder="Excellent / Good…" />
-      <datalist id={conditionListId}><option value="Mint" /><option value="Near Mint" /><option value="Excellent" /><option value="Good" /><option value="Fair" /><option value="Poor" /></datalist>
-    </label>
+    <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL" />
+    <CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English" />
+    <CollectionSelectField name="conditionGrade" label="Condição geral" options={CONDITION_OPTIONS} />
 
     <fieldset className="rounded-2xl border border-[#ded8cb] bg-white/80 p-4 sm:col-span-2">
       <legend className="px-1 text-sm font-black text-slate-900">O que tens desta cópia?</legend>
@@ -332,14 +325,12 @@ function ManualAddForm({
   platforms,
   platformListId,
   completenessListId,
-  conditionListId,
   titleRef,
   onBack,
 }: {
   platforms: string[];
   platformListId: string;
   completenessListId: string;
-  conditionListId: string;
   titleRef: RefObject<HTMLInputElement | null>;
   onBack: () => void;
 }) {
@@ -366,14 +357,10 @@ function ManualAddForm({
       <input name="overallStatus" list={completenessListId} autoComplete="off" className="field-input" placeholder="CIB / Loose / Sealed" />
       <datalist id={completenessListId}><option value="CIB" /><option value="Loose" /><option value="Sealed" /><option value="Incomplete" /></datalist>
     </label>
-    <label>
-      <span className="field-label">Condição</span>
-      <input name="conditionGrade" list={conditionListId} autoComplete="off" className="field-input" />
-      <datalist id={conditionListId}><option value="Mint" /><option value="Near Mint" /><option value="Excellent" /><option value="Good" /><option value="Fair" /><option value="Poor" /></datalist>
-    </label>
-    <Field name="region" label="Região" />
+    <CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS} />
+    <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL" />
     <Field name="edition" label="Edição" placeholder="Standard" />
-    <Field name="language" label="Idioma" />
+    <CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English" />
     <Field name="source" label="Onde comprei" />
     <Field name="purchaseDate" label="Data de compra" type="date" />
     <Field name="seller" label="Vendedor" />
