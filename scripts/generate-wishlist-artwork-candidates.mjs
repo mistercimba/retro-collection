@@ -76,7 +76,7 @@ async function loadTree(repository) {
   if (!boxart?.sha) throw new Error(`Named_Boxarts tree not found for ${repository}`);
   const payload = await githubJson(`https://api.github.com/repos/libretro-thumbnails/${repository}/git/trees/${boxart.sha}?recursive=1`);
   if (payload.truncated) throw new Error(`Truncated boxart tree for ${repository}`);
-  return { sourceCommit: root.sha, files: (payload.tree ?? []).filter((item) => item.type === "blob" && /\.png$/i.test(item.path ?? "")) };
+  return { sourceCommit: root.sha, files: (payload.tree ?? []).filter((item) => item.type === "blob" && item.mode !== "120000" && /\.png$/i.test(item.path ?? "")) };
 }
 function regionLabel(sourcePath) {
   const groups = [...String(sourcePath).matchAll(/\(([^)]*)\)/g)].map((match) => match[1]);

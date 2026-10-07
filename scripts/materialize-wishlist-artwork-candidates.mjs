@@ -7,6 +7,7 @@ const OUTPUT_DIR = path.join(ROOT, "public", "covers", "wishlist-candidates");
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
 const CONCURRENCY = 8;
 const MODULE_PREFIX = "export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = ";
+const CHECK_ONLY = process.argv.includes("--check");
 
 function candidateExtension(candidate) {
   const match = String(candidate.sourcePath ?? "").toLowerCase().match(/\.(png|jpe?g)$/);
@@ -36,50 +37,89 @@ async function loadCandidates() {
   return candidates;
 }
 
+async function fetchOnce(url) {
+  const response = await fetch(url, {
+    headers: { "User-Agent": "RetroCollection-WishlistArtworkMaterializer/1.0" },
+    signal: AbortSignal.timeout(30000),
+  });
+  if (!response.ok) throw new Error("HTTP " + response.status);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  if (!bytes.length || bytes.length > MAX_IMAGE_BYTES) throw new Error("invalid image size");
+  return bytes;
+}
+
+function libretroAliasUrl(candidate, bytes) {
+  if (candidate.source !== "libretro-thumbnails" || imageType(bytes)) return "";
+  const alias = bytes.toString("utf8").trim();
+  if (!/^[^/\\\r\n]+\.(png|jpe?g)$/i.test(alias) || alias.includes("..")) return "";
+  const base = candidate.sourceUrl.slice(0, candidate.sourceUrl.lastIndexOf("/") + 1);
+  return new URL(alias, base).toString();
+}
+
 async function fetchBytes(candidate) {
   let lastError = null;
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
-      const response = await fetch(candidate.sourceUrl, {
-        headers: { "User-Agent": "RetroCollection-WishlistArtworkMaterializer/1.0" },
-        signal: AbortSignal.timeout(30000),
-      });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const bytes = Buffer.from(await response.arrayBuffer());
-      if (!bytes.length || bytes.length > MAX_IMAGE_BYTES) throw new Error("invalid image size");
+      let bytes = await fetchOnce(candidate.sourceUrl);
+      const aliasUrl = libretroAliasUrl(candidate, bytes);
+      if (aliasUrl) bytes = await fetchOnce(aliasUrl);
       return bytes;
     } catch (error) {
       lastError = error;
       if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 700));
     }
   }
-  throw new Error(`Could not materialize ${candidate.id}: ${String(lastError)}`);
+  throw new Error("Could not materialize " + candidate.id + ": " + String(lastError));
+}
+
+async function existingCandidateState(candidate) {
+  if (!validId(candidate.id)) throw new Error("Invalid candidate id: " + candidate.id);
+  const extension = candidateExtension(candidate);
+  if (!extension) throw new Error("Unsupported candidate extension: " + candidate.sourcePath);
+  const destination = path.join(OUTPUT_DIR, candidate.id + "." + extension);
+  try {
+    const bytes = await fs.readFile(destination);
+    return { destination, extension, valid: imageType(bytes) === extension && bytes.length <= MAX_IMAGE_BYTES };
+  } catch (error) {
+    if (error.code === "ENOENT") return { destination, extension, valid: false };
+    throw error;
+  }
 }
 
 async function materialize(candidate) {
-  if (!validId(candidate.id)) throw new Error(`Invalid candidate id: ${candidate.id}`);
-  const extension = candidateExtension(candidate);
-  if (!extension) throw new Error(`Unsupported candidate extension: ${candidate.sourcePath}`);
-  const destination = path.join(OUTPUT_DIR, `${candidate.id}.${extension}`);
-  try {
-    const existing = await fs.readFile(destination);
-    if (imageType(existing) === extension && existing.length <= MAX_IMAGE_BYTES) return { downloaded: false };
-  } catch (error) {
-    if (error.code !== "ENOENT") throw error;
-  }
+  const state = await existingCandidateState(candidate);
+  if (state.valid) return { downloaded: false };
   const bytes = await fetchBytes(candidate);
   const actualType = imageType(bytes);
-  if (actualType !== extension) throw new Error(`Candidate ${candidate.id} returned ${actualType || "unsupported"} bytes for .${extension}`);
-  await fs.writeFile(destination, bytes);
+  if (actualType !== state.extension) {
+    throw new Error("Candidate " + candidate.id + " returned " + (actualType || "unsupported") + " bytes for ." + state.extension);
+  }
+  await fs.writeFile(state.destination, bytes);
   return { downloaded: true };
 }
 
 const candidates = await loadCandidates();
+
+if (CHECK_ONLY) {
+  const invalid = [];
+  for (const candidate of candidates) {
+    const state = await existingCandidateState(candidate);
+    if (!state.valid) invalid.push(path.basename(state.destination));
+  }
+  if (invalid.length) {
+    const suffix = invalid.length > 12 ? " (+" + (invalid.length - 12) + " more)" : "";
+    throw new Error("Missing or invalid materialized Wishlist artwork: " + invalid.slice(0, 12).join(", ") + suffix);
+  }
+  console.log(JSON.stringify({ candidates: candidates.length, valid: candidates.length, runtimeDirectory: "/covers/wishlist-candidates" }, null, 2));
+  process.exit(0);
+}
+
 await fs.mkdir(OUTPUT_DIR, { recursive: true });
-const expectedFiles = new Set(candidates.map((candidate) => `${candidate.id}.${candidateExtension(candidate)}`));
+const expectedFiles = new Set(candidates.map((candidate) => candidate.id + "." + candidateExtension(candidate)));
 for (const name of await fs.readdir(OUTPUT_DIR)) {
   if (!expectedFiles.has(name)) await fs.rm(path.join(OUTPUT_DIR, name), { force: true });
 }
+
 let cursor = 0;
 let downloaded = 0;
 async function worker() {
@@ -91,4 +131,10 @@ async function worker() {
   }
 }
 await Promise.all(Array.from({ length: Math.min(CONCURRENCY, Math.max(candidates.length, 1)) }, () => worker()));
-console.log(JSON.stringify({ candidates: candidates.length, downloaded, reused: candidates.length - downloaded, runtimeDirectory: "/covers/wishlist-candidates" }, null, 2));
+
+console.log(JSON.stringify({
+  candidates: candidates.length,
+  downloaded,
+  reused: candidates.length - downloaded,
+  runtimeDirectory: "/covers/wishlist-candidates",
+}, null, 2));

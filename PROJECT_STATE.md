@@ -48,7 +48,7 @@ Implementation model:
 - candidate discovery is now reproducible via `npm run wishlist-artwork:candidates`; passing the existing LaunchBox index format materializes LaunchBox ambiguities too;
 - remaining LaunchBox-only ambiguities and the 34 non-ambiguous gaps are explicitly part of the artwork audit, not something Mário is expected to discover manually.
 - the candidate generator now audits every unresolved Wishlist artwork entry, not only `ambiguous-*`; known rejected Libretro sources stay rejected and LaunchBox is allowed to supply a single safe fallback candidate. Metroid NES is the first verified recovery path: the rejected Libretro Classic-Serie image remains blocked while the LaunchBox Europe front cover is used.
-- candidate images are no longer hotlinked at runtime. `npm run build` materializes the committed candidate registry into `public/covers/wishlist-candidates/`; detail pages and the chooser use only those app-owned paths. Remote Libretro/LaunchBox URLs remain provenance/import inputs.
+- candidate images are no longer hotlinked at runtime. A dedicated import workflow materializes the candidate registry once into committed files under `public/covers/wishlist-candidates/`; normal CI/build only verifies those app-owned files. Remote Libretro/LaunchBox URLs remain provenance/import inputs.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 

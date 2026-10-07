@@ -30,7 +30,7 @@ Implementation direction: materialize the known libretro ambiguity set, deduplic
 
 Coverage rule: audit every current Wishlist fallback, including non-ambiguous mismatch/unconfirmed cases. A known-bad source remains rejected; when a secondary source has one safe exact European front cover, use it as the automatic fallback instead of leaving the placeholder.
 
-Runtime rule: candidate source URLs are discovery/provenance only. Before a candidate is used by the app, the build materializes it under `public/covers/wishlist-candidates/`; detail pages and the chooser must never hotlink Libretro/LaunchBox.
+Runtime rule: candidate source URLs are discovery/provenance only. A dedicated import step materializes candidates into committed files under `public/covers/wishlist-candidates/`; normal CI/build verifies the files and detail pages/chooser never hotlink Libretro/LaunchBox.
 
 Artwork gaps/deliberate fallback (#48) are complete and merged in PR #59.
 
