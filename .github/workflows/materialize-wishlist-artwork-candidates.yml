@@ -39,11 +39,15 @@ jobs:
       - name: Download LaunchBox metadata
         run: |
           python3 - <<'PY'
+          import shutil
           import urllib.request
-          urllib.request.urlretrieve(
+
+          request = urllib.request.Request(
               "https://gamesdb.launchbox-app.com/Metadata.zip",
-              "/tmp/launchbox-metadata.zip",
+              headers={"User-Agent": "MarioRetroCollection/1.0"},
           )
+          with urllib.request.urlopen(request, timeout=90) as response, open("/tmp/launchbox-metadata.zip", "wb") as output:
+              shutil.copyfileobj(response, output)
           PY
 
       - name: Build Wishlist LaunchBox index
