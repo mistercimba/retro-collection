@@ -21,7 +21,8 @@ export async function storeWishlistArtworkOverride(
   candidate: WishlistArtworkCandidate,
 ): Promise<WishlistArtworkOverride> {
   const source = new URL(candidate.sourceUrl);
-  if (source.protocol !== "https:" || source.hostname !== "raw.githubusercontent.com") {
+  const allowedHosts = new Set(["raw.githubusercontent.com", "images.launchbox-app.com"]);
+  if (source.protocol !== "https:" || !allowedHosts.has(source.hostname)) {
     throw new Error("Fonte de artwork não permitida.");
   }
 
@@ -55,6 +56,10 @@ export async function storeWishlistArtworkOverride(
     sourceRepo: candidate.sourceRepo,
     sourceCommit: candidate.sourceCommit,
     sourcePath: candidate.sourcePath,
+    metadataUrl: candidate.metadataUrl,
+    metadataSha256: candidate.metadataSha256,
+    launchboxDatabaseId: candidate.launchboxDatabaseId,
+    sourcePlatform: candidate.sourcePlatform,
     selectedAt: new Date().toISOString(),
   };
 }

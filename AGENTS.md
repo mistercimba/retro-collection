@@ -313,6 +313,8 @@ Loading and unavailable price states should remain distinguishable.
 
 ### Manual artwork choices
 
+- User screenshots/examples are evidence of a problem class, not the scope. When an artwork gap is reported, audit the current unresolved report/registry for all equivalent cases before calling the fix complete.
+
 - Ambiguous candidates may have a deterministic visual default. Prefer Europe / Australia when present, then another European candidate, then remaining candidates.
 - Candidate discovery may ignore targetId, but the persisted override must belong to the exact Wishlist target.
 - Candidate metadata must retain provenance (source repo/commit/path and region/variant context).

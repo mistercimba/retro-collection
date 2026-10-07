@@ -24,7 +24,7 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ### NOW — Manual resolution of ambiguous artwork (#60)
 
-When the artwork pipeline has multiple plausible covers, choose a sensible default but let Mário change it explicitly.
+When the artwork pipeline has multiple plausible covers, choose a sensible default but let Mário change it explicitly. Treat this as a collection-wide audit problem, not a per-example fix.
 
 Implementation direction: materialize the known libretro ambiguity set, deduplicate identical image bytes, prefer **Europe / Australia** when present (otherwise another European cover before other regions), expose a chooser only when genuinely different alternatives remain, store any manual choice in private Blob, persist the override on the exact Wishlist target, and allow returning to the automatic default.
 

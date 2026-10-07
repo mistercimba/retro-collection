@@ -32,8 +32,10 @@ Implementation model:
 
 - when known candidates exist, one is selected as the visual default; Europe / Australia is preferred when available, then other European candidates, then remaining sources;
 - a target exposes known ambiguous candidates by normalized title + platform, independent of targetId; region/edition are shown as context rather than used to hide the manual chooser;
-- the candidate registry now materializes all 64 current `ambiguous-source-candidates` cases from the libretro audit, not only FF8;
+- a full snapshot audit found **159 Wishlist artwork fallbacks**: 125 ambiguous (64 libretro-source + 61 LaunchBox-source) and 34 other mismatch/unconfirmed cases;
+- the candidate registry materializes every current libretro ambiguity, rather than relying on user-reported examples;
 - identical source images are deduplicated by Git blob SHA before runtime, so cases like DuckTales 2 (Europe/France/Germany labels pointing at the same image) collapse to one safe default;
+- DuckTales 2 is covered by the same registry: its three European labels point to one identical Git blob, so it collapses to a single Europe default;
 - Final Fantasy VIII still exposes two genuinely different PAL candidates: Europe/Australia and Spain;
 - the Wishlist detail shows **Artwork ambíguo** and links to an explicit chooser only when at least two compatible candidates exist;
 - until Mário makes a manual choice, the preferred candidate can be used directly as the displayed default; opening the chooser still exposes all alternatives with provenance;
@@ -42,7 +44,9 @@ Implementation model:
 - removing a manual choice returns to the preferred automatic candidate;
 - a manual choice is intentionally authoritative for that exact title/platform target, even if its free-text targetVersion is imperfect;
 - removing/receiving/satisfying the Wishlist target also cleans up the private override Blob;
-- History records manual artwork set/clear actions.
+- History records manual artwork set/clear actions;
+- candidate discovery is now reproducible via `npm run wishlist-artwork:candidates`; passing the existing LaunchBox index format materializes LaunchBox ambiguities too;
+- remaining LaunchBox-only ambiguities and the 34 non-ambiguous gaps are explicitly part of the artwork audit, not something Mário is expected to discover manually.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 

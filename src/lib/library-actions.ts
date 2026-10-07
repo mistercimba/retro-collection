@@ -758,7 +758,7 @@ export async function setWishlistArtworkOverride(form: FormData) {
       title: current.title,
       platform: current.platform,
       summary: "Capa escolhida manualmente · " + currentCandidate.displayRegion,
-      details: [currentCandidate.sourceRepo, currentCandidate.sourcePath],
+      details: [currentCandidate.sourceRepo, currentCandidate.sourcePath].filter((value): value is string => Boolean(value)),
     });
     return library;
   });

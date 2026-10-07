@@ -6,11 +6,15 @@ export type WishlistArtworkCandidate = {
   artworkRegion: "Europe" | "US" | "Japan";
   displayRegion: string;
   coverVariant: string;
-  source: "libretro-thumbnails";
-  sourceRepo: string;
-  sourceCommit: string;
+  source: "libretro-thumbnails" | "launchbox";
+  sourceRepo?: string;
+  sourceCommit?: string;
   sourcePath: string;
   sourceUrl: string;
+  metadataUrl?: string;
+  metadataSha256?: string;
+  launchboxDatabaseId?: string;
+  sourcePlatform?: string;
 };
 
 export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
@@ -721,7 +725,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Professor Layton and Pandora's Box",
     "platform": "Nintendo DS",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Nintendo_-_Nintendo_DS",
@@ -825,7 +829,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Mario Kart Wii",
     "platform": "Nintendo Wii",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
@@ -864,7 +868,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Punch-Out!!",
     "platform": "Nintendo Wii",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
@@ -890,7 +894,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Super Mario Galaxy",
     "platform": "Nintendo Wii",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
@@ -929,7 +933,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Super Smash Bros. Brawl",
     "platform": "Nintendo Wii",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Nintendo_-_Wii",
@@ -1007,7 +1011,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Crash Bandicoot",
     "platform": "Playstation",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
@@ -1085,7 +1089,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Final Fantasy VIII",
     "platform": "Playstation",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
@@ -1280,7 +1284,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Syphon Filter",
     "platform": "Playstation",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
@@ -1384,7 +1388,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Tony Hawk's Pro Skater 2",
     "platform": "Playstation",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation",
@@ -1436,7 +1440,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Burnout 3: Takedown",
     "platform": "Playstation 2",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
@@ -1449,7 +1453,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Final Fantasy XII",
     "platform": "Playstation 2",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",
@@ -1462,7 +1466,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "title": "Kingdom Hearts II",
     "platform": "Playstation 2",
     "artworkRegion": "Europe",
-    "displayRegion": "Europe, Australia",
+    "displayRegion": "Europe / Australia",
     "coverVariant": "Standard",
     "source": "libretro-thumbnails",
     "sourceRepo": "libretro-thumbnails/Sony_-_PlayStation_2",

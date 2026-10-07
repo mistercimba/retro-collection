@@ -52,17 +52,19 @@ describe("wishlist artwork candidates", () => {
   });
 
   it("keeps a manual override authoritative for the exact title/platform target", () => {
+    const spain = resolveWishlistArtworkCandidates(target()).find((candidate) => candidate.displayRegion === "Spain");
+    expect(spain).toBeTruthy();
     const override = {
-      candidateId: "libretro-ff8-spain",
-      pathname: "retro-collection/wishlist-artwork-overrides/APP-123/libretro-ff8-spain.png",
+      candidateId: spain!.id,
+      pathname: "retro-collection/wishlist-artwork-overrides/APP-123/manual.png",
       contentType: "image/png",
-      source: "libretro-thumbnails" as const,
-      sourceRepo: "libretro-thumbnails/Sony_-_PlayStation",
-      sourceCommit: "ccee75c7744d81676b6725307aca27ef6be6231a",
-      sourcePath: "Named_Boxarts/Final Fantasy VIII (Spain).png",
+      source: spain!.source,
+      sourceRepo: spain!.sourceRepo,
+      sourceCommit: spain!.sourceCommit,
+      sourcePath: spain!.sourcePath,
       selectedAt: "2026-10-06T22:00:00.000Z",
     };
-    expect(resolveWishlistArtworkOverrideCandidate(target({ artworkOverride: override }))?.id).toBe("libretro-ff8-spain");
-    expect(resolveWishlistArtworkOverrideCandidate(target({ targetVersion: "PAL Platinum", artworkOverride: override }))?.id).toBe("libretro-ff8-spain");
+    expect(resolveWishlistArtworkOverrideCandidate(target({ artworkOverride: override }))?.id).toBe(spain!.id);
+    expect(resolveWishlistArtworkOverrideCandidate(target({ targetVersion: "PAL Platinum", artworkOverride: override }))?.id).toBe(spain!.id);
   });
 });

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { resolveWishlistArtwork, resolveWishlistArtworkFromEntries } from "./wishlist-artwork";
+import { resolveWishlistArtworkCandidates } from "./wishlist-artwork-candidates.logic";
 import {
   wishlistArtworkIdentity,
   wishlistArtworkEditionRequirement,
@@ -38,19 +39,24 @@ const collectionArtwork = {
 
 describe("wishlist artwork resolver", () => {
   it("gives a valid manual artwork choice priority over automatic sources", () => {
-    const result = resolveWishlistArtwork({
+    const base = {
       targetId: "APP-123",
       title: "Final Fantasy VIII",
       platform: "Playstation",
       targetVersion: "PAL; CIB",
+    };
+    const spain = resolveWishlistArtworkCandidates(base).find((candidate) => candidate.displayRegion === "Spain");
+    expect(spain).toBeTruthy();
+    const result = resolveWishlistArtwork({
+      ...base,
       artworkOverride: {
-        candidateId: "libretro-ff8-spain",
-        pathname: "retro-collection/wishlist-artwork-overrides/APP-123/libretro-ff8-spain.png",
+        candidateId: spain!.id,
+        pathname: "retro-collection/wishlist-artwork-overrides/APP-123/manual.png",
         contentType: "image/png",
-        source: "libretro-thumbnails",
-        sourceRepo: "libretro-thumbnails/Sony_-_PlayStation",
-        sourceCommit: "ccee75c7744d81676b6725307aca27ef6be6231a",
-        sourcePath: "Named_Boxarts/Final Fantasy VIII (Spain).png",
+        source: spain!.source,
+        sourceRepo: spain!.sourceRepo,
+        sourceCommit: spain!.sourceCommit,
+        sourcePath: spain!.sourcePath,
         selectedAt: "2026-10-06T22:00:00.000Z",
       },
     });
