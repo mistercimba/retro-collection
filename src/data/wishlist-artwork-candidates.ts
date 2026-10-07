@@ -17,7 +17,21 @@ export type WishlistArtworkCandidate = {
   sourcePlatform?: string;
 };
 
-export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
+export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[
+  {
+    "id": "launchbox-13b8ce6f7308da7216e1",
+    "title": "Metroid",
+    "platform": "NES",
+    "artworkRegion": "Europe",
+    "displayRegion": "Europe",
+    "coverVariant": "Standard",
+    "source": "launchbox",
+    "sourcePath": "r2_672af117-608d-4ef7-bc4f-b1d5a64e2bdc.jpg",
+    "sourceUrl": "https://images.launchbox-app.com/r2_672af117-608d-4ef7-bc4f-b1d5a64e2bdc.jpg",
+    "launchboxDatabaseId": "120",
+    "sourcePlatform": "Nintendo Entertainment System"
+  },
+] = [
   {
     "id": "libretro-01d742daa436e00f",
     "title": "Fire Emblem",

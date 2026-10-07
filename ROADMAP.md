@@ -28,6 +28,8 @@ When the artwork pipeline has multiple plausible covers, choose a sensible defau
 
 Implementation direction: materialize the known libretro ambiguity set, deduplicate identical image bytes, prefer **Europe / Australia** when present (otherwise another European cover before other regions), expose a chooser only when genuinely different alternatives remain, store any manual choice in private Blob, persist the override on the exact Wishlist target, and allow returning to the automatic default.
 
+Coverage rule: audit every current Wishlist fallback, including non-ambiguous mismatch/unconfirmed cases. A known-bad source remains rejected; when a secondary source has one safe exact European front cover, use it as the automatic fallback instead of leaving the placeholder.
+
 Artwork gaps/deliberate fallback (#48) are complete and merged in PR #59.
 
 ## Product roadmap

@@ -6,10 +6,12 @@ import {
   sourceArtworkRegion,
   sourceArtworkTitle,
   launchboxArtworkRegion,
+  rejectedArtworkSource,
 } from "./wishlist-artwork-matcher.mjs";
 
 const ROOT = process.cwd();
 const MISSING_FILE = path.join(ROOT, "data", "wishlist-artwork-missing.json");
+const REJECTIONS_FILE = path.join(ROOT, "data", "wishlist-artwork-rejections.json");
 const OUTPUT_FILE = path.join(ROOT, "src", "data", "wishlist-artwork-candidates.ts");
 
 const REPO_BY_PLATFORM = {
@@ -111,7 +113,7 @@ function launchboxCandidates(target, launchbox) {
   if (games.length !== 1) return [];
   const game = games[0];
   const images = [...new Map((game.images ?? []).filter((item) => item.fileName && launchboxArtworkRegion(item.region) === "Europe").map((item) => [item.fileName, item])).values()];
-  if (images.length < 2) return [];
+  if (images.length < 1) return [];
   return images.map((image) => ({
     id: `launchbox-${sha(`${game.databaseId}\0${image.fileName}`)}`,
     title: target.title, platform: target.platform, artworkRegion: "Europe",
@@ -123,14 +125,15 @@ function launchboxCandidates(target, launchbox) {
 }
 
 const missing = JSON.parse(await fs.readFile(MISSING_FILE, "utf8"));
-const ambiguous = (missing.entries ?? []).filter((entry) => String(entry.reason).startsWith("ambiguous-"));
+const unresolved = (missing.entries ?? []).filter((entry) => entry?.title && entry?.platform);
+const rejections = JSON.parse(await fs.readFile(REJECTIONS_FILE, "utf8")).entries ?? [];
 const launchboxPath = arg("--launchbox-index");
 const launchbox = launchboxPath ? JSON.parse(await fs.readFile(path.resolve(launchboxPath), "utf8")) : null;
 const treeCache = new Map();
 const records = [];
 const audit = [];
 
-for (const target of ambiguous) {
+for (const target of unresolved) {
   const repository = REPO_BY_PLATFORM[target.platform];
   let libretro = [];
   if (repository) {
@@ -151,7 +154,7 @@ for (const target of ambiguous) {
         sourceCommit: tree.sourceCommit, sourcePath: `Named_Boxarts/${item.path}`,
         sourceUrl: `https://raw.githubusercontent.com/libretro-thumbnails/${repository}/${tree.sourceCommit}/Named_Boxarts/${item.path.split("/").map(encodeURIComponent).join("/")}`,
         blobSha: item.sha,
-      }))).map(({ blobSha, ...candidate }) => candidate);
+      })).filter((candidate) => !rejectedArtworkSource(candidate, rejections))).map(({ blobSha, ...candidate }) => candidate);
     }
   }
   const secondary = libretro.length ? [] : launchboxCandidates(target, launchbox);
@@ -184,9 +187,9 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = ${JSON.st
 `;
 await fs.writeFile(OUTPUT_FILE, moduleText);
 console.log(JSON.stringify({
-  ambiguousTargets: ambiguous.length,
+  unresolvedTargetsAudited: unresolved.length,
   materializedTargets: audit.filter((item) => item.materializedCandidates > 0).length,
   materializedCandidates: records.length,
-  unresolvedTargets: audit.filter((item) => item.materializedCandidates === 0),
+  stillUnresolvedTargets: audit.filter((item) => item.materializedCandidates === 0),
   launchboxIndexUsed: Boolean(launchbox),
 }, null, 2));
