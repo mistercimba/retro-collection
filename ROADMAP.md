@@ -26,7 +26,7 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 When the artwork pipeline has multiple plausible covers, choose a sensible default but let Mário change it explicitly.
 
-Implementation direction: for known candidate sets, prefer **Europe / Australia** when present, otherwise another European cover before other regions; expose a dedicated chooser with provenance, store any manual choice in private Blob, persist the override on the exact Wishlist target, and allow returning to the automatic default. The first concrete case is Final Fantasy VIII (PlayStation): Europe/Australia vs Spain.
+Implementation direction: materialize the known libretro ambiguity set, deduplicate identical image bytes, prefer **Europe / Australia** when present (otherwise another European cover before other regions), expose a chooser only when genuinely different alternatives remain, store any manual choice in private Blob, persist the override on the exact Wishlist target, and allow returning to the automatic default.
 
 Artwork gaps/deliberate fallback (#48) are complete and merged in PR #59.
 

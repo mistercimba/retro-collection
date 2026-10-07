@@ -30,9 +30,11 @@ Issue #60. Candidate branch: `feat/manual-artwork-choice`.
 
 Implementation model:
 
-- when multiple known candidates exist, one is selected as the visual default; Europe / Australia is preferred when available, then other European candidates, then remaining sources;
+- when known candidates exist, one is selected as the visual default; Europe / Australia is preferred when available, then other European candidates, then remaining sources;
 - a target exposes known ambiguous candidates by normalized title + platform, independent of targetId; region/edition are shown as context rather than used to hide the manual chooser;
-- the first materialized case is Final Fantasy VIII on PlayStation, where the existing importer found two exact PAL candidates: Europe/Australia and Spain;
+- the candidate registry now materializes all 64 current `ambiguous-source-candidates` cases from the libretro audit, not only FF8;
+- identical source images are deduplicated by Git blob SHA before runtime, so cases like DuckTales 2 (Europe/France/Germany labels pointing at the same image) collapse to one safe default;
+- Final Fantasy VIII still exposes two genuinely different PAL candidates: Europe/Australia and Spain;
 - the Wishlist detail shows **Artwork ambíguo** and links to an explicit chooser only when at least two compatible candidates exist;
 - until Mário makes a manual choice, the preferred candidate can be used directly as the displayed default; opening the chooser still exposes all alternatives with provenance;
 - choosing a candidate downloads it server-side into private Vercel Blob and persists a copy-specific Wishlist override with full provenance;

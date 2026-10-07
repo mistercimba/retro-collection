@@ -31,6 +31,18 @@ describe("wishlist artwork candidates", () => {
     expect(resolvePreferredWishlistArtworkCandidate(target())?.displayRegion).toBe("Europe / Australia");
   });
 
+  it("collapses duplicate regional labels that point to the same DuckTales 2 image", () => {
+    const duck = {
+      ...target(),
+      targetId: "APP-DT2",
+      title: "DuckTales 2",
+      platform: "NES",
+      targetVersion: "PAL; loose",
+    };
+    expect(resolveWishlistArtworkCandidates(duck)).toHaveLength(1);
+    expect(resolvePreferredWishlistArtworkCandidate(duck)?.displayRegion).toBe("Europe");
+  });
+
   it("still offers candidates when the target version text is unrecognized so the user can resolve visually", () => {
     expect(resolveWishlistArtworkCandidates(target({ targetVersion: "PAL edição a confirmar; CIB" }))).toHaveLength(2);
   });
