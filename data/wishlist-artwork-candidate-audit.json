@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "unresolvedTargetsAudited": 159,
-  "materializedTargets": 141,
-  "materializedCandidates": 333,
+  "materializedTargets": 147,
+  "materializedCandidates": 374,
   "materializedBySource": {
     "libretro-thumbnails": {
       "targets": 64,
       "candidates": 122
     },
     "launchbox": {
-      "targets": 77,
-      "candidates": 211
+      "targets": 83,
+      "candidates": 252
     }
   },
   "stillUnresolvedTargets": [
@@ -18,13 +18,6 @@
       "title": "Mole Mania",
       "platform": "Game Boy",
       "reason": "region-mismatch",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
-      "title": "Mystic Quest / Final Fantasy Adventure",
-      "platform": "Game Boy",
-      "reason": "no-exact-title-platform-match",
       "materializedCandidates": 0,
       "source": "unresolved"
     },
@@ -39,20 +32,6 @@
       "title": "Yoshi's Island / Super Mario World 2",
       "platform": "SNES",
       "reason": "no-exact-title-platform-match",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
-      "title": "Crash Team Racing",
-      "platform": "Playstation",
-      "reason": "no-exact-title-platform-match",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
-      "title": "Persona 3 FES",
-      "platform": "Playstation 2",
-      "reason": "source-artwork-region-mismatch",
       "materializedCandidates": 0,
       "source": "unresolved"
     },
@@ -85,13 +64,6 @@
       "source": "unresolved"
     },
     {
-      "title": "Luigi's Mansion 2 / Dark Moon",
-      "platform": "Nintendo 3DS",
-      "reason": "no-exact-title-platform-match",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
       "title": "Pokémon Ultra Sun ou Ultra Moon",
       "platform": "Nintendo 3DS",
       "reason": "no-exact-title-platform-match",
@@ -109,20 +81,6 @@
       "title": "Super Mario 3D World",
       "platform": "Nintendo Wii U",
       "reason": "source-artwork-region-mismatch",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
-      "title": "Final Fantasy VII Rebirth",
-      "platform": "Playstation 5",
-      "reason": "no-exact-title-platform-match",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
-      "title": "Gran Turismo 7",
-      "platform": "Playstation 5",
-      "reason": "no-exact-title-platform-match",
       "materializedCandidates": 0,
       "source": "unresolved"
     },
