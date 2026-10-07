@@ -60,7 +60,8 @@
       "sourcePath": "13683_front.jpg",
       "sourceUrl": "https://gamefaqs.gamespot.com/a/box/6/8/3/13683_front.jpg",
       "metadataUrl": "https://gamefaqs.gamespot.com/gbc/477564-wendy-every-witch-way/boxes/96532",
-      "note": "Approved by Mário on 2026-10-07. GameFAQs identifies this box scan as EU."
+      "note": "Approved by Mário on 2026-10-07. GameFAQs identifies this box scan as EU; kept pending because the direct GameFAQs image host is not a reliable CI materialization source.",
+      "enabled": false
     },
     {
       "title": "Valkyria Chronicles",
@@ -72,7 +73,8 @@
       "sourcePath": "89595_front.jpg",
       "sourceUrl": "https://gamefaqs.gamespot.com/a/box/5/9/5/89595_front.jpg",
       "metadataUrl": "https://gamefaqs.gamespot.com/ps3/942165-valkyria-chronicles/boxes/102234",
-      "note": "Approved by Mário on 2026-10-08. GameFAQs identifies this box scan as EU."
+      "note": "Approved by Mário on 2026-10-08. GameFAQs identifies this box scan as EU; kept pending because CI receives HTTP 403 from the direct GameFAQs image host.",
+      "enabled": false
     }
   ]
 }
