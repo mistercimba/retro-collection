@@ -11,6 +11,7 @@ import {
   resolvePreferredWishlistArtworkCandidate,
   resolveWishlistArtworkCandidates,
   resolveWishlistArtworkOverrideCandidate,
+  wishlistArtworkCandidateLocalUrl,
 } from "@/lib/wishlist-artwork-candidates.logic";
 
 
@@ -58,7 +59,7 @@ export default async function WishlistArtworkChoicePage({
       <div className="flex gap-3">
         <Images className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" />
         <p className="text-xs font-semibold leading-5 text-amber-950">
-          Estas imagens só são carregadas nesta página de escolha. Depois de escolheres uma, a app guarda uma cópia privada e passa a servi-la localmente. A escolha manual tem prioridade sobre o automático.
+          Os candidatos são materializados durante o build e servidos pela própria app. Os URLs externos ficam apenas como proveniência. Depois de escolheres uma capa, a app guarda também a escolha no Blob privado.
         </p>
       </div>
       <p className="mt-3 rounded-xl bg-white/70 p-3 text-xs font-semibold leading-5 text-amber-900">
@@ -72,7 +73,7 @@ export default async function WishlistArtworkChoicePage({
         const isManual = selected?.id === candidate.id;
         return <article key={candidate.id} className={isSelected ? "overflow-hidden rounded-2xl border-2 border-emerald-400 bg-emerald-50" : "collection-panel overflow-hidden"}>
           <div className="p-4">
-            <WishlistArtwork title={target.title} platform={target.platform} artworkSrc={candidate.sourceUrl} className="mx-auto h-[330px] w-[240px]" eager />
+            <WishlistArtwork title={target.title} platform={target.platform} artworkSrc={wishlistArtworkCandidateLocalUrl(candidate)} className="mx-auto h-[330px] w-[240px]" eager />
             <div className="mt-4">
               <div className="flex items-center justify-between gap-2">
                 <div>

@@ -7,6 +7,13 @@ import {
 
 type CandidateTarget = Pick<WantTarget, "title" | "platform"> & { targetVersion?: string };
 
+export function wishlistArtworkCandidateLocalUrl(candidate: WishlistArtworkCandidate): string | null {
+  const match = candidate.sourcePath.toLocaleLowerCase("en-US").match(/\.(png|jpe?g)$/);
+  if (!match || !/^[a-z0-9][a-z0-9-]*$/i.test(candidate.id)) return null;
+  const extension = match[1] === "png" ? "png" : "jpg";
+  return `/covers/wishlist-candidates/${candidate.id}.${extension}`;
+}
+
 export function resolveWishlistArtworkCandidates(target: CandidateTarget): WishlistArtworkCandidate[] {
   const title = normalizeWishlistArtworkTitle(target.title);
   const platform = normalizeWishlistArtworkPlatform(target.platform);

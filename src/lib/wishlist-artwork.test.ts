@@ -70,7 +70,7 @@ describe("wishlist artwork resolver", () => {
       platform: "NES",
       targetVersion: "PAL; loose",
     });
-    expect(result).toBe("https://images.launchbox-app.com/r2_672af117-608d-4ef7-bc4f-b1d5a64e2bdc.jpg");
+    expect(result).toBe("/covers/wishlist-candidates/launchbox-13b8ce6f7308da7216e1.jpg");
   });
 
   it("uses authenticated catalog artwork as a conservative final fallback", () => {

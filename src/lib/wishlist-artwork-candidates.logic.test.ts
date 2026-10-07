@@ -4,6 +4,7 @@ import {
   resolvePreferredWishlistArtworkCandidate,
   resolveWishlistArtworkCandidates,
   resolveWishlistArtworkOverrideCandidate,
+  wishlistArtworkCandidateLocalUrl,
 } from "./wishlist-artwork-candidates.logic";
 
 function target(overrides: Partial<WantTarget> = {}): WantTarget {
@@ -29,6 +30,13 @@ describe("wishlist artwork candidates", () => {
 
   it("prefers Europe / Australia as the default when it is one of several options", () => {
     expect(resolvePreferredWishlistArtworkCandidate(target())?.displayRegion).toBe("Europe / Australia");
+  });
+
+  it("serves candidate artwork from an app-owned path instead of the remote source URL", () => {
+    const preferred = resolvePreferredWishlistArtworkCandidate(target());
+    expect(preferred).toBeTruthy();
+    expect(wishlistArtworkCandidateLocalUrl(preferred!)).toMatch(/^\/covers\/wishlist-candidates\//);
+    expect(wishlistArtworkCandidateLocalUrl(preferred!)).not.toContain("http");
   });
 
   it("collapses duplicate regional labels that point to the same DuckTales 2 image", () => {
