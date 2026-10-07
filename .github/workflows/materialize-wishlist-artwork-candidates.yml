@@ -84,7 +84,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add             src/data/wishlist-artwork-candidates.ts             data/wishlist-artwork-candidate-audit.json             public/covers/wishlist-candidates
+          git add \
+            src/data/wishlist-artwork-candidates.ts \
+            src/data/wishlist-artwork-candidate-files.ts \
+            data/wishlist-artwork-candidate-audit.json \
+            public/covers/wishlist-candidates
           if git diff --cached --quiet; then
             echo "All candidate artwork is already materialized."
             exit 0

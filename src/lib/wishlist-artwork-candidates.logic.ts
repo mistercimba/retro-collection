@@ -1,5 +1,6 @@
 import type { WantTarget, WishlistArtworkOverride } from "./data/types";
 import { WISHLIST_ARTWORK_CANDIDATES, type WishlistArtworkCandidate } from "../data/wishlist-artwork-candidates";
+import { WISHLIST_ARTWORK_CANDIDATE_FILES } from "../data/wishlist-artwork-candidate-files";
 import {
   normalizeWishlistArtworkPlatform,
   normalizeWishlistArtworkTitle,
@@ -8,10 +9,8 @@ import {
 type CandidateTarget = Pick<WantTarget, "title" | "platform"> & { targetVersion?: string };
 
 export function wishlistArtworkCandidateLocalUrl(candidate: WishlistArtworkCandidate): string | null {
-  const match = candidate.sourcePath.toLocaleLowerCase("en-US").match(/\.(png|jpe?g)$/);
-  if (!match || !/^[a-z0-9][a-z0-9-]*$/i.test(candidate.id)) return null;
-  const extension = match[1] === "png" ? "png" : "jpg";
-  return `/covers/wishlist-candidates/${candidate.id}.${extension}`;
+  if (!/^[a-z0-9][a-z0-9-]*$/i.test(candidate.id)) return null;
+  return WISHLIST_ARTWORK_CANDIDATE_FILES[candidate.id] ?? null;
 }
 
 export function resolveWishlistArtworkCandidates(target: CandidateTarget): WishlistArtworkCandidate[] {
