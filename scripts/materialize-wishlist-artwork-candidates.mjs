@@ -32,9 +32,14 @@ async function loadCandidates() {
   return candidates;
 }
 
-async function fetchOnce(url) {
+async function fetchOnce(url, referer = "") {
+  const headers = {
+    "User-Agent": "RetroCollection-WishlistArtworkMaterializer/1.0",
+    Accept: "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+  };
+  if (referer) headers.Referer = referer;
   const response = await fetch(url, {
-    headers: { "User-Agent": "RetroCollection-WishlistArtworkMaterializer/1.0" },
+    headers,
     signal: AbortSignal.timeout(30000),
   });
   if (!response.ok) throw new Error("HTTP " + response.status);
@@ -57,7 +62,8 @@ async function fetchBytes(candidate) {
   let lastError = null;
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
-      let bytes = await fetchOnce(candidate.sourceUrl);
+      const referer = candidate.source === "curated" ? candidate.metadataUrl ?? "" : "";
+      let bytes = await fetchOnce(candidate.sourceUrl, referer);
       const aliasUrl = libretroAliasUrl(candidate, bytes);
       if (aliasUrl) bytes = await fetchOnce(aliasUrl);
       return bytes;

@@ -11,7 +11,68 @@
       "sourcePath": "146373-mole-mania-game-boy-front-cover.jpg",
       "sourceUrl": "https://www.mobygames.com/images/covers/l/146373-mole-mania-game-boy-front-cover.jpg",
       "metadataUrl": "https://www.mobygames.com/game/20550/mole-mania/cover/group-55080/cover-146373/",
-      "note": "Approved by Mário on 2026-10-07."
+      "enabled": false,
+      "note": "Approved by Mário on 2026-10-07. Kept pending because the exact MobyGames asset returns HTTP 403 to CI; do not substitute another cover silently."
+    },
+    {
+      "title": "Teenage Mutant Hero Turtles: Turtles in Time",
+      "platform": "SNES",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "6f2e802f-823b-4fa4-8517-341d84f4c872.png",
+      "sourceUrl": "https://images.launchbox-app.com/6f2e802f-823b-4fa4-8517-341d84f4c872.png",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/179-teenage-mutant-ninja-turtles-iv-turtles-in-time",
+      "note": "Approved by Mário on 2026-10-07. Live Wishlist title correction to Teenage Mutant Hero Turtles IV: Turtles in Time is pending private Blob access."
+    },
+    {
+      "title": "Yoshi's Island / Super Mario World 2",
+      "platform": "SNES",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "78f17a9d-68f1-4ea3-947e-abea9ea5fe11.png",
+      "sourceUrl": "https://images.launchbox-app.com/78f17a9d-68f1-4ea3-947e-abea9ea5fe11.png",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/132-super-mario-world-2-yoshis-island",
+      "note": "Approved by Mário on 2026-10-07. Live Wishlist title correction to Super Mario World 2: Yoshi's Island is pending private Blob access."
+    },
+    {
+      "title": "Super Mario 3D World",
+      "platform": "Nintendo Wii U",
+      "artworkRegion": "Europe",
+      "displayRegion": "Spain",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "b70fbb15-54c6-4b2c-923f-c1f970e666d1.jpg",
+      "sourceUrl": "https://images.launchbox-app.com/b70fbb15-54c6-4b2c-923f-c1f970e666d1.jpg",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/71648-super-mario-3d-world",
+      "note": "Approved by Mário on 2026-10-07 as the PAL Portugal/Spain-family choice; this is the verified physical Spain PAL front."
+    },
+    {
+      "title": "Wendy: Every Witch Way",
+      "platform": "Game Boy Color",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "13683_front.jpg",
+      "sourceUrl": "https://gamefaqs.gamespot.com/a/box/6/8/3/13683_front.jpg",
+      "metadataUrl": "https://gamefaqs.gamespot.com/gbc/477564-wendy-every-witch-way/boxes/96532",
+      "note": "Approved by Mário on 2026-10-07. GameFAQs identifies this box scan as EU."
+    },
+    {
+      "title": "Valkyria Chronicles",
+      "platform": "Playstation 3",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "89595_front.jpg",
+      "sourceUrl": "https://gamefaqs.gamespot.com/a/box/5/9/5/89595_front.jpg",
+      "metadataUrl": "https://gamefaqs.gamespot.com/ps3/942165-valkyria-chronicles/boxes/102234",
+      "note": "Approved by Mário on 2026-10-08. GameFAQs identifies this box scan as EU."
     }
   ]
 }

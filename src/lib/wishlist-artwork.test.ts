@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { resolveWishlistArtwork, resolveWishlistArtworkFromEntries } from "./wishlist-artwork";
-import { resolveWishlistArtworkCandidates } from "./wishlist-artwork-candidates.logic";
+import { resolvePreferredWishlistArtworkCandidate, resolveWishlistArtworkCandidates, wishlistArtworkCandidateLocalUrl } from "./wishlist-artwork-candidates.logic";
 import {
   wishlistArtworkIdentity,
   wishlistArtworkEditionRequirement,
@@ -64,13 +64,15 @@ describe("wishlist artwork resolver", () => {
   });
 
   it("uses a safe recovered candidate when static artwork is unresolved", () => {
-    const result = resolveWishlistArtwork({
+    const wanted = {
       targetId: "NOVO",
       title: "Metroid",
       platform: "NES",
       targetVersion: "PAL; loose",
-    });
-    expect(result).toBe("/covers/wishlist-candidates/launchbox-13b8ce6f7308da7216e1.jpg");
+    };
+    const preferred = resolvePreferredWishlistArtworkCandidate(wanted);
+    expect(preferred).toBeTruthy();
+    expect(resolveWishlistArtwork(wanted)).toBe(wishlistArtworkCandidateLocalUrl(preferred!));
   });
 
   it("uses authenticated catalog artwork as a conservative final fallback", () => {

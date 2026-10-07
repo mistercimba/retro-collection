@@ -124,7 +124,7 @@ function launchboxCandidates(target, launchbox) {
 const missing = JSON.parse(await fs.readFile(MISSING_FILE, "utf8"));
 const unresolved = (missing.entries ?? []).filter((entry) => entry?.title && entry?.platform);
 const rejections = JSON.parse(await fs.readFile(REJECTIONS_FILE, "utf8")).entries ?? [];
-const curatedEntries = JSON.parse(await fs.readFile(CURATED_FILE, "utf8")).entries ?? [];
+const curatedEntries = (JSON.parse(await fs.readFile(CURATED_FILE, "utf8")).entries ?? []).filter((entry) => entry?.enabled !== false);
 const launchboxPath = arg("--launchbox-index");
 const launchbox = launchboxPath ? JSON.parse(await fs.readFile(path.resolve(launchboxPath), "utf8")) : null;
 const treeCache = new Map();
