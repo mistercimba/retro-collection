@@ -6,6 +6,8 @@ import {
   sourceArtworkRegion,
   sourceArtworkTitle,
   launchboxArtworkRegion,
+  launchboxArtworkRegionScore,
+  findLaunchboxGameMatches,
   rejectedArtworkSource,
 } from "./wishlist-artwork-matcher.mjs";
 
@@ -88,11 +90,7 @@ function regionLabel(sourcePath) {
     "Europe";
 }
 function regionScore(label) {
-  const text = String(label).toLowerCase();
-  if (text.includes("europe") && text.includes("australia")) return 300;
-  if (text === "europe" || text.startsWith("europe,")) return 250;
-  if (text.includes("portugal")) return 240;
-  return 200;
+  return launchboxArtworkRegionScore(label);
 }
 function dedupeSourceCandidates(items) {
   const byBlob = new Map();
@@ -106,14 +104,11 @@ function launchboxCandidates(target, launchbox) {
   if (!launchbox) return [];
   const sourcePlatform = LAUNCHBOX_BY_PLATFORM[target.platform];
   if (!sourcePlatform || !launchbox.platforms?.includes(sourcePlatform)) return [];
-  const title = normalizeArtworkTitle(target.title);
-  const games = launchbox.games.filter((game) => game.platform === sourcePlatform && (
-    normalizeArtworkTitle(game.title) === title ||
-    game.alternates?.some((alternate) => normalizeArtworkTitle(alternate.title) === title && launchboxArtworkRegion(alternate.region) === "Europe")
-  ));
+  const games = findLaunchboxGameMatches(target, launchbox.games, sourcePlatform);
   if (games.length !== 1) return [];
   const game = games[0];
-  const images = [...new Map((game.images ?? []).filter((item) => item.fileName && launchboxArtworkRegion(item.region) === "Europe").map((item) => [item.fileName, item])).values()];
+  const images = [...new Map((game.images ?? []).filter((item) => item.fileName && launchboxArtworkRegion(item.region) === "Europe").map((item) => [item.fileName, item])).values()]
+    .sort((a, b) => launchboxArtworkRegionScore(b.region) - launchboxArtworkRegionScore(a.region));
   if (images.length < 1) return [];
   return images.map((image) => ({
     id: `launchbox-${sha(`${game.databaseId}\0${image.fileName}`)}`,

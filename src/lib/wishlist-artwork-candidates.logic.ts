@@ -29,9 +29,18 @@ export function resolveWishlistArtworkCandidates(target: CandidateTarget): Wishl
 }
 
 function defaultCandidateScore(candidate: WishlistArtworkCandidate): number {
-  const label = candidate.displayRegion.toLocaleLowerCase("en-US");
-  if (label.includes("europe") && label.includes("australia")) return 300;
-  if (candidate.artworkRegion === "Europe") return 200;
+  const label = candidate.displayRegion
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("en-US");
+  if (label === "europe") return 1000;
+  if (/\beurope\b/.test(label)) return 990;
+  if (/\b(united kingdom|great britain|uk)\b/.test(label)) return 950;
+  if (/\bportugal\b/.test(label) && /\bspain\b/.test(label)) return 940;
+  if (/\bportugal\b/.test(label)) return 930;
+  if (/\bspain\b/.test(label)) return 920;
+  if (/\b(france|germany|italy|ireland|netherlands|the netherlands|belgium|austria|switzerland|sweden|denmark|norway|finland)\b/.test(label)) return 900;
+  if (/\b(australia|oceania)\b/.test(label)) return 800;
+  if (candidate.artworkRegion === "Europe") return 700;
   if (candidate.artworkRegion === "US") return 100;
   return 0;
 }

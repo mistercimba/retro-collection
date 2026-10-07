@@ -28,7 +28,7 @@ describe("wishlist artwork candidates", () => {
     expect(candidates.map((item) => item.displayRegion)).toEqual(["Europe / Australia", "Spain"]);
   });
 
-  it("prefers Europe / Australia as the default when it is one of several options", () => {
+  it("prefers the most general European cover before country-specific PAL covers", () => {
     expect(resolvePreferredWishlistArtworkCandidate(target())?.displayRegion).toBe("Europe / Australia");
   });
 

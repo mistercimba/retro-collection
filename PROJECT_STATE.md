@@ -30,7 +30,7 @@ Issue #60. Candidate branch: `feat/manual-artwork-choice`.
 
 Implementation model:
 
-- when known candidates exist, one is selected as the visual default; Europe / Australia is preferred when available, then other European candidates, then remaining sources;
+- when known candidates exist, one is selected as the visual default using a conservative PAL preference: general Europe first, then UK, Portugal, Portugal/Spain or Spain, then other European PAL regions, with Australia/Oceania only as a later PAL fallback;
 - a target exposes known ambiguous candidates by normalized title + platform, independent of targetId; region/edition are shown as context rather than used to hide the manual chooser;
 - a full snapshot audit found **159 Wishlist artwork fallbacks**: 125 ambiguous (64 libretro-source + 61 LaunchBox-source) and 34 other mismatch/unconfirmed cases;
 - the candidate registry materializes every current libretro ambiguity, rather than relying on user-reported examples;
@@ -53,6 +53,7 @@ Implementation model:
 - follow-up audit after that first pass found **94 of the original 159 fallbacks still had zero materialized candidate**. The same import lane now builds a full supported-platform LaunchBox index and retries all of those unresolved targets using exact title/platform plus European front-cover constraints; unresolved results are persisted in `data/wishlist-artwork-candidate-audit.json` instead of being left for Mário to discover manually.
 - materialized candidate filenames are now derived from the actual downloaded image bytes and recorded in `src/data/wishlist-artwork-candidate-files.ts`; runtime does not trust a remote filename extension (LaunchBox can label a JPEG payload as `.png`).
 - candidate import/manual-choice image size guard is 10 MiB. The previous 3 MiB ceiling rejected valid high-resolution LaunchBox front covers; the guard remains bounded and image signatures are still validated.
+- remaining-cover matching stays exact on game/platform identity but accepts exact LaunchBox alternate names even when the alias metadata is World/unlabelled; conservative slash-form titles may resolve only when their exact fragments/reordered form point to one unique LaunchBox game. This is intended to recover naming differences such as Crash Team Racing / CTR without introducing fuzzy guessing.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 

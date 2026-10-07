@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { findExactLaunchboxMatch, findExactSourceMatches, normalizeArtworkTitle, rejectedArtworkSource, requestedArtworkRegion, sourceArtworkRegion, sourceArtworkTitle } from "../../scripts/wishlist-artwork-matcher.mjs";
+import { findExactLaunchboxMatch, findExactSourceMatches, launchboxArtworkRegion, launchboxArtworkRegionScore, normalizeArtworkTitle, rejectedArtworkSource, requestedArtworkRegion, sourceArtworkRegion, sourceArtworkTitle, targetArtworkTitleVariants } from "../../scripts/wishlist-artwork-matcher.mjs";
 
 describe("wishlist artwork source matcher", () => {
   it("normalizes accents, punctuation, and ampersands without fuzzy matching", () => {
@@ -34,9 +34,14 @@ describe("wishlist artwork source matcher", () => {
     expect(sourceArtworkRegion("Game Name.png")).toBeNull();
   });
 
-  it("does not substitute an Australian-only variant for Europe", () => {
-    expect(sourceArtworkRegion("Game (Australia).png")).toBeNull();
+  it("treats PAL-family Australian artwork as a lower-priority European fallback", () => {
+    expect(sourceArtworkRegion("Game (Australia).png")).toBe("Europe");
     expect(sourceArtworkRegion("Game (Europe, Australia).png")).toBe("Europe");
+    expect(launchboxArtworkRegion("Oceania")).toBe("Europe");
+    expect(launchboxArtworkRegionScore("Europe")).toBeGreaterThan(launchboxArtworkRegionScore("United Kingdom"));
+    expect(launchboxArtworkRegionScore("United Kingdom")).toBeGreaterThan(launchboxArtworkRegionScore("Portugal"));
+    expect(launchboxArtworkRegionScore("Portugal")).toBeGreaterThan(launchboxArtworkRegionScore("Spain"));
+    expect(launchboxArtworkRegionScore("Spain")).toBeGreaterThan(launchboxArtworkRegionScore("Australia"));
   });
 
   it("parses explicit language metadata without treating edition tags as title metadata", () => {
@@ -58,6 +63,22 @@ describe("wishlist artwork source matcher", () => {
     images: [{ fileName: "front.jpg", region: "Europe" }],
   };
   const target = { title: "Okami", targetVersion: "PAL" };
+
+  it("matches exact LaunchBox alternate names regardless of the alternate-name region label", () => {
+    const aliasGame = {
+      databaseId: "2",
+      title: "CTR: Crash Team Racing",
+      platform: "Sony Playstation",
+      alternates: [{ title: "Crash Team Racing", region: "World" }],
+      images: [{ fileName: "ctr-eu.jpg", region: "Europe" }],
+    };
+    expect(findExactLaunchboxMatch({ title: "Crash Team Racing", targetVersion: "PAL" }, [aliasGame], aliasGame.platform).image?.fileName).toBe("ctr-eu.jpg");
+  });
+
+  it("supports conservative slash aliases without fuzzy title matching", () => {
+    expect(targetArtworkTitleVariants("Mystic Quest / Final Fantasy Adventure")).toContain("final fantasy adventure");
+    expect(targetArtworkTitleVariants("Yoshi's Island / Super Mario World 2")).toContain("super mario world 2 yoshis island");
+  });
 
   it("requires one exact LaunchBox game and one regional front cover", () => {
     expect(findExactLaunchboxMatch(target, [game], game.platform).image?.fileName).toBe("front.jpg");
