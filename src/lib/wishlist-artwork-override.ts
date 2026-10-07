@@ -1,57 +1,73 @@
 import "server-only";
+import fs from "node:fs/promises";
+import path from "node:path";
 import { del, get, put } from "@vercel/blob";
 import type { WishlistArtworkOverride } from "@/lib/data/types";
 import type { WishlistArtworkCandidate } from "@/data/wishlist-artwork-candidates";
+import { wishlistArtworkCandidateLocalUrl } from "@/lib/wishlist-artwork-candidates.logic";
 
 const PREFIX = "retro-collection/wishlist-artwork-overrides";
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
+const LOCAL_CANDIDATE_ROOT = path.resolve(process.cwd(), "public", "covers", "wishlist-candidates");
 
 function safePart(value: string) {
   return value.replace(/[^a-zA-Z0-9_-]+/g, "_").slice(0, 120) || "target";
 }
 
-function extension(contentType: string) {
-  if (contentType === "image/png") return "png";
-  if (contentType === "image/jpeg") return "jpg";
-  return "";
+function localCandidate(candidate: WishlistArtworkCandidate) {
+  const localUrl = wishlistArtworkCandidateLocalUrl(candidate);
+  if (!localUrl) throw new Error("Capa local inválida.");
+
+  const filename = path.resolve(process.cwd(), "public", localUrl.replace(/^\/+/, ""));
+  if (filename !== LOCAL_CANDIDATE_ROOT && !filename.startsWith(LOCAL_CANDIDATE_ROOT + path.sep)) {
+    throw new Error("Caminho de artwork não permitido.");
+  }
+
+  const ext = path.extname(filename).toLowerCase();
+  const contentType = ext === ".png" ? "image/png" : ext === ".jpg" ? "image/jpeg" : "";
+  if (!contentType) throw new Error("Tipo de imagem não suportado.");
+  return { filename, contentType, ext: ext.slice(1) };
+}
+
+function validImageBytes(bytes: Buffer, contentType: string) {
+  if (contentType === "image/png") {
+    return bytes.length > 24 && bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+  }
+  if (contentType === "image/jpeg") {
+    return bytes.length > 3 && bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff;
+  }
+  return false;
 }
 
 export async function storeWishlistArtworkOverride(
   targetId: string,
   candidate: WishlistArtworkCandidate,
 ): Promise<WishlistArtworkOverride> {
-  const source = new URL(candidate.sourceUrl);
-  const allowedHosts = new Set(["raw.githubusercontent.com", "images.launchbox-app.com"]);
-  if (source.protocol !== "https:" || !allowedHosts.has(source.hostname)) {
-    throw new Error("Fonte de artwork não permitida.");
+  const local = localCandidate(candidate);
+
+  let bytes: Buffer;
+  try {
+    bytes = await fs.readFile(local.filename);
+  } catch {
+    throw new Error("A cópia local desta capa não está disponível.");
   }
 
-  const response = await fetch(candidate.sourceUrl, {
-    cache: "no-store",
-    headers: { "User-Agent": "RetroCollection-ArtworkChoice/1.0" },
-    signal: AbortSignal.timeout(30000),
-  });
-  if (!response.ok) throw new Error("Não foi possível descarregar esta capa.");
+  if (!bytes.byteLength || bytes.byteLength > MAX_IMAGE_BYTES || !validImageBytes(bytes, local.contentType)) {
+    throw new Error("Imagem local inválida ou demasiado grande.");
+  }
 
-  const contentType = (response.headers.get("content-type") ?? "").split(";")[0].trim().toLowerCase();
-  const ext = extension(contentType);
-  if (!ext) throw new Error("Tipo de imagem não suportado.");
-
-  const bytes = await response.arrayBuffer();
-  if (!bytes.byteLength || bytes.byteLength > MAX_IMAGE_BYTES) throw new Error("Imagem inválida ou demasiado grande.");
-
-  const pathname = `${PREFIX}/${safePart(targetId)}/${safePart(candidate.id)}.${ext}`;
+  const pathname = `${PREFIX}/${safePart(targetId)}/${safePart(candidate.id)}.${local.ext}`;
   await put(pathname, bytes, {
     access: "private",
     addRandomSuffix: false,
     allowOverwrite: true,
-    contentType,
+    contentType: local.contentType,
   });
 
   return {
     candidateId: candidate.id,
     pathname,
-    contentType,
+    contentType: local.contentType,
     source: candidate.source,
     sourceRepo: candidate.sourceRepo,
     sourceCommit: candidate.sourceCommit,
