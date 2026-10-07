@@ -6,7 +6,7 @@ export type WishlistArtworkCandidate = {
   artworkRegion: "Europe" | "US" | "Japan";
   displayRegion: string;
   coverVariant: string;
-  source: "libretro-thumbnails" | "launchbox";
+  source: "libretro-thumbnails" | "launchbox" | "curated";
   sourceRepo?: string;
   sourceCommit?: string;
   sourcePath: string;
@@ -3372,6 +3372,18 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePlatform": "Nintendo Wii U"
   },
   {
+    "id": "curated-30cd1fe43cc444210b4b",
+    "title": "Super Mario 3D World",
+    "platform": "Nintendo Wii U",
+    "artworkRegion": "Europe",
+    "displayRegion": "Spain",
+    "coverVariant": "Standard",
+    "source": "curated",
+    "sourcePath": "b70fbb15-54c6-4b2c-923f-c1f970e666d1.jpg",
+    "sourceUrl": "https://images.launchbox-app.com/b70fbb15-54c6-4b2c-923f-c1f970e666d1.jpg",
+    "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/71648-super-mario-3d-world"
+  },
+  {
     "id": "launchbox-53bb160f08a1595bb8d7",
     "title": "The Legend of Zelda: The Wind Waker HD",
     "platform": "Nintendo Wii U",
@@ -5331,6 +5343,18 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourceUrl": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System/cdd8f1d44612976cc9d422b0ace53a8542667688/Named_Boxarts/Starwing%20(Europe).png"
   },
   {
+    "id": "curated-cad0b3a3efdbb7c358fe",
+    "title": "Teenage Mutant Hero Turtles: Turtles in Time",
+    "platform": "SNES",
+    "artworkRegion": "Europe",
+    "displayRegion": "Europe",
+    "coverVariant": "Standard",
+    "source": "curated",
+    "sourcePath": "6f2e802f-823b-4fa4-8517-341d84f4c872.png",
+    "sourceUrl": "https://images.launchbox-app.com/6f2e802f-823b-4fa4-8517-341d84f4c872.png",
+    "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/179-teenage-mutant-ninja-turtles-iv-turtles-in-time"
+  },
+  {
     "id": "libretro-6031ebb66dcc21a0bc47",
     "title": "Terranigma",
     "platform": "SNES",
@@ -5383,5 +5407,17 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
     "launchboxDatabaseId": "1764",
     "sourcePlatform": "Super Nintendo Entertainment System"
+  },
+  {
+    "id": "curated-33a8a7dd6c3ed352eaa2",
+    "title": "Yoshi's Island / Super Mario World 2",
+    "platform": "SNES",
+    "artworkRegion": "Europe",
+    "displayRegion": "Europe",
+    "coverVariant": "Standard",
+    "source": "curated",
+    "sourcePath": "78f17a9d-68f1-4ea3-947e-abea9ea5fe11.png",
+    "sourceUrl": "https://images.launchbox-app.com/78f17a9d-68f1-4ea3-947e-abea9ea5fe11.png",
+    "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/132-super-mario-world-2-yoshis-island"
   }
 ];

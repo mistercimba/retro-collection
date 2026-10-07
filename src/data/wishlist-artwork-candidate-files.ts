@@ -233,6 +233,7 @@ export const WISHLIST_ARTWORK_CANDIDATE_FILES: Record<string, string> = {
   "launchbox-dc1eb363947f28d87fa3": "/covers/wishlist-candidates/launchbox-dc1eb363947f28d87fa3.jpg",
   "launchbox-c79baaf262333650fd37": "/covers/wishlist-candidates/launchbox-c79baaf262333650fd37.jpg",
   "launchbox-aeb99141d9d9ce650461": "/covers/wishlist-candidates/launchbox-aeb99141d9d9ce650461.png",
+  "curated-30cd1fe43cc444210b4b": "/covers/wishlist-candidates/curated-30cd1fe43cc444210b4b.jpg",
   "launchbox-53bb160f08a1595bb8d7": "/covers/wishlist-candidates/launchbox-53bb160f08a1595bb8d7.jpg",
   "launchbox-a351ce38ff72984cecf4": "/covers/wishlist-candidates/launchbox-a351ce38ff72984cecf4.jpg",
   "launchbox-d461424507408f07f8f3": "/covers/wishlist-candidates/launchbox-d461424507408f07f8f3.jpg",
@@ -370,8 +371,10 @@ export const WISHLIST_ARTWORK_CANDIDATE_FILES: Record<string, string> = {
   "libretro-b1bf8d911453ea89ba5a": "/covers/wishlist-candidates/libretro-b1bf8d911453ea89ba5a.png",
   "libretro-829bed48b6059ef654cb": "/covers/wishlist-candidates/libretro-829bed48b6059ef654cb.png",
   "libretro-a5df222122440c82d1c3": "/covers/wishlist-candidates/libretro-a5df222122440c82d1c3.png",
+  "curated-cad0b3a3efdbb7c358fe": "/covers/wishlist-candidates/curated-cad0b3a3efdbb7c358fe.png",
   "libretro-6031ebb66dcc21a0bc47": "/covers/wishlist-candidates/libretro-6031ebb66dcc21a0bc47.png",
   "libretro-92bfaaff7016748166f2": "/covers/wishlist-candidates/libretro-92bfaaff7016748166f2.png",
   "libretro-63b6b640579b725aaaec": "/covers/wishlist-candidates/libretro-63b6b640579b725aaaec.png",
-  "launchbox-b865d52092d43a0d33f5": "/covers/wishlist-candidates/launchbox-b865d52092d43a0d33f5.png"
+  "launchbox-b865d52092d43a0d33f5": "/covers/wishlist-candidates/launchbox-b865d52092d43a0d33f5.png",
+  "curated-33a8a7dd6c3ed352eaa2": "/covers/wishlist-candidates/curated-33a8a7dd6c3ed352eaa2.png"
 };

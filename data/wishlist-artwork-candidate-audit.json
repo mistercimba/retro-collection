@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "unresolvedTargetsAudited": 159,
-  "materializedTargets": 147,
-  "materializedCandidates": 374,
+  "materializedTargets": 150,
+  "materializedCandidates": 377,
   "materializedBySource": {
     "libretro-thumbnails": {
       "targets": 64,
@@ -11,6 +11,10 @@
     "launchbox": {
       "targets": 83,
       "candidates": 252
+    },
+    "curated": {
+      "targets": 3,
+      "candidates": 3
     }
   },
   "stillUnresolvedTargets": [
@@ -18,20 +22,6 @@
       "title": "Mole Mania",
       "platform": "Game Boy",
       "reason": "region-mismatch",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
-      "title": "Teenage Mutant Hero Turtles: Turtles in Time",
-      "platform": "SNES",
-      "reason": "no-exact-title-platform-match",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
-      "title": "Yoshi's Island / Super Mario World 2",
-      "platform": "SNES",
-      "reason": "no-exact-title-platform-match",
       "materializedCandidates": 0,
       "source": "unresolved"
     },
@@ -74,13 +64,6 @@
       "title": "Fire Emblem Fates (Birthright ou Conquest)",
       "platform": "Nintendo 3DS",
       "reason": "no-exact-title-platform-match",
-      "materializedCandidates": 0,
-      "source": "unresolved"
-    },
-    {
-      "title": "Super Mario 3D World",
-      "platform": "Nintendo Wii U",
-      "reason": "source-artwork-region-mismatch",
       "materializedCandidates": 0,
       "source": "unresolved"
     },
