@@ -366,6 +366,7 @@ When working on it, preserve these principles:
 - wrong region/edition is a bug;
 - visibly rejected source assets must stay blocked;
 - import in small checkpointed batches.
+- User-approved one-off Wishlist covers may be recorded in `data/wishlist-artwork-curated.json`; they must still be exact title+platform, retain provenance, and be materialized locally before runtime.
 
 Do not create a new GitHub Action just to import Wishlist artwork unless explicitly requested.
 

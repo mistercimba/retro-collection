@@ -14,6 +14,7 @@ import {
 const ROOT = process.cwd();
 const MISSING_FILE = path.join(ROOT, "data", "wishlist-artwork-missing.json");
 const REJECTIONS_FILE = path.join(ROOT, "data", "wishlist-artwork-rejections.json");
+const CURATED_FILE = path.join(ROOT, "data", "wishlist-artwork-curated.json");
 const OUTPUT_FILE = path.join(ROOT, "src", "data", "wishlist-artwork-candidates.ts");
 const AUDIT_FILE = path.join(ROOT, "data", "wishlist-artwork-candidate-audit.json");
 
@@ -123,6 +124,7 @@ function launchboxCandidates(target, launchbox) {
 const missing = JSON.parse(await fs.readFile(MISSING_FILE, "utf8"));
 const unresolved = (missing.entries ?? []).filter((entry) => entry?.title && entry?.platform);
 const rejections = JSON.parse(await fs.readFile(REJECTIONS_FILE, "utf8")).entries ?? [];
+const curatedEntries = JSON.parse(await fs.readFile(CURATED_FILE, "utf8")).entries ?? [];
 const launchboxPath = arg("--launchbox-index");
 const launchbox = launchboxPath ? JSON.parse(await fs.readFile(path.resolve(launchboxPath), "utf8")) : null;
 const treeCache = new Map();
@@ -130,6 +132,22 @@ const records = [];
 const audit = [];
 
 for (const target of unresolved) {
+  const curated = curatedEntries.filter((entry) =>
+    normalizeArtworkTitle(entry.title) === normalizeArtworkTitle(target.title) &&
+    entry.platform === target.platform
+  ).map((entry) => ({
+    id: `curated-${sha(`${entry.title}\0${entry.platform}\0${entry.sourceUrl}`)}`,
+    title: target.title,
+    platform: target.platform,
+    artworkRegion: entry.artworkRegion ?? "Europe",
+    displayRegion: entry.displayRegion ?? "Europe",
+    coverVariant: entry.coverVariant ?? "Standard",
+    source: "curated",
+    sourcePath: entry.sourcePath,
+    sourceUrl: entry.sourceUrl,
+    metadataUrl: entry.metadataUrl,
+  }));
+
   const repository = REPO_BY_PLATFORM[target.platform];
   let libretro = [];
   if (repository) {
@@ -157,10 +175,10 @@ for (const target of unresolved) {
       });
     }
   }
-  const secondary = libretro.length ? [] : launchboxCandidates(target, launchbox);
-  const found = libretro.length ? libretro : secondary;
+  const secondary = libretro.length || curated.length ? [] : launchboxCandidates(target, launchbox);
+  const found = curated.length ? curated : libretro.length ? libretro : secondary;
   records.push(...found);
-  audit.push({ title: target.title, platform: target.platform, reason: target.reason, materializedCandidates: found.length, source: libretro.length ? "libretro-thumbnails" : secondary.length ? "launchbox" : "unresolved" });
+  audit.push({ title: target.title, platform: target.platform, reason: target.reason, materializedCandidates: found.length, source: curated.length ? "curated" : libretro.length ? "libretro-thumbnails" : secondary.length ? "launchbox" : "unresolved" });
 }
 records.sort((a, b) => a.platform.localeCompare(b.platform, "en-US") || a.title.localeCompare(b.title, "en-US") || regionScore(b.displayRegion) - regionScore(a.displayRegion) || a.sourcePath.localeCompare(b.sourcePath, "en-US"));
 
@@ -172,7 +190,7 @@ export type WishlistArtworkCandidate = {
   artworkRegion: "Europe" | "US" | "Japan";
   displayRegion: string;
   coverVariant: string;
-  source: "libretro-thumbnails" | "launchbox";
+  source: "libretro-thumbnails" | "launchbox" | "curated";
   sourceRepo?: string;
   sourceCommit?: string;
   sourcePath: string;
@@ -195,7 +213,7 @@ const auditPayload = {
   materializedTargets: materialized.length,
   materializedCandidates: records.length,
   materializedBySource: Object.fromEntries(
-    ["libretro-thumbnails", "launchbox"].map((source) => [
+    ["libretro-thumbnails", "launchbox", "curated"].map((source) => [
       source,
       {
         targets: materialized.filter((item) => item.source === source).length,

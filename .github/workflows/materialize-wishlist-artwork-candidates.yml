@@ -10,6 +10,7 @@ on:
       - "src/data/wishlist-artwork-candidates.ts"
       - "data/wishlist-artwork-missing.json"
       - "data/wishlist-artwork-rejections.json"
+      - "data/wishlist-artwork-curated.json"
   workflow_dispatch:
 
 permissions:
@@ -88,6 +89,7 @@ jobs:
             src/data/wishlist-artwork-candidates.ts \
             src/data/wishlist-artwork-candidate-files.ts \
             data/wishlist-artwork-candidate-audit.json \
+            data/wishlist-artwork-curated.json \
             public/covers/wishlist-candidates
           if git diff --cached --quiet; then
             echo "All candidate artwork is already materialized."

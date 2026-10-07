@@ -127,7 +127,7 @@ export interface WishlistArtworkOverride {
   candidateId: string;
   pathname: string;
   contentType: string;
-  source: "libretro-thumbnails" | "launchbox";
+  source: "libretro-thumbnails" | "launchbox" | "curated";
   sourceRepo?: string;
   sourceCommit?: string;
   sourcePath: string;
