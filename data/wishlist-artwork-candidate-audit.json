@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "unresolvedTargetsAudited": 159,
+  "materializedTargets": 141,
+  "materializedCandidates": 333,
+  "materializedBySource": {
+    "libretro-thumbnails": {
+      "targets": 64,
+      "candidates": 122
+    },
+    "launchbox": {
+      "targets": 77,
+      "candidates": 211
+    }
+  },
+  "stillUnresolvedTargets": [
+    {
+      "title": "Mole Mania",
+      "platform": "Game Boy",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Mystic Quest / Final Fantasy Adventure",
+      "platform": "Game Boy",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Teenage Mutant Hero Turtles: Turtles in Time",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Yoshi's Island / Super Mario World 2",
+      "platform": "SNES",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Crash Team Racing",
+      "platform": "Playstation",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Persona 3 FES",
+      "platform": "Playstation 2",
+      "reason": "source-artwork-region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Warlocked",
+      "platform": "Game Boy Color",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Wendy: Every Witch Way",
+      "platform": "Game Boy Color",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Pokémon Black 2 ou White 2",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Valkyria Chronicles",
+      "platform": "Playstation 3",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Luigi's Mansion 2 / Dark Moon",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Pokémon Ultra Sun ou Ultra Moon",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Fire Emblem Fates (Birthright ou Conquest)",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Super Mario 3D World",
+      "platform": "Nintendo Wii U",
+      "reason": "source-artwork-region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Final Fantasy VII Rebirth",
+      "platform": "Playstation 5",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Gran Turismo 7",
+      "platform": "Playstation 5",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Resident Evil 4",
+      "platform": "Playstation 5",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Stellar Blade",
+      "platform": "Playstation 5",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    }
+  ],
+  "launchboxIndexUsed": true,
+  "launchboxMetadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9"
+}
