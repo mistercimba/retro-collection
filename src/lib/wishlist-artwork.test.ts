@@ -63,6 +63,16 @@ describe("wishlist artwork resolver", () => {
     expect(result).toContain("/api/wishlist-artwork-override/APP-123?");
   });
 
+  it("uses a safe recovered candidate when static artwork is unresolved", () => {
+    const result = resolveWishlistArtwork({
+      targetId: "NOVO",
+      title: "Metroid",
+      platform: "NES",
+      targetVersion: "PAL; loose",
+    });
+    expect(result).toBe("https://images.launchbox-app.com/r2_672af117-608d-4ef7-bc4f-b1d5a64e2bdc.jpg");
+  });
+
   it("uses authenticated catalog artwork as a conservative final fallback", () => {
     const result = resolveWishlistArtwork({
       ...target({ targetId: "APP-1", targetVersion: "PAL Standard; CIB" }),

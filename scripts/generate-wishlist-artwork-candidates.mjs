@@ -154,7 +154,11 @@ for (const target of unresolved) {
         sourceCommit: tree.sourceCommit, sourcePath: `Named_Boxarts/${item.path}`,
         sourceUrl: `https://raw.githubusercontent.com/libretro-thumbnails/${repository}/${tree.sourceCommit}/Named_Boxarts/${item.path.split("/").map(encodeURIComponent).join("/")}`,
         blobSha: item.sha,
-      })).filter((candidate) => !rejectedArtworkSource(candidate, rejections))).map(({ blobSha, ...candidate }) => candidate);
+      })).filter((candidate) => !rejectedArtworkSource(candidate, rejections))).map((candidate) => {
+        const { blobSha: _dedupeBlobSha, ...publicCandidate } = candidate;
+        void _dedupeBlobSha;
+        return publicCandidate;
+      });
     }
   }
   const secondary = libretro.length ? [] : launchboxCandidates(target, launchbox);
