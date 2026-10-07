@@ -57,11 +57,10 @@
       "displayRegion": "Europe",
       "coverVariant": "Standard",
       "source": "curated",
-      "sourcePath": "13683_front.jpg",
-      "sourceUrl": "https://gamefaqs.gamespot.com/a/box/6/8/3/13683_front.jpg",
-      "metadataUrl": "https://gamefaqs.gamespot.com/gbc/477564-wendy-every-witch-way/boxes/96532",
-      "note": "Approved by Mário on 2026-10-07. GameFAQs identifies this box scan as EU; kept pending because the direct GameFAQs image host is not a reliable CI materialization source.",
-      "enabled": false
+      "sourcePath": "50141--wendy-every-witch-way.png",
+      "sourceUrl": "https://www.retroplace.com/pics/gbc/packshots/50141--wendy-every-witch-way.png",
+      "metadataUrl": "https://www.retroplace.com/en/games/50141--wendy-every-witch-way",
+      "note": "Approved by Mário on 2026-10-07. Retroplace identifies this as the Europe release (CGB-BWGP-EUR, 2000)."
     },
     {
       "title": "Valkyria Chronicles",
@@ -70,11 +69,10 @@
       "displayRegion": "Europe",
       "coverVariant": "Standard",
       "source": "curated",
-      "sourcePath": "89595_front.jpg",
-      "sourceUrl": "https://gamefaqs.gamespot.com/a/box/5/9/5/89595_front.jpg",
-      "metadataUrl": "https://gamefaqs.gamespot.com/ps3/942165-valkyria-chronicles/boxes/102234",
-      "note": "Approved by Mário on 2026-10-08. GameFAQs identifies this box scan as EU; kept pending because CI receives HTTP 403 from the direct GameFAQs image host.",
-      "enabled": false
+      "sourcePath": "70950-large_default/white-knight-chronicles-2-neuf.jpg",
+      "sourceUrl": "https://www.retrogame-shop.com/70950-large_default/white-knight-chronicles-2-neuf.jpg",
+      "metadataUrl": "https://www.retrogame-shop.com/fr/playstation-3/24083-white-knight-chronicles-2-neuf.html",
+      "note": "Approved by Mário on 2026-10-08. Retrogameshop identifies this physical copy as PAL euro/fr; the visible front is PEGI 16."
     }
   ]
 }
