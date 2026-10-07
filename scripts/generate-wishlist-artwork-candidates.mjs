@@ -13,6 +13,7 @@ const ROOT = process.cwd();
 const MISSING_FILE = path.join(ROOT, "data", "wishlist-artwork-missing.json");
 const REJECTIONS_FILE = path.join(ROOT, "data", "wishlist-artwork-rejections.json");
 const OUTPUT_FILE = path.join(ROOT, "src", "data", "wishlist-artwork-candidates.ts");
+const AUDIT_FILE = path.join(ROOT, "data", "wishlist-artwork-candidate-audit.json");
 
 const REPO_BY_PLATFORM = {
   NES: "Nintendo_-_Nintendo_Entertainment_System",
@@ -190,10 +191,26 @@ export type WishlistArtworkCandidate = {
 export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = ${JSON.stringify(records, null, 2)};
 `;
 await fs.writeFile(OUTPUT_FILE, moduleText);
-console.log(JSON.stringify({
+
+const materialized = audit.filter((item) => item.materializedCandidates > 0);
+const stillUnresolved = audit.filter((item) => item.materializedCandidates === 0);
+const auditPayload = {
+  schemaVersion: 1,
   unresolvedTargetsAudited: unresolved.length,
-  materializedTargets: audit.filter((item) => item.materializedCandidates > 0).length,
+  materializedTargets: materialized.length,
   materializedCandidates: records.length,
-  stillUnresolvedTargets: audit.filter((item) => item.materializedCandidates === 0),
+  materializedBySource: Object.fromEntries(
+    ["libretro-thumbnails", "launchbox"].map((source) => [
+      source,
+      {
+        targets: materialized.filter((item) => item.source === source).length,
+        candidates: records.filter((item) => item.source === source).length,
+      },
+    ]),
+  ),
+  stillUnresolvedTargets: stillUnresolved,
   launchboxIndexUsed: Boolean(launchbox),
-}, null, 2));
+  launchboxMetadataSha256: launchbox?.metadataSha256 ?? null,
+};
+await fs.writeFile(AUDIT_FILE, JSON.stringify(auditPayload, null, 2) + "\n");
+console.log(JSON.stringify(auditPayload, null, 2));

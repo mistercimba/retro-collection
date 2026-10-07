@@ -30,6 +30,8 @@ Implementation direction: materialize the known libretro ambiguity set, deduplic
 
 Coverage rule: audit every current Wishlist fallback, including non-ambiguous mismatch/unconfirmed cases. A known-bad source remains rejected; when a secondary source has one safe exact European front cover, use it as the automatic fallback instead of leaving the placeholder.
 
+Current audit baseline on PR #61: the first persisted candidate pass covered 65 of the 159 original fallbacks and left **94 targets with no candidate at all**. The active pass must query the full supported-platform LaunchBox metadata index for those remaining targets, materialize only exact title/platform European front covers, and keep any still-unresolved identities explicit in the generated audit report.
+
 Runtime rule: candidate source URLs are discovery/provenance only. A dedicated import step materializes candidates into committed files under `public/covers/wishlist-candidates/`; normal CI/build verifies the files and detail pages/chooser never hotlink Libretro/LaunchBox.
 
 Artwork gaps/deliberate fallback (#48) are complete and merged in PR #59.

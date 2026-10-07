@@ -4,8 +4,12 @@ on:
   push:
     paths:
       - ".github/workflows/materialize-wishlist-artwork-candidates.yml"
+      - "scripts/generate-wishlist-artwork-candidates.mjs"
+      - "scripts/index-wishlist-launchbox.py"
       - "scripts/materialize-wishlist-artwork-candidates.mjs"
       - "src/data/wishlist-artwork-candidates.ts"
+      - "data/wishlist-artwork-missing.json"
+      - "data/wishlist-artwork-rejections.json"
   workflow_dispatch:
 
 permissions:
@@ -17,8 +21,9 @@ concurrency:
 
 jobs:
   materialize:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4
@@ -31,6 +36,43 @@ jobs:
         with:
           node-version: 22
 
+      - name: Download LaunchBox metadata
+        run: |
+          python3 - <<'PY'
+          import urllib.request
+          urllib.request.urlretrieve(
+              "https://gamesdb.launchbox-app.com/Metadata.zip",
+              "/tmp/launchbox-metadata.zip",
+          )
+          PY
+
+      - name: Build Wishlist LaunchBox index
+        run: |
+          python3 scripts/index-wishlist-launchbox.py \
+            --metadata /tmp/launchbox-metadata.zip \
+            --output /tmp/wishlist-launchbox-index.json \
+            --platform "Nintendo Entertainment System" \
+            --platform "Super Nintendo Entertainment System" \
+            --platform "Nintendo 64" \
+            --platform "Nintendo Game Boy" \
+            --platform "Nintendo Game Boy Color" \
+            --platform "Nintendo Game Boy Advance" \
+            --platform "Nintendo GameCube" \
+            --platform "Nintendo DS" \
+            --platform "Nintendo 3DS" \
+            --platform "Nintendo Wii" \
+            --platform "Nintendo Wii U" \
+            --platform "Nintendo Switch" \
+            --platform "Sony Playstation" \
+            --platform "Sony Playstation 2" \
+            --platform "Sony Playstation 3" \
+            --platform "Sony Playstation 5"
+
+      - name: Regenerate Wishlist artwork candidates
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/generate-wishlist-artwork-candidates.mjs --launchbox-index /tmp/wishlist-launchbox-index.json
+
       - name: Materialize candidate artwork
         run: node scripts/materialize-wishlist-artwork-candidates.mjs
 
@@ -38,11 +80,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/covers/wishlist-candidates
+          git add             src/data/wishlist-artwork-candidates.ts             data/wishlist-artwork-candidate-audit.json             public/covers/wishlist-candidates
           if git diff --cached --quiet; then
             echo "All candidate artwork is already materialized."
             exit 0
           fi
-          git commit -m "chore: materialize Wishlist artwork candidates"
+          git commit -m "chore: expand Wishlist artwork candidates"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
