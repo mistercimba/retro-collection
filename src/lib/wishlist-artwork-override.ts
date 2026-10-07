@@ -4,7 +4,7 @@ import type { WishlistArtworkOverride } from "@/lib/data/types";
 import type { WishlistArtworkCandidate } from "@/data/wishlist-artwork-candidates";
 
 const PREFIX = "retro-collection/wishlist-artwork-overrides";
-const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
+const MAX_IMAGE_BYTES = 10 * 1024 * 1024;
 
 function safePart(value: string) {
   return value.replace(/[^a-zA-Z0-9_-]+/g, "_").slice(0, 120) || "target";

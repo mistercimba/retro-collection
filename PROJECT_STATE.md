@@ -52,6 +52,7 @@ Implementation model:
 - first persisted candidate import completed on PR #61: 138/138 registry candidates are committed as app-owned image files, including the Metroid NES LaunchBox Europe cover. CI now checks that every registry candidate has a valid local file.
 - follow-up audit after that first pass found **94 of the original 159 fallbacks still had zero materialized candidate**. The same import lane now builds a full supported-platform LaunchBox index and retries all of those unresolved targets using exact title/platform plus European front-cover constraints; unresolved results are persisted in `data/wishlist-artwork-candidate-audit.json` instead of being left for Mário to discover manually.
 - materialized candidate filenames are now derived from the actual downloaded image bytes and recorded in `src/data/wishlist-artwork-candidate-files.ts`; runtime does not trust a remote filename extension (LaunchBox can label a JPEG payload as `.png`).
+- candidate import/manual-choice image size guard is 10 MiB. The previous 3 MiB ceiling rejected valid high-resolution LaunchBox front covers; the guard remains bounded and image signatures are still validated.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 

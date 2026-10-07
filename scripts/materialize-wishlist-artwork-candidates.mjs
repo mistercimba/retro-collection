@@ -5,7 +5,7 @@ const ROOT = process.cwd();
 const CANDIDATE_MODULE = path.join(ROOT, "src", "data", "wishlist-artwork-candidates.ts");
 const CANDIDATE_FILES_MODULE = path.join(ROOT, "src", "data", "wishlist-artwork-candidate-files.ts");
 const OUTPUT_DIR = path.join(ROOT, "public", "covers", "wishlist-candidates");
-const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
+const MAX_IMAGE_BYTES = 10 * 1024 * 1024;
 const CONCURRENCY = 8;
 const MODULE_PREFIX = "export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = ";
 const CHECK_ONLY = process.argv.includes("--check");
@@ -39,7 +39,9 @@ async function fetchOnce(url) {
   });
   if (!response.ok) throw new Error("HTTP " + response.status);
   const bytes = Buffer.from(await response.arrayBuffer());
-  if (!bytes.length || bytes.length > MAX_IMAGE_BYTES) throw new Error("invalid image size");
+  if (!bytes.length || bytes.length > MAX_IMAGE_BYTES) {
+    throw new Error("invalid image size: " + bytes.length + " bytes");
+  }
   return bytes;
 }
 
