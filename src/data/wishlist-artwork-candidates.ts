@@ -184,6 +184,18 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePlatform": "Nintendo Game Boy Color"
   },
   {
+    "id": "curated-25352cf66439e6df6976",
+    "title": "Wendy: Every Witch Way",
+    "platform": "Game Boy Color",
+    "artworkRegion": "Europe",
+    "displayRegion": "Europe",
+    "coverVariant": "Standard",
+    "source": "curated",
+    "sourcePath": "50141--wendy-every-witch-way.png",
+    "sourceUrl": "https://www.retroplace.com/pics/gbc/packshots/50141--wendy-every-witch-way.png",
+    "metadataUrl": "https://www.retroplace.com/en/games/50141--wendy-every-witch-way"
+  },
+  {
     "id": "launchbox-c04b6cf0c905370892e4",
     "title": "Castlevania: Circle of the Moon",
     "platform": "GameBoy Advance",
@@ -4913,6 +4925,18 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
     "launchboxDatabaseId": "2264",
     "sourcePlatform": "Sony Playstation 3"
+  },
+  {
+    "id": "curated-b7c96b093683c5725481",
+    "title": "Valkyria Chronicles",
+    "platform": "Playstation 3",
+    "artworkRegion": "Europe",
+    "displayRegion": "Europe",
+    "coverVariant": "Standard",
+    "source": "curated",
+    "sourcePath": "70950-large_default/white-knight-chronicles-2-neuf.jpg",
+    "sourceUrl": "https://www.retrogame-shop.com/70950-large_default/white-knight-chronicles-2-neuf.jpg",
+    "metadataUrl": "https://www.retrogame-shop.com/fr/playstation-3/24083-white-knight-chronicles-2-neuf.html"
   },
   {
     "id": "launchbox-f16e879678db20409e4a",
