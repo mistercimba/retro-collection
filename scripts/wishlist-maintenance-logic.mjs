@@ -332,8 +332,11 @@ export function applyWishlistMaintenance(library, plan, options = {}) {
       const target = exactMatches(next.wishlist, operation.match)[0];
       if (!target) continue;
       const previousTitle = target.title;
+      // Check the original exact identity before changing the title, so a
+      // genuine Next Objective follows this approved rename.
+      const wasObjective = isObjectiveFor(next, target);
       target.title = operation.title;
-      if (isObjectiveFor(next, target)) {
+      if (wasObjective) {
         next.nextObjective = { ...next.nextObjective, title: operation.title };
       }
       addHistory(next, state, {
