@@ -23,7 +23,34 @@ function exactMatches(wishlist, match) {
 }
 
 function isObjectiveFor(library, target) {
-  return library.nextObjective?.targetId === target.targetId;
+  // Legacy imported records can share targetId: "NOVO". Always compare the
+  // same three fields used by the app's normal Next Objective resolver.
+  return Boolean(
+    library.nextObjective &&
+    library.nextObjective.targetId === target.targetId &&
+    library.nextObjective.title === target.title &&
+    library.nextObjective.platform === target.platform
+  );
+}
+
+function splitNotesAreApproved(target, operation) {
+  const actual = typeof target.notes === "string" ? target.notes : "";
+  // No notes in the source: ordinary clean split. If the plan explicitly
+  // expected notes, a change (including deletion) must be reviewed again.
+  if (!actual.trim() && operation.expectedSourceNotes === undefined) return true;
+  const assignments = operation.notesByTitle;
+  if (typeof operation.expectedSourceNotes !== "string" ||
+      actual !== operation.expectedSourceNotes ||
+      !assignments || typeof assignments !== "object" || Array.isArray(assignments)) return false;
+  const titles = operation.titles;
+  const keys = Object.keys(assignments);
+  return keys.length === titles.length && new Set(titles).size === titles.length &&
+    titles.every((title) =>
+      Object.hasOwn(assignments, title) &&
+      typeof assignments[title] === "string" &&
+      assignments[title].includes(actual) &&
+      assignments[title].trim().length >= actual.length
+    );
 }
 
 function hasOrderedAcquisition(target) {
@@ -37,10 +64,10 @@ function ownedIdentityExists(library, title, platform) {
   );
 }
 
-function wishlistIdentityExists(library, title, platform, excludeTargetId = "") {
+function wishlistIdentityExists(library, title, platform, excludedTarget = null) {
   const key = identityKey(title, platform);
   return library.wishlist.some((target) =>
-    target.targetId !== excludeTargetId && identityKey(target.title, target.platform) === key
+    target !== excludedTarget && identityKey(target.title, target.platform) === key
   );
 }
 
@@ -121,7 +148,7 @@ function analyzeOperation(library, operation, operationIndex, report) {
     if (hasOrderedAcquisition(target)) {
       pushBlocker(report, operationIndex, "ordered-target", "Target is purchased/in transit and must be inspected before rename.", target);
     }
-    if (wishlistIdentityExists(library, operation.title, target.platform, target.targetId)) {
+    if (wishlistIdentityExists(library, operation.title, target.platform, target)) {
       pushBlocker(report, operationIndex, "destination-duplicate", "Exact destination target already exists.", target);
     }
     if (ownedIdentityExists(library, operation.title, target.platform)) {
@@ -174,11 +201,11 @@ function analyzeOperation(library, operation, operationIndex, report) {
     if (target.priceCeilingEur !== null && target.priceCeilingEur !== undefined) {
       pushBlocker(report, operationIndex, "price-ceiling", "Combined target has a price ceiling; review it per replacement before splitting.", target);
     }
-    if (String(target.notes ?? "").trim()) {
-      pushBlocker(report, operationIndex, "notes", "Combined target has notes; review them per replacement before splitting.", target);
+    if (!splitNotesAreApproved(target, operation)) {
+      pushBlocker(report, operationIndex, "notes", "Original notes changed or there is no explicit, approved note for each replacement.", target);
     }
     for (const title of operation.titles) {
-      if (wishlistIdentityExists(library, title, target.platform, target.targetId)) {
+      if (wishlistIdentityExists(library, title, target.platform, target)) {
         pushBlocker(report, operationIndex, "destination-duplicate", "Exact split destination already exists on Wishlist: " + title, target);
       }
       if (ownedIdentityExists(library, title, target.platform)) {
@@ -268,7 +295,9 @@ function collectOverrideCleanup(target, cleanupArtworkPaths) {
 function removeTarget(library, state, target, cleanupArtworkPaths, summary) {
   clearObjectiveIfNeeded(library, state, target, "Próximo objetivo removido pela manutenção da Wishlist");
   collectOverrideCleanup(target, cleanupArtworkPaths);
-  library.wishlist = library.wishlist.filter((item) => item.targetId !== target.targetId);
+  // Remove only the exact object selected by title/platform, not every row
+  // with the shared legacy targetId.
+  library.wishlist = library.wishlist.filter((item) => item !== target);
   addHistory(library, state, {
     action: "wishlist.remove",
     entityId: target.targetId,
@@ -323,8 +352,11 @@ export function applyWishlistMaintenance(library, plan, options = {}) {
       const target = exactMatches(next.wishlist, operation.match)[0];
       if (!target) continue;
       const previousTitle = target.title;
+      // Check the original exact identity before changing the title, so a
+      // genuine Next Objective follows this approved rename.
+      const wasObjective = isObjectiveFor(next, target);
       target.title = operation.title;
-      if (isObjectiveFor(next, target)) {
+      if (wasObjective) {
         next.nextObjective = { ...next.nextObjective, title: operation.title };
       }
       addHistory(next, state, {
@@ -341,7 +373,7 @@ export function applyWishlistMaintenance(library, plan, options = {}) {
     if (operation.type === "split") {
       const source = exactMatches(next.wishlist, operation.match)[0];
       if (!source) continue;
-      next.wishlist = next.wishlist.filter((target) => target.targetId !== source.targetId);
+      next.wishlist = next.wishlist.filter((target) => target !== source);
       addHistory(next, state, {
         action: "wishlist.remove",
         entityId: source.targetId,
@@ -361,7 +393,7 @@ export function applyWishlistMaintenance(library, plan, options = {}) {
           targetVersion: source.targetVersion,
           priceCeilingEur: null,
           status: source.status,
-          notes: "",
+          notes: operation.notesByTitle?.[title] ?? "",
         };
         next.wishlist.push(target);
         addHistory(next, state, {

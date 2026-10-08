@@ -39,7 +39,12 @@
       "titles": [
         "Pokémon Black Version 2",
         "Pokémon White Version 2"
-      ]
+      ],
+      "expectedSourceNotes": "Confirmar código e autenticidade; não comprar repro.",
+      "notesByTitle": {
+        "Pokémon Black Version 2": "Confirmar código e autenticidade; não comprar repro.",
+        "Pokémon White Version 2": "Confirmar código e autenticidade; não comprar repro."
+      }
     },
     {
       "type": "split",
@@ -50,7 +55,12 @@
       "titles": [
         "Pokémon Ultra Sun",
         "Pokémon Ultra Moon"
-      ]
+      ],
+      "expectedSourceNotes": "Escolher um; não é necessário comprar os dois.",
+      "notesByTitle": {
+        "Pokémon Ultra Sun": "Escolher um; não é necessário comprar os dois. Alternativa: Pokémon Ultra Moon.",
+        "Pokémon Ultra Moon": "Escolher um; não é necessário comprar os dois. Alternativa: Pokémon Ultra Sun."
+      }
     },
     {
       "type": "split",
@@ -61,7 +71,12 @@
       "titles": [
         "Fire Emblem Fates: Birthright",
         "Fire Emblem Fates: Conquest"
-      ]
+      ],
+      "expectedSourceNotes": "Não é necessário comprar as duas versões de início.",
+      "notesByTitle": {
+        "Fire Emblem Fates: Birthright": "Não é necessário comprar as duas versões de início. Alternativa: Fire Emblem Fates: Conquest.",
+        "Fire Emblem Fates: Conquest": "Não é necessário comprar as duas versões de início. Alternativa: Fire Emblem Fates: Birthright."
+      }
     }
   ]
 }
