@@ -53,6 +53,15 @@ export default async function WishlistMaintenancePreflightPage() {
         </span>
       </div>
       <p className="text-xs font-semibold text-slate-500">Dados atuais: {report.sourceUpdatedAt}</p>
+      {report.collidingTargetIds.length > 0 && <p className="text-sm font-semibold text-amber-800">
+        Atenção: {report.collidingTargetIds.length} identificadores repetidos; o mais frequente é
+        {" "}{report.collidingTargetIds[0].targetId} ({report.collidingTargetIds[0].count} jogos).
+      </p>}
+      <p className="text-xs font-semibold text-slate-600">
+        Próximo objetivo real: {report.nextObjective
+          ? report.nextObjective.title + " · " + report.nextObjective.platform
+          : "Nenhum"}
+      </p>
       <CopyWishlistPreflight report={reportText} />
     </section>
     {report.blockers.length > 0 && <section className="collection-panel space-y-3 p-4">
@@ -82,6 +91,10 @@ export default async function WishlistMaintenancePreflightPage() {
               <li key={target.targetId} className="text-sm text-slate-700">{target.title} <span className="text-xs text-slate-500">({target.targetId})</span></li>
             )}</ul>
           : <p className="mt-2 text-sm text-slate-500">Nenhum registo atual corresponde a este título.</p>}
+        {operation.type === "split" && operation.existing.some((item) => "notes" in item && item.notes) &&
+          <p className="mt-2 rounded-lg bg-amber-50 p-2 text-sm text-amber-900">
+            Notas da entrada original: {operation.existing.map((item) => "notes" in item ? item.notes : "").filter(Boolean).join(" · ")}
+          </p>}
         {operation.proposedTitles.length > 0 && <p className="mt-2 text-sm font-semibold text-emerald-900">
           → {operation.proposedTitles.join(" · ")}
         </p>}

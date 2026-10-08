@@ -9,6 +9,14 @@ export function buildWishlistMaintenancePreflight(
   plan: WishlistMaintenancePlan,
 ) {
   const analysis = analyzeWishlistMaintenance(library, plan);
+  const counts = new Map<string, number>();
+  for (const target of library.wishlist) {
+    counts.set(target.targetId, (counts.get(target.targetId) ?? 0) + 1);
+  }
+  const collidingTargetIds = [...counts]
+    .filter(([, count]) => count > 1)
+    .map(([targetId, count]) => ({ targetId, count }))
+    .sort((a, b) => b.count - a.count || a.targetId.localeCompare(b.targetId));
   const operations = plan.operations.map((operation, index) => {
     const status = analysis.operations[index];
     const existing = operation.type === "remove-platform"
@@ -28,6 +36,7 @@ export function buildWishlistMaintenancePreflight(
         targetId: target.targetId,
         title: target.title,
         platform: target.platform,
+        ...(operation.type === "split" ? { notes: target.notes || "" } : {}),
       })),
       proposedTitles: operation.type === "rename"
         ? [operation.title]
@@ -46,6 +55,13 @@ export function buildWishlistMaintenancePreflight(
     planId: analysis.planId,
     sourceUpdatedAt: library.updatedAt,
     sourceWishlistCount: analysis.sourceWishlistCount,
+    distinctTargetIdCount: counts.size,
+    collidingTargetIds: collidingTargetIds.slice(0, 20),
+    nextObjective: library.nextObjective
+      ? { targetId: library.nextObjective.targetId,
+          title: library.nextObjective.title,
+          platform: library.nextObjective.platform }
+      : null,
     estimatedWishlistCount: analysis.safeToApply ? analysis.sourceWishlistCount + delta : null,
     safeToApply: analysis.safeToApply,
     operations,

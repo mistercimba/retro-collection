@@ -54,8 +54,32 @@ describe("Wishlist read-only preflight", () => {
     expect(report.estimatedWishlistCount).toBe(2);
     expect(report.operations[0].existing[0].targetId).toBe("W-1");
     expect(report.operations[1].proposedTitles).toEqual(["Pokémon Black Version 2", "Pokémon White Version 2"]);
+    expect(report.distinctTargetIdCount).toBe(2);
+    expect(report.collidingTargetIds).toEqual([]);
+    expect(report.nextObjective).toBeNull();
+    expect(report.operations[1].existing[0]).toEqual({
+      targetId: "W-2", title: "Pokémon Black 2 ou White 2", platform: "Nintendo DS", notes: "",
+    });
     expect(input).toEqual(before);
     expect(JSON.stringify(report)).not.toContain("SECRET_NOTE_DO_NOT_EXPORT");
+  });
+
+  it("reports duplicate legacy IDs, distinct objective and exact split notes", () => {
+    const input = library();
+    input.wishlist[0].targetId = "NOVO";
+    input.wishlist[1].targetId = "NOVO";
+    input.wishlist[1].notes = "Preferir PAL";
+    input.nextObjective = {
+      targetId: "NOVO", title: "Warlocked", platform: "Game Boy Color",
+      setAt: "2026-10-08T10:00:00.000Z",
+    };
+    const report = buildWishlistMaintenancePreflight(input, plan);
+    expect(report.safeToApply).toBe(false);
+    expect(report.collidingTargetIds).toEqual([{ targetId: "NOVO", count: 2 }]);
+    expect(report.nextObjective?.title).toBe("Warlocked");
+    expect(report.blockers.map((item) => item.code)).toEqual(["notes"]);
+    expect(report.operations[1].existing[0]).toHaveProperty("notes", "Preferir PAL");
+    expect(report.operations[0].existing[0]).not.toHaveProperty("notes");
   });
 
   it("reports ordered-target blockers and never promises a safe final count", () => {

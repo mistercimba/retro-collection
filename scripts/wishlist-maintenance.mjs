@@ -42,15 +42,51 @@ async function readLibrary() {
   };
 }
 
-function summary(report, cleanupArtworkPaths, apply, fingerprint, current, next) {
-  const before = new Map(current.wishlist.map((target) => [target.targetId, target]));
-  const after = new Map(next.wishlist.map((target) => [target.targetId, target]));
-  const removed = current.wishlist.filter((target) => !after.has(target.targetId));
-  const added = next.wishlist.filter((target) => !before.has(target.targetId));
-  const renamed = next.wishlist.filter((target) => {
-    const previous = before.get(target.targetId);
-    return previous && (previous.title !== target.title || previous.platform !== target.platform);
-  }).map((target) => ({ targetId: target.targetId, from: before.get(target.targetId).title, to: target.title }));
+function recordIdentity(target) {
+  return JSON.stringify([target.targetId, target.title, target.platform]);
+}
+
+function distinctRecords(items, other) {
+  // Multiset difference by the app's exact target identity. IDs alone are
+  // unreliable for legacy imported Wishlist rows that all say "NOVO".
+  const counts = new Map();
+  for (const target of other) {
+    const key = recordIdentity(target);
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  return items.filter((target) => {
+    const key = recordIdentity(target);
+    const remaining = counts.get(key) ?? 0;
+    if (!remaining) return true;
+    counts.set(key, remaining - 1);
+    return false;
+  });
+}
+
+function summary(report, cleanupArtworkPaths, apply, fingerprint, current, next, plan) {
+  const changedBefore = distinctRecords(current.wishlist, next.wishlist);
+  const changedAfter = distinctRecords(next.wishlist, current.wishlist);
+  const renamed = plan.operations.filter((operation) => operation.type === "rename").flatMap((operation) => {
+    const source = changedBefore.find((item) =>
+      item.title === operation.match.title && item.platform === operation.match.platform
+    );
+    if (!source) return [];
+    const replacement = changedAfter.find((item) =>
+      item.targetId === source.targetId &&
+      item.title === operation.title && item.platform === source.platform
+    );
+    return replacement
+      ? [{ targetId: source.targetId, from: source.title, to: replacement.title, platform: source.platform }]
+      : [];
+  });
+  const renamedBefore = new Set(renamed.map((item) =>
+    JSON.stringify([item.targetId, item.from, item.platform])
+  ));
+  const renamedAfter = new Set(renamed.map((item) =>
+    JSON.stringify([item.targetId, item.to, item.platform])
+  ));
+  const removed = changedBefore.filter((item) => !renamedBefore.has(recordIdentity(item)));
+  const added = changedAfter.filter((item) => !renamedAfter.has(recordIdentity(item)));
   return {
     mode: apply ? "apply" : "dry-run",
     planId: report.planId,
@@ -82,7 +118,7 @@ async function main() {
   const { library: current, rawJson, fingerprint } = await readLibrary();
   const nowIso = new Date().toISOString();
   const result = applyWishlistMaintenance(current, plan, { nowIso });
-  console.log(JSON.stringify(summary(result.report, result.cleanupArtworkPaths, apply, fingerprint, current, result.library), null, 2));
+  console.log(JSON.stringify(summary(result.report, result.cleanupArtworkPaths, apply, fingerprint, current, result.library, plan), null, 2));
 
   if (!result.report.safeToApply) {
     process.exitCode = 2;
