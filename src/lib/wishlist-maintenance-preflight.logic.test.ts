@@ -26,6 +26,7 @@ function library(ordered = false): WishlistMaintenanceLibrary {
         targetId: "W-2",
         title: "Pokémon Black 2 ou White 2",
         platform: "Nintendo DS",
+        notes: "", // This target is safe to split; a nonempty note must block it.
         acquisition: ordered ? { state: "ordered", purchaseId: "PUR-1", orderedAt: "2026-10-08T08:00:00Z" } : null,
       },
     ],
