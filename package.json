@@ -24,7 +24,8 @@
     "wishlist-artwork:import": "node scripts/import-wishlist-artwork.mjs",
     "wishlist-artwork:candidates": "node scripts/generate-wishlist-artwork-candidates.mjs",
     "wishlist-artwork:materialize-candidates": "node scripts/materialize-wishlist-artwork-candidates.mjs",
-    "wishlist-artwork:check-candidates": "node scripts/materialize-wishlist-artwork-candidates.mjs --check"
+    "wishlist-artwork:check-candidates": "node scripts/materialize-wishlist-artwork-candidates.mjs --check",
+    "wishlist:maintain": "node scripts/wishlist-maintenance.mjs"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

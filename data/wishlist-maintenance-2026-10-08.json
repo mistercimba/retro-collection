@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "wishlist-cleanup-2026-10-08",
+  "description": "Mário-approved cleanup from issue #62. Exact identity only; dry-run is mandatory before --apply.",
+  "operations": [
+    {
+      "type": "remove",
+      "match": {
+        "title": "Warlocked",
+        "platform": "Game Boy Color"
+      }
+    },
+    {
+      "type": "remove-platform",
+      "platform": "Playstation 5"
+    },
+    {
+      "type": "rename",
+      "match": {
+        "title": "Teenage Mutant Hero Turtles: Turtles in Time",
+        "platform": "SNES"
+      },
+      "title": "Teenage Mutant Hero Turtles IV: Turtles in Time"
+    },
+    {
+      "type": "rename",
+      "match": {
+        "title": "Yoshi's Island / Super Mario World 2",
+        "platform": "SNES"
+      },
+      "title": "Super Mario World 2: Yoshi's Island"
+    },
+    {
+      "type": "split",
+      "match": {
+        "title": "Pokémon Black 2 ou White 2",
+        "platform": "Nintendo DS"
+      },
+      "titles": [
+        "Pokémon Black Version 2",
+        "Pokémon White Version 2"
+      ]
+    },
+    {
+      "type": "split",
+      "match": {
+        "title": "Pokémon Ultra Sun ou Ultra Moon",
+        "platform": "Nintendo 3DS"
+      },
+      "titles": [
+        "Pokémon Ultra Sun",
+        "Pokémon Ultra Moon"
+      ]
+    },
+    {
+      "type": "split",
+      "match": {
+        "title": "Fire Emblem Fates (Birthright ou Conquest)",
+        "platform": "Nintendo 3DS"
+      },
+      "titles": [
+        "Fire Emblem Fates: Birthright",
+        "Fire Emblem Fates: Conquest"
+      ]
+    }
+  ]
+}

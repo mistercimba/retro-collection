@@ -60,6 +60,23 @@ The candidate is being batched into one remote QA push under the CI/Vercel cost 
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
+## Active data maintenance — approved Wishlist cleanup
+
+Issue #62. Stacked candidate branch: `feat/wishlist-data-cleanup`, based on PR #61 until the artwork work lands.
+
+The maintenance path is deliberately data-driven and conservative:
+
+- `data/wishlist-maintenance-2026-10-08.json` records the exact approved remove / rename / split operations;
+- `npm run wishlist:maintain` is dry-run by default and reads a fresh uncached `retro-collection/library.json` from the authorized private Blob environment;
+- `--apply` is explicit and only writes when the whole plan has no blockers;
+- ordered/in-transit targets block removal/splitting/renaming instead of silently cancelling or duplicating purchases;
+- split targets block on Next Objective, manual artwork override, canonical catalog identity, price ceiling or notes so ambiguous metadata is reviewed instead of guessed;
+- exact duplicate Wishlist destinations and already-owned destinations block the operation;
+- removal cleans manual artwork override blobs only after a successful library save;
+- out-of-band Blob writes require a fresh deployment or an in-app mutation afterwards to invalidate any previous Next Data Cache snapshot.
+
+Live execution is still pending a safe authenticated runtime. Browser setup was completed, but the current browser automation provider cannot start another run because its execution wallet is exhausted. No live library mutation has been performed.
+
 ## Current architecture
 
 ### Personal data
