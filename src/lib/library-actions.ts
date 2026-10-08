@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
 import { platformSlug } from "@/lib/data/platforms";
 import type { CanonicalGameIdentity, CollectionGame, ComponentNeed, ComponentNeedKey, ComponentNeedStatus, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
-import { getLibrary, updateLibrary } from "@/lib/library-store";
+import { getFreshLibrary, getLibrary, updateLibrary } from "@/lib/library-store";
 import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
 import { resolveCanonicalGame } from "@/lib/igdb-catalog";
 import { ensureCanonicalArtwork } from "@/lib/catalog-artwork";
@@ -16,6 +16,7 @@ import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 import { wishlistCatalogArtworkCompatible } from "@/lib/wishlist-catalog-artwork.logic";
 import { wishlistArtworkCandidateById, resolveWishlistArtworkOverrideCandidate } from "@/lib/wishlist-artwork-candidates.logic";
 import { deleteWishlistArtworkOverride, storeWishlistArtworkOverride } from "@/lib/wishlist-artwork-override";
+import { shouldDeleteUncommittedWishlistArtwork } from "@/lib/wishlist-artwork-override.logic";
 import {
   componentStateToLibraryValue,
   derivePhysicalCopyStatus,
@@ -741,27 +742,37 @@ export async function setWishlistArtworkOverride(form: FormData) {
   let previousPath = "";
   let applied = false;
 
-  await updateLibrary((library) => {
-    const current = library.wishlist.find((item) =>
-      item.targetId === targetId && item.title === title && item.platform === platform
-    );
-    if (!current) return library;
-    const currentCandidate = wishlistArtworkCandidateById(current, candidateId);
-    if (!currentCandidate || currentCandidate.sourcePath !== candidate.sourcePath) return library;
+  try {
+    await updateLibrary((library) => {
+      const current = library.wishlist.find((item) =>
+        item.targetId === targetId && item.title === title && item.platform === platform
+      );
+      if (!current) return library;
+      const currentCandidate = wishlistArtworkCandidateById(current, candidateId);
+      if (!currentCandidate || currentCandidate.sourcePath !== candidate.sourcePath) return library;
 
-    previousPath = current.artworkOverride?.pathname ?? "";
-    current.artworkOverride = nextOverride;
-    applied = true;
-    addHistory(library, {
-      action: "wishlist.artwork.set",
-      entityId: current.targetId,
-      title: current.title,
-      platform: current.platform,
-      summary: "Capa escolhida manualmente · " + currentCandidate.displayRegion,
-      details: [currentCandidate.sourceRepo, currentCandidate.sourcePath].filter((value): value is string => Boolean(value)),
+      previousPath = current.artworkOverride?.pathname ?? "";
+      current.artworkOverride = nextOverride;
+      applied = true;
+      addHistory(library, {
+        action: "wishlist.artwork.set",
+        entityId: current.targetId,
+        title: current.title,
+        platform: current.platform,
+        summary: "Capa escolhida manualmente · " + currentCandidate.displayRegion,
+        details: [currentCandidate.sourceRepo, currentCandidate.sourcePath].filter((value): value is string => Boolean(value)),
+      });
+      return library;
     });
-    return library;
-  });
+  } catch (error) {
+    // A save may throw after the Blob write succeeded but cache invalidation
+    // failed. Check fresh persisted state before deleting the new asset.
+    const fresh = await getFreshLibrary().catch(() => null);
+    if (shouldDeleteUncommittedWishlistArtwork(fresh, nextOverride.pathname)) {
+      await deleteWishlistArtworkOverride(nextOverride.pathname).catch(() => undefined);
+    }
+    throw error;
+  }
 
   if (!applied) {
     await deleteWishlistArtworkOverride(nextOverride.pathname).catch(() => undefined);

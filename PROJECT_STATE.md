@@ -39,7 +39,8 @@ Implementation model:
 - Final Fantasy VIII still exposes two genuinely different PAL candidates: Europe/Australia and Spain;
 - the Wishlist detail shows **Artwork ambíguo** and links to an explicit chooser only when at least two compatible candidates exist;
 - until Mário makes a manual choice, the preferred candidate can be used directly as the displayed default; opening the chooser still exposes all alternatives with provenance;
-- choosing a candidate downloads it server-side into private Vercel Blob and persists a copy-specific Wishlist override with full provenance;
+- choosing a candidate persists an app-owned materialized cover into private Vercel Blob and saves a copy-specific Wishlist override with full provenance;
+- each manual artwork selection uses a unique private Blob path, with fresh-read-aware failure cleanup so a failed write cannot overwrite the previous image;
 - the persisted manual override has priority over static/reused/catalog artwork;
 - removing a manual choice returns to the preferred automatic candidate;
 - a manual choice is intentionally authoritative for that exact title/platform target, even if its free-text targetVersion is imperfect;
