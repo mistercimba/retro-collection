@@ -39,6 +39,72 @@ const library = (
 });
 
 describe("wishlist maintenance", () => {
+  it("preserves approved real notes for each distinct version without making both obligatory", () => {
+    const realNotes = "Escolher um; não é necessário comprar os dois.";
+    const input = library([
+      target({
+        targetId: "NOVO", title: "Pokémon Ultra Sun ou Ultra Moon",
+        platform: "Nintendo 3DS", notes: realNotes,
+      }),
+      target({ targetId: "NOVO", title: "Another 3DS Game", platform: "Nintendo 3DS" }),
+    ]);
+    const op = {
+      type: "split" as const,
+      match: { title: "Pokémon Ultra Sun ou Ultra Moon", platform: "Nintendo 3DS" },
+      titles: ["Pokémon Ultra Sun", "Pokémon Ultra Moon"],
+      expectedSourceNotes: realNotes,
+      notesByTitle: {
+        "Pokémon Ultra Sun": realNotes + " Alternativa: Pokémon Ultra Moon.",
+        "Pokémon Ultra Moon": realNotes + " Alternativa: Pokémon Ultra Sun.",
+      },
+    };
+    const plan: WishlistMaintenancePlan = { schemaVersion: 1, operations: [op] };
+    const out = applyWishlistMaintenance(input, plan, { nowIso: "2026-10-08T11:00:00.000Z" });
+    expect(out.report.safeToApply).toBe(true);
+    expect(out.library.wishlist.map((x) => x.title)).toEqual([
+      "Another 3DS Game", "Pokémon Ultra Sun", "Pokémon Ultra Moon",
+    ]);
+    expect(out.library.wishlist.slice(1).map((x) => x.notes)).toEqual([
+      realNotes + " Alternativa: Pokémon Ultra Moon.",
+      realNotes + " Alternativa: Pokémon Ultra Sun.",
+    ]);
+    expect(input.wishlist).toHaveLength(2);
+    expect(input.wishlist[0].notes).toBe(realNotes);
+  });
+
+  it("blocks a stale notes plan and cannot silently drop a source note", () => {
+    const source = target({
+      targetId: "NOVO", title: "Pokémon Black 2 ou White 2",
+      platform: "Nintendo DS", notes: "Confirmar código e autenticidade; não comprar repro.",
+    });
+    const plan: WishlistMaintenancePlan = {
+      schemaVersion: 1,
+      operations: [{
+        type: "split",
+        match: { title: source.title, platform: source.platform },
+        titles: ["Pokémon Black Version 2", "Pokémon White Version 2"],
+        expectedSourceNotes: source.notes,
+        notesByTitle: {
+          "Pokémon Black Version 2": source.notes,
+          "Pokémon White Version 2": source.notes,
+        },
+      }],
+    };
+    expect(applyWishlistMaintenance(library([source]), plan).report.safeToApply).toBe(true);
+    const changedSource = { ...source, notes: "Atenção: verificar também o estado da caixa" };
+    expect(analyzeWishlistMaintenance(library([changedSource]), plan).blockers.map((x) => x.code)).toContain("notes");
+    const missingDestinationNote: WishlistMaintenancePlan = structuredClone(plan);
+    const missingOp = missingDestinationNote.operations[0];
+    if (missingOp.type !== "split" || !missingOp.notesByTitle) throw new Error("Invalid test fixture");
+    delete missingOp.notesByTitle["Pokémon White Version 2"];
+    expect(analyzeWishlistMaintenance(library([source]), missingDestinationNote).blockers.map((x) => x.code)).toContain("notes");
+    const droppedNote: WishlistMaintenancePlan = structuredClone(plan);
+    const droppedOp = droppedNote.operations[0];
+    if (droppedOp.type !== "split" || !droppedOp.notesByTitle) throw new Error("Invalid test fixture");
+    droppedOp.notesByTitle["Pokémon Black Version 2"] = "";
+    expect(analyzeWishlistMaintenance(library([source]), droppedNote).blockers.map((x) => x.code)).toContain("notes");
+  });
+
   it("only removes the exact intended record when unrelated targets share the legacy NOVO ID", () => {
     const input = library([
       target({ targetId: "NOVO", title: "Warlocked", platform: "Game Boy Color" }),

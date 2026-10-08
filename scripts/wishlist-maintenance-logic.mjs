@@ -33,6 +33,26 @@ function isObjectiveFor(library, target) {
   );
 }
 
+function splitNotesAreApproved(target, operation) {
+  const actual = typeof target.notes === "string" ? target.notes : "";
+  // No notes in the source: ordinary clean split. If the plan explicitly
+  // expected notes, a change (including deletion) must be reviewed again.
+  if (!actual.trim() && operation.expectedSourceNotes === undefined) return true;
+  const assignments = operation.notesByTitle;
+  if (typeof operation.expectedSourceNotes !== "string" ||
+      actual !== operation.expectedSourceNotes ||
+      !assignments || typeof assignments !== "object" || Array.isArray(assignments)) return false;
+  const titles = operation.titles;
+  const keys = Object.keys(assignments);
+  return keys.length === titles.length && new Set(titles).size === titles.length &&
+    titles.every((title) =>
+      Object.hasOwn(assignments, title) &&
+      typeof assignments[title] === "string" &&
+      assignments[title].includes(actual) &&
+      assignments[title].trim().length >= actual.length
+    );
+}
+
 function hasOrderedAcquisition(target) {
   return target.acquisition?.state === "ordered" || Boolean(target.acquisition?.purchaseId);
 }
@@ -181,8 +201,8 @@ function analyzeOperation(library, operation, operationIndex, report) {
     if (target.priceCeilingEur !== null && target.priceCeilingEur !== undefined) {
       pushBlocker(report, operationIndex, "price-ceiling", "Combined target has a price ceiling; review it per replacement before splitting.", target);
     }
-    if (String(target.notes ?? "").trim()) {
-      pushBlocker(report, operationIndex, "notes", "Combined target has notes; review them per replacement before splitting.", target);
+    if (!splitNotesAreApproved(target, operation)) {
+      pushBlocker(report, operationIndex, "notes", "Original notes changed or there is no explicit, approved note for each replacement.", target);
     }
     for (const title of operation.titles) {
       if (wishlistIdentityExists(library, title, target.platform, target)) {
@@ -373,7 +393,7 @@ export function applyWishlistMaintenance(library, plan, options = {}) {
           targetVersion: source.targetVersion,
           priceCeilingEur: null,
           status: source.status,
-          notes: "",
+          notes: operation.notesByTitle?.[title] ?? "",
         };
         next.wishlist.push(target);
         addHistory(next, state, {

@@ -41,6 +41,9 @@ export function buildWishlistMaintenancePreflight(
       proposedTitles: operation.type === "rename"
         ? [operation.title]
         : operation.type === "split" ? operation.titles : [],
+      ...(operation.type === "split" ? { proposedNotes: operation.titles.map((title) =>
+        ({ title, notes: operation.notesByTitle?.[title] ?? "" })
+      ) } : {}),
     };
   });
 

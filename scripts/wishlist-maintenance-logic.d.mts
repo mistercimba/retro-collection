@@ -4,7 +4,7 @@ export type WishlistMaintenanceOperation =
   | { type: "remove"; match: WishlistMaintenanceMatch }
   | { type: "remove-platform"; platform: string }
   | { type: "rename"; match: WishlistMaintenanceMatch; title: string }
-  | { type: "split"; match: WishlistMaintenanceMatch; titles: string[] };
+  | { type: "split"; match: WishlistMaintenanceMatch; titles: string[]; expectedSourceNotes?: string; notesByTitle?: Record<string, string> };
 
 export type WishlistMaintenancePlan = {
   schemaVersion: 1;

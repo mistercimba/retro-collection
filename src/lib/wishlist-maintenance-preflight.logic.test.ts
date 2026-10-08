@@ -45,6 +45,26 @@ const plan: WishlistMaintenancePlan = {
 };
 
 describe("Wishlist read-only preflight", () => {
+  it("shows approved per-title notes and no notes blocker when live note matches the plan", () => {
+    const expectedNotes = "Não é necessário comprar as duas versões de início.";
+    const input = library();
+    input.wishlist[1].notes = expectedNotes;
+    const approvedPlan: WishlistMaintenancePlan = structuredClone(plan);
+    const split = approvedPlan.operations[1];
+    if (split.type !== "split") throw new Error("Expected split");
+    split.expectedSourceNotes = expectedNotes;
+    split.notesByTitle = {
+      "Pokémon Black Version 2": expectedNotes + " Alternativa: White 2.",
+      "Pokémon White Version 2": expectedNotes + " Alternativa: Black 2.",
+    };
+    const report = buildWishlistMaintenancePreflight(input, approvedPlan);
+    expect(report.safeToApply).toBe(true);
+    expect(report.operations[1].proposedNotes?.map((x) => x.notes)).toEqual([
+      expectedNotes + " Alternativa: White 2.",
+      expectedNotes + " Alternativa: Black 2.",
+    ]);
+  });
+
   it("reports exact live source IDs and new titles without changing the source", () => {
     const input = library();
     const before = structuredClone(input);

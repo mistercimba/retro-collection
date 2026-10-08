@@ -98,6 +98,13 @@ export default async function WishlistMaintenancePreflightPage() {
         {operation.proposedTitles.length > 0 && <p className="mt-2 text-sm font-semibold text-emerald-900">
           → {operation.proposedTitles.join(" · ")}
         </p>}
+        {operation.type === "split" && "proposedNotes" in operation &&
+          <ul className="mt-2 space-y-1">
+            {operation.proposedNotes.map((item) =>
+              <li key={item.title} className="text-xs text-slate-600">
+                <strong>{item.title}:</strong> {item.notes || "(sem nota atribuída)"}
+              </li>)}
+          </ul>}
       </article>)}
     </section>
   </div>;
