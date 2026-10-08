@@ -39,6 +39,21 @@ describe("wishlist artwork candidates", () => {
     expect(wishlistArtworkCandidateLocalUrl(preferred!)).not.toContain("http");
   });
 
+  it("preserves approved SNES European artwork after exact Wishlist title corrections", () => {
+    const titles = [
+      ["Teenage Mutant Hero Turtles: Turtles in Time", "Teenage Mutant Hero Turtles IV: Turtles in Time"],
+      ["Yoshi's Island / Super Mario World 2", "Super Mario World 2: Yoshi's Island"],
+    ];
+    for (const [before, after] of titles) {
+      const original = resolvePreferredWishlistArtworkCandidate(target({ platform: "SNES", title: before }));
+      const renamed = resolvePreferredWishlistArtworkCandidate(target({ platform: "SNES", title: after }));
+      expect(original).toBeTruthy();
+      expect(renamed?.id).toBe(original?.id);
+      expect(wishlistArtworkCandidateLocalUrl(renamed!)).toContain("/covers/wishlist-candidates/");
+    }
+    expect(resolveWishlistArtworkCandidates(target({ platform: "SNES", title: "Some Other Title" }))).toEqual([]);
+  });
+
   it("collapses duplicate regional labels that point to the same DuckTales 2 image", () => {
     const duck = {
       ...target(),

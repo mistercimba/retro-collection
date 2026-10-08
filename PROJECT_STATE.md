@@ -1,6 +1,6 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-06
+Last updated: 2026-10-08
 
 This is the living project handoff. Read `AGENTS.md` first.
 
@@ -8,7 +8,7 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`ef940362b380bbabdc42c8625ca0bd4b3b342b6e`
+`df6e0a8f82dae2cea5734a61f366b505fadde78d`
 
 Most recent merged work:
 
@@ -17,14 +17,15 @@ Most recent merged work:
 - PR #56 — universal acquisition flow with **Já tenho / A caminho / Wishlist**, including receipt verification and reused Wishlist purchase dialog;
 - PR #57 — copy-specific **Para completar** queue, loose-friendly cartridge policy, console filters and incompleteness indicators;
 - PR #58 — manual **Próximo objetivo** plus transparent suggestions from lists/series/Wishlist priority;
-- PR #59 — deliberate shared artwork placeholder, compatible catalog-artwork fallback for new Wishlist targets and real artwork coverage reporting.
+- PR #59 — deliberate shared artwork placeholder, compatible catalog-artwork fallback for new Wishlist targets and real artwork coverage reporting;
+- PR #61 — deterministic PAL Wishlist cover defaults, alternative chooser, safe manual overrides and materialized candidate library (merged 2026-10-08).
 
 Verified before starting the current feature:
 
 - PR #59 GitHub Actions: SUCCESS before merge;
 - PR #59 merged as `ef940362b380bbabdc42c8625ca0bd4b3b342b6e`.
 
-## Active product work — manual resolution of ambiguous artwork
+## Completed product work — manual resolution of ambiguous artwork
 
 Issue #60. Candidate branch: `feat/manual-artwork-choice`.
 
@@ -57,9 +58,29 @@ Implementation model:
 - remaining-cover matching stays exact on game/platform identity but accepts exact LaunchBox alternate names even when the alias metadata is World/unlabelled; conservative slash-form titles may resolve only when their exact fragments/reordered form point to one unique LaunchBox game. This is intended to recover naming differences such as Crash Team Racing / CTR without introducing fuzzy guessing.
 - user-approved curated Wishlist covers are persisted in `data/wishlist-artwork-curated.json` so future regeneration does not erase them. Curated entries may be disabled while an exact approved source cannot be materialized safely. Mole Mania (Game Boy) keeps the approved Germany/PAL MobyGames provenance but is currently disabled because CI receives HTTP 403 for that exact asset; it must not be silently replaced. Active approved curated cases currently include the PAL fronts for Turtles in Time, Yoshi's Island, Super Mario 3D World, Wendy: Every Witch Way and Valkyria Chronicles. Wendy now uses Retroplace's verified Europe release asset (CGB-BWGP-EUR); Valkyria Chronicles uses a PAL euro/fr physical-cover source from Retrogameshop. Mole Mania remains disabled because the exact approved Germany/PAL MobyGames asset still returns HTTP 403 to CI and must not be silently replaced.
 
-The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
+PR #61 has merged; CI, materialization and production deployment were successful.
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
+
+## Active data maintenance — approved Wishlist cleanup
+
+Issue #62. Candidate PR #63, rebased logically onto `main` after PR #61 merged. Live private Blob cleanup is not applied by merging the PR.
+
+The maintenance path is deliberately data-driven and conservative:
+
+- `data/wishlist-maintenance-2026-10-08.json` records the exact approved remove / rename / split operations;
+- `npm run wishlist:maintain` is dry-run by default and reads a fresh uncached `retro-collection/library.json` from the authorized private Blob environment;
+- `--apply` requires an exact SHA-256 fingerprint from a reviewed dry-run and only writes when the whole plan has no blockers;
+- an immutable private backup is stored before overwriting `retro-collection/library.json`, with rollback left manual;
+- the dry-run lists exact IDs and titles affected; no write is performed by dry-run;
+- ordered/in-transit targets block removal/splitting/renaming instead of silently cancelling or duplicating purchases;
+- split targets block on Next Objective, manual artwork override, canonical catalog identity, price ceiling or notes so ambiguous metadata is reviewed instead of guessed;
+- exact duplicate Wishlist destinations and already-owned destinations block the operation;
+- removal cleans manual artwork override blobs only after a successful library save;
+- out-of-band Blob writes require a fresh deployment or an in-app mutation afterwards to invalidate any previous Next Data Cache snapshot;
+- explicit exact title aliases preserve approved SNES PAL cover candidates after the two Issue #62 title corrections; newly split game covers still require a post-live-mutation audit.
+
+Live execution is still pending a safe authenticated runtime. Browser setup was completed, but the current browser automation provider cannot start another run because its execution wallet is exhausted. No live library mutation has been performed.
 
 ## Current architecture
 
