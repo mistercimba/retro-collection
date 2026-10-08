@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { resolveWishlistArtwork, resolveWishlistArtworkFromEntries } from "./wishlist-artwork";
+import { resolvePreferredWishlistArtworkCandidate, resolveWishlistArtworkCandidates, wishlistArtworkCandidateLocalUrl } from "./wishlist-artwork-candidates.logic";
 import {
   wishlistArtworkIdentity,
   wishlistArtworkEditionRequirement,
@@ -37,6 +38,43 @@ const collectionArtwork = {
 };
 
 describe("wishlist artwork resolver", () => {
+  it("gives a valid manual artwork choice priority over automatic sources", () => {
+    const base = {
+      targetId: "APP-123",
+      title: "Final Fantasy VIII",
+      platform: "Playstation",
+      targetVersion: "PAL; CIB",
+    };
+    const spain = resolveWishlistArtworkCandidates(base).find((candidate) => candidate.displayRegion === "Spain");
+    expect(spain).toBeTruthy();
+    const result = resolveWishlistArtwork({
+      ...base,
+      artworkOverride: {
+        candidateId: spain!.id,
+        pathname: "retro-collection/wishlist-artwork-overrides/APP-123/manual.png",
+        contentType: "image/png",
+        source: spain!.source,
+        sourceRepo: spain!.sourceRepo,
+        sourceCommit: spain!.sourceCommit,
+        sourcePath: spain!.sourcePath,
+        selectedAt: "2026-10-06T22:00:00.000Z",
+      },
+    });
+    expect(result).toContain("/api/wishlist-artwork-override/APP-123?");
+  });
+
+  it("uses a safe recovered candidate when static artwork is unresolved", () => {
+    const wanted = {
+      targetId: "NOVO",
+      title: "Metroid",
+      platform: "NES",
+      targetVersion: "PAL; loose",
+    };
+    const preferred = resolvePreferredWishlistArtworkCandidate(wanted);
+    expect(preferred).toBeTruthy();
+    expect(resolveWishlistArtwork(wanted)).toBe(wishlistArtworkCandidateLocalUrl(preferred!));
+  });
+
   it("uses authenticated catalog artwork as a conservative final fallback", () => {
     const result = resolveWishlistArtwork({
       ...target({ targetId: "APP-1", targetVersion: "PAL Standard; CIB" }),

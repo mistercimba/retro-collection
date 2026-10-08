@@ -22,13 +22,19 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Artwork gaps and deliberate fallback (#48)
+### NOW — Manual resolution of ambiguous artwork (#60)
 
-Make missing artwork look intentional and keep new catalog-backed additions from regressing into blank/unknown covers.
+When the artwork pipeline has multiple plausible covers, choose a sensible default but let Mário change it explicitly. Treat this as a collection-wide audit problem, not a per-example fix.
 
-Implementation direction: preserve the conservative static mappings, use one shared placeholder whenever no safe cover exists, persist canonical artwork for compatible catalog-backed Wishlist mutations, and expose real current coverage in the health endpoint. Accuracy remains more important than forcing 100% coverage; ambiguous region/edition candidates stay unresolved.
+Implementation direction: materialize the known ambiguity set, deduplicate identical image bytes, and use a conservative PAL default order: **Europe** → **United Kingdom** → **Portugal** → **Portugal/Spain or Spain** → other European PAL regions → Australia/Oceania as a later PAL fallback. Expose a chooser only when genuinely different alternatives remain, store any manual choice in private Blob, persist the override on the exact Wishlist target, and allow returning to the automatic default.
 
-The single Next objective (#51) is complete and merged in PR #58.
+Coverage rule: audit every current Wishlist fallback, including non-ambiguous mismatch/unconfirmed cases. A known-bad source remains rejected; when a secondary source has one safe exact European front cover, use it as the automatic fallback instead of leaving the placeholder.
+
+Current audit baseline on PR #61: the full LaunchBox pass now covers **141 of the 159 original fallbacks**, leaving **18 targets with no candidate** before the PAL/alias refinement. The active pass must keep exact title/platform identity, accept exact LaunchBox alternate names and conservative slash-title equivalents, apply the PAL preference above, and keep genuinely unresolved or one-of identities explicit in the generated audit report.
+
+Runtime rule: candidate source URLs are discovery/provenance only. A dedicated import step materializes candidates into committed files under `public/covers/wishlist-candidates/`; normal CI/build verifies the files and detail pages/chooser never hotlink Libretro/LaunchBox.
+
+Artwork gaps/deliberate fallback (#48) are complete and merged in PR #59.
 
 ## Product roadmap
 

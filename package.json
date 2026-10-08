@@ -21,7 +21,10 @@
     "artwork:strict-fallback": "node scripts/import-strict-libretro-fallback.mjs",
     "metadata:refresh": "node scripts/refresh-game-metadata.mjs",
     "collection:refresh": "node scripts/refresh-collection-snapshot.mjs",
-    "wishlist-artwork:import": "node scripts/import-wishlist-artwork.mjs"
+    "wishlist-artwork:import": "node scripts/import-wishlist-artwork.mjs",
+    "wishlist-artwork:candidates": "node scripts/generate-wishlist-artwork-candidates.mjs",
+    "wishlist-artwork:materialize-candidates": "node scripts/materialize-wishlist-artwork-candidates.mjs",
+    "wishlist-artwork:check-candidates": "node scripts/materialize-wishlist-artwork-candidates.mjs --check"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

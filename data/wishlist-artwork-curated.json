@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "title": "Mole Mania",
+      "platform": "Game Boy",
+      "artworkRegion": "Europe",
+      "displayRegion": "Germany",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "146373-mole-mania-game-boy-front-cover.jpg",
+      "sourceUrl": "https://www.mobygames.com/images/covers/l/146373-mole-mania-game-boy-front-cover.jpg",
+      "metadataUrl": "https://www.mobygames.com/game/20550/mole-mania/cover/group-55080/cover-146373/",
+      "enabled": false,
+      "note": "Approved by Mário on 2026-10-07. Kept pending because the exact MobyGames asset returns HTTP 403 to CI; do not substitute another cover silently."
+    },
+    {
+      "title": "Teenage Mutant Hero Turtles: Turtles in Time",
+      "platform": "SNES",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "6f2e802f-823b-4fa4-8517-341d84f4c872.png",
+      "sourceUrl": "https://images.launchbox-app.com/6f2e802f-823b-4fa4-8517-341d84f4c872.png",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/179-teenage-mutant-ninja-turtles-iv-turtles-in-time",
+      "note": "Approved by Mário on 2026-10-07. Live Wishlist title correction to Teenage Mutant Hero Turtles IV: Turtles in Time is pending private Blob access."
+    },
+    {
+      "title": "Yoshi's Island / Super Mario World 2",
+      "platform": "SNES",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "78f17a9d-68f1-4ea3-947e-abea9ea5fe11.png",
+      "sourceUrl": "https://images.launchbox-app.com/78f17a9d-68f1-4ea3-947e-abea9ea5fe11.png",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/132-super-mario-world-2-yoshis-island",
+      "note": "Approved by Mário on 2026-10-07. Live Wishlist title correction to Super Mario World 2: Yoshi's Island is pending private Blob access."
+    },
+    {
+      "title": "Super Mario 3D World",
+      "platform": "Nintendo Wii U",
+      "artworkRegion": "Europe",
+      "displayRegion": "Spain",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "b70fbb15-54c6-4b2c-923f-c1f970e666d1.jpg",
+      "sourceUrl": "https://images.launchbox-app.com/b70fbb15-54c6-4b2c-923f-c1f970e666d1.jpg",
+      "metadataUrl": "https://gamesdb.launchbox-app.com/games/details/71648-super-mario-3d-world",
+      "note": "Approved by Mário on 2026-10-07 as the PAL Portugal/Spain-family choice; this is the verified physical Spain PAL front."
+    },
+    {
+      "title": "Wendy: Every Witch Way",
+      "platform": "Game Boy Color",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "50141--wendy-every-witch-way.png",
+      "sourceUrl": "https://www.retroplace.com/pics/gbc/packshots/50141--wendy-every-witch-way.png",
+      "metadataUrl": "https://www.retroplace.com/en/games/50141--wendy-every-witch-way",
+      "note": "Approved by Mário on 2026-10-07. Retroplace identifies this as the Europe release (CGB-BWGP-EUR, 2000)."
+    },
+    {
+      "title": "Valkyria Chronicles",
+      "platform": "Playstation 3",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "70950-large_default/white-knight-chronicles-2-neuf.jpg",
+      "sourceUrl": "https://www.retrogame-shop.com/70950-large_default/white-knight-chronicles-2-neuf.jpg",
+      "metadataUrl": "https://www.retrogame-shop.com/fr/playstation-3/24083-white-knight-chronicles-2-neuf.html",
+      "note": "Approved by Mário on 2026-10-08. Retrogameshop identifies this physical copy as PAL euro/fr; the visible front is PEGI 16."
+    }
+  ]
+}

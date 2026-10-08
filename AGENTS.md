@@ -311,6 +311,18 @@ Loading and unavailable price states should remain distinguishable.
 
 ## Artwork
 
+### Manual artwork choices
+
+- User screenshots/examples are evidence of a problem class, not the scope. When an artwork gap is reported, audit the current unresolved report/registry for all equivalent cases before calling the fix complete.
+
+- Ambiguous candidates may have a deterministic visual default. Prefer Europe / Australia when present, then another European candidate, then remaining candidates.
+- Candidate discovery may ignore targetId, but the persisted override must belong to the exact Wishlist target.
+- Candidate metadata must retain provenance (source repo/commit/path and region/variant context).
+- The preferred unresolved candidate may be displayed directly until the user makes a manual choice; the chooser shows all alternatives.
+- On manual selection, store a private copy in Blob and serve that on subsequent normal browsing.
+- A manual override beats static/reused/catalog artwork only while it remains compatible with the target's current region/edition.
+- Removing a manual choice returns to the deterministic default; removing/changing/acquiring the target must not leave an active stale override reference.
+
 ### Artwork fallback and catalog covers
 
 - Never deliberately request a known-missing cover path just to trigger an image error; render the shared placeholder directly.
@@ -354,6 +366,7 @@ When working on it, preserve these principles:
 - wrong region/edition is a bug;
 - visibly rejected source assets must stay blocked;
 - import in small checkpointed batches.
+- User-approved one-off Wishlist covers may be recorded in `data/wishlist-artwork-curated.json`; they must still be exact title+platform, retain provenance, and be materialized locally before runtime.
 
 Do not create a new GitHub Action just to import Wishlist artwork unless explicitly requested.
 

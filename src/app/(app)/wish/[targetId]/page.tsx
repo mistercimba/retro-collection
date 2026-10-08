@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Target } from "lucide-react";
+import { ArrowLeft, Images, Target } from "lucide-react";
 import { notFound } from "next/navigation";
 import { WishlistArtwork } from "@/components/wishlist-artwork";
 import { WishlistBuyReferencePanel } from "@/components/wishlist-buy-reference-panel";
@@ -23,6 +23,7 @@ import { physicalCopyProfile, type PhysicalComponentKey } from "@/lib/physical-c
 import { formatEuro } from "@/lib/format";
 import { getLibrary } from "@/lib/library-store";
 import { objectiveMatchesTarget } from "@/lib/next-objective.logic";
+import { resolvePreferredWishlistArtworkCandidate, resolveWishlistArtworkCandidates, resolveWishlistArtworkOverrideCandidate } from "@/lib/wishlist-artwork-candidates.logic";
 
 export default async function WishDetailPage({
   params,
@@ -51,6 +52,10 @@ export default async function WishDetailPage({
   ]);
   const metadata = findGameMetadataByTitle(target.title);
   const artworkSrc = resolveWishlistArtwork(target);
+  const artworkCandidates = resolveWishlistArtworkCandidates(target);
+  const artworkOverrideCandidate = resolveWishlistArtworkOverrideCandidate(target);
+  const preferredArtworkCandidate = resolvePreferredWishlistArtworkCandidate(target);
+  const effectiveArtworkCandidate = artworkOverrideCandidate ?? preferredArtworkCandidate;
   const back = getSafeListReturnPath(query.from) ?? (ordered ? "/want" : "/platform/" + platformSlug(target.platform) + "?tab=wishlist");
   const year = metadata?.firstReleaseDate ? metadata.firstReleaseDate.slice(0, 4) : "—";
   const origin = ordered ? null : getWishlistOriginState(query.from, platformSlug(target.platform));
@@ -120,6 +125,28 @@ export default async function WishDetailPage({
         <div className="mt-5"><ReferenceLinks title={target.title} metacriticUrl={metadata?.reviewScoreUrl ?? ""} /></div>
       </div>
     </section>
+
+    {artworkCandidates.length > 1 && <section className={artworkOverrideCandidate ? "rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4" : "rounded-2xl border border-sky-200 bg-sky-50/70 p-4"}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex min-w-0 items-start gap-3">
+          <span className={artworkOverrideCandidate ? "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-100 text-emerald-800" : "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-sky-100 text-sky-800"}><Images className="h-5 w-5" /></span>
+          <div className="min-w-0">
+            <p className="text-sm font-black text-slate-950">{artworkOverrideCandidate ? "Capa escolhida manualmente" : "Capa predefinida"}</p>
+            <p className="mt-1 text-xs font-semibold leading-5 text-slate-500">
+              {effectiveArtworkCandidate
+                ? effectiveArtworkCandidate.displayRegion + (artworkOverrideCandidate ? " · escolha manual." : " · escolhida automaticamente entre " + String(artworkCandidates.length) + " opções.")
+                : String(artworkCandidates.length) + " opções de capa disponíveis."}
+            </p>
+          </div>
+        </div>
+        <Link
+          href={"/wish/" + encodeURIComponent(target.targetId) + "/artwork?" + new URLSearchParams({ platform: target.platform, title: target.title, from: back }).toString()}
+          className="min-h-10 rounded-xl bg-[#17382e] px-4 py-2.5 text-xs font-black text-white"
+        >
+          Trocar capa
+        </Link>
+      </div>
+    </section>}
 
     {canBeNextObjective && <section className={isNextObjective ? "rounded-2xl border border-lime-300 bg-lime-50/80 p-4" : "collection-panel p-4"}>
       <div className="flex flex-wrap items-center justify-between gap-3">

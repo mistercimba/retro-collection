@@ -11,6 +11,7 @@ wishlist. Next.js App Router, TypeScript, Tailwind, Node.js 22 e Vercel.
 - Detalhes da cópia, edição dos dados de compra, fotos privadas e gestão/navegação entre múltiplas cópias físicas do mesmo jogo.
 - Lista **Para completar** para caixas, manuais, media e extras em falta, sempre ligada à cópia física concreta.
 - **Próximo objetivo** manual-first: um único target da Wishlist pode ser destacado na Home como próxima aquisição importante.
+- Artwork ambíguo: a app materializa e guarda no repositório os candidatos conhecidos, elimina duplicados de imagem, escolhe uma predefinição determinística (preferindo Europe / Australia quando existe) e deixa trocar manualmente quando restam alternativas realmente diferentes; os URLs Libretro/LaunchBox ficam só como proveniência/import, não como imagens de runtime; a escolha manual é guardada no Blob privado e pode ser removida para voltar à predefinição.
 - Listas/objetivos personalizados com progresso automático contra a Collection.
 - Para vender/Vendidos e histórico das alterações feitas na app.
 - Metadata, capas e imagens das plataformas locais; referências de preço e links de pesquisa.

@@ -19,7 +19,7 @@ export function sourceArtworkRegion(filePath) {
   const base = path.posix.basename(filePath);
   const groups = [...base.matchAll(/\(([^)]*)\)/g)].map((match) => normalizeArtworkTitle(match[1]));
   const joined = groups.join(" ");
-  const europe = /\b(europe|pal|portugal|united kingdom|great britain|uk|france|germany|spain|italy|netherlands|ireland|belgium|sweden|norway|denmark|finland|austria|switzerland)\b/.test(joined);
+  const europe = /\b(europe|pal|portugal|united kingdom|great britain|uk|france|germany|spain|italy|netherlands|the netherlands|ireland|belgium|sweden|norway|denmark|finland|austria|switzerland|australia|oceania)\b/.test(joined);
   const us = /\b(usa|united states|ntsc u|north america|canada)\b/.test(joined);
   const japan = /\b(japan|japanese|ntsc j)\b/.test(joined);
   if (Number(europe) + Number(us) + Number(japan) !== 1) return null;
@@ -49,16 +49,31 @@ export function findExactSourceMatches(target, candidates) {
   );
 }
 
-// LaunchBox already links each front image to a game and platform. Both the game
-// and its eligible image must be unique; no regional ranking or fuzzy aliases.
-export function findExactLaunchboxMatch(target, games, sourcePlatform) {
-  const title = normalizeArtworkTitle(target.title);
-  const region = requestedArtworkRegion(target.targetVersion);
-  const matches = games.filter((game) => game.platform === sourcePlatform && (
-    normalizeArtworkTitle(game.title) === title ||
-    game.alternates.some((alternate) => normalizeArtworkTitle(alternate.title) === title &&
-      launchboxArtworkRegion(alternate.region) === region)
+export function targetArtworkTitleVariants(title) {
+  const raw = String(title ?? "").trim();
+  const variants = new Set([normalizeArtworkTitle(raw)]);
+  const slashParts = raw.split(/\s+\/\s+/).map((part) => part.trim()).filter(Boolean);
+  if (slashParts.length === 2) {
+    variants.add(normalizeArtworkTitle(slashParts[0]));
+    variants.add(normalizeArtworkTitle(slashParts[1]));
+    variants.add(normalizeArtworkTitle(`${slashParts[1]} ${slashParts[0]}`));
+  }
+  return [...variants].filter(Boolean);
+}
+
+export function findLaunchboxGameMatches(target, games, sourcePlatform) {
+  const titles = new Set(targetArtworkTitleVariants(target.title));
+  return games.filter((game) => game.platform === sourcePlatform && (
+    titles.has(normalizeArtworkTitle(game.title)) ||
+    (game.alternates ?? []).some((alternate) => titles.has(normalizeArtworkTitle(alternate.title)))
   ));
+}
+
+// LaunchBox already links each front image to a game and platform. Keep identity
+// exact, but rank PAL-family region labels instead of requiring one literal label.
+export function findExactLaunchboxMatch(target, games, sourcePlatform) {
+  const region = requestedArtworkRegion(target.targetVersion);
+  const matches = findLaunchboxGameMatches(target, games, sourcePlatform);
   if (matches.length !== 1) return {
     reason: matches.length > 1 ? "ambiguous-launchbox-games" : "no-exact-title-platform-match",
     candidateCount: matches.length,
@@ -66,7 +81,8 @@ export function findExactLaunchboxMatch(target, games, sourcePlatform) {
   const game = matches[0];
   const images = [...new Map(game.images
     .filter((item) => item.fileName && launchboxArtworkRegion(item.region) === region)
-    .map((item) => [item.fileName, item])).values()];
+    .map((item) => [item.fileName, item])).values()]
+    .sort((a, b) => launchboxArtworkRegionScore(b.region) - launchboxArtworkRegionScore(a.region));
   if (images.length !== 1) return {
     reason: images.length > 1 ? "ambiguous-launchbox-covers" : "region-mismatch",
     candidateCount: images.length,
@@ -76,10 +92,23 @@ export function findExactLaunchboxMatch(target, games, sourcePlatform) {
 
 export function launchboxArtworkRegion(region) {
   const value = normalizeArtworkTitle(region);
-  if (["europe", "united kingdom", "great britain", "portugal", "france", "germany", "spain", "italy", "ireland", "netherlands", "belgium", "austria", "switzerland", "sweden", "denmark", "norway", "finland"].includes(value)) return "Europe";
+  if (/\b(europe|united kingdom|great britain|portugal|spain|france|germany|italy|ireland|netherlands|belgium|austria|switzerland|sweden|denmark|norway|finland|australia|oceania)\b/.test(value)) return "Europe";
   if (["north america", "united states", "usa"].includes(value)) return "US";
   if (value === "japan") return "Japan";
   return null;
+}
+
+export function launchboxArtworkRegionScore(region) {
+  const value = normalizeArtworkTitle(region);
+  if (value === "europe") return 1000;
+  if (/\beurope\b/.test(value)) return 990;
+  if (/\b(united kingdom|great britain|uk)\b/.test(value)) return 950;
+  if (/\bportugal\b/.test(value) && /\bspain\b/.test(value)) return 940;
+  if (/\bportugal\b/.test(value)) return 930;
+  if (/\bspain\b/.test(value)) return 920;
+  if (/\b(france|germany|italy|ireland|netherlands|belgium|austria|switzerland|sweden|denmark|norway|finland)\b/.test(value)) return 900;
+  if (/\b(australia|oceania)\b/.test(value)) return 800;
+  return 0;
 }
 
 export function rejectedArtworkSource(source, rejections) {

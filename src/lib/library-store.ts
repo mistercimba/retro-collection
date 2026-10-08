@@ -100,6 +100,11 @@ const readCachedLibrary = unstable_cache(
 
 export const getLibrary = cache(readCachedLibrary);
 
+// Use only for failure recovery / mutation verification, never cached rendering.
+export async function getFreshLibrary(): Promise<LibraryData> {
+  return readRequiredLibrary();
+}
+
 export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
   const next: LibraryData = {
     ...data,

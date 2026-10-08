@@ -8,7 +8,7 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 Current `main` baseline:
 
-`2425f50ff8120d021673d03e628ca093b390875c`
+`ef940362b380bbabdc42c8625ca0bd4b3b342b6e`
 
 Most recent merged work:
 
@@ -16,34 +16,46 @@ Most recent merged work:
 - PR #55 — CI now runs once per PR candidate plus post-merge on `main`, with concurrency cancellation and documented push batching;
 - PR #56 — universal acquisition flow with **Já tenho / A caminho / Wishlist**, including receipt verification and reused Wishlist purchase dialog;
 - PR #57 — copy-specific **Para completar** queue, loose-friendly cartridge policy, console filters and incompleteness indicators;
-- PR #58 — manual **Próximo objetivo** plus transparent suggestions from lists/series/Wishlist priority.
+- PR #58 — manual **Próximo objetivo** plus transparent suggestions from lists/series/Wishlist priority;
+- PR #59 — deliberate shared artwork placeholder, compatible catalog-artwork fallback for new Wishlist targets and real artwork coverage reporting.
 
 Verified before starting the current feature:
 
-- PR #58 GitHub Actions: SUCCESS;
-- PR #58 Vercel production deployment: SUCCESS.
+- PR #59 GitHub Actions: SUCCESS before merge;
+- PR #59 merged as `ef940362b380bbabdc42c8625ca0bd4b3b342b6e`.
 
-## Active product work — artwork gaps and deliberate fallback
+## Active product work — manual resolution of ambiguous artwork
 
-Issue #48. Candidate branch: `feat/artwork-gaps-placeholder`.
-
-Baseline audit:
-
-- Collection static snapshot: 516/516 mapped, 0 missing;
-- Wishlist static snapshot: 139/298 safe dedicated mappings, 159 deliberate fallbacks;
-- Final Fantasy VIII is one of the intentionally unresolved PS1 cases because the source pipeline found more than one plausible candidate. Do not pick one blindly.
+Issue #60. Candidate branch: `feat/manual-artwork-choice`.
 
 Implementation model:
 
-- one deliberate game-cover placeholder shared by Collection and Wishlist; no known-missing image URL/404 is used as the normal fallback;
-- existing validated static artwork remains first priority;
-- safe Collection reuse remains second;
-- canonical IGDB artwork can be a final Wishlist fallback only when the requested edition is compatible;
-- special/unknown editions never borrow incompatible Standard catalog artwork;
-- new catalog-backed Wishlist targets import/persist canonical artwork during the add/purchase mutation when compatible;
-- authenticated Wishlist catalog-artwork route serves the private Blob; normal browsing performs no external artwork fetch;
-- `/api/health` reports real artwork coverage for current mutable Collection/Wishlist so coverage is observable beyond old snapshots;
-- no ambiguous static mappings are re-enabled merely to increase coverage.
+- when known candidates exist, one is selected as the visual default using a conservative PAL preference: general Europe first, then UK, Portugal, Portugal/Spain or Spain, then other European PAL regions, with Australia/Oceania only as a later PAL fallback;
+- a target exposes known ambiguous candidates by normalized title + platform, independent of targetId; region/edition are shown as context rather than used to hide the manual chooser;
+- a full snapshot audit found **159 Wishlist artwork fallbacks**: 125 ambiguous (64 libretro-source + 61 LaunchBox-source) and 34 other mismatch/unconfirmed cases;
+- the candidate registry materializes every current libretro ambiguity, rather than relying on user-reported examples;
+- identical source images are deduplicated by Git blob SHA before runtime, so cases like DuckTales 2 (Europe/France/Germany labels pointing at the same image) collapse to one safe default;
+- DuckTales 2 is covered by the same registry: its three European labels point to one identical Git blob, so it collapses to a single Europe default;
+- Final Fantasy VIII still exposes two genuinely different PAL candidates: Europe/Australia and Spain;
+- the Wishlist detail shows **Artwork ambíguo** and links to an explicit chooser only when at least two compatible candidates exist;
+- until Mário makes a manual choice, the preferred candidate can be used directly as the displayed default; opening the chooser still exposes all alternatives with provenance;
+- choosing a candidate persists an app-owned materialized cover into private Vercel Blob and saves a copy-specific Wishlist override with full provenance;
+- each manual artwork selection uses a unique private Blob path, with fresh-read-aware failure cleanup so a failed write cannot overwrite the previous image;
+- the persisted manual override has priority over static/reused/catalog artwork;
+- removing a manual choice returns to the preferred automatic candidate;
+- a manual choice is intentionally authoritative for that exact title/platform target, even if its free-text targetVersion is imperfect;
+- removing/receiving/satisfying the Wishlist target also cleans up the private override Blob;
+- History records manual artwork set/clear actions;
+- candidate discovery is now reproducible via `npm run wishlist-artwork:candidates`; passing the existing LaunchBox index format materializes LaunchBox ambiguities too;
+- remaining LaunchBox-only ambiguities and the 34 non-ambiguous gaps are explicitly part of the artwork audit, not something Mário is expected to discover manually.
+- the candidate generator now audits every unresolved Wishlist artwork entry, not only `ambiguous-*`; known rejected Libretro sources stay rejected and LaunchBox is allowed to supply a single safe fallback candidate. Metroid NES is the first verified recovery path: the rejected Libretro Classic-Serie image remains blocked while the LaunchBox Europe front cover is used.
+- candidate images are no longer hotlinked at runtime. A dedicated import workflow materializes the candidate registry once into committed files under `public/covers/wishlist-candidates/`; normal CI/build only verifies those app-owned files. Remote Libretro/LaunchBox URLs remain provenance/import inputs.
+- first persisted candidate import completed on PR #61: 138/138 registry candidates are committed as app-owned image files, including the Metroid NES LaunchBox Europe cover. CI now checks that every registry candidate has a valid local file.
+- follow-up audit after that first pass found **94 of the original 159 fallbacks still had zero materialized candidate**. The same import lane now builds a full supported-platform LaunchBox index and retries all of those unresolved targets using exact title/platform plus European front-cover constraints; unresolved results are persisted in `data/wishlist-artwork-candidate-audit.json` instead of being left for Mário to discover manually.
+- materialized candidate filenames are now derived from the actual downloaded image bytes and recorded in `src/data/wishlist-artwork-candidate-files.ts`; runtime does not trust a remote filename extension (LaunchBox can label a JPEG payload as `.png`).
+- candidate import/manual-choice image size guard is 10 MiB. The previous 3 MiB ceiling rejected valid high-resolution LaunchBox front covers; the guard remains bounded and image signatures are still validated.
+- remaining-cover matching stays exact on game/platform identity but accepts exact LaunchBox alternate names even when the alias metadata is World/unlabelled; conservative slash-form titles may resolve only when their exact fragments/reordered form point to one unique LaunchBox game. This is intended to recover naming differences such as Crash Team Racing / CTR without introducing fuzzy guessing.
+- user-approved curated Wishlist covers are persisted in `data/wishlist-artwork-curated.json` so future regeneration does not erase them. Curated entries may be disabled while an exact approved source cannot be materialized safely. Mole Mania (Game Boy) keeps the approved Germany/PAL MobyGames provenance but is currently disabled because CI receives HTTP 403 for that exact asset; it must not be silently replaced. Active approved curated cases currently include the PAL fronts for Turtles in Time, Yoshi's Island, Super Mario 3D World, Wendy: Every Witch Way and Valkyria Chronicles. Wendy now uses Retroplace's verified Europe release asset (CGB-BWGP-EUR); Valkyria Chronicles uses a PAL euro/fr physical-cover source from Retrogameshop. Mole Mania remains disabled because the exact approved Germany/PAL MobyGames asset still returns HTTP 403 to CI and must not be silently replaced.
 
 The candidate is being batched into one remote QA push under the CI/Vercel cost discipline.
 
@@ -380,8 +392,8 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active product work is Issue #48 on `feat/artwork-gaps-placeholder`.
-After it lands, continue with #50 (Home refocus) and #52 (Wishlist suggestions).
+The current active product work is Issue #60 on `feat/manual-artwork-choice`.
+After it lands, return to #50 (Home refocus) and #52 (Wishlist suggestions).
 Real mobile/laptop QA remains retained in the roadmap.
 
 ## Handoff prompt for a brand-new chat

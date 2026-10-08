@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "unresolvedTargetsAudited": 159,
+  "materializedTargets": 152,
+  "materializedCandidates": 379,
+  "materializedBySource": {
+    "libretro-thumbnails": {
+      "targets": 64,
+      "candidates": 122
+    },
+    "launchbox": {
+      "targets": 83,
+      "candidates": 252
+    },
+    "curated": {
+      "targets": 5,
+      "candidates": 5
+    }
+  },
+  "stillUnresolvedTargets": [
+    {
+      "title": "Mole Mania",
+      "platform": "Game Boy",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Warlocked",
+      "platform": "Game Boy Color",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Pokémon Black 2 ou White 2",
+      "platform": "Nintendo DS",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Pokémon Ultra Sun ou Ultra Moon",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Fire Emblem Fates (Birthright ou Conquest)",
+      "platform": "Nintendo 3DS",
+      "reason": "no-exact-title-platform-match",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Resident Evil 4",
+      "platform": "Playstation 5",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    },
+    {
+      "title": "Stellar Blade",
+      "platform": "Playstation 5",
+      "reason": "region-mismatch",
+      "materializedCandidates": 0,
+      "source": "unresolved"
+    }
+  ],
+  "launchboxIndexUsed": true,
+  "launchboxMetadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9"
+}

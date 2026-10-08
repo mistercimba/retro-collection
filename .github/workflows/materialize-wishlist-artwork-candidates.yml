@@ -1,0 +1,100 @@
+name: Materialize Wishlist artwork candidates
+
+on:
+  push:
+    paths:
+      - ".github/workflows/materialize-wishlist-artwork-candidates.yml"
+      - "scripts/generate-wishlist-artwork-candidates.mjs"
+      - "scripts/index-wishlist-launchbox.py"
+      - "scripts/materialize-wishlist-artwork-candidates.mjs"
+      - "src/data/wishlist-artwork-candidates.ts"
+      - "data/wishlist-artwork-missing.json"
+      - "data/wishlist-artwork-rejections.json"
+      - "data/wishlist-artwork-curated.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wishlist-artwork-materialize-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Download LaunchBox metadata
+        run: |
+          python3 - <<'PY'
+          import shutil
+          import urllib.request
+
+          request = urllib.request.Request(
+              "https://gamesdb.launchbox-app.com/Metadata.zip",
+              headers={"User-Agent": "MarioRetroCollection/1.0"},
+          )
+          with urllib.request.urlopen(request, timeout=90) as response, open("/tmp/launchbox-metadata.zip", "wb") as output:
+              shutil.copyfileobj(response, output)
+          PY
+
+      - name: Build Wishlist LaunchBox index
+        run: |
+          python3 scripts/index-wishlist-launchbox.py \
+            --metadata /tmp/launchbox-metadata.zip \
+            --output /tmp/wishlist-launchbox-index.json \
+            --platform "Nintendo Entertainment System" \
+            --platform "Super Nintendo Entertainment System" \
+            --platform "Nintendo 64" \
+            --platform "Nintendo Game Boy" \
+            --platform "Nintendo Game Boy Color" \
+            --platform "Nintendo Game Boy Advance" \
+            --platform "Nintendo GameCube" \
+            --platform "Nintendo DS" \
+            --platform "Nintendo 3DS" \
+            --platform "Nintendo Wii" \
+            --platform "Nintendo Wii U" \
+            --platform "Nintendo Switch" \
+            --platform "Sony Playstation" \
+            --platform "Sony Playstation 2" \
+            --platform "Sony Playstation 3" \
+            --platform "Sony Playstation 5"
+
+      - name: Regenerate Wishlist artwork candidates
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/generate-wishlist-artwork-candidates.mjs --launchbox-index /tmp/wishlist-launchbox-index.json
+
+      - name: Materialize candidate artwork
+        run: node scripts/materialize-wishlist-artwork-candidates.mjs
+
+      - name: Commit app-owned artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/data/wishlist-artwork-candidates.ts \
+            src/data/wishlist-artwork-candidate-files.ts \
+            data/wishlist-artwork-candidate-audit.json \
+            data/wishlist-artwork-curated.json \
+            public/covers/wishlist-candidates
+          if git diff --cached --quiet; then
+            echo "All candidate artwork is already materialized."
+            exit 0
+          fi
+          git commit -m "chore: expand Wishlist artwork candidates"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

@@ -2,7 +2,8 @@ import collectionManifest from "../../public/covers/manifest.json";
 import artworkGames from "../../data/artwork-games.json";
 import { WISHLIST_ARTWORK } from "../data/wishlist-artwork";
 import { GAME_ARTWORK } from "../data/game-artwork";
-import type { CanonicalGameIdentity } from "./data/types";
+import type { CanonicalGameIdentity, WishlistArtworkOverride } from "./data/types";
+import { resolvePreferredWishlistArtworkCandidate, resolveWishlistArtworkOverrideCandidate, wishlistArtworkCandidateLocalUrl } from "./wishlist-artwork-candidates.logic";
 import { wishlistCatalogArtworkCompatible } from "./wishlist-catalog-artwork.logic";
 import {
   createCollectionWishlistArtworkIndex,
@@ -17,7 +18,15 @@ export type { WishlistArtworkTarget } from "./wishlist-artwork.logic";
 
 type WishlistArtworkWithCatalog = WishlistArtworkTarget & {
   catalog?: CanonicalGameIdentity;
+  artworkOverride?: WishlistArtworkOverride | null;
 };
+
+function manualArtworkUrl(target: WishlistArtworkWithCatalog): string | null {
+  if (!target.artworkOverride?.pathname) return null;
+  if (!resolveWishlistArtworkOverrideCandidate(target)) return null;
+  const params = new URLSearchParams({ platform: target.platform, title: target.title });
+  return `/api/wishlist-artwork-override/${encodeURIComponent(target.targetId)}?${params.toString()}`;
+}
 
 function catalogArtworkUrl(target: WishlistArtworkWithCatalog): string | null {
   if (!target.catalog?.artwork?.pathname) return null;
@@ -42,8 +51,12 @@ export function resolveWishlistArtworkFromEntries(
 }
 
 export function resolveWishlistArtwork(target: WishlistArtworkWithCatalog): string | null {
-  return resolveDedicatedWishlistArtwork(target, WISHLIST_ARTWORK) ??
+  const preferredAmbiguous = resolvePreferredWishlistArtworkCandidate(target);
+  return manualArtworkUrl(target) ??
+    resolveDedicatedWishlistArtwork(target, WISHLIST_ARTWORK) ??
     resolveCollectionWishlistArtworkFromIndex(target, collectionArtworkIndex) ??
-    catalogArtworkUrl(target);
+    catalogArtworkUrl(target) ??
+    (preferredAmbiguous ? wishlistArtworkCandidateLocalUrl(preferredAmbiguous) : null) ??
+    null;
 }
 
