@@ -23,6 +23,7 @@ export async function applyApprovedWishlistCleanup(form: FormData) {
   const expectedSha256 = String(form.get("snapshotSha256") ?? "");
   let outcome = "blocked";
   let backupPath = "";
+  let backupCreated = false;
 
   try {
     const before = await getFreshLibrarySnapshot();
@@ -43,6 +44,7 @@ export async function applyApprovedWishlistCleanup(form: FormData) {
         addRandomSuffix: false,
         contentType: "application/json",
       });
+      backupCreated = true;
 
       // Abort if any mutation occurred while uploading the backup. This is a
       // single-user app, not a transactional compare-and-swap database.
@@ -50,7 +52,7 @@ export async function applyApprovedWishlistCleanup(form: FormData) {
       if (!maintenanceSnapshotConfirmed(current.sha256, before.sha256)) {
         outcome = "stale-after-backup";
       } else {
-        const saved = await saveLibrary(prepared as LibraryData);
+        const saved = await saveLibrary(prepared as unknown as LibraryData);
         revalidatePath("/want");
         revalidatePath("/maintenance/wishlist");
         revalidatePath("/history");
@@ -66,12 +68,12 @@ export async function applyApprovedWishlistCleanup(form: FormData) {
     console.error("wishlist_live_cleanup_failed", {
       errorName: error instanceof Error ? error.name : "UnknownError",
       // No user data, auth credentials or full raw JSON in logs.
-      backupCreated: Boolean(backupPath),
+      backupCreated,
     });
     outcome = "failed";
   }
 
-  if (backupPath) {
+  if (backupCreated) {
     console.info("wishlist_maintenance_private_backup", { pathname: backupPath, outcome });
   }
   redirect("/maintenance/wishlist?result=" + encodeURIComponent(outcome));
