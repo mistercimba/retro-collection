@@ -5,6 +5,7 @@ import {
   MAX_WISHLIST_ARTWORK_BYTES,
   shouldDeleteUncommittedWishlistArtwork,
   wishlistArtworkImageType,
+  wishlistMaterializedAssetOrigin,
 } from "./wishlist-artwork-override.logic";
 
 describe("Wishlist manual artwork storage safety", () => {
@@ -37,4 +38,14 @@ describe("Wishlist manual artwork storage safety", () => {
     } as unknown as Pick<LibraryData, "wishlist">;
     expect(shouldDeleteUncommittedWishlistArtwork(committed, pathname)).toBe(false);
   });
+  it("resolves only trusted app-owned asset origins", () => {
+    expect(wishlistMaterializedAssetOrigin("retro-collection-test.vercel.app", null, "production"))
+      .toBe("https://retro-collection-test.vercel.app");
+    expect(wishlistMaterializedAssetOrigin(undefined, "localhost:3001", "development"))
+      .toBe("http://localhost:3001");
+    expect(() => wishlistMaterializedAssetOrigin("evil.example.com", null, "production")).toThrow();
+    expect(() => wishlistMaterializedAssetOrigin(undefined, "evil.example.com", "development")).toThrow();
+    expect(() => wishlistMaterializedAssetOrigin(undefined, "localhost:3000", "production")).toThrow();
+  });
+
 });

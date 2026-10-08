@@ -33,3 +33,23 @@ export function shouldDeleteUncommittedWishlistArtwork(
   // rather than risk deleting a Blob that the library now references.
   return library !== null && !library.wishlist.some((target) => target.artworkOverride?.pathname === pathname);
 }
+
+export function wishlistMaterializedAssetOrigin(
+  deploymentHost: string | undefined,
+  requestHost: string | null,
+  environment: string | undefined,
+): string {
+  if (deploymentHost) {
+    if (!/^[a-z0-9.-]+$/i.test(deploymentHost) || !deploymentHost.endsWith(".vercel.app")) {
+      throw new Error("Host de deployment inválido.");
+    }
+    return "https://" + deploymentHost;
+  }
+  // Host headers are not trusted as a production asset origin. Local development
+  // can use only loopback, and never an arbitrary user-provided host.
+  if (environment !== "production" && requestHost &&
+      /^(localhost|127\.0\.0\.1)(:\d{1,5})?$/.test(requestHost)) {
+    return "http://" + requestHost;
+  }
+  throw new Error("A capa materializada não está acessível neste ambiente.");
+}

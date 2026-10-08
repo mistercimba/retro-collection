@@ -1,7 +1,5 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { headers } from "next/headers";
 import { del, get, put } from "@vercel/blob";
 import type { WishlistArtworkOverride } from "@/lib/data/types";
@@ -9,6 +7,7 @@ import type { WishlistArtworkCandidate } from "@/data/wishlist-artwork-candidate
 import { wishlistArtworkCandidateLocalUrl } from "@/lib/wishlist-artwork-candidates.logic";
 import {
   materializedWishlistCandidatePath,
+  wishlistMaterializedAssetOrigin,
   MAX_WISHLIST_ARTWORK_BYTES,
   wishlistArtworkImageType,
 } from "@/lib/wishlist-artwork-override.logic";
@@ -21,23 +20,16 @@ function safePart(value: string) {
 
 async function readMaterializedCandidate(candidate: WishlistArtworkCandidate): Promise<Uint8Array> {
   const localUrl = materializedWishlistCandidatePath(candidate.id, wishlistArtworkCandidateLocalUrl(candidate));
-  const localPath = path.join(process.cwd(), "public", localUrl.slice(1));
-
-  try {
-    return new Uint8Array(await readFile(localPath));
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
-  }
-
-  // Vercel serves public assets separately from serverless function files.
-  // Fetch the *deployed app's own* materialized image, never its original provider.
-  const host = process.env.VERCEL_URL;
-  if (!host || !/^[a-z0-9.-]+$/i.test(host)) {
-    throw new Error("A capa materializada não está acessível neste ambiente.");
-  }
-  // Forward the current browser's cookies for protected preview deployments.
-  const cookie = (await headers()).get("cookie");
-  const response = await fetch("https://" + host + localUrl, {
+  // Access the public CDN asset rather than reading dynamic filesystem paths.
+  // Dynamic fs tracing can package all covers into Vercel serverless functions.
+  const requestHeaders = await headers();
+  const origin = wishlistMaterializedAssetOrigin(
+    process.env.VERCEL_URL,
+    requestHeaders.get("host"),
+    process.env.NODE_ENV,
+  );
+  const cookie = requestHeaders.get("cookie");
+  const response = await fetch(origin + localUrl, {
     cache: "no-store",
     redirect: "error",
     headers: cookie ? { Cookie: cookie } : {},
