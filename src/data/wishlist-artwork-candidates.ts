@@ -29,7 +29,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "2f56744d-7df7-4c83-b0db-178d0bbd9750.jpg",
     "sourceUrl": "https://images.launchbox-app.com/2f56744d-7df7-4c83-b0db-178d0bbd9750.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "18863",
     "sourcePlatform": "Nintendo Game Boy"
   },
@@ -44,7 +44,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "85e5fcad-0433-4655-b4c6-791a5d2c1cf7.png",
     "sourceUrl": "https://images.launchbox-app.com/85e5fcad-0433-4655-b4c6-791a5d2c1cf7.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "18863",
     "sourcePlatform": "Nintendo Game Boy"
   },
@@ -59,7 +59,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "5d8ce23c-da38-40d7-ad6f-f16623583786.jpg",
     "sourceUrl": "https://images.launchbox-app.com/5d8ce23c-da38-40d7-ad6f-f16623583786.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "18863",
     "sourcePlatform": "Nintendo Game Boy"
   },
@@ -74,7 +74,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_b6678fd3-67ee-4dd7-b7b8-23e2c1012cd8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_b6678fd3-67ee-4dd7-b7b8-23e2c1012cd8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13077",
     "sourcePlatform": "Nintendo Game Boy"
   },
@@ -89,7 +89,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "8f2076bc-8fdc-4680-b43e-1b4a453b711e.jpg",
     "sourceUrl": "https://images.launchbox-app.com/8f2076bc-8fdc-4680-b43e-1b4a453b711e.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "3182",
     "sourcePlatform": "Nintendo Game Boy"
   },
@@ -104,7 +104,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "66cf2c16-2c9c-4770-b563-68945ff79229.jpg",
     "sourceUrl": "https://images.launchbox-app.com/66cf2c16-2c9c-4770-b563-68945ff79229.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "21709",
     "sourcePlatform": "Nintendo Game Boy"
   },
@@ -119,7 +119,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "dfccf579-de11-4f78-95ae-d5db8126fbd6.png",
     "sourceUrl": "https://images.launchbox-app.com/dfccf579-de11-4f78-95ae-d5db8126fbd6.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "21709",
     "sourcePlatform": "Nintendo Game Boy"
   },
@@ -134,7 +134,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0584373e-d16e-4a33-9831-a62fa58746a2.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0584373e-d16e-4a33-9831-a62fa58746a2.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "8615",
     "sourcePlatform": "Nintendo Game Boy Color"
   },
@@ -149,7 +149,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "eaca4be4-a58a-4a2d-8ec2-5783ef57490e.jpg",
     "sourceUrl": "https://images.launchbox-app.com/eaca4be4-a58a-4a2d-8ec2-5783ef57490e.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "8615",
     "sourcePlatform": "Nintendo Game Boy Color"
   },
@@ -164,7 +164,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4025f215-ee6a-43e8-b86f-f68a551dda2f.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4025f215-ee6a-43e8-b86f-f68a551dda2f.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "8633",
     "sourcePlatform": "Nintendo Game Boy Color"
   },
@@ -179,7 +179,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "b529692c-62c4-401d-9028-0b6f85c8d14c.jpg",
     "sourceUrl": "https://images.launchbox-app.com/b529692c-62c4-401d-9028-0b6f85c8d14c.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "8648",
     "sourcePlatform": "Nintendo Game Boy Color"
   },
@@ -206,7 +206,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "8102568e-f47e-4d5e-a830-f4360db19fbb.jpg",
     "sourceUrl": "https://images.launchbox-app.com/8102568e-f47e-4d5e-a830-f4360db19fbb.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "3350",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -221,7 +221,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e3311e96-a08b-4198-a84e-68841680d7f2.png",
     "sourceUrl": "https://images.launchbox-app.com/e3311e96-a08b-4198-a84e-68841680d7f2.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "3350",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -236,7 +236,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "ce4428ac-f2c0-4e8d-acaa-775ca1320d2c.jpg",
     "sourceUrl": "https://images.launchbox-app.com/ce4428ac-f2c0-4e8d-acaa-775ca1320d2c.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "3350",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -251,7 +251,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a518bcde-d7d6-415c-87e1-dcb16da00083.png",
     "sourceUrl": "https://images.launchbox-app.com/a518bcde-d7d6-415c-87e1-dcb16da00083.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "3422",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -292,7 +292,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "58919e3d-3947-43e5-b541-a66b448f6294.jpg",
     "sourceUrl": "https://images.launchbox-app.com/58919e3d-3947-43e5-b541-a66b448f6294.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "3771",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -307,7 +307,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "b772b632-533c-424b-90ee-054abaae362b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/b772b632-533c-424b-90ee-054abaae362b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "3771",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -322,7 +322,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "9be339f3-f025-452e-9660-bf846040d429.jpg",
     "sourceUrl": "https://images.launchbox-app.com/9be339f3-f025-452e-9660-bf846040d429.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "3771",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -337,7 +337,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "07e6360e-7d8c-4f09-9896-961e619966ca.jpg",
     "sourceUrl": "https://images.launchbox-app.com/07e6360e-7d8c-4f09-9896-961e619966ca.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6691",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -352,7 +352,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "be0d11e2-b999-42d7-8571-6eb4f5683500.jpg",
     "sourceUrl": "https://images.launchbox-app.com/be0d11e2-b999-42d7-8571-6eb4f5683500.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6691",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -367,7 +367,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a383fd93-02b7-407f-9666-d7993096fe67.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a383fd93-02b7-407f-9666-d7993096fe67.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6691",
     "sourcePlatform": "Nintendo Game Boy Advance"
   },
@@ -655,7 +655,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "cecc9e43-f75b-4047-abb7-eaf05c5005be.jpg",
     "sourceUrl": "https://images.launchbox-app.com/cecc9e43-f75b-4047-abb7-eaf05c5005be.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "130",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -670,7 +670,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_4c4fb7d4-8c06-4a08-acb5-acaed1be9611.png",
     "sourceUrl": "https://images.launchbox-app.com/r2_4c4fb7d4-8c06-4a08-acb5-acaed1be9611.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "130",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -685,7 +685,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "25a2d997-d62d-43c6-8826-4333bd47fdf7.jpg",
     "sourceUrl": "https://images.launchbox-app.com/25a2d997-d62d-43c6-8826-4333bd47fdf7.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "130",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -700,7 +700,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "95af75d6-191c-49cb-89b4-0eeba1c94585.jpg",
     "sourceUrl": "https://images.launchbox-app.com/95af75d6-191c-49cb-89b4-0eeba1c94585.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "130",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -741,7 +741,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_672af117-608d-4ef7-bc4f-b1d5a64e2bdc.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_672af117-608d-4ef7-bc4f-b1d5a64e2bdc.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "123",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -756,7 +756,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "ee2d0266-63b7-4bc9-814d-bb3fc0e8f3be.png",
     "sourceUrl": "https://images.launchbox-app.com/ee2d0266-63b7-4bc9-814d-bb3fc0e8f3be.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "123",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -771,7 +771,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "49cd6748-04d9-49eb-80cf-84c562e51da9.jpg",
     "sourceUrl": "https://images.launchbox-app.com/49cd6748-04d9-49eb-80cf-84c562e51da9.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "123",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -786,7 +786,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "dfd6beb1-15d8-4158-8414-73f824b9839d.jpg",
     "sourceUrl": "https://images.launchbox-app.com/dfd6beb1-15d8-4158-8414-73f824b9839d.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "123",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -801,7 +801,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "3f3b8b16-d409-46a5-abb8-c7b986262cb2.jpg",
     "sourceUrl": "https://images.launchbox-app.com/3f3b8b16-d409-46a5-abb8-c7b986262cb2.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "1427",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -816,7 +816,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "548893de-2c7f-42f2-b1c4-b7a7878ae281.png",
     "sourceUrl": "https://images.launchbox-app.com/548893de-2c7f-42f2-b1c4-b7a7878ae281.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "113",
     "sourcePlatform": "Nintendo Entertainment System"
   },
@@ -844,7 +844,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "cefa73d1-f534-4d46-8881-0d0148763395.jpg",
     "sourceUrl": "https://images.launchbox-app.com/cefa73d1-f534-4d46-8881-0d0148763395.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "122365",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -859,7 +859,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "7914f49e-a732-4fa1-9d56-bdfe31976440.jpg",
     "sourceUrl": "https://images.launchbox-app.com/7914f49e-a732-4fa1-9d56-bdfe31976440.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "122365",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -900,7 +900,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "686aad15-a0e5-4b33-b304-811316c0a5e9.png",
     "sourceUrl": "https://images.launchbox-app.com/686aad15-a0e5-4b33-b304-811316c0a5e9.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "20488",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -915,7 +915,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "96dc8e8e-4785-419f-859c-1918bcbb1de5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/96dc8e8e-4785-419f-859c-1918bcbb1de5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "15183",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -930,7 +930,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4ba83e6c-ccdc-4ec6-b412-ba2a1d238e79.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4ba83e6c-ccdc-4ec6-b412-ba2a1d238e79.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "15183",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -945,7 +945,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "d512ef99-3c89-4999-b3bf-3edf022a4e2d.png",
     "sourceUrl": "https://images.launchbox-app.com/d512ef99-3c89-4999-b3bf-3edf022a4e2d.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "15183",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -960,7 +960,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a4823ad2-a654-41be-886f-4a6494c7c619.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a4823ad2-a654-41be-886f-4a6494c7c619.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "17217",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -975,7 +975,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "c1d97597-f768-4a30-a6ea-ebef0bca6611.jpg",
     "sourceUrl": "https://images.launchbox-app.com/c1d97597-f768-4a30-a6ea-ebef0bca6611.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "17217",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -990,7 +990,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "206917f1-78db-4f08-aca3-6797cd366135.jpg",
     "sourceUrl": "https://images.launchbox-app.com/206917f1-78db-4f08-aca3-6797cd366135.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "17217",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1005,7 +1005,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "d200f264-cdf1-4aa8-8677-2cd0f1343ccc.png",
     "sourceUrl": "https://images.launchbox-app.com/d200f264-cdf1-4aa8-8677-2cd0f1343ccc.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "17217",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1020,7 +1020,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e3e198df-a40c-44ef-90a0-38d187db53cc.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e3e198df-a40c-44ef-90a0-38d187db53cc.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "137848",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1035,7 +1035,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a79ad2a4-d1a7-4781-b861-5538034430a4.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a79ad2a4-d1a7-4781-b861-5538034430a4.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "137848",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1050,7 +1050,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "6a64a7e3-c05d-4a17-b045-758d0d3fbd15.jpg",
     "sourceUrl": "https://images.launchbox-app.com/6a64a7e3-c05d-4a17-b045-758d0d3fbd15.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "137848",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1065,7 +1065,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "fbcd3ba9-45c2-406d-bec3-cc84c0bd6063.png",
     "sourceUrl": "https://images.launchbox-app.com/fbcd3ba9-45c2-406d-bec3-cc84c0bd6063.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "137848",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1080,7 +1080,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_defcc462-33f0-4d5f-a5b8-8c4660499991.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_defcc462-33f0-4d5f-a5b8-8c4660499991.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "137848",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1095,7 +1095,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "040fdf43-3ace-441e-b1f3-cbb0617c94e1.png",
     "sourceUrl": "https://images.launchbox-app.com/040fdf43-3ace-441e-b1f3-cbb0617c94e1.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12504",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1110,7 +1110,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_91b9d258-544f-4dd8-b13e-962be3c8301e.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_91b9d258-544f-4dd8-b13e-962be3c8301e.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12504",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1125,7 +1125,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_f59b9934-60f1-48eb-a4ce-98b4e4bab5bc.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_f59b9934-60f1-48eb-a4ce-98b4e4bab5bc.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12504",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1140,7 +1140,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a8d7eb91-952c-45d3-83c8-1fa418e63132.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a8d7eb91-952c-45d3-83c8-1fa418e63132.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12504",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1155,7 +1155,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_a350c718-f268-4ac4-b195-aa8a724755bd.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_a350c718-f268-4ac4-b195-aa8a724755bd.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12504",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1170,7 +1170,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a4228cc5-463e-4270-9d6a-0da4816b6913.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a4228cc5-463e-4270-9d6a-0da4816b6913.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12504",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1237,7 +1237,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "84f21a5f-610a-4bd8-8b29-95fa3009e5f7.jpg",
     "sourceUrl": "https://images.launchbox-app.com/84f21a5f-610a-4bd8-8b29-95fa3009e5f7.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12584",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1252,7 +1252,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a4c2fbb6-a7ca-4e31-8e3b-db676ead4115.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a4c2fbb6-a7ca-4e31-8e3b-db676ead4115.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12584",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1293,7 +1293,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4d035ec0-6508-4e1e-bedb-c4e8e5e97c78.png",
     "sourceUrl": "https://images.launchbox-app.com/4d035ec0-6508-4e1e-bedb-c4e8e5e97c78.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "23870",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1308,7 +1308,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_d470e0e7-a0aa-454f-9823-1a1f7ee1f8cc.png",
     "sourceUrl": "https://images.launchbox-app.com/r2_d470e0e7-a0aa-454f-9823-1a1f7ee1f8cc.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "23870",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1323,7 +1323,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_f8e03001-2a1f-4341-b6eb-d760e1f14b18.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_f8e03001-2a1f-4341-b6eb-d760e1f14b18.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "23870",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1338,7 +1338,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "65370336-5ff2-4a82-8f0d-12c55a35c834.jpg",
     "sourceUrl": "https://images.launchbox-app.com/65370336-5ff2-4a82-8f0d-12c55a35c834.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12698",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1353,7 +1353,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "b3444fdf-6c9f-4dae-b1d0-2bbcc51da6b8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/b3444fdf-6c9f-4dae-b1d0-2bbcc51da6b8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12698",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1368,7 +1368,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_2f45fc73-cb0a-4199-8914-7b4bed7651ad.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_2f45fc73-cb0a-4199-8914-7b4bed7651ad.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12698",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1383,7 +1383,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_288db2ca-4523-4b1a-ad68-128f2cc84a1a.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_288db2ca-4523-4b1a-ad68-128f2cc84a1a.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12698",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1398,7 +1398,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_4f8e4f53-5208-442f-9cea-e5efc5b25cdf.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_4f8e4f53-5208-442f-9cea-e5efc5b25cdf.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12698",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1413,7 +1413,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_5533f210-3af9-4195-a07c-5eaaad627da0.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_5533f210-3af9-4195-a07c-5eaaad627da0.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "12698",
     "sourcePlatform": "Nintendo 3DS"
   },
@@ -1493,7 +1493,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "1356f75a-fa31-428c-9499-5ff98aae7b99.jpg",
     "sourceUrl": "https://images.launchbox-app.com/1356f75a-fa31-428c-9499-5ff98aae7b99.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "1205",
     "sourcePlatform": "Nintendo 64"
   },
@@ -1560,7 +1560,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "62369986-993e-403f-b45a-ca2fcae01cd5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/62369986-993e-403f-b45a-ca2fcae01cd5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6795",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1575,7 +1575,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "639951b7-5770-4669-bf5c-70d64eac1ec5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/639951b7-5770-4669-bf5c-70d64eac1ec5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6795",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1590,7 +1590,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "56e36a5d-87dd-44c9-b491-fa8a46f40ca3.jpg",
     "sourceUrl": "https://images.launchbox-app.com/56e36a5d-87dd-44c9-b491-fa8a46f40ca3.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6795",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1605,7 +1605,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "6762e8bb-0b93-4f65-9c97-e9fa7ab9c97c.jpg",
     "sourceUrl": "https://images.launchbox-app.com/6762e8bb-0b93-4f65-9c97-e9fa7ab9c97c.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6795",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1620,7 +1620,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "bb65cf79-95ec-40c1-b6a9-3c99a789223f.jpg",
     "sourceUrl": "https://images.launchbox-app.com/bb65cf79-95ec-40c1-b6a9-3c99a789223f.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6795",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1674,7 +1674,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "bc62bea9-88b6-4aa0-8adc-10baa471f3c6.png",
     "sourceUrl": "https://images.launchbox-app.com/bc62bea9-88b6-4aa0-8adc-10baa471f3c6.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "438",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1689,7 +1689,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "09af3662-b209-41b4-80cb-ab9f77bec85d.jpg",
     "sourceUrl": "https://images.launchbox-app.com/09af3662-b209-41b4-80cb-ab9f77bec85d.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "438",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1704,7 +1704,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "1134a225-46a5-4c23-9589-677aff7f721d.jpg",
     "sourceUrl": "https://images.launchbox-app.com/1134a225-46a5-4c23-9589-677aff7f721d.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "438",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1719,7 +1719,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "d472712f-db59-4d17-a2e0-20c7a99d4ad8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/d472712f-db59-4d17-a2e0-20c7a99d4ad8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "438",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1734,7 +1734,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "013d9590-8999-49d7-8493-d742126ceeb7.jpg",
     "sourceUrl": "https://images.launchbox-app.com/013d9590-8999-49d7-8493-d742126ceeb7.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6835",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1749,7 +1749,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "77a090c2-d331-47e1-ba46-cda3b502bcb4.jpg",
     "sourceUrl": "https://images.launchbox-app.com/77a090c2-d331-47e1-ba46-cda3b502bcb4.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6835",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1764,7 +1764,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "aee4211b-e783-4a2a-b89a-18446419608a.jpg",
     "sourceUrl": "https://images.launchbox-app.com/aee4211b-e783-4a2a-b89a-18446419608a.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6835",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1857,7 +1857,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "1637337b-034c-40f0-b51d-e3fa717ac581.jpg",
     "sourceUrl": "https://images.launchbox-app.com/1637337b-034c-40f0-b51d-e3fa717ac581.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1872,7 +1872,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e02a2fb9-b000-4218-a5ea-bb7059246ef2.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e02a2fb9-b000-4218-a5ea-bb7059246ef2.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1887,7 +1887,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "dbaf01f6-0a92-4ce4-ac39-b08daf3f0564.png",
     "sourceUrl": "https://images.launchbox-app.com/dbaf01f6-0a92-4ce4-ac39-b08daf3f0564.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1902,7 +1902,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0fd6ecef-35c5-458a-8e60-fdc0f42f768a.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0fd6ecef-35c5-458a-8e60-fdc0f42f768a.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1917,7 +1917,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "7ca5f5f1-a8ef-4886-8ab2-0cca485f5c38.jpg",
     "sourceUrl": "https://images.launchbox-app.com/7ca5f5f1-a8ef-4886-8ab2-0cca485f5c38.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1932,7 +1932,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "af95905b-ccaa-42a8-a73f-d687f052dd8b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/af95905b-ccaa-42a8-a73f-d687f052dd8b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1947,7 +1947,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "afd514bf-6029-4a31-a5ec-c77ad66270bf.jpg",
     "sourceUrl": "https://images.launchbox-app.com/afd514bf-6029-4a31-a5ec-c77ad66270bf.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1962,7 +1962,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "bd0e9314-5827-41b9-950b-d6b5db53c18b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/bd0e9314-5827-41b9-950b-d6b5db53c18b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1977,7 +1977,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "06c04def-e510-4a33-b8ba-ad03cbf1e8f1.jpg",
     "sourceUrl": "https://images.launchbox-app.com/06c04def-e510-4a33-b8ba-ad03cbf1e8f1.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13135",
     "sourcePlatform": "Nintendo DS"
   },
@@ -1992,7 +1992,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "9af63a20-b55d-4f6e-89d3-cab7353ccc17.png",
     "sourceUrl": "https://images.launchbox-app.com/9af63a20-b55d-4f6e-89d3-cab7353ccc17.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "2245",
     "sourcePlatform": "Nintendo DS"
   },
@@ -2007,7 +2007,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "2eca93c8-0127-4725-89a0-9cfcb83a3ee0.jpg",
     "sourceUrl": "https://images.launchbox-app.com/2eca93c8-0127-4725-89a0-9cfcb83a3ee0.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6890",
     "sourcePlatform": "Nintendo DS"
   },
@@ -2022,7 +2022,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "da5403d4-f92a-4fed-ba19-45f328442b72.jpg",
     "sourceUrl": "https://images.launchbox-app.com/da5403d4-f92a-4fed-ba19-45f328442b72.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6890",
     "sourcePlatform": "Nintendo DS"
   },
@@ -2037,7 +2037,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "51ca2f2f-21f9-4fa3-a552-439bef7efcd3.jpg",
     "sourceUrl": "https://images.launchbox-app.com/51ca2f2f-21f9-4fa3-a552-439bef7efcd3.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6890",
     "sourcePlatform": "Nintendo DS"
   },
@@ -2052,7 +2052,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "de7a017c-c718-4687-8cb8-587eca09cdf5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/de7a017c-c718-4687-8cb8-587eca09cdf5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6896",
     "sourcePlatform": "Nintendo DS"
   },
@@ -2067,7 +2067,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f48390b1-776a-4e02-9ca8-e3a85fe85c1c.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f48390b1-776a-4e02-9ca8-e3a85fe85c1c.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6896",
     "sourcePlatform": "Nintendo DS"
   },
@@ -2082,7 +2082,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "40b87e08-ac65-42e6-9fa6-69c091dc3505.png",
     "sourceUrl": "https://images.launchbox-app.com/40b87e08-ac65-42e6-9fa6-69c091dc3505.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "166313",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2097,7 +2097,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f4b456cb-eb77-4e00-8234-00ac12b9156f.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f4b456cb-eb77-4e00-8234-00ac12b9156f.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "166313",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2112,7 +2112,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "99251e89-e8a5-4c7b-a339-59a4357db2a6.jpg",
     "sourceUrl": "https://images.launchbox-app.com/99251e89-e8a5-4c7b-a339-59a4357db2a6.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "166313",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2127,7 +2127,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "733823f9-a861-49e3-add0-236344315828.jpg",
     "sourceUrl": "https://images.launchbox-app.com/733823f9-a861-49e3-add0-236344315828.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "166313",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2142,7 +2142,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "50ee6a05-7e7a-417b-9a1e-cd0dfba7d620.jpg",
     "sourceUrl": "https://images.launchbox-app.com/50ee6a05-7e7a-417b-9a1e-cd0dfba7d620.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "168109",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2157,7 +2157,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4928a4a2-8d4e-4bea-9803-a800c1e07ad6.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4928a4a2-8d4e-4bea-9803-a800c1e07ad6.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "168109",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2172,7 +2172,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "6b23a3e4-fcc9-4b68-a2b6-df7bf0baec83.jpg",
     "sourceUrl": "https://images.launchbox-app.com/6b23a3e4-fcc9-4b68-a2b6-df7bf0baec83.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "150081",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2187,7 +2187,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "9cc9da58-aae5-4b46-a91e-4977f3742ea7.jpg",
     "sourceUrl": "https://images.launchbox-app.com/9cc9da58-aae5-4b46-a91e-4977f3742ea7.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "150081",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2202,7 +2202,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "08379520-486c-4753-8639-00778d559fc5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/08379520-486c-4753-8639-00778d559fc5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "150081",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2217,7 +2217,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0da7c1b8-4d93-43c3-80bc-5343b35afdf6.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0da7c1b8-4d93-43c3-80bc-5343b35afdf6.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "150081",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2232,7 +2232,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "9ad9c44d-f3cd-41b4-88f9-fcd68238f8f9.jpg",
     "sourceUrl": "https://images.launchbox-app.com/9ad9c44d-f3cd-41b4-88f9-fcd68238f8f9.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "150081",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2247,7 +2247,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e22c889a-f3ca-41c7-9742-dd5a43031f15.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e22c889a-f3ca-41c7-9742-dd5a43031f15.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "150081",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2262,7 +2262,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "d4ab141e-4b4b-4ead-b0d5-7db076e3bde5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/d4ab141e-4b4b-4ead-b0d5-7db076e3bde5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "218754",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2277,7 +2277,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f01d24b3-b78a-4084-b686-51e58cb28166.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f01d24b3-b78a-4084-b686-51e58cb28166.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "218754",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2292,7 +2292,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "1a38f635-6289-406e-9682-5e4cc8ed5b8b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/1a38f635-6289-406e-9682-5e4cc8ed5b8b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "167709",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2307,7 +2307,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "626dd640-62f1-4b67-9566-cf9bb7c848ce.jpg",
     "sourceUrl": "https://images.launchbox-app.com/626dd640-62f1-4b67-9566-cf9bb7c848ce.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "167709",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2322,7 +2322,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f53a16f2-ae92-4e53-a78f-bb57551f879e.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f53a16f2-ae92-4e53-a78f-bb57551f879e.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "167709",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2337,7 +2337,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "00b11029-18ac-4806-bb91-bbd3bd3b3bc7.jpg",
     "sourceUrl": "https://images.launchbox-app.com/00b11029-18ac-4806-bb91-bbd3bd3b3bc7.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205485",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2352,7 +2352,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_2c7d0477-0755-4617-8efb-0acd0d1a5b0b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_2c7d0477-0755-4617-8efb-0acd0d1a5b0b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205485",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2367,7 +2367,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4e8b03a8-93f1-4ce3-8fb9-681ff0cae8a3.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4e8b03a8-93f1-4ce3-8fb9-681ff0cae8a3.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205485",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2382,7 +2382,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "bd103115-eee2-47f2-bd45-c7e3ea91b4b4.jpg",
     "sourceUrl": "https://images.launchbox-app.com/bd103115-eee2-47f2-bd45-c7e3ea91b4b4.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205485",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2397,7 +2397,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "3560f79f-53a6-4e4a-9dd5-6cb3d0f305cd.jpg",
     "sourceUrl": "https://images.launchbox-app.com/3560f79f-53a6-4e4a-9dd5-6cb3d0f305cd.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "129188",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2412,7 +2412,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a252dcf3-8c01-40ba-81a9-92b7ee6e8ea9.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a252dcf3-8c01-40ba-81a9-92b7ee6e8ea9.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "129188",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2427,7 +2427,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "97496bdb-805c-48b6-bef4-ea77de207b23.jpg",
     "sourceUrl": "https://images.launchbox-app.com/97496bdb-805c-48b6-bef4-ea77de207b23.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "129188",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2442,7 +2442,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "06853270-401e-4f72-888e-7315f92b4783.jpg",
     "sourceUrl": "https://images.launchbox-app.com/06853270-401e-4f72-888e-7315f92b4783.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "129188",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2457,7 +2457,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "82371fed-4b2f-4a3c-b020-4e8cd52b66d6.jpg",
     "sourceUrl": "https://images.launchbox-app.com/82371fed-4b2f-4a3c-b020-4e8cd52b66d6.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "129188",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2472,7 +2472,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a40479f7-2d0d-4e75-b541-d0bd0ade01e5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a40479f7-2d0d-4e75-b541-d0bd0ade01e5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "202670",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2487,7 +2487,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "9c0388f9-508e-40ae-860d-fb036a70f61c.jpg",
     "sourceUrl": "https://images.launchbox-app.com/9c0388f9-508e-40ae-860d-fb036a70f61c.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "202670",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2502,7 +2502,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "b714ab9c-ac25-4ba9-8960-508548e80de2.jpg",
     "sourceUrl": "https://images.launchbox-app.com/b714ab9c-ac25-4ba9-8960-508548e80de2.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "219255",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2517,7 +2517,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "5a93fdc6-99c6-472d-a7ef-bc2f5255bd55.jpg",
     "sourceUrl": "https://images.launchbox-app.com/5a93fdc6-99c6-472d-a7ef-bc2f5255bd55.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "219255",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2532,7 +2532,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "dcb1c902-9301-4f1e-bb2c-7dee0d0ddd2a.jpg",
     "sourceUrl": "https://images.launchbox-app.com/dcb1c902-9301-4f1e-bb2c-7dee0d0ddd2a.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "219255",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2547,7 +2547,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "9600fee1-56bc-4a19-a17f-65fc85688aae.jpg",
     "sourceUrl": "https://images.launchbox-app.com/9600fee1-56bc-4a19-a17f-65fc85688aae.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "199982",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2562,7 +2562,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "3af61c47-8b21-4d47-8837-13e3d5979a54.jpg",
     "sourceUrl": "https://images.launchbox-app.com/3af61c47-8b21-4d47-8837-13e3d5979a54.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "199982",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2577,7 +2577,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "49da1b06-5293-4790-b481-280857528fd2.jpg",
     "sourceUrl": "https://images.launchbox-app.com/49da1b06-5293-4790-b481-280857528fd2.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "199982",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2592,7 +2592,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "c770e92d-ae77-4067-8c8c-71414e1cb517.jpg",
     "sourceUrl": "https://images.launchbox-app.com/c770e92d-ae77-4067-8c8c-71414e1cb517.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "199982",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2607,7 +2607,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "c0a0af4b-3827-43c0-949d-de3dbb96b797.jpg",
     "sourceUrl": "https://images.launchbox-app.com/c0a0af4b-3827-43c0-949d-de3dbb96b797.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "199982",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2622,7 +2622,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e39f62b8-5e2a-411d-8ee8-e6e266b32122.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e39f62b8-5e2a-411d-8ee8-e6e266b32122.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "189051",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2637,7 +2637,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4e85f184-b2bb-41e1-be83-27e96dd01180.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4e85f184-b2bb-41e1-be83-27e96dd01180.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "189051",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2652,7 +2652,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "9e821fb5-f1e9-4995-97f4-c22e4ade8904.png",
     "sourceUrl": "https://images.launchbox-app.com/9e821fb5-f1e9-4995-97f4-c22e4ade8904.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "189051",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2667,7 +2667,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "7f19d033-e44b-4ab3-ab4e-ab2e8234e9bf.jpg",
     "sourceUrl": "https://images.launchbox-app.com/7f19d033-e44b-4ab3-ab4e-ab2e8234e9bf.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "421985",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2682,7 +2682,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4ddcba8d-9960-4b9b-9003-f6bfa20dfaef.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4ddcba8d-9960-4b9b-9003-f6bfa20dfaef.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "421985",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2697,7 +2697,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "faf9c730-fa7a-49c1-a29b-f8ea72cf0145.jpg",
     "sourceUrl": "https://images.launchbox-app.com/faf9c730-fa7a-49c1-a29b-f8ea72cf0145.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "421985",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2712,7 +2712,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "6729485f-ae47-4915-8dd7-2b1584050d4b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/6729485f-ae47-4915-8dd7-2b1584050d4b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "136132",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2727,7 +2727,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "115c3cd9-302a-4fa3-a1cb-2e4a344f9ad3.jpg",
     "sourceUrl": "https://images.launchbox-app.com/115c3cd9-302a-4fa3-a1cb-2e4a344f9ad3.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "136132",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2742,7 +2742,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "c3298e93-dd11-4303-a188-25f2fc7f2c94.jpg",
     "sourceUrl": "https://images.launchbox-app.com/c3298e93-dd11-4303-a188-25f2fc7f2c94.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "136132",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2757,7 +2757,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e3b8c40c-713a-4486-9dc3-fc548d88d98e.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e3b8c40c-713a-4486-9dc3-fc548d88d98e.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "136132",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2772,7 +2772,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "3623b12c-9040-4f58-bf2b-885b8e02f097.jpg",
     "sourceUrl": "https://images.launchbox-app.com/3623b12c-9040-4f58-bf2b-885b8e02f097.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "158007",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2787,7 +2787,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f5e27f4f-39c7-4333-a96e-5dc5d651eea2.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f5e27f4f-39c7-4333-a96e-5dc5d651eea2.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "158007",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2802,7 +2802,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "c992ead7-3690-4777-9d7c-fdd376106b81.jpg",
     "sourceUrl": "https://images.launchbox-app.com/c992ead7-3690-4777-9d7c-fdd376106b81.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "158007",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2817,7 +2817,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0ba7f44f-739e-4aa1-b52a-c7423fff3d1f.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0ba7f44f-739e-4aa1-b52a-c7423fff3d1f.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "215519",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2832,7 +2832,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "74f7d19b-191d-4ada-bdfd-5d8274d95bab.jpg",
     "sourceUrl": "https://images.launchbox-app.com/74f7d19b-191d-4ada-bdfd-5d8274d95bab.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "215519",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2847,7 +2847,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f9123bcb-00b3-466a-986e-1c1ad4d6831d.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f9123bcb-00b3-466a-986e-1c1ad4d6831d.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "213371",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2862,7 +2862,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "7c16d16d-e613-4e84-bba0-49511a972103.jpg",
     "sourceUrl": "https://images.launchbox-app.com/7c16d16d-e613-4e84-bba0-49511a972103.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "213371",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2877,7 +2877,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "904b231d-a3b8-4978-8d8c-76038d7972b6.jpg",
     "sourceUrl": "https://images.launchbox-app.com/904b231d-a3b8-4978-8d8c-76038d7972b6.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "213371",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2892,7 +2892,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "c5f12e89-7ef4-4887-a193-8d957290c503.jpg",
     "sourceUrl": "https://images.launchbox-app.com/c5f12e89-7ef4-4887-a193-8d957290c503.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "180288",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2907,7 +2907,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e7b0ca78-9569-4a88-8310-5e92aa0b5568.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e7b0ca78-9569-4a88-8310-5e92aa0b5568.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "180288",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -2922,7 +2922,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "2dbbe5ea-afa5-4db9-acd3-26a680570941.png",
     "sourceUrl": "https://images.launchbox-app.com/2dbbe5ea-afa5-4db9-acd3-26a680570941.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "180288",
     "sourcePlatform": "Nintendo Switch"
   },
@@ -3119,7 +3119,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "01aea452-d684-4b2c-b3b5-f594ef171949.jpg",
     "sourceUrl": "https://images.launchbox-app.com/01aea452-d684-4b2c-b3b5-f594ef171949.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7744",
     "sourcePlatform": "Nintendo Wii"
   },
@@ -3134,7 +3134,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f0551718-4b94-41f5-9062-750f94f44555.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f0551718-4b94-41f5-9062-750f94f44555.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7744",
     "sourcePlatform": "Nintendo Wii"
   },
@@ -3149,7 +3149,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "8e018166-7d3e-410b-b38e-67d3a0520540.jpg",
     "sourceUrl": "https://images.launchbox-app.com/8e018166-7d3e-410b-b38e-67d3a0520540.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7744",
     "sourcePlatform": "Nintendo Wii"
   },
@@ -3164,7 +3164,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "9464c784-dd62-4e7a-a6ab-3ebb45735c06.jpg",
     "sourceUrl": "https://images.launchbox-app.com/9464c784-dd62-4e7a-a6ab-3ebb45735c06.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7744",
     "sourcePlatform": "Nintendo Wii"
   },
@@ -3179,7 +3179,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a3b82b99-64bc-4302-b27e-24b7e9bf8dfb.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a3b82b99-64bc-4302-b27e-24b7e9bf8dfb.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7744",
     "sourcePlatform": "Nintendo Wii"
   },
@@ -3194,7 +3194,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "5cdb4d32-d420-43f2-a1c5-645bed353756.jpg",
     "sourceUrl": "https://images.launchbox-app.com/5cdb4d32-d420-43f2-a1c5-645bed353756.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7744",
     "sourcePlatform": "Nintendo Wii"
   },
@@ -3274,7 +3274,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "2814e714-a697-43e6-ac52-fb4457d1e56b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/2814e714-a697-43e6-ac52-fb4457d1e56b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "19776",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3289,7 +3289,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "75edb132-6976-4bd2-b6e9-b5541080fe73.jpg",
     "sourceUrl": "https://images.launchbox-app.com/75edb132-6976-4bd2-b6e9-b5541080fe73.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "19776",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3304,7 +3304,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0f12805e-8b77-47cc-8005-7c8b40d9e710.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0f12805e-8b77-47cc-8005-7c8b40d9e710.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "19776",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3319,7 +3319,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "502e06d6-75d4-4b88-ae78-da7153dd16f5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/502e06d6-75d4-4b88-ae78-da7153dd16f5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "21148",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3334,7 +3334,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "a597fdb6-d3e8-42e1-a62f-4547885a3a52.jpg",
     "sourceUrl": "https://images.launchbox-app.com/a597fdb6-d3e8-42e1-a62f-4547885a3a52.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "21148",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3349,7 +3349,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e6247b34-144f-4f6f-9b7e-03f0952dbca2.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e6247b34-144f-4f6f-9b7e-03f0952dbca2.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "21148",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3364,7 +3364,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "fc8f9c5c-67eb-4c43-9ce5-1ebe80553e48.jpg",
     "sourceUrl": "https://images.launchbox-app.com/fc8f9c5c-67eb-4c43-9ce5-1ebe80553e48.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "21148",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3379,7 +3379,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e50d441e-73ca-43dd-b7b6-e77665cf2a86.png",
     "sourceUrl": "https://images.launchbox-app.com/e50d441e-73ca-43dd-b7b6-e77665cf2a86.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "21148",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3406,7 +3406,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "58e17d25-81ec-4bb0-be03-efbf48b5d845.jpg",
     "sourceUrl": "https://images.launchbox-app.com/58e17d25-81ec-4bb0-be03-efbf48b5d845.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "17824",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3421,7 +3421,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "403bb829-c2ac-471b-aa93-03368e9ffae8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/403bb829-c2ac-471b-aa93-03368e9ffae8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "17824",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3436,7 +3436,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "8f98ab2d-83db-473f-b01b-d2cb2c3292c5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/8f98ab2d-83db-473f-b01b-d2cb2c3292c5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "17824",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3451,7 +3451,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "29907e32-dfb4-4dfa-b881-90c5060225fb.jpg",
     "sourceUrl": "https://images.launchbox-app.com/29907e32-dfb4-4dfa-b881-90c5060225fb.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "33799",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3466,7 +3466,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "65b31952-208f-4efe-aceb-0c1f2a1adece.jpg",
     "sourceUrl": "https://images.launchbox-app.com/65b31952-208f-4efe-aceb-0c1f2a1adece.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "33799",
     "sourcePlatform": "Nintendo Wii U"
   },
@@ -3494,7 +3494,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_c5cfa63a-7449-42b9-82bb-068a4a1a2a06.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_c5cfa63a-7449-42b9-82bb-068a4a1a2a06.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "1007",
     "sourcePlatform": "Sony Playstation"
   },
@@ -3600,7 +3600,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "5833e534-7da6-4699-b14c-5746312cb4fb.jpg",
     "sourceUrl": "https://images.launchbox-app.com/5833e534-7da6-4699-b14c-5746312cb4fb.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "1008",
     "sourcePlatform": "Sony Playstation"
   },
@@ -3615,7 +3615,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "84995ef8-cabf-41cb-91ba-8b72644afb3b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/84995ef8-cabf-41cb-91ba-8b72644afb3b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "1008",
     "sourcePlatform": "Sony Playstation"
   },
@@ -3851,7 +3851,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "2ccaffa7-2ce3-45b3-8c7f-586a2daa8552.jpg",
     "sourceUrl": "https://images.launchbox-app.com/2ccaffa7-2ce3-45b3-8c7f-586a2daa8552.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6772",
     "sourcePlatform": "Sony Playstation"
   },
@@ -3866,7 +3866,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_386fca4e-6a30-423b-8554-ba1e80d91fd8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_386fca4e-6a30-423b-8554-ba1e80d91fd8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6772",
     "sourcePlatform": "Sony Playstation"
   },
@@ -3972,7 +3972,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "83a8af0e-6d51-42e4-b02d-eb2bb5209508.jpg",
     "sourceUrl": "https://images.launchbox-app.com/83a8af0e-6d51-42e4-b02d-eb2bb5209508.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7226",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -3987,7 +3987,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_1296b395-a14b-432f-a49f-26e450dbf503.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_1296b395-a14b-432f-a49f-26e450dbf503.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7226",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4002,7 +4002,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4c495285-89f6-4cca-a259-328e805e0df2.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4c495285-89f6-4cca-a259-328e805e0df2.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7226",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4017,7 +4017,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "556aa758-5b06-4f3d-91dc-0058dcdd7abf.jpg",
     "sourceUrl": "https://images.launchbox-app.com/556aa758-5b06-4f3d-91dc-0058dcdd7abf.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7226",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4084,7 +4084,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "962d2680-2c04-4e47-a94f-2d52c68c5897.jpg",
     "sourceUrl": "https://images.launchbox-app.com/962d2680-2c04-4e47-a94f-2d52c68c5897.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "9327",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4099,7 +4099,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "82da1358-9d59-43f6-a824-221e7321c0df.png",
     "sourceUrl": "https://images.launchbox-app.com/82da1358-9d59-43f6-a824-221e7321c0df.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7797",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4114,7 +4114,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "255725b7-ab9d-4111-84c3-98ba66ace4ac.jpg",
     "sourceUrl": "https://images.launchbox-app.com/255725b7-ab9d-4111-84c3-98ba66ace4ac.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7797",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4129,7 +4129,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "c0635032-6cac-4375-894f-ab58ef5d4428.jpg",
     "sourceUrl": "https://images.launchbox-app.com/c0635032-6cac-4375-894f-ab58ef5d4428.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7797",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4144,7 +4144,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "45e5a4ed-93cf-4963-a28a-1ec518aee585.jpg",
     "sourceUrl": "https://images.launchbox-app.com/45e5a4ed-93cf-4963-a28a-1ec518aee585.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7797",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4159,7 +4159,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "61021093-e5ef-4b95-a02a-547663430a51.jpg",
     "sourceUrl": "https://images.launchbox-app.com/61021093-e5ef-4b95-a02a-547663430a51.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7797",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4174,7 +4174,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0f6ec8b4-5636-4a3d-839e-361831c4f2ad.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0f6ec8b4-5636-4a3d-839e-361831c4f2ad.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13150",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4189,7 +4189,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "be964358-3993-4111-bc05-0942224763d1.jpg",
     "sourceUrl": "https://images.launchbox-app.com/be964358-3993-4111-bc05-0942224763d1.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13150",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4204,7 +4204,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "ee474b68-f31b-4698-9499-68e2a5c135c8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/ee474b68-f31b-4698-9499-68e2a5c135c8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13150",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4219,7 +4219,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "3d1cfa12-95c6-424e-9c7f-300528bd03e8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/3d1cfa12-95c6-424e-9c7f-300528bd03e8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "13150",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4234,7 +4234,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_fc5cf84d-ac53-46d3-9e54-96277c9bd4c8.png",
     "sourceUrl": "https://images.launchbox-app.com/r2_fc5cf84d-ac53-46d3-9e54-96277c9bd4c8.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7992",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4249,7 +4249,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "1b4d80be-5f67-480f-974d-8f03e4581710.png",
     "sourceUrl": "https://images.launchbox-app.com/1b4d80be-5f67-480f-974d-8f03e4581710.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7992",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4264,7 +4264,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "2ad9e5e9-9c2c-4fc7-8cd6-9b9899686c16.jpg",
     "sourceUrl": "https://images.launchbox-app.com/2ad9e5e9-9c2c-4fc7-8cd6-9b9899686c16.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7992",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4279,7 +4279,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "b9f34437-9944-4f69-ae8c-0dcc449d316b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/b9f34437-9944-4f69-ae8c-0dcc449d316b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7992",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4294,7 +4294,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "fc06d894-5c41-41ec-87bc-e17f228a8494.jpg",
     "sourceUrl": "https://images.launchbox-app.com/fc06d894-5c41-41ec-87bc-e17f228a8494.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "7992",
     "sourcePlatform": "Sony Playstation 2"
   },
@@ -4322,7 +4322,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "13d76d2e-78ad-440b-bfe0-6196a2b8b2f3.jpg",
     "sourceUrl": "https://images.launchbox-app.com/13d76d2e-78ad-440b-bfe0-6196a2b8b2f3.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "815",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4337,7 +4337,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "fa42a572-a36d-45ae-9d56-3bf7310e41a7.jpg",
     "sourceUrl": "https://images.launchbox-app.com/fa42a572-a36d-45ae-9d56-3bf7310e41a7.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "815",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4352,7 +4352,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "15efd4bc-1e44-4a65-9f4d-15dc55675103.jpg",
     "sourceUrl": "https://images.launchbox-app.com/15efd4bc-1e44-4a65-9f4d-15dc55675103.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "941",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4367,7 +4367,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f4e68f50-132c-4e07-9184-bbfe9f774292.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f4e68f50-132c-4e07-9184-bbfe9f774292.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "941",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4382,7 +4382,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "69496eb0-e10e-4d8e-9a42-3837135eebf6.jpg",
     "sourceUrl": "https://images.launchbox-app.com/69496eb0-e10e-4d8e-9a42-3837135eebf6.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "36",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4397,7 +4397,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_874779b2-a8a7-4b3c-b0e6-ea9490aadf00.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_874779b2-a8a7-4b3c-b0e6-ea9490aadf00.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "36",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4412,7 +4412,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e13da506-048f-4ee2-baf8-29db62247a1b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e13da506-048f-4ee2-baf8-29db62247a1b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "36",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4427,7 +4427,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "1509ae85-f201-432f-8ca4-4d519782b365.jpg",
     "sourceUrl": "https://images.launchbox-app.com/1509ae85-f201-432f-8ca4-4d519782b365.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "36",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4442,7 +4442,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "90825458-98ae-4be3-97f8-07dd0035eedd.jpg",
     "sourceUrl": "https://images.launchbox-app.com/90825458-98ae-4be3-97f8-07dd0035eedd.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "36",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4457,7 +4457,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "577e35ec-0a5b-4860-8e9d-e215a12feeea.jpg",
     "sourceUrl": "https://images.launchbox-app.com/577e35ec-0a5b-4860-8e9d-e215a12feeea.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "36",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4472,7 +4472,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "d6a70df3-2ade-4517-8d2f-a9113b94fa6d.jpg",
     "sourceUrl": "https://images.launchbox-app.com/d6a70df3-2ade-4517-8d2f-a9113b94fa6d.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "45",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4487,7 +4487,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "fe4c4ff9-d75b-4913-a9ec-8b88db84f312.jpg",
     "sourceUrl": "https://images.launchbox-app.com/fe4c4ff9-d75b-4913-a9ec-8b88db84f312.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "45",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4502,7 +4502,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "8a9b3f13-b59f-45a8-afce-eff6862d5efc.jpg",
     "sourceUrl": "https://images.launchbox-app.com/8a9b3f13-b59f-45a8-afce-eff6862d5efc.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "45",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4517,7 +4517,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "500f2c88-0ce2-47bf-920d-95c79ccfb523.jpg",
     "sourceUrl": "https://images.launchbox-app.com/500f2c88-0ce2-47bf-920d-95c79ccfb523.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "45",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4532,7 +4532,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "61c9d370-6d30-403e-b72e-7637d022e743.jpg",
     "sourceUrl": "https://images.launchbox-app.com/61c9d370-6d30-403e-b72e-7637d022e743.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "45",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4547,7 +4547,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "aa8cccda-61a5-40e9-b564-f9df618761b5.jpg",
     "sourceUrl": "https://images.launchbox-app.com/aa8cccda-61a5-40e9-b564-f9df618761b5.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "14536",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4562,7 +4562,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "dddd6c85-1f57-4fea-9977-6b1443037770.jpg",
     "sourceUrl": "https://images.launchbox-app.com/dddd6c85-1f57-4fea-9977-6b1443037770.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "14536",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4577,7 +4577,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "09776a8f-eaa5-4360-af4a-41b8f759dd15.jpg",
     "sourceUrl": "https://images.launchbox-app.com/09776a8f-eaa5-4360-af4a-41b8f759dd15.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6626",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4592,7 +4592,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_e1bb04f3-5aa0-4d53-b124-d889d9523a18.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_e1bb04f3-5aa0-4d53-b124-d889d9523a18.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6626",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4607,7 +4607,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_f50306de-604c-4df9-afe2-610bf7a08d01.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_f50306de-604c-4df9-afe2-610bf7a08d01.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6626",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4622,7 +4622,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_56019c75-e748-4678-aa05-08d7a179c185.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_56019c75-e748-4678-aa05-08d7a179c185.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6627",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4637,7 +4637,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_a0491b6e-9ba1-4733-86af-efbc1971ed52.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_a0491b6e-9ba1-4733-86af-efbc1971ed52.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6627",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4652,7 +4652,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4b588d63-2972-4ac7-bd4e-a58aad4f3e8a.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4b588d63-2972-4ac7-bd4e-a58aad4f3e8a.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6627",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4667,7 +4667,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_eceec24a-84a3-4f7b-91de-ce9bf65ba094.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_eceec24a-84a3-4f7b-91de-ce9bf65ba094.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "6627",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4682,7 +4682,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "78d6569c-4e1f-4b17-9383-1c9a91236b08.jpg",
     "sourceUrl": "https://images.launchbox-app.com/78d6569c-4e1f-4b17-9383-1c9a91236b08.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "9040",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4697,7 +4697,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "6ed78c86-e54b-4aa1-ae52-c21a3d4b30cc.jpg",
     "sourceUrl": "https://images.launchbox-app.com/6ed78c86-e54b-4aa1-ae52-c21a3d4b30cc.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "9040",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4712,7 +4712,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0bf8df42-db7b-4f16-b5ad-63eddbe070c0.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0bf8df42-db7b-4f16-b5ad-63eddbe070c0.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "8329",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4727,7 +4727,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0009d47d-bf13-46ef-99e7-92dc09b08876.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0009d47d-bf13-46ef-99e7-92dc09b08876.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "8329",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4742,7 +4742,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "d6bfe83c-5ef4-47e2-b9d7-fc1c56734f7d.jpg",
     "sourceUrl": "https://images.launchbox-app.com/d6bfe83c-5ef4-47e2-b9d7-fc1c56734f7d.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "8329",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4757,7 +4757,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "df6b26f2-d7dc-4212-8d42-8a7b34897d53.jpg",
     "sourceUrl": "https://images.launchbox-app.com/df6b26f2-d7dc-4212-8d42-8a7b34897d53.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "8329",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4772,7 +4772,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "2e8fe799-0e7e-4879-92c7-b980ae67b611.jpg",
     "sourceUrl": "https://images.launchbox-app.com/2e8fe799-0e7e-4879-92c7-b980ae67b611.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "97",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4787,7 +4787,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "da69e296-dd30-47d7-b07f-6e7e46af25c9.jpg",
     "sourceUrl": "https://images.launchbox-app.com/da69e296-dd30-47d7-b07f-6e7e46af25c9.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "97",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4802,7 +4802,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "b1e2466b-8d20-4f3f-ba8e-e26cea87064f.jpg",
     "sourceUrl": "https://images.launchbox-app.com/b1e2466b-8d20-4f3f-ba8e-e26cea87064f.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "97",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4817,7 +4817,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "d1b1b144-52f4-49f9-a556-ec43ecb5b2d8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/d1b1b144-52f4-49f9-a556-ec43ecb5b2d8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "97",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4832,7 +4832,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_eda49215-ce48-4e6d-ba20-96f3aaef07cc.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_eda49215-ce48-4e6d-ba20-96f3aaef07cc.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "201",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4847,7 +4847,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "7e1ee544-66e1-4474-8f01-73cedab88af9.jpg",
     "sourceUrl": "https://images.launchbox-app.com/7e1ee544-66e1-4474-8f01-73cedab88af9.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "201",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4862,7 +4862,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4c289a6b-f946-4b1f-a670-d5dbb0e95677.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4c289a6b-f946-4b1f-a670-d5dbb0e95677.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "2264",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4877,7 +4877,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "235ff852-3c6b-482f-83d2-355f10ff6e8a.jpg",
     "sourceUrl": "https://images.launchbox-app.com/235ff852-3c6b-482f-83d2-355f10ff6e8a.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "2264",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4892,7 +4892,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "4426e8fe-3342-4a3e-8103-4cba096afd5d.jpg",
     "sourceUrl": "https://images.launchbox-app.com/4426e8fe-3342-4a3e-8103-4cba096afd5d.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "2264",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4907,7 +4907,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "b3ef1837-2f7a-42d2-b790-825dab08c457.jpg",
     "sourceUrl": "https://images.launchbox-app.com/b3ef1837-2f7a-42d2-b790-825dab08c457.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "2264",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4922,7 +4922,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "020508b5-6c7c-4d88-aad4-02988ef053b0.jpg",
     "sourceUrl": "https://images.launchbox-app.com/020508b5-6c7c-4d88-aad4-02988ef053b0.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "2264",
     "sourcePlatform": "Sony Playstation 3"
   },
@@ -4949,7 +4949,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_3121a56c-5508-4946-ac9a-a070f0dd48fa.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_3121a56c-5508-4946-ac9a-a070f0dd48fa.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "450841",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -4964,7 +4964,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "f9308263-f063-4164-84c0-6fdd71df6203.jpg",
     "sourceUrl": "https://images.launchbox-app.com/f9308263-f063-4164-84c0-6fdd71df6203.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "450841",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -4979,7 +4979,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_4bf67059-6160-4383-99e8-cf865e95da04.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_4bf67059-6160-4383-99e8-cf865e95da04.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "450841",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -4994,7 +4994,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "86681c02-2f61-47c2-93b5-5066f00fc39c.jpg",
     "sourceUrl": "https://images.launchbox-app.com/86681c02-2f61-47c2-93b5-5066f00fc39c.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205483",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5009,7 +5009,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "6733800d-0073-4ba3-8da0-9363255b33e8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/6733800d-0073-4ba3-8da0-9363255b33e8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205483",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5024,7 +5024,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_772cb629-8fc0-4b61-aad9-35bea8a629e8.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_772cb629-8fc0-4b61-aad9-35bea8a629e8.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "209573",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5039,7 +5039,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_ab23336f-2c8a-4a68-8ab9-8b326c500a2c.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_ab23336f-2c8a-4a68-8ab9-8b326c500a2c.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "209573",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5054,7 +5054,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "64eb20bc-7bca-477c-8cec-4c7727dfcc48.jpg",
     "sourceUrl": "https://images.launchbox-app.com/64eb20bc-7bca-477c-8cec-4c7727dfcc48.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "209573",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5069,7 +5069,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "0e615ad6-d479-41b1-b84d-5259f11f6228.jpg",
     "sourceUrl": "https://images.launchbox-app.com/0e615ad6-d479-41b1-b84d-5259f11f6228.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "441497",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5084,7 +5084,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "82e344cf-5fa2-449c-9b14-7274133adfa1.jpg",
     "sourceUrl": "https://images.launchbox-app.com/82e344cf-5fa2-449c-9b14-7274133adfa1.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "441497",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5099,7 +5099,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "e3b7efd6-28ef-44db-8ca8-c722d73cbf7b.jpg",
     "sourceUrl": "https://images.launchbox-app.com/e3b7efd6-28ef-44db-8ca8-c722d73cbf7b.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "209658",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5114,7 +5114,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "38ac5c90-236f-4a70-bac1-2b1884f49988.jpg",
     "sourceUrl": "https://images.launchbox-app.com/38ac5c90-236f-4a70-bac1-2b1884f49988.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "209658",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5129,7 +5129,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_28038fd3-ed45-463a-bc05-dfa3a3c2962d.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_28038fd3-ed45-463a-bc05-dfa3a3c2962d.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "423378",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5144,7 +5144,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_bbda5b72-aa4e-4adb-81ba-0589f52bc1eb.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_bbda5b72-aa4e-4adb-81ba-0589f52bc1eb.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "423378",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5159,7 +5159,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_4ead3432-0ebe-4c57-b73a-35c8a3a23890.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_4ead3432-0ebe-4c57-b73a-35c8a3a23890.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205481",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5174,7 +5174,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "r2_9b6d38b4-044d-490b-8bfd-55713fb10533.jpg",
     "sourceUrl": "https://images.launchbox-app.com/r2_9b6d38b4-044d-490b-8bfd-55713fb10533.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205481",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5189,7 +5189,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "c8a2906b-882a-4e2a-8cae-3554f1034827.png",
     "sourceUrl": "https://images.launchbox-app.com/c8a2906b-882a-4e2a-8cae-3554f1034827.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "205481",
     "sourcePlatform": "Sony Playstation 5"
   },
@@ -5295,7 +5295,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "75c12a82-e092-4416-853f-7c659f33b675.jpg",
     "sourceUrl": "https://images.launchbox-app.com/75c12a82-e092-4416-853f-7c659f33b675.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "5785",
     "sourcePlatform": "Super Nintendo Entertainment System"
   },
@@ -5310,7 +5310,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "803b8bdd-2973-4e91-b264-797a8163a25c.jpg",
     "sourceUrl": "https://images.launchbox-app.com/803b8bdd-2973-4e91-b264-797a8163a25c.jpg",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "5785",
     "sourcePlatform": "Super Nintendo Entertainment System"
   },
@@ -5428,7 +5428,7 @@ export const WISHLIST_ARTWORK_CANDIDATES: WishlistArtworkCandidate[] = [
     "sourcePath": "cb73f011-9091-4bf0-b038-1f8213e24585.png",
     "sourceUrl": "https://images.launchbox-app.com/cb73f011-9091-4bf0-b038-1f8213e24585.png",
     "metadataUrl": "https://gamesdb.launchbox-app.com/Metadata.zip",
-    "metadataSha256": "625ca89990cb8683215e5f1cc12f634bcfc1eb293a9f23884b4166d3dd0dd2d9",
+    "metadataSha256": "69dc27f73508bb3ed8e45bec87ab11de91fa5b7fbaf5c8ccf5755e0cb12d735f",
     "launchboxDatabaseId": "1764",
     "sourcePlatform": "Super Nintendo Entertainment System"
   },
