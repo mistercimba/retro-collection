@@ -92,3 +92,5 @@ export function applyWishlistMaintenance(
   cleanupArtworkPaths: string[];
   report: WishlistMaintenanceReport;
 };
+
+export function hasConfirmedMaintenanceSnapshot(actualSha256: string, expectedSha256: string | undefined): boolean;

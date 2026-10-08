@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-06
+Last updated: 2026-10-08
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -22,7 +22,11 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Manual resolution of ambiguous artwork (#60)
+### NOW — Approved Wishlist cleanup (#62)
+
+PR #63 implements dry-run-first Blob maintenance tooling. Before any live apply, inspect a fresh live snapshot, review exact target IDs, confirm its fingerprint, create an immutable private backup, and block unexpected purchases/duplicates/metadata. After applying, refresh Next Data Cache and audit the PAL artwork of renamed/split targets. Do not close #62 before the actual live cleanup is verified.
+
+### COMPLETED — Manual resolution of ambiguous artwork (#60)
 
 When the artwork pipeline has multiple plausible covers, choose a sensible default but let Mário change it explicitly. Treat this as a collection-wide audit problem, not a per-example fix.
 
@@ -30,7 +34,7 @@ Implementation direction: materialize the known ambiguity set, deduplicate ident
 
 Coverage rule: audit every current Wishlist fallback, including non-ambiguous mismatch/unconfirmed cases. A known-bad source remains rejected; when a secondary source has one safe exact European front cover, use it as the automatic fallback instead of leaving the placeholder.
 
-Current audit baseline on PR #61: the full LaunchBox pass now covers **141 of the 159 original fallbacks**, leaving **18 targets with no candidate** before the PAL/alias refinement. The active pass must keep exact title/platform identity, accept exact LaunchBox alternate names and conservative slash-title equivalents, apply the PAL preference above, and keep genuinely unresolved or one-of identities explicit in the generated audit report.
+PR #61 merged on 2026-10-08 with **152 of 159 original fallbacks covered** and 379 materialized candidates. Seven remaining fallbacks are accounted for by Mole Mania's blocked approved cover and planned Wishlist removals/splits in #62. The active pass must keep exact title/platform identity, accept exact LaunchBox alternate names and conservative slash-title equivalents, apply the PAL preference above, and keep genuinely unresolved or one-of identities explicit in the generated audit report.
 
 Runtime rule: candidate source URLs are discovery/provenance only. A dedicated import step materializes candidates into committed files under `public/covers/wishlist-candidates/`; normal CI/build verifies the files and detail pages/chooser never hotlink Libretro/LaunchBox.
 

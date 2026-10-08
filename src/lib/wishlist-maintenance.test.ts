@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   analyzeWishlistMaintenance,
+  hasConfirmedMaintenanceSnapshot,
   applyWishlistMaintenance,
   type WishlistMaintenanceLibrary,
   type WishlistMaintenancePlan,
@@ -38,6 +39,14 @@ const library = (
 });
 
 describe("wishlist maintenance", () => {
+  it("requires a reviewed fingerprint of the exact live Blob before an apply", () => {
+    const fingerprint = "a".repeat(64);
+    expect(hasConfirmedMaintenanceSnapshot(fingerprint, undefined)).toBe(false);
+    expect(hasConfirmedMaintenanceSnapshot(fingerprint, "b".repeat(64))).toBe(false);
+    expect(hasConfirmedMaintenanceSnapshot(fingerprint, "not-a-hash")).toBe(false);
+    expect(hasConfirmedMaintenanceSnapshot(fingerprint, fingerprint)).toBe(true);
+  });
+
   it("removes an exact target and every target on an approved platform", () => {
     const input = library([
       target({ targetId: "W", title: "Warlocked", platform: "Game Boy Color" }),

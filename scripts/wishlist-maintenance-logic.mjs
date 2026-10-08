@@ -386,3 +386,12 @@ export function applyWishlistMaintenance(library, plan, options = {}) {
     },
   };
 }
+
+
+// Force an explicit, reviewed dry-run against exactly the same persisted Blob
+// state. A stale report can never be used to approve a different snapshot.
+export function hasConfirmedMaintenanceSnapshot(actualSha256, expectedSha256) {
+  return typeof expectedSha256 === "string" &&
+    /^[a-f0-9]{64}$/.test(expectedSha256) &&
+    actualSha256 === expectedSha256;
+}

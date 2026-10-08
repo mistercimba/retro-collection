@@ -22,8 +22,23 @@ export function resolveWishlistArtworkCandidates(target: CandidateTarget): Wishl
   // of them and let the user make the final call from the visual/provenance
   // context. Region/edition heuristics remain useful labels, but they must not
   // hide the chooser itself.
-  return WISHLIST_ARTWORK_CANDIDATES.filter((candidate) =>
+  // Approved one-time live Wishlist title corrections (Issue #62). Retain
+  // the exact PAL artwork identities already curated under the previous names.
+  // Prefer direct candidates when a later import materializes the new title.
+  const direct = WISHLIST_ARTWORK_CANDIDATES.filter((candidate) =>
     normalizeWishlistArtworkTitle(candidate.title) === title &&
+    normalizeWishlistArtworkPlatform(candidate.platform) === platform
+  );
+  if (direct.length) return direct;
+  const approvedRenameAliases: Record<string, string> = {
+    "snes::teenage mutant hero turtles iv turtles in time": "Teenage Mutant Hero Turtles: Turtles in Time",
+    "snes::super mario world 2 yoshis island": "Yoshi's Island / Super Mario World 2",
+  };
+  const previousTitle = approvedRenameAliases[platform + "::" + title];
+  if (!previousTitle) return [];
+  const original = normalizeWishlistArtworkTitle(previousTitle);
+  return WISHLIST_ARTWORK_CANDIDATES.filter((candidate) =>
+    normalizeWishlistArtworkTitle(candidate.title) === original &&
     normalizeWishlistArtworkPlatform(candidate.platform) === platform
   );
 }
