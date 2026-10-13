@@ -1,4 +1,5 @@
 import { analyzeWishlistMaintenance } from "../../scripts/wishlist-maintenance-logic.mjs";
+import { buildWishlistPostCleanupAudit } from "./wishlist-maintenance-post-apply.logic";
 import type {
   WishlistMaintenanceLibrary,
   WishlistMaintenancePlan,
@@ -69,5 +70,8 @@ export function buildWishlistMaintenancePreflight(
     safeToApply: analysis.safeToApply,
     operations,
     blockers: analysis.blockers,
+    postCleanupAudit: library.wishlist.length === 291 &&
+      analysis.operations.every((operation) => operation.status === "skipped")
+      ? buildWishlistPostCleanupAudit(library, plan) : null,
   };
 }

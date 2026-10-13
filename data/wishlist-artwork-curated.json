@@ -73,6 +73,30 @@
       "sourceUrl": "https://www.retrogame-shop.com/70950-large_default/white-knight-chronicles-2-neuf.jpg",
       "metadataUrl": "https://www.retrogame-shop.com/fr/playstation-3/24083-white-knight-chronicles-2-neuf.html",
       "note": "Approved by Mário on 2026-10-08. Retrogameshop identifies this physical copy as PAL euro/fr; the visible front is PEGI 16."
+    },
+    {
+      "title": "Pokémon Black Version 2",
+      "platform": "Nintendo DS",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "pokemon_black_version_2_front_cover_eu-5393-800-600-100.jpg",
+      "sourceUrl": "https://www.pokemondungeon.com/images/igallery/resized/5301-5400/pokemon_black_version_2_front_cover_eu-5393-800-600-100.jpg",
+      "metadataUrl": "https://www.pokemondungeon.com/media-downloads/box-art/pokemon-black-version-2",
+      "note": "Confirmed visual PEGI 3, European DS front cover; specifically excludes the mixed USA/Europe Libretro ESRB asset."
+    },
+    {
+      "title": "Pokémon White Version 2",
+      "platform": "Nintendo DS",
+      "artworkRegion": "Europe",
+      "displayRegion": "Europe",
+      "coverVariant": "Standard",
+      "source": "curated",
+      "sourcePath": "pokemon_white_version_2_front_cover_eu-5412-800-600-100.jpg",
+      "sourceUrl": "https://www.pokemondungeon.com/images/igallery/resized/5401-5500/pokemon_white_version_2_front_cover_eu-5412-800-600-100.jpg",
+      "metadataUrl": "https://www.pokemondungeon.com/media-downloads/box-art/pokemon-white-version-2",
+      "note": "Confirmed visual PEGI 3, European DS front cover; specifically excludes the mixed USA/Europe Libretro ESRB asset."
     }
   ]
 }

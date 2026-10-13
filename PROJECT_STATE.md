@@ -80,7 +80,7 @@ The maintenance path is deliberately data-driven and conservative:
 - out-of-band Blob writes require a fresh deployment or an in-app mutation afterwards to invalidate any previous Next Data Cache snapshot;
 - explicit exact title aliases preserve approved SNES PAL cover candidates after the two Issue #62 title corrections; newly split game covers still require a post-live-mutation audit.
 
-Live execution is pending. PR #64 added a read-only authenticated production preflight and corrected exact-target identity, preserving the approved split notes. PR #65 proposes a one-time production-only authenticated apply form with fresh Blob SHA-256 verification, exact 301 → 291 guards, private backup, post-write re-read and Next Data Cache invalidation. This does not itself execute a live mutation; the Product Owner must separately confirm the action inside the production app.
+Live cleanup executed by Product Owner on 2026-10-13 through the one-time guarded production form in merged PR #65. Owner supplied a new uncached production report: 291 Wishlist records, all seven operations skipped/already applied, no blockers, Final Fantasy VIII still Next Objective. Pending exact persisted-notes/history audit and materialized Europe front covers for six new split entries; the old artwork fallback report remains historical. Use the approved maintenance plan to derive the post-cleanup artwork candidate queue; do not regenerate live data from repo snapshots.
 
 ## Current architecture
 

@@ -24,7 +24,7 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ### NOW — Approved Wishlist cleanup (#62)
 
-PR #63 merged command-line dry-run-first Blob maintenance tooling; PR #64 merged an authenticated read-only preflight and exact-identity/notes-preservation safety fixes. PR #65 proposes an explicit production-only authenticated apply form with fresh Blob SHA-256 confirmation and immutable backup, avoiding any need to disclose Vercel tokens. A user action on that form, not a PR merge, writes live data. Audit the exact 301 → 291 counts, the preserved Final Fantasy VIII objective and notes, history, and PAL artwork before closing #62.
+PRs #63–#65 merged the maintenance workflow, exact identity/notes safety and guarded live execution. Owner applied the cleanup on 2026-10-13; fresh production report verifies 291 games, all seven operations completed, no blockers and Final Fantasy VIII still Next Objective. Remaining: confirm the six new entries' actually persisted notes/history with a read-only post-apply audit and materialize distinct European PAL/PEGI front covers for all six. The historical 159-target fallback input is reconciled into an exact post-cleanup candidate queue by the approved maintenance plan. Do not re-run the destructive cleanup. Close #62 only after these checks pass.
 
 ### COMPLETED — Manual resolution of ambiguous artwork (#60)
 
