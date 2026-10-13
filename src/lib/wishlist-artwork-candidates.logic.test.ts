@@ -23,6 +23,45 @@ function target(overrides: Partial<WantTarget> = {}): WantTarget {
 }
 
 describe("wishlist artwork candidates", () => {
+  it("resolves all six new post-cleanup targets to committed European PAL fronts", () => {
+    const splitTitles = [
+      { title: "Pokémon Black Version 2", platform: "Nintendo DS", source: "curated", age: 3 },
+      { title: "Pokémon White Version 2", platform: "Nintendo DS", source: "curated", age: 3 },
+      { title: "Pokémon Ultra Sun", platform: "Nintendo 3DS", source: "libretro-thumbnails", age: 7 },
+      { title: "Pokémon Ultra Moon", platform: "Nintendo 3DS", source: "libretro-thumbnails", age: 7 },
+      { title: "Fire Emblem Fates: Birthright", platform: "Nintendo 3DS", source: "libretro-thumbnails", age: 12 },
+      { title: "Fire Emblem Fates: Conquest", platform: "Nintendo 3DS", source: "libretro-thumbnails", age: 12 },
+    ] as const;
+    const usedIds = new Set<string>();
+    for (const item of splitTitles) {
+      const exact = target({
+        targetId: "NOVO", title: item.title, platform: item.platform,
+        targetVersion: "PAL; CIB",
+      });
+      const preferred = resolvePreferredWishlistArtworkCandidate(exact);
+      expect(preferred, item.title).toBeTruthy();
+      expect(preferred?.title).toBe(item.title);
+      expect(preferred?.platform).toBe(item.platform);
+      expect(preferred?.source).toBe(item.source);
+      expect(preferred?.artworkRegion).toBe("Europe");
+      expect(preferred?.displayRegion).toBe("Europe");
+      expect(usedIds.has(preferred!.id)).toBe(false);
+      usedIds.add(preferred!.id);
+      const local = wishlistArtworkCandidateLocalUrl(preferred!);
+      expect(local).toMatch(/^\/covers\/wishlist-candidates\/[^/]+\.(png|jpg)$/);
+      expect(local).not.toContain("http");
+      if (item.platform === "Nintendo DS") {
+        expect(preferred?.metadataUrl).toContain("pokemondungeon.com");
+        expect(preferred?.sourcePath).toContain("_front_cover_eu-");
+      } else {
+        expect(preferred?.sourceRepo).toBe("libretro-thumbnails/Nintendo_-_Nintendo_3DS");
+        expect(preferred?.sourcePath).toContain("(Europe)");
+        expect(preferred?.sourcePath).not.toContain("(USA)");
+      }
+    }
+    expect(usedIds.size).toBe(6);
+  });
+
   it("offers both known PAL Final Fantasy VIII candidates independently of targetId", () => {
     const candidates = resolveWishlistArtworkCandidates(target({ targetId: "APP-whatever" }));
     expect(candidates.map((item) => item.displayRegion)).toEqual(["Europe / Australia", "Spain"]);
