@@ -106,7 +106,7 @@ export function QuickAddDialog({
       else dialogRef.current?.focus();
     });
     return () => cancelAnimationFrame(frame);
-  }, [open, manualMode, prefillWishlist, selected]);
+  }, [open, manualMode, prefillWishlist, selected, intent]);
 
   useEffect(() => {
     if (!open || prefillWishlist || manualMode || selected) return;
