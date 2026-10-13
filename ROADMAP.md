@@ -24,7 +24,7 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ### NOW — Approved Wishlist cleanup (#62)
 
-PR #63 implements dry-run-first Blob maintenance tooling. Before any live apply, inspect a fresh live snapshot, review exact target IDs, confirm its fingerprint, create an immutable private backup, and block unexpected purchases/duplicates/metadata. After applying, refresh Next Data Cache and audit the PAL artwork of renamed/split targets. Do not close #62 before the actual live cleanup is verified.
+PR #63 merged command-line dry-run-first Blob maintenance tooling; PR #64 merged an authenticated read-only preflight and exact-identity/notes-preservation safety fixes. PR #65 proposes an explicit production-only authenticated apply form with fresh Blob SHA-256 confirmation and immutable backup, avoiding any need to disclose Vercel tokens. A user action on that form, not a PR merge, writes live data. Audit the exact 301 → 291 counts, the preserved Final Fantasy VIII objective and notes, history, and PAL artwork before closing #62.
 
 ### COMPLETED — Manual resolution of ambiguous artwork (#60)
 

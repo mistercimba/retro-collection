@@ -1,5 +1,6 @@
 import "server-only";
 import { cache } from "react";
+import { createHash } from "node:crypto";
 import { revalidateTag, unstable_cache } from "next/cache";
 import { get, put } from "@vercel/blob";
 import type { LibraryData } from "@/lib/data/types";
@@ -103,6 +104,32 @@ export const getLibrary = cache(readCachedLibrary);
 // Use only for failure recovery / mutation verification, never cached rendering.
 export async function getFreshLibrary(): Promise<LibraryData> {
   return readRequiredLibrary();
+}
+
+// Only for an explicitly requested maintenance preflight/apply. Unlike the
+// cached app library, this captures the exact persisted bytes so a reviewed
+// read-only report can be compared against a future private Blob write.
+export async function getFreshLibrarySnapshot(): Promise<{
+  library: LibraryData;
+  rawJson: string;
+  sha256: string;
+}> {
+  const result = await get(LIBRARY_PATH, { access: "private", useCache: false });
+  if (!result) throw new Error("A library.json não existe no Blob privado.");
+  const rawJson = await new Response(result.stream).text();
+  const payload: unknown = JSON.parse(rawJson);
+  if (!validLibrary(payload)) throw new InvalidLibraryError();
+  return {
+    rawJson,
+    sha256: createHash("sha256").update(rawJson).digest("hex"),
+    library: {
+      ...payload,
+      componentNeeds: payload.componentNeeds ?? [],
+      nextObjective: payload.nextObjective ?? null,
+      collectionLists: payload.collectionLists ?? [],
+      history: payload.history ?? [],
+    },
+  };
 }
 
 export async function saveLibrary(data: LibraryData): Promise<LibraryData> {
