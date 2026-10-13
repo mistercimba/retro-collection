@@ -22,11 +22,11 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Actionable Home and mobile-first focus (#50)
+### COMPLETED — Actionable Home (#50)
 
-Issue #50, branch `feat/home-actionable-focus`: remove the decorative Home copy and summary cards; preserve the manually selected Next Objective, show at most one suggestion **only if none is set**, present copy-level missing/review tasks and ordered purchases, keep recent additions and console navigation. Keep 360/390/430 px layouts compact and avoid clipped actions and duplicate `NOVO` objective identity exclusion.
+PR #67 merged into `main` at `7f0faa2`; GitHub Actions and Vercel production PASS. Compact Home implemented with one Next Objective, grouped physical-copy tasks, received/ordered states, recent additions, console browsing and exact-identity handling for legacy `NOVO` entries.
 
-Static source review + CI/Vercel Preview are available; a signed-in visual browser session is currently unavailable. A complete interactive visual audit of mobile/laptop routes, dialogs and offline flows remains NEXT and must not be claimed complete by this Home-only pass.
+Authenticated end-to-end mobile/laptop/offline visual verification remains open under Issue #68 and must not be claimed complete by source review or CI.
 
 ### COMPLETED — Wishlist cleanup (#62)
 
@@ -48,13 +48,13 @@ Artwork gaps/deliberate fallback (#48) are complete and merged in PR #59.
 
 ## Product roadmap
 
-### NEXT — Real mobile/laptop QA
+### NOW — Real mobile/laptop QA (#68)
 
 Validate Home, Collection, platform/game detail, Wishlist, Lists, Sell/Sold, search, history, login/error/404, dialogs, forms and filters.
 
 Check 360/390/430 px where practical, laptop layout, overflow, clipped actions, bottom navigation/safe area, long titles, secondary metadata, keyboard/focus and loading/error states.
 
-Also validate the existing offline flow: authenticated snapshot, offline lookup, freshness indicator, network cut/reconnect and snapshot refresh after reconnect.
+Also validate the existing offline flow: authenticated snapshot, offline lookup, freshness indicator, network cut/reconnect and snapshot refresh after reconnect. Initial source audit found keyboard focus containment/restoration missing in the universal Add dialog, scroll/safe-area refinements, and a small offline lookup layout/image fallback bug; a focused PR is proposed. Automated code/tests and Preview do not constitute real viewport validation. Browser access to an authenticated session remains blocked (remote desktop offline, browser execution budget exhausted). Keep #68 open until real mobile/laptop and offline proof is available.
 
 ### NEXT — Small UI/UX polish
 
