@@ -56,6 +56,21 @@ function game(title: string, collectionId: string): CollectionGame {
 }
 
 describe("next objective suggestion", () => {
+  it("excludes only the actual objective when legacy Wishlist IDs collide", () => {
+    const suggestion = suggestNextObjective(
+      [
+        target({ targetId: "NOVO", title: "Final Fantasy VIII", priority: "Grail" }),
+        target({ targetId: "NOVO", title: "Final Fantasy IX", priority: "Alta" }),
+        target({ targetId: "NOVO", title: "Metal Gear Solid", priority: "Baixa" }),
+      ],
+      [game("Final Fantasy VII", "PS1-1")],
+      [],
+      { targetId: "NOVO", title: "Final Fantasy VIII", platform: "Playstation", setAt: "" },
+    );
+    expect(suggestion?.target.title).toBe("Final Fantasy IX");
+    expect(suggestion?.target.targetId).toBe("NOVO");
+  });
+
   it("strongly prefers a target that completes a user-defined list", () => {
     const list: CollectionList = {
       id: "L-1",
@@ -106,7 +121,7 @@ describe("next objective suggestion", () => {
       ],
       [game("Final Fantasy VII", "PS1-1")],
       [],
-      "W-1",
+      { targetId: "W-1", title: "Final Fantasy VIII", platform: "Playstation", setAt: "" },
     );
     expect(suggestion).toBeNull();
   });

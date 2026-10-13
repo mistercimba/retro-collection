@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-08
+Last updated: 2026-10-13
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -22,9 +22,15 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Approved Wishlist cleanup (#62)
+### NOW — Actionable Home and mobile-first focus (#50)
 
-PRs #63–#65 merged the maintenance workflow, exact identity/notes safety and guarded live execution. Owner applied the cleanup on 2026-10-13; fresh production report verifies 291 games, all seven operations completed, no blockers and Final Fantasy VIII still Next Objective. Remaining: confirm the six new entries' actually persisted notes/history with a read-only post-apply audit and materialize distinct European PAL/PEGI front covers for all six. The historical 159-target fallback input is reconciled into an exact post-cleanup candidate queue by the approved maintenance plan. Do not re-run the destructive cleanup. Close #62 only after these checks pass.
+Issue #50, branch `feat/home-actionable-focus`: remove the decorative Home copy and summary cards; preserve the manually selected Next Objective, show at most one suggestion **only if none is set**, present copy-level missing/review tasks and ordered purchases, keep recent additions and console navigation. Keep 360/390/430 px layouts compact and avoid clipped actions and duplicate `NOVO` objective identity exclusion.
+
+Static source review + CI/Vercel Preview are available; a signed-in visual browser session is currently unavailable. A complete interactive visual audit of mobile/laptop routes, dialogs and offline flows remains NEXT and must not be claimed complete by this Home-only pass.
+
+### COMPLETED — Wishlist cleanup (#62)
+
+PRs #63–#66 merged. Owner applied and verified 291 Wishlist records, all seven planned operations, Final Fantasy VIII unchanged, six of six persisted notes and history entries, and six distinct European local cover assets. Issue #62 is closed. Do not re-run the one-time cleanup.
 
 ### COMPLETED — Manual resolution of ambiguous artwork (#60)
 

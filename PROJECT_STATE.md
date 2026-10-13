@@ -1,14 +1,21 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-08
+Last updated: 2026-10-13
 
 This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status
 
+## Active UX work — Home focus (#50)
+
+Branch: `feat/home-actionable-focus` from production main `9ded6c9f`; awaiting PR review/merge.
+The Home's top summary metrics and decorative tagline are being removed in favor of the confirmed Next Objective, an actionable copy-level queue (physical missing components plus needs-review copies), ordered purchases, recently added games and console navigation. The suggestion slot appears only with no confirmed Next Objective; exact triple-identity exclusion fixes legacy `NOVO` collisions. No Blob mutation or new data source.
+GitHub CI and Vercel Preview will validate code/build. Authenticated browser-based visual tests at 360/390/430 and laptop/offline remain outstanding (the authorized browser has no execution balance and remote desktop is offline), so do not claim full visual QA.
+
+
 Current `main` baseline:
 
-`df6e0a8f82dae2cea5734a61f366b505fadde78d`
+`9ded6c9f8c4527e542be61c51bd03f06a09585d0`
 
 Most recent merged work:
 

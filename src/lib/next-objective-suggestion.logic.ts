@@ -1,4 +1,5 @@
-import type { CollectionGame, CollectionList, WantListEntry } from "./data/types";
+import type { CollectionGame, CollectionList, NextCollectionObjective, WantListEntry } from "./data/types";
+import { objectiveMatchesTarget } from "./next-objective.logic";
 import { collectionListTargetIdentity, resolveCollectionList } from "./collection-lists.logic";
 import { collectionCopyIdentity } from "./copy-groups.logic";
 import { isOrderedWishlistTarget } from "./wishlist-acquisition.logic";
@@ -48,9 +49,13 @@ export function suggestNextObjective(
   targets: WantListEntry[],
   collection: CollectionGame[],
   lists: CollectionList[],
-  currentTargetId = "",
+  currentObjective: NextCollectionObjective | null = null,
 ): NextObjectiveSuggestion | null {
-  const active = targets.filter((target) => activeTarget(target) && target.targetId !== currentTargetId);
+  // Older imported Wishlist entries share targetId "NOVO"; matching only the
+  // ID would accidentally hide nearly the entire list from suggestions.
+  const active = targets.filter((target) =>
+    activeTarget(target) && !objectiveMatchesTarget(currentObjective, target)
+  );
   if (!active.length) return null;
 
   const owned = collection.filter((game) => game.keepStatus === "Collection");
