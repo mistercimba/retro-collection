@@ -64,7 +64,7 @@ The repository-first operating workflow is defined in `AGENTS.md`: substantial r
 
 ## Active data maintenance — approved Wishlist cleanup
 
-Issue #62. Candidate PR #63, rebased logically onto `main` after PR #61 merged. Live private Blob cleanup is not applied by merging the PR.
+Issue #62: PRs #63–#65 were merged; the owner executed the guarded production-only cleanup on 2026-10-13. The latest live read-only report confirms 291 entries and all seven operations complete. PR #66 adds six materialized Europe/PEGI cover candidates and an independent, read-only audit of actual split notes/history; post-merge live audit is pending.
 
 The maintenance path is deliberately data-driven and conservative:
 
@@ -74,13 +74,13 @@ The maintenance path is deliberately data-driven and conservative:
 - an immutable private backup is stored before overwriting `retro-collection/library.json`, with rollback left manual;
 - the dry-run lists exact IDs and titles affected; no write is performed by dry-run;
 - ordered/in-transit targets block removal/splitting/renaming instead of silently cancelling or duplicating purchases;
-- split targets block on Next Objective, manual artwork override, canonical catalog identity, price ceiling or notes so ambiguous metadata is reviewed instead of guessed;
+- split targets block on Next Objective, manual artwork override, canonical catalog identity and price ceiling. Original nonempty notes are only accepted with a pre-reviewed exact source-note match and explicit per-destination preservation;
 - exact duplicate Wishlist destinations and already-owned destinations block the operation;
-- removal cleans manual artwork override blobs only after a successful library save;
+- manual artwork overrides are guarded against accidental loss; the one-time live action did not delete potentially orphaned manual artwork assets;
 - out-of-band Blob writes require a fresh deployment or an in-app mutation afterwards to invalidate any previous Next Data Cache snapshot;
-- explicit exact title aliases preserve approved SNES PAL cover candidates after the two Issue #62 title corrections; newly split game covers still require a post-live-mutation audit.
+- explicit exact title aliases preserve approved SNES PAL cover candidates after the two title corrections; PR #66 includes six Europe PEGI post-split covers served from committed app-owned assets, pending release.
 
-Live cleanup executed by Product Owner on 2026-10-13 through the one-time guarded production form in merged PR #65. Owner supplied a new uncached production report: 291 Wishlist records, all seven operations skipped/already applied, no blockers, Final Fantasy VIII still Next Objective. Pending exact persisted-notes/history audit and materialized Europe front covers for six new split entries; the old artwork fallback report remains historical. Use the approved maintenance plan to derive the post-cleanup artwork candidate queue; do not regenerate live data from repo snapshots.
+Live cleanup executed by Product Owner on 2026-10-13 through the one-time guarded production form in merged PR #65. Owner supplied a new uncached production report: 291 Wishlist records, all seven operations skipped/already applied, no blockers, Final Fantasy VIII still Next Objective. Pending the read-only production audit of actual persisted notes/history and release of the six locally materialized Europe front covers from PR #66; the old artwork fallback report remains historical. Use the approved maintenance plan to derive the post-cleanup artwork candidate queue; do not regenerate live data from repo snapshots.
 
 ## Current architecture
 
