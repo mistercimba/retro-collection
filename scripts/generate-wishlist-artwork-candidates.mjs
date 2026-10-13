@@ -15,6 +15,7 @@ const ROOT = process.cwd();
 const MISSING_FILE = path.join(ROOT, "data", "wishlist-artwork-missing.json");
 const REJECTIONS_FILE = path.join(ROOT, "data", "wishlist-artwork-rejections.json");
 const CURATED_FILE = path.join(ROOT, "data", "wishlist-artwork-curated.json");
+const APPROVED_CLEANUP_PLAN = path.join(ROOT, "data", "wishlist-maintenance-2026-10-08.json");
 const OUTPUT_FILE = path.join(ROOT, "src", "data", "wishlist-artwork-candidates.ts");
 const AUDIT_FILE = path.join(ROOT, "data", "wishlist-artwork-candidate-audit.json");
 
@@ -122,7 +123,30 @@ function launchboxCandidates(target, launchbox) {
 }
 
 const missing = JSON.parse(await fs.readFile(MISSING_FILE, "utf8"));
-const unresolved = (missing.entries ?? []).filter((entry) => entry?.title && entry?.platform);
+// This historical missing-artwork report predates the approved live cleanup.
+// Build the current candidate queue from the already-applied, exact operations
+// instead of claiming the old snapshot itself was the 291-entry live library.
+// Keep the two SNES rename originals: their Europe candidates already resolve
+// via the intentionally curated exact-title aliases.
+const approvedCleanup = JSON.parse(await fs.readFile(APPROVED_CLEANUP_PLAN, "utf8"));
+const removals = approvedCleanup.operations
+  .filter((op) => op.type === "remove" || op.type === "split")
+  .map((op) => op.match);
+const removedPlatforms = new Set(approvedCleanup.operations
+  .filter((op) => op.type === "remove-platform")
+  .map((op) => op.platform));
+const replacementTargets = approvedCleanup.operations
+  .filter((op) => op.type === "split")
+  .flatMap((op) => op.titles.map((title) => ({
+    title, platform: op.match.platform, reason: "approved-post-cleanup-split",
+  })));
+const unresolved = [
+  ...(missing.entries ?? []).filter((entry) =>
+    entry?.title && entry?.platform && !removedPlatforms.has(entry.platform) &&
+    !removals.some((match) => match.title === entry.title && match.platform === entry.platform)
+  ),
+  ...replacementTargets,
+];
 const rejections = JSON.parse(await fs.readFile(REJECTIONS_FILE, "utf8")).entries ?? [];
 const curatedEntries = (JSON.parse(await fs.readFile(CURATED_FILE, "utf8")).entries ?? []).filter((entry) => entry?.enabled !== false);
 const launchboxPath = arg("--launchbox-index");

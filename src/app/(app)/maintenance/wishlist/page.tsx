@@ -80,6 +80,26 @@ export default async function WishlistMaintenancePreflightPage({
       </p>
       <CopyWishlistPreflight report={reportText} />
     </section>
+    {report.postCleanupAudit && <section className="collection-panel space-y-3 p-4">
+      <h2 className="text-lg font-black text-slate-900">Auditoria dos seis jogos novos</h2>
+      <p className="text-sm text-slate-700">
+        Esta verificação compara as notas reais de cada entrada com as notas aprovadas e
+        procura os eventos de criação e substituição no histórico. Não altera dados.
+      </p>
+      <p className="text-sm font-semibold text-slate-800">
+        Notas verificadas: {report.postCleanupAudit.verifiedNotesCount}/6 ·
+        Eventos de criação encontrados: {report.postCleanupAudit.verifiedNewTargetHistoryCount}/6 ·
+        Histórico de substituição: {report.postCleanupAudit.historyRecorded ? "OK" : "Por confirmar"}
+      </p>
+      <ul className="space-y-2">
+        {report.postCleanupAudit.splitEntries.map((item) => <li key={item.platform + item.title}
+          className="border-t border-[#e2ddd2] pt-2 text-sm text-slate-700">
+          <strong>{item.title}</strong>
+          <span className="ml-2">{item.persistedNotesMatch ? "Notas OK" : "Notas por confirmar"}</span>
+          <span className="ml-2">{item.historyAddFound ? "Histórico OK" : "Histórico por confirmar"}</span>
+        </li>)}
+      </ul>
+    </section>}
     {canApply && <section className="collection-panel space-y-3 border border-amber-300 p-4">
       <h2 className="text-lg font-black text-amber-900">Executar a limpeza aprovada</h2>
       <p className="text-sm text-slate-700">
