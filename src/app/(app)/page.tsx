@@ -2,8 +2,8 @@ import Link from "next/link";
 import { PlatformArtwork } from "@/components/artwork";
 import { WishlistArtwork } from "@/components/wishlist-artwork";
 import { QuickSearch } from "@/components/quick-search";
-import { getAllGames, getComponentCompletionQueue, getStats, getWantlist } from "@/lib/data/collection-service";
-import { displayPlatform, platformReleaseYear, sortPlatformsByRelease } from "@/lib/data/platforms";
+import { getAllGames, getComponentCompletionQueue, getWantlist } from "@/lib/data/collection-service";
+import { displayPlatform, platformReleaseYear, platformSlug, sortPlatformsByRelease } from "@/lib/data/platforms";
 import { gameCountLabel } from "@/lib/format";
 import { getLibrary } from "@/lib/library-store";
 import { toQuickSearchableGame } from "@/lib/quick-search.logic";
@@ -16,15 +16,23 @@ import { ActionSubmitButton } from "@/components/action-submit-button";
 import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 
 export default async function HomePage() {
-  const [stats, games, wantlist, library, completion] = await Promise.all([
-    getStats(),
+  const [games, wantlist, library, completion] = await Promise.all([
     getAllGames(),
     getWantlist(),
     getLibrary(),
     getComponentCompletionQueue(),
   ]);
 
-  const platforms = sortPlatformsByRelease(stats.platforms);
+  // The Home needs only platform names/counts for navigation, not market-value
+  // aggregation. Derive these from the already loaded owned collection.
+  const platformCounts = new Map<string, number>();
+  for (const game of games) {
+    if (game.keepStatus !== "Collection") continue;
+    platformCounts.set(game.platform, (platformCounts.get(game.platform) ?? 0) + 1);
+  }
+  const platforms = sortPlatformsByRelease(
+    [...platformCounts].map(([platform, count]) => ({ platform, slug: platformSlug(platform), count }))
+  );
   const incompleteIds = new Set(completion.active.map((need) => need.collectionId));
   const searchGames = games.map((game) => toQuickSearchableGame(game, incompleteIds.has(game.collectionId)));
   const nextObjective = resolveNextObjective(library.nextObjective ?? null, wantlist);
@@ -33,7 +41,8 @@ export default async function HomePage() {
     : suggestNextObjective(wantlist, games, library.collectionLists);
   const orderedWishlist = wantlist.filter(isOrderedWishlistTarget);
   const copyAttention = buildHomeCopyAttention(games, completion.active);
-  const hasCopyReview = copyAttention.some((item) => item.kind === "review");
+  const hasCopyReview = games.some((game) => game.keepStatus === "Collection" && game.needsReview);
+  const hasComponentNeeds = completion.active.length > 0;
   const activeWishlist = wantlist
     .filter((target) => !isOrderedWishlistTarget(target) && target.planState !== "inactive" && target.matchState !== "acquired")
     .map((target) => ({
@@ -127,7 +136,7 @@ export default async function HomePage() {
         {copyAttention.length > 0 && <article className="collection-panel min-w-0 p-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h3 className="text-sm font-black text-slate-950">Cópias a rever ou completar</h3>
-            <Link href="/complete" className="text-xs font-black text-[#315b47]">Ver peças →</Link>
+            <Link href={hasComponentNeeds ? "/complete" : "/collection/games?review=1"} className="text-xs font-black text-[#315b47]">{hasComponentNeeds ? "Ver peças →" : "Ver revisões →"}</Link>
           </div>
           <div className="mt-3 space-y-2">
             {copyAttention.slice(0, 3).map((item) => <Link
@@ -145,8 +154,8 @@ export default async function HomePage() {
             </Link>)}
           </div>
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs font-bold">
-            {copyAttention.length > 3 && <Link href="/complete" className="text-[#315b47]">Mais cópias →</Link>}
-            {hasCopyReview && <Link href="/collection/games?review=1" className="text-[#315b47]">Cópias por rever →</Link>}
+            {copyAttention.length > 3 && <span className="text-slate-500">Mostradas 3 de {copyAttention.length} cópias</span>}
+            {hasCopyReview && hasComponentNeeds && <Link href="/collection/games?review=1" className="text-[#315b47]">Cópias por rever →</Link>}
           </div>
         </article>}
 
