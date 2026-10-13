@@ -103,7 +103,7 @@ See `docs/WISHLIST_REFERENCE_MATCH_AUDIT_2026-10-02.md`.
 Remaining source debt:
 - GBA CeX coverage depends on the upstream Retro Hunter `GBA Jogos` fix and refreshed catalog;
 - PriceCharting PAL snapshot currently lacks PS3/PS5 coverage;
-- one-of Wishlist targets remain unresolved until alternatives can be represented safely.
+- the former one-of Wishlist targets are now separate entries with choose-one notes, but the app does not enforce mutually exclusive purchases; do not mistake them for six mandatory purchases.
 
 Accuracy beats coverage. Do not guess.
 
