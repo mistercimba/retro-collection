@@ -12,8 +12,12 @@ export function PageSkeleton({ variant }: { variant: SkeletonVariant }) {
   return <div aria-busy="true" className="animate-pulse space-y-5">
     <p role="status" className="sr-only">A carregar conteúdo da página</p>
     {variant === "home" && <>
-      <section className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 p-5 sm:p-9"><div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr]"><div className="space-y-4"><Block className="h-5 w-36" /><Block className="h-16 w-4/5" /><Block className="h-10 w-full max-w-2xl" /><div className="flex gap-2"><Block className="h-10 w-36" /><Block className="h-10 w-32" /></div></div><Block className="h-48 rounded-2xl" /></div><div className="mt-6 grid grid-cols-2 gap-2 border-t border-slate-200 pt-4 sm:grid-cols-4">{Array.from({ length: 4 }, (_, i) => <Block key={i} className="h-12" />)}</div></section>
-      <div className="grid gap-4 lg:grid-cols-2"><Block className="h-48 rounded-2xl" /><Block className="h-48 rounded-2xl" /></div><Block className="h-52 rounded-2xl" />
+      <div className="flex items-center justify-between gap-3"><div className="space-y-2"><Block className="h-3 w-32" /><Block className="h-8 w-32" /></div><Block className="h-10 w-28" /></div>
+      <Block className="h-12 rounded-xl md:hidden" />
+      <Block className="h-36 rounded-2xl border border-slate-200" />
+      <div className="space-y-3"><Block className="h-5 w-32" /><div className="grid gap-3 lg:grid-cols-2"><Block className="h-44 rounded-2xl" /><Block className="h-44 rounded-2xl" /></div></div>
+      <Block className="h-36 rounded-2xl" />
+      <Block className="h-5 w-28" /><CardGrid count={4} />
     </>}
     {variant === "platforms" && <><div className="flex items-end justify-between"><div className="space-y-2"><Block className="h-3 w-24" /><Block className="h-8 w-64" /><Block className="h-4 w-52" /></div><Block className="h-10 w-32" /></div><Block className="h-24 rounded-2xl" /><div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{Array.from({ length: 6 }, (_, i) => <Block key={i} className="h-28 rounded-2xl" />)}</div></>}
     {variant === "games" && <><div className="space-y-2"><Block className="h-3 w-28" /><Block className="h-8 w-56" /><Block className="h-4 w-64" /></div><div className="flex flex-col gap-2 sm:flex-row"><Block className="h-11 flex-1" /><Block className="h-11 w-32" /><Block className="h-11 w-28" /></div><CardGrid count={8} /></>}
