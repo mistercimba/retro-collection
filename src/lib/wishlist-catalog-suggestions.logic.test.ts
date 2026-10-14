@@ -45,7 +45,8 @@ describe("IGDB verified Wishlist suggestions", () => {
       release_dates: [{ platform: 21, release_region: 1 }, { platform: 20, release_region: 2 }] };
     const results = verifiedCatalogSuggestions(
       lib([owned("A"), owned("B"), owned("C"), owned("D"),
-        owned("One", "GameCube"), owned("Two", "GameCube")]),
+        owned("One", "GameCube"), owned("Two", "GameCube"),
+        owned("Three", "GameCube"), owned("Four", "GameCube")]),
       [], [], [], [], [candidate], "",
     );
     expect(results).toHaveLength(1);
