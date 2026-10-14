@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
+import { platformSlug } from "@/lib/data/platforms";
 import { getFreshLibrary, updateLibrary } from "@/lib/library-store";
 import { acceptWishlistListGaps, suggestWishlistListGaps } from "@/lib/wishlist-list-suggestions.logic";
 
@@ -20,6 +21,7 @@ export async function addSelectedWishlistSuggestions(form: FormData) {
   if (!selection.some((reference) => known.has(reference))) redirect("/want/suggestions");
 
   let count = 0;
+  let newPlatforms: string[] = [];
   await updateLibrary((library) => {
     const result = acceptWishlistListGaps(library, selection, {
       now: new Date().toISOString(),
@@ -27,6 +29,7 @@ export async function addSelectedWishlistSuggestions(form: FormData) {
       nextHistoryId: () => "H-" + crypto.randomUUID(),
     });
     count = result.added.length;
+    newPlatforms = [...new Set(result.added.map((target) => target.platform))];
     return result.library;
   });
 
@@ -37,7 +40,9 @@ export async function addSelectedWishlistSuggestions(form: FormData) {
     revalidatePath("/search");
     revalidatePath("/want/suggestions");
     revalidatePath("/lists");
-    // Platform pages use live GET reads and their own request-level cache.
+    for (const platform of newPlatforms) {
+      revalidatePath("/platform/" + platformSlug(platform));
+    }
   }
   redirect(count ? "/want/suggestions?added=" + count : "/want/suggestions");
 }
