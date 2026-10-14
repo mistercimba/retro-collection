@@ -48,7 +48,7 @@ Implementation direction: materialize the known ambiguity set, deduplicate ident
 
 Coverage rule: audit every current Wishlist fallback, including non-ambiguous mismatch/unconfirmed cases. A known-bad source remains rejected; when a secondary source has one safe exact European front cover, use it as the automatic fallback instead of leaving the placeholder.
 
-PR #61 merged on 2026-10-08 with **152 of 159 original fallbacks covered** and 379 materialized candidates. Seven remaining fallbacks were accounted for by Mole Mania's blocked approved cover and Wishlist removals/splits later completed in #62. The implemented pipeline keeps exact title/platform identity, accept exact LaunchBox alternate names and conservative slash-title equivalents, apply the PAL preference above, and keep genuinely unresolved or one-of identities explicit in the generated audit report.
+PR #61 merged on 2026-10-08 with **152 of 159 original fallbacks covered** and 379 materialized candidates. Seven remaining fallbacks were accounted for by Mole Mania's blocked approved cover and Wishlist removals/splits later completed in #62. The implemented pipeline preserves exact title/platform identity, accepts exact LaunchBox alternate names and conservative slash-title equivalents, applies the PAL preference above, and keeps genuinely unresolved or one-of identities explicit in the generated audit report.
 
 Runtime rule: candidate source URLs are discovery/provenance only. A dedicated import step materializes candidates into committed files under `public/covers/wishlist-candidates/`; normal CI/build verifies the files and detail pages/chooser never hotlink Libretro/LaunchBox.
 
