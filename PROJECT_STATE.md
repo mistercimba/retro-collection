@@ -6,7 +6,11 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-14
 
-**Live `main` baseline:** `9440def0fb2ac7b2bd53f11c8abc0813de60126c` (PR #72). GitHub Actions **SUCCESS**, Vercel production **READY**. At this checkpoint there are **no open GitHub Issues or PRs**. No new product feature is in progress. Consult `ROADMAP.md` for proposed next work; the Wishlist buying workflow is a candidate, not a committed scope.
+**Live `main` baseline:** `9440def0fb2ac7b2bd53f11c8abc0813de60126c` (PR #72). GitHub Actions **SUCCESS**, Vercel production **READY**. At this baseline checkpoint, no Issues or PRs were open. The Product Owner has since initiated **Issue #74** and the branch `feat/wishlist-buying-shortlist`, for a read-only cross-platform buying shortlist. This work is in progress, not deployed; consult `ROADMAP.md` for scope.
+
+### Active — Wishlist buying shortlist (#74)
+
+Owner authorized starting the next recommended Wishlist buying workflow on 2026-10-14. Planned first delivery: `/want/buying`, aggregating definitively missing, active, not-ordered Wishlist targets across consoles. Compare existing PriceCharting PAL and CeX buying references against the **same** requested Loose/CIB condition and a valid user-defined ceiling; distinguish within-ceiling, below-reference and incomplete data with source confidence/dates. Provide filters and marketplace search links. No live offers, "good deal" labels, threshold guesses, schema changes, notifications, purchases or private Blob writes. PR requires new explicit owner approval before merge; no authenticated visual QA should be claimed without browser access.
 
 ### Completed — contextual Wishlist suggestions (#52)
 
@@ -413,7 +417,7 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-At the 2026-10-14 checkpoint, Issues #50, #52, #60, #62, #68 and #70 are closed. No Issue or PR is open. The next proposed scope is the Wishlist buying workflow, subject to Product Owner prioritization. Mobile/laptop/offline real-device checks were waived under #68 and are not a blocking active task.
+Issues #50, #52, #60, #62, #68 and #70 are closed. Issue #74 is now the active buying-shortlist scope on a separate branch; the Product Owner must approve its PR before merge. Mobile/laptop/offline real-device checks were waived under #68 and are not a blocking active task.
 
 ## Handoff prompt for a brand-new chat
 

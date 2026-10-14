@@ -32,6 +32,8 @@ describe("URL-backed list state", () => {
   it("keeps only safe, same-site list return destinations", () => {
     expect(getSafeListReturnPath("/platform/ps2?genre=Action&review=1")).toBe("/platform/ps2?genre=Action&review=1");
     expect(getSafeListReturnPath("/search?q=Pokemon")).toBe("/search?q=Pokemon");
+    expect(getSafeListReturnPath("/want/buying?platform=GameCube&group=within-ceiling")).toBe("/want/buying?platform=GameCube&group=within-ceiling");
+    expect(getSafeListReturnPath("/want/buying/other")).toBeNull();
     expect(getSafeListReturnPath("https://example.com/steal")).toBeNull();
     expect(getSafeListReturnPath("//example.com/steal")).toBeNull();
     expect(getSafeListReturnPath("/login")).toBeNull();
@@ -40,6 +42,7 @@ describe("URL-backed list state", () => {
   it("labels the contextual return route", () => {
     expect(listReturnLabel("/collection/games?review=1", [])).toBe("Todos os jogos");
     expect(listReturnLabel("/want?sort=priority", [])).toBe("À procura");
+    expect(listReturnLabel("/want/buying?group=incomplete", [])).toBe("Lista de compra");
     expect(listReturnLabel("/collection?q=Silent+Hill", [])).toBe("Coleção");
     expect(listReturnLabel("/platform/ps2", ["Playstation 2"])).toBe("PlayStation 2");
     expect(listReturnLabel("/search?q=Pokemon", [])).toBe("Resultados da pesquisa");
