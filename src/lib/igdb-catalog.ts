@@ -38,7 +38,7 @@ async function getToken(): Promise<string> {
   return tokenState.value;
 }
 
-async function requestGames(body: string): Promise<IgdbRawGame[]> {
+async function requestIgdb<T>(endpoint: "games" | "collections", body: string): Promise<T[]> {
   const clientId = process.env.IGDB_CLIENT_ID;
   if (!clientId) throw new Error("IGDB não está configurado.");
 
@@ -46,7 +46,7 @@ async function requestGames(body: string): Promise<IgdbRawGame[]> {
     const token = await getToken();
     let response: Response;
     try {
-      response = await fetch("https://api.igdb.com/v4/games", {
+      response = await fetch("https://api.igdb.com/v4/" + endpoint, {
         method: "POST",
         headers: {
           "Client-ID": clientId,
@@ -73,10 +73,31 @@ async function requestGames(body: string): Promise<IgdbRawGame[]> {
     }
     if (!response.ok) throw new Error(`IGDB respondeu ${response.status}.`);
     const payload = await response.json();
-    return Array.isArray(payload) ? payload as IgdbRawGame[] : [];
+    return Array.isArray(payload) ? payload as T[] : [];
   }
 
   return [];
+}
+
+async function requestGames(body: string): Promise<IgdbRawGame[]> {
+  return requestIgdb<IgdbRawGame>("games", body);
+}
+
+// Authoritative IGDB catalogue-only lookups for opt-in Wishlist discovery.
+// Cached by exact endpoint and APICalypse query. Never runs in the browser.
+const cachedWishlistDiscovery = unstable_cache(
+  async (endpoint: "games" | "collections", body: string) =>
+    requestIgdb<Record<string, unknown>>(endpoint, body),
+  ["igdb-wishlist-discovery-v1"],
+  { revalidate: 60 * 60 * 24 },
+);
+
+export async function queryVerifiedIgdb<T>(
+  endpoint: "games" | "collections",
+  body: string,
+): Promise<T[]> {
+  if (body.length > 3000) throw new Error("Consulta IGDB demasiado longa.");
+  return cachedWishlistDiscovery(endpoint, body) as Promise<T[]>;
 }
 
 const fields = [

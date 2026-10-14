@@ -22,6 +22,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### NOW — Sugestões contextuais para a Wishlist (#52)
+
+PR #72: gerar sugestões apenas após ação explícita em /want, a partir de lacunas comprovadas em listas de coleção criadas pelo utilizador e relações verificadas pelo IGDB, sempre filtradas por lançamento europeu registado para a consola exata (IGDB release_region=1). Exibir agrupado por consola e não considerar lançamento worldwide, US, japonês ou apenas noutra consola como prova de PAL (séries de jogos próprios e títulos fortemente avaliados nas plataformas colecionadas). Excluir qualquer jogo já registado na Collection ou Wishlist (incluindo encomendas/inativos e IDs legados NOVO); ordenar por listas mais perto de terminar; não inventar sequências, catálogo ou preços e permitir zero resultados quando o catálogo não tem informação suficientemente fiável. Permitir selecionar/ignorar candidatos e confirmar inclusões em lote. Revalidar as referências às listas dentro da leitura fresca do Blob antes de guardar, mantendo histórico e prioridades existentes. Sem migração ou inserção automática. A descoberta de novos jogos por franquias deve ter relações de catálogo verificadas e fica para evolução futura.
+
 ### COMPLETED — Actionable Home (#50)
 
 PR #67 merged into `main` at `7f0faa2`; GitHub Actions and Vercel production PASS. Compact Home implemented with one Next Objective, grouped physical-copy tasks, received/ordered states, recent additions, console browsing and exact-identity handling for legacy `NOVO` entries.

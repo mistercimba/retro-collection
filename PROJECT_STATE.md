@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status
 
+## Active feature — Wishlist suggestions (#52)
+
+Owner-approved 2026-10-14. Feature branch `feat/wishlist-contextual-suggestions`: prioritize explicit Collection list target gaps, then verify new series candidates via IGDB Collections and strongly rated game candidates on owned platforms. Product Owner's 2026-10-14 change: group visible proposals by console and require an IGDB Europe release record for the exact platform on EVERY candidate (including list-derived goals). Never equate IGDB platform presence with PAL; a European release record does not guarantee any specific used physical edition/cover is PAL. Deduplicate by exact title + platform and conservatively block already owned/wanted game titles globally for catalog discovery. Suppress candidates present in Collection (including Sold/Sell) or any Wishlist state (including ordered/inactive legacy NOVO). UI is opt-in from /want, user can select/ignore and confirm batch; the guarded server action rereads fresh Blob, resolves only current list/target IDs, writes only accepted new targets and forward history, never updates existing priority. Never guess franchise links: only use IGDB's real Collection relations, IGDB-rated verified platform titles, or user-authored list gaps. Graceful catalog outage shows a warning; no new schema. #68 remains open for actual device/offline QA; no merge of #52 without owner approval.
+
 ## Current UX audit — #68
 
 Issue #50 completed in merged PR #67 as `7f0faa2`; final GitHub CI and Vercel production passed. The new Home was accepted in preview by the Product Owner.
