@@ -439,3 +439,8 @@ A minimal new-chat prompt can be:
 > Do not merge anything unless I explicitly approve the merge.
 
 That should be enough to start without replaying old chat history.
+## Storage optimization — Issue #70
+
+Owner-authorized 2026-10-14. Branch `ops/cover-deployment-storage`. The prebuild pass bounds large JPEG/PNG covers to 1600 pixels, keeps local paths/formats/alpha and only writes smaller results. Originals remain in git; optimized bytes are build workspace outputs, not committed replacements. Measured 43 images: 568.21 MB to 471.81 MB, saving 96.40 MB per build. All 368 candidate files are referenced; no candidate removal is justified from static snapshots. Local lint (five existing warnings), 285 Vitest tests, cover storage test, candidate integrity and Next build passed. Node 24 in local environment; project CI remains Node 22. No Blob data mutation. Separate owner approval required to merge.
+
+Preview cleanup remains manual after merge: preserve production, rollback versions and latest previews of open PRs; remove only superseded/merged previews after checking aliases. No broad age-based automatic deletion was enabled.

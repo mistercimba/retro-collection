@@ -115,7 +115,7 @@ Accuracy beats coverage. Do not guess.
 
 ## Optional maintenance
 
-- Evaluate reducing Wishlist image sizes while preserving identity, quality and provenance.
+- In QA (#70): bound large local JPEG/PNG deployment copies to 1600 pixels while retaining originals in git, image identity, paths, transparency and provenance. Measured saving: 96.40 MB per build.
 - Metadata/artwork enrichment is not active by default; current unresolved/fallback coverage is accepted unless Mário explicitly reopens it.
 
 ## Completed product foundations
