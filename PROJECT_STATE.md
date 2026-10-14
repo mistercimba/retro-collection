@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status
 
+## Active feature — Wishlist suggestions (#52)
+
+Owner-approved 2026-10-14. Feature branch `feat/wishlist-contextual-suggestions`: only propose gaps from explicit Collection list targets, ranked by proximity to completion and deduplicated by normalized exact title + platform. Suppress candidates present in Collection (including Sold/Sell) or any Wishlist state (including ordered/inactive legacy NOVO). UI is opt-in from /want, user can select/ignore and confirm batch; the guarded server action rereads fresh Blob, resolves only current list/target IDs, writes only accepted new targets and forward history, never updates existing priority. No hypothetical franchise sequel discovery, IGDB title invention or new schema. #68 remains open for actual device/offline QA; no merge of #52 without owner approval.
+
 ## Current UX audit — #68
 
 Issue #50 completed in merged PR #67 as `7f0faa2`; final GitHub CI and Vercel production passed. The new Home was accepted in preview by the Product Owner.

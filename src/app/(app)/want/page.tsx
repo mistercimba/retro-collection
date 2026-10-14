@@ -37,6 +37,18 @@ export default async function WantPage() {
       </p>
     </header>
 
+    <section className="collection-panel flex flex-wrap items-center justify-between gap-3 p-4">
+      <div className="min-w-0">
+        <h2 className="text-sm font-black text-slate-950">Reforçar a Wishlist</h2>
+        <p className="mt-1 text-xs leading-5 text-slate-600">
+          Sugestões com base nos jogos em falta nas tuas listas e objetivos. Só entram os que aprovares.
+        </p>
+      </div>
+      <Link href="/want/suggestions" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-[#17382e] px-4 text-sm font-black text-white">
+        Gerar sugestões →
+      </Link>
+    </section>
+
     {ordered.length > 0 && <section className="collection-panel p-4">
       <div className="flex items-baseline justify-between gap-3">
         <div>
