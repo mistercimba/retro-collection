@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import type { CollectionGame, CollectionList, LibraryData, WantTarget } from "./data/types";
+import type { VerifiedIgdbSuggestion } from "./wishlist-catalog-suggestions.logic";
 import {
-  acceptWishlistListGaps, listTargetReference, suggestWishlistListGaps,
+  acceptWishlistListGaps, combineWishlistSuggestions, listTargetReference, suggestWishlistListGaps, wishlistSuggestionIdentity,
 } from "./wishlist-list-suggestions.logic";
 
 const game = (title: string, platform = "Nintendo DS", keepStatus = "Collection") =>
@@ -18,7 +19,35 @@ const library = (collection: CollectionGame[] = [], wishlist: WantTarget[] = [],
     componentNeeds: [], history: [],
   });
 
+function euListProof(current: LibraryData, title: string): VerifiedIgdbSuggestion {
+  const item = suggestWishlistListGaps(current).find((suggestion) => suggestion.title === title);
+  if (!item) throw Error("Test fixture must have a missing list target");
+  return {
+    key: wishlistSuggestionIdentity(item), reference: item.reference,
+    title: item.title, platform: item.platform, score: item.score, reason: item.reason,
+    origin: "list", euReleaseVerified: true,
+    catalog: {
+      source: "IGDB", sourceGameId: 100, sourcePlatformId: 20,
+      title: item.title, platform: item.platform, edition: "Standard",
+      summary: "", firstReleaseDate: "", genres: [], developers: [],
+      publishers: [], coverImageId: "", selectedAt: "",
+    },
+  };
+}
+
 describe("contextual Wishlist suggestions", () => {
+  it("hides even explicitly listed goals unless an exact European release is verified", () => {
+    const current = library([], [], [list("L", "Wish", ["One"])]);
+    expect(combineWishlistSuggestions(current, [])).toEqual([]);
+    const proof = euListProof(current, "One");
+    expect(combineWishlistSuggestions(current, [proof])).toMatchObject([
+      { title: "One", origin: "catalog-list", euReleaseVerified: true },
+    ]);
+    expect(acceptWishlistListGaps(current, [listTargetReference("L", "T-0")], {
+      now: "", nextId: () => "X", nextHistoryId: () => "Y",
+    }).added).toHaveLength(0);
+  });
+
   it("returns zero instead of fabricating series entries when there are no list gaps", () => {
     expect(suggestWishlistListGaps(library([game("Super Mario World")]))).toEqual([]);
   });
@@ -76,7 +105,7 @@ describe("contextual Wishlist suggestions", () => {
       JSON.stringify(["L", "NOT-A-TARGET"]),
       listTargetReference("L", "T-0"),
       listTargetReference("L", "T-0"),
-    ], options);
+    ], options, [euListProof(current, "One")]);
     expect(result.added).toHaveLength(1);
     expect(result.added[0]).toMatchObject({
       title: "One", targetId: "APP-1", priority: "Média",
@@ -98,7 +127,7 @@ describe("contextual Wishlist suggestions", () => {
     const rated = {
       key: "ds|recommended", reference: JSON.stringify(["igdb", 512, 20]),
       title: "Recommended", platform: "Nintendo DS", score: 230,
-      reason: "Bem avaliado no IGDB", origin: "platform" as const,
+      reason: "Bem avaliado no IGDB", origin: "platform" as const, euReleaseVerified: true as const,
       catalog: {
         source: "IGDB" as const, sourceGameId: 512, sourcePlatformId: 20,
         title: "Recommended", platform: "Nintendo DS",

@@ -1,6 +1,8 @@
 import { describe, it, expect } from "vitest";
 import type { CollectionGame, LibraryData, WantTarget } from "./data/types";
-import { verifiedCatalogSuggestions, catalogSuggestionReference } from "./wishlist-catalog-suggestions.logic";
+import {
+  verifiedCatalogSuggestions, catalogSuggestionReference, hasEuropeanReleaseOnPlatform,
+} from "./wishlist-catalog-suggestions.logic";
 
 const owned = (title: string, platform = "Nintendo DS") =>
   ({ title, platform, keepStatus: "Collection" }) as CollectionGame;
@@ -9,9 +11,48 @@ const wish = (title: string, targetId = "NOVO") =>
 const lib = (collection: CollectionGame[], wishlist: WantTarget[] = []) =>
   ({ collection, wishlist }) as LibraryData;
 const game = (id: number, name: string, platforms = [20], collections = [111], total_rating = 90) =>
-  ({ id, name, platforms, collections, game_type: 0, total_rating, total_rating_count: 30 });
+  ({ id, name, platforms, collections, game_type: 0, total_rating, total_rating_count: 30,
+    release_dates: platforms.map((platform) => ({ platform, release_region: 1 })) });
 
 describe("IGDB verified Wishlist suggestions", () => {
+  it("requires a Europe record for the exact game and console; US, Japan, Australia, worldwide and no data do not qualify", () => {
+    expect(hasEuropeanReleaseOnPlatform({ release_dates: [] }, 20)).toBe(false);
+    expect(hasEuropeanReleaseOnPlatform({ release_dates: [
+      { platform: 20, release_region: 2 }, { platform: 20, release_region: 5 },
+      { platform: 20, release_region: 3 }, { platform: 20, release_region: 8 },
+      { platform: 19, release_region: 1 },
+    ] }, 20)).toBe(false);
+    expect(hasEuropeanReleaseOnPlatform({ release_dates: [
+      { platform: 20, release_region: 2 }, { platform: 20, release_region: 1 },
+    ] }, 20)).toBe(true);
+    expect(hasEuropeanReleaseOnPlatform({ release_dates: [{ platform: 20, region: 1 }] }, 20)).toBe(true);
+    expect(hasEuropeanReleaseOnPlatform({ release_dates: [
+      { platform: 20, release_region: 2, region: 1 },
+    ] }, 20)).toBe(false);
+  });
+
+  it("does not assume a game is PAL just because it was sold in Europe on a different console", () => {
+    const candidate = { ...game(90, "Multi-platform", [20, 21], [], 94),
+      release_dates: [{ platform: 21, release_region: 1 }, { platform: 20, release_region: 2 }] };
+    expect(verifiedCatalogSuggestions(
+      lib([owned("A"), owned("B"), owned("C"), owned("D")]),
+      [], [], [], [], [candidate], "",
+    )).toEqual([]);
+  });
+
+  it("chooses a platform with confirmed Europe release when the most-collected platform has only US", () => {
+    const candidate = { ...game(90, "Multi-platform", [20, 21], [], 94),
+      release_dates: [{ platform: 21, release_region: 1 }, { platform: 20, release_region: 2 }] };
+    const results = verifiedCatalogSuggestions(
+      lib([owned("A"), owned("B"), owned("C"), owned("D"),
+        owned("One", "GameCube"), owned("Two", "GameCube")]),
+      [], [], [], [], [candidate], "",
+    );
+    expect(results).toHaveLength(1);
+    expect(results[0].platform).toBe("GameCube");
+    expect(results[0].euReleaseVerified).toBe(true);
+  });
+
   it("derives a real series sibling from owned canonical anchor, excluding titles already wanted", () => {
     const collection = [owned("Professor Layton 1"), owned("Other")];
     const seed = [{ gameId: 1, title: "Professor Layton 1", platform: "Nintendo DS" }];
@@ -51,6 +92,19 @@ describe("IGDB verified Wishlist suggestions", () => {
     );
     expect(result.map((x) => x.title)).toEqual(["Fresh game"]);
   });
+  it("rejects rated and series suggestions with no European release on the matching console", () => {
+    const noEurope = { ...game(15, "Outside region"), release_dates: [
+      { platform: 20, release_region: 2 },
+    ] };
+    const result = verifiedCatalogSuggestions(
+      lib([owned("A"), owned("B"), owned("C"), owned("D")]),
+      [{ gameId: 1, title: "A", platform: "Nintendo DS" }],
+      [game(1, "A")], [{ id: 111, name: "Series", games: [1, 15] }],
+      [noEurope], [noEurope], "",
+    );
+    expect(result).toHaveLength(0);
+  });
+
   it("returns none without verified support, rather than fabricating titles", () => {
     expect(verifiedCatalogSuggestions(lib([owned("A")]), [], [], [], [game(23, "Other")], [], "")).toEqual([]);
   });

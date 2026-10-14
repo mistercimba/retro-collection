@@ -66,17 +66,21 @@ async function verifiedListSuggestions(library: CandidateLibrary): Promise<Verif
   // User-authored targets are valuable, but they are not PAL proof by
   // themselves. Every proposed game must have an IGDB Europe release record
   // for its exact console before it is displayed or accepted.
-  const gaps = suggestWishlistListGaps(library).slice(0, 45);
+  const gaps = suggestWishlistListGaps(library).slice(0, 20);
   if (!gaps.length) return [];
-  const exact = (await Promise.all(gaps.map(async (gap) => {
-    const matches = await searchCanonicalGames(gap.title, gap.platform);
-    const matched = matches.find((candidate) =>
-      candidate.platform === gap.platform &&
-      normalizeMatchText(candidate.title) === normalizeMatchText(gap.title) &&
-      candidate.edition === "Standard"
-    );
-    return matched ? { gap, matched } : null;
-  }))).filter((item): item is NonNullable<typeof item> => item !== null);
+  const exact: Array<{ gap: (typeof gaps)[number]; matched: Awaited<ReturnType<typeof searchCanonicalGames>>[number] }> = [];
+  for (let offset = 0; offset < gaps.length; offset += 2) {
+    const resolved = await Promise.all(gaps.slice(offset, offset + 2).map(async (gap) => {
+      const matches = await searchCanonicalGames(gap.title, gap.platform);
+      const matched = matches.find((candidate) =>
+        candidate.platform === gap.platform &&
+        normalizeMatchText(candidate.title) === normalizeMatchText(gap.title) &&
+        candidate.edition === "Standard"
+      );
+      return matched ? { gap, matched } : null;
+    }));
+    for (const entry of resolved) if (entry) exact.push(entry);
+  }
   if (!exact.length) return [];
   const found: IgdbDiscoveryGame[] = [];
   const ids = [...new Set(exact.map((item) => item.matched.gameId))];
