@@ -91,6 +91,45 @@ describe("contextual Wishlist suggestions", () => {
     expect(acceptWishlistListGaps(stale, [listTargetReference("L", "T-0")], options).added).toHaveLength(0);
   });
 
+  it("accepts only reviewed, verified IGDB proposals and records catalog provenance", () => {
+    const original = library(
+      [game("Existing"), game("Owned 2"), game("Owned 3"), game("Owned 4")],
+    );
+    const rated = {
+      key: "ds|recommended", reference: JSON.stringify(["igdb", 512, 20]),
+      title: "Recommended", platform: "Nintendo DS", score: 230,
+      reason: "Bem avaliado no IGDB", origin: "platform" as const,
+      catalog: {
+        source: "IGDB" as const, sourceGameId: 512, sourcePlatformId: 20,
+        title: "Recommended", platform: "Nintendo DS",
+        edition: "Standard", summary: "", firstReleaseDate: "",
+        genres: [], developers: [], publishers: [],
+        coverImageId: "", selectedAt: "",
+      },
+    };
+    let generated = 0;
+    const opts = {
+      now: "2026-10-14T12:00:00.000Z",
+      nextId: () => "APP-" + ++generated, nextHistoryId: () => "H-" + generated,
+    };
+    const added = acceptWishlistListGaps(original, [rated.reference], opts, [rated]);
+    expect(added.added).toHaveLength(1);
+    expect(added.added[0].catalog).toMatchObject({
+      sourceGameId: 512, sourcePlatformId: 20, selectedAt: opts.now,
+    });
+    expect(added.library.history[0].action).toBe("wishlist.add");
+    expect(original.wishlist).toHaveLength(0);
+
+    const nowOwned = library([...original.collection, game("Recommended")]);
+    expect(acceptWishlistListGaps(nowOwned, [rated.reference], opts, [rated]).added).toHaveLength(0);
+    const nowWanted = library(original.collection, [wish("Recommended")]);
+    expect(acceptWishlistListGaps(nowWanted, [rated.reference], opts, [rated]).added).toHaveLength(0);
+    const noPlatformEvidence = library([game("Existing")]);
+    expect(acceptWishlistListGaps(noPlatformEvidence, [rated.reference], opts, [rated]).added).toHaveLength(0);
+    const forged = acceptWishlistListGaps(original, [JSON.stringify(["igdb", 1, 20])], opts, [rated]);
+    expect(forged.added).toHaveLength(0);
+  });
+
   it("rechecks owned and ordered states immediately before an approved addition", () => {
     const target = listTargetReference("L", "T-0");
     const changed = library([game("One")], [wish("Two", "Nintendo DS", "ACTIVE")],
