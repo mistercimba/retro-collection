@@ -81,6 +81,23 @@ describe("contextual Wishlist suggestions", () => {
     expect(suggestWishlistListGaps(source).map((x) => x.title)).toEqual(["Pokemon Blue"]);
   });
 
+  it("accepts a verified user-authored goal for a different console with the same title", () => {
+    const current = library([game("Shared Title", "GameCube")], [], [
+      list("L", "Portáteis", ["Shared Title"], "Nintendo DS"),
+    ]);
+    const evidence = euListProof(current, "Shared Title");
+    const reference = listTargetReference("L", "T-0");
+    const result = acceptWishlistListGaps(current, [reference], {
+      now: "2026-10-14T12:00:00Z",
+      nextId: () => "APP-NEW", nextHistoryId: () => "H-NEW",
+    }, [evidence]);
+    expect(result.added).toMatchObject([{
+      targetId: "APP-NEW", title: "Shared Title", platform: "Nintendo DS",
+    }]);
+    expect(result.library.wishlist).toHaveLength(1);
+    expect(current.wishlist).toHaveLength(0);
+  });
+
   it("deduplicates targets appearing in several lists and prioritizes closest owned completion", () => {
     const source = library([game("A"), game("B")], [], [
       list("L1", "Mais longe", ["A", "B", "C", "D"]),

@@ -192,9 +192,12 @@ export function acceptWishlistListGaps(
     if (!suggestion?.euReleaseVerified || !suggestion.catalog ||
         seenKeys.has(suggestion.key) ||
         inCollection.has(suggestion.key) || inWishlist.has(suggestion.key)) continue;
-    if (suggestion.origin) {
-      // A previously verified IGDB recommendation must still have its source
-      // evidence: series anchor, or significant owned-console presence.
+    if (suggestion.origin === "catalog-series" || suggestion.origin === "catalog-platform") {
+      // Catalog-discovered games are blocked across all consoles, but a
+      // user-authored list explicitly names a title and its target console.
+      // Its exact title+platform was already verified above and must remain
+      // addable even if another version exists in the Collection.
+      // Recheck series anchors and platform presence for catalog suggestions.
       if (allTitles.has(normalizeMatchText(suggestion.title))) continue;
       const kept = copy.collection.filter((game) =>
         game.keepStatus === "Collection" && platformSlug(game.platform) === platformSlug(suggestion.platform));
