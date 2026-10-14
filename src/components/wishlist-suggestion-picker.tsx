@@ -47,7 +47,8 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
               value={suggestion.reference}
               checked={checked}
               onChange={(event) => toggle(suggestion.reference, event.target.checked)}
-              className="mt-1.5 h-5 w-5 shrink-0 accent-[#17382e]"
+              disabled={!checked && selected.length >= 40}
+              className="mt-1.5 h-5 w-5 shrink-0 accent-[#17382e] disabled:cursor-not-allowed disabled:opacity-50"
             />
             <div className="min-w-0 flex-1">
               <label htmlFor={"suggestion-" + suggestion.key}
@@ -70,7 +71,7 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
         </article>;
       })}
       <div className="collection-panel flex min-w-0 flex-wrap items-center justify-between gap-3 p-4">
-        <span className="text-sm font-semibold text-slate-700">{selectedVisible.length} selecionado(s)</span>
+        <span className="text-sm font-semibold text-slate-700">{selectedVisible.length} selecionado(s) · até 40 por confirmação</span>
         <div className="flex flex-wrap gap-2">
           <button type="button" onClick={() =>
             setSelected(visible.slice(0, 40).map((suggestion) => suggestion.reference))
