@@ -34,6 +34,7 @@ export type VerifiedIgdbSuggestion = {
   origin: "series" | "platform";
   catalog: CanonicalGameIdentity;
   anchorGameId?: number;
+  anchorTitle?: string;
 };
 
 export function catalogSuggestionReference(gameId: number, platformId: number): string {
@@ -135,8 +136,10 @@ export function verifiedCatalogSuggestions(
       key, reference: catalogSuggestionReference(game.id, platform.id),
       title: game.name.trim(), platform: platform.owned.name,
       reason, score, origin: linked?.owned ? "series" : "platform",
-      catalog, ...(linked?.owned ? { anchorGameId: roots.size ? [...roots]
-        .find(([, root]) => root.collectionIds.includes(linked.id))?.[0] : undefined } : {}),
+      catalog, ...(linked?.owned ? {
+        anchorGameId: [...roots].find(([, root]) => root.collectionIds.includes(linked.id))?.[0],
+        anchorTitle: linked.owned.title,
+      } : {}),
     };
     const earlier = result.get(key);
     if (!earlier || candidate.score > earlier.score) result.set(key, candidate);
