@@ -25,16 +25,20 @@
     "wishlist-artwork:candidates": "node scripts/generate-wishlist-artwork-candidates.mjs",
     "wishlist-artwork:materialize-candidates": "node scripts/materialize-wishlist-artwork-candidates.mjs",
     "wishlist-artwork:check-candidates": "node scripts/materialize-wishlist-artwork-candidates.mjs --check",
-    "wishlist:maintain": "node scripts/wishlist-maintenance.mjs"
+    "wishlist:maintain": "node scripts/wishlist-maintenance.mjs",
+    "artwork:optimize-storage": "node scripts/optimize-cover-storage.mjs",
+    "prebuild": "npm run artwork:optimize-storage",
+    "test:cover-storage": "node --test scripts/optimize-cover-storage.test.mjs"
   },
   "dependencies": {
+    "@vercel/blob": "2.6.1",
     "exceljs": "^4.4.0",
     "google-auth-library": "11.1.0",
     "lucide-react": "1.48.0",
     "next": "16.3.6",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "@vercel/blob": "2.6.1"
+    "sharp": "0.35.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.3",
