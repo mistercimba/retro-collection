@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-13
+Last updated: 2026-10-14
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -22,15 +22,19 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Sugestões contextuais para a Wishlist (#52)
+As of 2026-10-14 there are **no open GitHub Issues or PRs**. The latest feature (#52) has shipped. The next proposed scope is the Wishlist buying workflow below; it is **not** an approved implementation or an open Issue yet.
 
-PR #72: gerar sugestões apenas após ação explícita em /want, a partir de lacunas comprovadas em listas de coleção criadas pelo utilizador e relações verificadas pelo IGDB, sempre filtradas por lançamento europeu registado para a consola exata (IGDB release_region=1). Exibir agrupado por consola e não considerar lançamento worldwide, US, japonês ou apenas noutra consola como prova de PAL (séries de jogos próprios e títulos fortemente avaliados nas plataformas colecionadas). Excluir qualquer jogo já registado na Collection ou Wishlist (incluindo encomendas/inativos e IDs legados NOVO); ordenar por listas mais perto de terminar; não inventar sequências, catálogo ou preços e permitir zero resultados quando o catálogo não tem informação suficientemente fiável. Permitir selecionar/ignorar candidatos e confirmar inclusões em lote. Revalidar as referências às listas dentro da leitura fresca do Blob antes de guardar, mantendo histórico e prioridades existentes. Sem migração ou inserção automática. A descoberta de novos jogos por franquias deve ter relações de catálogo verificadas e fica para evolução futura.
+### COMPLETED — Contextual Wishlist suggestions (#52)
+
+Issue #52 closed as completed. PR #72 merged into `main` as `9440def0fb2ac7b2bd53f11c8abc0813de60126c` on 2026-10-14; GitHub Actions SUCCESS and Vercel production READY.
+
+User-triggered suggestions in `/want` prioritize gaps in explicit Collection lists and catalog-verified candidates, grouped by console. All candidates must have an IGDB Europe release for their exact platform (`release_region=1`); this confirms a European platform release, **not** a specific physical PAL edition. Suggestions conservatively exclude existing Collection/Wishlist records, including ordered/inactive targets; user-authored list gaps can legitimately request another platform for a title already owned. Users select/ignore candidates and explicitly confirm additions, with fresh Blob/list revalidation and no automatic insertions or priority rewrites. Zero suggestions is a valid result. Broader franchise discovery remains a possible later improvement, not an active task.
 
 ### COMPLETED — Actionable Home (#50)
 
 PR #67 merged into `main` at `7f0faa2`; GitHub Actions and Vercel production PASS. Compact Home implemented with one Next Objective, grouped physical-copy tasks, received/ordered states, recent additions, console browsing and exact-identity handling for legacy `NOVO` entries.
 
-Authenticated end-to-end mobile/laptop/offline visual verification remains open under Issue #68 and must not be claimed complete by source review or CI.
+The associated mobile/laptop/offline audit (#68) was later closed with the unexecuted real-device verification explicitly waived; do not treat automated checks as proof of visual or network-cut behavior.
 
 ### COMPLETED — Wishlist cleanup (#62)
 
@@ -44,7 +48,7 @@ Implementation direction: materialize the known ambiguity set, deduplicate ident
 
 Coverage rule: audit every current Wishlist fallback, including non-ambiguous mismatch/unconfirmed cases. A known-bad source remains rejected; when a secondary source has one safe exact European front cover, use it as the automatic fallback instead of leaving the placeholder.
 
-PR #61 merged on 2026-10-08 with **152 of 159 original fallbacks covered** and 379 materialized candidates. Seven remaining fallbacks are accounted for by Mole Mania's blocked approved cover and planned Wishlist removals/splits in #62. The active pass must keep exact title/platform identity, accept exact LaunchBox alternate names and conservative slash-title equivalents, apply the PAL preference above, and keep genuinely unresolved or one-of identities explicit in the generated audit report.
+PR #61 merged on 2026-10-08 with **152 of 159 original fallbacks covered** and 379 materialized candidates. Seven remaining fallbacks were accounted for by Mole Mania's blocked approved cover and Wishlist removals/splits later completed in #62. The implemented pipeline preserves exact title/platform identity, accepts exact LaunchBox alternate names and conservative slash-title equivalents, applies the PAL preference above, and keeps genuinely unresolved or one-of identities explicit in the generated audit report.
 
 Runtime rule: candidate source URLs are discovery/provenance only. A dedicated import step materializes candidates into committed files under `public/covers/wishlist-candidates/`; normal CI/build verifies the files and detail pages/chooser never hotlink Libretro/LaunchBox.
 
@@ -52,13 +56,11 @@ Artwork gaps/deliberate fallback (#48) are complete and merged in PR #59.
 
 ## Product roadmap
 
-### NOW — Real mobile/laptop QA (#68)
+### CLOSED / WAIVED — Real mobile/laptop QA (#68)
 
-Validate Home, Collection, platform/game detail, Wishlist, Lists, Sell/Sold, search, history, login/error/404, dialogs, forms and filters.
+Issue #68 was closed on 2026-10-14 with state reason `not_planned`, per explicit Product Owner instruction to skip inaccessible checks rather than block the project. The focused code repairs from PR #69 are already on `main` (`e74c9fa3`): modal keyboard focus trap/restore and step focus, dynamic viewport/safe-area adjustments, mobile filter scroll locking and narrow-screen/offline layout and image fallback fixes. CI and Vercel production passed.
 
-Check 360/390/430 px where practical, laptop layout, overflow, clipped actions, bottom navigation/safe area, long titles, secondary metadata, keyboard/focus and loading/error states.
-
-Also validate the existing offline flow: authenticated snapshot, offline lookup, freshness indicator, network cut/reconnect and snapshot refresh after reconnect. Initial source audit found keyboard focus containment/restoration missing in the universal Add dialog, scroll/safe-area refinements, and a small offline lookup layout/image fallback bug; a focused PR is proposed. Automated code/tests and Preview do not constitute real viewport validation. Browser access to an authenticated session remains blocked (remote desktop offline, browser execution budget exhausted). Keep #68 open until real mobile/laptop and offline proof is available.
+**Not performed / not verified:** authenticated visual and interaction checks at 360/390/430 px and laptop, keyboard/virtual-keyboard on real devices, and actual network cut/reconnect with offline snapshot refresh. The remote desktop was offline and the authenticated browser executor unavailable. Do **not** report E2E/mobile/offline QA as PASS; revisit only for a reproducible bug or new explicit test request with usable access.
 
 ### NEXT — Small UI/UX polish
 
@@ -119,7 +121,7 @@ Accuracy beats coverage. Do not guess.
 
 ## Optional maintenance
 
-- Evaluate reducing Wishlist image sizes while preserving identity, quality and provenance.
+- PR #71 already reduces oversized deployed cover images (measured saving 96.40 MB per build); consider further image optimization only if measurement justifies it, while preserving identity, quality and provenance.
 - Metadata/artwork enrichment is not active by default; current unresolved/fallback coverage is accepted unless Mário explicitly reopens it.
 
 ## Completed product foundations
@@ -138,7 +140,8 @@ Do not reintroduce these as future phases:
 - multiple independent physical copies;
 - forward-only mutation history;
 - custom Collection lists/goals;
-- offline read-only Collection snapshot;
+- offline read-only Collection snapshot (runtime source checks passed; real offline/reconnect E2E not verified);
+- opt-in, European-release-verified contextual Wishlist suggestions;
 - persistent cross-request library/pricing caching and streamed/deferred initial-load work;
 - contextual market actions;
 - page-shaped loading skeletons;
