@@ -1,44 +1,33 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-13
+Last updated: 2026-10-14
 
 This is the living project handoff. Read `AGENTS.md` first.
 
-## Current status
+## Current status — 2026-10-14
 
-## Active feature — Wishlist suggestions (#52)
+**Live `main` baseline:** `9440def0fb2ac7b2bd53f11c8abc0813de60126c` (PR #72). GitHub Actions **SUCCESS**, Vercel production **READY**. At this checkpoint there are **no open GitHub Issues or PRs**. No new product feature is in progress. Consult `ROADMAP.md` for proposed next work; the Wishlist buying workflow is a candidate, not a committed scope.
 
-Owner-approved 2026-10-14. Feature branch `feat/wishlist-contextual-suggestions`: prioritize explicit Collection list target gaps, then verify new series candidates via IGDB Collections and strongly rated game candidates on owned platforms. Product Owner's 2026-10-14 change: group visible proposals by console and require an IGDB Europe release record for the exact platform on EVERY candidate (including list-derived goals). Never equate IGDB platform presence with PAL; a European release record does not guarantee any specific used physical edition/cover is PAL. Deduplicate by exact title + platform and conservatively block already owned/wanted game titles globally for catalog discovery. Suppress candidates present in Collection (including Sold/Sell) or any Wishlist state (including ordered/inactive legacy NOVO). UI is opt-in from /want, user can select/ignore and confirm batch; the guarded server action rereads fresh Blob, resolves only current list/target IDs, writes only accepted new targets and forward history, never updates existing priority. Never guess franchise links: only use IGDB's real Collection relations, IGDB-rated verified platform titles, or user-authored list gaps. Graceful catalog outage shows a warning; no new schema. #68 remains open for actual device/offline QA; no merge of #52 without owner approval.
+### Completed — contextual Wishlist suggestions (#52)
 
-## Current UX audit — #68
+PR #72 merged on 2026-10-14, with explicit Product Owner approval; Issue #52 closed as completed. From `/want`, user-triggered suggestions prioritize gaps in authored Collection lists and verified IGDB relationships, grouped by console. Every suggested game has a recorded IGDB European release for the **exact** platform; this does not establish the physical edition/cover is PAL. Avoid existing Collection and Wishlist records, including sold/sell and in-transit/inactive states; allow an explicit user-authored list goal for a different console even when the same title is owned. For catalog discovery, apply the conservative global-title exclusion. User selection and confirmation are required. Fresh Blob/list references are revalidated before persisting accepted targets and forward history; no silent changes to existing priorities or schema. A catalog outage/insufficient evidence can legitimately yield zero suggestions.
 
-Issue #50 completed in merged PR #67 as `7f0faa2`; final GitHub CI and Vercel production passed. The new Home was accepted in preview by the Product Owner.
+### Closed with limits — mobile/laptop/offline audit (#68)
 
-Issue #68 is the follow-up mobile/laptop/offline audit. Initial source investigation identified a missing keyboard focus trap/restore in the global Add dialog and responsive offline shell problems. A focused code repair is in progress; no private data writes. Real authenticated visual QA at 360/390/430/laptop and network cut/reconnect is still blocked because connected browser execution has no balance and remote desktop is offline. Keep the audit issue open after any code PR until that real test is executed.
+PR #69 merged on 2026-10-14 as `e74c9fa3e279c229e8744c421b12227c778b280e`, with production/CI PASS. It fixed Quick Add keyboard focus trap/restoration/step focus, mobile safe-area and dynamic-viewport layout, filter scroll locking and narrow-screen offline layout/image fallback. The six focus-helper tests passed in the validated PR.
 
+At the Product Owner's explicit request, Issue #68 was closed as `not_planned` on 2026-10-14 so inaccessible real-device tests do not block more work. **Not tested:** authenticated 360/390/430 px and laptop visual/interactivity, virtual keyboard, physical offline navigation/network disconnection and reconnect/snapshot refresh. Do not claim these as visually or end-to-end verified. Reassess only on a reproducible bug or a new request with functional access. No private Collection/Wishlist Blob data was modified in this closing audit.
 
-Current `main` baseline:
+### Other recently completed work
 
-`e3cb01b07d2c86e4316c343f0a172559372b4532`
-
-Most recent merged work:
-
-- PR #53 — canonical IGDB-backed Add flow, standardized copy fields, conservative cover persistence, Wishlist auto-removal and catalog state indicators;
-- PR #55 — CI now runs once per PR candidate plus post-merge on `main`, with concurrency cancellation and documented push batching;
-- PR #56 — universal acquisition flow with **Já tenho / A caminho / Wishlist**, including receipt verification and reused Wishlist purchase dialog;
-- PR #57 — copy-specific **Para completar** queue, loose-friendly cartridge policy, console filters and incompleteness indicators;
-- PR #58 — manual **Próximo objetivo** plus transparent suggestions from lists/series/Wishlist priority;
-- PR #59 — deliberate shared artwork placeholder, compatible catalog-artwork fallback for new Wishlist targets and real artwork coverage reporting;
-- PR #61 — deterministic PAL Wishlist cover defaults, alternative chooser, safe manual overrides and materialized candidate library (merged 2026-10-08).
-
-Verified before starting the current feature:
-
-- PR #59 GitHub Actions: SUCCESS before merge;
-- PR #59 merged as `ef940362b380bbabdc42c8625ca0bd4b3b342b6e`.
+- **#50 / PR #67:** Actionable Home, merged as `7f0faa2`; CI and production passed.
+- **#62 / PRs #63–#66:** one-time Wishlist cleanup completed and verified by the owner, 291 resulting targets, seven approved operations, six persisted notes/history entries, six European cover assets. Do not rerun.
+- **#70 / PR #71:** deployed cover-storage optimization, merged as `66c968739e8ed4e85a84f3aef3bdcb18693e8270`; previously measured 96.40 MB savings per build. No data or originals in git altered.
+- Previous foundations: canonical Add (#53), CI consolidation (#55), acquisition (#56), components (#57), next objective (#58), cover fallback (#59) and artwork chooser (#61).
 
 ## Completed product work — manual resolution of ambiguous artwork
 
-Issue #60. Candidate branch: `feat/manual-artwork-choice`.
+Issue #60 completed in merged PR #61 (historical implementation notes follow; branch `feat/manual-artwork-choice` is not active).
 
 Implementation model:
 
@@ -73,9 +62,9 @@ PR #61 has merged; CI, materialization and production deployment were successful
 
 The repository-first operating workflow is defined in `AGENTS.md`: substantial requests should live in GitHub Issues so a new chat/agent can continue without depending on prior conversation history.
 
-## Active data maintenance — approved Wishlist cleanup
+## Completed data maintenance — Wishlist cleanup (#62)
 
-Issue #62: PRs #63–#65 were merged; the owner executed the guarded production-only cleanup on 2026-10-13. The latest live read-only report confirms 291 entries and all seven operations complete. PR #66 adds six materialized Europe/PEGI cover candidates and an independent, read-only audit of actual split notes/history; post-merge live audit is pending.
+Issue #62 is closed as completed. PRs #63–#66 merged; the owner executed the guarded cleanup on 2026-10-13. The final read-only verification confirms 291 Wishlist entries, all seven operations, six persisted notes and history entries, Final Fantasy VIII unchanged, and six distinct European cover assets. Do not execute the one-time cleanup again.
 
 The maintenance path is deliberately data-driven and conservative:
 
@@ -89,9 +78,9 @@ The maintenance path is deliberately data-driven and conservative:
 - exact duplicate Wishlist destinations and already-owned destinations block the operation;
 - manual artwork overrides are guarded against accidental loss; the one-time live action did not delete potentially orphaned manual artwork assets;
 - out-of-band Blob writes require a fresh deployment or an in-app mutation afterwards to invalidate any previous Next Data Cache snapshot;
-- explicit exact title aliases preserve approved SNES PAL cover candidates after the two title corrections; PR #66 includes six Europe PEGI post-split covers served from committed app-owned assets, pending release.
+- explicit exact title aliases preserve approved SNES PAL cover candidates after the two title corrections; PR #66 delivered six Europe PEGI post-split covers from committed app-owned assets.
 
-Live cleanup executed by Product Owner on 2026-10-13 through the one-time guarded production form in merged PR #65. Owner supplied a new uncached production report: 291 Wishlist records, all seven operations skipped/already applied, no blockers, Final Fantasy VIII still Next Objective. Pending the read-only production audit of actual persisted notes/history and release of the six locally materialized Europe front covers from PR #66; the old artwork fallback report remains historical. Use the approved maintenance plan to derive the post-cleanup artwork candidate queue; do not regenerate live data from repo snapshots.
+Live cleanup executed by the Product Owner on 2026-10-13 through the guarded production form in PR #65. The owner then verified all seven operations, persisted notes/history, and the six local covers delivered through PR #66. Final Fantasy VIII remained the Next Objective. The old artwork fallback report is historical; do not regenerate live data from repo snapshots or rerun this maintenance plan.
 
 ## Current architecture
 
@@ -386,7 +375,7 @@ Do not silently remove/reclassify the 298 records based on that historical wordi
 
 - Blob updates are simple read-modify-write without optimistic concurrency/ETag. Acceptable for current single-user usage unless real races appear.
 - Wishlist artwork coverage is incomplete by design; fallback is acceptable.
-- Mobile UI audit remains pending.
+- Real-device authenticated mobile/laptop and network-cut offline E2E checks were waived when Issue #68 closed; they remain **unverified**, not passing.
 
 ## Completed migration milestones
 
@@ -424,9 +413,7 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-The current active product work is Issue #60 on `feat/manual-artwork-choice`.
-After it lands, return to #50 (Home refocus) and #52 (Wishlist suggestions).
-Real mobile/laptop QA remains retained in the roadmap.
+At the 2026-10-14 checkpoint, Issues #50, #52, #60, #62, #68 and #70 are closed. No Issue or PR is open. The next proposed scope is the Wishlist buying workflow, subject to Product Owner prioritization. Mobile/laptop/offline real-device checks were waived under #68 and are not a blocking active task.
 
 ## Handoff prompt for a brand-new chat
 
@@ -444,8 +431,8 @@ A minimal new-chat prompt can be:
 
 That should be enough to start without replaying old chat history.
 
-## Storage optimization — Issue #70
+## Completed storage optimization — Issue #70
 
-Owner-authorized 2026-10-14. PR #71 merged with explicit owner approval as `66c968739e8ed4e85a84f3aef3bdcb18693e8270`. Branch `ops/cover-deployment-storage`. The prebuild pass bounds large JPEG/PNG covers to 1600 pixels, keeps local paths/formats/alpha and only writes smaller results. Originals remain in git; optimized bytes are build workspace outputs, not committed replacements. Measured 43 images: 568.21 MB to 471.81 MB, saving 96.40 MB per build. All 368 candidate files are referenced; no candidate removal is justified from static snapshots. Local lint (five existing warnings), 285 Vitest tests, cover storage test, candidate integrity and Next build passed. Node 24 in local environment; project CI remains Node 22. No Blob data mutation. Owner merge approval received and applied; production deployment status must be checked live.
+Owner-authorized 2026-10-14. PR #71 merged with explicit owner approval as `66c968739e8ed4e85a84f3aef3bdcb18693e8270`. Branch `ops/cover-deployment-storage`. The prebuild pass bounds large JPEG/PNG covers to 1600 pixels, keeps local paths/formats/alpha and only writes smaller results. Originals remain in git; optimized bytes are build workspace outputs, not committed replacements. Measured 43 images: 568.21 MB to 471.81 MB, saving 96.40 MB per build. All 368 candidate files are referenced; no candidate removal is justified from static snapshots. Local lint (five existing warnings), 285 Vitest tests, cover storage test, candidate integrity and Next build passed. Node 24 in local environment; project CI remains Node 22. No Blob data mutation. Owner merge approval received and applied; the later `main` production deployment was confirmed READY.
 
 Preview cleanup remains manual after merge: preserve production, rollback versions and latest previews of open PRs; remove only superseded/merged previews after checking aliases. No broad age-based automatic deletion was enabled.
