@@ -6,16 +6,16 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status
 
-## Active UX work — Home focus (#50)
+## Current UX audit — #68
 
-Branch: `feat/home-actionable-focus` from production main `9ded6c9f`; awaiting PR review/merge.
-The Home's top summary metrics and decorative tagline are being removed in favor of the confirmed Next Objective, an actionable copy-level queue (physical missing components plus needs-review copies), ordered purchases, recently added games and console navigation. The suggestion slot appears only with no confirmed Next Objective; exact triple-identity exclusion fixes legacy `NOVO` collisions. No Blob mutation or new data source.
-GitHub CI and Vercel Preview will validate code/build. Authenticated browser-based visual tests at 360/390/430 and laptop/offline remain outstanding (the authorized browser has no execution balance and remote desktop is offline), so do not claim full visual QA.
+Issue #50 completed in merged PR #67 as `7f0faa2`; final GitHub CI and Vercel production passed. The new Home was accepted in preview by the Product Owner.
+
+Issue #68 is the follow-up mobile/laptop/offline audit. Initial source investigation identified a missing keyboard focus trap/restore in the global Add dialog and responsive offline shell problems. A focused code repair is in progress; no private data writes. Real authenticated visual QA at 360/390/430/laptop and network cut/reconnect is still blocked because connected browser execution has no balance and remote desktop is offline. Keep the audit issue open after any code PR until that real test is executed.
 
 
 Current `main` baseline:
 
-`9ded6c9f8c4527e542be61c51bd03f06a09585d0`
+`e3cb01b07d2c86e4316c343f0a172559372b4532`
 
 Most recent merged work:
 
@@ -439,6 +439,7 @@ A minimal new-chat prompt can be:
 > Do not merge anything unless I explicitly approve the merge.
 
 That should be enough to start without replaying old chat history.
+
 ## Storage optimization — Issue #70
 
 Owner-authorized 2026-10-14. PR #71 merged with explicit owner approval as `66c968739e8ed4e85a84f3aef3bdcb18693e8270`. Branch `ops/cover-deployment-storage`. The prebuild pass bounds large JPEG/PNG covers to 1600 pixels, keeps local paths/formats/alpha and only writes smaller results. Originals remain in git; optimized bytes are build workspace outputs, not committed replacements. Measured 43 images: 568.21 MB to 471.81 MB, saving 96.40 MB per build. All 368 candidate files are referenced; no candidate removal is justified from static snapshots. Local lint (five existing warnings), 285 Vitest tests, cover storage test, candidate integrity and Next build passed. Node 24 in local environment; project CI remains Node 22. No Blob data mutation. Owner merge approval received and applied; production deployment status must be checked live.

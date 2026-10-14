@@ -12,6 +12,7 @@ import {
   type CanonicalGameCandidate,
 } from "@/lib/igdb-catalog.logic";
 import type { CatalogLibraryBadge, CatalogLibraryState } from "@/lib/catalog-library-state.logic";
+import { wrappingDialogFocusIndex } from "@/lib/dialog-focus.logic";
 import { physicalCopyProfile, type PhysicalComponentKey } from "@/lib/physical-copy-profile.logic";
 
 type SearchState = "idle" | "loading" | "loaded" | "error";
@@ -52,6 +53,8 @@ export function QuickAddDialog({
   const [sealed, setSealed] = useState("no");
   const searchRef = useRef<HTMLInputElement>(null);
   const manualTitleRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const platformListId = useMemo(() => "quick-add-platform-" + trigger, [trigger]);
   const completenessListId = useMemo(() => "quick-add-completeness-" + trigger, [trigger]);
   const allPlatforms = useMemo(
@@ -59,24 +62,51 @@ export function QuickAddDialog({
     [platforms],
   );
 
+  // Keep one modal lifecycle for body scroll locking, keyboard containment
+  // and focus restoration. Changing steps must not reset the focus origin.
   useEffect(() => {
     if (!open) return;
+    const returnFocusTo = document.activeElement instanceof HTMLElement
+      ? document.activeElement : triggerRef.current;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const frame = requestAnimationFrame(() => {
-      if (!prefillWishlist && !selected && !manualMode) searchRef.current?.focus();
-      if (manualMode) manualTitleRef.current?.focus();
-    });
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setOpen(false);
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const focusable = Array.from(dialog.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      )).filter((element) => element.getClientRects().length > 0);
+      const index = focusable.indexOf(document.activeElement as HTMLElement);
+      const next = wrappingDialogFocusIndex(focusable.length, index, event.shiftKey);
+      if (next === null) return;
+      event.preventDefault();
+      (next < 0 ? dialog : focusable[next])?.focus();
     };
     document.addEventListener("keydown", onKeyDown);
     return () => {
-      cancelAnimationFrame(frame);
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = previousOverflow;
+      if (returnFocusTo?.isConnected) returnFocusTo.focus();
+      else triggerRef.current?.focus();
     };
-  }, [open, manualMode, prefillWishlist, selected]);
+  }, [open]);
+
+  // Move focus to the active step, including the prefilled purchase form.
+  useEffect(() => {
+    if (!open) return;
+    const frame = requestAnimationFrame(() => {
+      if (manualMode) manualTitleRef.current?.focus();
+      else if (!prefillWishlist && !selected) searchRef.current?.focus();
+      else dialogRef.current?.focus();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [open, manualMode, prefillWishlist, selected, intent]);
 
   useEffect(() => {
     if (!open || prefillWishlist || manualMode || selected) return;
@@ -138,19 +168,19 @@ export function QuickAddDialog({
   };
 
   const triggerButton = trigger === "sidebar"
-    ? <button type="button" onClick={openDialog} className="side-nav-link side-nav-action w-full text-left">
+    ? <button ref={triggerRef} type="button" onClick={openDialog} className="side-nav-link side-nav-action w-full text-left">
         <Plus className="h-5 w-5" /><span>Adicionar jogo</span>
       </button>
     : trigger === "mobile"
-      ? <button type="button" onClick={openDialog} className="mobile-nav-link text-[#17382e]" aria-label="Adicionar jogo">
+      ? <button ref={triggerRef} type="button" onClick={openDialog} className="mobile-nav-link text-[#17382e]" aria-label="Adicionar jogo">
           <span className="grid h-9 w-9 place-items-center rounded-full bg-[#d9f36a] text-[#17382e] shadow-md"><Plus className="h-5 w-5" /></span>
           <span>Adicionar</span>
         </button>
       : trigger === "wishlist-add"
-        ? <button type="button" onClick={openDialog} className="min-h-11 rounded-xl bg-rose-700 px-4 text-sm font-black text-white">
+        ? <button ref={triggerRef} type="button" onClick={openDialog} className="min-h-11 rounded-xl bg-rose-700 px-4 text-sm font-black text-white">
             + Adicionar jogo à wishlist
           </button>
-        : <button type="button" onClick={openDialog} className="min-h-11 w-full rounded-xl bg-emerald-900 px-4 text-sm font-black text-white">
+        : <button ref={triggerRef} type="button" onClick={openDialog} className="min-h-11 w-full rounded-xl bg-emerald-900 px-4 text-sm font-black text-white">
             Comprei este jogo
           </button>;
 
@@ -188,7 +218,7 @@ export function QuickAddDialog({
         className="fixed inset-0 z-[100] flex items-end justify-center bg-slate-950/45 p-0 backdrop-blur-sm sm:items-center sm:p-4"
         onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}
       >
-        <section role="dialog" aria-modal="true" aria-labelledby="quick-add-title" className="max-h-[92vh] w-full overflow-y-auto rounded-t-3xl bg-[#f7f3ea] shadow-2xl sm:max-w-2xl sm:rounded-3xl">
+        <section ref={dialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby="quick-add-title" className="max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-3xl bg-[#f7f3ea] pb-[env(safe-area-inset-bottom)] shadow-2xl focus:outline-none sm:max-h-[calc(100dvh-2rem)] sm:max-w-2xl sm:rounded-3xl">
           <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-[#ded8cb] bg-[#f7f3ea]/95 px-5 py-4 backdrop-blur-xl sm:px-6">
             <div>
               <p className="eyebrow">ADICIONAR JOGO</p>

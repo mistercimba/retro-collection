@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
+import { wrappingDialogFocusIndex } from "@/lib/dialog-focus.logic";
 
 export function MobileFilterDialog({ open, onClose, label, children }: {
   open: boolean;
@@ -15,6 +16,8 @@ export function MobileFilterDialog({ open, onClose, label, children }: {
   useEffect(() => {
     if (!open) return;
     const returnFocusTo = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const dialog = dialogRef.current;
     const focusable = () => dialog?.querySelectorAll<HTMLElement>(
       'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
@@ -34,21 +37,19 @@ export function MobileFilterDialog({ open, onClose, label, children }: {
         dialog?.focus();
         return;
       }
-      const first = items[0];
-      const last = items[items.length - 1];
-      if (event.shiftKey && (document.activeElement === first || !dialog?.contains(document.activeElement))) {
+      const index = Array.from(items).indexOf(document.activeElement as HTMLElement);
+      const next = wrappingDialogFocusIndex(items.length, index, event.shiftKey);
+      if (next !== null) {
         event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && (document.activeElement === last || !dialog?.contains(document.activeElement))) {
-        event.preventDefault();
-        first.focus();
+        (next < 0 ? dialog : items[next])?.focus();
       }
     };
 
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      returnFocusTo?.focus();
+      document.body.style.overflow = previousOverflow;
+      if (returnFocusTo?.isConnected) returnFocusTo.focus();
     };
   }, [open]);
 
