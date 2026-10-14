@@ -20,8 +20,8 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
   if (suggestions.length === 0) return <div className="collection-panel p-5">
     <h2 className="text-base font-black text-slate-950">Sem sugestões novas</h2>
     <p className="mt-1 text-sm text-slate-600">
-      As tuas listas não têm alvos novos que estejam fora da Collection e da Wishlist.
-      Podes criar ou atualizar uma lista de objetivos para obter propostas mais tarde.
+      Não foram encontrados candidatos adicionais com provas suficientes no catálogo e nas tuas listas.
+      Podes tentar de novo mais tarde ou atualizar as tuas listas de objetivos.
     </p>
   </div>;
 
@@ -57,6 +57,10 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
               </label>
               <p className="mt-0.5 text-xs font-semibold text-slate-500">{suggestion.platform}</p>
               <p className="mt-2 text-sm leading-5 text-slate-700">{suggestion.reason}</p>
+              {suggestion.origin && <p className="mt-1 text-xs font-semibold text-[#315b47]">
+                {suggestion.origin === "catalog-series" ? "Série identificada no catálogo IGDB" :
+                  "Descoberta por plataforma · avaliação IGDB"}
+              </p>}
               {suggestion.sources.length > 1 &&
                 <p className="mt-1 text-xs text-[#315b47]">Também aparece em {suggestion.sources.length - 1} outra(s) lista(s).</p>}
               <p className="mt-2 text-[11px] text-slate-500">Versão, região e preço por confirmar — sem referência de mercado inventada.</p>

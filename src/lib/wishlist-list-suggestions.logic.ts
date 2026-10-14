@@ -1,4 +1,5 @@
-import type { CollectionList, LibraryData, WantTarget } from "./data/types";
+import type { CanonicalGameIdentity, CollectionList, LibraryData, WantTarget } from "./data/types";
+import type { VerifiedIgdbSuggestion } from "./wishlist-catalog-suggestions.logic";
 import { normalizeMatchText } from "./data/wishlist-matching";
 import { platformSlug } from "./data/platforms";
 
@@ -23,6 +24,9 @@ export type WishlistGapSuggestion = {
   score: number;
   reference: string;
   sources: SuggestionSource[];
+  origin?: "catalog-series" | "catalog-platform";
+  catalog?: CanonicalGameIdentity;
+  anchorTitle?: string;
 };
 
 export function wishlistSuggestionIdentity(value: { title: string; platform: string }): string {
@@ -118,6 +122,34 @@ export function suggestWishlistListGaps(library: ExistingLibrary): WishlistGapSu
   );
 }
 
+export function combineWishlistSuggestions(
+  library: ExistingLibrary,
+  catalogCandidates: readonly VerifiedIgdbSuggestion[],
+): WishlistGapSuggestion[] {
+  const declared = suggestWishlistListGaps(library);
+  const existing = new Set(declared.map((item) => item.key));
+  const unavailable = new Set([
+    ...library.collection.map(wishlistSuggestionIdentity),
+    ...library.wishlist.map(wishlistSuggestionIdentity),
+  ]);
+  const catalog = catalogCandidates.filter((candidate) => {
+    if (existing.has(candidate.key) || unavailable.has(candidate.key)) return false;
+    existing.add(candidate.key);
+    return true;
+  }).map((candidate): WishlistGapSuggestion => ({
+    title: candidate.title, platform: candidate.platform,
+    key: candidate.key, reference: candidate.reference,
+    reason: candidate.reason, score: candidate.score,
+    sources: [], origin: candidate.origin === "series" ? "catalog-series" : "catalog-platform",
+    catalog: candidate.catalog, ...(candidate.anchorTitle ? {anchorTitle:candidate.anchorTitle}:{})
+  }));
+  return [...declared, ...catalog].sort((a, b) =>
+    b.score - a.score ||
+    a.platform.localeCompare(b.platform, "pt-PT") ||
+    a.title.localeCompare(b.title, "pt-PT")
+  ).slice(0, 40);
+}
+
 /**
  * Pure acceptance function so tests can prove the confirmation guard. The
  * server action re-runs this inside a fresh Blob read-modify-write transaction.
@@ -126,19 +158,39 @@ export function acceptWishlistListGaps(
   library: LibraryData,
   requestedReferences: readonly string[],
   options: { now: string; nextId: () => string; nextHistoryId: () => string },
+  verifiedCatalog: readonly VerifiedIgdbSuggestion[] = [],
 ): { library: LibraryData; added: WantTarget[] } {
   const copy: LibraryData = structuredClone(library);
+  const candidates = combineWishlistSuggestions(copy, verifiedCatalog);
   const available = new Map<string, WishlistGapSuggestion>();
-  for (const suggestion of suggestWishlistListGaps(copy)) {
+  for (const suggestion of candidates) {
+    available.set(suggestion.reference, suggestion);
     for (const source of suggestion.sources) available.set(source.reference, suggestion);
   }
+  const inCollection = new Set(copy.collection.map(wishlistSuggestionIdentity));
+  const inWishlist = new Set(copy.wishlist.map(wishlistSuggestionIdentity));
+  const allTitles = new Set([
+    ...copy.collection.map((game) => normalizeMatchText(game.title)),
+    ...copy.wishlist.map((game) => normalizeMatchText(game.title)),
+  ]);
   const seenKeys = new Set<string>();
   const added: WantTarget[] = [];
 
   // Never accept more than 40 independent targets in a single action.
   for (const reference of [...new Set(requestedReferences)].slice(0, 40)) {
     const suggestion = available.get(reference);
-    if (!suggestion || seenKeys.has(suggestion.key)) continue;
+    if (!suggestion || seenKeys.has(suggestion.key) ||
+        inCollection.has(suggestion.key) || inWishlist.has(suggestion.key)) continue;
+    if (suggestion.origin) {
+      // A previously verified IGDB recommendation must still have its source
+      // evidence: series anchor, or significant owned-console presence.
+      if (allTitles.has(normalizeMatchText(suggestion.title))) continue;
+      const kept = copy.collection.filter((game) =>
+        game.keepStatus === "Collection" && platformSlug(game.platform) === platformSlug(suggestion.platform));
+      if (suggestion.origin === "catalog-series" &&
+          !kept.some((game) => game.title === suggestion.anchorTitle)) continue;
+      if (suggestion.origin === "catalog-platform" && kept.length < 4) continue;
+    }
     seenKeys.add(suggestion.key);
     const target: WantTarget = {
       targetId: options.nextId(),
@@ -150,8 +202,10 @@ export function acceptWishlistListGaps(
       priceCeilingEur: null,
       status: "ACTIVE",
       notes: "",
+      ...(suggestion.catalog ? { catalog: { ...suggestion.catalog, selectedAt: options.now } } : {}),
     };
     copy.wishlist.push(target);
+    inWishlist.add(suggestion.key);
     copy.history ??= [];
     copy.history.unshift({
       id: options.nextHistoryId(), at: options.now,

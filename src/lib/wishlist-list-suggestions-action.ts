@@ -5,7 +5,8 @@ import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
 import { platformSlug } from "@/lib/data/platforms";
 import { getFreshLibrary, updateLibrary } from "@/lib/library-store";
-import { acceptWishlistListGaps, suggestWishlistListGaps } from "@/lib/wishlist-list-suggestions.logic";
+import { acceptWishlistListGaps } from "@/lib/wishlist-list-suggestions.logic";
+import { loadWishlistSuggestions } from "@/lib/wishlist-catalog-suggestions";
 
 export async function addSelectedWishlistSuggestions(form: FormData) {
   if (!(await isAuthenticated())) throw new Error("Não autenticado.");
@@ -15,8 +16,9 @@ export async function addSelectedWishlistSuggestions(form: FormData) {
   if (!selection.length || selection.length > 40) redirect("/want/suggestions");
   // Avoid a write when a user submits a now-invalid or obsolete selection.
   const fresh = await getFreshLibrary();
-  const known = new Set(suggestWishlistListGaps(fresh).flatMap((item) =>
-    item.sources.map((source) => source.reference)
+  const loaded = await loadWishlistSuggestions(fresh);
+  const known = new Set(loaded.suggestions.flatMap((item) =>
+    [item.reference, ...item.sources.map((source) => source.reference)]
   ));
   if (!selection.some((reference) => known.has(reference))) redirect("/want/suggestions");
 
@@ -27,7 +29,7 @@ export async function addSelectedWishlistSuggestions(form: FormData) {
       now: new Date().toISOString(),
       nextId: () => "APP-" + crypto.randomUUID(),
       nextHistoryId: () => "H-" + crypto.randomUUID(),
-    });
+    }, loaded.catalogCandidates);
     count = result.added.length;
     newPlatforms = [...new Set(result.added.map((target) => target.platform))];
     return result.library;
