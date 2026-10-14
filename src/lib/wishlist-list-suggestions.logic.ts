@@ -24,7 +24,8 @@ export type WishlistGapSuggestion = {
   score: number;
   reference: string;
   sources: SuggestionSource[];
-  origin?: "catalog-series" | "catalog-platform";
+  origin?: "catalog-list" | "catalog-series" | "catalog-platform";
+  euReleaseVerified?: true;
   catalog?: CanonicalGameIdentity;
   anchorTitle?: string;
 };
@@ -126,13 +127,22 @@ export function combineWishlistSuggestions(
   library: ExistingLibrary,
   catalogCandidates: readonly VerifiedIgdbSuggestion[],
 ): WishlistGapSuggestion[] {
-  const declared = suggestWishlistListGaps(library);
+  const verifiedLists = new Map(catalogCandidates
+    .filter((candidate) => candidate.origin === "list" && candidate.euReleaseVerified)
+    .map((candidate) => [candidate.key, candidate]));
+  const declared = suggestWishlistListGaps(library)
+    .filter((suggestion) => verifiedLists.has(suggestion.key))
+    .map((suggestion): WishlistGapSuggestion => ({
+      ...suggestion, euReleaseVerified: true, origin: "catalog-list",
+      catalog: verifiedLists.get(suggestion.key)?.catalog,
+    }));
   const existing = new Set(declared.map((item) => item.key));
   const unavailable = new Set([
     ...library.collection.map(wishlistSuggestionIdentity),
     ...library.wishlist.map(wishlistSuggestionIdentity),
   ]);
   const catalog = catalogCandidates.filter((candidate) => {
+    if (candidate.origin === "list" || !candidate.euReleaseVerified) return false;
     if (existing.has(candidate.key) || unavailable.has(candidate.key)) return false;
     existing.add(candidate.key);
     return true;
@@ -141,7 +151,7 @@ export function combineWishlistSuggestions(
     key: candidate.key, reference: candidate.reference,
     reason: candidate.reason, score: candidate.score,
     sources: [], origin: candidate.origin === "series" ? "catalog-series" : "catalog-platform",
-    catalog: candidate.catalog, ...(candidate.anchorTitle ? {anchorTitle:candidate.anchorTitle}:{})
+    catalog: candidate.catalog, euReleaseVerified: true, ...(candidate.anchorTitle ? {anchorTitle:candidate.anchorTitle}:{})
   }));
   return [...declared, ...catalog].sort((a, b) =>
     b.score - a.score ||
@@ -179,7 +189,8 @@ export function acceptWishlistListGaps(
   // Never accept more than 40 independent targets in a single action.
   for (const reference of [...new Set(requestedReferences)].slice(0, 40)) {
     const suggestion = available.get(reference);
-    if (!suggestion || seenKeys.has(suggestion.key) ||
+    if (!suggestion?.euReleaseVerified || !suggestion.catalog ||
+        seenKeys.has(suggestion.key) ||
         inCollection.has(suggestion.key) || inWishlist.has(suggestion.key)) continue;
     if (suggestion.origin) {
       // A previously verified IGDB recommendation must still have its source

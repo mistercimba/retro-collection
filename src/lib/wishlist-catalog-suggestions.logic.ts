@@ -14,6 +14,7 @@ export type IgdbDiscoveryGame = {
   total_rating_count?: number | null;
   first_release_date?: number | null;
   cover?: { image_id?: string };
+  release_dates?: Array<{ platform?: number; release_region?: number; region?: number }>;
 };
 
 export type IgdbDiscoveryCollection = {
@@ -31,11 +32,24 @@ export type VerifiedIgdbSuggestion = {
   platform: string;
   reason: string;
   score: number;
-  origin: "series" | "platform";
+  origin: "series" | "platform" | "list";
+  euReleaseVerified: true;
   catalog: CanonicalGameIdentity;
   anchorGameId?: number;
   anchorTitle?: string;
 };
+
+/** Region 1 is Europe in IGDB. Worldwide, Australia and unknown are *not*
+ * evidence of a PAL/European-market release for the named console. */
+export function hasEuropeanReleaseOnPlatform(
+  game: Pick<IgdbDiscoveryGame, "release_dates">,
+  platformId: number,
+): boolean {
+  return (game.release_dates ?? []).some((release) =>
+    release.platform === platformId &&
+    (release.release_region ?? release.region) === 1
+  );
+}
 
 export function catalogSuggestionReference(gameId: number, platformId: number): string {
   return JSON.stringify(["igdb", gameId, platformId]);
@@ -100,7 +114,8 @@ export function verifiedCatalogSuggestions(
         !Array.isArray(game.platforms)) return;
     const candidates = [...new Set(game.platforms.map(Number))]
       .map((id) => ({ id, owned: platformCounts.get(String(id)) }))
-      .filter((entry) => entry.owned && entry.owned.count >= 2)
+      .filter((entry) => entry.owned && entry.owned.count >= 2 &&
+        hasEuropeanReleaseOnPlatform(game, entry.id))
       .sort((a, b) => (b.owned?.count ?? 0) - (a.owned?.count ?? 0) || a.id - b.id);
     const platform = candidates[0];
     if (!platform?.owned) return;
@@ -135,6 +150,7 @@ export function verifiedCatalogSuggestions(
     const candidate: VerifiedIgdbSuggestion = {
       key, reference: catalogSuggestionReference(game.id, platform.id),
       title: game.name.trim(), platform: platform.owned.name,
+      euReleaseVerified: true,
       reason, score, origin: linked?.owned ? "series" : "platform",
       catalog, ...(linked?.owned ? {
         anchorGameId: [...roots].find(([, root]) => root.collectionIds.includes(linked.id))?.[0],

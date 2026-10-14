@@ -3,17 +3,18 @@ import "server-only";
 import type { LibraryData } from "./data/types";
 import { queryVerifiedIgdb, searchCanonicalGames } from "./igdb-catalog";
 import { igdbPlatformId } from "./igdb-catalog.logic";
+import { wishlistSuggestionIdentity, suggestWishlistListGaps, combineWishlistSuggestions } from "./wishlist-list-suggestions.logic";
 import {
   type IgdbDiscoveryCollection, type IgdbDiscoveryGame, type IgdbDiscoverySeed,
-  type VerifiedIgdbSuggestion, verifiedCatalogSuggestions,
+  type VerifiedIgdbSuggestion, verifiedCatalogSuggestions, hasEuropeanReleaseOnPlatform,
 } from "./wishlist-catalog-suggestions.logic";
-import { combineWishlistSuggestions } from "./wishlist-list-suggestions.logic";
 import { normalizeMatchText } from "./data/wishlist-matching";
 
 type CandidateLibrary = Pick<LibraryData, "collection" | "wishlist" | "collectionLists">;
 const fields = [
   "id", "name", "platforms", "collections", "game_type", "version_parent",
   "first_release_date", "total_rating", "total_rating_count", "cover.image_id",
+  "release_dates.platform", "release_dates.release_region",
 ].join(",");
 
 function numbers(ids: readonly number[], limit = 200): string {
@@ -59,6 +60,54 @@ async function ownedSeeds(library: CandidateLibrary): Promise<IgdbDiscoverySeed[
     }
   }
   return seeds.slice(0, 45);
+}
+
+async function verifiedListSuggestions(library: CandidateLibrary): Promise<VerifiedIgdbSuggestion[]> {
+  // User-authored targets are valuable, but they are not PAL proof by
+  // themselves. Every proposed game must have an IGDB Europe release record
+  // for its exact console before it is displayed or accepted.
+  const gaps = suggestWishlistListGaps(library).slice(0, 45);
+  if (!gaps.length) return [];
+  const exact = (await Promise.all(gaps.map(async (gap) => {
+    const matches = await searchCanonicalGames(gap.title, gap.platform);
+    const matched = matches.find((candidate) =>
+      candidate.platform === gap.platform &&
+      normalizeMatchText(candidate.title) === normalizeMatchText(gap.title) &&
+      candidate.edition === "Standard"
+    );
+    return matched ? { gap, matched } : null;
+  }))).filter((item): item is NonNullable<typeof item> => item !== null);
+  if (!exact.length) return [];
+  const found: IgdbDiscoveryGame[] = [];
+  const ids = [...new Set(exact.map((item) => item.matched.gameId))];
+  for (let offset = 0; offset < ids.length; offset += 100) {
+    found.push(...await queryVerifiedIgdb<IgdbDiscoveryGame>("games",
+      "fields " + fields + "; where id = (" +
+      numbers(ids.slice(offset, offset + 100)) + "); limit 100;"));
+  }
+  const byId = new Map(found.map((item) => [item.id, item]));
+  return exact.flatMap(({ gap, matched }) => {
+    const game = byId.get(matched.gameId);
+    if (!game || !hasEuropeanReleaseOnPlatform(game, matched.platformId) ||
+        (game.game_type !== undefined && game.game_type !== 0)) return [];
+    return [{
+      key: wishlistSuggestionIdentity(gap),
+      reference: gap.reference,
+      title: gap.title, platform: gap.platform,
+      reason: gap.reason, score: gap.score,
+      origin: "list" as const, euReleaseVerified: true as const,
+      catalog: {
+        source: "IGDB" as const, sourceGameId: matched.gameId,
+        sourcePlatformId: matched.platformId,
+        title: matched.title, platform: matched.platform,
+        edition: matched.edition, summary: matched.summary,
+        firstReleaseDate: matched.firstReleaseDate,
+        genres: matched.genres, developers: matched.developers,
+        publishers: matched.publishers, coverImageId: matched.coverImageId,
+        selectedAt: new Date().toISOString(),
+      },
+    }];
+  });
 }
 
 async function catalogVerifiedSuggestions(library: CandidateLibrary): Promise<VerifiedIgdbSuggestion[]> {
@@ -117,8 +166,18 @@ export async function loadWishlistSuggestions(library: CandidateLibrary) {
       name: error instanceof Error ? error.name : "UnknownError",
     });
   }
+  let verifiedLists: VerifiedIgdbSuggestion[] = [];
+  try {
+    verifiedLists = await verifiedListSuggestions(library);
+  } catch (error) {
+    catalogUnavailable = true;
+    console.error("wishlist_suggestions_pal_verification_unavailable", {
+      name: error instanceof Error ? error.name : "UnknownError",
+    });
+  }
+  const verified = [...verifiedLists, ...catalogCandidates];
   return {
-    catalogCandidates, catalogUnavailable,
-    suggestions: combineWishlistSuggestions(library, catalogCandidates),
+    catalogCandidates: verified, catalogUnavailable,
+    suggestions: combineWishlistSuggestions(library, verified),
   };
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { displayPlatform, sortPlatformsByRelease } from "@/lib/data/platforms";
 import { ActionSubmitButton } from "./action-submit-button";
 import type { WishlistGapSuggestion } from "@/lib/wishlist-list-suggestions.logic";
 import { addSelectedWishlistSuggestions } from "@/lib/wishlist-list-suggestions-action";
@@ -9,6 +10,11 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
   const [ignored, setIgnored] = useState<string[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
   const visible = suggestions.filter((suggestion) => !ignored.includes(suggestion.key));
+  const consoles = sortPlatformsByRelease([...new Set(visible.map((item) => item.platform))]
+    .map((platform) => ({
+      platform,
+      items: visible.filter((item) => item.platform === platform),
+    })));
   const selectedVisible = visible.filter((suggestion) => selected.includes(suggestion.reference));
 
   function toggle(reference: string, checked: boolean) {
@@ -20,8 +26,8 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
   if (suggestions.length === 0) return <div className="collection-panel p-5">
     <h2 className="text-base font-black text-slate-950">Sem sugestões novas</h2>
     <p className="mt-1 text-sm text-slate-600">
-      Não foram encontrados candidatos adicionais com provas suficientes no catálogo e nas tuas listas.
-      Podes tentar de novo mais tarde ou atualizar as tuas listas de objetivos.
+      Não foram encontrados jogos novos com lançamento europeu confirmado para as tuas consolas.
+      Jogos sem informação regional suficiente não aparecem, mesmo que estejam em listas de objetivos.
     </p>
   </div>;
 
@@ -36,7 +42,14 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
         Voltar a mostrar sugestões
       </button>
     </div> : <form action={addSelectedWishlistSuggestions} className="space-y-3">
-      {visible.map((suggestion) => {
+      {consoles.map(({ platform, items }) => <div key={platform} className="space-y-2">
+        <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-[#d8d2c5] pb-2 pt-3">
+          <h3 className="text-base font-black text-[#17382e]">{displayPlatform(platform)}</h3>
+          <p className="text-xs font-semibold text-slate-500">
+            {items.length} {items.length === 1 ? "jogo" : "jogos"} · lançamento europeu confirmado
+          </p>
+        </div>
+        {items.map((suggestion) => {
         const checked = selected.includes(suggestion.reference);
         return <article key={suggestion.key} className="collection-panel min-w-0 p-4">
           <div className="flex min-w-0 items-start gap-3">
@@ -55,15 +68,18 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
                 className="block cursor-pointer break-words text-base font-black text-slate-950">
                 {suggestion.title}
               </label>
-              <p className="mt-0.5 text-xs font-semibold text-slate-500">{suggestion.platform}</p>
+              <p className="mt-0.5 text-xs font-semibold text-[#315b47]">Europa (IGDB) · {displayPlatform(suggestion.platform)}</p>
               <p className="mt-2 text-sm leading-5 text-slate-700">{suggestion.reason}</p>
               {suggestion.origin && <p className="mt-1 text-xs font-semibold text-[#315b47]">
-                {suggestion.origin === "catalog-series" ? "Série identificada no catálogo IGDB" :
+                {suggestion.origin === "catalog-list" ? "Objetivo da tua lista · lançamento europeu verificado" :
+                  suggestion.origin === "catalog-series" ? "Série identificada no catálogo IGDB" :
                   "Descoberta por plataforma · avaliação IGDB"}
               </p>}
               {suggestion.sources.length > 1 &&
                 <p className="mt-1 text-xs text-[#315b47]">Também aparece em {suggestion.sources.length - 1} outra(s) lista(s).</p>}
-              <p className="mt-2 text-[11px] text-slate-500">Versão, região e preço por confirmar — sem referência de mercado inventada.</p>
+              <p className="mt-2 text-[11px] text-slate-500">
+                Lançamento europeu confirmado para esta consola; capa, edição física PAL, idioma e preço ainda por verificar.
+              </p>
             </div>
             <button type="button" onClick={() => {
               setIgnored((before) => [...before, suggestion.key]);
@@ -74,6 +90,7 @@ export function WishlistSuggestionPicker({ suggestions }: { suggestions: Wishlis
           </div>
         </article>;
       })}
+      </div>)}
       <div className="collection-panel flex min-w-0 flex-wrap items-center justify-between gap-3 p-4">
         <span className="text-sm font-semibold text-slate-700">{selectedVisible.length} selecionado(s) · até 40 por confirmação</span>
         <div className="flex flex-wrap gap-2">

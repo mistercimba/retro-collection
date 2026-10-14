@@ -25,7 +25,7 @@ export default async function WishlistSuggestionsPage({
       <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
         Propostas das tuas listas e de relações verificadas no catálogo IGDB:
         jogos de séries que já colecionas e descobertas bem avaliadas nas tuas consolas.
-        Nunca adicionamos jogos só para chegar a um número.
+        Agrupamos por consola e mostramos apenas lançamentos europeus confirmados no IGDB.
       </p>
       <p className="mt-2 text-xs font-semibold text-[#315b47]">
         Nada é adicionado sem selecionares e confirmares. «Ignorar» só esconde a sugestão nesta sessão.
@@ -35,7 +35,7 @@ export default async function WishlistSuggestionsPage({
       Pedido processado. Consulta a Wishlist para confirmar os novos alvos; as restantes sugestões foram atualizadas.
     </p>}
     {catalogUnavailable && <p role="status" className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-semibold text-amber-950">
-      Não foi possível consultar o IGDB neste momento. Mostramos apenas sugestões das tuas listas; volta a tentar quando o catálogo estiver disponível.
+Não foi possível verificar todos os lançamentos europeus no IGDB. Jogos sem confirmação PAL/Europa são ocultados; volta a tentar mais tarde.
     </p>}
     <WishlistSuggestionPicker suggestions={suggestions} />
     <div className="flex flex-wrap gap-4 text-sm font-bold">
