@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-14
+Last updated: 2026-10-15
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -22,7 +22,7 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-On 2026-10-14, Product Owner started **Issue #74**, the cross-platform Wishlist buying shortlist. Implementation is underway in `feat/wishlist-buying-shortlist`; it is not yet shipped and still requires review and explicit merge approval.
+As of 2026-10-15, Issues #74 and #76 are closed as completed and their PRs #75 and #77 are merged into `main`, with explicit Product Owner approval. No GitHub Issues or PRs remain open. Further buying-marketplace enhancements are proposals, not active tasks.
 
 ### COMPLETED — Contextual Wishlist suggestions (#52)
 
@@ -81,11 +81,19 @@ Only change after visual verification:
 - Show Wishlist count on console cards if it remains readable.
 - Structured editing of component-level physical condition/audit data.
 
-### NOW — Wishlist buying shortlist (#74)
+### COMPLETED — Wishlist buying shortlist (#74; PR #75)
 
-First phase: a read-only cross-platform buying shortlist at `/want/buying`, entered explicitly from the Wishlist. Compare a user-defined price ceiling to the calculated PriceCharting PAL/CeX reference **only for explicitly requested Loose/CIB**, and group into reference inside ceiling, ceiling below reference, or insufficient data. Show source breakdown/dates and CeX generic ambiguity warnings, filter by console/priority, open exact Wishlist targets and existing manual marketplace searches. Do not include ordered/acquired/inactive/ambiguous targets; no writes or new integrations.
+Merged as `02ea5089f6042d70e51d9bd19500b7dd5c2d02a9` on 2026-10-15. A read-only cross-platform buying shortlist at `/want/buying` is entered explicitly from the Wishlist. Compare a user-defined price ceiling to the calculated PriceCharting PAL/CeX reference **only for explicitly requested Loose/CIB**, and group into reference inside ceiling, ceiling below reference, or insufficient data. Show source breakdown/dates and CeX generic ambiguity warnings, filter by console/priority, open exact Wishlist targets and existing manual marketplace searches. Do not include ordered/acquired/inactive/ambiguous targets; no writes or new integrations.
 
 **A reference is not a live listing**. The difference between ceiling and reference is not an observed saving or verified deal. Do not call any target a "good deal" from this calculation.
+
+### COMPLETED — Physical IGDB catalog search and copy extras (#76; PR #77)
+
+Merged as `484dd74f558659208c70a0fb4db66ca1ac00c652` on 2026-10-15. IGDB search now constrains console/platform and game type before the upstream result limit; default search omits PC and requires evidence of a publisher for ordinary searches. Partial multiword matches use conservative, locally verified word-prefix recovery. Known mods/forks are excluded; explicit ID lookup retains its documented escape hatch. Canonical Add and the copy detail support manually verified physical extras in the existing copy-specific `extras` field (e.g., Pokéwalker), without inventing separate PAL catalog records.
+
+**QA limitation:** CI and pre-merge previews succeeded; the live authenticated IGDB result counts, specific retail edition coverage, and real-device interaction have not been independently verified. Some fan games may still have publisher metadata or misleading categories, so the filter is conservative, not an authenticity guarantee.
+
+### NEXT — Evaluate genuine buying opportunities
 
 Follow-up ideas after this first phase:
 - Evaluate real listing prices/condition/shipping against the correct reference before any actual opportunity/deal ranking.
