@@ -11,6 +11,12 @@ export type IgdbRawGame = {
   cover?: { image_id?: string };
   genres?: Array<{ name?: string }>;
   platforms?: Array<{ id?: number; name?: string }>;
+  release_dates?: Array<{
+    platform?: number;
+    release_region?: number | null;
+    /** Legacy IGDB field; release_region takes precedence when both exist. */
+    region?: number | null;
+  }>;
   involved_companies?: Array<{
     developer?: boolean;
     publisher?: boolean;
@@ -69,6 +75,25 @@ const CONSOLE_PLATFORM_IDS = PLATFORM_ENTRIES.filter(([name]) => name !== "PC").
 const CATALOG_GAME_TYPES = new Set([0, 3, 4, 8, 9, 10, 11]);
 const CATALOG_GAME_TYPE_QUERY = [...CATALOG_GAME_TYPES].join(",");
 
+/**
+ * A platform appearing in games.platforms is not evidence of a European
+ * launch. Worldwide (8), North America (2), Japan (5), Australia (3) and
+ * other regions are NOT evidence of a European/PAL market release.
+ *
+ * This is a catalogue claim for game + platform, not proof that any specific
+ * regional physical edition, case, cover or accessory exists.
+ */
+export function hasEuropeanReleaseOnPlatform(
+  game: Pick<IgdbRawGame, "release_dates">,
+  platformId: number,
+): boolean {
+  return Number.isSafeInteger(platformId) && platformId > 0 &&
+    (game.release_dates ?? []).some((release) =>
+      release.platform === platformId &&
+      (release.release_region ?? release.region) === 1
+    );
+}
+
 export function isCatalogGameType(game: Pick<IgdbRawGame, "game_type" | "category">): boolean {
   const kind = game.game_type ?? game.category;
   // Old/partial IGDB payloads can omit the category; publisher evidence is
@@ -108,7 +133,10 @@ export function buildCatalogSearchBodies(query: string, platform = ""): { primar
   const onePlatform = platform ? igdbPlatformId(platform) : null;
   if (platform && onePlatform === null) return null;
   const platforms = onePlatform === null ? CONSOLE_PLATFORM_IDS : [onePlatform];
-  const where = `platforms = (${platforms.join(",")}) & game_type = (${CATALOG_GAME_TYPE_QUERY}) & involved_companies != null`;
+  // Pre-filter Europe before IGDB's result cap. This alone is NOT sufficient:
+  // a multi-platform game may have Europe on another platform, so the mapper
+  // also requires an exact release_dates.platform + Europe pair.
+  const where = `platforms = (${platforms.join(",")}) & game_type = (${CATALOG_GAME_TYPE_QUERY}) & involved_companies != null & release_dates.release_region = 1`;
   const primary = `fields CATALOG_FIELDS; search "${escapeIgdbSearch(trimmed)}"; where ${where}; limit 100;`;
   const words = normalizeCatalogSearch(trimmed).split(" ").filter(Boolean);
   const last = words.at(-1);
@@ -170,7 +198,8 @@ export function mapIgdbCandidates(
       .map((platform) => Number(platform.id))
       .filter((id) => platformById.has(id))
       .filter((id) => !options.consolesOnly || id !== igdbPlatformId("PC"))
-      .filter((id) => wantedPlatformId === null || id === wantedPlatformId);
+      .filter((id) => wantedPlatformId === null || id === wantedPlatformId)
+      .filter((id) => hasEuropeanReleaseOnPlatform(game, id));
 
     for (const platformId of supported) {
       const platform = platformById.get(platformId);

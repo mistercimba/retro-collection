@@ -1,5 +1,5 @@
 import type { CanonicalGameIdentity, LibraryData } from "./data/types";
-import { igdbPlatformId } from "./igdb-catalog.logic";
+import { hasEuropeanReleaseOnPlatform as europeanReleaseFromCatalog, igdbPlatformId } from "./igdb-catalog.logic";
 import { normalizeMatchText } from "./data/wishlist-matching";
 import { wishlistSuggestionIdentity } from "./wishlist-list-suggestions.logic";
 
@@ -39,16 +39,13 @@ export type VerifiedIgdbSuggestion = {
   anchorTitle?: string;
 };
 
-/** Region 1 is Europe in IGDB. Worldwide, Australia and unknown are *not*
- * evidence of a PAL/European-market release for the named console. */
+/** Keep Wishlist discovery and Quick Add aligned on the same strict
+ * IGDB game + exact platform European release evidence. */
 export function hasEuropeanReleaseOnPlatform(
   game: Pick<IgdbDiscoveryGame, "release_dates">,
   platformId: number,
 ): boolean {
-  return (game.release_dates ?? []).some((release) =>
-    release.platform === platformId &&
-    (release.release_region ?? release.region) === 1
-  );
+  return europeanReleaseFromCatalog(game, platformId);
 }
 
 export function catalogSuggestionReference(gameId: number, platformId: number): string {
