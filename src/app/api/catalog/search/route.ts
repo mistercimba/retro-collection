@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { isAuthenticated } from "@/lib/auth";
 import { searchCanonicalGames } from "@/lib/igdb-catalog";
+import { catalogSearchResultWindow } from "@/lib/igdb-catalog.logic";
 import { getLibrary } from "@/lib/library-store";
 import { getCatalogLibraryState } from "@/lib/catalog-library-state.logic";
 
@@ -22,7 +23,8 @@ export async function GET(request: Request) {
       searchCanonicalGames(query, platform),
       getLibrary(),
     ]);
-    const annotated = results.slice(0, 24).map((candidate) => ({
+    const window = catalogSearchResultWindow(results);
+    const annotated = window.visible.map((candidate) => ({
       ...candidate,
       libraryState: getCatalogLibraryState(
         library.collection,
@@ -31,7 +33,7 @@ export async function GET(request: Request) {
         candidate.platform,
       ),
     }));
-    return NextResponse.json({ source: "IGDB", results: annotated }, {
+    return NextResponse.json({ source: "IGDB", results: annotated, truncated: window.hasMore }, {
       headers: { "Cache-Control": "private, max-age=60" },
     });
   } catch (error) {

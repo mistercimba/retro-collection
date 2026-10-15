@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
   buildCatalogSearchBodies,
+  CATALOG_PLATFORMS,
+  catalogSearchResultWindow,
+  igdbPlatformId,
+  legacyEuropeanSearchRetryBody,
   catalogTitleMatchesQuery,
   escapeIgdbSearch,
   hasEuropeanReleaseOnPlatform,
@@ -218,6 +222,114 @@ describe("IGDB catalog logic", () => {
       [91, "GameCube"], [91, "Nintendo DS"],
     ]);
     expect(mapIgdbCandidates(games, "Nintendo DS").map((g) => g.edition)).toEqual(["Gold"]);
+  });
+
+  it("audits ALL supported consoles with the same exact-platform European release gate", () => {
+    expect(CATALOG_PLATFORMS).toHaveLength(18);
+    const ids = CATALOG_PLATFORMS.map((platform) => igdbPlatformId(platform));
+    expect(ids.every((id) => typeof id === "number" && id > 0)).toBe(true);
+    expect(new Set(ids).size).toBe(CATALOG_PLATFORMS.length);
+
+    // These fixtures exercise the *same* mapping/query code for all consoles,
+    // including PS1/PS2/PS3/PS5, GameCube, GBA, DS, Wii, PSP, PC and NES.
+    // They are NOT claims about live IGDB regional coverage for real titles.
+    for (const platform of CATALOG_PLATFORMS) {
+      const platformId = igdbPlatformId(platform)!;
+      const otherPlatform = ids.find((id) => id !== platformId)!;
+      const query = buildCatalogSearchBodies("retro", platform)!;
+      expect(query.primary, platform).toContain(`platforms = (${platformId})`);
+      expect(query.primary, platform).toContain("release_dates.release_region = 1");
+      const base = {
+        id: platformId + 1000000, name: "Regional test game", game_type: 0,
+        platforms: [{ id: platformId }],
+        involved_companies: [{ publisher: true, company: { name: "Verified Publisher" } }],
+      };
+      const accepted = { ...base, release_dates: [{ platform: platformId, release_region: 1 }] };
+      const acceptedCandidates = mapIgdbCandidates([accepted], platform, { requirePublisher: true });
+      expect(acceptedCandidates, platform).toHaveLength(1);
+      expect(acceptedCandidates[0].platformId, platform).toBe(platformId);
+      expect(hasEuropeanReleaseOnPlatform(accepted, platformId), platform).toBe(true);
+      for (const region of [2, 3, 5, 8]) {
+        const nonEuropean = { ...base, release_dates: [{ platform: platformId, release_region: region }] };
+        expect(mapIgdbCandidates([nonEuropean], platform, { requirePublisher: true }), `${platform} region ${region}`).toEqual([]);
+      }
+      const noRegion = { ...base, release_dates: [] };
+      expect(mapIgdbCandidates([noRegion], platform, { requirePublisher: true }), platform).toEqual([]);
+      const onlyOtherPlatformEurope = {
+        ...base,
+        platforms: [{ id: platformId }, { id: otherPlatform }],
+        release_dates: [{ platform: platformId, release_region: 2 }, { platform: otherPlatform, release_region: 1 }],
+      };
+      expect(mapIgdbCandidates([onlyOtherPlatformEurope], platform), platform).toEqual([]);
+      expect(mapIgdbCandidates([onlyOtherPlatformEurope], "", { consolesOnly: true })
+        .some((item) => item.platformId === platformId), platform).toBe(false);
+
+      // An explicit ID request must still pass through the strict mapper.
+      const idBody = buildCatalogSearchBodies("IGDB: " + base.id, platform);
+      expect(idBody?.primary).toContain(`where id = ${base.id}`);
+      expect(legacyEuropeanSearchRetryBody(idBody!)).toBeNull();
+      expect(mapIgdbCandidates([{ ...base, release_dates: [{ platform: platformId, release_region: 8 }] }], platform)).toEqual([]);
+    }
+  });
+
+  it("preserves real European platform year rather than misleading global first-release year", () => {
+    const candidates = mapIgdbCandidates([{
+      id: 70021,
+      name: "Multi-region game",
+      first_release_date: 915148800, // 1999 global, NOT Europe.
+      platforms: [{ id: 20 }, { id: 21 }],
+      release_dates: [
+        { platform: 20, release_region: 2, date: 915148800 },
+        { platform: 20, release_region: 1, date: 1009843200 }, // 2002 EU DS
+        { platform: 20, release_region: 1, date: 1041379200 },
+        { platform: 21, release_region: 1, date: 978307200 }, // 2001 EU GC
+      ],
+    }]);
+    expect(candidates.find((item) => item.platform === "Nintendo DS")).toMatchObject({
+      firstReleaseDate: "1999-01-01",
+      europeanReleaseDate: "2002-01-01",
+    });
+    expect(candidates.find((item) => item.platform === "GameCube")?.europeanReleaseDate).toBe("2001-01-01");
+    const unknown = mapIgdbCandidates([{
+      id: 70022, name: "Region confirmed, year not supplied",
+      platforms: [{ id: 20 }], release_dates: [{ platform: 20, release_region: 1 }],
+    }], "Nintendo DS");
+    expect(unknown[0].europeanReleaseDate).toBe("");
+    const invalidTimestamp = mapIgdbCandidates([{
+      id: 70023, name: "Date error",
+      platforms: [{ id: 20 }], release_dates: [{ platform: 20, release_region: 1, date: 1e20 }],
+    }], "Nintendo DS");
+    expect(invalidTimestamp[0].europeanReleaseDate).toBe("");
+  });
+
+  it("creates a bounded legacy-region retry only for actual eligible text searches", () => {
+    const ds = buildCatalogSearchBodies("pokemon", "Nintendo DS")!;
+    expect(legacyEuropeanSearchRetryBody(ds)).toContain("platforms = (20)");
+    expect(legacyEuropeanSearchRetryBody(ds)).toContain("release_dates.region = 1");
+    expect(legacyEuropeanSearchRetryBody(ds)).not.toContain("release_dates.release_region = 1");
+
+    const partial = buildCatalogSearchBodies("pokemon hear", "Nintendo DS")!;
+    expect(legacyEuropeanSearchRetryBody(partial)).toContain('name ~ *"hear"*');
+    expect(legacyEuropeanSearchRetryBody(partial)).toContain("release_dates.region = 1");
+    expect(legacyEuropeanSearchRetryBody(buildCatalogSearchBodies("IGDB: 1000")!)).toBeNull();
+    expect(hasEuropeanReleaseOnPlatform({
+      release_dates: [{ platform: 20, region: 1 }],
+    }, 20)).toBe(true);
+    expect(hasEuropeanReleaseOnPlatform({
+      release_dates: [{ platform: 20, release_region: 2, region: 1 }],
+    }, 20)).toBe(false);
+  });
+
+  it("signals when the visible catalog results are a truncated window, without claiming total coverage", () => {
+    const all = Array.from({ length: 31 }, (_, index) => index + 1);
+    const page = catalogSearchResultWindow(all);
+    expect(page.visible).toHaveLength(24);
+    expect(page.visible[0]).toBe(1);
+    expect(page.visible[23]).toBe(24);
+    expect(page.hasMore).toBe(true);
+    expect(all).toHaveLength(31);
+    expect(catalogSearchResultWindow(all.slice(0, 24)).hasMore).toBe(false);
+    expect(catalogSearchResultWindow([])).toEqual({ visible: [], hasMore: false });
   });
 
 });

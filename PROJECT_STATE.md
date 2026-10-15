@@ -6,11 +6,17 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-15
 
-**Latest `main` commit:** `02ea5089f6042d70e51d9bd19500b7dd5c2d02a9` (PR #75, following PR #77 at `484dd74f558659208c70a0fb4db66ca1ac00c652`). Both feature PRs had GitHub Actions SUCCESS and Vercel Preview READY before merge; the latest post-merge CI and production status require live verification. At that completed-work checkpoint there were no open Issues/PRs. **Issue #79 is now open** for a production Quick Add bug: non-European Nintendo DS titles remain visible even after #76. Work on a separate focused PR in `fix/catalog-european-releases`, not merged. Consult `ROADMAP.md`.
+**Latest production `main` commit:** `f177e7b03b1141e55633b6536cb0994b052850db` (PR #80). The post-merge GitHub Actions completed **SUCCESS**, Vercel production **READY** and Issue #79 is closed. At audit intake, no other issues/PRs were open. **Issue #81 is now active** on `audit/catalog-pal-cross-platform`; no merge has been approved for its code changes.
 
-### Active — exact European-release verification in Quick Add (#79)
+### Active — cross-platform European catalog audit (#81)
 
-Production evidence from 2026-10-15: a Nintendo DS search for `mega man force` includes Mega Man Star Force 3: Black Ace and Red Joker, even though the games did not launch in Europe. Root cause: #76 checked platform and publisher but **not** an IGDB European release-date record tied to that same game + platform. The #52 Wishlist suggestions already require EU region 1 on the selected platform. The targeted fix shares that gate between suggestions and Quick Add, checks it at search and server-side identity resolution, filters non-European results before displaying them, and does not bypass region requirements for exact IGDB IDs. It retains the manual add option for verified owned copies absent from IGDB. CI and Vercel Preview verification are required; **no production data mutation and no merge before Product Owner approval**. Evidence of EU game release is not evidence of a particular physical PAL cover, language or SKU.
+The Product Owner requested a systematic audit of **all supported platforms**, rather than one-title-at-a-time patches. Findings: the deprecated IGDB release-region field was consumed locally but unavailable to cached search responses; the 24-card result cap was invisible; first **global** release year was presented as if regional; stale search hits remained clickable while a query changed. The focused candidate adds a conditional best-effort legacy-region lookup when modern search is empty, includes exact-platform European release year when known, clears old selectable results during debounce and flags non-exhaustive search windows. A synthetic 18-platform test matrix validates the common filters against US/JP/AU/Worldwide/absent/cross-console cases. Evidence and limits: `docs/IGDB_EU_CATALOG_AUDIT_2026-10-15.md`.
+
+**Unverified:** authenticated live IGDB responses, whether deprecated field filtering still works in production, all genuine PAL physical SKU/edition coverage and real-device visual behavior. Tests with synthetic fixtures are not a live Europe-release dataset audit. The collector's private Blob is not modified.
+
+### Completed — European-only canonical Add (#79; PR #80)
+
+PR #80 merged on 2026-10-15 at `f177e7b03b1141e55633b6536cb0994b052850db`. The shared predicate validates IGDB **Europe region 1 for the specific game and exact platform** at both catalog search and fresh canonical selection, including numeric IGDB IDs. EU records on another platform cannot admit imports on the selected platform. The normal search prefilters EU evidence before the result limit. This is not proof of PAL country edition, physical retail packaging or language, nor confirmation of the completeness of IGDB release metadata.
 
 ### Completed — Wishlist buying shortlist (#74; PR #75)
 
@@ -427,7 +433,7 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-Issues #50, #52, #60, #62, #68, #70, #74 and #76 are closed. Issue #79 is open for canonical catalog Europe filtering, with a separate implementation PR to be reviewed. The Wishlist buying shortlist (PR #75) and previous search quality fix (PR #77) are merged. Mobile/laptop/offline real-device checks were waived under #68 and remain unverified; they are not a blocking active task.
+Issues #50, #52, #60, #62, #68, #70, #74, #76 and #79 are closed. Issue #81 is the active European catalog audit; code changes remain unmerged pending new Product Owner approval. Wishlist buying shortlist (#75), search quality (#77) and Europe validation (#80) are merged. Real-device/authenticated browser checks remain unverified as in #68 and must not be reported PASS.
 
 ## Handoff prompt for a brand-new chat
 

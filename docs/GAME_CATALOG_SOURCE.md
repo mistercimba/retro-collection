@@ -25,10 +25,10 @@ states that retrieved data may be retained.
 1. The browser calls the authenticated local route `/api/catalog/search`.
 2. The server calls IGDB using `IGDB_CLIENT_ID` and `IGDB_CLIENT_SECRET`.
 3. For ordinary text search, the IGDB request is scoped **before its limit** to a selected platform or, when none is selected, supported **console** platforms (PC is explicit opt-in). It also requires `release_dates.release_region=1` (Europe) upstream. Every returned game+platform pair is independently checked locally against `release_dates.platform` **and** Europe; a game's Europe launch on another platform does not qualify. Worldwide, Japan, USA and Australia records are not accepted as Europe evidence, and records with absent/unknown release-region metadata are hidden. IGDB game types for mods/forks/DLC/updates are excluded, and results without a recorded publishing company are not proposed as regular physical-collection candidates. This is a conservative **evidence threshold**, not proof of official licensing or retail packaging.
-   When IGDB's full-text search fails on a partial multiword name (e.g. `pokemon hear`), one bounded fallback matches the last substantial word and then verifies all user-entered normalized word prefixes locally. Unrelated matches are not guessed.
+   When IGDB's full-text search fails on a partial multiword name (e.g. `pokemon hear`), one bounded fallback matches the last substantial word and then verifies all user-entered normalized word prefixes locally. Unrelated matches are not guessed. IGDB's old `release_dates.region` field remains a supported **read-side** field in the local predicate; for sufficiently specific text searches returning zero candidates, a single, optional **best-effort** retry uses that deprecated region filter. This does not alter the normal query, and failure of the old filter never bypasses region safety or produces guessed results. Live acceptance of the deprecated query remains unverified.
    Explicit IGDB ID lookup can still bypass missing publisher metadata, **but never game/platform European-release evidence or known mod/fork categories**. The user can add a verifiably physical unlisted copy through the explicit manual emergency form; no hidden or automatic bypass is allowed in canonical Add or its server-side revalidation.
 4. Search results are mapped only to the local supported-platform list.
-5. The user must explicitly choose a result. Ambiguous results are never auto-selected. The result list is explicitly Europe-verified for the IGDB game **on that platform**; it does not claim proof of a PAL box, barcode, language or specific edition.
+5. The user must explicitly choose a result. Ambiguous results are never auto-selected. The result list is explicitly Europe-verified for the IGDB game **on that platform**; it does not claim proof of a PAL box, barcode, language or specific edition. When the exact-platform European release has a dated IGDB record, that EU year is displayed instead of the potentially misleading global first-release year; otherwise the result says European launch confirmed without inventing a date.
 6. On submit, the server resolves the selected IGDB game/platform again, **including the exact-platform European release check**, instead of
    trusting hidden title/platform fields or the earlier search response from the browser.
 7. The selected identity and a compact metadata snapshot are stored on the collection
@@ -41,7 +41,11 @@ states that retrieved data may be retained.
 
 Search responses are cached by Next for one day; selected identity lookups are cached
 for seven days. On a change of eligibility logic the relevant cache namespace must be bumped
-to invalidate stale candidates. OAuth tokens are held server-side only.
+to invalidate stale candidates. OAuth tokens are held server-side only. Broad requests can receive up to 100 IGDB candidate records and the UI renders at most 24 matched results: it explicitly warns when more candidates were mapped than are displayed, and directs the user to refine the title/console. This is **not** a guarantee of exhaustive regional coverage.
+
+## Cross-platform audit evidence
+
+See [`IGDB_EU_CATALOG_AUDIT_2026-10-15.md`](IGDB_EU_CATALOG_AUDIT_2026-10-15.md) for the 18-platform source/test matrix, fixes, and explicitly unverified live-data questions. The matrix covers all supported platforms via the same code, but is based on synthetic fixtures and must **not** be presented as an authenticated live IGDB data coverage pass.
 
 ## Identifier support
 
