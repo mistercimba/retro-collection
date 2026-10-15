@@ -3,6 +3,8 @@ import { unstable_cache } from "next/cache";
 import type { CanonicalGameIdentity } from "@/lib/data/types";
 import {
   buildCatalogSearchBodies,
+  legacyEuropeanSearchRetryBody,
+  normalizeCatalogSearch,
   catalogTitleMatchesQuery,
   rankCatalogMatch,
   mapIgdbCandidates,
@@ -116,6 +118,8 @@ const fields = [
   "platforms.name",
   "release_dates.platform",
   "release_dates.release_region",
+  "release_dates.region",
+  "release_dates.date",
   "involved_companies.developer",
   "involved_companies.publisher",
   "involved_companies.company.name",
@@ -141,6 +145,25 @@ async function searchUncached(query: string, platform = ""): Promise<CanonicalGa
     const fallback = await requestGames(plan.fallback.replace("CATALOG_FIELDS", fields));
     matches = candidates([...primary, ...fallback]);
   }
+
+  // Region 'region' is deprecated but may be the only European marker on
+  // older records. The normal fast path remains the current IGDB field.
+  // One bounded, best-effort retry on otherwise empty, specific text
+  // searches recovers those candidates while retaining exact-platform EU
+  // verification; failures here must never mask a healthy modern response.
+  if (!explicitId && matches.length === 0 && normalizeCatalogSearch(trimmed).length >= 6) {
+    const legacyBody = legacyEuropeanSearchRetryBody(plan);
+    if (legacyBody) {
+      try {
+        matches = candidates(await requestGames(legacyBody.replace("CATALOG_FIELDS", fields)));
+      } catch (error) {
+        console.warn("igdb_legacy_europe_lookup_unavailable", {
+          errorName: error instanceof Error ? error.name : "UnknownError",
+        });
+      }
+    }
+  }
+
   return matches.sort((a, b) =>
     rankCatalogMatch(a.title, trimmed) - rankCatalogMatch(b.title, trimmed)
     || a.title.localeCompare(b.title, "pt-PT")
@@ -151,7 +174,7 @@ async function searchUncached(query: string, platform = ""): Promise<CanonicalGa
 
 const cachedSearch = unstable_cache(
   searchUncached,
-  ["igdb-canonical-search-v3-europe-only"],
+  ["igdb-canonical-search-v4-pal-audit"],
   { revalidate: 60 * 60 * 24 },
 );
 
@@ -185,7 +208,7 @@ async function resolveUncached(gameId: number, platformId: number): Promise<Omit
 
 const cachedResolve = unstable_cache(
   resolveUncached,
-  ["igdb-canonical-resolve-v3-europe-only"],
+  ["igdb-canonical-resolve-v4-pal-audit"],
   { revalidate: 60 * 60 * 24 * 7 },
 );
 

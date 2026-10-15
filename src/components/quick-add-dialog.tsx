@@ -50,8 +50,11 @@ export function QuickAddDialog({
   const [intent, setIntent] = useState<AddIntent | null>(null);
   const [searchState, setSearchState] = useState<SearchState>("idle");
   const [searchError, setSearchError] = useState("");
+  const [moreCatalogResults, setMoreCatalogResults] = useState(false);
   const [sealed, setSealed] = useState("no");
   const searchRef = useRef<HTMLInputElement>(null);
+  // Invalidate late responses synchronously on each query, platform or flow change.
+  const searchSequenceRef = useRef(0);
   const manualTitleRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -114,21 +117,28 @@ export function QuickAddDialog({
     if (!isSearchableQuery(trimmed)) return;
 
     const controller = new AbortController();
+    const requestSequence = ++searchSequenceRef.current;
     const timer = window.setTimeout(() => {
+      if (controller.signal.aborted || requestSequence !== searchSequenceRef.current) return;
       setSearchState("loading");
       setSearchError("");
+      setResults([]);
+      setMoreCatalogResults(false);
       const params = new URLSearchParams({ q: trimmed });
       if (platformFilter) params.set("platform", platformFilter);
       fetch("/api/catalog/search?" + params.toString(), { signal: controller.signal, cache: "no-store" })
         .then(async (response) => {
           const payload = await response.json();
           if (!response.ok) throw new Error(payload?.error || "Pesquisa indisponível.");
+          if (controller.signal.aborted || requestSequence !== searchSequenceRef.current) return;
           setResults(Array.isArray(payload?.results) ? payload.results : []);
+          setMoreCatalogResults(payload?.truncated === true);
           setSearchState("loaded");
         })
         .catch((error) => {
-          if (controller.signal.aborted) return;
+          if (controller.signal.aborted || requestSequence !== searchSequenceRef.current) return;
           setResults([]);
+          setMoreCatalogResults(false);
           setSearchState("error");
           setSearchError(error instanceof Error ? error.message : "Pesquisa indisponível.");
         });
@@ -141,10 +151,12 @@ export function QuickAddDialog({
   }, [open, prefillWishlist, manualMode, selected, query, platformFilter]);
 
   const resetFlow = () => {
+    searchSequenceRef.current += 1;
     setManualMode(false);
     setQuery("");
     setPlatformFilter("");
     setResults([]);
+    setMoreCatalogResults(false);
     setSelected(null);
     setIntent(null);
     setSearchState("idle");
@@ -270,12 +282,14 @@ export function QuickAddDialog({
                             value={query}
                             onChange={(event) => {
                               const value = event.target.value;
+                              searchSequenceRef.current += 1;
                               setQuery(value);
-                              if (!isSearchableQuery(value)) {
-                                setResults([]);
-                                setSearchState("idle");
-                                setSearchError("");
-                              }
+                              // Search cards from a previous term must not remain
+                              // clickable during debounce and a new request.
+                              setResults([]);
+                              setMoreCatalogResults(false);
+                              setSearchError("");
+                              setSearchState(isSearchableQuery(value) ? "loading" : "idle");
                             }}
                             autoComplete="off"
                             spellCheck={false}
@@ -286,7 +300,18 @@ export function QuickAddDialog({
                       </label>
                       <label>
                         <span className="field-label">Consola</span>
-                        <select value={platformFilter} onChange={(event) => setPlatformFilter(event.target.value)} className="field-input">
+                        <select
+                          value={platformFilter}
+                          onChange={(event) => {
+                            searchSequenceRef.current += 1;
+                            setPlatformFilter(event.target.value);
+                            setResults([]);
+                            setMoreCatalogResults(false);
+                            setSearchError("");
+                            setSearchState(isSearchableQuery(query) ? "loading" : "idle");
+                          }}
+                          className="field-input"
+                        >
                           <option value="">Todas as consolas</option>
                           {allPlatforms.map((platform) => <option key={platform} value={platform}>{platform}</option>)}
                         </select>
@@ -298,7 +323,8 @@ export function QuickAddDialog({
                       {searchState === "loading" && <p className="p-5 text-sm font-semibold text-slate-500">A procurar no catálogo…</p>}
                       {searchState === "error" && <div className="flex gap-3 p-5 text-sm text-rose-800"><AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" /><span>{searchError}</span></div>}
                       {searchState === "loaded" && results.length === 0 && <p className="p-5 text-sm font-semibold text-slate-500">Nenhum lançamento europeu confirmado para esta pesquisa e consola no IGDB. Experimenta outro nome ou escolhe a consola; para uma cópia física não indexada, usa o modo manual.</p>}
-                      {results.map((candidate) => <button
+                      {searchState === "loaded" && moreCatalogResults && <p role="status" className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-xs font-semibold text-amber-900">Há mais correspondências do que as 24 apresentadas. Escreve mais palavras ou escolhe uma consola para afinar; esta pesquisa não é uma lista completa do catálogo.</p>}
+                      {searchState === "loaded" && results.map((candidate) => <button
                         key={String(candidate.gameId) + ":" + String(candidate.platformId)}
                         type="button"
                         onClick={() => { setSelected(candidate); setIntent(trigger === "wishlist-add" ? "wishlist" : null); }}
@@ -308,7 +334,7 @@ export function QuickAddDialog({
                         <span className="min-w-0">
                           <strong className="block truncate text-sm font-black text-slate-950">{candidate.title}</strong>
                           <span className="mt-0.5 block truncate text-xs font-semibold text-slate-500">
-                            {candidate.platform} · {candidate.edition}{candidate.firstReleaseDate ? " · " + candidate.firstReleaseDate.slice(0, 4) : ""}
+                            {candidate.platform} · {candidate.edition}{candidate.europeanReleaseDate ? " · Europa " + candidate.europeanReleaseDate.slice(0, 4) : " · lançamento europeu confirmado"}
                           </span>
                           {candidate.genres.length > 0 && <span className="mt-1 block truncate text-[11px] text-slate-400">{candidate.genres.slice(0, 3).join(" · ")}</span>}
                           <CatalogLibraryBadges candidate={candidate} className="mt-1.5" />
@@ -393,7 +419,7 @@ function SelectedIdentity({ candidate }: { candidate: CatalogSearchCandidate }) 
     <div className="min-w-0 flex-1">
       <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#466558]">IDENTIDADE SELECIONADA · IGDB #{candidate.gameId}</p>
       <h3 className="mt-1 text-lg font-black text-slate-950">{candidate.title}</h3>
-      <p className="text-xs font-semibold text-slate-500">{candidate.platform}{candidate.firstReleaseDate ? " · " + candidate.firstReleaseDate.slice(0, 4) : ""}</p>
+      <p className="text-xs font-semibold text-slate-500">{candidate.platform}{candidate.europeanReleaseDate ? " · Europa " + candidate.europeanReleaseDate.slice(0, 4) : " · lançamento europeu confirmado"}</p>
       <CatalogLibraryBadges candidate={candidate} className="mt-2" />
     </div>
   </div>;

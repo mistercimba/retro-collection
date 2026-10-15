@@ -16,6 +16,8 @@ export type IgdbRawGame = {
     release_region?: number | null;
     /** Legacy IGDB field; release_region takes precedence when both exist. */
     region?: number | null;
+    /** Unix timestamp for this game + platform + regional release, if known. */
+    date?: number | null;
   }>;
   involved_companies?: Array<{
     developer?: boolean;
@@ -33,6 +35,8 @@ export type CanonicalGameCandidate = {
   edition: string;
   summary: string;
   firstReleaseDate: string;
+  /** First recorded European release for the exact platform, if dated by IGDB. */
+  europeanReleaseDate: string;
   genres: string[];
   developers: string[];
   publishers: string[];
@@ -146,6 +150,38 @@ export function buildCatalogSearchBodies(query: string, platform = ""): { primar
   return { primary, fallback };
 }
 
+/**
+ * IGDB still documents release_dates.region (deprecated), and the local
+ * regional predicate already accepts it. One optional zero-result retry can
+ * use that field without changing/breaking the modern primary query.
+ *
+ * Never apply this to explicit ID lookups: those are already unfiltered by
+ * region upstream and are verified by mapIgdbCandidates on return.
+ */
+export function legacyEuropeanSearchRetryBody(plan: {
+  primary: string;
+  fallback: string | null;
+}): string | null {
+  const query = plan.fallback ?? plan.primary;
+  const modern = "release_dates.release_region = 1";
+  return query.includes(modern) ? query.replace(modern, "release_dates.region = 1") : null;
+}
+
+/**
+ * Avoid silently pretending a 24-card search window exhausts a larger
+ * catalogue match set. This count is bounded by IGDB's own result cap; do
+ * not present it as an exhaustive worldwide or European catalogue count.
+ */
+export function catalogSearchResultWindow<T>(results: readonly T[], visibleLimit = 24): {
+  visible: T[];
+  hasMore: boolean;
+} {
+  return {
+    visible: results.slice(0, visibleLimit),
+    hasMore: results.length > visibleLimit,
+  };
+}
+
 export function igdbPlatformId(platform: string): number | null {
   return idByPlatform.get(platform) ?? null;
 }
@@ -163,7 +199,19 @@ export function escapeIgdbSearch(value: string): string {
 
 function dateFromUnix(value: number | undefined) {
   if (!value || !Number.isFinite(value)) return "";
-  return new Date(value * 1000).toISOString().slice(0, 10);
+  const date = new Date(value * 1000);
+  return Number.isFinite(date.getTime()) ? date.toISOString().slice(0, 10) : "";
+}
+
+function firstEuropeanPlatformDate(game: IgdbRawGame, platformId: number): string {
+  return (game.release_dates ?? [])
+    .filter((release) =>
+      release.platform === platformId &&
+      (release.release_region ?? release.region) === 1
+    )
+    .map((release) => dateFromUnix(release.date ?? undefined))
+    .filter(Boolean)
+    .sort()[0] ?? "";
 }
 
 function companyNames(
@@ -214,6 +262,7 @@ export function mapIgdbCandidates(
         edition: game.version_title?.trim() || "Standard",
         summary: game.summary?.trim() ?? "",
         firstReleaseDate: dateFromUnix(game.first_release_date),
+        europeanReleaseDate: firstEuropeanPlatformDate(game, platformId),
         genres: [...new Set((game.genres ?? []).map((genre) => genre.name?.trim() ?? "").filter(Boolean))],
         developers: companyNames(game, "developer"),
         publishers,

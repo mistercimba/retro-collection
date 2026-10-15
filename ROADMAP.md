@@ -22,11 +22,15 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-Issue #79 is **OPEN**: Quick Add incorrectly shows non-European games (Mega Man Star Force 3: Black Ace/Red Joker on Nintendo DS). Implementation on `fix/catalog-european-releases` must require an IGDB Europe-region release for the **exact game and platform** in both catalog search and canonical selection; current game/platform/publisher filters from #76 are insufficient. No merge without Product Owner approval. The buying shortlist (#74/#75) and search quality fixes (#76/#77) are already merged and remain completed.
+Issue #79 is **CLOSED**: PR #80 merged as `f177e7b03b1141e55633b6536cb0994b052850db`, with GitHub CI SUCCESS and Vercel production READY. The current active task is **Issue #81**, a systematic cross-platform **source audit** of the European catalog. Tests and fixes are under review on `audit/catalog-pal-cross-platform`; no merge before explicit Product Owner approval. This is not a completed live/authenticated IGDB dataset audit.
 
-### NOW — European-only canonical Add (#79)
+### NOW — 18-platform European catalog source audit (#81)
 
-Reject game+platform candidates lacking a matching IGDB release record `release_dates.platform === selectedPlatformId` and `release_dates.release_region === 1`. Upstream ordinary search filters `release_dates.release_region=1` before truncation, but that alone cannot prove region and platform belong to the same release entry; a strict local check and re-validation on submit are mandatory. Neither publisher metadata, a game existing on the console, nor a Worldwide release proves EU. Keep the partial-name search, distinct IGDB editions and explicit manual emergency path. The intended result is a **European game release**, not verification of a particular physical PAL package. Regression tests must cover non-European DS Mega Man Star Force 3 and cross-platform false matches.
+Audit the entire supported IGDB platform registry for exact game+console Europe-release filtering, modern/deprecated regional metadata compatibility, false-positive imports, silent result truncation and regional release-year ambiguity. Deterministic tests cover **all 18** supported platform identities, including PC explicitly, but do **not** certify live IGDB coverage or physical PAL retail editions. Fix confirmed source/UI defects without per-game exceptions or extra backend integrations. A dated audit evidence document lives at `docs/IGDB_EU_CATALOG_AUDIT_2026-10-15.md`; the PR remains unmerged pending explicit owner approval.
+
+### COMPLETED — European-only canonical Add (#79; PR #80)
+
+PR #80 merged on 2026-10-15 as `f177e7b03b1141e55633b6536cb0994b052850db`, CI SUCCESS / Vercel production READY. The mapper requires `release_dates.platform === selectedPlatformId` and Europe region 1 for **each game+console**, both in search and server-side identity confirmation. Upstream ordinary searches filter Europe before the result cap. Publisher, generic global release date and a different console's European release do **not** suffice. Worldwide/NA/JP/AU-only records and missing region evidence are excluded. A European game release record is not retail PAL SKU/cover proof. Live authenticated examples remain to be checked when access is available.
 
 ### COMPLETED — Contextual Wishlist suggestions (#52)
 
