@@ -6,7 +6,11 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-15
 
-**Latest `main` commit:** `02ea5089f6042d70e51d9bd19500b7dd5c2d02a9` (PR #75, following PR #77 at `484dd74f558659208c70a0fb4db66ca1ac00c652`). Both feature PRs had GitHub Actions SUCCESS and Vercel Preview READY before merge; the latest post-merge CI and production status require live verification. At this checkpoint there are **no open GitHub Issues or PRs**. Consult `ROADMAP.md` for proposed next work.
+**Latest `main` commit:** `02ea5089f6042d70e51d9bd19500b7dd5c2d02a9` (PR #75, following PR #77 at `484dd74f558659208c70a0fb4db66ca1ac00c652`). Both feature PRs had GitHub Actions SUCCESS and Vercel Preview READY before merge; the latest post-merge CI and production status require live verification. At that completed-work checkpoint there were no open Issues/PRs. **Issue #79 is now open** for a production Quick Add bug: non-European Nintendo DS titles remain visible even after #76. Work on a separate focused PR in `fix/catalog-european-releases`, not merged. Consult `ROADMAP.md`.
+
+### Active — exact European-release verification in Quick Add (#79)
+
+Production evidence from 2026-10-15: a Nintendo DS search for `mega man force` includes Mega Man Star Force 3: Black Ace and Red Joker, even though the games did not launch in Europe. Root cause: #76 checked platform and publisher but **not** an IGDB European release-date record tied to that same game + platform. The #52 Wishlist suggestions already require EU region 1 on the selected platform. The targeted fix shares that gate between suggestions and Quick Add, checks it at search and server-side identity resolution, filters non-European results before displaying them, and does not bypass region requirements for exact IGDB IDs. It retains the manual add option for verified owned copies absent from IGDB. CI and Vercel Preview verification are required; **no production data mutation and no merge before Product Owner approval**. Evidence of EU game release is not evidence of a particular physical PAL cover, language or SKU.
 
 ### Completed — Wishlist buying shortlist (#74; PR #75)
 
@@ -423,7 +427,7 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-Issues #50, #52, #60, #62, #68, #70, #74 and #76 are closed. The Wishlist buying shortlist (PR #75) and catalog search fix (PR #77) are merged. There are no open Issues/PRs. Mobile/laptop/offline real-device checks were waived under #68 and remain unverified; they are not a blocking active task.
+Issues #50, #52, #60, #62, #68, #70, #74 and #76 are closed. Issue #79 is open for canonical catalog Europe filtering, with a separate implementation PR to be reviewed. The Wishlist buying shortlist (PR #75) and previous search quality fix (PR #77) are merged. Mobile/laptop/offline real-device checks were waived under #68 and remain unverified; they are not a blocking active task.
 
 ## Handoff prompt for a brand-new chat
 

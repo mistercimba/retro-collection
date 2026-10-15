@@ -210,7 +210,7 @@ export function QuickAddDialog({
             ? "Regista a compra agora; a verificação física fica para quando chegar."
             : selected && intent === "wishlist"
               ? "Guarda-o como alvo de compra, sem fingir que já foi comprado."
-              : "Pesquisa por nome ou por um IGDB ID. Nada é escolhido automaticamente.";
+              : "Pesquisa no IGDB por nome ou ID. Só aparecem jogos com lançamento europeu confirmado na consola escolhida; a embalagem PAL específica não fica automaticamente verificada.";
 
   const modal = open && typeof document !== "undefined"
     ? createPortal(
@@ -297,7 +297,7 @@ export function QuickAddDialog({
                       {searchState === "idle" && <p className="p-5 text-sm font-semibold text-slate-500">Escreve pelo menos dois caracteres, ou um IGDB ID.</p>}
                       {searchState === "loading" && <p className="p-5 text-sm font-semibold text-slate-500">A procurar no catálogo…</p>}
                       {searchState === "error" && <div className="flex gap-3 p-5 text-sm text-rose-800"><AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" /><span>{searchError}</span></div>}
-                      {searchState === "loaded" && results.length === 0 && <p className="p-5 text-sm font-semibold text-slate-500">Nenhum resultado seguro. Tenta outro nome, filtra por consola ou usa o modo manual.</p>}
+                      {searchState === "loaded" && results.length === 0 && <p className="p-5 text-sm font-semibold text-slate-500">Nenhum lançamento europeu confirmado para esta pesquisa e consola no IGDB. Experimenta outro nome ou escolhe a consola; para uma cópia física não indexada, usa o modo manual.</p>}
                       {results.map((candidate) => <button
                         key={String(candidate.gameId) + ":" + String(candidate.platformId)}
                         type="button"

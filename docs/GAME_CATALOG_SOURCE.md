@@ -24,13 +24,13 @@ states that retrieved data may be retained.
 
 1. The browser calls the authenticated local route `/api/catalog/search`.
 2. The server calls IGDB using `IGDB_CLIENT_ID` and `IGDB_CLIENT_SECRET`.
-3. For ordinary text search, the IGDB request is scoped **before its limit** to a selected platform or, when none is selected, supported **console** platforms (PC is explicit opt-in). IGDB game types for mods/forks/DLC/updates are excluded, and results without a recorded publishing company are not proposed as regular physical-collection candidates. This is a conservative **evidence threshold**, not proof of official licensing.
+3. For ordinary text search, the IGDB request is scoped **before its limit** to a selected platform or, when none is selected, supported **console** platforms (PC is explicit opt-in). It also requires `release_dates.release_region=1` (Europe) upstream. Every returned game+platform pair is independently checked locally against `release_dates.platform` **and** Europe; a game's Europe launch on another platform does not qualify. Worldwide, Japan, USA and Australia records are not accepted as Europe evidence, and records with absent/unknown release-region metadata are hidden. IGDB game types for mods/forks/DLC/updates are excluded, and results without a recorded publishing company are not proposed as regular physical-collection candidates. This is a conservative **evidence threshold**, not proof of official licensing or retail packaging.
    When IGDB's full-text search fails on a partial multiword name (e.g. `pokemon hear`), one bounded fallback matches the last substantial word and then verifies all user-entered normalized word prefixes locally. Unrelated matches are not guessed.
-   Explicit IGDB ID lookup is still available for records missing publisher metadata, but known mod/fork types are rejected; manual add remains the escape hatch for real missing games.
+   Explicit IGDB ID lookup can still bypass missing publisher metadata, **but never game/platform European-release evidence or known mod/fork categories**. The user can add a verifiably physical unlisted copy through the explicit manual emergency form; no hidden or automatic bypass is allowed in canonical Add or its server-side revalidation.
 4. Search results are mapped only to the local supported-platform list.
-5. The user must explicitly choose a result. Ambiguous results are never auto-selected.
-6. On submit, the server resolves the selected IGDB game/platform again instead of
-   trusting hidden title/platform fields from the browser.
+5. The user must explicitly choose a result. Ambiguous results are never auto-selected. The result list is explicitly Europe-verified for the IGDB game **on that platform**; it does not claim proof of a PAL box, barcode, language or specific edition.
+6. On submit, the server resolves the selected IGDB game/platform again, **including the exact-platform European release check**, instead of
+   trusting hidden title/platform fields or the earlier search response from the browser.
 7. The selected identity and a compact metadata snapshot are stored on the collection
    record so normal browsing does not need IGDB.
 8. If a matching IGDB cover is available and the user did not change the edition, the
@@ -40,7 +40,8 @@ states that retrieved data may be retained.
    remains available. A failed external lookup never silently invents an identity.
 
 Search responses are cached by Next for one day; selected identity lookups are cached
-for seven days. OAuth tokens are held server-side only.
+for seven days. On a change of eligibility logic the relevant cache namespace must be bumped
+to invalidate stale candidates. OAuth tokens are held server-side only.
 
 ## Identifier support
 
@@ -60,6 +61,7 @@ known.
 - Platform identity comes from IGDB.
 - IGDB version titles are used when present; otherwise the candidate is shown as
   `Standard`. These are **game database versions**, not an exhaustive register of country-specific physical boxes, launch bundles, SKU variants or included accessories.
+- A European release record from IGDB is now required for the **exact game+platform** when using canonical Add. This means a confirmed European-market game release, not a physical PAL SKU or cover. IGDB's release records may be incomplete and can conceal legitimate PAL games; this is an intentional false-negative preference over listing unconfirmed imports.
 - Region is deliberately left for the user to confirm because the chosen game identity
   alone is not enough to prove the exact physical PAL country release.
 - If the user changes the edition from the selected catalog edition, automatic cover

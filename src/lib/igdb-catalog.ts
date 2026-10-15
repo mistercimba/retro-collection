@@ -114,6 +114,8 @@ const fields = [
   "genres.name",
   "platforms.id",
   "platforms.name",
+  "release_dates.platform",
+  "release_dates.release_region",
   "involved_companies.developer",
   "involved_companies.publisher",
   "involved_companies.company.name",
@@ -149,7 +151,7 @@ async function searchUncached(query: string, platform = ""): Promise<CanonicalGa
 
 const cachedSearch = unstable_cache(
   searchUncached,
-  ["igdb-canonical-search-v2"],
+  ["igdb-canonical-search-v3-europe-only"],
   { revalidate: 60 * 60 * 24 },
 );
 
@@ -159,6 +161,8 @@ export async function searchCanonicalGames(query: string, platform = "") {
 
 async function resolveUncached(gameId: number, platformId: number): Promise<Omit<CanonicalGameIdentity, "selectedAt"> | null> {
   const games = await requestGames(`fields ${fields}; where id = ${gameId}; limit 1;`);
+  // Re-evaluate release evidence server-side on submit; the browser can send
+  // an arbitrary IGDB gameId/platformId, including a non-European copy.
   const candidate = mapIgdbCandidates(games).find((item) =>
     item.gameId === gameId && item.platformId === platformId
   );
@@ -181,7 +185,7 @@ async function resolveUncached(gameId: number, platformId: number): Promise<Omit
 
 const cachedResolve = unstable_cache(
   resolveUncached,
-  ["igdb-canonical-resolve-v2"],
+  ["igdb-canonical-resolve-v3-europe-only"],
   { revalidate: 60 * 60 * 24 * 7 },
 );
 

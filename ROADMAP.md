@@ -22,7 +22,11 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-As of 2026-10-15, Issues #74 and #76 are closed as completed and their PRs #75 and #77 are merged into `main`, with explicit Product Owner approval. No GitHub Issues or PRs remain open. Further buying-marketplace enhancements are proposals, not active tasks.
+Issue #79 is **OPEN**: Quick Add incorrectly shows non-European games (Mega Man Star Force 3: Black Ace/Red Joker on Nintendo DS). Implementation on `fix/catalog-european-releases` must require an IGDB Europe-region release for the **exact game and platform** in both catalog search and canonical selection; current game/platform/publisher filters from #76 are insufficient. No merge without Product Owner approval. The buying shortlist (#74/#75) and search quality fixes (#76/#77) are already merged and remain completed.
+
+### NOW — European-only canonical Add (#79)
+
+Reject game+platform candidates lacking a matching IGDB release record `release_dates.platform === selectedPlatformId` and `release_dates.release_region === 1`. Upstream ordinary search filters `release_dates.release_region=1` before truncation, but that alone cannot prove region and platform belong to the same release entry; a strict local check and re-validation on submit are mandatory. Neither publisher metadata, a game existing on the console, nor a Worldwide release proves EU. Keep the partial-name search, distinct IGDB editions and explicit manual emergency path. The intended result is a **European game release**, not verification of a particular physical PAL package. Regression tests must cover non-European DS Mega Man Star Force 3 and cross-platform false matches.
 
 ### COMPLETED — Contextual Wishlist suggestions (#52)
 
