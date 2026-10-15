@@ -5,6 +5,9 @@ export type IgdbRawGame = {
   first_release_date?: number;
   version_title?: string;
   version_parent?: number;
+  /** IGDB game_type supersedes the deprecated category enum. */
+  game_type?: number;
+  category?: number;
   cover?: { image_id?: string };
   genres?: Array<{ name?: string }>;
   platforms?: Array<{ id?: number; name?: string }>;
@@ -57,6 +60,64 @@ const idByPlatform = new Map<string, number>(PLATFORM_ENTRIES.map(([name, id]) =
 
 export const CATALOG_PLATFORMS = PLATFORM_ENTRIES.map(([name]) => name);
 
+// A broad physical-console search should not return PC fan projects. PC
+// remains available when the user explicitly selects it in the dropdown.
+const CONSOLE_PLATFORM_IDS = PLATFORM_ENTRIES.filter(([name]) => name !== "PC").map(([, id]) => id);
+
+// IGDB's published game categories, excluding mods/forks, updates, DLC and packs.
+// A category alone cannot prove an officially licensed retail release.
+const CATALOG_GAME_TYPES = new Set([0, 3, 4, 8, 9, 10, 11]);
+const CATALOG_GAME_TYPE_QUERY = [...CATALOG_GAME_TYPES].join(",");
+
+export function isCatalogGameType(game: Pick<IgdbRawGame, "game_type" | "category">): boolean {
+  const kind = game.game_type ?? game.category;
+  // Old/partial IGDB payloads can omit the category; publisher evidence is
+  // checked separately for ordinary text searches.
+  return kind === undefined || CATALOG_GAME_TYPES.has(kind);
+}
+
+export function normalizeCatalogSearch(value: string): string {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("pt-PT").replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+export function catalogTitleMatchesQuery(title: string, query: string): boolean {
+  const words = normalizeCatalogSearch(title).split(" ").filter(Boolean);
+  const requested = normalizeCatalogSearch(query).split(" ").filter(Boolean);
+  return requested.length > 0 && requested.every((word) => words.some((candidate) => candidate.startsWith(word)));
+}
+
+export function rankCatalogMatch(title: string, query: string): number {
+  const normalizedTitle = normalizeCatalogSearch(title);
+  const normalizedQuery = normalizeCatalogSearch(query);
+  if (normalizedTitle === normalizedQuery) return 0;
+  if (normalizedTitle.startsWith(normalizedQuery)) return 1;
+  return catalogTitleMatchesQuery(title, query) ? 2 : 3;
+}
+
+/**
+ * Server-side platform/type/publisher filtering MUST run before IGDB's limit.
+ * The fallback looks for the unfinished final word, then requires every
+ * requested word to match locally. It never guesses an unrelated title.
+ */
+export function buildCatalogSearchBodies(query: string, platform = ""): { primary: string; fallback: string | null } | null {
+  const trimmed = query.trim();
+  if (!trimmed) return null;
+  const id = parseIgdbIdentifier(trimmed);
+  if (id) return { primary: `fields CATALOG_FIELDS; where id = ${id}; limit 1;`, fallback: null };
+  const onePlatform = platform ? igdbPlatformId(platform) : null;
+  if (platform && onePlatform === null) return null;
+  const platforms = onePlatform === null ? CONSOLE_PLATFORM_IDS : [onePlatform];
+  const where = `platforms = (${platforms.join(",")}) & game_type = (${CATALOG_GAME_TYPE_QUERY}) & involved_companies != null`;
+  const primary = `fields CATALOG_FIELDS; search "${escapeIgdbSearch(trimmed)}"; where ${where}; limit 100;`;
+  const words = normalizeCatalogSearch(trimmed).split(" ").filter(Boolean);
+  const last = words.at(-1);
+  const fallback = words.length >= 2 && last && last.length >= 3
+    ? `fields CATALOG_FIELDS; where ${where} & name ~ *"${escapeIgdbSearch(last)}"*; limit 100;`
+    : null;
+  return { primary, fallback };
+}
+
 export function igdbPlatformId(platform: string): number | null {
   return idByPlatform.get(platform) ?? null;
 }
@@ -96,15 +157,19 @@ export function igdbCoverUrl(imageId: string) {
 export function mapIgdbCandidates(
   games: IgdbRawGame[],
   platformFilter = "",
+  options: { requirePublisher?: boolean; consolesOnly?: boolean } = {},
 ): CanonicalGameCandidate[] {
   const wantedPlatformId = platformFilter ? igdbPlatformId(platformFilter) : null;
   const candidates: CanonicalGameCandidate[] = [];
 
   for (const game of games) {
-    if (!Number.isInteger(game.id) || !game.name?.trim()) continue;
+    if (!Number.isInteger(game.id) || !game.name?.trim() || !isCatalogGameType(game)) continue;
+    const publishers = companyNames(game, "publisher");
+    if (options.requirePublisher && publishers.length === 0) continue;
     const supported = (game.platforms ?? [])
       .map((platform) => Number(platform.id))
       .filter((id) => platformById.has(id))
+      .filter((id) => !options.consolesOnly || id !== igdbPlatformId("PC"))
       .filter((id) => wantedPlatformId === null || id === wantedPlatformId);
 
     for (const platformId of supported) {
@@ -122,7 +187,7 @@ export function mapIgdbCandidates(
         firstReleaseDate: dateFromUnix(game.first_release_date),
         genres: [...new Set((game.genres ?? []).map((genre) => genre.name?.trim() ?? "").filter(Boolean))],
         developers: companyNames(game, "developer"),
-        publishers: companyNames(game, "publisher"),
+        publishers,
         coverImageId,
         coverUrl: igdbCoverUrl(coverImageId),
       });

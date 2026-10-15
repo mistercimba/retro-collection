@@ -1,6 +1,6 @@
 # Canonical game catalog source
 
-Last reviewed: 2026-10-06
+Last reviewed: 2026-10-15
 
 The guided Add flow uses **IGDB** as the canonical identity/metadata source.
 
@@ -24,16 +24,19 @@ states that retrieved data may be retained.
 
 1. The browser calls the authenticated local route `/api/catalog/search`.
 2. The server calls IGDB using `IGDB_CLIENT_ID` and `IGDB_CLIENT_SECRET`.
-3. Search results are mapped only to the local supported-platform list.
-4. The user must explicitly choose a result. Ambiguous results are never auto-selected.
-5. On submit, the server resolves the selected IGDB game/platform again instead of
+3. For ordinary text search, the IGDB request is scoped **before its limit** to a selected platform or, when none is selected, supported **console** platforms (PC is explicit opt-in). IGDB game types for mods/forks/DLC/updates are excluded, and results without a recorded publishing company are not proposed as regular physical-collection candidates. This is a conservative **evidence threshold**, not proof of official licensing.
+   When IGDB's full-text search fails on a partial multiword name (e.g. `pokemon hear`), one bounded fallback matches the last substantial word and then verifies all user-entered normalized word prefixes locally. Unrelated matches are not guessed.
+   Explicit IGDB ID lookup is still available for records missing publisher metadata, but known mod/fork types are rejected; manual add remains the escape hatch for real missing games.
+4. Search results are mapped only to the local supported-platform list.
+5. The user must explicitly choose a result. Ambiguous results are never auto-selected.
+6. On submit, the server resolves the selected IGDB game/platform again instead of
    trusting hidden title/platform fields from the browser.
-6. The selected identity and a compact metadata snapshot are stored on the collection
+7. The selected identity and a compact metadata snapshot are stored on the collection
    record so normal browsing does not need IGDB.
-7. If a matching IGDB cover is available and the user did not change the edition, the
+8. If a matching IGDB cover is available and the user did not change the edition, the
    cover bytes are copied once into the existing private Vercel Blob store. Browsing
    then serves that private stored copy.
-8. If lookup or cover import fails, the existing explicit manual/placeholder behavior
+9. If lookup or cover import fails, the existing explicit manual/placeholder behavior
    remains available. A failed external lookup never silently invents an identity.
 
 Search responses are cached by Next for one day; selected identity lookups are cached
@@ -56,12 +59,20 @@ known.
 
 - Platform identity comes from IGDB.
 - IGDB version titles are used when present; otherwise the candidate is shown as
-  `Standard`.
+  `Standard`. These are **game database versions**, not an exhaustive register of country-specific physical boxes, launch bundles, SKU variants or included accessories.
 - Region is deliberately left for the user to confirm because the chosen game identity
   alone is not enough to prove the exact physical PAL country release.
 - If the user changes the edition from the selected catalog edition, automatic cover
   persistence is skipped so a Standard cover is not presented as a Platinum/Player's
   Choice/etc. cover.
+- Canonical Add now allows a human-entered **Extras / acessórios que tens** field
+  which is stored in the existing copy-specific `extras` field and can be edited
+  from the copy detail. Example: Pokémon HeartGold/SoulSilver European original
+  launch packs included the Pokéwalker accessory (Nintendo Europe announcement,
+  https://www.nintendo.com/pt-pt/Noticias/2010/Novo-acessorio-Pokewalker-traz-Pokemon-para-o-mundo-real-252312.html).
+  This is not proof that a particular used copy still includes it, nor grounds
+  for inventing a separate IGDB title or region-specific box. The owner confirms
+  actual included accessories and can record the precise packaging in Edition.
 
 ## Physical completeness
 
@@ -75,5 +86,5 @@ edition. The add flow therefore uses conservative platform profiles:
 - PSP: UMD + caixa + manual;
 - unknown platforms: only generic media + packaging.
 
-Each component can be **Tenho**, **Falta** or **Verificar depois**. Special-edition
-extras are never fabricated. Unknown answers mark the copy for later review.
+Each base component can be **Tenho**, **Falta** or **Verificar depois**. Special-edition
+extras are never fabricated; optional extras text records only what the owner says is actually present. Unknown answers mark the copy for later review.

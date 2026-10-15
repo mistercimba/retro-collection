@@ -2,7 +2,9 @@ import "server-only";
 import { unstable_cache } from "next/cache";
 import type { CanonicalGameIdentity } from "@/lib/data/types";
 import {
-  escapeIgdbSearch,
+  buildCatalogSearchBodies,
+  catalogTitleMatchesQuery,
+  rankCatalogMatch,
   mapIgdbCandidates,
   parseIgdbIdentifier,
   type CanonicalGameCandidate,
@@ -107,6 +109,7 @@ const fields = [
   "first_release_date",
   "version_title",
   "version_parent",
+  "game_type",
   "cover.image_id",
   "genres.name",
   "platforms.id",
@@ -118,18 +121,35 @@ const fields = [
 
 async function searchUncached(query: string, platform = ""): Promise<CanonicalGameCandidate[]> {
   const trimmed = query.trim();
-  if (!trimmed) return [];
-  const id = parseIgdbIdentifier(trimmed);
-  const body = id
-    ? `fields ${fields}; where id = ${id}; limit 10;`
-    : `fields ${fields}; search "${escapeIgdbSearch(trimmed)}"; limit 30;`;
+  const plan = buildCatalogSearchBodies(trimmed, platform);
+  if (!plan) return [];
 
-  return mapIgdbCandidates(await requestGames(body), platform);
+  const explicitId = parseIgdbIdentifier(trimmed) !== null;
+  const candidates = (games: IgdbRawGame[]) => mapIgdbCandidates(games, platform, {
+    requirePublisher: !explicitId,
+    consolesOnly: !platform,
+  }).filter((item) => explicitId || catalogTitleMatchesQuery(item.title, trimmed));
+
+  const primary = await requestGames(plan.primary.replace("CATALOG_FIELDS", fields));
+  let matches = candidates(primary);
+  // IGDB's free-text search does not reliably index unfinished words. Recover
+  // via a bounded substring on the last word, but verify the full typed name
+  // locally before showing anything. No guessed title or platform.
+  if (plan.fallback && matches.length < 12) {
+    const fallback = await requestGames(plan.fallback.replace("CATALOG_FIELDS", fields));
+    matches = candidates([...primary, ...fallback]);
+  }
+  return matches.sort((a, b) =>
+    rankCatalogMatch(a.title, trimmed) - rankCatalogMatch(b.title, trimmed)
+    || a.title.localeCompare(b.title, "pt-PT")
+    || a.platform.localeCompare(b.platform, "pt-PT")
+    || a.edition.localeCompare(b.edition, "pt-PT")
+  );
 }
 
 const cachedSearch = unstable_cache(
   searchUncached,
-  ["igdb-canonical-search-v1"],
+  ["igdb-canonical-search-v2"],
   { revalidate: 60 * 60 * 24 },
 );
 
@@ -161,7 +181,7 @@ async function resolveUncached(gameId: number, platformId: number): Promise<Omit
 
 const cachedResolve = unstable_cache(
   resolveUncached,
-  ["igdb-canonical-resolve-v1"],
+  ["igdb-canonical-resolve-v2"],
   { revalidate: 60 * 60 * 24 * 7 },
 );
 

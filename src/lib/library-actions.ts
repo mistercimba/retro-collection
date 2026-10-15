@@ -132,6 +132,7 @@ function blankGame(input: {
   purchaseId: string;
   paid: number | null;
   notes: string;
+  extras: string;
   canonical?: CanonicalGameIdentity;
   physical?: PhysicalAddState;
 }): CollectionGame {
@@ -149,7 +150,7 @@ function blankGame(input: {
     media: input.physical?.media ?? "Yes",
     box: input.physical?.box ?? (complete ? "Yes" : loose ? "No" : ""),
     manual: input.physical?.manual ?? (complete ? "Yes" : loose ? "No" : ""),
-    extras: "",
+    extras: input.extras,
     label: "",
     sealed: input.physical?.sealed ?? (/sealed|selado/i.test(input.completeness) ? "Yes" : "No"),
     overallStatus: input.physical?.completeness ?? input.completeness,
@@ -315,6 +316,7 @@ export async function editGame(form: FormData) {
       acquiredDate: purchaseDate || current.acquiredDate,
       purchaseId,
       allocatedCostEur: paid,
+      extras: text(form, "extras"),
       notes: text(form, "notes"),
     };
     const details: string[] = [];
@@ -324,6 +326,7 @@ export async function editGame(form: FormData) {
     changed("completude", current.overallStatus, nextGame.overallStatus, details);
     changed("condição", current.conditionGrade, nextGame.conditionGrade, details);
     changed("notas", current.notes, nextGame.notes, details);
+    changed("extras", current.extras, nextGame.extras, details);
     const nextPurchase = purchaseId ? library.purchases.find((purchase) => purchase.purchaseId === purchaseId) : undefined;
     changed("preço pago", previousPurchase?.totalPaidEur ?? current.allocatedCostEur, nextPurchase?.totalPaidEur ?? paid, details);
     changed("data de compra", previousPurchase?.date ?? current.acquiredDate, nextPurchase?.date ?? purchaseDate, details);
@@ -407,6 +410,7 @@ export async function addCollectionGame(form: FormData) {
       purchaseId,
       paid,
       notes: text(form, "notes"),
+      extras: text(form, "extras"),
       canonical,
       physical,
     }));
@@ -1121,6 +1125,7 @@ export async function receiveWishlistPurchase(form: FormData) {
       purchaseId: purchase.purchaseId,
       paid,
       notes: text(form, "notes"),
+      extras: text(form, "extras"),
       canonical: target.catalog,
       physical,
     }));
