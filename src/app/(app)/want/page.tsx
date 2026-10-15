@@ -37,9 +37,10 @@ export default async function WantPage() {
       </p>
     </header>
 
-    <section className="collection-panel flex flex-wrap items-center justify-between gap-3 p-4">
-      <div className="min-w-0">
-        <h2 className="text-sm font-black text-slate-950">Reforçar a Wishlist</h2>
+    <section className="grid gap-3 md:grid-cols-2">
+      <div className="collection-panel flex flex-wrap items-center justify-between gap-3 p-4">
+        <div className="min-w-0">
+          <h2 className="text-sm font-black text-slate-950">Reforçar a Wishlist</h2>
         <p className="mt-1 text-xs leading-5 text-slate-600">
           Sugestões com base nos jogos em falta nas tuas listas e objetivos. Só entram os que aprovares.
         </p>
@@ -47,6 +48,18 @@ export default async function WantPage() {
       <Link href="/want/suggestions" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-[#17382e] px-4 text-sm font-black text-white">
         Gerar sugestões →
       </Link>
+      </div>
+      <div className="collection-panel flex flex-wrap items-center justify-between gap-3 p-4">
+        <div className="min-w-0">
+          <h2 className="text-sm font-black text-slate-950">Lista de compra</h2>
+          <p className="mt-1 text-xs leading-5 text-slate-600">
+            Compara os teus tetos com referências PriceCharting/CeX em todas as consolas, sem inventar negócios.
+          </p>
+        </div>
+        <Link href="/want/buying" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-[#17382e] px-4 text-sm font-black text-white">
+          O que procurar →
+        </Link>
+      </div>
     </section>
 
     {ordered.length > 0 && <section className="collection-panel p-4">

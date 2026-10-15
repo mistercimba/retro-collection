@@ -22,7 +22,7 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-As of 2026-10-14 there are **no open GitHub Issues or PRs**. The latest feature (#52) has shipped. The next proposed scope is the Wishlist buying workflow below; it is **not** an approved implementation or an open Issue yet.
+On 2026-10-14, Product Owner started **Issue #74**, the cross-platform Wishlist buying shortlist. Implementation is underway in `feat/wishlist-buying-shortlist`; it is not yet shipped and still requires review and explicit merge approval.
 
 ### COMPLETED — Contextual Wishlist suggestions (#52)
 
@@ -81,13 +81,17 @@ Only change after visual verification:
 - Show Wishlist count on console cards if it remains readable.
 - Structured editing of component-level physical condition/audit data.
 
-### NEXT — Wishlist buying workflow
+### NOW — Wishlist buying shortlist (#74)
 
-- Good-deal / buying-opportunity queue using the calculated PriceCharting + CeX buy reference.
-- Define thresholds from real examples before automatic “good deal” claims.
-- Explicit region field only if splitting it from `targetVersion` materially improves matching/filtering.
-- Structured minimum completeness/condition only if it integrates with pricing/buying.
-- Below-reference-price queue/filter once there is a trustworthy listing input.
+First phase: a read-only cross-platform buying shortlist at `/want/buying`, entered explicitly from the Wishlist. Compare a user-defined price ceiling to the calculated PriceCharting PAL/CeX reference **only for explicitly requested Loose/CIB**, and group into reference inside ceiling, ceiling below reference, or insufficient data. Show source breakdown/dates and CeX generic ambiguity warnings, filter by console/priority, open exact Wishlist targets and existing manual marketplace searches. Do not include ordered/acquired/inactive/ambiguous targets; no writes or new integrations.
+
+**A reference is not a live listing**. The difference between ceiling and reference is not an observed saving or verified deal. Do not call any target a "good deal" from this calculation.
+
+Follow-up ideas after this first phase:
+- Evaluate real listing prices/condition/shipping against the correct reference before any actual opportunity/deal ranking.
+- Calibrate thresholds using real examples; do not hardcode discount percentages without evidence.
+- Introduce explicit region or minimum physical completeness fields only if those meaningfully improve matching/filtering.
+- A genuine below-reference listing queue requires a trustworthy live listing input.
 
 ### LATER — Price history and trends
 
