@@ -82,6 +82,7 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
    <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
     <Info label="Collection ID" value={game.collectionId}/>
     <Info label="Região / edição" value={[game.region,game.edition].filter(Boolean).join(" · ")}/>
+    {game.extras && <Info label="Extras / acessórios" value={game.extras}/>}
     <Info label="Completude" value={game.overallStatus}/>
     <Info label="Condição geral" value={game.conditionGrade}/>
     <Info label="Preço pago" value={paid!==null&&paid!==undefined?formatEuro(paid):"—"}/>
@@ -112,6 +113,7 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
     <input type="hidden" name="collectionId" value={game.collectionId}/>
     <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue={game.region}/><Field name="edition" label="Edição" value={game.edition}/><CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue={game.language}/><Field name="overallStatus" label="Completude" value={game.overallStatus}/><CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS} defaultValue={game.conditionGrade}/>
     <Field name="paid" label="Preço pago (€)" value={game.purchase?.totalPaidEur??game.allocatedCostEur??""} type="number" step="0.01"/><Field name="source" label="Onde comprei" value={game.purchase?.source??""}/><Field name="purchaseDate" label="Data de compra" value={game.purchase?.date||game.acquiredDate||""} type="date"/><Field name="seller" label="Vendedor" value={game.purchase?.seller??""}/><Field name="listingUrl" label="Link do anúncio" value={game.purchase?.listingUrl??""} type="url"/><Field name="purchaseNotes" label="Notas da compra" value={game.purchase?.notes??""}/>
+    <label className="sm:col-span-2"><span className="field-label">Extras / acessórios da cópia</span><input name="extras" defaultValue={game.extras} className="field-input" placeholder="Ex.: Pokéwalker incluído"/></label>
     <label className="sm:col-span-2"><span className="field-label">Notas da cópia</span><textarea name="notes" defaultValue={game.notes} className="field-input min-h-24"/></label>
     <ActionSubmitButton pendingLabel="A guardar…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">Guardar alterações</ActionSubmitButton>
    </form>

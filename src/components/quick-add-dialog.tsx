@@ -287,7 +287,7 @@ export function QuickAddDialog({
                       <label>
                         <span className="field-label">Consola</span>
                         <select value={platformFilter} onChange={(event) => setPlatformFilter(event.target.value)} className="field-input">
-                          <option value="">Todas</option>
+                          <option value="">Todas as consolas</option>
                           {allPlatforms.map((platform) => <option key={platform} value={platform}>{platform}</option>)}
                         </select>
                       </label>
@@ -519,7 +519,7 @@ function CanonicalAddForm({
     <label>
       <span className="field-label">Edição</span>
       <input name="edition" defaultValue={candidate.edition} className="field-input" />
-      <span className="mt-1 block text-[10px] leading-4 text-slate-400">Se alterares a edição, a capa do catálogo fica por confirmar.</span>
+      <span className="mt-1 block text-[10px] leading-4 text-slate-400">Descreve a embalagem real, se for diferente. O IGDB não enumera todas as variantes físicas; se alterares a edição, a capa fica por confirmar.</span>
     </label>
     <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL" />
     <CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English" />
@@ -539,6 +539,11 @@ function CanonicalAddForm({
         {sealed !== "yes" && profile.components.map((component) => <ComponentStateField key={component.key} componentKey={component.key} label={component.label} />)}
       </div>
       {candidate.edition !== "Standard" && <p className="mt-3 rounded-xl bg-amber-50 p-3 text-xs font-semibold leading-5 text-amber-900">Esta parece ser uma edição específica. O IGDB não descreve de forma fiável todos os inserts/extras físicos; confirma esses componentes depois em vez de os inventarmos.</p>}
+      <label className="mt-3 block">
+        <span className="field-label">Extras / acessórios que tens (opcional)</span>
+        <input name="extras" className="field-input" placeholder="Ex.: Pokéwalker incluído, com caixa" />
+        <span className="mt-1 block text-[10px] leading-4 text-slate-500">Só regista o que verificaste na tua cópia. Não assumimos que esteja incluído por ser desta edição.</span>
+      </label>
     </fieldset>
 
     <label>
@@ -614,6 +619,7 @@ function ManualAddForm({
     <CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS} />
     <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL" />
     <Field name="edition" label="Edição" placeholder="Standard" />
+    <Field name="extras" label="Extras / acessórios presentes" placeholder="Ex.: Pokéwalker, poster…" />
     <CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English" />
     <Field name="source" label="Onde comprei" />
     <Field name="purchaseDate" label="Data de compra" type="date" />
