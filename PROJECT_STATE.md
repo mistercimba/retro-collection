@@ -1,16 +1,22 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-14
+Last updated: 2026-10-15
 
 This is the living project handoff. Read `AGENTS.md` first.
 
-## Current status — 2026-10-14
+## Current status — 2026-10-15
 
-**Live `main` baseline:** `9440def0fb2ac7b2bd53f11c8abc0813de60126c` (PR #72). GitHub Actions **SUCCESS**, Vercel production **READY**. At this baseline checkpoint, no Issues or PRs were open. The Product Owner has since initiated **Issue #74** and the branch `feat/wishlist-buying-shortlist`, for a read-only cross-platform buying shortlist. This work is in progress, not deployed; consult `ROADMAP.md` for scope.
+**Latest `main` commit:** `02ea5089f6042d70e51d9bd19500b7dd5c2d02a9` (PR #75, following PR #77 at `484dd74f558659208c70a0fb4db66ca1ac00c652`). Both feature PRs had GitHub Actions SUCCESS and Vercel Preview READY before merge; the latest post-merge CI and production status require live verification. At this checkpoint there are **no open GitHub Issues or PRs**. Consult `ROADMAP.md` for proposed next work.
 
-### Active — Wishlist buying shortlist (#74)
+### Completed — Wishlist buying shortlist (#74; PR #75)
 
-Owner authorized starting the next recommended Wishlist buying workflow on 2026-10-14. Planned first delivery: `/want/buying`, aggregating definitively missing, active, not-ordered Wishlist targets across consoles. Compare existing PriceCharting PAL and CeX buying references against the **same** requested Loose/CIB condition and a valid user-defined ceiling; distinguish within-ceiling, below-reference and incomplete data with source confidence/dates. Provide filters and marketplace search links. No live offers, "good deal" labels, threshold guesses, schema changes, notifications, purchases or private Blob writes. PR requires new explicit owner approval before merge; no authenticated visual QA should be claimed without browser access.
+Owner approved merge on 2026-10-15; PR #75 merged at `02ea5089f6042d70e51d9bd19500b7dd5c2d02a9` and Issue #74 closed. `/want/buying` aggregates definitively missing, active, not-ordered Wishlist targets across consoles. Compare existing PriceCharting PAL and CeX buying references against the **same** requested Loose/CIB condition and a valid user-defined ceiling; distinguish within-ceiling, below-reference and incomplete data with source confidence/dates. Provide filters and marketplace search links. No live offers, "good deal" labels, threshold guesses, schema changes, notifications, purchases or private Blob writes. The owner explicitly approved the merge; no authenticated visual QA was performed, and the pre-merge CI/Preview are not a substitute for live user validation.
+
+### Completed — IGDB search quality and physical extras (#76; PR #77)
+
+Owner approved merge on 2026-10-15; PR #77 merged at `484dd74f558659208c70a0fb4db66ca1ac00c652` and Issue #76 closed. The IGDB search previously fetched 30 results before filtering the local platform; it now constrains eligible game types and platforms in the IGDB request, uses a larger upstream limit, and attempts a bounded locally verified partial-title recovery. Broad default catalog search excludes PC and uses publisher metadata as a conservative proxy for legitimate commercial software; explicitly chosen PC remains available, and an exact IGDB ID can bypass missing publisher metadata but not a known mod/fork category. The genuine published retail release/edition list cannot be guaranteed exhaustively by IGDB. Canonical owned-copy Add and copy-detail editing now support copy-specific physical extras, including an owner-confirmed Pokéwalker, without adding a database field or fabricating separate IGDB games. The receive action can accept extras, but the receipt UI was not extended in this PR.
+
+CI and Vercel Preview passed on the feature candidate. **Not verified:** the exact authenticated production results for the reported Pokémon queries or all retail packaging variants. The app's `extras` field records what the owner confirms is present in the physical copy; do not infer package contents or edition from IGDB.
 
 ### Completed — contextual Wishlist suggestions (#52)
 
@@ -417,7 +423,7 @@ Production commit:
 All pending, planned, blocked and deliberately deferred work is maintained in
 [ROADMAP.md](ROADMAP.md). Do not duplicate the roadmap in this handoff.
 
-Issues #50, #52, #60, #62, #68 and #70 are closed. Issue #74 is now the active buying-shortlist scope on a separate branch; the Product Owner must approve its PR before merge. Mobile/laptop/offline real-device checks were waived under #68 and are not a blocking active task.
+Issues #50, #52, #60, #62, #68, #70, #74 and #76 are closed. The Wishlist buying shortlist (PR #75) and catalog search fix (PR #77) are merged. There are no open Issues/PRs. Mobile/laptop/offline real-device checks were waived under #68 and remain unverified; they are not a blocking active task.
 
 ## Handoff prompt for a brand-new chat
 
