@@ -129,4 +129,16 @@ describe("external game data matching and display", () => {
     expect(estimateCondition({ sealed: "No", media: "Yes", box: "No", manual: "No" })).toMatchObject({ label: "Loose" });
     expect(estimateCondition({ sealed: "", media: "Yes", box: "Yes", manual: "Yes" })).toBeNull();
   });
+  it("honors platform-specific physical completeness and does not invent Loose", () => {
+    for (const platform of ["Nintendo Switch", "Playstation 5"]) {
+      expect(estimateCondition({ platform, sealed: "No", media: "Yes", box: "Yes", manual: "" })?.label).toBe("CIB");
+      expect(estimateCondition({ platform, sealed: "No", media: "Yes", box: "No", manual: "" })?.label).toBe("Loose");
+    }
+    expect(estimateCondition({ platform: "Playstation 2", sealed: "No", media: "Yes", box: "Yes", manual: "" })).toBeNull();
+    expect(estimateCondition({ platform: "Playstation 2", sealed: "No", media: "Yes", box: "Yes", manual: "No" })).toBeNull();
+    expect(estimateCondition({ platform: "GameCube", sealed: "No", media: "No", box: "No", manual: "No" })).toBeNull();
+    expect(estimateCondition({ platform: "Nintendo DS", sealed: "No", media: "Yes", box: "No", manual: "" })).toBeNull();
+    expect(estimateCondition({ platform: "Game Boy", sealed: "No", media: "Yes", box: "No", manual: "No" })?.label).toBe("Loose");
+    expect(estimateCondition({ platform: "Playstation 5", sealed: "Unknown", media: "Yes", box: "Yes", manual: "" })).toBeNull();
+  });
 });

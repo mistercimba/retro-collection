@@ -8,6 +8,8 @@ import {editGame,removeCollectionGame} from "@/lib/library-actions";
 import {getComponentNeedsForGame,getGame,getGameCopies} from "@/lib/data/collection-service";
 import {displayPlatform,platformSlug} from "@/lib/data/platforms";
 import {formatEuro} from "@/lib/format";
+import {resolveCopyValue, copyValueDescription} from "@/lib/collection-valuation.logic";
+import {getPricechartingEstimates} from "@/lib/pricecharting-catalog";
 import {getGameResearch} from "@/lib/game-research";
 import {getSafeListReturnPath} from "@/lib/list-url-state.logic";
 import { ActionSubmitButton } from "@/components/action-submit-button";
@@ -26,8 +28,15 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
  const metadata=research.metadata;
  const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
  const paid=game.purchase?.totalPaidEur??game.allocatedCostEur;
- const estimatedValue=game.latestValuation?.valueEur??game.marketValueEur;
- const valueDifference=paid!==null&&paid!==undefined&&estimatedValue!==null&&estimatedValue!==undefined?estimatedValue-paid:null;
+ const copyValue=resolveCopyValue(game,research.estimate);
+ const estimatedValue=copyValue.value;
+ const otherCopies=copies.filter((copy)=>copy.collectionId!==game.collectionId);
+ const otherEstimates=otherCopies.length?await getPricechartingEstimates(otherCopies):new Map();
+ const copyValues=Object.fromEntries(copies.map((copy)=>[
+  copy.collectionId,
+  copy.collectionId===game.collectionId?copyValue:resolveCopyValue(copy,otherEstimates.get(copy.collectionId)),
+ ]));
+ const valueDifference=paid!==null&&paid!==undefined&&estimatedValue!==null?estimatedValue-paid:null;
  const audit=game.audit;
  const auditFields=[
   ["Funcional",audit?.functionalStatus],
@@ -72,7 +81,7 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
 
   <PriceGuidePanel guide={research.priceGuide} cexCashEur={game.cexCashEur}/>
 
-  <OwnedCopyGroup current={game} copies={copies} returnTo={returnTo}/>
+  <OwnedCopyGroup current={game} copies={copies} returnTo={returnTo} copyValues={copyValues}/>
 
   <section className="collection-panel p-4">
    <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -86,7 +95,8 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
     <Info label="Completude" value={game.overallStatus}/>
     <Info label="Condição geral" value={game.conditionGrade}/>
     <Info label="Preço pago" value={paid!==null&&paid!==undefined?formatEuro(paid):"—"}/>
-    <Info label="Valor estimado" value={estimatedValue!==null&&estimatedValue!==undefined?formatEuro(estimatedValue):"—"}/>
+    <Info label="Valor da cópia" value={formatEuro(estimatedValue)}/>
+    <Info label="Origem do valor" value={copyValueDescription(copyValue)}/>
     <Info label="Diferença vs. pago" value={formatDifference(valueDifference)}/>
     <Info label="Compra" value={[game.purchase?.date,game.purchase?.source].filter(Boolean).join(" · ")}/>
    </dl>

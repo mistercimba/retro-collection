@@ -22,11 +22,11 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-Issue #79 is **CLOSED**: PR #80 merged as `f177e7b03b1141e55633b6536cb0994b052850db`, with GitHub CI SUCCESS and Vercel production READY. The current active task is **Issue #81**, a systematic cross-platform **source audit** of the European catalog. Tests and fixes are under review on `audit/catalog-pal-cross-platform`; no merge before explicit Product Owner approval. This is not a completed live/authenticated IGDB dataset audit.
+### NOW — Copy valuation consistency (#84)
+The first focused implementation from audit #83 P0 (F1/F2) is under review. It aligns provenance-aware value presentation across copy details, duplicate-copy panels, all-games lists and platform totals, and uses platform-specific physical profiles to determine PriceCharting CIB/Loose conditions. No production Blob writes, schema migration or merge without Product Owner approval.
 
-### NOW — 18-platform European catalog source audit (#81)
-
-Audit the entire supported IGDB platform registry for exact game+console Europe-release filtering, modern/deprecated regional metadata compatibility, false-positive imports, silent result truncation and regional release-year ambiguity. Deterministic tests cover **all 18** supported platform identities, including PC explicitly, but do **not** certify live IGDB coverage or physical PAL retail editions. Fix confirmed source/UI defects without per-game exceptions or extra backend integrations. A dated audit evidence document lives at `docs/IGDB_EU_CATALOG_AUDIT_2026-10-15.md`; the PR remains unmerged pending explicit owner approval.
+### COMPLETED — 18-platform European catalog source audit (#81; PR #82)
+PR #82 merged into `main` on 2026-10-15 as `940226a2d8236e519ed406a4eb8bcfe1c954c2b1`. Deterministic code audit, not live authenticated IGDB coverage or proof of a physical PAL SKU.
 
 ### COMPLETED — European-only canonical Add (#79; PR #80)
 

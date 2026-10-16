@@ -1,18 +1,18 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-15
+Last updated: 2026-10-16
 
 This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-15
 
-**Latest production `main` commit:** `f177e7b03b1141e55633b6536cb0994b052850db` (PR #80). The post-merge GitHub Actions completed **SUCCESS**, Vercel production **READY** and Issue #79 is closed. At audit intake, no other issues/PRs were open. **Issue #81 is now active** on `audit/catalog-pal-cross-platform`; no merge has been approved for its code changes.
+**Latest merged `main` commit confirmed:** `940226a2d8236e519ed406a4eb8bcfe1c954c2b1` (PR #82, 2026-10-15). Issue #81 is closed. No authenticated production/browser QA is claimed here.
 
-### Active — cross-platform European catalog audit (#81)
+### Candidate — copy valuation consistency and physical profiles (#84)
+Issue #84 implements audit #83 P0 findings F1/F2. The candidate unifies valuation selection across copy detail, duplicate-copy grouping, global/platform lists and totals, and fixes CIB/Loose PriceCharting matching for platform-specific component profiles. Unknown/mixed completeness is not automatically priced. Code only, no private Blob writes or schema migration; awaiting CI, Preview and owner merge approval.
 
-The Product Owner requested a systematic audit of **all supported platforms**, rather than one-title-at-a-time patches. Findings: the deprecated IGDB release-region field was consumed locally but unavailable to cached search responses; the 24-card result cap was invisible; first **global** release year was presented as if regional; stale search hits remained clickable while a query changed. The focused candidate adds a conditional best-effort legacy-region lookup when modern search is empty, includes exact-platform European release year when known, clears old selectable results during debounce and flags non-exhaustive search windows. A synthetic 18-platform test matrix validates the common filters against US/JP/AU/Worldwide/absent/cross-console cases. Evidence and limits: `docs/IGDB_EU_CATALOG_AUDIT_2026-10-15.md`.
-
-**Unverified:** authenticated live IGDB responses, whether deprecated field filtering still works in production, all genuine PAL physical SKU/edition coverage and real-device visual behavior. Tests with synthetic fixtures are not a live Europe-release dataset audit. The collector's private Blob is not modified.
+### Completed — European catalog source audit (#81; PR #82)
+PR #82 merged on 2026-10-15 at `940226a2d8236e519ed406a4eb8bcfe1c954c2b1`. Changes cover legacy regional evidence fallback, nonexhaustive search results, regional year labeling and stale result selection. Synthetic tests across 18 platforms are not a live certified PAL retail edition audit.
 
 ### Completed — European-only canonical Add (#79; PR #80)
 

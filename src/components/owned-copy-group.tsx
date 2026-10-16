@@ -6,13 +6,10 @@ import { CONDITION_OPTIONS, LANGUAGE_OPTIONS, REGION_OPTIONS } from "@/lib/colle
 import { addCollectionGame } from "@/lib/library-actions";
 import type { CollectionGame } from "@/lib/data/types";
 import { formatEuro } from "@/lib/format";
+import type { CopyValue } from "@/lib/collection-valuation.logic";
 
 function paidValue(copy: CollectionGame): number | null {
   return copy.purchase?.totalPaidEur ?? copy.allocatedCostEur ?? null;
-}
-
-function estimatedValue(copy: CollectionGame): number | null {
-  return copy.latestValuation?.valueEur ?? copy.marketValueEur ?? null;
 }
 
 function statusLabel(copy: CollectionGame): string {
@@ -29,10 +26,12 @@ export function OwnedCopyGroup({
   current,
   copies,
   returnTo,
+  copyValues,
 }: {
   current: CollectionGame;
   copies: CollectionGame[];
   returnTo: string;
+  copyValues: Record<string, CopyValue>;
 }) {
   return <section className="collection-panel p-4">
     <div className="flex flex-wrap items-start justify-between gap-3">
@@ -68,7 +67,7 @@ export function OwnedCopyGroup({
           </p>
           <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
             <CopyFact label="Pago" value={formatEuro(paidValue(copy))}/>
-            <CopyFact label="Valor" value={formatEuro(estimatedValue(copy))}/>
+            <div title={copyValues[copy.collectionId]?.source ?? "Valor não disponível"}><CopyFact label="Valor" value={formatEuro(copyValues[copy.collectionId]?.value)}/></div>
             <CopyFact label="Fotos" value={String(copy.photos?.length ?? 0)}/>
           </div>
         </div>;
