@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Camera, Trash2, Upload } from "lucide-react";
+import { Camera, ChevronLeft, ChevronRight, Trash2, Upload, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import type { OwnedCopyPhoto, OwnedCopyPhotoKind } from "@/lib/data/types";
-import { MAX_OWNED_COPY_PHOTOS, OWNED_COPY_PHOTO_KIND_OPTIONS, ownedCopyPhotoLabel } from "@/lib/owned-copy-photos.logic";
+import { MAX_OWNED_COPY_PHOTOS, OWNED_COPY_PHOTO_KIND_OPTIONS, ownedCopyPhotoLabel, adjacentPhotoIndex } from "@/lib/owned-copy-photos.logic";
 
 const ACCEPTED_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/avif"]);
 const CLIENT_RESIZE_THRESHOLD = 1.5 * 1024 * 1024;
@@ -55,11 +55,27 @@ export function OwnedCopyPhotos({
 }) {
   const router = useRouter();
   const fileRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
+  const selectedPhoto = selectedPhotoIndex === null ? null : photos[selectedPhotoIndex] ?? null;
   const [kind, setKind] = useState<OwnedCopyPhotoKind>("front");
   const [busy, setBusy] = useState(false);
   const [removing, setRemoving] = useState<string | null>(null);
   const [error, setError] = useState("");
   const limitReached = photos.length >= MAX_OWNED_COPY_PHOTOS;
+
+  function openPhoto(index: number) {
+    setSelectedPhotoIndex(index);
+    dialogRef.current?.showModal();
+  }
+
+  function changePhoto(direction: -1 | 1) {
+    setSelectedPhotoIndex((current) => current === null ? null : adjacentPhotoIndex(current, photos.length, direction));
+  }
+
+  function closePhoto() {
+    dialogRef.current?.close();
+  }
 
   async function uploadPhoto(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -116,14 +132,21 @@ export function OwnedCopyPhotos({
     </div>
 
     {photos.length > 0 ? <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-      {photos.map((photo) => <figure key={photo.id} className="overflow-hidden rounded-2xl border border-[#e2ddd2] bg-[#faf8f2]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`/api/copy-photos/${encodeURIComponent(photo.id)}?collectionId=${encodeURIComponent(collectionId)}`}
-          alt={`${ownedCopyPhotoLabel(photo.kind)} — ${title}`}
-          className="aspect-[4/3] w-full bg-slate-100 object-cover"
-          loading="lazy"
-        />
+      {photos.map((photo, index) => <figure key={photo.id} className="overflow-hidden rounded-2xl border border-[#e2ddd2] bg-[#faf8f2]">
+        <button
+          type="button"
+          onClick={() => openPhoto(index)}
+          aria-label={`Ampliar fotografia ${ownedCopyPhotoLabel(photo.kind)} de ${title}`}
+          className="block w-full cursor-zoom-in rounded-t-2xl focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#17382e]"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/api/copy-photos/${encodeURIComponent(photo.id)}?collectionId=${encodeURIComponent(collectionId)}`}
+            alt={`${ownedCopyPhotoLabel(photo.kind)} — ${title}`}
+            className="aspect-[4/3] w-full bg-slate-100 object-cover"
+            loading="lazy"
+          />
+        </button>
         <figcaption className="flex items-center justify-between gap-2 p-2.5">
           <span className="truncate text-xs font-bold text-slate-700">{ownedCopyPhotoLabel(photo.kind)}</span>
           <button
@@ -142,6 +165,55 @@ export function OwnedCopyPhotos({
       <p className="mt-2 text-sm font-bold text-slate-700">Ainda não há fotos desta cópia.</p>
       <p className="mt-1 text-xs text-slate-500">Podes começar pela frente, verso ou pelo disco/cartucho.</p>
     </div>}
+
+    <dialog
+      ref={dialogRef}
+      aria-label={`Fotografias da cópia — ${title}`}
+      onClose={() => setSelectedPhotoIndex(null)}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft" && photos.length > 1) {
+          event.preventDefault();
+          changePhoto(-1);
+        } else if (event.key === "ArrowRight" && photos.length > 1) {
+          event.preventDefault();
+          changePhoto(1);
+        }
+      }}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) closePhoto();
+      }}
+      className="m-auto max-h-[calc(100dvh-2rem)] w-[min(94vw,72rem)] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-2xl border border-[#e2ddd2] bg-[#faf8f2] p-0 text-slate-950 shadow-xl backdrop:bg-slate-950/80"
+    >
+      {selectedPhoto && selectedPhotoIndex !== null && <div className="flex flex-col">
+        <header className="flex items-start justify-between gap-3 border-b border-[#e2ddd2] px-4 py-3">
+          <div className="min-w-0">
+            <p className="truncate text-sm font-black">{ownedCopyPhotoLabel(selectedPhoto.kind)} — {title}</p>
+            <p className="mt-1 text-xs font-semibold text-slate-500">Fotografia {selectedPhotoIndex + 1} de {photos.length}</p>
+          </div>
+          <button type="button" onClick={closePhoto} aria-label="Fechar fotografia ampliada" className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-slate-700 hover:bg-[#e5eadf] focus-visible:outline-2 focus-visible:outline-[#17382e]">
+            <X className="h-5 w-5" aria-hidden="true" />
+          </button>
+        </header>
+        <div className="flex min-h-0 items-center justify-center bg-[#e8e7e1] p-2 sm:p-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            key={selectedPhoto.id}
+            src={`/api/copy-photos/${encodeURIComponent(selectedPhoto.id)}?collectionId=${encodeURIComponent(collectionId)}`}
+            alt={`${ownedCopyPhotoLabel(selectedPhoto.kind)} — ${title}`}
+            className="max-h-[calc(100dvh-12rem)] max-w-full object-contain"
+          />
+        </div>
+        {photos.length > 1 && <nav aria-label="Navegar pelas fotografias" className="flex items-center justify-between gap-3 border-t border-[#e2ddd2] px-4 py-3">
+          <button type="button" onClick={() => changePhoto(-1)} className="inline-flex min-h-10 items-center gap-2 rounded-xl px-3 text-sm font-bold hover:bg-[#e5eadf] focus-visible:outline-2 focus-visible:outline-[#17382e]">
+            <ChevronLeft className="h-4 w-4" aria-hidden="true" /> Anterior
+          </button>
+          <span className="text-xs font-bold tabular-nums text-slate-500">{selectedPhotoIndex + 1} / {photos.length}</span>
+          <button type="button" onClick={() => changePhoto(1)} className="inline-flex min-h-10 items-center gap-2 rounded-xl px-3 text-sm font-bold hover:bg-[#e5eadf] focus-visible:outline-2 focus-visible:outline-[#17382e]">
+            Seguinte <ChevronRight className="h-4 w-4" aria-hidden="true" />
+          </button>
+        </nav>}
+      </div>}
+    </dialog>
 
     <form onSubmit={uploadPhoto} className="mt-4 grid gap-2 sm:grid-cols-[160px_minmax(0,1fr)_auto]">
       <select

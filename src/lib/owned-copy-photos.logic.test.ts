@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   MAX_OWNED_COPY_PHOTO_BYTES,
+  adjacentPhotoIndex,
   isOwnedCopyPhotoKind,
   ownedCopyPhotoExtension,
   ownedCopyPhotoLabel,
@@ -26,5 +27,22 @@ describe("owned-copy photo rules", () => {
     expect(validateOwnedCopyPhotoFile({ type: "image/gif", size: 1000 })).toMatch(/JPEG/);
     expect(validateOwnedCopyPhotoFile({ type: "image/jpeg", size: 0 })).toMatch(/vazia/);
     expect(validateOwnedCopyPhotoFile({ type: "image/jpeg", size: MAX_OWNED_COPY_PHOTO_BYTES + 1 })).toMatch(/4 MB/);
+  });
+});
+
+describe("private photo viewer navigation", () => {
+  it("moves in either direction and wraps within one copy", () => {
+    expect(adjacentPhotoIndex(0, 3, 1)).toBe(1);
+    expect(adjacentPhotoIndex(2, 3, 1)).toBe(0);
+    expect(adjacentPhotoIndex(0, 3, -1)).toBe(2);
+    expect(adjacentPhotoIndex(0, 1, 1)).toBe(0);
+    expect(adjacentPhotoIndex(11, 12, 1)).toBe(0);
+  });
+
+  it("does not select a photo from an empty or invalid gallery", () => {
+    expect(adjacentPhotoIndex(0, 0, 1)).toBeNull();
+    expect(adjacentPhotoIndex(-1, 4, 1)).toBeNull();
+    expect(adjacentPhotoIndex(4, 4, -1)).toBeNull();
+    expect(adjacentPhotoIndex(Number.NaN, 4, 1)).toBeNull();
   });
 });
