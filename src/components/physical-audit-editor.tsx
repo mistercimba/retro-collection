@@ -56,40 +56,38 @@ function LongField({ name, label, value = "", placeholder = "" }: {
   </label>;
 }
 
-/** Observation-only editor: physical presence remains in the separate copy checklist. */
+/** Keep the everyday identification workflow small; legacy audit detail stays opt-in. */
 export function PhysicalAuditEditor({ game }: { game: CollectionGame }) {
   const audit: AuditRecord | null = game.audit;
   return <details className="collection-panel p-4">
-    <summary className="cursor-pointer text-sm font-black text-slate-900">Editar auditoria física da cópia</summary>
-    <p className="mt-2 text-xs leading-5 text-slate-600">
-      Regista apenas o que observaste nesta cópia. Uma edição europeia no IGDB não confirma
-      automaticamente o país, o código de produto nem os idiomas da tua edição física.
-      A checklist de peças em falta é gerida separadamente.
-    </p>
+    <summary className="cursor-pointer text-sm font-black text-slate-900">Identificação da edição</summary>
     <form action={savePhysicalAudit} className="mt-4 grid gap-3 sm:grid-cols-2">
       <input type="hidden" name="collectionId" value={game.collectionId} />
-      <SelectField name="auditStatus" label="Estado da auditoria" value={audit?.auditStatus} options={AUDIT_STATUSES} />
-      <InputField name="auditDate" label="Data da auditoria" value={audit?.auditDate} placeholder="AAAA-MM-DD ou data histórica" />
-      <InputField name="localizedTitle" label="Título impresso na cópia" value={audit?.localizedTitle} />
-      <InputField name="productCode" label="Código de produto / SKU" value={audit?.productCode} placeholder="Ex.: SLES-XXXXX" />
-      <InputField name="ean" label="EAN / código de barras observado" value={audit?.ean} inputMode="numeric" placeholder="Transcrição por verificar" />
-      <InputField name="releaseMarket" label="Mercado / país impresso" value={audit?.releaseMarket} placeholder="Ex.: Portugal / Reino Unido" />
-      <InputField name="observedLanguages" label="Idiomas observados" value={audit?.observedLanguages} wide placeholder="Idiomas da capa, manual ou jogo; discrimina nas notas" />
-      <SelectField name="functionalStatus" label="Funcionamento testado" value={audit?.functionalStatus} options={FUNCTIONAL_STATUSES} />
-      <InputField name="packaging" label="Embalagem / sleeve" value={audit?.packaging} placeholder="Ex.: Caixa original PAL" />
-      <SelectField name="mediaCondition" label="Condição do disco / cartucho" value={audit?.mediaCondition} options={COMPONENT_CONDITIONS} />
-      <SelectField name="labelCondition" label="Condição da label" value={audit?.labelCondition} options={COMPONENT_CONDITIONS} />
-      <SelectField name="boxCondition" label="Condição da caixa" value={audit?.boxCondition} options={COMPONENT_CONDITIONS} />
-      <SelectField name="manualCondition" label="Condição do manual" value={audit?.manualCondition} options={COMPONENT_CONDITIONS} />
-      <LongField name="evidenceBasis" label="Base da evidência" value={audit?.evidenceBasis} placeholder="O que verificaste fisicamente ou nas fotografias?" />
-      <LongField name="sources" label="Fontes consultadas" value={audit?.sources} placeholder="Referências para confirmar a variante (opcional)" />
-      <LongField name="auditNotes" label="Notas detalhadas da auditoria" value={audit?.auditNotes} placeholder="Observações adicionais, ressalvas e pontos ainda por confirmar" />
-      <p className="text-xs leading-5 text-slate-500 sm:col-span-2">
-        O EAN é guardado como transcrição, não como validação externa. Só assinala
-        “Confirmada” se tiveres verificado a cópia. Este formulário não muda a completude nem o preço automaticamente.
-      </p>
-      <ActionSubmitButton pendingLabel="A guardar auditoria…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">
-        Guardar auditoria física
+      <InputField name="productCode" label="Código de produto" value={audit?.productCode} placeholder="Ex.: SLES-XXXXX" />
+      <InputField name="ean" label="EAN / código de barras" value={audit?.ean} inputMode="numeric" />
+      <InputField name="releaseMarket" label="País / mercado da edição" value={audit?.releaseMarket} placeholder="Ex.: Portugal" wide />
+
+      <details className="rounded-xl border border-[#e2ddd2] bg-[#faf8f2] p-3 sm:col-span-2">
+        <summary className="cursor-pointer text-xs font-bold text-slate-700">Mais detalhes (opcional)</summary>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <SelectField name="auditStatus" label="Estado da auditoria" value={audit?.auditStatus} options={AUDIT_STATUSES} />
+          <InputField name="auditDate" label="Data da auditoria" value={audit?.auditDate} placeholder="AAAA-MM-DD" />
+          <InputField name="localizedTitle" label="Título impresso" value={audit?.localizedTitle} />
+          <InputField name="observedLanguages" label="Idiomas observados" value={audit?.observedLanguages} />
+          <SelectField name="functionalStatus" label="Funcionamento" value={audit?.functionalStatus} options={FUNCTIONAL_STATUSES} />
+          <InputField name="packaging" label="Embalagem" value={audit?.packaging} />
+          <SelectField name="mediaCondition" label="Disco / cartucho" value={audit?.mediaCondition} options={COMPONENT_CONDITIONS} />
+          <SelectField name="labelCondition" label="Label" value={audit?.labelCondition} options={COMPONENT_CONDITIONS} />
+          <SelectField name="boxCondition" label="Caixa" value={audit?.boxCondition} options={COMPONENT_CONDITIONS} />
+          <SelectField name="manualCondition" label="Manual" value={audit?.manualCondition} options={COMPONENT_CONDITIONS} />
+          <LongField name="evidenceBasis" label="Evidência" value={audit?.evidenceBasis} />
+          <LongField name="sources" label="Fontes" value={audit?.sources} />
+          <LongField name="auditNotes" label="Notas da auditoria" value={audit?.auditNotes} />
+        </div>
+      </details>
+
+      <ActionSubmitButton pendingLabel="A guardar…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">
+        Guardar
       </ActionSubmitButton>
     </form>
   </details>;
