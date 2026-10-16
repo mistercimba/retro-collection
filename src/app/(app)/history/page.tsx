@@ -8,6 +8,7 @@ export const metadata = { title: "Histórico" };
 const actionMeta: Record<LibraryHistoryAction, { label: string; icon: typeof History }> = {
   "collection.add": { label: "Coleção", icon: Plus },
   "collection.edit": { label: "Coleção", icon: Pencil },
+  "collection.audit": { label: "Auditoria física", icon: ListChecks },
   "collection.remove": { label: "Coleção", icon: Trash2 },
   "collection.photo.add": { label: "Foto", icon: Camera },
   "collection.photo.remove": { label: "Foto", icon: Trash2 },
