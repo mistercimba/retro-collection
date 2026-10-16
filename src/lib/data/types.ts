@@ -102,6 +102,7 @@ export interface PlatformStats {
   audited: number;
   review: number;
   marketValueEur: number | null;
+  valuedCount: number;
 }
 
 export interface CollectionStats {

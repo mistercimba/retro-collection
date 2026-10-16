@@ -1,4 +1,5 @@
 import { getLibrary } from "@/lib/library-store";
+import { getCollectionListGames } from "@/lib/game-list-data";
 import { platformSlug } from "./platforms";
 import { matchWantTarget } from "./wishlist-matching";
 import { isAuditCompleted, selectLatestValuation } from "./collection-integrity";
@@ -46,19 +47,21 @@ export async function getGameCopies(collectionId: string): Promise<CollectionGam
 }
 
 export async function getStats(): Promise<CollectionStats> {
-  const games = await getAllGames();
+  const [games, valuedGames] = await Promise.all([getAllGames(), getCollectionListGames()]);
   const kept = games.filter((g) => g.keepStatus === "Collection");
   const sell = games.filter((g) => g.keepStatus === "Sell");
   const platforms = [...new Set(kept.map((game) => game.platform))]
     .map((platform) => {
       const items = kept.filter((game) => game.platform === platform);
+      const priced = valuedGames.filter((game) => game.platform === platform);
       return {
         platform,
         slug: platformSlug(platform),
         count: items.length,
         audited: items.filter((game) => isAuditCompleted(game.audit?.auditStatus)).length,
         review: items.filter((game) => game.needsReview).length,
-        marketValueEur: sumKnownMarketValues(items),
+        marketValueEur: sumKnownMarketValues(priced.map((game) => ({ marketValueEur: game.currentValueEur }))),
+        valuedCount: priced.filter((game) => game.currentValueEur !== null).length,
       };
     });
 
@@ -68,7 +71,7 @@ export async function getStats(): Promise<CollectionStats> {
     sold: games.filter((g) => g.keepStatus === "Sold").length,
     review: kept.filter((g) => g.needsReview).length,
     auditRecords: games.filter((game) => isAuditCompleted(game.audit?.auditStatus)).length,
-    marketValueEur: sumKnownMarketValues(kept),
+    marketValueEur: sumKnownMarketValues(valuedGames.map((game) => ({ marketValueEur: game.currentValueEur }))),
     platforms,
   };
 }

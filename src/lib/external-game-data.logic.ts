@@ -1,4 +1,5 @@
 import { editionsCompatible, titleMatchRank, type TitleMatchRank } from "./game-title-match.logic";
+import { physicalCopyProfile, type PhysicalComponentKey } from "./physical-copy-profile.logic";
 
 export function normalizeMatchTitle(value: string): string {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -98,14 +99,23 @@ export function lookupPalPricechartingMatch(catalog: PricechartingCatalog, platf
   return unique.length === 1 ? { product: unique[0], pricechartingPlatform: targetPlatform.id } : null;
 }
 
-export function estimateCondition(game: { sealed: string; media: string; box: string; manual: string }): { sealed: boolean; complete: boolean; label: "New" | "CIB" | "Loose" } | null {
+export function estimateCondition(game: { platform?: string; sealed: string; media: string; box: string; manual: string }): { sealed: boolean; complete: boolean; label: "New" | "CIB" | "Loose" } | null {
   const yes = (value: string) => /^(yes|sim|true|1)$/i.test(value.trim());
   const no = (value: string) => /^(no|nao|não|false|0)$/i.test(value.trim());
   if (yes(game.sealed)) return { sealed: true, complete: false, label: "New" };
   if (!no(game.sealed)) return null;
-  const parts = [game.media, game.box, game.manual];
-  if (parts.every(yes)) return { sealed: false, complete: true, label: "CIB" };
-  if (parts.some(no)) return { sealed: false, complete: false, label: "Loose" };
+
+  // Only require the components belonging to the actual console profile.
+  const required: PhysicalComponentKey[] = game.platform
+    ? physicalCopyProfile(game.platform).components.map((part) => part.key)
+    : ["media", "box", "manual"];
+  if (required.every((key) => yes(game[key]))) {
+    return { sealed: false, complete: true, label: "CIB" };
+  }
+  // Mixed/unknown completeness must not be silently converted to Loose.
+  if (yes(game.media) && required.filter((key) => key !== "media").every((key) => no(game[key]))) {
+    return { sealed: false, complete: false, label: "Loose" };
+  }
   return null;
 }
 

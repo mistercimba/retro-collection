@@ -29,12 +29,12 @@ export function GameCard({ game, sale = false, returnTo, copyMarker }: { game: C
             <StatusPill tone={game.overallStatus.toLowerCase().includes("incomplete") ? "warn" : "neutral"}>{game.overallStatus || "Estado n/d"}</StatusPill>
             {copyMarker && <StatusPill tone="neutral">{copyMarker}</StatusPill>}
             {sale && <StatusPill tone="bad">Para vender</StatusPill>}
-            <span className="ml-auto flex items-center gap-1 text-xs font-bold text-slate-900"><BadgeEuro className="h-3.5 w-3.5 text-emerald-800" />{formatEuro(game.currentValueEur)}</span>
+            <span className="ml-auto flex items-center gap-1 text-xs font-bold text-slate-900" title={[game.currentValueSource, game.currentValueInfo.basis, game.currentValueInfo.date].filter(Boolean).join(" · ")}><BadgeEuro className="h-3.5 w-3.5 text-emerald-800" />{formatEuro(game.currentValueEur)}</span>
           </span>
           <span className="mt-1 truncate text-[10px] text-slate-400">{game.region || "Região n/d"}{game.edition ? ` · ${game.edition}` : ""}{game.conditionGrade ? ` · ${game.conditionGrade}` : ""}</span>
         </span>
       </Link>
-      {sale && <div className="border-t border-slate-100 px-3.5 py-2.5"><p className="mb-1 text-[10px] font-semibold text-slate-500">{game.priceEstimate.value !== null ? `PriceCharting · ${game.priceEstimate.basis} · ${game.priceEstimate.date || "snapshot"}` : game.currentValueEur !== null ? "Valor registado na coleção" : "Valor não disponível"}{game.cexCashEur !== null ? ` · CeX cash ${formatEuro(game.cexCashEur)}` : ""}</p><MarketSearchLinks title={game.title} platform={game.platform} compact context="sell" /></div>}
+      {sale && <div className="border-t border-slate-100 px-3.5 py-2.5"><p className="mb-1 text-[10px] font-semibold text-slate-500">{[game.currentValueSource, game.currentValueInfo.basis, game.currentValueInfo.date].filter(Boolean).join(" · ")}{game.cexCashEur !== null ? ` · CeX cash ${formatEuro(game.cexCashEur)}` : ""}</p><MarketSearchLinks title={game.title} platform={game.platform} compact context="sell" /></div>}
     </article>
   );
 }

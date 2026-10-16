@@ -2,7 +2,8 @@ import Link from "next/link";
 import {ArrowLeft} from "lucide-react";
 import {notFound} from "next/navigation";
 import {PlatformLibraryBrowser} from "@/components/platform-library-browser";
-import {getCollectionGames,getWantlist} from "@/lib/data/collection-service";
+import {getWantlist} from "@/lib/data/collection-service";
+import {getCollectionListGames} from "@/lib/game-list-data";
 import {displayPlatform,platformFromSlug,platformReleaseYear} from "@/lib/data/platforms";
 import {resolveGameMetadata} from "@/lib/game-metadata";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
@@ -11,14 +12,14 @@ import { searchParamsToString } from "@/lib/list-url-state.logic";
 import { gameCountLabel } from "@/lib/format";
 
 export default async function PlatformPage({params,searchParams}:{params:Promise<{slug:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
- const[{slug},query,collectionGames,wantlist]=await Promise.all([params,searchParams,getCollectionGames(),getWantlist()]);
+ const[{slug},query,collectionGames,wantlist]=await Promise.all([params,searchParams,getCollectionListGames(),getWantlist()]);
  const known=[...new Set([...collectionGames.map(x=>x.platform),...wantlist.map(x=>x.platform)])];
  const platform=platformFromSlug(slug,known);
  if(!platform) notFound();
 
  const rawGames=collectionGames.filter(x=>x.platform===platform);
  const targets=wantlist.filter(x=>x.platform===platform&&x.planState!=="inactive"&&x.matchState!=="acquired");
- const collection=rawGames.map(x=>{const meta=resolveGameMetadata(x);return {collectionId:x.collectionId,title:x.title,genre:meta?.matchStatus==="matched"?(meta.genres??[]).join(", "):"",valueEur:x.marketValueEur,condition:x.conditionGrade,completeness:x.overallStatus,catalogArtwork:Boolean(x.catalog?.artwork?.pathname)}});
+ const collection=rawGames.map(x=>{const meta=resolveGameMetadata(x);return {collectionId:x.collectionId,title:x.title,genre:meta?.matchStatus==="matched"?(meta.genres??[]).join(", "):"",valueEur:x.currentValueEur,valueSource:x.currentValueSource,valueDate:x.currentValueInfo.date,valueBasis:x.currentValueInfo.basis,condition:x.conditionGrade,completeness:x.overallStatus,catalogArtwork:Boolean(x.catalog?.artwork?.pathname)}});
  const wishlist=targets.map(x=>({
   targetId:x.targetId,
   title:x.title,

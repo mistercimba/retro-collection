@@ -30,7 +30,7 @@ export default async function CollectionPage() {
     <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
       {platforms.map((item) => <Link key={item.platform} href={"/platform/" + item.slug} className="console-card group">
         <span className="h-24 w-28 shrink-0 overflow-hidden rounded-2xl bg-white/65"><PlatformArtwork platform={item.platform} className="h-full w-full" /></span>
-        <span className="min-w-0 flex-1"><span className="flex justify-between gap-2"><strong className="truncate text-base font-black">{displayPlatform(item.platform)}</strong><span className="text-xs font-black text-slate-400">{platformReleaseYear(item.platform) < 9990 ? platformReleaseYear(item.platform) : "—"}</span></span><span className="mt-2 flex gap-3 text-xs font-semibold text-slate-500"><span>{gameCountLabel(item.count)}</span><span>{formatEuro(item.marketValueEur)}</span></span></span>
+        <span className="min-w-0 flex-1"><span className="flex justify-between gap-2"><strong className="truncate text-base font-black">{displayPlatform(item.platform)}</strong><span className="text-xs font-black text-slate-400">{platformReleaseYear(item.platform) < 9990 ? platformReleaseYear(item.platform) : "—"}</span></span><span className="mt-2 flex gap-3 text-xs font-semibold text-slate-500"><span>{gameCountLabel(item.count)}</span><span title={`${item.valuedCount} de ${item.count} cópias com valor conhecido`}>{formatEuro(item.marketValueEur)}{item.valuedCount < item.count ? ` · ${item.valuedCount}/${item.count} com valor` : ""}</span></span></span>
       </Link>)}
     </section>
 
