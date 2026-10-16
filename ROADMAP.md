@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-15
+Last updated: 2026-10-16
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -22,11 +22,17 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Copy valuation consistency (#84)
-The first focused implementation from audit #83 P0 (F1/F2) is under review. It aligns provenance-aware value presentation across copy details, duplicate-copy panels, all-games lists and platform totals, and uses platform-specific physical profiles to determine PriceCharting CIB/Loose conditions. No production Blob writes, schema migration or merge without Product Owner approval.
+### COMPLETED — Valuations consistent across collection views (#84; PR #85)
+Owner approved; PR #85 merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373ad4cce39c490d9c6`, Issue #84 closed. The copy-detail, other physical-copy panels, global lists, platform lists and platform totals now use a provenance-aware valuation order (PriceCharting PAL/condition reference, recorded valuation, legacy recorded value, otherwise unavailable). Totals identify partial price coverage. Switch/PS5 and other platform-specific physical completeness rules are respected when selecting Loose/CIB; unknown/mixed contents are not confidently priced. Pre-merge CI and Vercel Preview passed. Authenticated visual QA and final production CI/deployment status are separate verification steps.
+
+### COMPLETED — Owned-copy photo enlargement (#86; PR #87)
+Owner approved; PR #87 merged on 2026-10-16 as `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb`, Issue #86 closed. An accessible native photo dialog enlarges existing private owned-copy images with previous/next buttons, arrow keys and Escape. No storage/data migration; the existing private image API remains the sole source. Pre-merge CI and Preview passed; authenticated real-device gallery QA was not performed.
+
+### NEXT — Collection catalog and physical archive refinement (audit #83)
+Consider a focused follow-up Issue for editing structured **per-copy physical audit data** (SKU/product code, observed languages, functional condition, component condition and evidence) without overwriting legacy records. Keep verified PAL retail SKU evidence separate from IGDB's generic Europe-release metadata. Do not assume catalog completion or create a new storage system. Plan scope and migration safety before implementation. Photo viewer and initial price consistency are already completed.
 
 ### COMPLETED — 18-platform European catalog source audit (#81; PR #82)
-PR #82 merged into `main` on 2026-10-15 as `940226a2d8236e519ed406a4eb8bcfe1c954c2b1`. Deterministic code audit, not live authenticated IGDB coverage or proof of a physical PAL SKU.
+PR #82 merged into `main` on 2026-10-15 as `940226a2d8236e519ed406a4eb8bcfe1c954c2b1`. Deterministic source audit, not live authenticated IGDB coverage or proof of a physical PAL SKU.
 
 ### COMPLETED — European-only canonical Add (#79; PR #80)
 
@@ -75,7 +81,7 @@ Issue #68 was closed on 2026-10-14 with state reason `not_planned`, per explicit
 Only change after visual verification:
 - reduce overly tall platform rows if they still waste space;
 - improve secondary-label legibility where needed;
-- open cover/owned-copy photos larger for inspection;
+- open cover artwork larger for inspection (owned-copy photo viewer completed in #87);
 - use wide desktop space better on game detail where useful;
 - improve contextual back labels while preserving return state;
 - make market-reference precision/source/condition/date explicit enough;

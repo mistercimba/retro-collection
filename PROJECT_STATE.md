@@ -4,15 +4,21 @@ Last updated: 2026-10-16
 
 This is the living project handoff. Read `AGENTS.md` first.
 
-## Current status — 2026-10-15
+## Current status — 2026-10-16
 
-**Latest merged `main` commit confirmed:** `940226a2d8236e519ed406a4eb8bcfe1c954c2b1` (PR #82, 2026-10-15). Issue #81 is closed. No authenticated production/browser QA is claimed here.
+**Latest merged `main` commit confirmed:** `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb` (PR #87, 2026-10-16). Owner explicitly approved merging both #85 and #87. Pre-merge checks and Vercel Previews were green; **do not state post-merge production CI/READY without confirming fresh checks**. Neither PR modified private Collection/Wishlist Blob data.
 
-### Candidate — copy valuation consistency and physical profiles (#84)
-Issue #84 implements audit #83 P0 findings F1/F2. The candidate unifies valuation selection across copy detail, duplicate-copy grouping, global/platform lists and totals, and fixes CIB/Loose PriceCharting matching for platform-specific component profiles. Unknown/mixed completeness is not automatically priced. Code only, no private Blob writes or schema migration; awaiting CI, Preview and owner merge approval.
+### Completed — unified copy valuation presentation and physical profiles (#84; PR #85)
+Owner approved; PR #85 squash-merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373ad4cce39c490d9c6` and Issue #84 closed. Provenance-aware values are now selected consistently on game detail, same-title physical-copy panels, global lists, platform lists and platform totals. Priority: compatible PAL PriceCharting per-condition estimate, stored valuation snapshot, legacy value, unavailable. Date/source/condition context is surfaced; partial price coverage is shown on platform totals. Physical-copy profile drives CIB/Loose selection (e.g. Switch/PS5 don't require a manual). Unknown/mixed component states remain unpriced instead of assuming Loose. No private Blob writes, schema change or migration. Authenticated UI, real-device behavior and post-merge production QA have not been verified.
+
+### Completed — private photo enlargement (#86; PR #87)
+Owner approved; PR #87 squash-merged on 2026-10-16 as `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb` and Issue #86 closed. Existing owned-copy photographs can be enlarged in a native dialog, navigated with arrow keys and controls, dismissed by Escape/close/click-outside. It uses the existing private photo route and does not change uploads, storage or collection contents. Authenticated visual/gallery QA was not performed. No new image service or schema change.
+
+### Next recommended work — physical archive audit (#83)
+Unfinished F3/F4: edit physical audit information from each copy's detail (product code/SKU, physical condition per component, tested functional status, source/evidence) and distinguish observed PAL country editions from broader IGDB Europe metadata. First scope a separate Issue and preserve historical audit records. F6 (purchase lot allocation) is a conditional finding to investigate with fixtures, not a confirmed defect. No implementation in these areas has been authorized.
 
 ### Completed — European catalog source audit (#81; PR #82)
-PR #82 merged on 2026-10-15 at `940226a2d8236e519ed406a4eb8bcfe1c954c2b1`. Changes cover legacy regional evidence fallback, nonexhaustive search results, regional year labeling and stale result selection. Synthetic tests across 18 platforms are not a live certified PAL retail edition audit.
+PR #82 merged on 2026-10-15 at `940226a2d8236e519ed406a4eb8bcfe1c954c2b1`. Includes legacy regional filtering evidence fallback, nonexhaustive result messaging, regional year reporting and stale selections clearing. Synthetic 18-platform tests do not certify live IGDB coverage or PAL country-specific retail editions.
 
 ### Completed — European-only canonical Add (#79; PR #80)
 
