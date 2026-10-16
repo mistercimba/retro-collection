@@ -51,6 +51,19 @@ For substantial new work:
 7. wait for Mário's explicit approval before merging;
 8. after merge, close/update the Issue and reconcile `PROJECT_STATE.md` / `ROADMAP.md` when the landed work changes them.
 
+### Manual acceptance test in every PR
+
+Every pull request that changes user-facing behavior **must include a short `Teste manual — Product Owner` section directly in its description**, written in clear European Portuguese. Do not make Mário search through code or technical QA logs to find out what changed.
+
+Include:
+- an exact usable app URL (PR Preview while pending; production once merged) and any sign-in prerequisite;
+- no more than 2–4 concrete actions that take about **1–2 minutes** and demonstrate the visible change;
+- the exact expected result / what constitutes **PASS**, including which labels or sections he should see;
+- a brief note if a test can mutate the **real private Blob** or needs pre-existing data (such as copy photos);
+- when helpful, a simple failure-report instruction (e.g. the game/console and what differs).
+
+Keep this **separate from automated CI/Preview checks**. A green build never proves authenticated manual UX. If a feature cannot be tested with available data, state the limitation and avoid inventing demo records or prompting irreversible data edits. Update the manual steps and links if the feature changes during review. Manual checks do not replace explicit owner merge approval.
+
 Preferred Issue lifecycle:
 
 - `inbox` — captured, but not yet ready to build;
