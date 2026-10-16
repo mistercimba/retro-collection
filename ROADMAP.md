@@ -28,8 +28,11 @@ Owner approved; PR #85 merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373ad4cce39
 ### COMPLETED — Owned-copy photo enlargement (#86; PR #87)
 Owner approved; PR #87 merged on 2026-10-16 as `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb`, Issue #86 closed. An accessible native photo dialog enlarges existing private owned-copy images with previous/next buttons, arrow keys and Escape. No storage/data migration; the existing private image API remains the sole source. Pre-merge CI and Preview passed; authenticated real-device gallery QA was not performed.
 
-### NEXT — Collection catalog and physical archive refinement (audit #83)
-Consider a focused follow-up Issue for editing structured **per-copy physical audit data** (SKU/product code, observed languages, functional condition, component condition and evidence) without overwriting legacy records. Keep verified PAL retail SKU evidence separate from IGDB's generic Europe-release metadata. Do not assume catalog completion or create a new storage system. Plan scope and migration safety before implementation. Photo viewer and initial price consistency are already completed.
+### NOW — Editable per-copy physical archive (#88; audit #83)
+PR candidate under development/review: edit existing copy-specific audit data with SKU, optional observed EAN, PAL country/market, physical condition and evidence. Keep prior audit records and historical dates; never infer retail PAL identities from IGDB. This is an application feature, not a migration of production Blob data. Do not merge without Product Owner approval.
+
+### NEXT — Further archive polish
+After real authenticated testing of the per-copy audit editor, consider structured archive browse/filter affordances and conservative validation of observed retail SKU evidence. No automated edition verification without defensible sources; physical completeness remains managed by the existing component checklist.
 
 ### COMPLETED — 18-platform European catalog source audit (#81; PR #82)
 PR #82 merged into `main` on 2026-10-15 as `940226a2d8236e519ed406a4eb8bcfe1c954c2b1`. Deterministic source audit, not live authenticated IGDB coverage or proof of a physical PAL SKU.
