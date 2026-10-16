@@ -31,10 +31,7 @@ export function mergePhysicalAudit(
 ): { audit: AuditRecord | null; changedFields: PhysicalAuditField[] } {
   const existing = copy.audit;
   const next: AuditRecord = {
-    collectionId: copy.collectionId,
-    title: copy.title,
     localizedTitle: "",
-    platform: copy.platform,
     productCode: "",
     region: "",
     releaseMarket: "",
