@@ -36,3 +36,11 @@ export function validateOwnedCopyPhotoFile(input: { type: string; size: number }
   if (input.size > MAX_OWNED_COPY_PHOTO_BYTES) return "A imagem é demasiado grande. O limite após otimização é 4 MB.";
   return null;
 }
+
+/** Navigate a bounded photo gallery without ever leaving the owning copy. */
+export function adjacentPhotoIndex(index: number, count: number, direction: -1 | 1): number | null {
+  if (!Number.isInteger(index) || !Number.isInteger(count) || count <= 0 || index < 0 || index >= count) {
+    return null;
+  }
+  return (index + direction + count) % count;
+}
