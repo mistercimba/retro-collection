@@ -122,7 +122,7 @@ export default async function WishDetailPage({
           <dt className="text-slate-500">Publisher</dt><dd className="font-bold">{metadata?.publishers.join(", ") || "—"}</dd>
           <dt className="text-slate-500">Género</dt><dd className="font-bold">{metadata?.genres.slice(0, 2).join(" · ") || "—"}</dd>
         </dl>
-        <div className="mt-5"><ReferenceLinks title={target.title} metacriticUrl={metadata?.reviewScoreUrl ?? ""} /></div>
+        <div className="mt-5"><ReferenceLinks title={target.title} /></div>
       </div>
     </section>
 
