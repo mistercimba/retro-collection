@@ -29,7 +29,10 @@ async function getHltb(title: string, beforeExternalRequest?: BeforeExternalRequ
 
 async function rawgJson(url: string, signal: AbortSignal, beforeExternalRequest?: BeforeExternalRequest) {
   await beforeExternalRequest?.();
-  const response = await fetch(url, { signal, cache: "no-store" });
+  // In maintenance mode the 2–3 s rate-limit pause must NOT use up the HTTP
+  // timeout. Give each actual RAWG request its own 6 s deadline.
+  const requestSignal = beforeExternalRequest ? AbortSignal.timeout(6000) : signal;
+  const response = await fetch(url, { signal: requestSignal, cache: "no-store" });
   if (!response.ok) throw new Error(`RAWG HTTP ${response.status}`);
   return response.json() as Promise<Record<string, unknown>>;
 }
