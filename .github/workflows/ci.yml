@@ -20,21 +20,6 @@ jobs:
         with:
           node-version: 22
       - run: npm install
-      # TEMPORARY: reproduce the exact npm install lock delta for this PR; remove after capturing.
-      - name: Capture installed lock delta (temporary)
-        run: |
-          node - <<'NODE'
-          const fs = require('fs');
-          const {execFileSync}=require('child_process');
-          const before=JSON.parse(execFileSync('git',['show','HEAD:package-lock.json'],{encoding:'utf8'}));
-          const after=JSON.parse(fs.readFileSync('package-lock.json','utf8'));
-          const updated={};
-          for(const [key,value] of Object.entries(after.packages)) {
-            if(JSON.stringify(before.packages[key])!==JSON.stringify(value)) updated[key]=value;
-          }
-          const removed=Object.keys(before.packages).filter(k=>!(k in after.packages));
-          console.log('LOCKDELTA:'+JSON.stringify({updated,removed}));
-          NODE
       - run: npm run lint
       - run: npm run test
       - run: python3 -m unittest discover -s scripts -p 'test_*.py'
