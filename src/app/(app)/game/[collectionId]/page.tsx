@@ -42,7 +42,6 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   copy.collectionId,
   copy.collectionId===game.collectionId?copyValue:resolveCopyValue(copy,otherEstimates.get(copy.collectionId)),
  ]));
- const valueDifference=paid!==null&&paid!==undefined&&estimatedValue!==null?estimatedValue-paid:null;
  const audit=game.audit;
  const auditFields=[
   ["Funcional",audit?.functionalStatus],
@@ -175,6 +174,4 @@ function ShowcasePart({label,kind,state}:{label:string;kind:"media"|"box"|"manua
  </div>;
 }
 
-function formatDifference(value:number|null){if(value===null)return "—";if(value===0)return formatEuro(0);return `${value>0?"+":"−"}${formatEuro(Math.abs(value))}`;}
-function CompactInfo({label,value}:{label:string;value:string}){return <div className="min-w-0"><dt className="font-bold text-slate-500">{label}</dt><dd className="mt-0.5 whitespace-pre-wrap break-words text-slate-800">{value||"—"}</dd></div>}
 function Field({name,label,value,type="text",step}:{name:string;label:string;value:string|number;type?:string;step?:string}){return <label><span className="field-label">{label}</span><input name={name} type={type} step={step} defaultValue={value} className="field-input"/></label>}
