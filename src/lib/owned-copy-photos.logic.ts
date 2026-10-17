@@ -6,9 +6,17 @@ export const MAX_OWNED_COPY_PHOTOS = 12;
 export const OWNED_COPY_PHOTO_KIND_OPTIONS: readonly { value: OwnedCopyPhotoKind; label: string }[] = [
   { value: "front", label: "Frente" },
   { value: "back", label: "Verso" },
+  { value: "interior", label: "Interior da caixa" },
   { value: "media", label: "Disco / cartucho" },
   { value: "manual", label: "Manual / inserts" },
   { value: "extras", label: "Extras" },
+];
+
+/** Visual prompts for an empty physical-copy photo shelf. */
+export const EMPTY_PHOTO_SLOTS: readonly { kind: OwnedCopyPhotoKind; label: string; hint: string }[] = [
+  { kind: "front", label: "Frente", hint: "Capa da caixa" },
+  { kind: "back", label: "Trás", hint: "Contracapa" },
+  { kind: "interior", label: "Interior", hint: "Interior da caixa" },
 ];
 
 const EXTENSIONS: Record<string, string> = {

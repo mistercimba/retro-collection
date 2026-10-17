@@ -1,5 +1,8 @@
 import Link from "next/link";
-import {ArrowLeft,PackageOpen} from "lucide-react";
+import {ArrowLeft,ChevronRight,Check,BookOpen,Package,Disc3,HelpCircle,X,Settings2,NotebookPen,CheckCircle2} from "lucide-react";
+import {physicalCopyProfile} from "@/lib/physical-copy-profile.logic";
+import {componentPresentation,copyOwnershipLabel,completionSummary,platformBadgeLabel} from "@/lib/game-showcase.logic";
+import "./game-showcase.css";
 import {notFound} from "next/navigation";
 import {GameArtwork} from "@/components/artwork";
 import {PriceGuidePanel} from "@/components/price-guide";
@@ -27,7 +30,9 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
  const returnTo=getSafeListReturnPath(query.from)??`/platform/${platformSlug(game.platform)}`;
  const[research,copies,componentNeeds]=await Promise.all([getGameResearch(game),getGameCopies(game.collectionId),getComponentNeedsForGame(game.collectionId)]);
  const metadata=research.metadata;
- const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
+ const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"";
+ const publisher=metadata?.publishers.join(", ") || "";
+ const genre=metadata?.genres.slice(0,2).join(" · ") || "";
  const paid=game.purchase?.totalPaidEur??game.allocatedCostEur;
  const copyValue=resolveCopyValue(game,research.estimate);
  const estimatedValue=copyValue.value;
@@ -37,7 +42,6 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   copy.collectionId,
   copy.collectionId===game.collectionId?copyValue:resolveCopyValue(copy,otherEstimates.get(copy.collectionId)),
  ]));
- const valueDifference=paid!==null&&paid!==undefined&&estimatedValue!==null?estimatedValue-paid:null;
  const audit=game.audit;
  const auditFields=[
   ["Funcional",audit?.functionalStatus],
@@ -54,77 +58,103 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   ["Base da evidência",audit?.evidenceBasis],
  ].filter((entry):entry is [string,string]=>Boolean(entry[1]));
 
- return <div className="mx-auto max-w-4xl space-y-5 pb-10">
-  <Link href={returnTo} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Voltar</Link>
 
-  <section className="collection-panel grid gap-6 p-4 sm:grid-cols-[240px_minmax(0,1fr)] sm:p-6">
-   <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="mx-auto h-[330px] w-[240px] rounded-2xl bg-slate-50 object-contain sm:mx-0" eager/>
-   <div className="min-w-0">
-    <p className="eyebrow">{displayPlatform(game.platform)}</p>
-    <h1 className="mt-1 text-3xl font-black leading-tight tracking-tight text-slate-950">{game.title}</h1>
-    {componentNeeds.active.length>0&&<div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50/90 p-3">
-     <div className="flex items-center gap-2 text-amber-900">
-      <PackageOpen className="h-4 w-4 shrink-0"/>
-      <span className="text-[10px] font-black uppercase tracking-[0.14em]">Para completar</span>
+ const parts=componentPresentation(game,physicalCopyProfile(game.platform));
+ const completion=completionSummary(parts,componentNeeds.active.length);
+
+ return <div className="game-showcase">
+  <section className="showcase-hero">
+   <div className="showcase-atmosphere" aria-hidden="true">
+    <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="showcase-atmosphere-art" />
+   </div>
+   <div className="showcase-hero-inner">
+
+    <div className="showcase-navigation">
+     <Link href={returnTo} className="showcase-back"><ArrowLeft size={16}/> Voltar para a Biblioteca</Link>
+     <nav aria-label="Localização na biblioteca" className="showcase-breadcrumbs">
+      <Link href="/collection">Biblioteca</Link><ChevronRight size={13} aria-hidden="true"/>
+      <Link href={`/platform/${platformSlug(game.platform)}`}>{displayPlatform(game.platform)}</Link><ChevronRight size={13} aria-hidden="true"/>
+      <span aria-current="page" title={game.title}>{game.title}</span>
+     </nav>
+    </div>
+    <div className="showcase-hero-grid">
+     <div className="showcase-cover-column">
+      <div className="showcase-cover-frame">
+       <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="showcase-cover-art" eager />
+      </div>
+      <ReferenceLinks title={game.title} metacriticUrl={research.metascore.url}/>
      </div>
-     <div className="mt-2 flex flex-wrap gap-1.5">
-      {componentNeeds.active.slice(0,3).map((need)=><span key={need.id} className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-amber-950">
-       {need.status==="found"?"Encontrado":need.status==="purchased"?"Comprado":"Falta"} · {need.label}
-      </span>)}
-      {componentNeeds.active.length>3&&<span className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-amber-800">+{componentNeeds.active.length-3}</span>}
+     <div className="showcase-primary">
+      <p className="showcase-overline">{[publisher,year].filter(Boolean).join(" · ")}</p>
+      <div className="showcase-title-row">
+       <h1>{game.title}</h1>
+       <span className="showcase-platform-badge" aria-label={`Plataforma: ${displayPlatform(game.platform)}`}>{platformBadgeLabel(game.platform)}</span>
+      </div>
+      {genre&&<p className="showcase-genre">{genre}</p>}
+      <div className={"showcase-ownership "+(game.keepStatus==="Collection"?"showcase-owned":"showcase-not-owned")}>
+       {game.keepStatus==="Collection"&&<Check size={21} strokeWidth={3}/>}
+       {copyOwnershipLabel(game.keepStatus)}
+      </div>
+      <div className="showcase-chips">
+       {game.region&&<span className="showcase-chip showcase-region">{game.region}</span>}
+       {game.edition&&<span className="showcase-chip">{game.edition}</span>}
+       {game.overallStatus&&<span className="showcase-chip showcase-status">{game.overallStatus}</span>}
+       {game.conditionGrade&&<span className="showcase-chip showcase-condition">{game.conditionGrade}</span>}
+      </div>
+      <div className="showcase-card-grid">
+       <article className="showcase-glass-card">
+        <h2><Package size={19}/> A minha cópia</h2>
+        <dl className="showcase-facts">
+         <div><dt>Preço pago</dt><dd className="showcase-fact-value">{formatEuro(paid)}</dd></div>
+         <div><dt>Estimativa de mercado</dt><dd className="showcase-fact-value">{formatEuro(estimatedValue)}</dd></div>
+         <div><dt>{audit?.productCode?"Código da edição":"ID da cópia"}</dt><dd className="showcase-fact-id">{audit?.productCode||game.collectionId}</dd></div>
+        </dl>
+        <p className="showcase-source">{estimatedValue===null?"Valor não disponível":copyValueDescription(copyValue)}</p>
+       </article>
+       <article className="showcase-glass-card">
+        <h2><CheckCircle2 size={19}/> Peças e completude</h2>
+        <div className="showcase-component-grid">
+         {parts.map(part=><ShowcasePart key={part.key} label={part.label} kind={part.key} state={part.state}/>)}
+        </div>
+        <p role="status" className={"showcase-completion-result "+(completion.state==="complete"?"showcase-ok":completion.state==="missing"?"showcase-missing":"")}>
+         {completion.state==="complete"&&<CheckCircle2 size={18} aria-hidden="true"/>}
+         {completion.label}
+        </p>
+       </article>
+      </div>
      </div>
-    </div>}
-    <dl className="mt-5 grid grid-cols-[100px_1fr] gap-x-3 gap-y-2.5 text-sm">
-     <dt className="text-slate-500">Ano</dt><dd className="font-bold text-slate-900">{year}</dd>
-     <dt className="text-slate-500">Developer</dt><dd className="font-bold text-slate-900">{metadata?.developers.join(", ")||"—"}</dd>
-     <dt className="text-slate-500">Publisher</dt><dd className="font-bold text-slate-900">{metadata?.publishers.join(", ")||"—"}</dd>
-     <dt className="text-slate-500">Género</dt><dd className="font-bold text-slate-900">{metadata?.genres.slice(0,2).join(" · ")||"—"}</dd>
-    </dl>
-    <div className="mt-5"><ReferenceLinks title={game.title} metacriticUrl={research.metascore.url}/></div>
+    </div>
    </div>
   </section>
 
-  <PriceGuidePanel guide={research.priceGuide} cexCashEur={game.cexCashEur}/>
-
-  <OwnedCopyGroup current={game} copies={copies} returnTo={returnTo} copyValues={copyValues}/>
-
-  <section className="collection-panel p-4">
-   <div className="flex flex-wrap items-baseline justify-between gap-2">
-    <h2 className="text-sm font-black text-slate-950">A minha cópia</h2>
-    {audit?.auditDate&&<span className="text-[11px] font-semibold text-slate-400">Auditoria · {audit.auditDate}</span>}
+  <div className="showcase-bottom">
+   <div className="showcase-left">
+    <OwnedCopyPhotos collectionId={game.collectionId} title={game.title} photos={game.photos??[]} showcase/>
+    <PriceGuidePanel guide={research.priceGuide} cexCashEur={game.cexCashEur} compact/>
+    <OwnedCopyGroup current={game} copies={copies} returnTo={returnTo} copyValues={copyValues}/>
    </div>
-   <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
-    <Info label="Collection ID" value={game.collectionId}/>
-    <Info label="Região / edição" value={[game.region,game.edition].filter(Boolean).join(" · ")}/>
-    {game.extras && <Info label="Extras / acessórios" value={game.extras}/>}
-    <Info label="Completude" value={game.overallStatus}/>
-    <Info label="Condição geral" value={game.conditionGrade}/>
-    <Info label="Preço pago" value={paid!==null&&paid!==undefined?formatEuro(paid):"—"}/>
-    <Info label="Valor da cópia" value={formatEuro(estimatedValue)}/>
-    <Info label="Origem do valor" value={copyValueDescription(copyValue)}/>
-    <Info label="Diferença vs. pago" value={formatDifference(valueDifference)}/>
-    <Info label="Compra" value={[game.purchase?.date,game.purchase?.source].filter(Boolean).join(" · ")}/>
-   </dl>
-
-   {auditFields.length>0&&<div className="mt-4 rounded-2xl border border-[#e2ddd2] bg-[#faf8f2] p-3">
-    <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#466558]">Auditoria física</p>
-    <dl className="mt-2 grid gap-2 sm:grid-cols-2">
-     {auditFields.map(([label,value])=><Info key={label} label={label} value={value}/>)}
-    </dl>
-    {audit?.missingComponents&&<p className="mt-2 text-xs font-semibold text-amber-800">Em falta: {audit.missingComponents}</p>}
-    {audit?.auditNotes&&<p className="mt-2 whitespace-pre-wrap text-xs leading-5 text-slate-600">{audit.auditNotes}</p>}
-   </div>}
-
-   {game.notes&&<p className="mt-3 whitespace-pre-wrap rounded-xl bg-[#f4f1e8] p-3 text-xs leading-5 text-slate-600">{game.notes}</p>}
-  </section>
-
-  <PhysicalAuditEditor game={game}/>
-
-  <CopyCompletionPanel game={game} activeNeeds={componentNeeds.active} history={componentNeeds.history}/>
-
-  <OwnedCopyPhotos collectionId={game.collectionId} title={game.title} photos={game.photos??[]}/>
-
-  <details className="collection-panel p-4">
+   <div className="showcase-right">
+    <PhysicalAuditEditor game={game}/>
+    <details className="showcase-accordion">
+     <summary><NotebookPen size={18}/> Notas do colecionador</summary>
+     <div className="showcase-accordion-content">
+      {game.notes?<p className="whitespace-pre-wrap">{game.notes}</p>:<p className="showcase-dimmed">Ainda sem notas desta cópia.</p>}
+      {auditFields.length>0&&<details className="showcase-subdetails">
+       <summary>Observações da auditoria ({auditFields.length})</summary>
+       <dl className="showcase-audit-list">
+        {auditFields.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+        {audit?.auditDate&&<div><dt>Data</dt><dd>{audit.auditDate}</dd></div>}
+        {audit?.auditNotes&&<div><dt>Notas</dt><dd>{audit.auditNotes}</dd></div>}
+       </dl>
+      </details>}
+      {(game.purchase?.date||game.acquiredDate||game.purchase?.source)&&<p className="showcase-dimmed">Aquisição: {[game.purchase?.date||game.acquiredDate,game.purchase?.source].filter(Boolean).join(" · ")}</p>}
+     </div>
+    </details>
+    <details className="showcase-accordion showcase-options">
+     <summary><Settings2 size={18}/> Opções da cópia</summary>
+     <div className="showcase-accordion-content">
+      <CopyCompletionPanel game={game} activeNeeds={componentNeeds.active} history={componentNeeds.history}/>
+        <details className="collection-panel p-4">
    <summary className="cursor-pointer text-sm font-black text-slate-900">Editar a minha cópia</summary>
    <form action={editGame} className="mt-4 grid gap-3 sm:grid-cols-2">
     <input type="hidden" name="collectionId" value={game.collectionId}/>
@@ -141,8 +171,21 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
    <p className="mt-2 text-xs text-rose-700">Só abre isto para remover mesmo o jogo.</p>
    <form action={removeCollectionGame} className="mt-3"><input type="hidden" name="collectionId" value={game.collectionId}/><ActionSubmitButton pendingLabel="A remover…" className="min-h-10 rounded-xl bg-rose-800 px-4 text-sm font-black text-white">Remover da coleção</ActionSubmitButton></form>
   </details>
+
+     </div>
+    </details>
+   </div>
+  </div>
  </div>;
 }
-function formatDifference(value:number|null){if(value===null)return "—";if(value===0)return formatEuro(0);return `${value>0?"+":"−"}${formatEuro(Math.abs(value))}`;}
-function Info({label,value}:{label:string;value:string}){return <div className="rounded-xl bg-[#f4f1e8] px-3 py-2"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{label}</p><p className="mt-0.5 text-sm font-semibold text-slate-800">{value||"—"}</p></div>}
+function ShowcasePart({label,kind,state}:{label:string;kind:"media"|"box"|"manual";state:"yes"|"no"|"unknown"}) {
+ const Icon=kind==="box"?Package:kind==="manual"?BookOpen:Disc3;
+ const Status=state==="yes"?CheckCircle2:state==="no"?X:HelpCircle;
+ return <div className={"showcase-component showcase-part-"+state}>
+  <span className="showcase-component-art"><Icon size={32} strokeWidth={1.7}/><Status size={16} className="showcase-part-status"/></span>
+  <span>{label}</span>
+  <small>{state==="yes"?"Tenho":state==="no"?"Falta":"Por verificar"}</small>
+ </div>;
+}
+
 function Field({name,label,value,type="text",step}:{name:string;label:string;value:string|number;type?:string;step?:string}){return <label><span className="field-label">{label}</span><input name={name} type={type} step={step} defaultValue={value} className="field-input"/></label>}

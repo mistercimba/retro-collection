@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Camera, ChevronLeft, ChevronRight, Trash2, Upload, X } from "lucide-react";
+import { Camera, ChevronLeft, ChevronRight, Plus, Trash2, Upload, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import type { OwnedCopyPhoto, OwnedCopyPhotoKind } from "@/lib/data/types";
-import { MAX_OWNED_COPY_PHOTOS, OWNED_COPY_PHOTO_KIND_OPTIONS, ownedCopyPhotoLabel, adjacentPhotoIndex } from "@/lib/owned-copy-photos.logic";
+import { MAX_OWNED_COPY_PHOTOS, OWNED_COPY_PHOTO_KIND_OPTIONS, ownedCopyPhotoLabel, adjacentPhotoIndex, EMPTY_PHOTO_SLOTS } from "@/lib/owned-copy-photos.logic";
 
 const ACCEPTED_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/avif"]);
 const CLIENT_RESIZE_THRESHOLD = 1.5 * 1024 * 1024;
@@ -48,14 +48,17 @@ export function OwnedCopyPhotos({
   collectionId,
   title,
   photos,
+  showcase = false,
 }: {
   collectionId: string;
   title: string;
   photos: OwnedCopyPhoto[];
+  showcase?: boolean;
 }) {
   const router = useRouter();
   const fileRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const uploadDetailsRef = useRef<HTMLDetailsElement>(null);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
   const selectedPhoto = selectedPhotoIndex === null ? null : photos[selectedPhotoIndex] ?? null;
   const [kind, setKind] = useState<OwnedCopyPhotoKind>("front");
@@ -63,6 +66,13 @@ export function OwnedCopyPhotos({
   const [removing, setRemoving] = useState<string | null>(null);
   const [error, setError] = useState("");
   const limitReached = photos.length >= MAX_OWNED_COPY_PHOTOS;
+
+  function prepareEmptySlot(kind: OwnedCopyPhotoKind) {
+    if (limitReached || busy) return;
+    setKind(kind);
+    if (uploadDetailsRef.current) uploadDetailsRef.current.open = true;
+    fileRef.current?.focus();
+  }
 
   function openPhoto(index: number) {
     setSelectedPhotoIndex(index);
@@ -122,17 +132,13 @@ export function OwnedCopyPhotos({
     }
   }
 
-  return <section className="collection-panel p-4">
-    <div className="flex flex-wrap items-baseline justify-between gap-2">
-      <div>
-        <h2 className="text-sm font-black text-slate-950">Fotos da minha cópia</h2>
-        <p className="mt-1 text-xs text-slate-500">Fotos reais desta cópia — não artwork genérico.</p>
-      </div>
-      <span className="text-[11px] font-semibold text-slate-400">{photos.length}/{MAX_OWNED_COPY_PHOTOS}</span>
+  return <section className={showcase ? "showcase-photo-section" : "collection-panel p-4"}>
+    <div className="showcase-photo-heading">
+      <h2>Fotografias da cópia</h2>
+      <span>{photos.length} / {MAX_OWNED_COPY_PHOTOS}</span>
     </div>
-
-    {photos.length > 0 ? <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-      {photos.map((photo, index) => <figure key={photo.id} className="overflow-hidden rounded-2xl border border-[#e2ddd2] bg-[#faf8f2]">
+    {photos.length > 0 ? <div className={showcase ? "showcase-photo-grid" : "mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3"}>
+      {photos.map((photo, index) => <figure key={photo.id} className="showcase-photo-thumb overflow-hidden rounded-2xl border border-[#e2ddd2] bg-[#faf8f2]">
         <button
           type="button"
           onClick={() => openPhoto(index)}
@@ -160,11 +166,21 @@ export function OwnedCopyPhotos({
           </button>
         </figcaption>
       </figure>)}
-    </div> : <div className="mt-4 rounded-2xl border border-dashed border-[#d8d2c5] bg-[#faf8f2] p-5 text-center">
-      <Camera className="mx-auto h-7 w-7 text-slate-300" />
-      <p className="mt-2 text-sm font-bold text-slate-700">Ainda não há fotos desta cópia.</p>
-      <p className="mt-1 text-xs text-slate-500">Podes começar pela frente, verso ou pelo disco/cartucho.</p>
-    </div>}
+    </div> : showcase ? <div className="showcase-empty-photo-shelf" aria-label="Fotografias em falta">
+      {EMPTY_PHOTO_SLOTS.map(slot=><button
+        key={slot.kind}
+        type="button"
+        className="showcase-empty-photo-slot"
+        onClick={() => prepareEmptySlot(slot.kind)}
+        disabled={busy||limitReached}
+        aria-label={`Adicionar fotografia: ${slot.label}`}
+      >
+        <Camera size={25} aria-hidden="true"/>
+        <strong>{slot.label}</strong>
+        <small>{slot.hint}</small>
+        <Plus size={17} className="showcase-empty-photo-plus" aria-hidden="true"/>
+      </button>)}
+    </div> : <p className="mt-3 text-xs text-slate-500">Adiciona fotos reais da frente, verso ou disco/cartucho.</p>}
 
     <dialog
       ref={dialogRef}
@@ -215,7 +231,9 @@ export function OwnedCopyPhotos({
       </div>}
     </dialog>
 
-    <form onSubmit={uploadPhoto} className="mt-4 grid gap-2 sm:grid-cols-[160px_minmax(0,1fr)_auto]">
+    <details ref={uploadDetailsRef} className="showcase-upload">
+      <summary>+ Adicionar fotografias</summary>
+      <form onSubmit={uploadPhoto} className="mt-3 grid gap-2 sm:grid-cols-[140px_minmax(0,1fr)_auto]">
       <select
         aria-label="Tipo de foto da cópia"
         value={kind}
@@ -245,5 +263,6 @@ export function OwnedCopyPhotos({
     <p className="mt-2 text-[11px] text-slate-400">Imagens grandes são reduzidas no browser antes do upload. JPEG, PNG, WebP ou AVIF.</p>
     {limitReached && <p className="mt-2 text-xs font-semibold text-amber-700">Atingiste o limite de fotos desta cópia.</p>}
     {error && <p role="alert" className="mt-2 text-xs font-semibold text-rose-700">{error}</p>}
+    </details>
   </section>;
 }
