@@ -18,6 +18,6 @@ export function ReferenceLinks({ title, ratings }: { title: string; ratings?: On
     <a href={metacritic} target="_blank" rel="noopener noreferrer" className="reference-link" title={metacriticScore!==null?"Pontuação Metacritic — via RAWG":"Procurar no Metacritic"}>
       <Star className="h-3.5 w-3.5" /> Metacritic{metacriticScore!==null?`: ${metacriticScore}`:""} <ExternalLink className="h-3.5 w-3.5" />
     </a>
-    {metacriticScore!==null&&ratings?.metacritic.rawgUrl&&<a href={ratings.metacritic.rawgUrl} target="_blank" rel="noopener noreferrer" className="text-[10px] font-semibold text-current underline underline-offset-2 opacity-80" title="Dados Metacritic via RAWG">via RAWG</a>}
+    {metacriticScore!==null&&<a href={ratings?.metacritic.rawgUrl ?? "https://rawg.io"} target="_blank" rel="noopener noreferrer" className="text-[10px] font-semibold text-current underline underline-offset-2 opacity-80" title="Dados Metacritic via RAWG">via RAWG</a>}
   </div>;
 }
