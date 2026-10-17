@@ -1,6 +1,6 @@
 import type {KeepStatus,CollectionGame} from "@/lib/data/types";
 import type {PhysicalCopyProfile,PhysicalComponentKey,PhysicalComponentState} from "@/lib/physical-copy-profile.logic";
-import {libraryComponentState} from "@/lib/component-needs.logic";
+import {libraryComponentState} from "./component-needs.logic";
 
 export type ComponentPresentation={key:PhysicalComponentKey;label:string;state:PhysicalComponentState};
 
