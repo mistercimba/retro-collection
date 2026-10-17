@@ -1,6 +1,6 @@
 import { ExternalLink, Clock3, Star } from "lucide-react";
 import type { OneTimeGameRatings } from "@/lib/data/types";
-import { positiveMainHours, ratingScore } from "@/lib/game-ratings.logic";
+import { positiveMainHours, ratingScore } from "../lib/game-ratings.logic";
 
 const duration = new Intl.NumberFormat("pt-PT", { maximumFractionDigits: 1 });
 export function ReferenceLinks({ title, ratings }: { title: string; ratings?: OneTimeGameRatings | null }) {
