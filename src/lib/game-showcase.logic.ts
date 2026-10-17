@@ -19,11 +19,28 @@ export function completionSummary(
 ):{state:"complete"|"missing"|"unknown";label:string}{
  if(parts.some(part=>part.state==="no")||activeNeeds>0)return {state:"missing",label:activeNeeds>0?String(activeNeeds)+" peça(s) para completar":"Componentes em falta"};
  if(!parts.length||parts.some(part=>part.state==="unknown"))return {state:"unknown",label:"Completude por verificar"};
- return {state:"complete",label:"Componentes base confirmados"};
+ return {state:"complete",label:"100% dos componentes base confirmados"};
 }
 export function copyOwnershipLabel(status:KeepStatus):string{
  if(status==="Collection")return "NA MINHA COLEÇÃO";
  if(status==="Sell")return "PARA VENDER";
  if(status==="Sold")return "VENDIDO";
  return "ESTADO POR VERIFICAR";
+}
+
+/** Short console badges avoid confusion between editions of the same game. */
+export function platformBadgeLabel(platform:string):string {
+ const compact:Record<string,string>={
+  "Nintendo Wii":"Wii",
+  "Nintendo Wii U":"Wii U",
+  "GameCube":"GameCube",
+  "Playstation":"PS1",
+  "Playstation 2":"PS2",
+  "Playstation 3":"PS3",
+  "Playstation 4":"PS4",
+  "Playstation 5":"PS5",
+  "Game Boy Advance":"GBA",
+  "Nintendo Switch":"Switch",
+ };
+ return compact[platform]||platform;
 }

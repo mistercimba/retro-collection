@@ -1,7 +1,7 @@
 import Link from "next/link";
-import {ArrowLeft,Check,BookOpen,Package,Disc3,HelpCircle,X,Settings2,NotebookPen,CheckCircle2} from "lucide-react";
+import {ArrowLeft,ChevronRight,Check,BookOpen,Package,Disc3,HelpCircle,X,Settings2,NotebookPen,CheckCircle2} from "lucide-react";
 import {physicalCopyProfile} from "@/lib/physical-copy-profile.logic";
-import {componentPresentation,copyOwnershipLabel,completionSummary} from "@/lib/game-showcase.logic";
+import {componentPresentation,copyOwnershipLabel,completionSummary,platformBadgeLabel} from "@/lib/game-showcase.logic";
 import "./game-showcase.css";
 import {notFound} from "next/navigation";
 import {GameArtwork} from "@/components/artwork";
@@ -68,7 +68,15 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
     <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="showcase-atmosphere-art" />
    </div>
    <div className="showcase-hero-inner">
-    <Link href={returnTo} className="showcase-back"><ArrowLeft size={16}/> Voltar à Biblioteca</Link>
+
+    <div className="showcase-navigation">
+     <Link href={returnTo} className="showcase-back"><ArrowLeft size={16}/> Voltar para a Biblioteca</Link>
+     <nav aria-label="Localização na biblioteca" className="showcase-breadcrumbs">
+      <Link href="/collection">Biblioteca</Link><ChevronRight size={13} aria-hidden="true"/>
+      <Link href={`/platform/${platformSlug(game.platform)}`}>{displayPlatform(game.platform)}</Link><ChevronRight size={13} aria-hidden="true"/>
+      <span aria-current="page" title={game.title}>{game.title}</span>
+     </nav>
+    </div>
     <div className="showcase-hero-grid">
      <div className="showcase-cover-column">
       <div className="showcase-cover-3d">
@@ -77,8 +85,11 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
       <ReferenceLinks title={game.title} metacriticUrl={research.metascore.url}/>
      </div>
      <div className="showcase-primary">
-      <p className="showcase-overline">{[displayPlatform(game.platform),year,publisher].filter(Boolean).join(" · ")}</p>
-      <h1>{game.title}</h1>
+      <p className="showcase-overline">{[publisher,year].filter(Boolean).join(" · ")}</p>
+      <div className="showcase-title-row">
+       <h1>{game.title}</h1>
+       <span className="showcase-platform-badge" aria-label={`Plataforma: ${displayPlatform(game.platform)}`}>{platformBadgeLabel(game.platform)}</span>
+      </div>
       {genre&&<p className="showcase-genre">{genre}</p>}
       <div className={"showcase-ownership "+(game.keepStatus==="Collection"?"showcase-owned":"showcase-not-owned")}>
        {game.keepStatus==="Collection"&&<Check size={21} strokeWidth={3}/>}
@@ -94,9 +105,9 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
        <article className="showcase-glass-card">
         <h2><Package size={19}/> A minha cópia</h2>
         <dl className="showcase-facts">
-         <div><dt>Preço pago</dt><dd>{formatEuro(paid)}</dd></div>
-         <div><dt>Estimativa de mercado</dt><dd>{formatEuro(estimatedValue)}</dd></div>
-         <div><dt>{audit?.productCode?"Código da edição":"ID da cópia"}</dt><dd>{audit?.productCode||game.collectionId}</dd></div>
+         <div><dt>Preço pago</dt><dd className="showcase-fact-value">{formatEuro(paid)}</dd></div>
+         <div><dt>Estimativa de mercado</dt><dd className="showcase-fact-value">{formatEuro(estimatedValue)}</dd></div>
+         <div><dt>{audit?.productCode?"Código da edição":"ID da cópia"}</dt><dd className="showcase-fact-id">{audit?.productCode||game.collectionId}</dd></div>
         </dl>
         <p className="showcase-source">{estimatedValue===null?"Valor não disponível":copyValueDescription(copyValue)}</p>
        </article>
@@ -105,7 +116,10 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
         <div className="showcase-component-grid">
          {parts.map(part=><ShowcasePart key={part.key} label={part.label} kind={part.key} state={part.state}/>)}
         </div>
-        <p className={"showcase-completion-result "+(completion.state==="complete"?"showcase-ok":completion.state==="missing"?"showcase-missing":"")}>{completion.label}</p>
+        <p role="status" className={"showcase-completion-result "+(completion.state==="complete"?"showcase-ok":completion.state==="missing"?"showcase-missing":"")}>
+         {completion.state==="complete"&&<CheckCircle2 size={18} aria-hidden="true"/>}
+         {completion.label}
+        </p>
        </article>
       </div>
      </div>

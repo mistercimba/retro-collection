@@ -103,3 +103,36 @@ body:has(.game-showcase) header.md\:hidden a { color:white; }
 @media(max-width:840px){.game-showcase .showcase-bottom {grid-template-columns:1fr;}.game-showcase .showcase-cover-3d {max-width:150px;}.game-showcase .showcase-hero-grid {grid-template-columns:155px minmax(0,1fr);}.game-showcase .showcase-card-grid {grid-template-columns:1fr;}.game-showcase .showcase-hero-inner {padding-bottom:1.2rem;}}
 @media(max-width:530px){.game-showcase .showcase-hero-inner {padding:1rem 1rem 1.2rem;}.game-showcase .showcase-hero-grid {grid-template-columns:95px minmax(0,1fr);gap:1rem;align-items:start;}.game-showcase .showcase-cover-3d {max-width:91px;margin-top:1rem;}.game-showcase .showcase-cover-column .reference-link {font-size:.6rem;padding:.3rem;}.game-showcase .showcase-cover-column .reference-link svg {display:none;}.game-showcase .showcase-cover-column>div:last-child {justify-content:center;}.game-showcase h1 {font-size:1.55rem;}.game-showcase .showcase-overline {font-size:.61rem;}.game-showcase .showcase-ownership {padding:.55rem .65rem;font-size:.82rem;margin:.7rem 0;}.game-showcase .showcase-chips {gap:.3rem;}.game-showcase .showcase-chip {font-size:.66rem;padding:.25rem .4rem;}.game-showcase .showcase-card-grid {margin-left:calc(-95px - 1rem);}.game-showcase .showcase-glass-card h2 {font-size:.83rem;}.game-showcase .showcase-bottom {padding:0 1rem;}.game-showcase .showcase-photo-thumb {flex-basis:118px;}.game-showcase .showcase-photo-thumb img {height:106px;}}
 @media(prefers-reduced-motion:reduce){.game-showcase .showcase-cover-3d {transition:none;}}
+
+
+/* Collector showcase refinement: clear console identity and readable archival facts. */
+.game-showcase .showcase-navigation {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.35rem 1rem;margin-bottom:1.3rem;}
+.game-showcase .showcase-navigation .showcase-back {margin-bottom:0;border:1px solid #789c96b0;background:#102923ec;color:#f4fff7;font-size:.8rem;font-weight:800;box-shadow:inset 0 1px #ffffff14;}
+.game-showcase .showcase-navigation .showcase-back:hover {background:#245143;border-color:#a8e8c8;}
+.game-showcase .showcase-breadcrumbs {display:flex;align-items:center;gap:.35rem;max-width:100%;min-width:0;color:#bed4ca;font-size:.71rem;}
+.game-showcase .showcase-breadcrumbs a {color:#d3ebe0;text-decoration:none;font-weight:700;}
+.game-showcase .showcase-breadcrumbs a:hover {color:#b9fa80;text-decoration:underline;}
+.game-showcase .showcase-breadcrumbs span {min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#e5f5ea;}
+.game-showcase .showcase-title-row {display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .85rem;margin:.35rem 0;}
+.game-showcase .showcase-title-row h1 {margin:0;}
+.game-showcase .showcase-platform-badge {display:inline-flex;flex-shrink:0;align-items:center;justify-content:center;min-height:2rem;padding:.32rem .78rem;border:1px solid #91d2fe;border-radius:.55rem;background:linear-gradient(135deg,#195481,#102e4f);box-shadow:0 0 0 1px #7ecbff26 inset;color:#f4fcff;font-size:.85rem;font-weight:900;letter-spacing:.025em;}
+.game-showcase .showcase-facts {font-size:.85rem;}
+.game-showcase .showcase-facts div {padding:.74rem 0;gap:.6rem;border-bottom-color:#ffffff2c;}
+.game-showcase .showcase-facts dt {flex:1;min-width:0;color:#d3e4dc;font-size:.7rem;font-weight:700;letter-spacing:.05em;line-height:1.4;}
+.game-showcase .showcase-facts dd {flex:0 1 auto;max-width:60%;font-weight:900;font-size:1rem;font-variant-numeric:tabular-nums;line-height:1.3;color:#ffffff;text-shadow:0 1px 3px #0006;}
+.game-showcase .showcase-facts .showcase-fact-id {color:#b9fb83;font-size:1.02rem;letter-spacing:.02em;}
+.game-showcase .showcase-source {color:#d4e5d9;font-size:.73rem;line-height:1.5;font-weight:600;}
+.game-showcase .showcase-glass-card {background:linear-gradient(145deg,#1d3330e0,#0c211be8);border-color:#829a90a8;}
+.game-showcase .showcase-glass-card h2 {font-size:1rem;color:#fff;}
+.game-showcase .showcase-completion-result.showcase-ok {display:flex;gap:.5rem;align-items:center;justify-content:center;background:linear-gradient(120deg,#154b31,#1d5932);border:1px solid #8fed89;box-shadow:inset 0 0 0 1px #d7ff981c,0 0 12px #62d95c24;color:#e8ffda;font-size:.76rem;font-weight:900;padding:.6rem;}
+.game-showcase .showcase-completion-result.showcase-ok svg {flex-shrink:0;color:#aeff7d;}
+.game-showcase .showcase-empty-photo-shelf {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:.4rem;}
+.game-showcase .showcase-empty-photo-slot {position:relative;display:flex;min-width:0;min-height:142px;align-items:center;justify-content:center;flex-direction:column;gap:.4rem;border:1.5px dashed #7baba0b8;border-radius:.85rem;background:linear-gradient(140deg,#17322d6b,#0b231f96);color:#d6e7de;cursor:pointer;text-align:center;padding:.75rem;transition:background .18s,border-color .18s;}
+.game-showcase .showcase-empty-photo-slot:hover,.game-showcase .showcase-empty-photo-slot:focus-visible {background:#1b4036;border-color:#b8f694;}
+.game-showcase .showcase-empty-photo-slot>svg:first-child {color:#b6d4c4;}
+.game-showcase .showcase-empty-photo-slot strong {font-size:.87rem;font-weight:850;color:#f3fff6;}
+.game-showcase .showcase-empty-photo-slot small {color:#adcabd;font-size:.68rem;line-height:1.3;}
+.game-showcase .showcase-empty-photo-plus {position:absolute;top:.55rem;right:.55rem;color:#b0ec88;}
+.game-showcase .showcase-empty-photo-slot:disabled {opacity:.45;cursor:not-allowed;}
+@media(max-width:530px){.game-showcase .showcase-navigation {margin-bottom:1rem;}.game-showcase .showcase-breadcrumbs {font-size:.64rem;}.game-showcase .showcase-platform-badge {font-size:.74rem;min-height:1.7rem;padding:.2rem .5rem;}.game-showcase .showcase-empty-photo-shelf {gap:.35rem;}.game-showcase .showcase-empty-photo-slot {min-height:113px;padding:.5rem .25rem;}.game-showcase .showcase-empty-photo-slot strong {font-size:.75rem;}.game-showcase .showcase-empty-photo-slot small {font-size:.59rem;}.game-showcase .showcase-facts dd {font-size:.86rem;}.game-showcase .showcase-facts dt {font-size:.65rem;}}
+@media(prefers-reduced-motion:reduce){.game-showcase .showcase-empty-photo-slot {transition:none;}}

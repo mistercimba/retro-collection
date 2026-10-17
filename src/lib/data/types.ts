@@ -1,6 +1,6 @@
 export type KeepStatus = "Collection" | "Sell" | "Sold" | string;
 
-export type OwnedCopyPhotoKind = "front" | "back" | "media" | "manual" | "extras";
+export type OwnedCopyPhotoKind = "front" | "back" | "interior" | "media" | "manual" | "extras";
 
 export interface CanonicalGameArtwork {
   source: "IGDB";

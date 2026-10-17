@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Trash2, Upload, X } from "lucide-react";
+import { Camera, ChevronLeft, ChevronRight, Plus, Trash2, Upload, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import type { OwnedCopyPhoto, OwnedCopyPhotoKind } from "@/lib/data/types";
-import { MAX_OWNED_COPY_PHOTOS, OWNED_COPY_PHOTO_KIND_OPTIONS, ownedCopyPhotoLabel, adjacentPhotoIndex } from "@/lib/owned-copy-photos.logic";
+import { MAX_OWNED_COPY_PHOTOS, OWNED_COPY_PHOTO_KIND_OPTIONS, ownedCopyPhotoLabel, adjacentPhotoIndex, EMPTY_PHOTO_SLOTS } from "@/lib/owned-copy-photos.logic";
 
 const ACCEPTED_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/avif"]);
 const CLIENT_RESIZE_THRESHOLD = 1.5 * 1024 * 1024;
@@ -58,6 +58,7 @@ export function OwnedCopyPhotos({
   const router = useRouter();
   const fileRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const uploadDetailsRef = useRef<HTMLDetailsElement>(null);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
   const selectedPhoto = selectedPhotoIndex === null ? null : photos[selectedPhotoIndex] ?? null;
   const [kind, setKind] = useState<OwnedCopyPhotoKind>("front");
@@ -65,6 +66,13 @@ export function OwnedCopyPhotos({
   const [removing, setRemoving] = useState<string | null>(null);
   const [error, setError] = useState("");
   const limitReached = photos.length >= MAX_OWNED_COPY_PHOTOS;
+
+  function prepareEmptySlot(kind: OwnedCopyPhotoKind) {
+    if (limitReached || busy) return;
+    setKind(kind);
+    if (uploadDetailsRef.current) uploadDetailsRef.current.open = true;
+    fileRef.current?.focus();
+  }
 
   function openPhoto(index: number) {
     setSelectedPhotoIndex(index);
@@ -158,6 +166,20 @@ export function OwnedCopyPhotos({
           </button>
         </figcaption>
       </figure>)}
+    </div> : showcase ? <div className="showcase-empty-photo-shelf" aria-label="Fotografias em falta">
+      {EMPTY_PHOTO_SLOTS.map(slot=><button
+        key={slot.kind}
+        type="button"
+        className="showcase-empty-photo-slot"
+        onClick={() => prepareEmptySlot(slot.kind)}
+        disabled={busy||limitReached}
+        aria-label={`Adicionar fotografia: ${slot.label}`}
+      >
+        <Camera size={25} aria-hidden="true"/>
+        <strong>{slot.label}</strong>
+        <small>{slot.hint}</small>
+        <Plus size={17} className="showcase-empty-photo-plus" aria-hidden="true"/>
+      </button>)}
     </div> : <p className="mt-3 text-xs text-slate-500">Adiciona fotos reais da frente, verso ou disco/cartucho.</p>}
 
     <dialog
@@ -209,7 +231,7 @@ export function OwnedCopyPhotos({
       </div>}
     </dialog>
 
-    <details className="showcase-upload">
+    <details ref={uploadDetailsRef} className="showcase-upload">
       <summary>+ Adicionar fotografias</summary>
       <form onSubmit={uploadPhoto} className="mt-3 grid gap-2 sm:grid-cols-[140px_minmax(0,1fr)_auto]">
       <select
