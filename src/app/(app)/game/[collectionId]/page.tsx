@@ -27,7 +27,9 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
  const returnTo=getSafeListReturnPath(query.from)??`/platform/${platformSlug(game.platform)}`;
  const[research,copies,componentNeeds]=await Promise.all([getGameResearch(game),getGameCopies(game.collectionId),getComponentNeedsForGame(game.collectionId)]);
  const metadata=research.metadata;
- const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"—";
+ const year=metadata?.firstReleaseDate?metadata.firstReleaseDate.slice(0,4):"";
+ const publisher=metadata?.publishers.join(", ") || "";
+ const genre=metadata?.genres.slice(0,2).join(" · ") || "";
  const paid=game.purchase?.totalPaidEur??game.allocatedCostEur;
  const copyValue=resolveCopyValue(game,research.estimate);
  const estimatedValue=copyValue.value;
@@ -54,69 +56,74 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   ["Base da evidência",audit?.evidenceBasis],
  ].filter((entry):entry is [string,string]=>Boolean(entry[1]));
 
- return <div className="mx-auto max-w-4xl space-y-5 pb-10">
-  <Link href={returnTo} className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Voltar</Link>
+ return <div className="mx-auto max-w-4xl space-y-3 pb-10">
+  <Link href={returnTo} className="inline-flex min-h-9 items-center gap-1 text-xs font-bold text-slate-600 hover:text-[#17382e]"><ArrowLeft className="h-3.5 w-3.5"/>Voltar</Link>
 
-  <section className="collection-panel grid gap-6 p-4 sm:grid-cols-[240px_minmax(0,1fr)] sm:p-6">
-   <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="mx-auto h-[330px] w-[240px] rounded-2xl bg-slate-50 object-contain sm:mx-0" eager/>
-   <div className="min-w-0">
-    <p className="eyebrow">{displayPlatform(game.platform)}</p>
-    <h1 className="mt-1 text-3xl font-black leading-tight tracking-tight text-slate-950">{game.title}</h1>
-    {componentNeeds.active.length>0&&<div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50/90 p-3">
-     <div className="flex items-center gap-2 text-amber-900">
-      <PackageOpen className="h-4 w-4 shrink-0"/>
-      <span className="text-[10px] font-black uppercase tracking-[0.14em]">Para completar</span>
-     </div>
-     <div className="mt-2 flex flex-wrap gap-1.5">
-      {componentNeeds.active.slice(0,3).map((need)=><span key={need.id} className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-amber-950">
-       {need.status==="found"?"Encontrado":need.status==="purchased"?"Comprado":"Falta"} · {need.label}
-      </span>)}
-      {componentNeeds.active.length>3&&<span className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-amber-800">+{componentNeeds.active.length-3}</span>}
-     </div>
-    </div>}
-    <dl className="mt-5 grid grid-cols-[100px_1fr] gap-x-3 gap-y-2.5 text-sm">
-     <dt className="text-slate-500">Ano</dt><dd className="font-bold text-slate-900">{year}</dd>
-     <dt className="text-slate-500">Developer</dt><dd className="font-bold text-slate-900">{metadata?.developers.join(", ")||"—"}</dd>
-     <dt className="text-slate-500">Publisher</dt><dd className="font-bold text-slate-900">{metadata?.publishers.join(", ")||"—"}</dd>
-     <dt className="text-slate-500">Género</dt><dd className="font-bold text-slate-900">{metadata?.genres.slice(0,2).join(" · ")||"—"}</dd>
-    </dl>
-    <div className="mt-5"><ReferenceLinks title={game.title} metacriticUrl={research.metascore.url}/></div>
-   </div>
+  <header className="collection-panel grid grid-cols-[96px_minmax(0,1fr)] items-start gap-4 p-4 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-5 sm:p-5">
+    <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="aspect-[3/4] w-24 rounded-xl bg-slate-50 object-contain sm:w-[148px]" eager/>
+    <div className="min-w-0">
+      <p className="eyebrow">{displayPlatform(game.platform)}</p>
+      <h1 className="mt-1 text-xl font-black leading-tight tracking-tight text-slate-950 sm:text-2xl">{game.title}</h1>
+      <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm">
+        {[year, publisher, genre].filter(Boolean).join(" · ") || "Ficha de coleção"}
+      </p>
+      {componentNeeds.active.length>0&&<p className="mt-2 inline-flex flex-wrap items-center gap-1.5 rounded-lg bg-amber-50 px-2 py-1 text-xs font-bold text-amber-900">
+        <PackageOpen className="h-3.5 w-3.5" /> {componentNeeds.active.length} {componentNeeds.active.length===1?"peça em falta":"peças em falta"}
+      </p>}
+      <div className="mt-3"><ReferenceLinks title={game.title} metacriticUrl={research.metascore.url}/></div>
+      {(metadata?.developers.length || metadata?.genres.length || metadata?.publishers.length) && <details className="mt-3 text-xs text-slate-600">
+        <summary className="cursor-pointer font-semibold text-[#315b47]">Ficha técnica</summary>
+        <dl className="mt-2 grid grid-cols-[80px_minmax(0,1fr)] gap-x-3 gap-y-1.5">
+          {year && <><dt>Ano</dt><dd>{year}</dd></>}
+          {metadata?.developers.length ? <><dt>Developer</dt><dd>{metadata.developers.join(", ")}</dd></> : null}
+          {publisher && <><dt>Publisher</dt><dd>{publisher}</dd></>}
+          {genre && <><dt>Género</dt><dd>{metadata?.genres.join(" · ")}</dd></>}
+        </dl>
+      </details>}
+    </div>
+  </header>
+
+  <section className="collection-panel p-4 sm:p-5">
+    <div className="flex flex-wrap items-center justify-between gap-2">
+      <h2 className="text-sm font-black text-slate-950">A minha cópia</h2>
+      <span className="text-[11px] font-semibold text-slate-500">{game.collectionId}</span>
+    </div>
+    <div className="mt-3 flex flex-wrap gap-1.5">
+      {[game.region, game.edition, game.overallStatus, game.conditionGrade].filter(Boolean).map((value, index) =>
+        <span key={index} className="rounded-lg bg-[#f4f1e8] px-2.5 py-1 text-xs font-bold text-slate-700">{value}</span>
+      )}
+      {game.extras && <span className="rounded-lg bg-[#eaf2e9] px-2.5 py-1 text-xs font-semibold text-[#315b47]">Extras: {game.extras}</span>}
+    </div>
+    <div className="mt-4 grid grid-cols-2 gap-4 border-t border-[#ece7dd] pt-3">
+      <div>
+        <p className="text-[10px] font-bold uppercase tracking-wide text-slate-500">Valor da cópia</p>
+        <p className="mt-0.5 text-lg font-black text-slate-900">{formatEuro(estimatedValue)}</p>
+        <p className="mt-1 text-[11px] leading-4 text-slate-500">Origem do valor: {copyValueDescription(copyValue)}</p>
+      </div>
+      <div>
+        <p className="text-[10px] font-bold uppercase tracking-wide text-slate-500">Preço pago</p>
+        <p className="mt-0.5 text-lg font-black text-slate-900">{formatEuro(paid)}</p>
+        {valueDifference!==null&&<p className="mt-1 text-[11px] font-semibold text-slate-500">Diferença: {formatDifference(valueDifference)}</p>}
+      </div>
+    </div>
+    {(auditFields.length>0||Boolean(game.notes)||Boolean(game.purchase?.date)||Boolean(game.purchase?.source)||Boolean(game.acquiredDate))&&
+    <details className="mt-3 border-t border-[#ece7dd] pt-3">
+      <summary className="cursor-pointer text-xs font-bold text-[#315b47]">Mais dados desta cópia</summary>
+      <dl className="mt-3 grid gap-x-4 gap-y-2 text-xs sm:grid-cols-2">
+        <CompactInfo label="Collection ID" value={game.collectionId}/>
+        <CompactInfo label="Compra" value={[game.purchase?.date||game.acquiredDate,game.purchase?.source].filter(Boolean).join(" · ")}/>
+        {auditFields.map(([label,value])=><CompactInfo key={label} label={label} value={value}/>)}
+        {audit?.auditDate&&<CompactInfo label="Data da auditoria" value={audit.auditDate}/>}
+        {audit?.missingComponents&&<CompactInfo label="Peças auditadas em falta" value={audit.missingComponents}/>}
+        {audit?.auditNotes&&<CompactInfo label="Notas da auditoria" value={audit.auditNotes}/>}
+      </dl>
+      {game.notes&&<p className="mt-3 whitespace-pre-wrap text-xs text-slate-600">{game.notes}</p>}
+    </details>}
   </section>
 
-  <PriceGuidePanel guide={research.priceGuide} cexCashEur={game.cexCashEur}/>
+  <PriceGuidePanel guide={research.priceGuide} cexCashEur={game.cexCashEur} compact/>
 
   <OwnedCopyGroup current={game} copies={copies} returnTo={returnTo} copyValues={copyValues}/>
-
-  <section className="collection-panel p-4">
-   <div className="flex flex-wrap items-baseline justify-between gap-2">
-    <h2 className="text-sm font-black text-slate-950">A minha cópia</h2>
-    {audit?.auditDate&&<span className="text-[11px] font-semibold text-slate-400">Auditoria · {audit.auditDate}</span>}
-   </div>
-   <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
-    <Info label="Collection ID" value={game.collectionId}/>
-    <Info label="Região / edição" value={[game.region,game.edition].filter(Boolean).join(" · ")}/>
-    {game.extras && <Info label="Extras / acessórios" value={game.extras}/>}
-    <Info label="Completude" value={game.overallStatus}/>
-    <Info label="Condição geral" value={game.conditionGrade}/>
-    <Info label="Preço pago" value={paid!==null&&paid!==undefined?formatEuro(paid):"—"}/>
-    <Info label="Valor da cópia" value={formatEuro(estimatedValue)}/>
-    <Info label="Origem do valor" value={copyValueDescription(copyValue)}/>
-    <Info label="Diferença vs. pago" value={formatDifference(valueDifference)}/>
-    <Info label="Compra" value={[game.purchase?.date,game.purchase?.source].filter(Boolean).join(" · ")}/>
-   </dl>
-
-   {auditFields.length>0&&<div className="mt-4 rounded-2xl border border-[#e2ddd2] bg-[#faf8f2] p-3">
-    <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#466558]">Auditoria física</p>
-    <dl className="mt-2 grid gap-2 sm:grid-cols-2">
-     {auditFields.map(([label,value])=><Info key={label} label={label} value={value}/>)}
-    </dl>
-    {audit?.missingComponents&&<p className="mt-2 text-xs font-semibold text-amber-800">Em falta: {audit.missingComponents}</p>}
-    {audit?.auditNotes&&<p className="mt-2 whitespace-pre-wrap text-xs leading-5 text-slate-600">{audit.auditNotes}</p>}
-   </div>}
-
-   {game.notes&&<p className="mt-3 whitespace-pre-wrap rounded-xl bg-[#f4f1e8] p-3 text-xs leading-5 text-slate-600">{game.notes}</p>}
-  </section>
 
   <PhysicalAuditEditor game={game}/>
 
@@ -144,5 +151,5 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
  </div>;
 }
 function formatDifference(value:number|null){if(value===null)return "—";if(value===0)return formatEuro(0);return `${value>0?"+":"−"}${formatEuro(Math.abs(value))}`;}
-function Info({label,value}:{label:string;value:string}){return <div className="rounded-xl bg-[#f4f1e8] px-3 py-2"><p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{label}</p><p className="mt-0.5 text-sm font-semibold text-slate-800">{value||"—"}</p></div>}
+function CompactInfo({label,value}:{label:string;value:string}){return <div className="min-w-0"><dt className="font-bold text-slate-500">{label}</dt><dd className="mt-0.5 whitespace-pre-wrap break-words text-slate-800">{value||"—"}</dd></div>}
 function Field({name,label,value,type="text",step}:{name:string;label:string;value:string|number;type?:string;step?:string}){return <label><span className="field-label">{label}</span><input name={name} type={type} step={step} defaultValue={value} className="field-input"/></label>}
