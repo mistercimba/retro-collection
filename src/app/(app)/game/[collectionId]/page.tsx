@@ -79,21 +79,8 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
     </div>
     <div className="showcase-hero-grid">
      <div className="showcase-cover-column">
-      <div className={game.platform==="Nintendo Wii"?"showcase-cover-scene showcase-wii-case":"showcase-cover-scene"}>
-       <div className="showcase-cover-3d">
-        <div className="showcase-case-back" aria-hidden="true"/>
-        <div className="showcase-case-top" aria-hidden="true"/>
-        <div className="showcase-case-bottom" aria-hidden="true"/>
-        <div className="showcase-case-spine" aria-hidden="true">
-         <span className="showcase-spine-platform">{platformBadgeLabel(game.platform)}</span>
-         <span className="showcase-spine-title">{game.title}</span>
-        </div>
-        <div className="showcase-case-face">
-         <div className="showcase-case-inlay">
-          <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="showcase-cover-art" eager />
-         </div>
-        </div>
-       </div>
+      <div className="showcase-cover-frame">
+       <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="showcase-cover-art" eager />
       </div>
       <ReferenceLinks title={game.title} metacriticUrl={research.metascore.url}/>
      </div>
