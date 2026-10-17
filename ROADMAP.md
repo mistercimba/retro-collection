@@ -22,6 +22,9 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### NOW — Ratings existentes: script manual protegido (#92; stacked on #91)
+Extensão pedida: `scripts/enrich-catalog.ts` com dry-run, backup, pausas 2–3 s por operação externa, consulta só campos em falta, SHA pre/post para evitar sobrescrever mudanças concorrentes, gravação única no Blob privado após revisão. Não executar automaticamente; aprovação explícita dos PRs e execução manual pelo owner. A cache Next expirará em até 5 min após escrita externa.
+
 ### NOW — One-time HLTB / RAWG Metacritic ratings (#92; stacked on #91)
 PR in progress: query HLTB Main Story and RAWG platform-specific Metacritic on **new** game adds only; persist optional values and source IDs in the private library. Existing games stay untouched (no automatic backfill); do not label the IGDB metadata snapshot as HLTB or Metacritic. Server provider failures must not block adds. PR stacked on #91/#89, requires explicit owner merge approval. External values subject to upstream availability and attribution.
 

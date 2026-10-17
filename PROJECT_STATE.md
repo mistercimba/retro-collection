@@ -6,6 +6,9 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-16
 
+### Candidate — manual enrichment of existing library ratings (#92)
+Owner requested an isolated `scripts/enrich-catalog.ts` on PR #93, using private Blob `retro-collection/library.json` as source/target, not a fake repo-local file. Apply only via explicit terminal command, backup to gitignored local directory, 2–3 s between external HLTB/RAWG operations, sequential groups per same title/platform/edition, preserve existing reference values and every non-rating field, reread SHA before one final write and abort on concurrent change. Read-only dry-run by default. Private Blob never mutated by CI or Preview. `unstable_cache` now revalidates within 300 s so externally enriched values eventually become visible. Follow commands in README. Pending CI, Preview and merge approval.
+
 ### Candidate — one-time external game ratings (#92)
 One-time insertion-only enrichment on branch `feat/one-time-game-ratings-92`, stacked on #91 (and #89): HLTB Main Story via npm library, RAWG platform-matched Metacritic, nullable values in optional per-copy `referenceRatings` on the existing private Vercel Blob Library. Frontend buttons show only these attributed values, never IGDB time/rating as HLTB/Metacritic. Legacy copies untouched; explicit manual backfill requires separate approval. Provider outages and key configuration failures are nonfatal for additions. Owner merge approval required.
 
