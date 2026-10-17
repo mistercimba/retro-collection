@@ -79,8 +79,16 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
     </div>
     <div className="showcase-hero-grid">
      <div className="showcase-cover-column">
-      <div className="showcase-cover-3d">
-       <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="showcase-cover-art" eager />
+      <div className="showcase-cover-scene">
+       <div className="showcase-cover-3d">
+        <div className="showcase-case-spine" aria-hidden="true">
+         <span className="showcase-spine-platform">{platformBadgeLabel(game.platform)}</span>
+         <span className="showcase-spine-title">{game.title}</span>
+        </div>
+        <div className="showcase-case-face">
+         <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="showcase-cover-art" eager />
+        </div>
+       </div>
       </div>
       <ReferenceLinks title={game.title} metacriticUrl={research.metascore.url}/>
      </div>
