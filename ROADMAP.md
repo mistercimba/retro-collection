@@ -22,6 +22,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### NOW — One-time HLTB / RAWG Metacritic ratings (#92; stacked on #91)
+PR in progress: query HLTB Main Story and RAWG platform-specific Metacritic on **new** game adds only; persist optional values and source IDs in the private library. Existing games stay untouched (no automatic backfill); do not label the IGDB metadata snapshot as HLTB or Metacritic. Server provider failures must not block adds. PR stacked on #91/#89, requires explicit owner merge approval. External values subject to upstream availability and attribution.
+
+
 ### COMPLETED — Valuations consistent across collection views (#84; PR #85)
 Owner approved; PR #85 merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373ad4cce39c490d9c6`, Issue #84 closed. The copy-detail, other physical-copy panels, global lists, platform lists and platform totals now use a provenance-aware valuation order (PriceCharting PAL/condition reference, recorded valuation, legacy recorded value, otherwise unavailable). Totals identify partial price coverage. Switch/PS5 and other platform-specific physical completeness rules are respected when selecting Loose/CIB; unknown/mixed contents are not confidently priced. Pre-merge CI and Vercel Preview passed. Authenticated visual QA and final production CI/deployment status are separate verification steps.
 

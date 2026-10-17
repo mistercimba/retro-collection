@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-16
 
+### Candidate — one-time external game ratings (#92)
+One-time insertion-only enrichment on branch `feat/one-time-game-ratings-92`, stacked on #91 (and #89): HLTB Main Story via npm library, RAWG platform-matched Metacritic, nullable values in optional per-copy `referenceRatings` on the existing private Vercel Blob Library. Frontend buttons show only these attributed values, never IGDB time/rating as HLTB/Metacritic. Legacy copies untouched; explicit manual backfill requires separate approval. Provider outages and key configuration failures are nonfatal for additions. Owner merge approval required.
+
+
 **Latest merged `main` commit confirmed:** `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb` (PR #87, 2026-10-16). Owner explicitly approved merging both #85 and #87. Pre-merge checks and Vercel Previews were green; **do not state post-merge production CI/READY without confirming fresh checks**. Neither PR modified private Collection/Wishlist Blob data.
 
 ### Completed — unified copy valuation presentation and physical profiles (#84; PR #85)
