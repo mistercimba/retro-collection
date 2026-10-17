@@ -14,19 +14,120 @@ body:has(.game-showcase) header.md\:hidden a { color:white; }
 .game-showcase .showcase-hero-inner { max-width:1340px;margin:auto;padding:1.6rem clamp(1rem,3vw,3rem) 2rem; }
 .game-showcase .showcase-back { display:inline-flex;align-items:center;gap:.55rem;padding:.55rem .8rem;margin-bottom:1rem;border:1px solid #5c74728c;border-radius:.6rem;background:#091b19b8;color:#e0eee9;font-size:.78rem;font-weight:700; }
 .game-showcase .showcase-back:hover { background:#284940; }
-.game-showcase .showcase-hero-grid { display:grid;grid-template-columns:minmax(150px,240px) minmax(0,1fr);gap:clamp(1.2rem,3vw,3.6rem);align-items:center; }
-.game-showcase .showcase-cover-column { min-width:0;display:flex;flex-direction:column;align-items:center;gap:1.1rem; }
+.game-showcase .showcase-hero-grid { display:grid;grid-template-columns:minmax(215px,330px) minmax(0,1fr);gap:clamp(1.2rem,3vw,3.6rem);align-items:center; }
+.game-showcase .showcase-cover-column { min-width:0;display:flex;flex-direction:column;align-items:center;gap:.85rem; }
 /* Real 3D case: positive Y reveals the physically attached left spine. */
-.game-showcase .showcase-cover-scene {--case-depth:clamp(12px,2.1vw,25px);width:90%;max-width:216px;perspective:950px;perspective-origin:50% 43%;padding:8px 7px 17px;}
-.game-showcase .showcase-cover-3d {position:relative;width:100%;aspect-ratio:3/4;transform-style:preserve-3d;transform:rotateY(25deg) rotateX(2deg);transform-origin:center center;transition:transform .25s ease;}
-.game-showcase .showcase-cover-scene:hover .showcase-cover-3d {transform:rotateY(17deg) rotateX(1deg) translateY(-2px);}
-.game-showcase .showcase-case-spine {position:absolute;left:0;top:0;bottom:0;width:var(--case-depth);transform-origin:left center;transform:rotateY(-90deg);backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:10px;overflow:hidden;padding:6px 3px;border:1px solid #cbd5d4;border-right:2px solid #9ca9a9;border-radius:3px 0 0 3px;background:linear-gradient(90deg,#bdc7c7 0%,#f3f6f5 27%,#ffffff 54%,#e3eaea 100%);color:#1a2d30;font-weight:800;box-shadow:inset -1px 0 #ffffffaa;}
-.game-showcase .showcase-spine-platform {writing-mode:vertical-rl;font-size:clamp(8px,.95vw,11px);font-weight:900;line-height:1;flex:none;}
-.game-showcase .showcase-spine-title {writing-mode:vertical-rl;overflow:hidden;max-height:72%;font-size:clamp(7px,.8vw,10px);line-height:1;letter-spacing:-.02em;white-space:nowrap;text-overflow:ellipsis;}
-.game-showcase .showcase-case-face {position:absolute;inset:0;transform:translateZ(var(--case-depth));backface-visibility:hidden;border:2px solid #f7f8f7;border-radius:5px;overflow:hidden;background:#f6f7f4;box-shadow:22px 26px 32px -12px #000b,10px 10px 18px #0009,0 2px 7px #0008;}
-.game-showcase .showcase-case-face::after {content:"";pointer-events:none;position:absolute;inset:0;z-index:2;background:linear-gradient(116deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.06) 20%,transparent 35%,rgba(255,255,255,.14) 50%,rgba(255,255,255,.03) 58%,transparent 77%,rgba(255,255,255,.12) 100%);border-radius:inherit;}
-.game-showcase .showcase-cover-art {position:relative;width:100%;height:100%;border-radius:3px;background:#edf1ed;overflow:hidden;}
-.game-showcase .showcase-cover-art img {padding:4px;}
+/* A physical game case: real front, spine, upper/lower rim and plastic sleeve. */
+.game-showcase .showcase-cover-scene {
+ --case-depth:clamp(15px,2.55vw,33px);
+ position:relative;isolation:isolate;
+ width:100%;max-width:302px;
+ margin-inline:auto;padding:18px 27px 32px;
+ perspective:1050px;perspective-origin:53% 46%;
+}
+.game-showcase .showcase-cover-scene::after {
+ content:"";position:absolute;z-index:-1;pointer-events:none;
+ bottom:11px;left:8%;width:93%;height:25px;
+ background:rgba(0,0,0,.83);filter:blur(15px);
+ border-radius:50%;transform:rotate(-8deg) skewX(-15deg);
+}
+.game-showcase .showcase-cover-3d {
+ position:relative;width:100%;aspect-ratio:0.69;
+ transform-style:preserve-3d;
+ transform:rotateY(26deg) rotateX(2deg);
+ transform-origin:center center;
+ transition:transform .28s ease;
+}
+.game-showcase .showcase-cover-scene:hover .showcase-cover-3d {
+ transform:rotateY(20deg) rotateX(1deg) translateY(-3px);
+}
+.game-showcase .showcase-case-back {
+ position:absolute;inset:0;transform:translateZ(0);
+ border-radius:5px;border:1px solid #dbe3e0;
+ background:linear-gradient(95deg,#a9b6b6,#f0f5f2 18%,#d4dedd 90%,#95a6a4);
+ backface-visibility:hidden;
+}
+.game-showcase .showcase-case-spine {
+ position:absolute;top:0;left:0;bottom:0;width:var(--case-depth);
+ transform-origin:left center;transform:rotateY(-90deg);
+ backface-visibility:hidden;
+ display:flex;align-items:center;flex-direction:column;gap:12px;
+ padding:8px 3px;overflow:hidden;
+ border:1px solid #c7d1d0;border-right:1px solid #fafffe;
+ border-radius:4px 0 0 4px;
+ background:linear-gradient(90deg,#9aa9aa 0%,#edf3f3 16%,#fff 45%,#edf2f2 86%,#cbd5d4 100%);
+ color:#405157;
+ box-shadow:inset 1px 0 1px #fff,inset -2px 0 2px #a1adab6b;
+}
+.game-showcase .showcase-case-spine::after {
+ content:"";position:absolute;left:2px;top:0;bottom:0;width:2px;
+ background:linear-gradient(90deg,#8c9b9a8c,#ffffffca);
+ pointer-events:none;
+}
+.game-showcase .showcase-spine-platform {
+ writing-mode:vertical-rl;line-height:1;font-size:clamp(9px,1.2vw,16px);
+ font-weight:900;letter-spacing:-.02em;flex:none;
+}
+.game-showcase .showcase-spine-title {
+ writing-mode:vertical-rl;white-space:nowrap;overflow:hidden;
+ max-height:72%;text-overflow:ellipsis;line-height:1;
+ font-size:clamp(7px,.84vw,11px);font-weight:700;
+}
+.game-showcase .showcase-case-top {
+ position:absolute;top:0;left:0;right:0;height:var(--case-depth);
+ transform-origin:center top;transform:rotateX(90deg);
+ background:linear-gradient(0deg,#a0b1b1 0%,#edf2f1 26%,#fff 55%,#c7d1d1 100%);
+ border:1px solid #d1dcdb;border-radius:3px;
+}
+.game-showcase .showcase-case-bottom {
+ position:absolute;bottom:0;left:0;right:0;height:var(--case-depth);
+ transform-origin:center bottom;transform:rotateX(-90deg);
+ background:linear-gradient(0deg,#a2b1ae,#f5faf7 40%,#a0acaa 100%);
+ border:1px solid #afbbb9;border-radius:3px;
+}
+.game-showcase .showcase-case-face {
+ position:absolute;inset:0;transform:translateZ(var(--case-depth));
+ backface-visibility:hidden;overflow:hidden;
+ padding:7px 8px 9px 10px;
+ border:2px solid #dce4e2;border-radius:7px 8px 9px 8px;
+ background:linear-gradient(95deg,#e7eeee 0%,#fff 9%,#fff 92%,#dce5e3 100%);
+ box-shadow:25px 35px 38px -13px #000d,13px 15px 25px #0008,0 0 0 1px #ffffff70 inset;
+}
+.game-showcase .showcase-case-face::before {
+ content:"";pointer-events:none;position:absolute;z-index:3;
+ top:0;bottom:0;left:1px;width:8px;
+ background:linear-gradient(90deg,#a1b2b37d,#ffffffba 46%,transparent);
+ border-left:1px solid #fff;
+}
+.game-showcase .showcase-case-face::after {
+ content:"";pointer-events:none;position:absolute;z-index:4;inset:0;
+ border-radius:inherit;
+ background:
+ linear-gradient(115deg,rgba(255,255,255,.17) 0%,rgba(255,255,255,.07) 10%,transparent 27%,transparent 57%,rgba(255,255,255,.19) 64%,rgba(255,255,255,.08) 68%,transparent 75%,rgba(255,255,255,.05) 100%),
+ linear-gradient(90deg,#ffffff0d,transparent 15%,transparent 88%,#ffffff13);
+ box-shadow:inset 0 0 0 2px #ffffff6b,inset 0 0 10px 1px #ffffff45;
+}
+.game-showcase .showcase-case-inlay {
+ position:relative;width:100%;height:100%;overflow:hidden;
+ border-radius:2px;background:#e0e7e6;
+ box-shadow:inset 0 0 0 1px #777e825e,0 0 0 1px #ced8d5;
+}
+.game-showcase .showcase-cover-art {position:relative;width:100%;height:100%;border-radius:2px;overflow:hidden;background:#e0e7e6;}
+.game-showcase .showcase-case-inlay .showcase-cover-art img {
+ width:100%;height:100%;object-fit:cover;padding:0;transform:none;
+ transition:none;
+}
+/* Wii uses a white translucent case. Non-Wii formats stay neutral rather than
+   pretending that a cartridge or PlayStation game comes in Wii packaging. */
+.game-showcase .showcase-wii-case .showcase-case-spine {color:#677379;}
+.game-showcase .showcase-cover-scene:not(.showcase-wii-case) .showcase-case-face {
+ background:linear-gradient(100deg,#7f9b99,#d8e1df 10%,#e3eae7 95%,#9eb3ad);
+ border-color:#a7bcb6;
+}
+.game-showcase .showcase-cover-scene:not(.showcase-wii-case) .showcase-case-spine {
+ background:linear-gradient(90deg,#536766,#aac3bb 25%,#d0ddd7 80%,#637c71);
+ color:#18352b;border-color:#64776f;
+}
 .game-showcase .showcase-cover-column .reference-link {padding:.4rem .55rem;font-size:.7rem;min-height:2.1rem;background:#102c2dbb;border-color:#355452;color:#d6e5e0;}
 .game-showcase .showcase-cover-column .reference-link:hover {background:#254e44;}
 .game-showcase .showcase-overline {font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800;color:#a5c8bf;}
@@ -105,9 +206,9 @@ body:has(.game-showcase) header.md\:hidden a { color:white; }
 .game-showcase .showcase-left>.collection-panel {padding:.85rem 1rem;}
 .game-showcase .showcase-left>.collection-panel>summary {font-size:.8rem;cursor:pointer;}
 .game-showcase .showcase-options>.showcase-accordion-content>details {margin-top:.6rem;}
-@media(max-width:1100px){.game-showcase .showcase-hero-grid {grid-template-columns:150px minmax(0,1fr);}.game-showcase .showcase-card-grid {gap:.5rem;}.game-showcase .showcase-glass-card {padding:.7rem;}}
-@media(max-width:840px){.game-showcase .showcase-bottom {grid-template-columns:1fr;}.game-showcase .showcase-cover-scene {max-width:150px;}.game-showcase .showcase-hero-grid {grid-template-columns:155px minmax(0,1fr);}.game-showcase .showcase-card-grid {grid-template-columns:1fr;}.game-showcase .showcase-hero-inner {padding-bottom:1.2rem;}}
-@media(max-width:530px){.game-showcase .showcase-hero-inner {padding:1rem 1rem 1.2rem;}.game-showcase .showcase-hero-grid {grid-template-columns:95px minmax(0,1fr);gap:1rem;align-items:start;}.game-showcase .showcase-cover-scene {max-width:91px;margin-top:1rem;padding:3px 4px 9px;}.game-showcase .showcase-cover-column .reference-link {font-size:.6rem;padding:.3rem;}.game-showcase .showcase-cover-column .reference-link svg {display:none;}.game-showcase .showcase-cover-column>div:last-child {justify-content:center;}.game-showcase h1 {font-size:1.55rem;}.game-showcase .showcase-overline {font-size:.61rem;}.game-showcase .showcase-ownership {padding:.55rem .65rem;font-size:.82rem;margin:.7rem 0;}.game-showcase .showcase-chips {gap:.3rem;}.game-showcase .showcase-chip {font-size:.66rem;padding:.25rem .4rem;}.game-showcase .showcase-card-grid {margin-left:calc(-95px - 1rem);}.game-showcase .showcase-glass-card h2 {font-size:.83rem;}.game-showcase .showcase-bottom {padding:0 1rem;}.game-showcase .showcase-photo-thumb {flex-basis:118px;}.game-showcase .showcase-photo-thumb img {height:106px;}}
+@media(max-width:1100px){.game-showcase .showcase-hero-grid {grid-template-columns:minmax(195px,245px) minmax(0,1fr);}.game-showcase .showcase-cover-scene {max-width:245px;padding:12px 18px 20px;}.game-showcase .showcase-card-grid {gap:.5rem;}.game-showcase .showcase-glass-card {padding:.7rem;}}
+@media(max-width:840px){.game-showcase .showcase-bottom {grid-template-columns:1fr;}.game-showcase .showcase-cover-scene {max-width:195px;}.game-showcase .showcase-hero-grid {grid-template-columns:195px minmax(0,1fr);}.game-showcase .showcase-card-grid {grid-template-columns:1fr;}.game-showcase .showcase-hero-inner {padding-bottom:1.2rem;}}
+@media(max-width:530px){.game-showcase .showcase-hero-inner {padding:1rem 1rem 1.2rem;}.game-showcase .showcase-hero-grid {grid-template-columns:108px minmax(0,1fr);gap:1rem;align-items:start;}.game-showcase .showcase-cover-scene {max-width:108px;margin-top:1rem;padding:5px 9px 11px;--case-depth:13px;}.game-showcase .showcase-cover-column .reference-link {font-size:.6rem;padding:.3rem;}.game-showcase .showcase-cover-column .reference-link svg {display:none;}.game-showcase .showcase-cover-column>div:last-child {justify-content:center;}.game-showcase h1 {font-size:1.55rem;}.game-showcase .showcase-overline {font-size:.61rem;}.game-showcase .showcase-ownership {padding:.55rem .65rem;font-size:.82rem;margin:.7rem 0;}.game-showcase .showcase-chips {gap:.3rem;}.game-showcase .showcase-chip {font-size:.66rem;padding:.25rem .4rem;}.game-showcase .showcase-card-grid {margin-left:calc(-108px - 1rem);}.game-showcase .showcase-glass-card h2 {font-size:.83rem;}.game-showcase .showcase-bottom {padding:0 1rem;}.game-showcase .showcase-photo-thumb {flex-basis:118px;}.game-showcase .showcase-photo-thumb img {height:106px;}}
 @media(prefers-reduced-motion:reduce){.game-showcase .showcase-cover-3d {transition:none;}}
 
 
