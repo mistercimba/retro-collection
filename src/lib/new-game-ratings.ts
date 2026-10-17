@@ -21,8 +21,8 @@ async function getHltb(title: string): Promise<OneTimeGameRatings["hltb"]> {
   return selectHltbMainStory(title, Array.isArray(items) ? items : []);
 }
 
-async function rawgJson(url: string) {
-  const response = await fetch(url, { signal: AbortSignal.timeout(5500), cache: "no-store" });
+async function rawgJson(url: string, signal: AbortSignal) {
+  const response = await fetch(url, { signal, cache: "no-store" });
   if (!response.ok) throw new Error(`RAWG HTTP ${response.status}`);
   return response.json() as Promise<Record<string, unknown>>;
 }
@@ -32,12 +32,14 @@ async function getMetacritic(title: string, platform: string): Promise<OneTimeGa
   if (!apiKey || !platformNamesInRawg(platform).length) {
     return { score: null, url: null, rawgUrl: null, status: "unavailable" };
   }
+  // Shared timeout across search + details, rather than 5.5 s for each request.
+  const signal = AbortSignal.timeout(6000);
   const query = new URLSearchParams({ key: apiKey, search: title, page_size: "40", search_exact: "true", search_precise: "true" });
-  const payload = await rawgJson(`https://api.rawg.io/api/games?${query}`);
+  const payload = await rawgJson(`https://api.rawg.io/api/games?${query}`, signal);
   const results = Array.isArray(payload.results) ? payload.results : [];
   const selected = selectRawgGame(title, platform, results);
   if (!selected?.id) return { score: null, url: null, rawgUrl: null, status: "unmatched" };
-  const detail = await rawgJson(`https://api.rawg.io/api/games/${selected.id}?${new URLSearchParams({ key: apiKey })}`);
+  const detail = await rawgJson(`https://api.rawg.io/api/games/${selected.id}?${new URLSearchParams({ key: apiKey })}`, signal);
   if (!detail || normalizedGameTitle(String(detail.name ?? "")) !== normalizedGameTitle(title)) {
     return { score: null, url: null, rawgUrl: null, status: "unmatched" };
   }
