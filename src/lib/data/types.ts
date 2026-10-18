@@ -71,6 +71,8 @@ export interface AuditRecord {
   localizedTitle: string;
   platform: string;
   productCode: string;
+  /** Transcribed barcode from the actual copy, not automatically verified. */
+  ean?: string;
   region: string;
   releaseMarket: string;
   auditStatus: string;
@@ -237,6 +239,7 @@ export interface ValuationSnapshot {
 export type LibraryHistoryAction =
   | "collection.add"
   | "collection.edit"
+  | "collection.audit"
   | "collection.remove"
   | "collection.photo.add"
   | "collection.photo.remove"

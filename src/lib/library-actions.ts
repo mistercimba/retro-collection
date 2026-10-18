@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
+import { mergePhysicalAudit } from "@/lib/physical-audit.logic";
 import { platformSlug } from "@/lib/data/platforms";
 import type { CanonicalGameIdentity, CollectionGame, ComponentNeed, ComponentNeedKey, ComponentNeedStatus, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
 import { getFreshLibrary, getLibrary, updateLibrary } from "@/lib/library-store";
@@ -272,6 +273,35 @@ function purchaseFromForm(form: FormData, purchaseId: string, previous?: Purchas
     status: previous?.status,
     statusUpdatedAt: previous?.statusUpdatedAt,
   };
+}
+
+export async function savePhysicalAudit(form: FormData) {
+  await guard();
+  const collectionId = text(form, "collectionId");
+  if (!collectionId) throw new Error("Identificador da cópia em falta.");
+
+  await updateLibrary((library) => {
+    const index = library.collection.findIndex((game) => game.collectionId === collectionId);
+    if (index < 0) throw new Error("Esta cópia já não existe na coleção.");
+    const current = library.collection[index];
+    const { audit, changedFields } = mergePhysicalAudit(current, form);
+    if (!changedFields.length) return library;
+
+    library.collection[index] = { ...current, audit };
+    addHistory(library, {
+      action: "collection.audit",
+      entityId: current.collectionId,
+      title: current.title,
+      platform: current.platform,
+      summary: "Auditoria física atualizada",
+      details: changedFields,
+    });
+    return library;
+  });
+
+  revalidatePath(`/game/${encodeURIComponent(collectionId)}`);
+  revalidatePath("/collection");
+  revalidatePath("/history");
 }
 
 export async function editGame(form: FormData) {

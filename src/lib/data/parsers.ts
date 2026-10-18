@@ -56,6 +56,7 @@ export function parseAuditRow(row: Record<string, string>): AuditRecord {
     localizedTitle: text(row["Localized / Label Title"]),
     platform: text(row.Platform),
     productCode: text(row["Product Code"]),
+    ean: text(row["EAN"]),
     region: text(row.Region),
     releaseMarket: text(row["Release Market"]),
     auditStatus: text(row["Audit Status"]),

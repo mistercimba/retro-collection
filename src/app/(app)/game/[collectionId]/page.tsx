@@ -18,6 +18,7 @@ import { CONDITION_OPTIONS, LANGUAGE_OPTIONS, REGION_OPTIONS } from "@/lib/colle
 import { OwnedCopyPhotos } from "@/components/owned-copy-photos";
 import { OwnedCopyGroup } from "@/components/owned-copy-group";
 import { CopyCompletionPanel } from "@/components/copy-completion-panel";
+import { PhysicalAuditEditor } from "@/components/physical-audit-editor";
 
 export default async function GamePage({params,searchParams}:{params:Promise<{collectionId:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const[{collectionId},query]=await Promise.all([params,searchParams]);
@@ -45,8 +46,12 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
   ["Caixa",audit?.boxCondition],
   ["Manual",audit?.manualCondition],
   ["Completude auditada",audit?.completeness],
-  ["Código",audit?.productCode],
+  ["Código de produto / SKU",audit?.productCode],
+  ["EAN observado",audit?.ean],
+  ["Mercado observado",audit?.releaseMarket],
   ["Idiomas observados",audit?.observedLanguages],
+  ["Estado da auditoria",audit?.auditStatus],
+  ["Base da evidência",audit?.evidenceBasis],
  ].filter((entry):entry is [string,string]=>Boolean(entry[1]));
 
  return <div className="mx-auto max-w-4xl space-y-5 pb-10">
@@ -112,6 +117,8 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
 
    {game.notes&&<p className="mt-3 whitespace-pre-wrap rounded-xl bg-[#f4f1e8] p-3 text-xs leading-5 text-slate-600">{game.notes}</p>}
   </section>
+
+  <PhysicalAuditEditor game={game}/>
 
   <CopyCompletionPanel game={game} activeNeeds={componentNeeds.active} history={componentNeeds.history}/>
 
