@@ -22,6 +22,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### NOW — Read-only HLTB coverage audit (#102)
+After 531 owned copies, 331 saved HLTB Main Story values and 200 without, RAWG has been paused. The HLTB lookup currently accepts exact normalized title matches only. Add a collapsed read-only audit to the authenticated ratings maintenance page: missing-reason categories, platforms, list of missing titles and HLTB IDs shared by different names. No HLTB/RAWG API requests or private Blob writes; matching algorithm changes require separately reviewed work. Issue #102, pending CI and owner merge approval.
+
+
 ### NOW — Resilient HLTB maintenance (#100)
 User resumed HLTB backfill after #99 and found 72 HLTB, 8 Metacritic, but an isolated HLTB timeout stopped the entire run. Fix: 1 controlled 2–3s retry per transient failed group, then session-only skip and continue; stop after 3 consecutive failures to avoid hammering an unstable upstream. No error writes, no replay loops, preserve confirmation of earlier results, keep RAWG isolated and 2–3s pacing. Issue #100, new PR. Never run the collection update on CI or Preview; no merge without explicit Product Owner approval.
 
