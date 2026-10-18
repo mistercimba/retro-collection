@@ -15,6 +15,7 @@ import type { CollectionGame, LibraryData, OneTimeGameRatings } from "../src/lib
 import { positiveMainHours, ratingScore, emptyRatings } from "../src/lib/game-ratings.logic";
 import { collectNewGameRatings } from "../src/lib/game-ratings-provider.node";
 import { missingRatingFields, mergeMissingRatings, ratingEditionKey, validatePrivateLibrary } from "../src/lib/game-ratings-enrichment.logic";
+import { blockConflictingNewHltb } from "../src/lib/hltb-id-integrity.logic";
 
 const PATH = "retro-collection/library.json";
 const BACKUPS = resolve(process.cwd(), ".retro-backups");
@@ -122,11 +123,17 @@ async function main() {
       hltb: reusableHltb?.hltb ?? fetched.hltb,
       metacritic: reusableMeta?.metacritic ?? fetched.metacritic,
     };
-    for (const game of group) {
-      game.referenceRatings = mergeMissingRatings(game.referenceRatings, resolved);
+    // The optional advanced CLI must enforce the same ID collision guard
+    // as live additions and the in-app maintenance workflow.
+    const safeResolved = blockConflictingNewHltb(library.collection, representative.title, resolved);
+    if (safeResolved !== resolved) {
+      console.warn("HLTB ID rejeitado: associado a outro título da coleção. Mantidas horas por confirmar.");
     }
-    if (positiveMainHours(resolved.hltb.mainHours) !== null) hltbHits += group.length;
-    if (ratingScore(resolved.metacritic.score) !== null) metacriticHits += group.length;
+    for (const game of group) {
+      game.referenceRatings = mergeMissingRatings(game.referenceRatings, safeResolved);
+    }
+    if (positiveMainHours(safeResolved.hltb.mainHours) !== null) hltbHits += group.length;
+    if (ratingScore(safeResolved.metacritic.score) !== null) metacriticHits += group.length;
     console.log(`[${index}/${groups.size}] ${representative.platform}: ${representative.title} — HLTB ${resolved.hltb.mainHours ?? "—"} h · Metacritic ${resolved.metacritic.score ?? "—"}`);
   }
 
