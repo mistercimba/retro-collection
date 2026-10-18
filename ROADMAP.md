@@ -22,6 +22,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### NOW — Fix broken live HLTB/RAWG backfill (#96)
+Production showed 0 HLTB and 7 Metacritic after 117 processed groups. Vercel logs confirm repeated HLTB `Error` and RAWG `TimeoutError`. Old HLTB npm 1.8.0 (3 years old) cannot be used reliably. Replace with recently maintained `howlongtobeat-ts`, fail fast on external error rather than storing empty as final, and reattempt legacy false negatives once using lookup version 2. Preserve 7 known score values. Do not re-run backfill until provider smoke/QA; user was told to pause. Fix in PR tied to Issue #96; do not merge without owner approval.
+
+
 ### COMPLETED — HLTB + RAWG on addition and maintenance UI (#92 / #94; PRs #93 / #95)
 The app stores platform-verified HLTB Main Story and RAWG Metacritic values on new adds. Existing copies may be enriched **from within the application** at `/maintenance/ratings` (linked in History), after an explicit user confirmation. A full private Blob backup is written before modification; batches run one title/platform/edition at a time and respect 2–3 second provider delays and concurrency checks. Never auto-run on deploy. The CLI exists as an advanced fallback only; user does not need a terminal. Production UX and actual provider availability are not certified by CI. Neither the merge nor deployment mutates existing collection data.
 

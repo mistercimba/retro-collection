@@ -25,6 +25,11 @@ export function RatingsMaintenanceRunner({initial,canRun}:{initial:RatingsOvervi
         const step=await enrichNextRatingsGroup({backupPath:begin.backupPath,expectedUpdatedAt:updatedAt});
         updatedAt=step.updatedAt;
         setOverview(step.overview);
+        if ("failure" in step && typeof step.failure === "string") {
+          setError(step.failure);
+          setMessage("Atualização parada automaticamente. Não foram guardados dados vazios para este jogo.");
+          break;
+        }
         if(step.processed) {
           processed++;setCompleted(processed);
           setMessage("Atualizado: "+step.processed.title+" ("+step.processed.platform+")");

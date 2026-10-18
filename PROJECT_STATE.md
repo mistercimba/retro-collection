@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-18
 
+### URGENT — Live ratings outage (#96)
+On 2026-10-18 user saw 531 active copies, HLTB=0, Metacritic=7, 117 batch groups run, 413 copies pending and 118 flagged attempted. Vercel runtime `/maintenance/ratings` logs confirm repeated `hltb_lookup_unavailable { errorName: 'Error' }` and RAWG Timeouts. Root cause: provider catches errors to `unavailable`, maintenance treats it as permanently attempted and writes to private Blob, wasting minutes and hiding failed attempts. User told to click Pausar. Issue #96 opened; PR working on replacement HLTB client, strict fail-fast and lookup version 2 to retry legacy nulls while preserving positive confirmed scores. Do NOT start real enrichment automatically or retry the whole collection until provider smoke validated.
+
+
 ### Completed — in-app HLTB / RAWG maintenance (#92, #94; PRs #93, #95)
 User explicitly approved merging PR #89 (physical copy editor), PR #91 (collector game detail with **static game cover**), PR #93 (new-game HLTB Main Story and platform-specific RAWG Metacritic), and PR #95 (no-terminal maintenance UI). These are now squash-merged into `main`: #89 `1b1f1db6b593dcf38dc2a1d6616cbb8a8c20604e`, #91 `44bef503460b7ff06a560750912abb5e5b856238`, #93 `c2c27a429adafe21923a3d9b7178448b95aaeb30`, #95 `6051ccd785199528b685c3d36c9650fab329563c`. Corresponding Issues #88/#90/#92/#94 closed. PR branch checks and Vercel Previews passed; final production checks and authenticated UX must be independently verified.
 

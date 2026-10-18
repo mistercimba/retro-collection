@@ -3,8 +3,12 @@ import { ratingEditionKey } from "./game-ratings-enrichment.logic";
 import { emptyRatings, positiveMainHours, ratingScore } from "./game-ratings.logic";
 
 export type RatingsOverview = {ownedCopies:number;hltbKnown:number;metacriticKnown:number;pendingCopies:number;pendingGroups:number;attemptedWithoutBoth:number};
+export const CURRENT_LOOKUP_VERSION=2;
 function attempted(r:OneTimeGameRatings|null|undefined,field:"hltb"|"metacritic") {
   if (!r?.fetchedAt) return false;
+  // A failed provider call is not a successful lookup. Version 1 results
+  // incorrectly stored errors as "unavailable"; recover these once in v2.
+  if ((r.lookupVersion??1)<CURRENT_LOOKUP_VERSION) return false;
   return ["matched","unmatched","ambiguous","unavailable"].includes(r[field]?.status ?? "");
 }
 export function pendingRatingFields(copy:CollectionGame) {
@@ -58,6 +62,7 @@ export function applyRatingsTask(game:CollectionGame, fetched:OneTimeGameRatings
   if(!pending.hltb&&!pending.metacritic)return game;
   const previous=game.referenceRatings??emptyRatings(fetched.fetchedAt);
   return {...game,referenceRatings:{
+    lookupVersion:CURRENT_LOOKUP_VERSION,
     fetchedAt:fetched.fetchedAt,
     hltb:pending.hltb?(known.hltb??fetched.hltb):previous.hltb,
     metacritic:pending.metacritic?(known.metacritic??fetched.metacritic):previous.metacritic,

@@ -113,9 +113,11 @@ async function main() {
           hltb: needsHltb && !reusableHltb,
           metacritic: needsMetacritic && !reusableMeta,
           beforeExternalRequest: pace,
+          strict: true, // An outage must abort before any private-Blob write.
         })
       : emptyRatings(new Date().toISOString());
     const resolved: OneTimeGameRatings = {
+      lookupVersion: fetched.lookupVersion,
       fetchedAt: fetched.fetchedAt,
       hltb: reusableHltb?.hltb ?? fetched.hltb,
       metacritic: reusableMeta?.metacritic ?? fetched.metacritic,
