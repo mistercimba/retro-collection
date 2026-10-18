@@ -28,6 +28,9 @@ Owner approved; PR #85 merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373ad4cce39
 ### COMPLETED — Owned-copy photo enlargement (#86; PR #87)
 Owner approved; PR #87 merged on 2026-10-16 as `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb`, Issue #86 closed. An accessible native photo dialog enlarges existing private owned-copy images with previous/next buttons, arrow keys and Escape. No storage/data migration; the existing private image API remains the sole source. Pre-merge CI and Preview passed; authenticated real-device gallery QA was not performed.
 
+### NOW — Compact copy-first game detail (#90; stacked on #89)
+User-approved overhaul of `/game/[collectionId]`: compact cover/metadata, primary copy facts, prices without empty price boxes, unobtrusive single-copy add, and collapsible empty photo/completion panels. Preserves full-edit, photo, provenance and duplicate-copy interactions. PR is stacked on #89 until that physical-audit PR merges; do not merge either without Product Owner approval. Screenshot feedback of Resident Evil 4: Wii Edition (WII-0019) initiated work. Manual Preview UX remains to be confirmed.
+
 ### NOW — Editable per-copy physical archive (#88; audit #83)
 PR candidate under development/review: edit existing copy-specific audit data with SKU, optional observed EAN, PAL country/market, physical condition and evidence. Keep prior audit records and historical dates; never infer retail PAL identities from IGDB. This is an application feature, not a migration of production Blob data. Do not merge without Product Owner approval.
 
