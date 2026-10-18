@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-18
 
+### NOW — Read-only HLTB coverage diagnostics (#102)
+Owner paused RAWG. Last screenshot: 531 owned, 331 HLTB, 8 Metacritic, no HLTB backlog; 200 copies without saved HLTB Main Story time. Root concern: normalized exact-title lookup can miss edition/name variants; matching is not platform-specific. Prepare an authenticated read-only UI breakdown of saved status (unmatched/ambiguous/unavailable/error/pending), platforms and titles, plus candidate shared IDs. No access to raw private Blob outside app, no external requests or writes during PR implementation. Await CI, preview and explicit owner merge approval.
+
+
 ### NOW — HLTB intermittent timeout during extended batch (#100)
 User's latest live screenshot: 531 physical copies, 72 with HLTB (previously 31), 8 with Metacritic, 487 pending one or both, 409 pending HLTB requests, then `HowLongToBeat indisponível (timeout)`. #99 isolation worked, but `strict:true` still stopped every batch on the first transient outage. The fix under Issue #100 should do one controlled retry, skip the failed group for the current browser session only (without Blob write) and continue, stop after 3 consecutive failures; maintain per-source selection and all backups/auth protections. Vercel log query failed due plan retention, not evidence of empty logs. No live collection change made by the assistant.
 
