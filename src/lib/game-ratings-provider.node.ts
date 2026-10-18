@@ -5,7 +5,6 @@ import {
 } from "./game-ratings.logic";
 
 type HltbRecord = { id?: string | number; name?: string; gameplayMain?: number };
-type ModernHltbEntry = { id: number|string; name: string; mainTime: number };
 export class RatingsProviderFailure extends Error {
   constructor(public readonly source:"hltb"|"rawg", public readonly reason:"timeout"|"http"|"network"|"provider", public readonly httpStatus?:number) {
     super(`${source === "hltb" ? "HowLongToBeat" : "RAWG"} indisponível (${reason}${httpStatus ? " " + httpStatus : ""}). A atualização foi interrompida; nenhum resultado vazio foi guardado neste jogo.`);
@@ -52,7 +51,7 @@ async function getHltb(title: string, beforeExternalRequest?: BeforeExternalRequ
       result.kind === "http" ? "http" :
       result.kind === "transport" ? "network" : "provider", result.status);
   }
-  const entries = result.data.map((item: ModernHltbEntry) => ({
+  const entries = result.data.map(item => ({
     id: item.id, name: item.name, gameplayMain: toHours(item.mainTime),
   }));
   const titleOptions = conservativeSearchTitles(title, "");
