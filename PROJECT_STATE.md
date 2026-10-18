@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-18
 
+### NOW — RAWG timeout blocking working HLTB (#98)
+User tested the merged #97 correction: 531 owned copies, 27 HowLongToBeat times, 8 Metacritic scores, 491 unprocessed; UI stopped on `RAWG indisponível (timeout)`. This confirms updated HLTB works but RAWG availability is intermittent. Current maintenance server does both provider calls sequentially with strict handling and discards a successful HLTB result if RAWG fails on the same group. Fix #98 isolates per-provider maintenance passes (HLTB as default; RAWG optional later), preserves the untouched provider's field and per-provider lookup revision, and maintains error stop and backups. Never run live backfill during development/CI/Preview; no merge without owner approval.
+
+
 ### URGENT — Live ratings outage (#96)
 On 2026-10-18 user saw 531 active copies, HLTB=0, Metacritic=7, 117 batch groups run, 413 copies pending and 118 flagged attempted. Vercel runtime `/maintenance/ratings` logs confirm repeated `hltb_lookup_unavailable { errorName: 'Error' }` and RAWG Timeouts. Root cause: provider catches errors to `unavailable`, maintenance treats it as permanently attempted and writes to private Blob, wasting minutes and hiding failed attempts. User told to click Pausar. Issue #96 opened; PR working on replacement HLTB client, strict fail-fast and lookup version 2 to retry legacy nulls while preserving positive confirmed scores. Do NOT start real enrichment automatically or retry the whole collection until provider smoke validated.
 

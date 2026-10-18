@@ -40,8 +40,8 @@ export interface OneTimeGameRatings {
   /** Lookup algorithm revision; old copies have no version and may be safely reprocessed. */
   lookupVersion?: number;
   fetchedAt: string;
-  hltb: { mainHours: number | null; gameId: string | null; status: RatingsStatus };
-  metacritic: { score: number | null; url: string | null; rawgUrl: string | null; status: RatingsStatus };
+  hltb: { mainHours: number | null; gameId: string | null; status: RatingsStatus; lookupVersion?: number };
+  metacritic: { score: number | null; url: string | null; rawgUrl: string | null; status: RatingsStatus; lookupVersion?: number };
 }
 
 export interface CollectionItem {

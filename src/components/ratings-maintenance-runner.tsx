@@ -1,33 +1,36 @@
 "use client";
 import { useRef, useState } from "react";
-import type { RatingsOverview } from "@/lib/ratings-maintenance.logic";
+import type { RatingsOverview, RatingsSource } from "@/lib/ratings-maintenance.logic";
 import { beginRatingsMaintenance, enrichNextRatingsGroup } from "@/lib/ratings-maintenance-actions";
 
 const sleep=(ms:number)=>new Promise<void>(resolve=>setTimeout(resolve,ms));
 export function RatingsMaintenanceRunner({initial,canRun}:{initial:RatingsOverview;canRun:boolean}) {
   const [overview,setOverview]=useState(initial);
+  const [source,setSource]=useState<RatingsSource>("hltb");
+  const pendingGroups=source==="hltb"?overview.pendingHltbGroups:overview.pendingMetacriticGroups;
   const [running,setRunning]=useState(false);
   const [message,setMessage]=useState("");
   const [error,setError]=useState("");
   const [completed,setCompleted]=useState(0);
   const stop=useRef(false);
   async function start() {
-    if(running||!canRun||overview.pendingGroups===0)return;
-    if(!window.confirm("Esta operação vai atualizar os dados reais da tua coleção. Primeiro será criado um backup privado. Queres continuar?"))return;
+    if(running||!canRun||pendingGroups===0)return;
+    const service=source==="hltb"?"HowLongToBeat":"Metacritic (RAWG)";
+    if(!window.confirm("Vais atualizar apenas "+service+" na coleção real. Será criado um backup antes de começar. Queres continuar?"))return;
     setRunning(true);stop.current=false;setError("");setCompleted(0);
     setMessage("A criar uma cópia de segurança…");
     try {
-      const begin=await beginRatingsMaintenance();
+      const begin=await beginRatingsMaintenance(source);
       setOverview(begin.overview);
-      if(!begin.backupPath){setMessage("Já não há jogos por atualizar.");return;}
+      if(!begin.backupPath){setMessage("Já não há jogos desta fonte por atualizar.");return;}
       let updatedAt=begin.updatedAt,processed=0;
       while(!stop.current) {
-        const step=await enrichNextRatingsGroup({backupPath:begin.backupPath,expectedUpdatedAt:updatedAt});
+        const step=await enrichNextRatingsGroup({backupPath:begin.backupPath,expectedUpdatedAt:updatedAt,source});
         updatedAt=step.updatedAt;
         setOverview(step.overview);
         if ("failure" in step && typeof step.failure === "string") {
           setError(step.failure);
-          setMessage("Atualização parada automaticamente. Não foram guardados dados vazios para este jogo.");
+          setMessage("A fonte selecionada parou por erro. Os valores já guardados foram preservados. Podes usar a outra fonte separadamente.");
           break;
         }
         if(step.processed) {
@@ -60,14 +63,32 @@ export function RatingsMaintenanceRunner({initial,canRun}:{initial:RatingsOvervi
       </div>)}
     </div>
     <p className="text-sm leading-6 text-slate-600">
-      {overview.pendingGroups} pesquisas distintas por fazer.
+      {overview.pendingGroups} pesquisas distintas por fazer no total.
       {overview.attemptedWithoutBoth>0?" "+overview.attemptedWithoutBoth+" cópias foram consultadas, mas não têm ambos os valores.":""}
     </p>
+    <div className="space-y-2">
+      <p className="text-sm font-bold text-slate-700">Escolhe que valores queres atualizar:</p>
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Fonte para atualizar">
+        <button type="button" disabled={running} aria-pressed={source==="hltb"}
+          onClick={()=>{setSource("hltb");setMessage("");setError("");}}
+          className={`rounded-xl border px-4 py-3 text-sm font-bold disabled:opacity-50 ${source==="hltb"?"border-[#17382e] bg-[#17382e] text-white":"border-[#c9d3ca] bg-white text-[#17382e]"}`}>
+          HowLongToBeat ({overview.pendingHltbGroups} pesquisas)
+        </button>
+        <button type="button" disabled={running} aria-pressed={source==="metacritic"}
+          onClick={()=>{setSource("metacritic");setMessage("");setError("");}}
+          className={`rounded-xl border px-4 py-3 text-sm font-bold disabled:opacity-50 ${source==="metacritic"?"border-[#17382e] bg-[#17382e] text-white":"border-[#c9d3ca] bg-white text-[#17382e]"}`}>
+          Metacritic / RAWG ({overview.pendingMetacriticGroups} pesquisas)
+        </button>
+      </div>
+      <p className="text-sm text-slate-600">{source==="hltb"
+        ?"Só serão consultados e guardados tempos HowLongToBeat. A RAWG não será contactada."
+        :"Só serão consultadas pontuações via RAWG. Se a RAWG falhar, esta atualização pára; os tempos HowLongToBeat não são afetados."}</p>
+    </div>
     {!canRun&&<p className="text-sm font-semibold text-amber-800">Este Preview é apenas para consulta. A atualização só pode ser iniciada na aplicação principal.</p>}
     <div className="flex flex-wrap gap-2">
-      <button type="button" disabled={running||!canRun||overview.pendingGroups===0} onClick={start}
+      <button type="button" disabled={running||!canRun||pendingGroups===0} onClick={start}
         className="min-h-11 rounded-xl bg-[#17382e] px-5 text-sm font-black text-white disabled:cursor-not-allowed disabled:opacity-40">
-        {running?"A atualizar…":"Atualizar valores em falta"}
+        {running?"A atualizar…":source==="hltb"?"Atualizar HowLongToBeat":"Atualizar Metacritic"}
       </button>
       {running&&<button type="button" onClick={()=>{stop.current=true;setMessage("A terminar o jogo atual antes de parar…");}}
         className="min-h-11 rounded-xl border border-[#d5d1c5] px-5 text-sm font-bold text-slate-700">Pausar</button>}
