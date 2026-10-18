@@ -4,6 +4,7 @@ import { get, put } from "@vercel/blob";
 import { authEnabled, isAuthenticated } from "./auth";
 import { getFreshLibrarySnapshot, saveLibrary } from "./library-store";
 import { collectNewGameRatings } from "./new-game-ratings";
+import { RatingsProviderFailure } from "./game-ratings-provider.node";
 import { emptyRatings } from "./game-ratings.logic";
 import { applyRatingsTask, nextRatingsTask, ratingsOverview } from "./ratings-maintenance.logic";
 
@@ -40,11 +41,27 @@ export async function enrichNextRatingsGroup(request:{backupPath:string;expected
     if(requests>0)await sleep(2000+Math.floor(Math.random()*1001));
     requests++;
   };
-  const fetched=task.lookupHltb||task.lookupMetacritic
-    ?await collectNewGameRatings(task.title,task.platform,{
-      hltb:task.lookupHltb,metacritic:task.lookupMetacritic,beforeExternalRequest:pace,strict:true,
-    })
-    :emptyRatings(new Date().toISOString());
+  let fetched;
+  try {
+    fetched=task.lookupHltb||task.lookupMetacritic
+      ?await collectNewGameRatings(task.title,task.platform,{
+        hltb:task.lookupHltb,metacritic:task.lookupMetacritic,beforeExternalRequest:pace,strict:true,
+      })
+      :emptyRatings(new Date().toISOString());
+  } catch (error) {
+    if (error instanceof RatingsProviderFailure) {
+      // Next.js hides uncaught server action exception messages in production.
+      // Return only a safe category, never provider URLs, auth tokens or raw data.
+      return {
+        updatedAt:before.library.updatedAt,
+        overview:ratingsOverview(before.library.collection),
+        done:false,
+        processed:null,
+        failure:error.message,
+      };
+    }
+    throw error;
+  }
   const fresh=await getFreshLibrarySnapshot();
   if(fresh.sha256!==before.sha256)
     throw new Error("A coleção mudou durante as consultas. Não foram gravados os resultados deste jogo.");
