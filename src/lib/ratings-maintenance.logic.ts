@@ -80,11 +80,13 @@ export function ratingsOverview(all: CollectionGame[]): RatingsOverview {
   };
 }
 
-export function nextRatingsTask(all: CollectionGame[], source?: RatingsSource) {
+export function nextRatingsTask(all: CollectionGame[], source?: RatingsSource, skippedIds: readonly string[] = []) {
+  const skipped = new Set(skippedIds);
   for (const group of ownedGroups(all).values()) {
     const pending = group.filter(g => {
       const needs = pendingRatingFields(g);
-      return source ? needs[source] : needs.hltb || needs.metacritic;
+      const selected = source ? needs[source] : needs.hltb || needs.metacritic;
+      return selected && !skipped.has(g.collectionId);
     });
     if (!pending.length) continue;
     const knownHltb = group.find(g => positiveMainHours(g.referenceRatings?.hltb?.mainHours) !== null)?.referenceRatings?.hltb ?? null;
@@ -126,4 +128,37 @@ export function applyRatingsTask(
         : previous.metacritic,
     },
   };
+}
+
+/**
+ * HLTB may intermittently time out. Only retry timeouts, network errors,
+ * HTTP 429 and transient 5xx once. Never retry RAWG automatically here.
+ */
+export function isTransientHltbFailure(error: unknown, source: RatingsSource): boolean {
+  if (source !== "hltb" || !error || typeof error !== "object") return false;
+  const e = error as { source?: unknown; reason?: unknown; httpStatus?: unknown };
+  if (e.source !== "hltb") return false;
+  if (e.reason === "timeout" || e.reason === "network") return true;
+  return e.reason === "http" && typeof e.httpStatus === "number" &&
+    (e.httpStatus === 429 || e.httpStatus >= 500 && e.httpStatus <= 599);
+}
+
+export async function retryTransientHltb<T>(
+  source: RatingsSource,
+  request: () => Promise<T>,
+  wait: () => Promise<void>,
+): Promise<T> {
+  try {
+    return await request();
+  } catch (error) {
+    if (!isTransientHltbFailure(error, source)) throw error;
+    await wait();
+    // At most one retry per group. Caller handles a second failure.
+    return request();
+  }
+}
+
+/** Prevent repeatedly hammering an upstream that is failing in succession. */
+export function shouldPauseAfterOutages(consecutiveFailures: number): boolean {
+  return consecutiveFailures >= 3;
 }

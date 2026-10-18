@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-18
 
+### NOW — HLTB intermittent timeout during extended batch (#100)
+User's latest live screenshot: 531 physical copies, 72 with HLTB (previously 31), 8 with Metacritic, 487 pending one or both, 409 pending HLTB requests, then `HowLongToBeat indisponível (timeout)`. #99 isolation worked, but `strict:true` still stopped every batch on the first transient outage. The fix under Issue #100 should do one controlled retry, skip the failed group for the current browser session only (without Blob write) and continue, stop after 3 consecutive failures; maintain per-source selection and all backups/auth protections. Vercel log query failed due plan retention, not evidence of empty logs. No live collection change made by the assistant.
+
+
 ### Completed — Isolated HLTB and RAWG maintenance (#98; PR #99)
 Owner approved and PR #99 squash-merged as `4144da5b89c46cdd279b6b8c53a1cc6f21d1985e`. Prior live test: 531 owned, 27 HLTB and 8 Metacritic, 491 still needing at least one source, then RAWG timeout. Source-specific selection now defaults to HLTB only; RAWG can be updated independently. Backend enforces per-source lookups and persistence, maintains per-provider lookup revision for old false negatives, keeps backup and concurrency protections, and 2–3-second pacing. Checks and preview passed. **No actual collection backfill performed on merge.** Next action: user opens production `/maintenance/ratings` and explicitly chooses whether to resume only HLTB. Do not claim upstream services will always respond; inspect runtime errors if a future pass fails.
 

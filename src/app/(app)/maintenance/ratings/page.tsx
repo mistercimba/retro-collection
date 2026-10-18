@@ -19,6 +19,6 @@ export default async function RatingsMaintenancePage() {
     <section className="collection-panel p-5">
       <RatingsMaintenanceRunner initial={ratingsOverview(library.collection)} canRun={process.env.VERCEL_ENV==="production"}/>
     </section>
-    <p className="text-xs leading-5 text-slate-500">Apenas o botão «Atualizar» modifica a coleção, depois de confirmação. Antes de começar é criado um backup privado. Escolhe primeiro HowLongToBeat para continuar a recolher tempos sem depender da RAWG. A atualização da RAWG pode ser feita mais tarde. Os jogos são processados com pausas e podes parar e retomar.</p>
+    <p className="text-xs leading-5 text-slate-500">Apenas o botão «Atualizar» modifica a coleção, depois de confirmação. Antes de começar é criado um backup privado. Escolhe primeiro HowLongToBeat para continuar a recolher tempos sem depender da RAWG. A atualização da RAWG pode ser feita mais tarde. Os jogos são processados com pausas; um timeout isolado não faz perder os resultados anteriores. Após três falhas seguidas, a atualização pára para proteger o serviço. Podes parar e retomar.</p>
   </div>;
 }

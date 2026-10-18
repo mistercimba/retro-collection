@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import type { RatingsOverview, RatingsSource } from "@/lib/ratings-maintenance.logic";
+import { shouldPauseAfterOutages, type RatingsOverview, type RatingsSource } from "@/lib/ratings-maintenance.logic";
 import { beginRatingsMaintenance, enrichNextRatingsGroup } from "@/lib/ratings-maintenance-actions";
 
 const sleep=(ms:number)=>new Promise<void>(resolve=>setTimeout(resolve,ms));
@@ -12,32 +12,55 @@ export function RatingsMaintenanceRunner({initial,canRun}:{initial:RatingsOvervi
   const [message,setMessage]=useState("");
   const [error,setError]=useState("");
   const [completed,setCompleted]=useState(0);
+  const [withoutResponse,setWithoutResponse]=useState(0);
   const stop=useRef(false);
   async function start() {
     if(running||!canRun||pendingGroups===0)return;
     const service=source==="hltb"?"HowLongToBeat":"Metacritic (RAWG)";
     if(!window.confirm("Vais atualizar apenas "+service+" na coleção real. Será criado um backup antes de começar. Queres continuar?"))return;
-    setRunning(true);stop.current=false;setError("");setCompleted(0);
+    setRunning(true);stop.current=false;setError("");setCompleted(0);setWithoutResponse(0);
     setMessage("A criar uma cópia de segurança…");
     try {
       const begin=await beginRatingsMaintenance(source);
       setOverview(begin.overview);
       if(!begin.backupPath){setMessage("Já não há jogos desta fonte por atualizar.");return;}
-      let updatedAt=begin.updatedAt,processed=0;
+      let updatedAt=begin.updatedAt,processed=0,consecutiveErrors=0;
+      let skippedIds:string[]=[];
+      let failedGroups=0;
       while(!stop.current) {
-        const step=await enrichNextRatingsGroup({backupPath:begin.backupPath,expectedUpdatedAt:updatedAt,source});
+        const step=await enrichNextRatingsGroup({backupPath:begin.backupPath,expectedUpdatedAt:updatedAt,source,skippedIds});
         updatedAt=step.updatedAt;
         setOverview(step.overview);
         if ("failure" in step && typeof step.failure === "string") {
+          if (step.transient === true && Array.isArray(step.failedIds) && step.failedIds.length) {
+            skippedIds=[...new Set([...skippedIds,...step.failedIds])];
+            failedGroups++;
+            consecutiveErrors++;
+            setWithoutResponse(failedGroups);
+            setMessage("Sem resposta: "+(step.failedTitle??"jogo atual")+". Ficou pendente; vou continuar com os restantes.");
+            if (shouldPauseAfterOutages(consecutiveErrors)) {
+              setError("Três jogos seguidos sem resposta do HowLongToBeat. Parei para não sobrecarregar o serviço. Podes tentar novamente mais tarde.");
+              break;
+            }
+            if(stop.current)break;
+            await sleep(2000+Math.floor(Math.random()*1001));
+            continue;
+          }
           setError(step.failure);
-          setMessage("A fonte selecionada parou por erro. Os valores já guardados foram preservados. Podes usar a outra fonte separadamente.");
+          setMessage("Atualização interrompida. Nenhum resultado vazio foi gravado para o jogo com erro.");
           break;
         }
+        consecutiveErrors=0;
         if(step.processed) {
           processed++;setCompleted(processed);
           setMessage("Atualizado: "+step.processed.title+" ("+step.processed.platform+")");
         }
-        if(step.done){setMessage("Concluído! Os resultados estão guardados.");break;}
+        if(step.done){
+          setMessage(failedGroups
+            ?"Passagem terminada para os jogos que responderam. "+failedGroups+" jogos ficaram pendentes por timeout e poderão ser tentados numa próxima sessão."
+            :"Concluído! Os resultados estão guardados.");
+          break;
+        }
         if(stop.current)break;
         // The server already spaces out requests within a title.
         // Pause again across titles to avoid bursts.
@@ -81,7 +104,7 @@ export function RatingsMaintenanceRunner({initial,canRun}:{initial:RatingsOvervi
         </button>
       </div>
       <p className="text-sm text-slate-600">{source==="hltb"
-        ?"Só serão consultados e guardados tempos HowLongToBeat. A RAWG não será contactada."
+        ?"Só serão consultados e guardados tempos HowLongToBeat. A RAWG não será contactada. Se um jogo não responder após uma segunda tentativa, fica pendente e a atualização segue para o próximo."
         :"Só serão consultadas pontuações via RAWG. Se a RAWG falhar, esta atualização pára; os tempos HowLongToBeat não são afetados."}</p>
     </div>
     {!canRun&&<p className="text-sm font-semibold text-amber-800">Este Preview é apenas para consulta. A atualização só pode ser iniciada na aplicação principal.</p>}
@@ -93,8 +116,9 @@ export function RatingsMaintenanceRunner({initial,canRun}:{initial:RatingsOvervi
       {running&&<button type="button" onClick={()=>{stop.current=true;setMessage("A terminar o jogo atual antes de parar…");}}
         className="min-h-11 rounded-xl border border-[#d5d1c5] px-5 text-sm font-bold text-slate-700">Pausar</button>}
     </div>
-    {running&&<p role="status" className="text-sm font-semibold text-slate-700">
-      {completed} pesquisas concluídas nesta sessão. Mantém esta página aberta enquanto decorre a atualização.
+    {(running||completed>0||withoutResponse>0)&&<p role="status" className="text-sm font-semibold text-slate-700">
+      {completed} pesquisas concluídas nesta sessão · {withoutResponse} sem resposta (continuam pendentes).
+      {running?" Mantém esta página aberta enquanto decorre a atualização.":""}
     </p>}
     {message&&<p role="status" className="text-sm text-slate-700">{message}</p>}
     {error&&<p role="alert" className="rounded-lg bg-rose-50 p-3 text-sm font-semibold text-rose-900">{error}</p>}
