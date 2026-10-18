@@ -62,6 +62,7 @@ export function applyRatingsTask(game:CollectionGame, fetched:OneTimeGameRatings
   if(!pending.hltb&&!pending.metacritic)return game;
   const previous=game.referenceRatings??emptyRatings(fetched.fetchedAt);
   return {...game,referenceRatings:{
+    lookupVersion:CURRENT_LOOKUP_VERSION,
     fetchedAt:fetched.fetchedAt,
     hltb:pending.hltb?(known.hltb??fetched.hltb):previous.hltb,
     metacritic:pending.metacritic?(known.metacritic??fetched.metacritic):previous.metacritic,

@@ -26,6 +26,7 @@ export function mergeMissingRatings(
   const prior = current ?? emptyRatings(fetched.fetchedAt);
   const missing = missingRatingFields({ referenceRatings: current });
   return {
+    lookupVersion: fetched.lookupVersion,
     fetchedAt: fetched.fetchedAt,
     hltb: missing.hltb ? fetched.hltb : prior.hltb,
     metacritic: missing.metacritic ? fetched.metacritic : prior.metacritic,
