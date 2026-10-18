@@ -26,8 +26,7 @@ export function conservativeSearchTitles(title: string, platform: string): strin
   const canonicalPlatform = platform === "Nintendo Wii" ? "Wii" :
     platform === "Nintendo Wii U" ? "Wii U" : "";
   if (canonicalPlatform) {
-    const expression = new RegExp(":\\s*" + canonicalPlatform.replace(/[.*+?^${}()|[\\]\\]/g, "\\const exactTitle = (left: string, right: string) => Boolean(normalizedGameTitle(left)) &&
-  normalizedGameTitle(left) === normalizedGameTitle(right);") + "\\s+Edition$", "i");
+    const expression = new RegExp(":\\s*" + canonicalPlatform + "\\s+Edition$", "i");
     const bare = title.replace(expression, "").trim();
     if (bare && bare !== title) alternatives.push(bare);
   }
