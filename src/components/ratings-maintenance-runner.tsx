@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import type { RatingsOverview, RatingsSource } from "@/lib/ratings-maintenance.logic";
+import { shouldPauseAfterOutages, type RatingsOverview, type RatingsSource } from "@/lib/ratings-maintenance.logic";
 import { beginRatingsMaintenance, enrichNextRatingsGroup } from "@/lib/ratings-maintenance-actions";
 
 const sleep=(ms:number)=>new Promise<void>(resolve=>setTimeout(resolve,ms));
@@ -38,7 +38,7 @@ export function RatingsMaintenanceRunner({initial,canRun}:{initial:RatingsOvervi
             consecutiveErrors++;
             setWithoutResponse(failedGroups);
             setMessage("Sem resposta: "+(step.failedTitle??"jogo atual")+". Ficou pendente; vou continuar com os restantes.");
-            if (consecutiveErrors >= 3) {
+            if (shouldPauseAfterOutages(consecutiveErrors)) {
               setError("Três jogos seguidos sem resposta do HowLongToBeat. Parei para não sobrecarregar o serviço. Podes tentar novamente mais tarde.");
               break;
             }

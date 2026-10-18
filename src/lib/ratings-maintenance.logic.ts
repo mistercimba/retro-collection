@@ -157,3 +157,8 @@ export async function retryTransientHltb<T>(
     return request();
   }
 }
+
+/** Prevent repeatedly hammering an upstream that is failing in succession. */
+export function shouldPauseAfterOutages(consecutiveFailures: number): boolean {
+  return consecutiveFailures >= 3;
+}

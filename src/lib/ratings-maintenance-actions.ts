@@ -58,7 +58,7 @@ export async function enrichNextRatingsGroup(request:{backupPath:string;expected
       beforeExternalRequest:pace,strict:true,
     });
     fetched=task.lookupHltb||task.lookupMetacritic
-      ?await retryTransientHltb(request.source,lookup,()=>sleep(2000+Math.floor(Math.random()*1001)))
+      ?await retryTransientHltb(request.source,lookup,async()=>{ /* The provider pacer already waits 2–3 s before the retry. */ })
       :emptyRatings(new Date().toISOString());
   } catch (error) {
     if (error instanceof RatingsProviderFailure) {

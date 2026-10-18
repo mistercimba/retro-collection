@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyRatingsTask, isTransientHltbFailure, nextRatingsTask, pendingRatingFields, ratingsOverview, retryTransientHltb } from "./ratings-maintenance.logic";
+import { applyRatingsTask, isTransientHltbFailure, nextRatingsTask, pendingRatingFields, ratingsOverview, retryTransientHltb, shouldPauseAfterOutages } from "./ratings-maintenance.logic";
 import { emptyRatings } from "./game-ratings.logic";
 import type { CollectionGame } from "./data/types";
 const copy=(id:string,extra:Partial<CollectionGame>={})=>({collectionId:id,title:"Resident Evil 4",
@@ -142,5 +142,14 @@ describe("HLTB transient failure recovery",()=>{
       rawgCalls++;throw {source:"rawg",reason:"timeout"};
     },async()=>{waits++})).rejects.toMatchObject({source:"rawg"});
     expect(rawgCalls).toBe(1);
+  });
+});
+
+describe("stop policy after repeated outages",()=>{
+  it("continues after isolated errors and stops on the third consecutive failure",()=>{
+    expect(shouldPauseAfterOutages(1)).toBe(false);
+    expect(shouldPauseAfterOutages(2)).toBe(false);
+    expect(shouldPauseAfterOutages(3)).toBe(true);
+    expect(shouldPauseAfterOutages(4)).toBe(true);
   });
 });
