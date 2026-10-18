@@ -14,11 +14,11 @@ export default async function RatingsMaintenancePage() {
     <header className="collection-hero">
       <p className="eyebrow">MANUTENÇÃO DA COLEÇÃO</p>
       <h1 className="mt-1 text-2xl font-black text-slate-950 sm:text-3xl">Tempos e pontuações</h1>
-      <p className="mt-2 text-sm text-slate-600">Descobre os jogos que ainda não têm tempo de história principal (HowLongToBeat) ou pontuação Metacritic (via RAWG).</p>
+      <p className="mt-2 text-sm text-slate-600">Consulta os tempos de jogo no HowLongToBeat ou as pontuações Metacritic (via RAWG), de forma independente.</p>
     </header>
     <section className="collection-panel p-5">
       <RatingsMaintenanceRunner initial={ratingsOverview(library.collection)} canRun={process.env.VERCEL_ENV==="production"}/>
     </section>
-    <p className="text-xs leading-5 text-slate-500">Apenas o botão «Atualizar» modifica a coleção, depois de confirmação. Antes de começar é criado um backup privado. Os jogos são processados devagar, um grupo de cada vez; podes pausar e retomar. Os resultados que não possam ser confirmados ficam sem valor.</p>
+    <p className="text-xs leading-5 text-slate-500">Apenas o botão «Atualizar» modifica a coleção, depois de confirmação. Antes de começar é criado um backup privado. Escolhe primeiro HowLongToBeat para continuar a recolher tempos sem depender da RAWG. A atualização da RAWG pode ser feita mais tarde. Os jogos são processados com pausas e podes parar e retomar.</p>
   </div>;
 }

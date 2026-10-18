@@ -50,3 +50,53 @@ describe("recover incorrectly marked previous attempts",()=>{
   expect(updated.referenceRatings?.metacritic.score).toBe(85);
  });
 });
+
+describe("provider-isolated backfill regression",()=>{
+ it("HLTB maintenance never queries or marks RAWG as attempted",()=>{
+  const legacy={...emptyRatings("2026-10-18"),lookupVersion:undefined,
+   hltb:{mainHours:null,gameId:null,status:"unavailable" as const},
+   metacritic:{score:null,url:null,rawgUrl:null,status:"unmatched" as const}};
+  const game=copy("A",{referenceRatings:legacy});
+  const task=nextRatingsTask([game],"hltb");
+  expect(task?.lookupHltb).toBe(true);
+  expect(task?.lookupMetacritic).toBe(false);
+  const fetched={...emptyRatings("2026-10-18"),hltb:{mainHours:24,gameId:"34",status:"matched" as const}};
+  const next=applyRatingsTask(game,fetched,{hltb:null,metacritic:null},"hltb");
+  expect(next.referenceRatings?.hltb.mainHours).toBe(24);
+  expect(next.referenceRatings?.metacritic).toEqual(legacy.metacritic);
+  expect(next.referenceRatings?.lookupVersion).toBeUndefined();
+  expect(next.referenceRatings?.hltb.lookupVersion).toBe(2);
+  expect(pendingRatingFields(next)).toEqual({hltb:false,metacritic:true});
+  expect(nextRatingsTask([next],"hltb")).toBeNull();
+  expect(nextRatingsTask([next],"metacritic")?.lookupMetacritic).toBe(true);
+ });
+ it("RAWG maintenance never queries or overwrites an existing HLTB result",()=>{
+  const legacy={...emptyRatings("2026-10-18"),lookupVersion:undefined,
+   hltb:{mainHours:23.6,gameId:"28",status:"matched" as const},
+   metacritic:{score:null,url:null,rawgUrl:null,status:"unmatched" as const}};
+  const game=copy("B",{referenceRatings:legacy});
+  const task=nextRatingsTask([game],"metacritic");
+  expect(task?.lookupHltb).toBe(false);
+  expect(task?.lookupMetacritic).toBe(true);
+  const fetched={...emptyRatings("2026-10-18"),
+    metacritic:{score:91,url:null,rawgUrl:"https://rawg.io/games/test",status:"matched" as const}};
+  const next=applyRatingsTask(game,fetched,{hltb:null,metacritic:null},"metacritic");
+  expect(next.referenceRatings?.hltb).toEqual(legacy.hltb);
+  expect(next.referenceRatings?.metacritic.score).toBe(91);
+  expect(nextRatingsTask([next],"metacritic")).toBeNull();
+ });
+ it("independently reports pending groups and counts for both providers",()=>{
+  const found=copy("A",{referenceRatings:fetched});
+  const hltbOnly=applyRatingsTask(copy("B"),fetched,{hltb:null,metacritic:null},"hltb");
+  const stats=ratingsOverview([found,hltbOnly,copy("C",{platform:"Playstation 2"})]);
+  expect(stats.pendingHltbCopies).toBe(1);
+  expect(stats.pendingMetacriticCopies).toBe(2);
+  expect(stats.pendingHltbGroups).toBe(1);
+  expect(stats.pendingMetacriticGroups).toBe(2);
+ });
+ it("does not replace a previous score with a null from a different provider",()=>{
+  const game=copy("A",{referenceRatings:{...fetched,hltb:{mainHours:null,gameId:null,status:"error"}}});
+  const recovered=applyRatingsTask(game,{...emptyRatings("2026-10-18"),hltb:{mainHours:18,gameId:"77",status:"matched"}},{hltb:null,metacritic:null},"hltb");
+  expect(recovered.referenceRatings?.metacritic.score).toBe(91);
+ });
+});
