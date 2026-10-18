@@ -93,10 +93,12 @@ async function readRequiredLibrary(): Promise<LibraryData> {
   return library;
 }
 
+// Updates made by explicit private-Blob maintenance scripts become visible
+// within five minutes; in-app saves still revalidate the tag immediately.
 const readCachedLibrary = unstable_cache(
   readRequiredLibrary,
   ["retro-library-v1"],
-  { tags: [LIBRARY_CACHE_TAG], revalidate: false },
+  { tags: [LIBRARY_CACHE_TAG], revalidate: 300 },
 );
 
 export const getLibrary = cache(readCachedLibrary);

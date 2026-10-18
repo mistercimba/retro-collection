@@ -28,7 +28,8 @@
     "wishlist:maintain": "node scripts/wishlist-maintenance.mjs",
     "artwork:optimize-storage": "node scripts/optimize-cover-storage.mjs",
     "prebuild": "npm run artwork:optimize-storage",
-    "test:cover-storage": "node --test scripts/optimize-cover-storage.test.mjs"
+    "test:cover-storage": "node --test scripts/optimize-cover-storage.test.mjs",
+    "collection:enrich-ratings": "tsx scripts/enrich-catalog.ts"
   },
   "dependencies": {
     "@vercel/blob": "2.6.1",
@@ -38,7 +39,8 @@
     "next": "16.3.6",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "sharp": "0.35.5"
+    "sharp": "0.35.5",
+    "howlongtobeat": "1.8.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.3",
@@ -49,6 +51,7 @@
     "eslint-config-next": "16.3.6",
     "tailwindcss": "4.3.3",
     "typescript": "^5.9.0",
-    "vitest": "5.0.2"
+    "vitest": "5.0.2",
+    "tsx": "^4.20.6"
   }
 }

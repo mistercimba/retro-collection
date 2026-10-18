@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install
+      - run: node --import tsx scripts/enrich-catalog.ts --help
       - run: npm run lint
       - run: npm run test
       - run: python3 -m unittest discover -s scripts -p 'test_*.py'

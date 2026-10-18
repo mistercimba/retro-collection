@@ -82,7 +82,7 @@ export default async function GamePage({params,searchParams}:{params:Promise<{co
       <div className="showcase-cover-frame">
        <GameArtwork collectionId={game.collectionId} title={game.title} platform={game.platform} catalogArtwork={Boolean(game.catalog?.artwork?.pathname)} className="showcase-cover-art" eager />
       </div>
-      <ReferenceLinks title={game.title} metacriticUrl={research.metascore.url}/>
+      <ReferenceLinks title={game.title} ratings={game.referenceRatings}/>
      </div>
      <div className="showcase-primary">
       <p className="showcase-overline">{[publisher,year].filter(Boolean).join(" · ")}</p>
