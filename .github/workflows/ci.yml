@@ -20,23 +20,6 @@ jobs:
         with:
           node-version: 22
       - run: npm install
-      # Temporary verification and exact package-lock capture; remove after QA.
-      - name: Capture package-lock changes for modern HLTB
-        run: |
-          node - <<'NODE'
-          const fs=require('fs');
-          const {execFileSync}=require('child_process');
-          const before=JSON.parse(execFileSync('git',['show','HEAD:package-lock.json'],{encoding:'utf8'}));
-          const after=JSON.parse(fs.readFileSync('package-lock.json','utf8'));
-          const updated={};
-          for(const [k,v] of Object.entries(after.packages)){
-            if(JSON.stringify(before.packages[k])!==JSON.stringify(v))updated[k]=v;
-          }
-          const removed=Object.keys(before.packages).filter(k=>!(k in after.packages));
-          console.log('LOCKDELTA:'+JSON.stringify({updated,removed}));
-          NODE
-      - name: Single read-only HLTB smoke
-        run: node --import tsx scripts/smoke-hltb.ts
       - run: node --import tsx scripts/enrich-catalog.ts --help
       - run: npm run lint
       - run: npm run test

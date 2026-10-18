@@ -35,7 +35,7 @@ describe("in-app ratings maintenance",()=>{
 
 describe("recover incorrectly marked previous attempts",()=>{
  it("retries v1 unavailable and unmatched but preserves all saved scores",()=>{
-  const copy=(id:string, ratings: any)=>({collectionId:id,title:"Nioh",platform:"Playstation 4",edition:"Standard",keepStatus:"Collection",referenceRatings:ratings} as CollectionGame);
+  const copy=(id:string, ratings: CollectionGame["referenceRatings"])=>({collectionId:id,title:"Nioh",platform:"Playstation 4",edition:"Standard",keepStatus:"Collection",referenceRatings:ratings} as CollectionGame);
   const legacy={...emptyRatings("2026-10-18"),lookupVersion:undefined,
     hltb:{mainHours:null,gameId:null,status:"unavailable" as const},
     metacritic:{score:85,url:null,rawgUrl:null,status:"matched" as const}};
@@ -44,5 +44,9 @@ describe("recover incorrectly marked previous attempts",()=>{
   expect(pendingRatingFields(copy("2",fresh))).toEqual({hltb:false,metacritic:false});
   const fail={...emptyRatings("2026-10-18"),hltb:{mainHours:null,gameId:null,status:"error" as const}};
   expect(pendingRatingFields(copy("3",fail)).hltb).toBe(true);
+  const updated=applyRatingsTask(copy("4",legacy), {...emptyRatings("2026-10-18"), hltb:{mainHours:23.6,gameId:"114",status:"matched"}}, {hltb:null, metacritic:null});
+  expect(updated.referenceRatings?.lookupVersion).toBe(2);
+  expect(updated.referenceRatings?.hltb.mainHours).toBe(23.6);
+  expect(updated.referenceRatings?.metacritic.score).toBe(85);
  });
 });
