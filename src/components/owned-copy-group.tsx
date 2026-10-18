@@ -33,16 +33,50 @@ export function OwnedCopyGroup({
   returnTo: string;
   copyValues: Record<string, CopyValue>;
 }) {
+  const addForm = (
+      <form action={addCollectionGame} className="mt-4 grid gap-3 sm:grid-cols-2">
+        <input type="hidden" name="title" value={current.title}/>
+        <input type="hidden" name="platform" value={current.platform}/>
+        <Field name="overallStatus" label="Completude" placeholder="CIB / Loose / Sealed"/>
+        <CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS}/>
+        <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL"/>
+        <Field name="edition" label="Edição" placeholder="Standard"/>
+        <Field name="paid" label="Preço pago (€)" type="number" step="0.01" min="0" inputMode="decimal"/>
+        <Field name="source" label="Onde comprei" placeholder="Feira, Vinted, CeX…"/>
+        <details className="rounded-xl border border-[#e2ddd2] bg-[#faf8f2] p-3 sm:col-span-2">
+          <summary className="cursor-pointer text-xs font-black text-slate-700">Mais detalhes</summary>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English"/>
+            <Field name="purchaseDate" label="Data de compra" type="date"/>
+            <Field name="seller" label="Vendedor"/>
+            <Field name="listingUrl" label="Link do anúncio" type="url"/>
+            <label className="sm:col-span-2">
+              <span className="field-label">Notas da cópia</span>
+              <textarea name="notes" className="field-input min-h-20"/>
+            </label>
+          </div>
+        </details>
+        <ActionSubmitButton pendingLabel="A adicionar…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">
+          Adicionar nova cópia
+        </ActionSubmitButton>
+      </form>
+  );
+  if (copies.length <= 1) {
+    return <details className="collection-panel px-4 py-3">
+      <summary className="cursor-pointer text-sm font-bold text-[#17382e]">+ Adicionar outra cópia</summary>
+      <p className="mt-2 text-xs text-slate-500">Nova cópia independente, com condição e compra próprias.</p>
+      {addForm}
+    </details>;
+  }
+
   return <section className="collection-panel p-4">
     <div className="flex flex-wrap items-start justify-between gap-3">
       <div>
         <h2 className="text-sm font-black text-slate-950">As minhas cópias</h2>
-        <p className="mt-1 text-xs text-slate-500">
-          Cada cópia mantém condição, compra, valor e fotos independentes.
-        </p>
+
       </div>
       <span className="rounded-full bg-[#e5eadf] px-2.5 py-1 text-[11px] font-black text-[#315b47]">
-        {copies.length} {copies.length === 1 ? "cópia atual" : "cópias atuais"}
+        {copies.length} cópias
       </span>
     </div>
 
@@ -87,32 +121,7 @@ export function OwnedCopyGroup({
       <p className="mt-2 text-xs text-slate-500">
         O título e a consola ficam iguais. Todos os dados físicos e de compra começam separados.
       </p>
-      <form action={addCollectionGame} className="mt-4 grid gap-3 sm:grid-cols-2">
-        <input type="hidden" name="title" value={current.title}/>
-        <input type="hidden" name="platform" value={current.platform}/>
-        <Field name="overallStatus" label="Completude" placeholder="CIB / Loose / Sealed"/>
-        <CollectionSelectField name="conditionGrade" label="Condição" options={CONDITION_OPTIONS}/>
-        <CollectionSelectField name="region" label="Região" options={REGION_OPTIONS} defaultValue="PAL"/>
-        <Field name="edition" label="Edição" placeholder="Standard"/>
-        <Field name="paid" label="Preço pago (€)" type="number" step="0.01" min="0" inputMode="decimal"/>
-        <Field name="source" label="Onde comprei" placeholder="Feira, Vinted, CeX…"/>
-        <details className="rounded-xl border border-[#e2ddd2] bg-[#faf8f2] p-3 sm:col-span-2">
-          <summary className="cursor-pointer text-xs font-black text-slate-700">Mais detalhes</summary>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            <CollectionSelectField name="language" label="Idioma" options={LANGUAGE_OPTIONS} defaultValue="English"/>
-            <Field name="purchaseDate" label="Data de compra" type="date"/>
-            <Field name="seller" label="Vendedor"/>
-            <Field name="listingUrl" label="Link do anúncio" type="url"/>
-            <label className="sm:col-span-2">
-              <span className="field-label">Notas da cópia</span>
-              <textarea name="notes" className="field-input min-h-20"/>
-            </label>
-          </div>
-        </details>
-        <ActionSubmitButton pendingLabel="A adicionar…" className="min-h-11 rounded-xl bg-[#17382e] px-4 text-sm font-black text-white sm:col-span-2">
-          Adicionar nova cópia
-        </ActionSubmitButton>
-      </form>
+      {addForm}
     </details>
   </section>;
 }

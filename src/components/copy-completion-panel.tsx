@@ -6,6 +6,7 @@ import { physicalCopyProfile } from "@/lib/physical-copy-profile.logic";
 import { addMissingComponent, saveCopyComponents } from "@/lib/library-actions";
 import { ActionSubmitButton } from "@/components/action-submit-button";
 import { ComponentNeedActions, ComponentNeedStatusBadge } from "@/components/component-need-actions";
+import { copySectionInitiallyExpanded } from "@/lib/game-detail-compact.logic";
 
 export function CopyCompletionPanel({
   game,
@@ -22,20 +23,14 @@ export function CopyCompletionPanel({
     !shouldTrackBaseComponentInQueue(game.platform, component.key)
   );
 
-  return <section className="collection-panel p-4">
-    <div className="flex flex-wrap items-baseline justify-between gap-2">
-      <div>
-        <p className="eyebrow text-amber-700">PARA COMPLETAR</p>
-        <h2 className="mt-1 text-sm font-black text-slate-950">
-          {activeNeeds.length === 0
-            ? "Nenhuma peça confirmada em falta"
-            : activeNeeds.length === 1
-              ? "1 peça em falta nesta cópia"
-              : String(activeNeeds.length) + " peças em falta nesta cópia"}
-        </h2>
-      </div>
-      <Link href="/complete" className="text-xs font-black text-[#315b47]">Ver lista completa →</Link>
-    </div>
+  return <details className="collection-panel p-4" open={copySectionInitiallyExpanded(activeNeeds.length)}>
+    <summary className="flex cursor-pointer flex-wrap items-center justify-between gap-2">
+      <span className="text-sm font-black text-slate-900">Peças e completude</span>
+      <span className={activeNeeds.length > 0 ? "text-xs font-bold text-amber-800" : "text-xs font-semibold text-slate-500"}>
+        {activeNeeds.length===0 ? "Nenhuma peça em falta" : `${activeNeeds.length} ${activeNeeds.length === 1 ? "peça em falta" : "peças em falta"}`}
+      </span>
+    </summary>
+    <div className="mt-2 text-right"><Link href="/complete" className="text-xs font-bold text-[#315b47]">Ver lista completa →</Link></div>
 
     {activeNeeds.length > 0 && <div className="mt-3 grid gap-2">
       {activeNeeds.map((need) => <div key={need.id} className="rounded-xl border border-[#e2ddd2] bg-[#faf8f2] p-3">
@@ -95,5 +90,5 @@ export function CopyCompletionPanel({
         </p>)}
       </div>
     </details>}
-  </section>;
+  </details>;
 }
