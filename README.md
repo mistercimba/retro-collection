@@ -212,6 +212,12 @@ estão merged. Para o estado vivo, consultar [PROJECT_STATE.md](PROJECT_STATE.md
 futuro e prioridades vivem em [ROADMAP.md](ROADMAP.md). Agentes devem começar por
 [AGENTS.md](AGENTS.md).
 
+## Atualizar tempos e pontuações — sem terminal
+
+Na aplicação principal, abre **Histórico → Atualizar tempos e pontuações** ou entra em `/maintenance/ratings`. O ecrã mostra o número de jogos ainda por processar sem alterar nada. Quando quiseres iniciar a atualização real, escolhe **Atualizar valores em falta** e confirma; é criado um backup privado, os jogos são processados devagar e é possível pausar e retomar. Esta funcionalidade só escreve na aplicação de produção; os Previews são de consulta. Não é executada automaticamente após nenhum deploy.
+
+O procedimento CLI abaixo é **avançado e opcional**. Não é necessário para usar a atualização na aplicação.
+
 ## Enriquecer uma vez HLTB/Metacritic dos jogos existentes (Issue #92)
 
 A coleção atual está num **Vercel Blob privado**, em `retro-collection/library.json`, e **não** num ficheiro local do repositório. Este script Node 22 usa exatamente o mesmo collector de inserção da app, mas consulta somente campos sem valor nos jogos com `keepStatus="Collection"`. Nunca corre durante build, CI nem deploy.

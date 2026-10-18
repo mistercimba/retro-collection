@@ -1,23 +1,17 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-16
+Last updated: 2026-10-18
 
 This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-18
 
-### In-app ratings maintenance (#94)
-Owner approved merging #89/#91/#93 and building an easy UI for filling existing games, replacing terminal steps. Read-only coverage on `/maintenance/ratings`, link from History. Explicit production-only start creates immutable private Blob backup, then sequential per-edition requests with 2–3 s provider delay and 2–3 s between titles. Each successful batch persists directly into the private library, preserving all unrelated fields; resume skips attempted fields. A stop after current batch is supported. No live update run by the developer. Code on `feat/ratings-maintenance-ui-94`, Issue #94.
+### Completed — in-app HLTB / RAWG maintenance (#92, #94; PRs #93, #95)
+User explicitly approved merging PR #89 (physical copy editor), PR #91 (collector game detail with **static game cover**), PR #93 (new-game HLTB Main Story and platform-specific RAWG Metacritic), and PR #95 (no-terminal maintenance UI). These are now squash-merged into `main`: #89 `1b1f1db6b593dcf38dc2a1d6616cbb8a8c20604e`, #91 `44bef503460b7ff06a560750912abb5e5b856238`, #93 `c2c27a429adafe21923a3d9b7178448b95aaeb30`, #95 `6051ccd785199528b685c3d36c9650fab329563c`. Corresponding Issues #88/#90/#92/#94 closed. PR branch checks and Vercel Previews passed; final production checks and authenticated UX must be independently verified.
 
+`/maintenance/ratings` (linked from History) shows read-only coverage immediately. **No real collection enrichment was executed as part of development or deploy**. Only a deliberate click in authenticated production, followed by explicit confirmation, creates an immutable private Blob backup and starts incremental one-game-group-at-a-time processing with 2–3-second intervals. Each request checks the live library for concurrent modification; results remain per copy and a paused run can be restarted without repeating attempted fields. All Previews are blocked from writing. User-facing path: `https://retro-collection-psi.vercel.app/maintenance/ratings`. CLI in README remains an advanced optional alternative, not a required workflow.
 
-### Candidate — manual enrichment of existing library ratings (#92)
-Owner requested an isolated `scripts/enrich-catalog.ts` on PR #93, using private Blob `retro-collection/library.json` as source/target, not a fake repo-local file. Apply only via explicit terminal command, backup to gitignored local directory, 2–3 s between external HLTB/RAWG operations, sequential groups per same title/platform/edition, preserve existing reference values and every non-rating field, reread SHA before one final write and abort on concurrent change. Read-only dry-run by default. Private Blob never mutated by CI or Preview. `unstable_cache` now revalidates within 300 s so externally enriched values eventually become visible. Follow commands in README. Pending CI, Preview and merge approval.
-
-### Candidate — one-time external game ratings (#92)
-One-time insertion-only enrichment on branch `feat/one-time-game-ratings-92`, stacked on #91 (and #89): HLTB Main Story via npm library, RAWG platform-matched Metacritic, nullable values in optional per-copy `referenceRatings` on the existing private Vercel Blob Library. Frontend buttons show only these attributed values, never IGDB time/rating as HLTB/Metacritic. Legacy copies untouched; explicit manual backfill requires separate approval. Provider outages and key configuration failures are nonfatal for additions. Owner merge approval required.
-
-
-**Latest merged `main` commit confirmed:** `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb` (PR #87, 2026-10-16). Owner explicitly approved merging both #85 and #87. Pre-merge checks and Vercel Previews were green; **do not state post-merge production CI/READY without confirming fresh checks**. Neither PR modified private Collection/Wishlist Blob data.
+**Current release baseline after these merges:** `6051ccd785199528b685c3d36c9650fab329563c` (documentation commit may follow). Collection data were untouched by merge. Next meaningful user action: open ratings maintenance, review counts, and decide whether to run the actual backfill.
 
 ### Completed — unified copy valuation presentation and physical profiles (#84; PR #85)
 Owner approved; PR #85 squash-merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373ad4cce39c490d9c6` and Issue #84 closed. Provenance-aware values are now selected consistently on game detail, same-title physical-copy panels, global lists, platform lists and platform totals. Priority: compatible PAL PriceCharting per-condition estimate, stored valuation snapshot, legacy value, unavailable. Date/source/condition context is surfaced; partial price coverage is shown on platform totals. Physical-copy profile drives CIB/Loose selection (e.g. Switch/PS5 don't require a manual). Unknown/mixed component states remain unpriced instead of assuming Loose. No private Blob writes, schema change or migration. Authenticated UI, real-device behavior and post-merge production QA have not been verified.
@@ -25,11 +19,8 @@ Owner approved; PR #85 squash-merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373a
 ### Completed — private photo enlargement (#86; PR #87)
 Owner approved; PR #87 squash-merged on 2026-10-16 as `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb` and Issue #86 closed. Existing owned-copy photographs can be enlarged in a native dialog, navigated with arrow keys and controls, dismissed by Escape/close/click-outside. It uses the existing private photo route and does not change uploads, storage or collection contents. Authenticated visual/gallery QA was not performed. No new image service or schema change.
 
-### Candidate — compact game detail UX (#90)
-User authorized a fully compact `/game/[collectionId]` after reviewing screenshots: the current layout wastes space with a huge artwork hero, empty PriceCharting cards, single-copy block, and expanded empty photo / component blocks. Work on `ux/compact-game-detail-90` based on `feat/physical-copy-audit-88` is a separate **stacked PR** with base #89 branch. Changes must be presentation-only, preserve all actions and price provenance, and require Product Owner approval before any merge. Manual Preview against Resident Evil 4: Wii Edition (WII-0019) must be checked.
-
-### Candidate — editable physical-copy audit (#88; related audit #83)
-The Product Owner asked the team to continue implementation rather than stop at planning. Issue #88 implements a copy-specific physical audit editor (observed SKU/product code, optional EAN transcription, market/observed languages, component condition, tested functionality and evidence) on `feat/physical-copy-audit-88`. Existing audit data and legacy date formats are retained, the physical-completeness checklist stays separate, and records are not automatically marked Confirmed. Tests cover patches, no-op, field clearing and copy identity isolation. No production Blob mutation before a user saves a form after merge. Pending PR CI/Preview and explicit merge approval. F6 (purchase lot cost allocation) remains a conditional finding, not a confirmed bug.
+### Completed — physical archive editor (#88; PR #89) and compact collector page (#90; PR #91)
+PR #89 integrated the per-copy physical audit fields without overwriting existing data. PR #91 integrated the dark collector detail with platform badge, status/provenance, photo slots and expandable controls. **The attempted 3D game box was explicitly rejected and replaced with a static, original game-cover image occupying the same layout space.** Manual authenticated visual QA remains separate from green CI.
 
 ### Completed — European catalog source audit (#81; PR #82)
 PR #82 merged on 2026-10-15 at `940226a2d8236e519ed406a4eb8bcfe1c954c2b1`. Includes legacy regional filtering evidence fallback, nonexhaustive result messaging, regional year reporting and stale selections clearing. Synthetic 18-platform tests do not certify live IGDB coverage or PAL country-specific retail editions.

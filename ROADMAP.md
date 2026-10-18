@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-16
+Last updated: 2026-10-18
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -22,16 +22,8 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### In-app ratings maintenance (#94)
-User approved a no-terminal way to enrich existing HLTB/RAWG values. A page at `/maintenance/ratings`, linked from History, is read-only by default and requires deliberate confirmation before performing real updates. A private backup is created first; requests are run incrementally with 2–3 s pauses and source identification. Revisions abort if the library changes externally. Preview deployments are read-only. No real collection enrichment is performed as part of the release; the owner must opt in.
-
-
-### NOW — Ratings existentes: script manual protegido (#92; stacked on #91)
-Extensão pedida: `scripts/enrich-catalog.ts` com dry-run, backup, pausas 2–3 s por operação externa, consulta só campos em falta, SHA pre/post para evitar sobrescrever mudanças concorrentes, gravação única no Blob privado após revisão. Não executar automaticamente; aprovação explícita dos PRs e execução manual pelo owner. A cache Next expirará em até 5 min após escrita externa.
-
-### NOW — One-time HLTB / RAWG Metacritic ratings (#92; stacked on #91)
-PR in progress: query HLTB Main Story and RAWG platform-specific Metacritic on **new** game adds only; persist optional values and source IDs in the private library. Existing games stay untouched (no automatic backfill); do not label the IGDB metadata snapshot as HLTB or Metacritic. Server provider failures must not block adds. PR stacked on #91/#89, requires explicit owner merge approval. External values subject to upstream availability and attribution.
-
+### COMPLETED — HLTB + RAWG on addition and maintenance UI (#92 / #94; PRs #93 / #95)
+The app stores platform-verified HLTB Main Story and RAWG Metacritic values on new adds. Existing copies may be enriched **from within the application** at `/maintenance/ratings` (linked in History), after an explicit user confirmation. A full private Blob backup is written before modification; batches run one title/platform/edition at a time and respect 2–3 second provider delays and concurrency checks. Never auto-run on deploy. The CLI exists as an advanced fallback only; user does not need a terminal. Production UX and actual provider availability are not certified by CI. Neither the merge nor deployment mutates existing collection data.
 
 ### COMPLETED — Valuations consistent across collection views (#84; PR #85)
 Owner approved; PR #85 merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373ad4cce39c490d9c6`, Issue #84 closed. The copy-detail, other physical-copy panels, global lists, platform lists and platform totals now use a provenance-aware valuation order (PriceCharting PAL/condition reference, recorded valuation, legacy recorded value, otherwise unavailable). Totals identify partial price coverage. Switch/PS5 and other platform-specific physical completeness rules are respected when selecting Loose/CIB; unknown/mixed contents are not confidently priced. Pre-merge CI and Vercel Preview passed. Authenticated visual QA and final production CI/deployment status are separate verification steps.
@@ -39,11 +31,11 @@ Owner approved; PR #85 merged on 2026-10-16 as `0fe5ae48189b2bbfc2fb0373ad4cce39
 ### COMPLETED — Owned-copy photo enlargement (#86; PR #87)
 Owner approved; PR #87 merged on 2026-10-16 as `cd643d4602ddc3c5833d52667c3ded7edc5a2ecb`, Issue #86 closed. An accessible native photo dialog enlarges existing private owned-copy images with previous/next buttons, arrow keys and Escape. No storage/data migration; the existing private image API remains the sole source. Pre-merge CI and Preview passed; authenticated real-device gallery QA was not performed.
 
-### NOW — Compact copy-first game detail (#90; stacked on #89)
-User-approved overhaul of `/game/[collectionId]`: compact cover/metadata, primary copy facts, prices without empty price boxes, unobtrusive single-copy add, and collapsible empty photo/completion panels. Preserves full-edit, photo, provenance and duplicate-copy interactions. PR is stacked on #89 until that physical-audit PR merges; do not merge either without Product Owner approval. Screenshot feedback of Resident Evil 4: Wii Edition (WII-0019) initiated work. Manual Preview UX remains to be confirmed.
+### COMPLETED — Static-cover collector page (#90; PR #91)
+Dark compact game detail with console identity, accurate copy values, component truthfulness, images and collapsed options. Important owner decision: game artwork must stay **flat, static and original**, not 3D. Merged 2026-10-18.
 
-### NOW — Editable per-copy physical archive (#88; audit #83)
-PR candidate under development/review: edit existing copy-specific audit data with SKU, optional observed EAN, PAL country/market, physical condition and evidence. Keep prior audit records and historical dates; never infer retail PAL identities from IGDB. This is an application feature, not a migration of production Blob data. Do not merge without Product Owner approval.
+### COMPLETED — Editable per-copy physical audit (#88; PR #89)
+Per-copy SKU/EAN, country/market, condition and evidence editing, without destructively changing other copies or their completeness. Merged 2026-10-18.
 
 ### NEXT — Further archive polish
 After real authenticated testing of the per-copy audit editor, consider structured archive browse/filter affordances and conservative validation of observed retail SKU evidence. No automated edition verification without defensible sources; physical completeness remains managed by the existing component checklist.
