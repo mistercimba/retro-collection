@@ -22,6 +22,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### NOW — Resilient HLTB maintenance (#100)
+User resumed HLTB backfill after #99 and found 72 HLTB, 8 Metacritic, but an isolated HLTB timeout stopped the entire run. Fix: 1 controlled 2–3s retry per transient failed group, then session-only skip and continue; stop after 3 consecutive failures to avoid hammering an unstable upstream. No error writes, no replay loops, preserve confirmation of earlier results, keep RAWG isolated and 2–3s pacing. Issue #100, new PR. Never run the collection update on CI or Preview; no merge without explicit Product Owner approval.
+
+
 ### COMPLETED — Independent HLTB and RAWG enrichment (#98; PR #99)
 Merged to `main` 2026-10-18 after explicit owner approval (`4144da5b89c46cdd279b6b8c53a1cc6f21d1985e`), passing GitHub CI and Preview. Owner's prior live test: 531 copies, 27 HLTB, 8 Metacritic, RAWG timeout. Maintenance now offers HLTB **alone by default** or Metacritic/RAWG independently, with provider-specific queues and lookup revisions. Never mark one source attempted when updating the other; preserve positive scores. Backups, auth, 2–3s pacing and fail-fast remain. The production backfill does **not** run on merge/deploy. Owner must explicitly start it in-app. Production deployment/real provider behavior requires separate verification.
 

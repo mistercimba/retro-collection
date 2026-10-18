@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyRatingsTask, nextRatingsTask, pendingRatingFields, ratingsOverview } from "./ratings-maintenance.logic";
+import { applyRatingsTask, isTransientHltbFailure, nextRatingsTask, pendingRatingFields, ratingsOverview, retryTransientHltb } from "./ratings-maintenance.logic";
 import { emptyRatings } from "./game-ratings.logic";
 import type { CollectionGame } from "./data/types";
 const copy=(id:string,extra:Partial<CollectionGame>={})=>({collectionId:id,title:"Resident Evil 4",
@@ -99,4 +99,48 @@ describe("provider-isolated backfill regression",()=>{
   const recovered=applyRatingsTask(game,{...emptyRatings("2026-10-18"),hltb:{mainHours:18,gameId:"77",status:"matched"}},{hltb:null,metacritic:null},"hltb");
   expect(recovered.referenceRatings?.metacritic.score).toBe(91);
  });
+});
+
+describe("HLTB transient failure recovery",()=>{
+  it("skips only the failed title for this run, without changing the collection",()=>{
+    const games=[copy("A"),copy("A2"),copy("B",{title:"Different Game"})];
+    const initial=nextRatingsTask(games,"hltb");
+    expect(initial?.ids).toEqual(["A","A2"]);
+    const resumed=nextRatingsTask(games,"hltb",initial?.ids);
+    expect(resumed?.ids).toEqual(["B"]);
+    expect(nextRatingsTask(games,"hltb",["A","A2","B"])).toBeNull();
+    expect(nextRatingsTask(games,"hltb")?.ids).toEqual(["A","A2"]);
+    expect(games[0].referenceRatings).toBeNull();
+  });
+  it("classifies only transient HLTB outages as recoverable",()=>{
+    expect(isTransientHltbFailure({source:"hltb",reason:"timeout"},"hltb")).toBe(true);
+    expect(isTransientHltbFailure({source:"hltb",reason:"network"},"hltb")).toBe(true);
+    expect(isTransientHltbFailure({source:"hltb",reason:"http",httpStatus:429},"hltb")).toBe(true);
+    expect(isTransientHltbFailure({source:"hltb",reason:"http",httpStatus:503},"hltb")).toBe(true);
+    expect(isTransientHltbFailure({source:"hltb",reason:"http",httpStatus:404},"hltb")).toBe(false);
+    expect(isTransientHltbFailure({source:"hltb",reason:"provider"},"hltb")).toBe(false);
+    expect(isTransientHltbFailure({source:"rawg",reason:"timeout"},"hltb")).toBe(false);
+    expect(isTransientHltbFailure({source:"hltb",reason:"timeout"},"metacritic")).toBe(false);
+  });
+  it("retries at most once with a delay then surfaces persistent outages",async()=>{
+    let attempts=0,waits=0;
+    const result=await retryTransientHltb("hltb",async()=>{
+      attempts++;
+      if(attempts===1)throw {source:"hltb",reason:"timeout"};
+      return 23;
+    },async()=>{waits++});
+    expect(result).toBe(23);
+    expect(attempts).toBe(2);
+    expect(waits).toBe(1);
+    let failed=0;
+    await expect(retryTransientHltb("hltb",async()=>{
+      failed++;throw {source:"hltb",reason:"timeout"};
+    },async()=>{waits++})).rejects.toMatchObject({reason:"timeout"});
+    expect(failed).toBe(2);
+    let rawgCalls=0;
+    await expect(retryTransientHltb("metacritic",async()=>{
+      rawgCalls++;throw {source:"rawg",reason:"timeout"};
+    },async()=>{waits++})).rejects.toMatchObject({source:"rawg"});
+    expect(rawgCalls).toBe(1);
+  });
 });
