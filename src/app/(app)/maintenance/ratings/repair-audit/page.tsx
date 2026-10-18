@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { loadHltbRepairBackupDiff } from "@/lib/hltb-repair-backup-diff.node";
+import { HltbAuditError, loadHltbRepairBackupDiff } from "@/lib/hltb-repair-backup-diff.node";
 
 export const metadata = {
   title: "Auditoria da reparação HowLongToBeat",
@@ -19,9 +19,12 @@ export default async function HltbRepairAuditPage() {
   let error = "";
   try {
     report = await loadHltbRepairBackupDiff();
-  } catch {
-    // Never expose backup paths or raw data via error pages/logs.
-    error = "Não foi possível validar ou ler o backup privado. Nenhum dado foi alterado.";
+  } catch (cause) {
+    // Stable failure stages help distinguish config, access and data integrity
+    // without disclosing a private Blob path, contents or upstream exception.
+    const code = cause instanceof HltbAuditError ? cause.code : "UNEXPECTED";
+    error = "Não foi possível concluir a auditoria. Código: " + code +
+      ". Nenhum dado foi alterado.";
   }
   return <div className="mx-auto max-w-3xl space-y-5 pb-10">
     <Link href="/history" className="inline-flex items-center gap-2 text-sm font-bold text-[#315b47]"><ArrowLeft className="h-4 w-4"/>Voltar ao histórico</Link>
