@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { CollectionGame, LibraryHistoryEntry } from "./data/types";
 import { compareHltbBackup, latestRepairReference, verifyRepairBackup } from "./hltb-repair-backup-diff.logic";
 
-const backupPath="retro-collection/backups/hltb-id-repair-2026-10-18T19-35-53-214Z-23ddc95a-94be-4b8e-b380-a38544714e0a.json";
+const backupPath="retro-collection/backups/hltb-id-repair-2026-10-18T19-35-53-214Z-11111111-2222-4333-8444-555555555555.json";
 const game=(id:string,title:string,hours:number|null,externalId:string|null,keepStatus="Collection") =>
   ({collectionId:id,title,platform:"Game Boy",edition:"Standard",keepStatus,
     referenceRatings:{lookupVersion:2,fetchedAt:"2026-10-18",

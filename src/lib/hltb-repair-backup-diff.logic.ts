@@ -33,7 +33,7 @@ export function latestRepairReference(history: readonly LibraryHistoryEntry[]): 
   const previousId = idValues[0].slice("ID HLTB anterior: ".length);
   const parsedHours = /^Tempo anterior não validado: (\d+(?:\.\d+)?) h$/.exec(hoursValues[0]);
   if (!BACKUP_PATTERN.test(pathname) || !/^\d+$/.test(previousId) || !parsedHours ||
-    !entry.collectionId && !entry.entityId || !entry.title || !entry.platform) {
+    !entry.entityId || !entry.title || !entry.platform) {
     throw new Error("Registo de reparação inválido.");
   }
   const previousHours = Number(parsedHours[1]);
