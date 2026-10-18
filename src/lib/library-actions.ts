@@ -5,11 +5,12 @@ import { redirect } from "next/navigation";
 import { isAuthenticated } from "@/lib/auth";
 import { mergePhysicalAudit } from "@/lib/physical-audit.logic";
 import { platformSlug } from "@/lib/data/platforms";
-import type { CanonicalGameIdentity, CollectionGame, ComponentNeed, ComponentNeedKey, ComponentNeedStatus, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget } from "@/lib/data/types";
+import type { CanonicalGameIdentity, CollectionGame, ComponentNeed, ComponentNeedKey, ComponentNeedStatus, LibraryData, LibraryHistoryAction, PurchaseRecord, WantTarget, OneTimeGameRatings } from "@/lib/data/types";
 import { getFreshLibrary, getLibrary, updateLibrary } from "@/lib/library-store";
 import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
 import { resolveCanonicalGame } from "@/lib/igdb-catalog";
 import { ensureCanonicalArtwork } from "@/lib/catalog-artwork";
+import { collectNewGameRatings } from "@/lib/new-game-ratings";
 import { wishlistTargetsSatisfiedByAddedGame } from "@/lib/wishlist-auto-remove.logic";
 import { objectiveMatchesTarget } from "@/lib/next-objective.logic";
 import { matchWantTarget } from "@/lib/data/wishlist-matching";
@@ -136,6 +137,7 @@ function blankGame(input: {
   extras: string;
   canonical?: CanonicalGameIdentity;
   physical?: PhysicalAddState;
+  referenceRatings?: OneTimeGameRatings;
 }): CollectionGame {
   const complete = /cib|complete|completo/i.test(input.completeness);
   const loose = /loose|solto/i.test(input.completeness);
@@ -168,6 +170,7 @@ function blankGame(input: {
     legacyName: input.title,
     catalog: input.canonical,
     photos: [],
+    referenceRatings: input.referenceRatings ?? null,
     audit: null,
   };
 }
@@ -413,6 +416,9 @@ export async function addCollectionGame(form: FormData) {
   }
 
   const physical = canonical ? physicalState(form, platform) : undefined;
+  // One shot at insertion, before the Blob mutation. On errors, persist honest nulls.
+  // The game-detail page never calls the external providers.
+  const referenceRatings = await collectNewGameRatings(title, platform);
   let created = "";
   const wishlistOverridePathsToDelete: string[] = [];
 
@@ -443,6 +449,7 @@ export async function addCollectionGame(form: FormData) {
       extras: text(form, "extras"),
       canonical,
       physical,
+      referenceRatings,
     }));
 
     const fulfilledWishlistTargets = wishlistTargetsSatisfiedByAddedGame(library.wishlist, title, platform);

@@ -34,6 +34,14 @@ export interface OwnedCopyPhoto {
   uploadedAt: string;
 }
 
+export type RatingsStatus = "matched" | "unmatched" | "ambiguous" | "unavailable";
+
+export interface OneTimeGameRatings {
+  fetchedAt: string;
+  hltb: { mainHours: number | null; gameId: string | null; status: RatingsStatus };
+  metacritic: { score: number | null; url: string | null; rawgUrl: string | null; status: RatingsStatus };
+}
+
 export interface CollectionItem {
   collectionId: string;
   catalogId: string;
@@ -63,6 +71,8 @@ export interface CollectionItem {
   legacyName: string;
   catalog?: CanonicalGameIdentity;
   photos?: OwnedCopyPhoto[];
+  /** One-time external lookup when this physical game copy is added. Legacy copies omit it. */
+  referenceRatings?: OneTimeGameRatings | null;
 }
 
 export interface AuditRecord {

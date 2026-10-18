@@ -211,3 +211,21 @@ PRs [#26](https://github.com/mistercimba/retro-collection/pull/26) (biblioteca B
 estão merged. Para o estado vivo, consultar [PROJECT_STATE.md](PROJECT_STATE.md). Todo o trabalho
 futuro e prioridades vivem em [ROADMAP.md](ROADMAP.md). Agentes devem começar por
 [AGENTS.md](AGENTS.md).
+
+## Enriquecer uma vez HLTB/Metacritic dos jogos existentes (Issue #92)
+
+A coleção atual está num **Vercel Blob privado**, em `retro-collection/library.json`, e **não** num ficheiro local do repositório. Este script Node 22 usa exatamente o mesmo collector de inserção da app, mas consulta somente campos sem valor nos jogos com `keepStatus="Collection"`. Nunca corre durante build, CI nem deploy.
+
+Depois de o PR #93 e os seus PRs-base serem aprovados e integrados, abre o terminal na raiz do projeto, faz `npm install` e obtém as variáveis de ambiente com a CLI autenticada da Vercel. Não copies nem publiques o conteúdo do ficheiro de credenciais:
+
+```bash
+npx vercel env pull .env.local --environment=production
+node --env-file=.env.local --import tsx scripts/enrich-catalog.ts --dry-run
+node --env-file=.env.local --import tsx scripts/enrich-catalog.ts --apply
+```
+
+O primeiro comando obtém as variáveis necessárias (`BLOB_READ_WRITE_TOKEN` e `RAWG_API_KEY`); confirma que apontam ao **projeto e Blob corretos**, sobretudo se tens outros projetos Vercel. O segundo é uma leitura + contagem, sem consultas de ratings nem qualquer gravação. O terceiro inicia o processo real **uma única vez**, sob a tua responsabilidade: cria primeiro `.retro-backups/library-before-ratings-*.json` (cópia privada ignorada pelo Git), consulta sequencialmente com pausa aleatória de **2–3 segundos entre cada operação HLTB e RAWG**, e escreve **uma única vez** no fim. Um jogo pode exigir HLTB + pesquisa RAWG + detalhes RAWG. A biblioteca HLTB pode fazer pedidos internos adicionais que não conseguimos regular individualmente.
+
+Em coleções com centenas de jogos isto pode levar dezenas de minutos, consoante as respostas externas. Deixa o terminal aberto e **evita editar a coleção na app durante a execução**. Se o Blob mudar entretanto, o script cancela a escrita em vez de substituir essas alterações. Só reutiliza ratings entre cópias da mesma edição/título/plataforma, sem sobrescrever campos já preenchidos. Se RAWG ou HLTB não confirmar o jogo, guarda estado sem valor (fallback para o link de pesquisa). O script não altera compras, wishlist, capas ou outras partes do arquivo.
+
+**Importante:** a execução é uma operação manual de manutenção com possibilidade de alterar dados reais; lê o dry-run e guarda a cópia de segurança antes de aplicar. O resultado da aplicação poderá demorar até **5 minutos** a atualizar pela cache. Se ocorrer falha, **não voltes a executar às cegas**: primeiro confirma o Blob e compara com o backup.
