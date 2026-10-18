@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { CollectionGame, LibraryData } from "./data/types";
 import { emptyRatings } from "./game-ratings.logic";
+import { pendingRatingFields } from "./ratings-maintenance.logic";
 import {
   blockConflictingNewHltb, findHltbIdCollision, findKnownCastlevaniaCollision,
   prepareCastlevaniaHltbRepair,
@@ -32,8 +33,15 @@ describe("HLTB external ID integrity",()=>{
     const incoming={...emptyRatings("2026-10-18"),hltb:{gameId:"10039",mainHours:12,status:"matched" as const},
       metacritic:{score:85,url:null,rawgUrl:null,status:"matched" as const}};
     const candidate=blockConflictingNewHltb([zelda],castlevania.title,incoming);
-    expect(candidate.hltb).toMatchObject({gameId:null,mainHours:null,status:"ambiguous"});
+    expect(candidate.hltb).toMatchObject({gameId:null,mainHours:null,status:"ambiguous",lookupVersion:2});
     expect(candidate.metacritic.score).toBe(85);
+    // Conflict quarantine remains visible for manual review, not scheduled for
+    // an automatic retry that could reuse the same incorrect HLTB ID.
+    expect(pendingRatingFields({referenceRatings:candidate} as CollectionGame).hltb).toBe(false);
+    const legacy={...incoming,lookupVersion:1,hltb:{...incoming.hltb,lookupVersion:1}};
+    const safeLegacy=blockConflictingNewHltb([zelda],castlevania.title,legacy);
+    expect(safeLegacy.hltb.lookupVersion).toBe(2);
+    expect(pendingRatingFields({referenceRatings:safeLegacy} as CollectionGame).hltb).toBe(false);
     expect(incoming.hltb.gameId).toBe("10039");
     expect(blockConflictingNewHltb([zelda],zelda.title,incoming)).toBe(incoming);
   });
@@ -47,6 +55,8 @@ describe("HLTB external ID integrity",()=>{
     expect(fixed.collection[0]).toBe(zelda);
     expect(fixed.collection[1].referenceRatings?.hltb)
       .toMatchObject({mainHours:null,gameId:null,status:"error",lookupVersion:2});
+    // The explicit, owner-confirmed repair intentionally reopens the HLTB queue.
+    expect(pendingRatingFields(fixed.collection[1]).hltb).toBe(true);
     expect(fixed.collection[1].referenceRatings?.metacritic)
       .toEqual(castlevania.referenceRatings?.metacritic);
     expect(fixed.collection[1].title).toBe(castlevania.title);

@@ -29,12 +29,11 @@ export function blockConflictingNewHltb(
 ): OneTimeGameRatings {
   const hltb = candidate.hltb;
   if (!findHltbIdCollision(copies, title, hltb.gameId)) return candidate;
-  // No score, link, or authoritative game ID should be stored for an
-  // unverified collision. Other provider values must be left untouched.
+  // An ID collision needs human review, not automatic retries of the same
+  // unsafe match. Preserve other providers and mark this attempt as current.
   return {
     ...candidate,
-    hltb: { mainHours: null, gameId: null, status: "ambiguous",
-      lookupVersion: hltb.lookupVersion ?? candidate.lookupVersion ?? 2 },
+    hltb: { mainHours: null, gameId: null, status: "ambiguous", lookupVersion: 2 },
   };
 }
 

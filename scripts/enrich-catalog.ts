@@ -134,7 +134,7 @@ async function main() {
     }
     if (positiveMainHours(safeResolved.hltb.mainHours) !== null) hltbHits += group.length;
     if (ratingScore(safeResolved.metacritic.score) !== null) metacriticHits += group.length;
-    console.log(`[${index}/${groups.size}] ${representative.platform}: ${representative.title} — HLTB ${resolved.hltb.mainHours ?? "—"} h · Metacritic ${resolved.metacritic.score ?? "—"}`);
+    console.log(`[${index}/${groups.size}] ${representative.platform}: ${representative.title} — HLTB ${safeResolved.hltb.mainHours ?? "—"} h · Metacritic ${safeResolved.metacritic.score ?? "—"}`);
   }
 
   // The live web app can edit the same Blob. Never overwrite a newer version.
