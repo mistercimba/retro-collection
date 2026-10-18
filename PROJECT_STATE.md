@@ -4,7 +4,11 @@ Last updated: 2026-10-16
 
 This is the living project handoff. Read `AGENTS.md` first.
 
-## Current status — 2026-10-16
+## Current status — 2026-10-18
+
+### In-app ratings maintenance (#94)
+Owner approved merging #89/#91/#93 and building an easy UI for filling existing games, replacing terminal steps. Read-only coverage on `/maintenance/ratings`, link from History. Explicit production-only start creates immutable private Blob backup, then sequential per-edition requests with 2–3 s provider delay and 2–3 s between titles. Each successful batch persists directly into the private library, preserving all unrelated fields; resume skips attempted fields. A stop after current batch is supported. No live update run by the developer. Code on `feat/ratings-maintenance-ui-94`, Issue #94.
+
 
 ### Candidate — manual enrichment of existing library ratings (#92)
 Owner requested an isolated `scripts/enrich-catalog.ts` on PR #93, using private Blob `retro-collection/library.json` as source/target, not a fake repo-local file. Apply only via explicit terminal command, backup to gitignored local directory, 2–3 s between external HLTB/RAWG operations, sequential groups per same title/platform/edition, preserve existing reference values and every non-rating field, reread SHA before one final write and abort on concurrent change. Read-only dry-run by default. Private Blob never mutated by CI or Preview. `unstable_cache` now revalidates within 300 s so externally enriched values eventually become visible. Follow commands in README. Pending CI, Preview and merge approval.

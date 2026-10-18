@@ -22,6 +22,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### In-app ratings maintenance (#94)
+User approved a no-terminal way to enrich existing HLTB/RAWG values. A page at `/maintenance/ratings`, linked from History, is read-only by default and requires deliberate confirmation before performing real updates. A private backup is created first; requests are run incrementally with 2–3 s pauses and source identification. Revisions abort if the library changes externally. Preview deployments are read-only. No real collection enrichment is performed as part of the release; the owner must opt in.
+
+
 ### NOW — Ratings existentes: script manual protegido (#92; stacked on #91)
 Extensão pedida: `scripts/enrich-catalog.ts` com dry-run, backup, pausas 2–3 s por operação externa, consulta só campos em falta, SHA pre/post para evitar sobrescrever mudanças concorrentes, gravação única no Blob privado após revisão. Não executar automaticamente; aprovação explícita dos PRs e execução manual pelo owner. A cache Next expirará em até 5 min após escrita externa.
 

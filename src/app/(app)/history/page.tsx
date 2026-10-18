@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Camera, History, Images, ListChecks, PackageCheck, Pencil, Plus, ShoppingBag, Target, Trash2 } from "lucide-react";
 import { getLibrary } from "@/lib/library-store";
 import { displayPlatform } from "@/lib/data/platforms";
@@ -50,6 +51,8 @@ export default async function HistoryPage() {
       <h1 className="mt-1 text-3xl font-black text-slate-950">Alterações da coleção</h1>
       <p className="mt-1 text-sm font-semibold text-slate-500">{entries.length ? `${entries.length} alterações registadas` : "O registo começa a partir desta versão."}</p>
     </header>
+
+    <Link href="/maintenance/ratings" className="inline-flex min-h-11 items-center rounded-xl border border-[#d5d9ce] bg-white px-4 text-sm font-bold text-[#315b47] hover:bg-[#eaf2e9]">Atualizar tempos e pontuações →</Link>
 
     {entries.length ? <div className="collection-list">
       {entries.map((entry) => {

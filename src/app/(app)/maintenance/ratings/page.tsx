@@ -1,0 +1,24 @@
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { getFreshLibrary } from "@/lib/library-store";
+import { ratingsOverview } from "@/lib/ratings-maintenance.logic";
+import { RatingsMaintenanceRunner } from "@/components/ratings-maintenance-runner";
+
+export const metadata={title:"Atualizar tempos e pontuações"};
+export const maxDuration=60;
+
+export default async function RatingsMaintenancePage() {
+  const library=await getFreshLibrary();
+  return <div className="mx-auto max-w-3xl space-y-5 pb-10">
+    <Link href="/history" className="inline-flex items-center gap-2 text-sm font-bold text-[#315b47]"><ArrowLeft className="h-4 w-4"/>Voltar ao histórico</Link>
+    <header className="collection-hero">
+      <p className="eyebrow">MANUTENÇÃO DA COLEÇÃO</p>
+      <h1 className="mt-1 text-2xl font-black text-slate-950 sm:text-3xl">Tempos e pontuações</h1>
+      <p className="mt-2 text-sm text-slate-600">Descobre os jogos que ainda não têm tempo de história principal (HowLongToBeat) ou pontuação Metacritic (via RAWG).</p>
+    </header>
+    <section className="collection-panel p-5">
+      <RatingsMaintenanceRunner initial={ratingsOverview(library.collection)} canRun={process.env.VERCEL_ENV==="production"}/>
+    </section>
+    <p className="text-xs leading-5 text-slate-500">Apenas o botão «Atualizar» modifica a coleção, depois de confirmação. Antes de começar é criado um backup privado. Os jogos são processados devagar, um grupo de cada vez; podes pausar e retomar. Os resultados que não possam ser confirmados ficam sem valor.</p>
+  </div>;
+}
