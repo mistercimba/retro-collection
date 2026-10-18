@@ -22,13 +22,11 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Separate HLTB and RAWG maintenance (#98)
-After PR #97 merged, user tested 531 copies: HLTB rose from 1 to 27, Metacritic from 7 to 8, then a RAWG timeout stopped all work. The current single batch runs HLTB and RAWG together with strict error handling, wasting a successful HLTB lookup if RAWG fails before write. Fix: let user run HLTB by itself (default) or RAWG separately, retain 2–3s rate limiting and backup, preserve confirmed values and legacy retry eligibility **independently per provider**. Issue #98, PR pending CI/QA. Do not merge without explicit owner approval or restart production backfill automatically.
+### COMPLETED — Independent HLTB and RAWG enrichment (#98; PR #99)
+Merged to `main` 2026-10-18 after explicit owner approval (`4144da5b89c46cdd279b6b8c53a1cc6f21d1985e`), passing GitHub CI and Preview. Owner's prior live test: 531 copies, 27 HLTB, 8 Metacritic, RAWG timeout. Maintenance now offers HLTB **alone by default** or Metacritic/RAWG independently, with provider-specific queues and lookup revisions. Never mark one source attempted when updating the other; preserve positive scores. Backups, auth, 2–3s pacing and fail-fast remain. The production backfill does **not** run on merge/deploy. Owner must explicitly start it in-app. Production deployment/real provider behavior requires separate verification.
 
-
-### NOW — Fix broken live HLTB/RAWG backfill (#96)
-Production showed 0 HLTB and 7 Metacritic after 117 processed groups. Vercel logs confirm repeated HLTB `Error` and RAWG `TimeoutError`. Old HLTB npm 1.8.0 (3 years old) cannot be used reliably. Replace with recently maintained `howlongtobeat-ts`, fail fast on external error rather than storing empty as final, and reattempt legacy false negatives once using lookup version 2. Preserve 7 known score values. Do not re-run backfill until provider smoke/QA; user was told to pause. Fix in PR tied to Issue #96; do not merge without owner approval.
-
+### COMPLETED — HLTB provider outage recovery (#96; PR #97)
+Replaced obsolete HLTB client with `howlongtobeat-ts`, confirmed read-only Hades 23.6h, exposed upstream failures and restored retry eligibility for affected old records. Owner's post-merge live test confirmed rising HLTB count (27), although RAWG timed out. #98 isolates the services.
 
 ### COMPLETED — HLTB + RAWG on addition and maintenance UI (#92 / #94; PRs #93 / #95)
 The app stores platform-verified HLTB Main Story and RAWG Metacritic values on new adds. Existing copies may be enriched **from within the application** at `/maintenance/ratings` (linked in History), after an explicit user confirmation. A full private Blob backup is written before modification; batches run one title/platform/edition at a time and respect 2–3 second provider delays and concurrency checks. Never auto-run on deploy. The CLI exists as an advanced fallback only; user does not need a terminal. Production UX and actual provider availability are not certified by CI. Neither the merge nor deployment mutates existing collection data.
