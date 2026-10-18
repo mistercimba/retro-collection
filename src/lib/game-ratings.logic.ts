@@ -20,8 +20,23 @@ export function normalizedGameTitle(value: string): string {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
     .replace(/[^a-z0-9]+/g, " ").trim();
 }
-const exactTitle = (left: string, right: string) => Boolean(normalizedGameTitle(left)) &&
-  normalizedGameTitle(left) === normalizedGameTitle(right);
+/** Variant suffixes are accepted only with the correct console. */
+export function conservativeSearchTitles(title: string, platform: string): string[] {
+  const alternatives = [title];
+  const canonicalPlatform = platform === "Nintendo Wii" ? "Wii" :
+    platform === "Nintendo Wii U" ? "Wii U" : "";
+  if (canonicalPlatform) {
+    const expression = new RegExp(":\\s*" + canonicalPlatform.replace(/[.*+?^${}()|[\\]\\]/g, "\\const exactTitle = (left: string, right: string) => Boolean(normalizedGameTitle(left)) &&
+  normalizedGameTitle(left) === normalizedGameTitle(right);") + "\\s+Edition$", "i");
+    const bare = title.replace(expression, "").trim();
+    if (bare && bare !== title) alternatives.push(bare);
+  }
+  return alternatives;
+}
+const comparableTitle = (value: string) =>
+  normalizedGameTitle(value).replace(/(?:^| )version$/, "").trim();
+const exactTitle = (left: string, right: string) => Boolean(comparableTitle(left)) &&
+  comparableTitle(left) === comparableTitle(right);
 export const ratingScore = (value: unknown): number | null =>
   typeof value === "number" && Number.isInteger(value) && value >= 1 && value <= 100 ? value : null;
 export const positiveMainHours = (value: unknown): number | null =>
@@ -38,8 +53,9 @@ export function selectHltbMainStory(title: string, entries: HltbEntry[]): OneTim
 
 export function selectRawgGame(title: string, platform: string, candidates: RawgCandidate[]): RawgCandidate | null {
   const names = platformNamesInRawg(platform);
+  const titleOptions = conservativeSearchTitles(title, platform);
   if (!names.length) return null;
-  const matches = candidates.filter((entry) => entry.id && entry.name && exactTitle(entry.name, title) &&
+  const matches = candidates.filter((entry) => entry.id && entry.name && titleOptions.some(option => exactTitle(entry.name!, option)) &&
     entry.platforms?.some((p) => names.includes(p.platform?.name ?? "")));
   const unique = [...new Map(matches.map((entry) => [entry.id, entry])).values()];
   return unique.length === 1 ? unique[0] : null;
@@ -79,12 +95,13 @@ export function selectRawgMetascore(platform: string, detail: RawgDetail): OneTi
 
 export function emptyRatings(at: string): OneTimeGameRatings {
   return {
+    lookupVersion: 2,
     fetchedAt: at,
     hltb: { mainHours: null, gameId: null, status: "unavailable" },
     metacritic: { score: null, url: null, rawgUrl: null, status: "unavailable" },
   };
 }
 export function ratingsStatus(status: RatingsStatus | undefined): RatingsStatus {
-  return status === "matched" || status === "unmatched" || status === "ambiguous" || status === "unavailable"
+  return status === "matched" || status === "unmatched" || status === "ambiguous" || status === "unavailable" || status === "error"
     ? status : "unavailable";
 }

@@ -34,9 +34,11 @@ export interface OwnedCopyPhoto {
   uploadedAt: string;
 }
 
-export type RatingsStatus = "matched" | "unmatched" | "ambiguous" | "unavailable";
+export type RatingsStatus = "matched" | "unmatched" | "ambiguous" | "unavailable" | "error";
 
 export interface OneTimeGameRatings {
+  /** Lookup algorithm revision; old copies have no version and may be safely reprocessed. */
+  lookupVersion?: number;
   fetchedAt: string;
   hltb: { mainHours: number | null; gameId: string | null; status: RatingsStatus };
   metacritic: { score: number | null; url: string | null; rawgUrl: string | null; status: RatingsStatus };

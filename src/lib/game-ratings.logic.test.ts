@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { emptyRatings, positiveMainHours, ratingScore, selectHltbMainStory, selectRawgGame, selectRawgMetascore } from "./game-ratings.logic";
+import { emptyRatings, positiveMainHours, ratingScore, selectHltbMainStory, selectRawgGame, selectRawgMetascore, conservativeSearchTitles } from "./game-ratings.logic";
 
 describe("one-time externally sourced game ratings", () => {
   it("matches an exact HLTB title and main story only", () => {
@@ -46,5 +46,24 @@ describe("one-time externally sourced game ratings", () => {
     const blank = emptyRatings("2026-10-17T00:00:00.000Z");
     expect(blank.hltb.mainHours).toBeNull();
     expect(blank.metacritic.score).toBeNull();
+  });
+});
+
+describe("conservative real game edition aliases",()=>{
+  it("only maps Wii-specific edition into a same-platform RAWG candidate",()=>{
+    const title="Resident Evil 4: Wii Edition";
+    expect(conservativeSearchTitles(title,"Nintendo Wii")).toEqual([title,"Resident Evil 4"]);
+    expect(conservativeSearchTitles(title,"Playstation 2")).toEqual([title]);
+    const candidates=[{id:42,name:"Resident Evil 4",platforms:[{platform:{name:"Wii"}}]}];
+    expect(selectRawgGame(title,"Nintendo Wii",candidates)?.id).toBe(42);
+    expect(selectRawgGame(title,"Playstation 2",candidates)).toBeNull();
+  });
+  it("matches a game labeled Version without conflating numbered sequels",()=>{
+    expect(selectRawgGame("Pokémon LeafGreen","GameBoy Advance",[
+      {id:1,name:"Pokémon LeafGreen Version",platforms:[{platform:{name:"Game Boy Advance"}}]},
+    ])?.id).toBe(1);
+    expect(selectRawgGame("Pokémon LeafGreen","GameBoy Advance",[
+      {id:1,name:"Pokémon FireRed Version",platforms:[{platform:{name:"Game Boy Advance"}}]},
+    ])).toBeNull();
   });
 });

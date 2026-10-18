@@ -42,7 +42,7 @@ export async function enrichNextRatingsGroup(request:{backupPath:string;expected
   };
   const fetched=task.lookupHltb||task.lookupMetacritic
     ?await collectNewGameRatings(task.title,task.platform,{
-      hltb:task.lookupHltb,metacritic:task.lookupMetacritic,beforeExternalRequest:pace,
+      hltb:task.lookupHltb,metacritic:task.lookupMetacritic,beforeExternalRequest:pace,strict:true,
     })
     :emptyRatings(new Date().toISOString());
   const fresh=await getFreshLibrarySnapshot();

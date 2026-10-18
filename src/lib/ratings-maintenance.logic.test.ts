@@ -32,3 +32,17 @@ describe("in-app ratings maintenance",()=>{
   expect(nextRatingsTask([copy("A",{referenceRatings:fetched}),copy("C",{edition:"Collector"})])?.lookupHltb).toBe(true);
  });
 });
+
+describe("recover incorrectly marked previous attempts",()=>{
+ it("retries v1 unavailable and unmatched but preserves all saved scores",()=>{
+  const copy=(id:string, ratings: any)=>({collectionId:id,title:"Nioh",platform:"Playstation 4",edition:"Standard",keepStatus:"Collection",referenceRatings:ratings} as CollectionGame);
+  const legacy={...emptyRatings("2026-10-18"),lookupVersion:undefined,
+    hltb:{mainHours:null,gameId:null,status:"unavailable" as const},
+    metacritic:{score:85,url:null,rawgUrl:null,status:"matched" as const}};
+  expect(pendingRatingFields(copy("1",legacy))).toEqual({hltb:true,metacritic:false});
+  const fresh={...emptyRatings("2026-10-18"),hltb:{mainHours:null,gameId:null,status:"unmatched" as const}};
+  expect(pendingRatingFields(copy("2",fresh))).toEqual({hltb:false,metacritic:false});
+  const fail={...emptyRatings("2026-10-18"),hltb:{mainHours:null,gameId:null,status:"error" as const}};
+  expect(pendingRatingFields(copy("3",fail)).hltb).toBe(true);
+ });
+});

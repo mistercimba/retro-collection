@@ -40,7 +40,7 @@
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "sharp": "0.35.5",
-    "howlongtobeat": "1.8.0"
+    "howlongtobeat-ts": "1.3.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.3",
