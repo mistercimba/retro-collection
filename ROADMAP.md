@@ -22,6 +22,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### NOW — HLTB repair backup delta audit (#106)
+Preparar diagnóstico privado read-only de backup vs `library.json` para explicar diferença 331 (Preview) → 329 (produção) depois de 1 reparação Castlevania. Fonte do backup: registo no Histórico; validar ID/cópia/horas, comparar apenas campos HLTB, contagens e entradas alteradas. Sem API HLTB/RAWG, writes, restores ou merge sem aprovação. Depois decidir se #103 precisa de ajustes/rebase e quando retomar HLTB.
+
+
 ### NOW — HLTB association integrity (#104)
 Collision reported in the read-only diagnostics: Zelda Oracle of Seasons and Castlevania II Belmont's Revenge both saved with HLTB #10039. Independent Wikidata identities identify #10039 for Zelda, #1571 for Castlevania; Castlevania's saved hours are suspect. Implement code-level guard to reject new HLTB ID cross-title collisions during addition and maintenance. Add a narrowly scoped manual repair of Castlevania that first backs up the private Blob and then clears wrong ID **and hours**, making HLTB pending. Do not fill in any unverified numeric values, nor modify live collection until separately confirmed in production UI. Issue #104, PR pending QA/owner merge approval; read-only PR #103 remains separate.
 

@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-18
 
+### NOW — Comparação read-only antes/depois da reparação HLTB (#106)
+Depois de #105 ter sido merged (`4582211`), o owner executou em produção a reparação de Castlevania II: Belmont's Revenge (GBC-0053), confirmada pelo Histórico em 18/10/2026 20:35 Europe/Lisbon. O Preview anterior mostrou 331 com HLTB e produção após o reset 329, mas a contagem verdadeira anterior **não pode ser inferida de uma screenshot de Preview**. Issue #106 prepara uma vista autenticada para comparar o backup privado identificado no próprio registo de reparação com a biblioteca atual, por collectionId. É read-only, sem writes/providers e deve passar QA antes de merge. Não fazer backfill HLTB nem restauro até o delta estar explicado. PR #103 continua aberto separadamente.
+
+
 ### NOW — HLTB cross-title ID collision (#104)
 Read-only PR #103 revealed HLTB ID `10039` linked to both The Legend of Zelda: Oracle of Seasons and Castlevania II: Belmont's Revenge. Independent Wikidata lists Zelda HLTB ID 10039 and Castlevania HLTB ID 1571, so the Castlevania ID is wrong; its saved Main Story hours may also be polluted, and **must not simply be reassigned to 1571**. Issue #104 implements server-side collision protection in additions and HLTB maintenance, and an explicit user-confirmed **Castlevania-only reset with private Blob backup** leaving HLTB pending, preserving Zelda and Metacritic. No live Blob mutation by developer, no new provider calls. Implementation branch `fix/hltb-id-collision-104` pending CI and explicit owner merge approval. PR #103 remains unmerged; its independent read-only diagnostics can be integrated separately.
 
