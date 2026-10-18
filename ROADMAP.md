@@ -22,6 +22,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
+### NOW — HLTB association integrity (#104)
+Collision reported in the read-only diagnostics: Zelda Oracle of Seasons and Castlevania II Belmont's Revenge both saved with HLTB #10039. Independent Wikidata identities identify #10039 for Zelda, #1571 for Castlevania; Castlevania's saved hours are suspect. Implement code-level guard to reject new HLTB ID cross-title collisions during addition and maintenance. Add a narrowly scoped manual repair of Castlevania that first backs up the private Blob and then clears wrong ID **and hours**, making HLTB pending. Do not fill in any unverified numeric values, nor modify live collection until separately confirmed in production UI. Issue #104, PR pending QA/owner merge approval; read-only PR #103 remains separate.
+
+
 ### NOW — Resilient HLTB maintenance (#100)
 User resumed HLTB backfill after #99 and found 72 HLTB, 8 Metacritic, but an isolated HLTB timeout stopped the entire run. Fix: 1 controlled 2–3s retry per transient failed group, then session-only skip and continue; stop after 3 consecutive failures to avoid hammering an unstable upstream. No error writes, no replay loops, preserve confirmation of earlier results, keep RAWG isolated and 2–3s pacing. Issue #100, new PR. Never run the collection update on CI or Preview; no merge without explicit Product Owner approval.
 

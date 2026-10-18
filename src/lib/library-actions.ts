@@ -11,6 +11,7 @@ import { deleteOwnedCopyPhoto } from "@/lib/owned-copy-photos";
 import { resolveCanonicalGame } from "@/lib/igdb-catalog";
 import { ensureCanonicalArtwork } from "@/lib/catalog-artwork";
 import { collectNewGameRatings } from "@/lib/new-game-ratings";
+import { blockConflictingNewHltb } from "@/lib/hltb-id-integrity.logic";
 import { wishlistTargetsSatisfiedByAddedGame } from "@/lib/wishlist-auto-remove.logic";
 import { objectiveMatchesTarget } from "@/lib/next-objective.logic";
 import { matchWantTarget } from "@/lib/data/wishlist-matching";
@@ -449,7 +450,7 @@ export async function addCollectionGame(form: FormData) {
       extras: text(form, "extras"),
       canonical,
       physical,
-      referenceRatings,
+      referenceRatings: blockConflictingNewHltb(library.collection, title, referenceRatings),
     }));
 
     const fulfilledWishlistTargets = wishlistTargetsSatisfiedByAddedGame(library.wishlist, title, platform);

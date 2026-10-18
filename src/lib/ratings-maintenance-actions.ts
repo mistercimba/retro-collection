@@ -5,6 +5,7 @@ import { authEnabled, isAuthenticated } from "./auth";
 import { getFreshLibrarySnapshot, saveLibrary } from "./library-store";
 import { collectNewGameRatings } from "./new-game-ratings";
 import { RatingsProviderFailure } from "./game-ratings-provider.node";
+import { findHltbIdCollision } from "./hltb-id-integrity.logic";
 import { emptyRatings } from "./game-ratings.logic";
 import { applyRatingsTask, isTransientHltbFailure, nextRatingsTask, ratingsOverview, retryTransientHltb, type RatingsSource } from "./ratings-maintenance.logic";
 
@@ -81,6 +82,27 @@ export async function enrichNextRatingsGroup(request:{backupPath:string;expected
   const fresh=await getFreshLibrarySnapshot();
   if(fresh.sha256!==before.sha256)
     throw new Error("A coleção mudou durante as consultas. Não foram gravados os resultados deste jogo.");
+  if(request.source==="hltb") {
+    const proposed=task.knownHltb??fetched.hltb;
+    if(proposed.gameId && proposed.mainHours) {
+      const collision=findHltbIdCollision(fresh.library.collection,task.title,proposed.gameId,task.ids);
+      if(collision) {
+        // Never persist a new association known to be used by a different title.
+        // No Blob write; leave this group pending for an explicit audit.
+        return {
+          updatedAt:fresh.library.updatedAt,
+          overview:ratingsOverview(fresh.library.collection),
+          done:false,
+          processed:null,
+          failure:"Conflito de identificador HowLongToBeat: o jogo "+task.title+
+            " recebeu um ID já associado a "+collision.title+". A atualização foi interrompida para revisão.",
+          transient:false,
+          failedIds:task.ids,
+          failedTitle:task.title,
+        };
+      }
+    }
+  }
   const ids=new Set(task.ids);
   const data={...fresh.library,collection:fresh.library.collection.map(game=>
     ids.has(game.collectionId)?applyRatingsTask(game,fetched,{

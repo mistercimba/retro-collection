@@ -6,6 +6,10 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-18
 
+### NOW — HLTB cross-title ID collision (#104)
+Read-only PR #103 revealed HLTB ID `10039` linked to both The Legend of Zelda: Oracle of Seasons and Castlevania II: Belmont's Revenge. Independent Wikidata lists Zelda HLTB ID 10039 and Castlevania HLTB ID 1571, so the Castlevania ID is wrong; its saved Main Story hours may also be polluted, and **must not simply be reassigned to 1571**. Issue #104 implements server-side collision protection in additions and HLTB maintenance, and an explicit user-confirmed **Castlevania-only reset with private Blob backup** leaving HLTB pending, preserving Zelda and Metacritic. No live Blob mutation by developer, no new provider calls. Implementation branch `fix/hltb-id-collision-104` pending CI and explicit owner merge approval. PR #103 remains unmerged; its independent read-only diagnostics can be integrated separately.
+
+
 ### NOW — HLTB intermittent timeout during extended batch (#100)
 User's latest live screenshot: 531 physical copies, 72 with HLTB (previously 31), 8 with Metacritic, 487 pending one or both, 409 pending HLTB requests, then `HowLongToBeat indisponível (timeout)`. #99 isolation worked, but `strict:true` still stopped every batch on the first transient outage. The fix under Issue #100 should do one controlled retry, skip the failed group for the current browser session only (without Blob write) and continue, stop after 3 consecutive failures; maintain per-source selection and all backups/auth protections. Vercel log query failed due plan retention, not evidence of empty logs. No live collection change made by the assistant.
 
