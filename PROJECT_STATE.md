@@ -1,10 +1,23 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-18
+Last updated: 2026-10-22
 
 This is the living project handoff. Read `AGENTS.md` first.
 
-## Current status — 2026-10-18
+## Current status — 2026-10-22
+
+### NOW — Fluid Active CPU reduction (#108)
+User requested implementation after the 20/10 Vercel quota warning. Focused branch `fix/fluid-cpu-108`, based on production/main `4582211d09006a7b79d49dbf42516ad1f20d0af3`; open HLTB PRs #103/#107 remain separate. Audit panel on 22/10: last 30 days retro-collection 6h43m (99.8%), MTG 50s, walls 0s. Historical route/deployment attribution is unavailable on Hobby, so this does **not** prove which historical request caused those hours.
+
+Implementation prepares platform-scoped aliases/title signatures once (bounded LRU, unchanged rank/edition rules); catalog snapshots share concurrent read/parse work for at most one hour per warm instance, reset on source/config change and never retain failed/missing reads. The raw catalog fetch uses `no-store` to avoid stacking a second stale cache beneath that TTL. Derived CeX/PriceCharting guide batches persist in Next Data Cache, keyed by full query inputs, SHA-256 of source bytes and ECB rate/date where applicable. This survives cold instances without redoing matching; it does not depend on process memory for correctness. Failed upstream/FX results bypass persistent caching. Library-dependent collection cache and fresh-read mutation paths remain unchanged; wishlist/stats gain render-scoped dedupe only.
+
+`/api/health` keeps its existing counts/artwork contract but no longer imports market pricing, computes collection valuations, or makes a second fresh Blob read for storage mode. It reports the app's cached library view (up to the existing 300s cache interval), not an independent live storage probe; read failures still return 503. No schema change, private Blob write, deployment deletion, plan upgrade or background enrichment.
+
+Reproducible synthetic benchmark: `node --import tsx scripts/benchmark-pricing.ts` on baseline vs candidate (Node 24): 240 catalog products, 78 lookups, CPU **3565.56ms -> 157.714ms** (~95.6% less), identical result SHA-256 `efbc4cd8fb91dedb6b5b544a29c569f7a5cd15eb501541cf9b71e294d1902ecf`. A differential check against the baseline compared **13,456 pairs** (58 fixture titles, four platforms), all identical. These are isolated matching CPU measurements, not a prediction of account-wide savings. After approved merge, compare the next usage window before claiming quota recovery; already-consumed CPU is not refunded.
+
+Local quality/remote checks and usable Preview are recorded in the PR. No merge or production rollout without explicit Product Owner approval.
+
+
 
 ### NOW — HLTB cross-title ID collision (#104)
 Read-only PR #103 revealed HLTB ID `10039` linked to both The Legend of Zelda: Oracle of Seasons and Castlevania II: Belmont's Revenge. Independent Wikidata lists Zelda HLTB ID 10039 and Castlevania HLTB ID 1571, so the Castlevania ID is wrong; its saved Main Story hours may also be polluted, and **must not simply be reassigned to 1571**. Issue #104 implements server-side collision protection in additions and HLTB maintenance, and an explicit user-confirmed **Castlevania-only reset with private Blob backup** leaving HLTB pending, preserving Zelda and Metacritic. No live Blob mutation by developer, no new provider calls. Implementation branch `fix/hltb-id-collision-104` pending CI and explicit owner merge approval. PR #103 remains unmerged; its independent read-only diagnostics can be integrated separately.
