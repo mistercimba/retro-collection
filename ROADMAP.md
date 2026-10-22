@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-18
+Last updated: 2026-10-22
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -21,6 +21,10 @@ Do not create another roadmap/checklist file. Update this one instead.
 - **BLOCKED** — useful but waiting on data/upstream work.
 
 ## Current focus
+
+### NOW — Fluid Active CPU quota (#108)
+Implement and validate the focused pricing/matching CPU repair in `fix/fluid-cpu-108`: prepared bounded title signatures, one-hour parsed-snapshot reuse, persistent content-keyed guide results, request-scoped wishlist/stat dedupe and health checks without market valuation or redundant Blob reads. Preserve all existing matching/ambiguity/edition rules and private data. Synthetic matching CPU benchmark is ~95.6% lower with identical outputs; historical per-route consumption remains unproven. PR/Preview QA and explicit owner merge approval are required. After rollout, inspect a new Vercel usage window; deployment cleanup cannot refund past CPU. No plan upgrade or automated deployment deletion.
+
 
 ### NOW — HLTB association integrity (#104)
 Collision reported in the read-only diagnostics: Zelda Oracle of Seasons and Castlevania II Belmont's Revenge both saved with HLTB #10039. Independent Wikidata identities identify #10039 for Zelda, #1571 for Castlevania; Castlevania's saved hours are suspect. Implement code-level guard to reject new HLTB ID cross-title collisions during addition and maintenance. Add a narrowly scoped manual repair of Castlevania that first backs up the private Blob and then clears wrong ID **and hours**, making HLTB pending. Do not fill in any unverified numeric values, nor modify live collection until separately confirmed in production UI. Issue #104, PR pending QA/owner merge approval; read-only PR #103 remains separate.

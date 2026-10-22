@@ -1,4 +1,5 @@
 import { GAME_TITLE_ALIAS_GROUPS } from "../data/game-title-aliases";
+import { boundedMemoize } from "./bounded-cache.logic";
 
 const STOPWORDS = new Set([
   "a", "an", "and", "the", "of", "de", "da", "do", "dos", "das", "para", "e", "o", "os", "as", "um", "uma",
@@ -45,14 +46,19 @@ export function normalizeGameTitle(value: unknown): string {
     .trim();
 }
 
+const regionalAliases = new Map<string, string>();
+for (const group of GAME_TITLE_ALIAS_GROUPS) {
+  const canonical = normalizeGameTitle(group.canonical);
+  for (const label of [group.canonical, ...group.aliases]) {
+    const key = JSON.stringify([group.platform, normalizeGameTitle(label)]);
+    // Preserve the original first-group-wins rule.
+    if (!regionalAliases.has(key)) regionalAliases.set(key, canonical);
+  }
+}
+
 function verifiedRegionalAlias(value: string, platform: string): string {
   const normalized = normalizeGameTitle(value);
-  for (const group of GAME_TITLE_ALIAS_GROUPS) {
-    if (group.platform !== platform) continue;
-    const labels = [group.canonical, ...group.aliases].map(normalizeGameTitle);
-    if (labels.includes(normalized)) return normalizeGameTitle(group.canonical);
-  }
-  return normalized;
+  return regionalAliases.get(JSON.stringify([platform, normalized])) ?? normalized;
 }
 
 function sourceAlias(value: string, platform: string): string {
@@ -92,33 +98,20 @@ function uniqueSorted(values: string[]): string[] {
   return [...new Set(values)].sort();
 }
 
-function tokenSignature(value: string, platform: string): string {
-  return uniqueSorted(meaningfulTokens(value, platform)).join("|");
-}
-
-function compactSignature(value: string, platform: string): string {
-  return meaningfulTokens(value, platform).join("");
-}
-
-function corporateCompactSignature(value: string, platform: string): string {
-  return meaningfulTokens(value, platform).filter((token) => token !== "inc").join("");
-}
-
-function sharedWordStats(left: string, right: string, platform: string): { common: number; overlap: number } {
-  const leftWords = wordSignature(left, platform);
-  const rightWords = wordSignature(right, platform);
-  const rightSet = new Set(rightWords);
-  const common = leftWords.filter((token) => rightSet.has(token)).length;
-  return { common, overlap: common / Math.max(leftWords.length, rightWords.length, 1) };
-}
-
-function numberSignature(value: string, platform: string): string {
-  return meaningfulTokens(value, platform).filter((token) => /^\d+$/.test(token)).sort().join("|");
-}
-
-function wordSignature(value: string, platform: string): string[] {
-  return uniqueSorted(meaningfulTokens(value, platform).filter((token) => !/^\d+$/.test(token)));
-}
+const preparedTitles = boundedMemoize((key: string) => {
+  const [platform, value] = JSON.parse(key) as [string, string];
+  return titleVariants(value).map((variant) => {
+    const meaningful = meaningfulTokens(variant, platform);
+    const corporate = meaningful.filter((token) => token !== "inc");
+    const words = uniqueSorted(meaningful.filter((token) => !/^\d+$/.test(token)));
+    return {
+      normalized: sourceAlias(variant, platform), meaningful, corporate, words,
+      wordSet: new Set(words), signature: uniqueSorted(meaningful).join("|"),
+      compact: meaningful.join(""), corporateCompact: corporate.join(""),
+      numbers: meaningful.filter((token) => /^\d+$/.test(token)).sort().join("|"),
+    };
+  });
+});
 
 function isSubset(left: string[], right: string[]): boolean {
   const lookup = new Set(right);
@@ -144,20 +137,20 @@ export function titleMatchRank(query: string, candidate: string, platform: strin
   if (!query || !candidate || isCompoundChoiceTitle(query)) return null;
   let best: TitleMatchRank | null = null;
 
-  for (const queryVariant of titleVariants(query)) {
-    for (const candidateVariant of titleVariants(candidate)) {
-      const queryNormalized = sourceAlias(queryVariant, platform);
-      const candidateNormalized = sourceAlias(candidateVariant, platform);
+  for (const queryVariant of preparedTitles(JSON.stringify([platform, query]))) {
+    for (const candidateVariant of preparedTitles(JSON.stringify([platform, candidate]))) {
+      const queryNormalized = queryVariant.normalized;
+      const candidateNormalized = candidateVariant.normalized;
       if (queryNormalized === candidateNormalized) best = best === null ? 0 : Math.min(best, 0) as TitleMatchRank;
 
-      const querySignature = tokenSignature(queryVariant, platform);
-      const candidateSignature = tokenSignature(candidateVariant, platform);
+      const querySignature = queryVariant.signature;
+      const candidateSignature = candidateVariant.signature;
       if (querySignature && querySignature === candidateSignature) {
         best = best === null ? 1 : Math.min(best, 1) as TitleMatchRank;
       }
 
-      const queryCompact = compactSignature(queryVariant, platform);
-      const candidateCompact = compactSignature(candidateVariant, platform);
+      const queryCompact = queryVariant.compact;
+      const candidateCompact = candidateVariant.compact;
       if (queryCompact.length >= 6 && queryCompact === candidateCompact) {
         best = best === null ? 1 : Math.min(best, 1) as TitleMatchRank;
       }
@@ -166,10 +159,10 @@ export function titleMatchRank(query: string, candidate: string, platform: strin
       // splitting a stylised compound word (for example WarioWare, Inc. vs
       // Wario Ware). Only ignore "inc" when at least three other meaningful
       // tokens remain on both sides, avoiding broad one-word matches.
-      const queryCorporateCompact = corporateCompactSignature(queryVariant, platform);
-      const candidateCorporateCompact = corporateCompactSignature(candidateVariant, platform);
-      const queryCorporateTokens = meaningfulTokens(queryVariant, platform).filter((token) => token !== "inc");
-      const candidateCorporateTokens = meaningfulTokens(candidateVariant, platform).filter((token) => token !== "inc");
+      const queryCorporateCompact = queryVariant.corporateCompact;
+      const candidateCorporateCompact = candidateVariant.corporateCompact;
+      const queryCorporateTokens = queryVariant.corporate;
+      const candidateCorporateTokens = candidateVariant.corporate;
       if (
         Math.min(queryCorporateTokens.length, candidateCorporateTokens.length) >= 3
         && queryCorporateCompact.length >= 8
@@ -178,16 +171,16 @@ export function titleMatchRank(query: string, candidate: string, platform: strin
         best = best === null ? 1 : Math.min(best, 1) as TitleMatchRank;
       }
 
-      const queryWords = wordSignature(queryVariant, platform);
-      const candidateWords = wordSignature(candidateVariant, platform);
+      const queryWords = queryVariant.words;
+      const candidateWords = candidateVariant.words;
       if (queryWords.length >= 3 && queryWords.join("|") === candidateWords.join("|")) {
         best = best === null ? 2 : Math.min(best, 2) as TitleMatchRank;
       }
 
-      const queryMeaningful = meaningfulTokens(queryVariant, platform);
-      const candidateMeaningful = meaningfulTokens(candidateVariant, platform);
-      const queryNumbers = numberSignature(queryVariant, platform);
-      const candidateNumbers = numberSignature(candidateVariant, platform);
+      const queryMeaningful = queryVariant.meaningful;
+      const candidateMeaningful = candidateVariant.meaningful;
+      const queryNumbers = queryVariant.numbers;
+      const candidateNumbers = candidateVariant.numbers;
       const shorterLength = Math.min(queryMeaningful.length, candidateMeaningful.length);
 
       // Controlled subtitle/source-name fallback. Never allow a one-token base title
@@ -214,7 +207,8 @@ export function titleMatchRank(query: string, candidate: string, platform: strin
       // Regional catalogue titles sometimes translate only the subtitle. If a
       // large distinctive core survives unchanged, accept it as a lower-ranked
       // candidate and still rely on the caller's unique-best rule.
-      const shared = sharedWordStats(queryVariant, candidateVariant, platform);
+      const common = queryWords.filter((token) => candidateVariant.wordSet.has(token)).length;
+      const shared = { common, overlap: common / Math.max(queryWords.length, candidateWords.length, 1) };
       const sharedPrefixLength = queryMeaningful.findIndex((token, index) => candidateMeaningful[index] !== token);
       const identicalPrefixLength = sharedPrefixLength === -1
         ? Math.min(queryMeaningful.length, candidateMeaningful.length)
@@ -256,10 +250,12 @@ export function editionFlags(value: string): Record<string, boolean> {
 }
 
 export function editionsCompatible(expected: string, actual: string): boolean {
-  const wanted = editionFlags(expected);
-  const found = editionFlags(actual);
+  const wanted = cachedEditionFlags(expected);
+  const found = cachedEditionFlags(actual);
   return Object.keys(wanted).every((key) => wanted[key] === found[key]);
 }
+
+const cachedEditionFlags = boundedMemoize(editionFlags);
 
 export function chooseUniqueBestTitleMatch<T>(
   query: string,

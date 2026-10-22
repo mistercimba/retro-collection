@@ -1,4 +1,7 @@
 import "server-only";
+import { createHash } from "node:crypto";
+import { unstable_cache } from "next/cache";
+import { singleFlightSnapshot } from "./bounded-cache.logic";
 import type { CollectionGame } from "@/lib/data/types";
 import { estimateCondition, lookupPalPricechartingMatch, parseEcbUsdEur, selectSnapshotPrice, type PricechartingCatalog } from "@/lib/external-game-data.logic";
 import { measureServerFetch, measureServerWork } from "./server-perf";
@@ -10,7 +13,15 @@ export type PriceEstimate = { value: number | null; source: string; date: string
 
 const unavailable = (source: string): PriceEstimate => ({ value: null, source, date: "", basis: "", productUrl: "" });
 
-async function getCatalog(): Promise<PricechartingCatalog | null> {
+type Snapshot = PricechartingCatalog & { snapshotHash: string };
+const snapshotCache = singleFlightSnapshot<Snapshot>(3600_000);
+
+function getCatalog(): Promise<Snapshot | null> {
+  const key = JSON.stringify([process.env.PRICECHARTING_CATALOG_REF || "main", process.env.PRICECHARTING_CATALOG_GITHUB_TOKEN || ""]);
+  return snapshotCache(key, readCatalog);
+}
+
+async function readCatalog(): Promise<Snapshot | null> {
   const token = process.env.PRICECHARTING_CATALOG_GITHUB_TOKEN;
   if (!token) return null;
   const ref = process.env.PRICECHARTING_CATALOG_REF || "main";
@@ -18,10 +29,15 @@ async function getCatalog(): Promise<PricechartingCatalog | null> {
   try {
     const response = await measureServerFetch("pricecharting.github_fetch", () => fetch(url, {
       headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github.raw+json", "X-GitHub-Api-Version": "2022-11-28" },
-      next: { revalidate: 3600 },
+      // The parsed snapshot below owns the one-hour TTL; do not stack a second
+      // stale-while-revalidate cache underneath it.
+      cache: "no-store",
     }));
     if (!response.ok) return null;
-    const catalog = await measureServerWork("pricecharting.snapshot_parse", () => response.json() as Promise<PricechartingCatalog>);
+    const catalog = await measureServerWork("pricecharting.snapshot_parse", async () => {
+      const text = await response.text();
+      return { ...JSON.parse(text) as PricechartingCatalog, snapshotHash: createHash("sha256").update(text).digest("hex") };
+    });
     if (catalog.source !== "pricecharting-pal-local-snapshot" || catalog.region !== "PAL" || catalog.currency !== "USD" || !catalog.generatedAt || !Number.isFinite(Date.parse(catalog.generatedAt)) || !Array.isArray(catalog.games)) return null;
     return catalog;
   } catch {
@@ -127,6 +143,22 @@ export async function getPricechartingGuides(entries: Array<{ key: string; platf
     for (const entry of entries) results.set(entry.key, emptyGuide("Snapshot PriceCharting indisponível"));
     return results;
   }
+  // Unavailable catalog/FX results must not be persisted for an hour.
+  if (!fx) return matchPricechartingGuides(entries, catalog, fx);
+  const cached = unstable_cache(
+    async (items: typeof entries) => [...await matchPricechartingGuides(items, catalog, fx)],
+    ["pricecharting-guides-v1", catalog.snapshotHash, String(fx.rate), fx.date],
+    { revalidate: 3600 },
+  );
+  return new Map(await cached(entries));
+}
+
+async function matchPricechartingGuides(
+  entries: Array<{ key: string; platform: string; title: string; edition?: string }>,
+  catalog: PricechartingCatalog,
+  fx: { rate: number; date: string } | null,
+): Promise<Map<string, PriceGuide>> {
+  const results = new Map<string, PriceGuide>();
   await measureServerWork("pricecharting.guide_match", async () => {
     for (const entry of entries) {
       const match = lookupPalPricechartingMatch(catalog, entry.platform, entry.title, entry.edition ?? "");

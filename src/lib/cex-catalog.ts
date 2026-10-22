@@ -1,4 +1,7 @@
 import "server-only";
+import { createHash } from "node:crypto";
+import { unstable_cache } from "next/cache";
+import { singleFlightSnapshot } from "./bounded-cache.logic";
 import type { CexConditionResult, CexPriceReference, CexWishlistGuide, WishlistBuyCondition } from "@/lib/wishlist-buy-reference.logic";
 import { measureServerFetch, measureServerWork } from "@/lib/server-perf";
 import { isCexPerfectGrade, stripCexReferenceAnnotations } from "@/lib/cex-title-match.logic";
@@ -83,7 +86,15 @@ function toReference(game: CexCatalogGame): CexPriceReference | null {
   };
 }
 
-async function getCatalog(): Promise<CexCatalog | null> {
+type Snapshot = CexCatalog & { snapshotHash: string };
+const snapshotCache = singleFlightSnapshot<Snapshot>(3600_000);
+
+function getCatalog(): Promise<Snapshot | null> {
+  const key = JSON.stringify([process.env.PRICECHARTING_CATALOG_REF || "main", process.env.PRICECHARTING_CATALOG_GITHUB_TOKEN || ""]);
+  return snapshotCache(key, readCatalog);
+}
+
+async function readCatalog(): Promise<Snapshot | null> {
   const token = process.env.PRICECHARTING_CATALOG_GITHUB_TOKEN;
   if (!token) return null;
   const ref = process.env.PRICECHARTING_CATALOG_REF || "main";
@@ -91,10 +102,13 @@ async function getCatalog(): Promise<CexCatalog | null> {
   try {
     const response = await measureServerFetch("cex.github_fetch", () => fetch(url, {
       headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github.raw+json", "X-GitHub-Api-Version": "2022-11-28" },
-      next: { revalidate: 3600 },
+      cache: "no-store",
     }));
     if (!response.ok) return null;
-    const catalog = await measureServerWork("cex.snapshot_parse", () => response.json() as Promise<CexCatalog>);
+    const catalog = await measureServerWork("cex.snapshot_parse", async () => {
+      const text = await response.text();
+      return { ...JSON.parse(text) as CexCatalog, snapshotHash: createHash("sha256").update(text).digest("hex") };
+    });
     if (catalog.version !== 1 || catalog.source !== "cex-pt-live-catalog" || !catalog.generatedAt || !Array.isArray(catalog.games)) return null;
     return catalog;
   } catch {
@@ -121,6 +135,19 @@ export async function getCexWishlistGuides(
     return results;
   }
 
+  const cached = unstable_cache(
+    async (items: typeof entries) => [...await matchCexWishlistGuides(items, catalog)],
+    ["cex-wishlist-guides-v1", catalog.snapshotHash],
+    { revalidate: 3600 },
+  );
+  return new Map(await cached(entries));
+}
+
+async function matchCexWishlistGuides(
+  entries: Array<{ key: string; platform: string; title: string; edition?: string }>,
+  catalog: CexCatalog,
+): Promise<Map<string, CexWishlistGuide>> {
+  const results = new Map<string, CexWishlistGuide>();
   await measureServerWork("cex.local_match", async () => {
     for (const entry of entries) {
       const cexPlatform = PLATFORM_MAP[entry.platform];

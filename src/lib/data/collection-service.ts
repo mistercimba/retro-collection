@@ -8,6 +8,7 @@ import { selectPhysicalCopies } from "@/lib/copy-groups.logic";
 import type { CollectionGame, CollectionStats, LibraryData, WantListEntry } from "./types";
 import { buildComponentNeedEntries, buildComponentNeedHistory } from "@/lib/component-needs.logic";
 import { resolveNextObjective } from "@/lib/next-objective.logic";
+import { cache } from "react";
 
 export async function getAllGames(): Promise<CollectionGame[]> {
   return (await getLibrary()).collection;
@@ -46,7 +47,7 @@ export async function getGameCopies(collectionId: string): Promise<CollectionGam
   return selectPhysicalCopies(library.collection, current).map((game) => hydrateGame(library, game));
 }
 
-export async function getStats(): Promise<CollectionStats> {
+export const getStats = cache(async (): Promise<CollectionStats> => {
   const [games, valuedGames] = await Promise.all([getAllGames(), getCollectionListGames()]);
   const kept = games.filter((g) => g.keepStatus === "Collection");
   const sell = games.filter((g) => g.keepStatus === "Sell");
@@ -74,9 +75,9 @@ export async function getStats(): Promise<CollectionStats> {
     marketValueEur: sumKnownMarketValues(valuedGames.map((game) => ({ marketValueEur: game.currentValueEur }))),
     platforms,
   };
-}
+});
 
-export async function getWantlist(): Promise<WantListEntry[]> {
+export const getWantlist = cache(async (): Promise<WantListEntry[]> => {
   const library = await getLibrary();
   const kept = library.collection.filter((game) => game.keepStatus === "Collection");
   const priorityOrder: Record<string, number> = { grail: 0, alta: 0, média: 1, media: 1, baixa: 2 };
@@ -92,7 +93,7 @@ export async function getWantlist(): Promise<WantListEntry[]> {
     a.platform.localeCompare(b.platform, "pt-PT") ||
     a.title.localeCompare(b.title, "pt-PT"),
   );
-}
+});
 
 export async function getNextObjective() {
   const [library, targets] = await Promise.all([getLibrary(), getWantlist()]);
