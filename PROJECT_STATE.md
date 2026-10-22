@@ -6,8 +6,8 @@ This is the living project handoff. Read `AGENTS.md` first.
 
 ## Current status — 2026-10-22
 
-### NOW — Fluid Active CPU reduction (#108)
-User requested implementation after the 20/10 Vercel quota warning. Focused branch `fix/fluid-cpu-108`, based on production/main `4582211d09006a7b79d49dbf42516ad1f20d0af3`; open HLTB PRs #103/#107 remain separate. Audit panel on 22/10: last 30 days retro-collection 6h43m (99.8%), MTG 50s, walls 0s. Historical route/deployment attribution is unavailable on Hobby, so this does **not** prove which historical request caused those hours.
+### Completed — Fluid Active CPU reduction (#108; PR #109)
+Owner explicitly approved merge on 2026-10-22. PR #109 from `fix/fluid-cpu-108` was squash-merged as `6e847be44c76bfcbe218070c5a801ae7a0d16ede`; open HLTB PRs #103/#107 remain separate. Audit panel on 22/10: last 30 days retro-collection 6h43m (99.8%), MTG 50s, walls 0s. Historical route/deployment attribution is unavailable on Hobby, so this does **not** prove which historical request caused those hours.
 
 Implementation prepares platform-scoped aliases/title signatures once (bounded LRU, unchanged rank/edition rules); catalog snapshots share concurrent read/parse work for at most one hour per warm instance, reset on source/config change and never retain failed/missing reads. The raw catalog fetch uses `no-store` to avoid stacking a second stale cache beneath that TTL. Derived CeX/PriceCharting guide batches persist in Next Data Cache, keyed by full query inputs, SHA-256 of source bytes and ECB rate/date where applicable. This survives cold instances without redoing matching; it does not depend on process memory for correctness. Failed upstream/FX results bypass persistent caching. Library-dependent collection cache and fresh-read mutation paths remain unchanged; wishlist/stats gain render-scoped dedupe only.
 
@@ -15,7 +15,7 @@ Implementation prepares platform-scoped aliases/title signatures once (bounded L
 
 Reproducible synthetic benchmark: `node --import tsx scripts/benchmark-pricing.ts` on baseline vs candidate (Node 24): 240 catalog products, 78 lookups, CPU **3565.56ms -> 157.714ms** (~95.6% less), identical result SHA-256 `efbc4cd8fb91dedb6b5b544a29c569f7a5cd15eb501541cf9b71e294d1902ecf`. A differential check against the baseline compared **13,456 pairs** (58 fixture titles, four platforms), all identical. These are isolated matching CPU measurements, not a prediction of account-wide savings. After approved merge, compare the next usage window before claiming quota recovery; already-consumed CPU is not refunded.
 
-Local quality/remote checks and usable Preview are recorded in the PR. No merge or production rollout without explicit Product Owner approval.
+Pre-merge validation: 396 Vitest tests, six Python tests, 368/368 cover candidates, lint, TypeScript and production build passed; GitHub CI and Vercel Preview passed on `fc2a8d001e8747578bf026f9460b55b368c8df2a`. Preview health returned HTTP 200/ok:true. Post-merge production deployment/check results are recorded in PR #109. Authenticated pricing UX and account-wide CPU savings remain separate from those checks; no collection data was changed.
 
 
 

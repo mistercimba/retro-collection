@@ -22,8 +22,8 @@ Do not create another roadmap/checklist file. Update this one instead.
 
 ## Current focus
 
-### NOW — Fluid Active CPU quota (#108)
-Implement and validate the focused pricing/matching CPU repair in `fix/fluid-cpu-108`: prepared bounded title signatures, one-hour parsed-snapshot reuse, persistent content-keyed guide results, request-scoped wishlist/stat dedupe and health checks without market valuation or redundant Blob reads. Preserve all existing matching/ambiguity/edition rules and private data. Synthetic matching CPU benchmark is ~95.6% lower with identical outputs; historical per-route consumption remains unproven. PR/Preview QA and explicit owner merge approval are required. After rollout, inspect a new Vercel usage window; deployment cleanup cannot refund past CPU. No plan upgrade or automated deployment deletion.
+### COMPLETED — Fluid Active CPU quota repair (#108; PR #109)
+Owner approved; PR #109 squash-merged on 2026-10-22 as `6e847be44c76bfcbe218070c5a801ae7a0d16ede`. Delivered the focused pricing/matching CPU repair: prepared bounded title signatures, one-hour parsed-snapshot reuse, persistent content-keyed guide results, request-scoped wishlist/stat dedupe and health checks without market valuation or redundant Blob reads. Preserve all existing matching/ambiguity/edition rules and private data. Synthetic matching CPU benchmark is ~95.6% lower with identical outputs; historical per-route consumption remains unproven. Pre-merge CI, Preview and read-only health check passed; authenticated pricing UX remains unverified. After rollout, inspect a new Vercel usage window; deployment cleanup cannot refund past CPU. No plan upgrade or automated deployment deletion.
 
 
 ### NOW — HLTB association integrity (#104)
