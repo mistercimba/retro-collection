@@ -1,6 +1,6 @@
 # PROJECT_STATE.md — Current handoff
 
-Last updated: 2026-10-22
+Last updated: 2026-10-28
 
 This is the living project handoff. Read `AGENTS.md` first.
 
@@ -19,13 +19,11 @@ Pre-merge validation: 396 Vitest tests, six Python tests, 368/368 cover candidat
 
 
 
-### NOW — HLTB cross-title ID collision (#104)
-Read-only PR #103 revealed HLTB ID `10039` linked to both The Legend of Zelda: Oracle of Seasons and Castlevania II: Belmont's Revenge. Independent Wikidata lists Zelda HLTB ID 10039 and Castlevania HLTB ID 1571, so the Castlevania ID is wrong; its saved Main Story hours may also be polluted, and **must not simply be reassigned to 1571**. Issue #104 implements server-side collision protection in additions and HLTB maintenance, and an explicit user-confirmed **Castlevania-only reset with private Blob backup** leaving HLTB pending, preserving Zelda and Metacritic. No live Blob mutation by developer, no new provider calls. Implementation branch `fix/hltb-id-collision-104` pending CI and explicit owner merge approval. PR #103 remains unmerged; its independent read-only diagnostics can be integrated separately.
+### Completed — HLTB cross-title ID collision guard (#104; PR #105)
+PR #105 squash-merged on 2026-10-18 as `4582211d09006a7b79d49dbf42516ad1f20d0af3`. HLTB ID `10039` had been saved for both The Legend of Zelda: Oracle of Seasons and Castlevania II: Belmont's Revenge; independent Wikidata lists Zelda as 10039 and Castlevania as 1571, so the Castlevania association (and possibly its saved hours) is wrong and **must not simply be reassigned to 1571**. The merge adds server-side collision protection in additions and HLTB maintenance, plus an explicit user-confirmed **Castlevania-only reset with private Blob backup** that leaves HLTB pending and preserves Zelda and Metacritic. Merging changed no live data. Issue #104 stays open until the owner runs (or declines) the repair in production. Read-only diagnostics PRs #103 (#102) and #107 (#106) remain open and unmerged.
 
-
-### NOW — HLTB intermittent timeout during extended batch (#100)
-User's latest live screenshot: 531 physical copies, 72 with HLTB (previously 31), 8 with Metacritic, 487 pending one or both, 409 pending HLTB requests, then `HowLongToBeat indisponível (timeout)`. #99 isolation worked, but `strict:true` still stopped every batch on the first transient outage. The fix under Issue #100 should do one controlled retry, skip the failed group for the current browser session only (without Blob write) and continue, stop after 3 consecutive failures; maintain per-source selection and all backups/auth protections. Vercel log query failed due plan retention, not evidence of empty logs. No live collection change made by the assistant.
-
+### Completed — Resilient HLTB maintenance (#100; PR #101)
+PR #101 squash-merged on 2026-10-18 as `d999494571a6de54b54d4d04bdb6237fa27abcc5`; Issue #100 closed. A transient HLTB timeout now gets one controlled retry, the failed group is skipped for the current browser session only (no Blob write) and the run continues; it stops after 3 consecutive failures. Per-source selection, backups, auth protections and 2–3 s pacing are unchanged. Context: the owner's live run had 531 copies, 72 with HLTB, 8 with Metacritic, then `HowLongToBeat indisponível (timeout)`. No collection change was made by the merge.
 
 ### Completed — Isolated HLTB and RAWG maintenance (#98; PR #99)
 Owner approved and PR #99 squash-merged as `4144da5b89c46cdd279b6b8c53a1cc6f21d1985e`. Prior live test: 531 owned, 27 HLTB and 8 Metacritic, 491 still needing at least one source, then RAWG timeout. Source-specific selection now defaults to HLTB only; RAWG can be updated independently. Backend enforces per-source lookups and persistence, maintains per-provider lookup revision for old false negatives, keeps backup and concurrency protections, and 2–3-second pacing. Checks and preview passed. **No actual collection backfill performed on merge.** Next action: user opens production `/maintenance/ratings` and explicitly chooses whether to resume only HLTB. Do not claim upstream services will always respond; inspect runtime errors if a future pass fails.

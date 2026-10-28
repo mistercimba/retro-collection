@@ -1,6 +1,6 @@
 # Retro Collection — Roadmap
 
-Last updated: 2026-10-22
+Last updated: 2026-10-28
 
 This is the **single source of truth for future work** on Mário's Retro Collection.
 
@@ -26,13 +26,11 @@ Do not create another roadmap/checklist file. Update this one instead.
 Owner approved; PR #109 squash-merged on 2026-10-22 as `6e847be44c76bfcbe218070c5a801ae7a0d16ede`. Delivered the focused pricing/matching CPU repair: prepared bounded title signatures, one-hour parsed-snapshot reuse, persistent content-keyed guide results, request-scoped wishlist/stat dedupe and health checks without market valuation or redundant Blob reads. Preserve all existing matching/ambiguity/edition rules and private data. Synthetic matching CPU benchmark is ~95.6% lower with identical outputs; historical per-route consumption remains unproven. Pre-merge CI, Preview and read-only health check passed; authenticated pricing UX remains unverified. After rollout, inspect a new Vercel usage window; deployment cleanup cannot refund past CPU. No plan upgrade or automated deployment deletion.
 
 
-### NOW — HLTB association integrity (#104)
-Collision reported in the read-only diagnostics: Zelda Oracle of Seasons and Castlevania II Belmont's Revenge both saved with HLTB #10039. Independent Wikidata identities identify #10039 for Zelda, #1571 for Castlevania; Castlevania's saved hours are suspect. Implement code-level guard to reject new HLTB ID cross-title collisions during addition and maintenance. Add a narrowly scoped manual repair of Castlevania that first backs up the private Blob and then clears wrong ID **and hours**, making HLTB pending. Do not fill in any unverified numeric values, nor modify live collection until separately confirmed in production UI. Issue #104, PR pending QA/owner merge approval; read-only PR #103 remains separate.
+### NOW — Owner decision on the Castlevania HLTB repair (#104)
+Code guard merged (PR #105, `4582211d09006a7b79d49dbf42516ad1f20d0af3`, 2026-10-18). Remaining step is owner-only: decide whether to run the explicit Castlevania-only reset (private Blob backup first, clears the wrong ID **and hours**, leaves HLTB pending). Never fill in unverified numeric values. Read-only audit PRs #103 and #107 are still open pending owner review.
 
-
-### NOW — Resilient HLTB maintenance (#100)
-User resumed HLTB backfill after #99 and found 72 HLTB, 8 Metacritic, but an isolated HLTB timeout stopped the entire run. Fix: 1 controlled 2–3s retry per transient failed group, then session-only skip and continue; stop after 3 consecutive failures to avoid hammering an unstable upstream. No error writes, no replay loops, preserve confirmation of earlier results, keep RAWG isolated and 2–3s pacing. Issue #100, new PR. Never run the collection update on CI or Preview; no merge without explicit Product Owner approval.
-
+### COMPLETED — Resilient HLTB maintenance (#100; PR #101)
+Merged 2026-10-18 (`d999494571a6de54b54d4d04bdb6237fa27abcc5`). One controlled retry per transient failed group, session-only skip, stop after 3 consecutive failures; RAWG stays isolated, pacing and backups unchanged.
 
 ### COMPLETED — Independent HLTB and RAWG enrichment (#98; PR #99)
 Merged to `main` 2026-10-18 after explicit owner approval (`4144da5b89c46cdd279b6b8c53a1cc6f21d1985e`), passing GitHub CI and Preview. Owner's prior live test: 531 copies, 27 HLTB, 8 Metacritic, RAWG timeout. Maintenance now offers HLTB **alone by default** or Metacritic/RAWG independently, with provider-specific queues and lookup revisions. Never mark one source attempted when updating the other; preserve positive scores. Backups, auth, 2–3s pacing and fail-fast remain. The production backfill does **not** run on merge/deploy. Owner must explicitly start it in-app. Production deployment/real provider behavior requires separate verification.
