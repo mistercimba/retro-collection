@@ -12,14 +12,14 @@ concurrency:
 
 jobs:
   check:
-    if: github.ref != 'refs/heads/snapshot-build' && github.ref != 'refs/heads/feature/simple-library-v1' && github.ref != 'refs/heads/feature/app-library-v1' && github.head_ref != 'feature/app-library-v1' && !contains(github.event.head_commit.message, '[snapshot-ready]')
+    if: "!contains(github.event.head_commit.message, '[snapshot-ready]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install
+      - run: npm ci
       - run: node --import tsx scripts/enrich-catalog.ts --help
       - run: npm run lint
       - run: npm run test
