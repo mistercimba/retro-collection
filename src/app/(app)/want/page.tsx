@@ -7,6 +7,7 @@ import { displayPlatform, platformReleaseYear, platformSlug, sortPlatformsByRele
 import { formatEuro, gameCountLabel } from "@/lib/format";
 import { isOrderedWishlistTarget } from "@/lib/wishlist-acquisition.logic";
 import { resolveWishlistArtwork } from "@/lib/wishlist-artwork";
+import { authEnabled } from "@/lib/auth";
 
 export const metadata = { title: "Wishlist" };
 
@@ -61,6 +62,21 @@ export default async function WantPage() {
         </Link>
       </div>
     </section>
+
+    {authEnabled() && <section className="collection-panel flex flex-wrap items-center justify-between gap-3 p-4">
+      <div className="min-w-0">
+        <h2 className="text-sm font-black text-slate-950">Exportar para auditoria PAL</h2>
+        <p className="mt-1 text-xs leading-5 text-slate-600">
+          Descarrega um JSON com a Collection e a Wishlist atuais, incluindo variantes e estados.
+          Sem compras, custos, vendedores ou fotos. As notas da Wishlist podem conter texto pessoal:
+          revê o ficheiro antes de o partilhar.
+        </p>
+      </div>
+      <a href="/api/export/collection-wishlist" download
+        className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-[#17382e] px-4 text-sm font-black text-white">
+        Descarregar JSON
+      </a>
+    </section>}
 
     {ordered.length > 0 && <section className="collection-panel p-4">
       <div className="flex items-baseline justify-between gap-3">
