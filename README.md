@@ -21,6 +21,24 @@ wishlist. Next.js App Router, TypeScript, Tailwind, Node.js 22 e Vercel.
 Rotas principais: `/`, `/collection`, `/collection/games`, `/platform/[slug]`,
 `/game/[collectionId]`, `/complete`, `/want`, `/want/buying`, `/wish/[targetId]`, `/lists`, `/lists/[listId]`, `/sell`, `/search` e `/history`.
 
+## Exportação privada para auditoria PAL
+
+Na Wishlist (`/want`), uma sessão autenticada pode usar **Descarregar JSON**
+para obter `/api/export/collection-wishlist`. A exportação é iniciada
+manualmente, lê a biblioteca **atual diretamente do Vercel Blob, sem cache**,
+e contém apenas `collection` e `wishlist` com os campos necessários para
+cruzar jogos, plataformas, estados de posse, edições e variantes PAL.
+Inclui também a data da leitura e o `updatedAt` de origem.
+
+A rota **não existe funcionalmente** quando `APP_PASSWORD` não está configurada
+(404) e devolve 401 a quem não estiver autenticado. A resposta é sempre
+`no-store` e descarregada como anexo JSON. Não inclui compras,
+vendedores, preços pagos, custos, valores, fotos, histórico ou tokens.
+**As notas livres da Wishlist são incluídas para preservar restrições de
+compra e escolhas de versões; devem ser revistas antes de partilhar o ficheiro.**
+Nunca publicar o JSON no repositório. Esta funcionalidade não altera o Blob
+e não envia dados automaticamente para serviços externos.
+
 ## Arquitetura e dados
 
 A app é a source of truth dos dados pessoais mutáveis. Os dados estruturados vivem
